@@ -427,20 +427,12 @@ body {
 .lane {
   display: flex;
   flex-shrink: 0;
-  background: rgba(255, 255, 255, 0.008);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
   height: 220px;
   align-items: stretch;
   position: relative;
   transition: var(--transition-smooth);
   overflow: visible;
   will-change: transform;
-}
-
-.lane:hover {
-  background: rgba(255, 255, 255, 0.015);
-  border-color: rgba(255, 255, 255, 0.06);
 }
 
 .lane-title {
@@ -459,8 +451,6 @@ body {
   gap: 4px;
   z-index: 10;
   box-shadow: 8px 0 20px rgba(0,0,0,0.4);
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
 }
 
 .lane-title h3 {
