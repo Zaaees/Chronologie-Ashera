@@ -40,6 +40,9 @@ def clean_character_name(name):
     name = name.strip()
     name = re.sub(r'\s+BOT$', '', name, flags=re.IGNORECASE)
 
+    if 'conseiller' in name.lower():
+        return "LE CONSEILLER"
+
     return name if name else "Narrateur"
 
 def parse_channel_name_from_filename(filename):
