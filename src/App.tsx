@@ -97,8 +97,15 @@ export default function App() {
         boardRef.current.style.transform = prevTransform;
         boardRef.current.style.width = prevWidth;
         boardRef.current.style.height = prevHeight;
+
+        // Auto fit to global view on start
+        const wrapper = wrapperRef.current;
+        if (wrapper && baseWidth.current > 0) {
+          const fitZoom = (wrapper.clientWidth - 40) / baseWidth.current;
+          setZoomLevel(Math.max(0.15, Math.min(1.0, fitZoom)));
+        }
       }
-    }, 400);
+    }, 450);
     return () => clearTimeout(timer);
   }, []);
 
@@ -187,18 +194,19 @@ export default function App() {
 
   // Render character specific card background icon based on role
   const renderRoleIcon = (role: string, color: string) => {
-    const style = { color: color };
+    const style = { color: color, flexShrink: 0 };
     switch (role?.toLowerCase()) {
-      case 'protecteur des écrits':
-        return <Award size={16} style={style} />;
-      case 'ombre fugitive':
-        return <Compass size={16} style={style} />;
-      case 'ménestrel':
-        return <Music size={16} style={style} />;
-      case 'astrologue':
-        return <Star size={16} style={style} />;
-      case 'érudit':
+      case 'cercle d\'azur':
         return <BookOpen size={16} style={style} />;
+      case 'la garde pourpre':
+        return <ShieldAlert size={16} style={style} />;
+      case 'voile d\'ivoire':
+        return <Star size={16} style={style} />;
+      case 'l\'œil':
+      case "l'oeil":
+        return <Compass size={16} style={style} />;
+      case 'sans guilde':
+        return <Music size={16} style={style} />;
       default:
         return <Palette size={16} style={style} />;
     }
