@@ -583,7 +583,7 @@ export default function App() {
                 return (
                   <div 
                     key={channel} 
-                    className="lane flex border-b border-white-05"
+                    className="lane flex"
                     id={`lane-${channel.replace(/\s+/g, "_")}`}
                   >
                     {/* Sticky Lane Channel block */}
