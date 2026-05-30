@@ -13,6 +13,17 @@ const ROLE_ORDER: Record<string, number> = {
   "pnj": 7
 };
 
+const THREAD_PARENT_MAP: Record<string, string> = {
+  "↳🃏𝐋e-𝐑ouge-et-𝐋e-𝐍oir": "🍻〕𝐋-𝐄picurien",
+  "↳🎯𝐋e-17": "🍻〕𝐋-𝐄picurien",
+  "↳🎲𝐋e-𝐁onneteau": "🍻〕𝐋-𝐄picurien",
+  "↳🦾𝐋e-𝐁ras-de-𝐅er": "🍻〕𝐋-𝐄picurien",
+};
+
+const getDisplayChannel = (channel: string): string => {
+  return THREAD_PARENT_MAP[channel] || channel;
+};
+
 export default function App() {
   const [selectedCharacter, setSelectedCharacter] = useState<string | null>(null);
   const [charSearch, setCharSearch] = useState('');
@@ -29,8 +40,78 @@ export default function App() {
   const baseHeight = useRef(0);
 
   const channels = useMemo(() => {
-    return Array.from(new Set(SCENES_DATA.map(s => s.channel)));
+    return Array.from(new Set(SCENES_DATA.map(s => getDisplayChannel(s.channel))));
   }, []);
+
+  const scenePositions = useMemo(() => {
+    const positions: Record<string, { laneIndex: number; slotIndex: number; topOffset: number; laneTop: number }> = {};
+    const laneHeights: Record<string, number> = {};
+    const laneTops: Record<string, number> = {};
+    let currentTop = 0;
+
+    channels.forEach((channel, laneIndex) => {
+      laneTops[channel] = currentTop;
+
+      const laneScenes = SCENES_DATA.filter(s => getDisplayChannel(s.channel) === channel)
+        .sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
+
+      const colOccupiedCount: Record<number, number> = {};
+
+      laneScenes.forEach(scene => {
+        // Obtenir l'index de la colonne pour cette scène
+        const sortedScenes = [...SCENES_DATA].sort(
+          (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
+        );
+        
+        // Trouver la colonne chronologique
+        let colIdx = 1;
+        if (sortedScenes.length > 0) {
+          let currentColumn = 1;
+          const tempMapping: Record<string, number> = {};
+          tempMapping[sortedScenes[0].id] = currentColumn;
+
+          for (let i = 1; i < sortedScenes.length; i++) {
+            const prev = sortedScenes[i - 1];
+            const curr = sortedScenes[i];
+            
+            const prevDate = prev.start_time.split("T")[0];
+            const currDate = curr.start_time.split("T")[0];
+
+            if (prevDate !== currDate) {
+              currentColumn++;
+            }
+            tempMapping[curr.id] = currentColumn;
+          }
+          colIdx = tempMapping[scene.id] || 1;
+        }
+
+        const slotIndex = colOccupiedCount[colIdx] || 0;
+        colOccupiedCount[colIdx] = slotIndex + 1;
+
+        positions[scene.id] = {
+          laneIndex,
+          slotIndex,
+          topOffset: 20 + slotIndex * 200,
+          laneTop: 0 // Ajusté après
+        };
+      });
+
+      const maxSlots = Math.max(...Object.values(colOccupiedCount), 1);
+      const height = maxSlots * 200 + 20;
+      laneHeights[channel] = height;
+
+      // Appliquer laneTop à toutes les scènes de ce lane
+      laneScenes.forEach(scene => {
+        if (positions[scene.id]) {
+          positions[scene.id].laneTop = currentTop;
+        }
+      });
+
+      currentTop += height + 22; // 22px de gap
+    });
+
+    return { positions, laneHeights, laneTops, totalBoardHeight: currentTop };
+  }, [channels]);
 
   const characterStats = useMemo(() => {
     const stats: Record<string, number> = {};
@@ -258,10 +339,10 @@ export default function App() {
     const points = sortedConnectorScenes.map(scene => {
       const colIndex = colMap[scene.id] || 1;
       const leftOffset = (colIndex - 1) * 360 + 30;
-      const laneIndex = channels.indexOf(scene.channel);
       
+      const pos = scenePositions.positions[scene.id];
       const x = 220 + leftOffset + 160;
-      const y = laneIndex * 242 + 110;
+      const y = pos ? pos.laneTop + pos.topOffset + 90 : 110;
       return { x, y, sceneId: scene.id };
     });
 
@@ -284,15 +365,15 @@ export default function App() {
       : 'rgba(234, 179, 8, 0.45)';
 
     return { paths, dots: points, lineColor, isGlobal };
-  }, [selectedCharacter, colMap, channels]);
+  }, [selectedCharacter, colMap, channels, scenePositions]);
 
   const handleCardDoubleClick = (scene: Scene) => {
     const colIndex = colMap[scene.id] || 1;
     const leftOffsetVal = (colIndex - 1) * 360 + 30;
-    const laneIndex = channels.indexOf(scene.channel);
     
+    const pos = scenePositions.positions[scene.id];
     const cardCenterX = 220 + leftOffsetVal + 160;
-    const cardCenterY = laneIndex * 242 + 110;
+    const cardCenterY = pos ? pos.laneTop + pos.topOffset + 90 : 110;
 
     setZoomLevel(1.0);
 
@@ -566,24 +647,32 @@ export default function App() {
               </svg>
 
               {channels.map((channel, laneIndex) => {
-                const laneScenes = SCENES_DATA.filter(s => s.channel === channel);
+                const laneScenes = SCENES_DATA.filter(s => getDisplayChannel(s.channel) === channel);
                 const displayTitle = channel.replace(/_/g, ' ').replace(/-/g, ' ');
+                const height = scenePositions.laneHeights[channel] || 220;
 
                 return (
                   <div 
                     key={channel} 
                     className="lane flex"
                     id={`lane-${channel.replace(/\s+/g, "_")}`}
+                    style={{ height: `${height}px` }}
                   >
                     <div className="lane-title select-none sticky left-0">
                       <h3 title={displayTitle}>#{displayTitle}</h3>
                       <span>{laneScenes.length} scène{laneScenes.length > 1 ? 's' : ''} RP</span>
                     </div>
 
-                    <div className="lane-cards" id={`cards-${channel.replace(/\s+/g, "_")}`}>
+                    <div 
+                      className="lane-cards" 
+                      id={`cards-${channel.replace(/\s+/g, "_")}`}
+                      style={{ height: `${height}px` }}
+                    >
                       {laneScenes.map(scene => {
                         const colIdx = colMap[scene.id] || 1;
                         const leftOffset = (colIdx - 1) * 360 + 30;
+                        const pos = scenePositions.positions[scene.id];
+                        const topOffset = pos ? pos.topOffset : 20;
                         
                         const hasActiveSelection = selectedCharacter !== null;
                         const actorParticipating = selectedCharacter !== null && scene.actors.includes(selectedCharacter);
@@ -598,6 +687,7 @@ export default function App() {
                         const timeEndStr = end.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
 
                         const charHighlightColor = selectedCharacter && CHARACTERS_DATA[selectedCharacter]?.color;
+                        const isThreadScene = scene.channel !== getDisplayChannel(scene.channel);
 
                         return (
                           <div 
@@ -606,6 +696,7 @@ export default function App() {
                             id={scene.id}
                             style={{ 
                               left: `${leftOffset}px`,
+                              top: `${topOffset}px`,
                               borderColor: isCardHighlighted ? charHighlightColor || undefined : undefined,
                               boxShadow: isCardHighlighted ? `0 0 20px ${charHighlightColor}25` : undefined
                             }}
@@ -630,8 +721,16 @@ export default function App() {
                             onMouseLeave={() => setHoveredScene(null)}
                           >
                             <div className="card-header">
-                              <span className="scene-number">
+                              <span className="scene-number flex items-center gap-1.5">
                                 {scene.id.replace("scene_", "").replace(/_/g, " ").toUpperCase()}
+                                {isThreadScene && (
+                                  <span 
+                                    className="text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 font-medium whitespace-nowrap select-none"
+                                    title={`Fil : ${scene.channel}`}
+                                  >
+                                    ↳ {scene.channel.replace('↳', '').trim()}
+                                  </span>
+                                )}
                               </span>
                               <span className="scene-date">
                                 {dateStr} • {timeStartStr} - {timeEndStr}

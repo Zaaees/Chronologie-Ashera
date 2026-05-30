@@ -37,6 +37,7 @@ def clean_character_name(name):
 
     name = unicodedata.normalize('NFKD', name)
     name = re.sub(r'[^\w\s\-\']', '', name)
+    name = re.sub(r'\s+', ' ', name)
     name = name.strip()
     name = re.sub(r'\s+BOT$', '', name, flags=re.IGNORECASE)
 
@@ -441,7 +442,7 @@ def main():
     character_map = {}
     valid_actors = set()
     for actor in all_actors:
-        if not actor or len(actor) >= 30:
+        if not actor or len(actor) >= 50:
             continue
         role, color, color_name = get_character_guild_and_color(actor)
         if role is not None:
