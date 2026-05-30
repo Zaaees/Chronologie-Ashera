@@ -40,8 +40,16 @@ def clean_character_name(name):
     name = name.strip()
     name = re.sub(r'\s+BOT$', '', name, flags=re.IGNORECASE)
 
-    if 'conseiller' in name.lower():
+    name_lower = name.lower()
+
+    if 'conseiller' in name_lower:
         return "LE CONSEILLER"
+    elif 'owl' in name_lower or 'messager' in name_lower:
+        return "OWL LE MESSAGER"
+    elif name_lower in ["l'oeil", "l'œil", "oeil", "œil", "loeil", "lœil"]:
+        return "L'Oeil"
+    elif 'missive' in name_lower:
+        return "LES MISSIVES"
 
     return name if name else "Narrateur"
 
@@ -345,7 +353,7 @@ def get_character_guild_and_color(actor_name):
     if any(x in name for x in ["koya", "profile"]):
         return None, None, None
 
-    if any(x in name for x in ["conseiller", "owl", "messager", "missive"]) or name in ["l'oeil", "l'oeil", "l'œil", "oeil"]:
+    if any(x in name for x in ["conseiller", "owl", "messager", "missive", "les missives"]) or name in ["l'oeil", "l'oeil", "l'œil", "oeil", "loeil", "lœil"]:
         return "PNJ", "#a855f7", "char_pnj"
 
     if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn"]):
