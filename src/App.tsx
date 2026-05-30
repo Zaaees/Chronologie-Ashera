@@ -2,6 +2,17 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { Search, ZoomIn, ZoomOut, Maximize2, ShieldAlert, Award, Compass, Music, Palette, BookOpen, Star, HelpCircle, ArrowRightLeft } from 'lucide-react';
 
+const ROLE_ORDER: Record<string, number> = {
+  "cercle d'azur": 1,
+  "la garde pourpre": 2,
+  "voile d'ivoire": 3,
+  "l'œil": 4,
+  "l'oeil": 4,
+  "sans guilde": 5,
+  "autre": 6,
+  "pnj": 7
+};
+
 export default function App() {
   // Application State
   const [selectedCharacter, setSelectedCharacter] = useState<string | null>(null);
@@ -34,20 +45,37 @@ export default function App() {
     return stats;
   }, []);
 
-  // List of distinct roles for the dropdown filter
+  // List of distinct roles for the dropdown filter sorted by role order
   const distinctRoles = useMemo(() => {
-    const roles = Object.values(CHARACTERS_DATA).map(c => c.role);
-    return Array.from(new Set(roles));
+    const roles = Array.from(new Set(Object.values(CHARACTERS_DATA).map(c => c.role)));
+    return roles.sort((a, b) => {
+      const orderA = ROLE_ORDER[a.toLowerCase()] || 99;
+      const orderB = ROLE_ORDER[b.toLowerCase()] || 99;
+      return orderA - orderB;
+    });
   }, []);
 
-  // Filtered characters list
+  // Filtered and sorted characters list
   const filteredActors = useMemo(() => {
-    return Object.keys(CHARACTERS_DATA).filter(actor => {
+    const list = Object.keys(CHARACTERS_DATA).filter(actor => {
       const meta = CHARACTERS_DATA[actor];
       const matchesSearch = actor.toLowerCase().includes(charSearch.toLowerCase()) || 
                             meta.role.toLowerCase().includes(charSearch.toLowerCase());
       const matchesRole = roleFilter === '' || meta.role === roleFilter;
       return matchesSearch && matchesRole;
+    });
+    
+    return list.sort((a, b) => {
+      const roleA = CHARACTERS_DATA[a]?.role?.toLowerCase() || '';
+      const roleB = CHARACTERS_DATA[b]?.role?.toLowerCase() || '';
+      
+      const orderA = ROLE_ORDER[roleA] || 99;
+      const orderB = ROLE_ORDER[roleB] || 99;
+      
+      if (orderA !== orderB) {
+        return orderA - orderB;
+      }
+      return a.localeCompare(b, 'fr');
     });
   }, [charSearch, roleFilter]);
 
