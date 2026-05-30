@@ -23,7 +23,6 @@
   --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Base resets & layout */
 body {
   background-color: var(--bg-primary);
   color: var(--text-main);
@@ -34,7 +33,6 @@ body {
   position: relative;
 }
 
-/* Background glowing decoration */
 .glow-orb {
   position: fixed;
   border-radius: 50%;
@@ -74,7 +72,6 @@ body {
   left: 55%;
 }
 
-/* App structure layout */
 .app-container {
   display: flex;
   height: 100vh;
@@ -82,7 +79,6 @@ body {
   overflow: hidden;
 }
 
-/* Sidebar styling with deep glassmorphic design */
 .sidebar {
   background-color: var(--bg-sidebar);
   border-right: 1px solid var(--border-color);
@@ -134,7 +130,6 @@ body {
   padding-bottom: 6px;
 }
 
-/* Search bar styling with neat microinteractions */
 .search-container {
   margin-bottom: 18px;
   display: flex;
@@ -184,7 +179,6 @@ body {
   box-shadow: 0 0 12px rgba(239, 68, 68, 0.2);
 }
 
-/* Sidebar lists with smooth vertical scrolling */
 .character-list {
   display: flex;
   flex-direction: column;
@@ -194,7 +188,6 @@ body {
   padding-right: 6px;
 }
 
-/* Modern clean cards for selected/visible actors */
 .character-card {
   background: rgba(255, 255, 255, 0.015);
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -227,7 +220,6 @@ body {
   transform: translateX(3px);
 }
 
-/* Dynamic highlighting for active cards */
 .character-card.active {
   background: rgba(255, 255, 255, 0.05);
 }
@@ -265,7 +257,6 @@ body {
   text-overflow: ellipsis;
 }
 
-/* Sidebar Footer metadata */
 .sidebar-footer {
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -275,7 +266,6 @@ body {
   line-height: 1.45;
 }
 
-/* Main timeline wrapper block */
 .timeline-container {
   flex-grow: 1;
   display: flex;
@@ -286,7 +276,6 @@ body {
   padding: 30px;
 }
 
-/* Header layout block */
 .timeline-header {
   display: flex;
   justify-content: space-between;
@@ -309,7 +298,6 @@ body {
   margin-top: 2px;
 }
 
-/* Timelines Legend dashboard */
 .legend {
   display: flex;
   gap: 16px;
@@ -335,7 +323,6 @@ body {
   box-shadow: 0 0 10px var(--text-glow);
 }
 
-/* Interactive zoom buttons styled like real glass gadgets */
 .zoom-controls {
   display: flex;
   align-items: center;
@@ -398,7 +385,6 @@ body {
   box-shadow: 0 0 15px rgba(139, 92, 246, 0.35);
 }
 
-/* Parallel scrollable tracks wrapper */
 .lanes-wrapper {
   flex-grow: 1;
   overflow: auto;
@@ -409,7 +395,6 @@ body {
   border-radius: 18px;
 }
 
-/* Global timeline map board */
 .timeline-board {
   display: flex;
   flex-direction: column;
@@ -423,7 +408,6 @@ body {
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Swimlanes for Parallel Channels */
 .lane {
   display: flex;
   flex-shrink: 0;
@@ -470,7 +454,6 @@ body {
   font-weight: 500;
 }
 
-/* Absolutely positioned container within a lane card stream */
 .lane-cards {
   position: relative;
   height: 220px;
@@ -481,7 +464,6 @@ body {
   overflow: visible;
 }
 
-/* Premium micro-designed RP card */
 .scene-card {
   position: absolute;
   top: 20px;
@@ -596,7 +578,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-/* Dimmed non-participating elements state */
 .scene-card.dimmed {
   opacity: 0.12;
   pointer-events: none;
@@ -606,7 +587,6 @@ body {
   opacity: 0.4;
 }
 
-/* SVG Line connector styling */
 .ariane-segment {
   animation: svgDashIn 0.8s ease-out forwards;
 }
@@ -632,7 +612,6 @@ body {
   }
 }
 
-/* Spinner loader styles */
 .spinner {
   width: 40px;
   height: 40px;
@@ -646,7 +625,6 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -667,7 +645,6 @@ body {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Reader Modal and Backdrop */
 .reader-modal {
   position: fixed;
   top: 0;
@@ -809,7 +786,6 @@ body {
   transform: rotate(90deg);
 }
 
-/* Modal Body lists with stunning custom message frames */
 .modal-body {
   flex-grow: 1;
   overflow-y: auto;
@@ -873,7 +849,6 @@ body {
   font-weight: 600;
 }
 
-/* Embed visuals inside the dialog box */
 .msg-embed {
   margin-top: 10px;
   background: rgba(0, 0, 0, 0.2);
@@ -901,9 +876,6 @@ body {
   white-space: pre-wrap;
 }
 
-/* ==========================================================================
-   Semantic Zoomout details
-   ========================================================================== */
 .zoom-out-mode .scene-card {
   padding: 12px 14px;
   justify-content: center;
@@ -937,7 +909,6 @@ body {
   display: block;
 }
 
-/* Floating Tooltip */
 .hover-tooltip {
   position: fixed;
   width: 320px;
@@ -996,13 +967,11 @@ body {
   gap: 4px;
 }
 
-/* Character Specific Highlighting paths helper */
 .character-highlight-aveline { --char-color: var(--color-aveline); }
 .character-highlight-boran { --char-color: var(--color-boran); }
 .character-highlight-cedric { --char-color: var(--color-cedric); }
 .character-highlight-diana { --char-color: var(--color-diana); }
 
-/* STATS BAR in character list cards */
 .char-stats-indicator {
   margin-top: 4px;
   font-size: 0.65rem;

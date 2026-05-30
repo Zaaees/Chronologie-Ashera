@@ -14,7 +14,6 @@ const ROLE_ORDER: Record<string, number> = {
 };
 
 export default function App() {
-  // Application State
   const [selectedCharacter, setSelectedCharacter] = useState<string | null>(null);
   const [charSearch, setCharSearch] = useState('');
   const [roleFilter, setRoleFilter] = useState('');
@@ -23,20 +22,16 @@ export default function App() {
   const [hoveredScene, setHoveredScene] = useState<Scene | null>(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
-  // Refs for tracking layout elements and dimensions
   const wrapperRef = useRef<HTMLDivElement>(null);
   const boardRef = useRef<HTMLDivElement>(null);
   
-  // Dimensions of the original unscaled content board
   const baseWidth = useRef(0);
   const baseHeight = useRef(0);
 
-  // Group scenes by unique channel
   const channels = useMemo(() => {
     return Array.from(new Set(SCENES_DATA.map(s => s.channel)));
   }, []);
 
-  // Compute stats/appearances for each character
   const characterStats = useMemo(() => {
     const stats: Record<string, number> = {};
     Object.keys(CHARACTERS_DATA).forEach(actor => {
@@ -45,7 +40,6 @@ export default function App() {
     return stats;
   }, []);
 
-  // List of distinct roles for the dropdown filter sorted by role order
   const distinctRoles = useMemo(() => {
     const roles = Array.from(new Set(Object.values(CHARACTERS_DATA).map(c => c.role)));
     return roles.sort((a, b) => {
@@ -55,7 +49,6 @@ export default function App() {
     });
   }, []);
 
-  // Filtered and sorted characters list
   const filteredActors = useMemo(() => {
     const list = Object.keys(CHARACTERS_DATA).filter(actor => {
       const meta = CHARACTERS_DATA[actor];
@@ -79,7 +72,6 @@ export default function App() {
     });
   }, [charSearch, roleFilter]);
 
-  // Chronological Grid Mapping (exactly matching the calculated chronological columns)
   const { colMap, totalCols } = useMemo(() => {
     const sortedScenes = [...SCENES_DATA].sort(
       (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
@@ -106,11 +98,9 @@ export default function App() {
     return { colMap: mapping, totalCols: currentColumn };
   }, []);
 
-  // Set the board width and height reference parameters on mount/render
   useEffect(() => {
     const timer = setTimeout(() => {
       if (boardRef.current) {
-        // Temporarily reset transform to measure actual unscaled scrollWidth/scrollHeight
         const prevTransform = boardRef.current.style.transform;
         const prevWidth = boardRef.current.style.width;
         const prevHeight = boardRef.current.style.height;
@@ -126,7 +116,6 @@ export default function App() {
         boardRef.current.style.width = prevWidth;
         boardRef.current.style.height = prevHeight;
 
-        // Auto fit to global view on start
         const wrapper = wrapperRef.current;
         if (wrapper && baseWidth.current > 0) {
           const fitZoom = (wrapper.clientWidth - 40) / baseWidth.current;
@@ -137,7 +126,6 @@ export default function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Function to apply zoom with centering support on general views
   const applyZoomCentering = (targetZoom: number) => {
     const oldZoom = zoomLevel;
     const nextZoom = Math.max(0.15, Math.min(2.0, targetZoom));
@@ -150,7 +138,6 @@ export default function App() {
       const centerX = (wrapper.scrollLeft + viewportWidth / 2) / oldZoom;
       const centerY = (wrapper.scrollTop + viewportHeight / 2) / oldZoom;
 
-      // Adjust wrapper viewport scroll values
       setTimeout(() => {
         wrapper.scrollLeft = centerX * nextZoom - viewportWidth / 2;
         wrapper.scrollTop = centerY * nextZoom - viewportHeight / 2;
@@ -158,7 +145,6 @@ export default function App() {
     }
   };
 
-  // Perform auto-fit zoom layout when requested
   const fitGlobalView = () => {
     const wrapper = wrapperRef.current;
     if (wrapper && baseWidth.current > 0) {
@@ -169,7 +155,6 @@ export default function App() {
     }
   };
 
-  // Handle advanced cursor-relative desktop wheel zooming (Ctrl + wheel)
   useEffect(() => {
     const handleWrapperWheel = (e: WheelEvent) => {
       if (e.ctrlKey) {
@@ -192,7 +177,6 @@ export default function App() {
 
         setZoomLevel(nextZoom);
 
-        // Instantly focus scroll offsets to anchor the point
         wrapper.scrollLeft = boardX * nextZoom - mouseViewportX;
         wrapper.scrollTop = boardY * nextZoom - mouseViewportY;
       }
@@ -209,7 +193,6 @@ export default function App() {
     };
   }, [zoomLevel]);
 
-  // Close scene details dialog when Escape key is pressed
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -220,7 +203,6 @@ export default function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Render character specific card background icon based on role
   const renderRoleIcon = (role: string, color: string) => {
     const style = { color: color, flexShrink: 0 };
     switch (role?.toLowerCase()) {
@@ -242,15 +224,11 @@ export default function App() {
     }
   };
 
-  // Helper parser to render text content italics and bolds
   const parseMarkdown = (text: string) => {
     if (!text) return "";
     return text.split("\n").map((line, lineIdx) => {
-      // Bold and italics matching
       let formatted = line;
-      // Bold replacement
       formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-      // Italics replacement
       formatted = formatted.replace(/\*(.*?)\*/g, "<em>$1</em>");
       return (
         <span 
@@ -262,7 +240,6 @@ export default function App() {
     });
   };
 
-  // Dynamic calculations for chronological Bézier curves of active thread
   const connectors = useMemo(() => {
     let sortedConnectorScenes = [...SCENES_DATA];
     let isGlobal = true;
@@ -272,7 +249,6 @@ export default function App() {
       isGlobal = false;
     }
 
-    // Sort chronologically
     sortedConnectorScenes.sort(
       (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
     );
@@ -310,7 +286,6 @@ export default function App() {
     return { paths, dots: points, lineColor, isGlobal };
   }, [selectedCharacter, colMap, channels]);
 
-  // Handle double clicking directly onto a scene card to center and zoom in optimal fit
   const handleCardDoubleClick = (scene: Scene) => {
     const colIndex = colMap[scene.id] || 1;
     const leftOffsetVal = (colIndex - 1) * 360 + 30;
@@ -332,21 +307,18 @@ export default function App() {
     }, 50);
   };
 
-  // Find active scene inside modal
   const activeModalScene = useMemo(() => {
     return SCENES_DATA.find(s => s.id === selectedSceneId) || null;
   }, [selectedSceneId]);
 
   return (
     <>
-      {/* Decorative Background Orbs */}
       <div className="glow-orb orb-1" id="orb-1"></div>
       <div className="glow-orb orb-2" id="orb-2"></div>
       <div className="glow-orb orb-3" id="orb-3"></div>
 
       <div className="app-container">
         
-        {/* SIDEBAR */}
         <aside className="sidebar" id="character-list-sidebar">
           
           <div className="sidebar-header">
@@ -404,7 +376,6 @@ export default function App() {
             Personnages ({filteredActors.length})
           </div>
 
-          {/* Dinamically calculated and listed actors */}
           <div className="character-list" id="character-list">
             {filteredActors.length === 0 ? (
               <div className="loading-text text-center py-6">Aucun personnage trouvé</div>
@@ -436,7 +407,6 @@ export default function App() {
                       </div>
                       <span className="char-role block text-xs">{meta.role}</span>
                       
-                      {/* Sub stats count */}
                       <span className="char-stats-indicator">
                         {scenesCount} {scenesCount > 1 ? 'scènes' : 'scène'}
                       </span>
@@ -451,7 +421,6 @@ export default function App() {
             )}
           </div>
 
-          {/* Explanatory footer text */}
           <div className="sidebar-footer">
             <p className="mb-2">
               <span className="inline-block w-2.5 h-1.5 bg-yellow-500 rounded-sm mr-1"></span>
@@ -464,7 +433,6 @@ export default function App() {
           </div>
         </aside>
 
-        {/* TIMELINE BOARD CONTAINER */}
         <main className="timeline-container">
           
           <header className="timeline-header flex justify-between items-center">
@@ -476,7 +444,6 @@ export default function App() {
               </h2>
             </div>
 
-            {/* Premium Interactive Zoom Controls */}
             <div className="zoom-controls">
               <button 
                 className="btn-zoom" 
@@ -509,7 +476,6 @@ export default function App() {
               </button>
             </div>
 
-            {/* Quick dashboard legend */}
             <div className="legend flex items-center gap-4">
               <div className="legend-item">
                 <span className="legend-dot main-timeline"></span>
@@ -530,20 +496,17 @@ export default function App() {
             </div>
           </header>
 
-          {/* lanes-wrapper scroll block */}
           <div 
             className="lanes-wrapper" 
             id="lanes-wrapper"
             ref={wrapperRef}
             onClick={() => setSelectedCharacter(null)}
             onDoubleClick={(e) => {
-              // Reset zoom back to comfortable window fit
               if (e.target === e.currentTarget) {
                 fitGlobalView();
               }
             }}
           >
-            {/* The Scaled Board Mapping */}
             <div 
               className={`timeline-board ${zoomLevel < 0.65 ? 'zoom-out-mode' : ''}`}
               id="timeline-board"
@@ -556,12 +519,10 @@ export default function App() {
               } as React.CSSProperties}
             >
               
-              {/* CONNECTING PATHS CANVAS */}
               <svg 
                 className="absolute inset-x-0 inset-y-0 h-full w-full pointer-events-none z-10" 
                 style={{ overflow: 'visible' }}
               >
-                {/* 1. Draw connecting segment curves with beautiful glow filters */}
                 {connectors.paths.map((d, index) => (
                   <g key={`connect-path-${index}`}>
                     <path 
@@ -584,7 +545,6 @@ export default function App() {
                   </g>
                 ))}
 
-                {/* 2. Anchor circular indicator dots at key coordinates */}
                 {connectors.dots.map((dot, index) => (
                   <g key={`connect-node-${index}-${dot.sceneId}`}>
                     <circle 
@@ -605,7 +565,6 @@ export default function App() {
                 ))}
               </svg>
 
-              {/* RENDER CHANNELS / LANES */}
               {channels.map((channel, laneIndex) => {
                 const laneScenes = SCENES_DATA.filter(s => s.channel === channel);
                 const displayTitle = channel.replace(/_/g, ' ').replace(/-/g, ' ');
@@ -616,13 +575,11 @@ export default function App() {
                     className="lane flex"
                     id={`lane-${channel.replace(/\s+/g, "_")}`}
                   >
-                    {/* Sticky Lane Channel block */}
                     <div className="lane-title select-none sticky left-0">
                       <h3 title={displayTitle}>#{displayTitle}</h3>
                       <span>{laneScenes.length} scène{laneScenes.length > 1 ? 's' : ''} RP</span>
                     </div>
 
-                    {/* Sequential columns of absolute card positioning stream */}
                     <div className="lane-cards" id={`cards-${channel.replace(/\s+/g, "_")}`}>
                       {laneScenes.map(scene => {
                         const colIdx = colMap[scene.id] || 1;
@@ -735,7 +692,6 @@ export default function App() {
         </main>
       </div>
 
-      {/* FLOATING HOVER TOOLTIP FOR LOW ZOOM CARD DETAILS */}
       {hoveredScene && (
         <div 
           className="hover-tooltip active"
@@ -780,7 +736,6 @@ export default function App() {
         </div>
       )}
 
-      {/* DYNAMIC SCENE DIALOG INTERACTIVE READER MODAL */}
       <div className={`reader-modal ${selectedSceneId ? 'active' : ''}`} id="reader-modal">
         <div className="modal-backdrop" id="modal-backdrop" onClick={() => setSelectedSceneId(null)}></div>
         
@@ -802,7 +757,6 @@ export default function App() {
                 </span>
               </div>
 
-              {/* Action buttons (Ouvrir sur discord, close) */}
               <div className="modal-header-actions">
                 {activeModalScene.discord_url && (
                   <a 
@@ -829,7 +783,6 @@ export default function App() {
               </div>
             </header>
 
-            {/* List of narrative posts in chronological sequence */}
             <div className="modal-body" id="modal-body">
               {activeModalScene.messages.length === 0 ? (
                 <p className="loading-text text-center text-slate-400">
@@ -862,14 +815,12 @@ export default function App() {
                         </span>
                       </div>
 
-                      {/* Main Message Content */}
                       {m.content && (
                         <div className="msg-text mb-2">
                           {parseMarkdown(m.content)}
                         </div>
                       )}
 
-                      {/* Discord Embed visual representation */}
                       {(m.embed_title || m.embed_description) && (
                         <div 
                           className="msg-embed"
