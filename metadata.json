@@ -1,0 +1,6 @@
+{
+  "name": "ChronoRP - Le Conte d'Ashera",
+  "description": "Site web interactif de chronologie de jeu de rôle (RP) avec fil d'Ariane dynamique et liseuse de scène.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

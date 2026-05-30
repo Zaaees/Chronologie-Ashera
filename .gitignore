@@ -1,0 +1,17 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Ignored non-essential / heavy folders for GitHub Pages React app
+Ancien_site/
+Nouveau site/
+Export/
+sample_discord_export.json
+__pycache__/
+*.pyc
+
