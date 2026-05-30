@@ -207,6 +207,8 @@ export default function App() {
         return <Compass size={16} style={style} />;
       case 'sans guilde':
         return <Music size={16} style={style} />;
+      case 'pnj':
+        return <HelpCircle size={16} style={style} />;
       default:
         return <Palette size={16} style={style} />;
     }
