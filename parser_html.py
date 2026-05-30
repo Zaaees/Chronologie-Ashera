@@ -391,12 +391,12 @@ def get_character_guild_and_color(actor_name):
     """
     name = clean_character_name(actor_name).lower()
     
-    # 1. Bots (A exclure)
-    if any(x in name for x in ["koya", "profile", "conseiller", "messeger", "owl", "missive"]):
+    # 1. Bots (A exclure - uniquement les comptes techniques/HRP)
+    if any(x in name for x in ["koya", "profile"]):
         return None, None, None
         
     # 2. L'œil (Noir, #0e0d0d)
-    if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn"]):
+    if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn", "conseiller", "oeil"]):
         return "L'œil", "#0e0d0d", "char_oeil"
         
     # 3. Cercle d'Azur (Bleu, #305ed3)
@@ -411,12 +411,13 @@ def get_character_guild_and_color(actor_name):
     if any(x in name for x in ["brutus", "redwitch", "ashbourne", "velka", "chapellet", "hana", "aryana", "taurielle", "happy", "loyis", "delacroix", "kenji", "heavil", "nick sol"]):
         return "La Garde Pourpre", "#b40000", "char_pourpre"
         
-    # 6. Autre / Anciens Persos (Gris, #94a3b8)
-    if any(x in name for x in ["grel", "madana", "nikko", "aytaupe", "saphizu", "vidtz"]):
+    # 6. Autre / Anciens / PNJ Narrateurs (Gris, #94a3b8)
+    if any(x in name for x in ["grel", "madana", "nikko", "aytaupe", "saphizu", "vidtz", "owl", "messager", "missive"]):
         return "Autre", "#94a3b8", "char_autre"
         
     # 7. Par défaut : Sans guilde (Or/Beige, #e2ce7d)
     return "Sans guilde", "#e2ce7d", "char_sans_guilde"
+
 
 def main():
     global GLOBAL_GUILD_ID
