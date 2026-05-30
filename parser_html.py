@@ -396,7 +396,7 @@ def get_character_guild_and_color(actor_name):
         return None, None, None
         
     # 2. L'œil (Noir, #0e0d0d)
-    if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn", "conseiller", "oeil"]):
+    if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn", "conseiller", "oeil", "œil"]):
         return "L'œil", "#0e0d0d", "char_oeil"
         
     # 3. Cercle d'Azur (Bleu, #305ed3)

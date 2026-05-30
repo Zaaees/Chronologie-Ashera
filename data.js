@@ -1,36 +1,81 @@
 window.rpData = {
   "characters": {
-    "Khem  Myrea M": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
+    "RED": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
     },
-    "Selena Moon": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
+    "Ju  Lucia Bunny Fiorella": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
     },
     "Lorna Is'Hor": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
     },
-    "Madana": {
-      "role": "Autre",
-      "color": "#94a3b8",
-      "colorName": "char_autre"
-    },
-    "Prince Nick Sol": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
-    },
-    "Yuu  Katelyn Hoffmann": {
+    "JAVUS": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
     },
-    "Sha'al Langster": {
+    "Etoile  Isis Faerieth": {
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "colorName": "char_ivoire"
+    },
+    "Nyx": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "OWL LE MESSAGER": {
+      "role": "Autre",
+      "color": "#94a3b8",
+      "colorName": "char_autre"
+    },
+    "Lydounne": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Adelina Del Fuego  Mari": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "Milli Enga - Mange de rang 2": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Nah Jasp": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Grel": {
+      "role": "Autre",
+      "color": "#94a3b8",
+      "colorName": "char_autre"
+    },
+    "Le Conseiller": {
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "colorName": "char_oeil"
+    },
+    "𓆩ɪʜʏᴀ𓆪": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Saphizu  Alizee Vidtz": {
+      "role": "Autre",
+      "color": "#94a3b8",
+      "colorName": "char_autre"
+    },
+    "Narrateur": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
@@ -40,57 +85,182 @@ window.rpData = {
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
     },
-    "Milli Enga - Mange de rang 2": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Lys Dandelion": {
+    "Vaelira Faelthorn": {
       "role": "L'œil",
       "color": "#0e0d0d",
       "colorName": "char_oeil"
     },
-    "Nah Jasp": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Le Conseiller": {
+    "Zaes  Ley Vaelric": {
       "role": "L'œil",
       "color": "#0e0d0d",
       "colorName": "char_oeil"
     },
-    "Etoile  Isis Faerieth": {
+    "Noci  Urugaki Ren": {
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire"
     },
-    "Florianne Hoster": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
+    "Happy  Loyis Delacroix": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
+    },
+    "Velka Valcyrion": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
     },
     "Lysander Armlet  Jlaus": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur"
     },
-    "𓆩ɪʜʏᴀ𓆪": {
+    "Hector Swaft - Mage de Rang 3": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
     },
-    "Mission  Soupcons Morbides": {
+    "Kenji Takahashi  Heavil": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
+    },
+    "Sulyvan Vosk  Hussh": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
+    },
+    "Florianne Hoster": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Someone  Eucymile Leonite": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "Kanta": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Nikko  Aytaupe": {
+      "role": "Autre",
+      "color": "#94a3b8",
+      "colorName": "char_autre"
+    },
+    "Yuu  Katelyn Hoffmann": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Tsukishiro Akane": {
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "colorName": "char_ivoire"
+    },
+    "L'Oeil": {
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "colorName": "char_oeil"
+    },
+    "Brutus Redwitch": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "Madana": {
+      "role": "Autre",
+      "color": "#94a3b8",
+      "colorName": "char_autre"
+    },
+    "Chapellet Hana": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
+    },
+    "Khem  Myrea M": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Magon baldor  Death": {
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "colorName": "char_ivoire"
+    },
+    "Yidmetra Rhys": {
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "colorName": "char_ivoire"
+    },
+    "Eita": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Selena Moon": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Mael Fol'dun Astyell": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Sha'al Langster": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Eopia  Asior Eveus": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "Aryana Erhendil  Taurielle": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
+    },
+    "Lys Dandelion": {
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "colorName": "char_oeil"
     },
     "Emil  Camille Rebenok": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur"
     },
-    "Sulyvan Vosk  Hussh": {
+    "Emilia Flavgan": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "LE CONSEILLER": {
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "colorName": "char_oeil"
+    },
+    "Prince Nick Sol": {
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "colorName": "char_pourpre"
+    },
+    "Ryo 웃  Kales Septimus": {
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde"
+    },
+    "Frey - Elear": {
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur"
+    },
+    "Ethan Jaster": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
@@ -105,180 +275,10 @@ window.rpData = {
       "color": "#305ed3",
       "colorName": "char_azur"
     },
-    "Emilia Flavgan": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Kanta": {
+    "Mission  Soupcons Morbides": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde"
-    },
-    "Magon baldor  Death": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire"
-    },
-    "Tsukishiro Akane": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire"
-    },
-    "RED": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Adelina Del Fuego  Mari": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Zaes  Ley Vaelric": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil"
-    },
-    "Saphizu  Alizee Vidtz": {
-      "role": "Autre",
-      "color": "#94a3b8",
-      "colorName": "char_autre"
-    },
-    "LE CONSEILLER": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil"
-    },
-    "Ryo 웃  Kales Septimus": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Ju  Lucia Bunny Fiorella": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Ethan Jaster": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Eopia  Asior Eveus": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Yidmetra Rhys": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire"
-    },
-    "Noci  Urugaki Ren": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire"
-    },
-    "Nikko  Aytaupe": {
-      "role": "Autre",
-      "color": "#94a3b8",
-      "colorName": "char_autre"
-    },
-    "Lydounne": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Chapellet Hana": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
-    },
-    "JAVUS": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Narrateur": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Brutus Redwitch": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Someone  Eucymile Leonite": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Kenji Takahashi  Heavil": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
-    },
-    "Aryana Erhendil  Taurielle": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
-    },
-    "Frey - Elear": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Vaelira Faelthorn": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil"
-    },
-    "Nyx": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur"
-    },
-    "Eita": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Grel": {
-      "role": "Autre",
-      "color": "#94a3b8",
-      "colorName": "char_autre"
-    },
-    "L'Oeil": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil"
-    },
-    "Hector Swaft - Mage de Rang 3": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "Happy  Loyis Delacroix": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
-    },
-    "Mael Fol'dun Astyell": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde"
-    },
-    "OWL LE MESSAGER": {
-      "role": "Autre",
-      "color": "#94a3b8",
-      "colorName": "char_autre"
-    },
-    "Velka Valcyrion": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre"
     }
   },
   "scenes": [
@@ -286,20 +286,20 @@ window.rpData = {
       "id": "scene_️〕Quartier_Ouest_1",
       "channel": "️〕Quartier-Ouest",
       "channel_id": "1467160087033413838",
-      "title": "Scène 1 - LE CONSEILLER, Kenji Takahashi  Heavil, Ju  Lucia Bunny Fiorella...",
+      "title": "Scène 1 - Kenji Takahashi  Heavil, Kanta, Ju  Lucia Bunny Fiorella...",
       "actors": [
-        "LE CONSEILLER",
         "Kenji Takahashi  Heavil",
+        "Kanta",
         "Ju  Lucia Bunny Fiorella",
-        "Prince Nick Sol",
+        "Etoile  Isis Faerieth",
         "Yuu  Katelyn Hoffmann",
         "Tsukishiro Akane",
-        "Kanta",
+        "Happy  Loyis Delacroix",
+        "LE CONSEILLER",
+        "Prince Nick Sol",
         "Hector Swaft - Mage de Rang 3",
-        "Etoile  Isis Faerieth",
-        "Magon baldor  Death",
         "Nah Jasp",
-        "Happy  Loyis Delacroix"
+        "Magon baldor  Death"
       ],
       "start_time": "2026-01-31T15:26:00Z",
       "end_time": "2026-04-10T16:24:00Z",
@@ -769,15 +769,15 @@ window.rpData = {
       "id": "scene_〕Lot_De_Maison_1",
       "channel": "〕Lot-De-Maison",
       "channel_id": "1467160123108626463",
-      "title": "Scène 1 - LE CONSEILLER, Ju  Lucia Bunny Fiorella, Prince Nick Sol...",
+      "title": "Scène 1 - Kanta, Ju  Lucia Bunny Fiorella, Etoile  Isis Faerieth...",
       "actors": [
-        "LE CONSEILLER",
-        "Ju  Lucia Bunny Fiorella",
-        "Prince Nick Sol",
         "Kanta",
-        "Hector Swaft - Mage de Rang 3",
+        "Ju  Lucia Bunny Fiorella",
         "Etoile  Isis Faerieth",
         "Tsukishiro Akane",
+        "LE CONSEILLER",
+        "Prince Nick Sol",
+        "Hector Swaft - Mage de Rang 3",
         "Nah Jasp",
         "Magon baldor  Death"
       ],
@@ -1217,15 +1217,15 @@ window.rpData = {
       "id": "scene_🏫〕Auditorium_1",
       "channel": "🏫〕Auditorium",
       "channel_id": "1327646243211444245",
-      "title": "Scène 1 - Eopia  Asior Eveus, OWL LE MESSAGER, Happy  Loyis Delacroix...",
+      "title": "Scène 1 - RED, Saphizu  Alizee Vidtz, Narrateur...",
       "actors": [
-        "Eopia  Asior Eveus",
-        "OWL LE MESSAGER",
-        "Happy  Loyis Delacroix",
-        "Emil  Camille Rebenok",
         "RED",
+        "Saphizu  Alizee Vidtz",
         "Narrateur",
-        "Saphizu  Alizee Vidtz"
+        "OWL LE MESSAGER",
+        "Eopia  Asior Eveus",
+        "Happy  Loyis Delacroix",
+        "Emil  Camille Rebenok"
       ],
       "start_time": "2026-02-01T17:01:00Z",
       "end_time": "2026-02-15T10:16:00Z",
@@ -1383,11 +1383,11 @@ window.rpData = {
       "id": "scene_🥗〕Kantine_1",
       "channel": "🥗〕Kantine",
       "channel_id": "1327646240669696047",
-      "title": "Scène 1 - Hector Swaft - Mage de Rang 3, Etoile  Isis Faerieth, Tsukishiro Akane...",
+      "title": "Scène 1 - Etoile  Isis Faerieth, Tsukishiro Akane, Hector Swaft - Mage de Rang 3...",
       "actors": [
-        "Hector Swaft - Mage de Rang 3",
         "Etoile  Isis Faerieth",
         "Tsukishiro Akane",
+        "Hector Swaft - Mage de Rang 3",
         "Nah Jasp",
         "Magon baldor  Death"
       ],
@@ -1603,11 +1603,11 @@ window.rpData = {
       "id": "scene_🛡️〕Terrain_d_entrainement_1",
       "channel": "🛡️〕Terrain-d-entrainement",
       "channel_id": "1327646241202634944",
-      "title": "Scène 1 - Magon baldor  Death, Nah Jasp, Milli Enga - Mange de rang 2",
+      "title": "Scène 1 - Milli Enga - Mange de rang 2, Nah Jasp, Magon baldor  Death",
       "actors": [
-        "Magon baldor  Death",
+        "Milli Enga - Mange de rang 2",
         "Nah Jasp",
-        "Milli Enga - Mange de rang 2"
+        "Magon baldor  Death"
       ],
       "start_time": "2026-02-02T16:44:00Z",
       "end_time": "2026-02-04T09:34:00Z",
@@ -2093,7 +2093,7 @@ window.rpData = {
       "id": "scene_🚢〕Port_du_Levant_1",
       "channel": "🚢〕Port-du-Levant",
       "channel_id": "1327646240669696043",
-      "title": "Scène 1 - Vaelira Faelthorn, Nah Jasp, Raien Shogo Enjaku  Blacksheep...",
+      "title": "Scène 1 - Vaelira Faelthorn, Raien Shogo Enjaku  Blacksheep, Nah Jasp...",
       "actors": [
         "Vaelira Faelthorn",
         "Nah Jasp",
@@ -2631,7 +2631,7 @@ window.rpData = {
       "id": "scene_〕Pont_des_Deux_1",
       "channel": "〕Pont-des-Deux",
       "channel_id": "1328038693902094357",
-      "title": "Scène 1 - Someone  Eucymile Leonite, Nah Jasp, Raien Shogo Enjaku  Blacksheep",
+      "title": "Scène 1 - Someone  Eucymile Leonite, Raien Shogo Enjaku  Blacksheep, Nah Jasp",
       "actors": [
         "Someone  Eucymile Leonite",
         "Nah Jasp"
@@ -2857,12 +2857,12 @@ window.rpData = {
       "id": "scene_〕Boutique_6",
       "channel": "〕Boutique",
       "channel_id": "1467160167488684074",
-      "title": "Scène 6 - LE CONSEILLER, Kenji Takahashi  Heavil, Yuu  Katelyn Hoffmann...",
+      "title": "Scène 6 - Yuu  Katelyn Hoffmann, Happy  Loyis Delacroix, LE CONSEILLER...",
       "actors": [
-        "LE CONSEILLER",
-        "Kenji Takahashi  Heavil",
         "Yuu  Katelyn Hoffmann",
         "Happy  Loyis Delacroix",
+        "LE CONSEILLER",
+        "Kenji Takahashi  Heavil",
         "Nah Jasp"
       ],
       "start_time": "2026-02-15T16:08:00Z",
@@ -3166,12 +3166,12 @@ window.rpData = {
       "id": "scene_〕Jardin_de_Quartz_1",
       "channel": "〕Jardin-de-Quartz",
       "channel_id": "1328033778505093180",
-      "title": "Scène 1 - Etoile  Isis Faerieth, Nah Jasp, Selena Moon...",
+      "title": "Scène 1 - Etoile  Isis Faerieth, Grel, Selena Moon...",
       "actors": [
         "Etoile  Isis Faerieth",
-        "Nah Jasp",
+        "Grel",
         "Selena Moon",
-        "Grel"
+        "Nah Jasp"
       ],
       "start_time": "2026-02-15T23:12:00Z",
       "end_time": "2026-03-03T17:50:00Z",
@@ -3353,12 +3353,12 @@ window.rpData = {
       "id": "scene_️〕Terrains_Nacres_1",
       "channel": "️〕Terrains-Nacres",
       "channel_id": "1327646239663325280",
-      "title": "Scène 1 - Tsukishiro Akane, Aryana Erhendil  Taurielle, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - Lewis-Phoebe d'Ashbourne, Brutus Redwitch, Aryana Erhendil  Taurielle...",
       "actors": [
-        "Tsukishiro Akane",
-        "Aryana Erhendil  Taurielle",
         "Lewis-Phoebe d'Ashbourne",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "Aryana Erhendil  Taurielle",
+        "Tsukishiro Akane"
       ],
       "start_time": "2026-02-17T00:20:00Z",
       "end_time": "2026-03-01T12:43:00Z",
@@ -4212,16 +4212,16 @@ window.rpData = {
       "id": "scene_️〕Grande_salle_porcelaine_1",
       "channel": "️〕Grande-salle-porcelaine",
       "channel_id": "1327646239663325281",
-      "title": "Scène 1 - Sulyvan Vosk  Hussh, Ryo 웃  Kales Septimus, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - RED, Eopia  Asior Eveus, Tsukishiro Akane...",
       "actors": [
-        "Sulyvan Vosk  Hussh",
+        "RED",
+        "Eopia  Asior Eveus",
+        "Tsukishiro Akane",
+        "L'Oeil",
         "Ryo 웃  Kales Septimus",
         "Lewis-Phoebe d'Ashbourne",
-        "Eopia  Asior Eveus",
-        "L'Oeil",
-        "Tsukishiro Akane",
         "Nah Jasp",
-        "RED"
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-02-17T18:49:00Z",
       "end_time": "2026-03-02T20:30:00Z",
@@ -4523,11 +4523,11 @@ window.rpData = {
       "id": "scene_⛲〕Fontaine_Marbree_1",
       "channel": "⛲〕Fontaine-Marbree",
       "channel_id": "1328033864190398485",
-      "title": "Scène 1 - Emil  Camille Rebenok, Lysander Armlet  Jlaus, Nyx",
+      "title": "Scène 1 - Nyx, Emil  Camille Rebenok, Lysander Armlet  Jlaus",
       "actors": [
+        "Nyx",
         "Emil  Camille Rebenok",
-        "Lysander Armlet  Jlaus",
-        "Nyx"
+        "Lysander Armlet  Jlaus"
       ],
       "start_time": "2026-02-17T22:41:00Z",
       "end_time": "2026-02-28T16:42:00Z",
@@ -4870,10 +4870,10 @@ window.rpData = {
       "id": "scene_✨〕Agora_des_Reines_1",
       "channel": "✨〕Agora-des-Reines",
       "channel_id": "1328038646019919872",
-      "title": "Scène 1 - Eopia  Asior Eveus, Grel",
+      "title": "Scène 1 - Grel, Eopia  Asior Eveus",
       "actors": [
-        "Eopia  Asior Eveus",
-        "Grel"
+        "Grel",
+        "Eopia  Asior Eveus"
       ],
       "start_time": "2026-02-18T12:47:00Z",
       "end_time": "2026-03-04T16:20:00Z",
@@ -5946,16 +5946,16 @@ window.rpData = {
       "id": "scene_️〕Terrain_Grandblanc_1",
       "channel": "️〕Terrain-Grandblanc",
       "channel_id": "1327646240132829226",
-      "title": "Scène 1 - Kenji Takahashi  Heavil, Aryana Erhendil  Taurielle, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - Yuu  Katelyn Hoffmann, Aryana Erhendil  Taurielle, Happy  Loyis Delacroix...",
       "actors": [
-        "Kenji Takahashi  Heavil",
-        "Aryana Erhendil  Taurielle",
-        "Lewis-Phoebe d'Ashbourne",
-        "Prince Nick Sol",
         "Yuu  Katelyn Hoffmann",
+        "Aryana Erhendil  Taurielle",
         "Happy  Loyis Delacroix",
-        "Nah Jasp",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "Prince Nick Sol",
+        "Lewis-Phoebe d'Ashbourne",
+        "Kenji Takahashi  Heavil",
+        "Nah Jasp"
       ],
       "start_time": "2026-03-01T17:09:00Z",
       "end_time": "2026-04-08T02:41:00Z",
@@ -6233,7 +6233,7 @@ window.rpData = {
       "id": "scene_⛲〕Fontaine_Marbree_3",
       "channel": "⛲〕Fontaine-Marbree",
       "channel_id": "1328033864190398485",
-      "title": "Scène 3 - Ju  Lucia Bunny Fiorella, Raien Shogo Enjaku  Blacksheep, Lewis Bamer  Historious",
+      "title": "Scène 3 - Raien Shogo Enjaku  Blacksheep, Ju  Lucia Bunny Fiorella, Lewis Bamer  Historious",
       "actors": [
         "Ju  Lucia Bunny Fiorella",
         "Lewis Bamer  Historious"
@@ -6330,17 +6330,17 @@ window.rpData = {
       "id": "scene_〕Zone_Buffet_1",
       "channel": "〕Zone-Buffet",
       "channel_id": "1334878286677016636",
-      "title": "Scène 1 - Kenji Takahashi  Heavil, Aryana Erhendil  Taurielle, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - Aryana Erhendil  Taurielle, Tsukishiro Akane, Happy  Loyis Delacroix...",
       "actors": [
-        "Kenji Takahashi  Heavil",
         "Aryana Erhendil  Taurielle",
-        "Lewis-Phoebe d'Ashbourne",
-        "Ryo 웃  Kales Septimus",
-        "Prince Nick Sol",
         "Tsukishiro Akane",
-        "L'Oeil",
         "Happy  Loyis Delacroix",
-        "Brutus Redwitch"
+        "L'Oeil",
+        "Brutus Redwitch",
+        "Prince Nick Sol",
+        "Ryo 웃  Kales Septimus",
+        "Lewis-Phoebe d'Ashbourne",
+        "Kenji Takahashi  Heavil"
       ],
       "start_time": "2026-03-01T21:22:00Z",
       "end_time": "2026-03-22T00:38:00Z",
@@ -7274,11 +7274,11 @@ window.rpData = {
       "id": "scene_〕Cours_Fleurie_1",
       "channel": "〕Cours-Fleurie",
       "channel_id": "1334878212110549033",
-      "title": "Scène 1 - Raien Shogo Enjaku  Blacksheep, Lewis Bamer  Historious, Ju  Lucia Bunny Fiorella...",
+      "title": "Scène 1 - Ju  Lucia Bunny Fiorella, Nyx, Raien Shogo Enjaku  Blacksheep...",
       "actors": [
-        "Lewis Bamer  Historious",
         "Ju  Lucia Bunny Fiorella",
         "Nyx",
+        "Lewis Bamer  Historious",
         "Grel"
       ],
       "start_time": "2026-03-02T20:33:00Z",
@@ -7381,18 +7381,18 @@ window.rpData = {
       "id": "scene_〕Centre_radieux_2",
       "channel": "〕Centre-radieux",
       "channel_id": "1333137995800383570",
-      "title": "Scène 2 - Sulyvan Vosk  Hussh, Ryo 웃  Kales Septimus, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 2 - JAVUS, Etoile  Isis Faerieth, Eopia  Asior Eveus...",
       "actors": [
-        "Sulyvan Vosk  Hussh",
+        "JAVUS",
+        "Etoile  Isis Faerieth",
+        "Eopia  Asior Eveus",
+        "Tsukishiro Akane",
+        "Happy  Loyis Delacroix",
+        "L'Oeil",
         "Ryo 웃  Kales Septimus",
         "Lewis-Phoebe d'Ashbourne",
-        "Eopia  Asior Eveus",
-        "L'Oeil",
-        "Etoile  Isis Faerieth",
-        "Tsukishiro Akane",
         "Nah Jasp",
-        "Happy  Loyis Delacroix",
-        "JAVUS"
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-03-03T13:17:00Z",
       "end_time": "2026-03-05T10:58:00Z",
@@ -7574,10 +7574,10 @@ window.rpData = {
       "id": "scene_⛲〕Fontaine_Marbree_4",
       "channel": "⛲〕Fontaine-Marbree",
       "channel_id": "1328033864190398485",
-      "title": "Scène 4 - Adelina Del Fuego  Mari, Sulyvan Vosk  Hussh",
+      "title": "Scène 4 - Sulyvan Vosk  Hussh, Adelina Del Fuego  Mari",
       "actors": [
-        "Adelina Del Fuego  Mari",
-        "Sulyvan Vosk  Hussh"
+        "Sulyvan Vosk  Hussh",
+        "Adelina Del Fuego  Mari"
       ],
       "start_time": "2026-03-04T00:30:00Z",
       "end_time": "2026-03-06T20:03:00Z",
@@ -7663,13 +7663,13 @@ window.rpData = {
       "id": "scene_〕Escaliers_Nacres_1",
       "channel": "〕Escaliers-Nacres",
       "channel_id": "1333138229041303652",
-      "title": "Scène 1 - Sulyvan Vosk  Hussh, Eopia  Asior Eveus, L'Oeil...",
+      "title": "Scène 1 - Eopia  Asior Eveus, Tsukishiro Akane, L'Oeil...",
       "actors": [
-        "Sulyvan Vosk  Hussh",
         "Eopia  Asior Eveus",
-        "L'Oeil",
         "Tsukishiro Akane",
-        "Brutus Redwitch"
+        "L'Oeil",
+        "Brutus Redwitch",
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-03-04T17:07:00Z",
       "end_time": "2026-03-08T21:05:00Z",
@@ -8285,17 +8285,17 @@ window.rpData = {
       "id": "scene_〕Etage_1",
       "channel": "〕Etage",
       "channel_id": "1480168703403495516",
-      "title": "Scène 1 - LE CONSEILLER, 𓆩ɪʜʏᴀ𓆪, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - RED, Nyx, Etoile  Isis Faerieth...",
       "actors": [
-        "LE CONSEILLER",
-        "𓆩ɪʜʏᴀ𓆪",
-        "Lewis-Phoebe d'Ashbourne",
-        "Ryo 웃  Kales Septimus",
+        "RED",
         "Nyx",
+        "Etoile  Isis Faerieth",
         "Sha'al Langster",
         "Emilia Flavgan",
-        "Etoile  Isis Faerieth",
-        "RED"
+        "LE CONSEILLER",
+        "Ryo 웃  Kales Septimus",
+        "Lewis-Phoebe d'Ashbourne",
+        "𓆩ɪʜʏᴀ𓆪"
       ],
       "start_time": "2026-03-08T13:20:00Z",
       "end_time": "2026-04-07T23:49:00Z",
@@ -8741,16 +8741,16 @@ window.rpData = {
       "id": "scene_〕Maison_de_Velours_3",
       "channel": "〕Maison-de-Velours",
       "channel_id": "1480167606580150272",
-      "title": "Scène 3 - 𓆩ɪʜʏᴀ𓆪, Lewis-Phoebe d'Ashbourne, Lewis Bamer  Historious...",
+      "title": "Scène 3 - RED, Etoile  Isis Faerieth, Nyx...",
       "actors": [
-        "𓆩ɪʜʏᴀ𓆪",
-        "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer  Historious",
-        "Adelina Del Fuego  Mari",
+        "RED",
+        "Etoile  Isis Faerieth",
         "Nyx",
         "Myrane Jaster",
-        "Etoile  Isis Faerieth",
-        "RED"
+        "Adelina Del Fuego  Mari",
+        "Lewis-Phoebe d'Ashbourne",
+        "Lewis Bamer  Historious",
+        "𓆩ɪʜʏᴀ𓆪"
       ],
       "start_time": "2026-03-08T13:44:00Z",
       "end_time": "2026-04-09T22:20:00Z",
@@ -9012,7 +9012,7 @@ window.rpData = {
       "id": "scene_️〕Balade_du_Pelerin_2",
       "channel": "️〕Balade-du-Pelerin",
       "channel_id": "1480217054157209692",
-      "title": "Scène 2 - Etoile  Isis Faerieth, Nah Jasp, Missive  De la Rage et du Sang...",
+      "title": "Scène 2 - Etoile  Isis Faerieth, Missive  De la Rage et du Sang, Nah Jasp...",
       "actors": [
         "Etoile  Isis Faerieth",
         "Nah Jasp",
@@ -9150,7 +9150,7 @@ window.rpData = {
       "id": "scene_〕Ruelle_Parallele_1",
       "channel": "〕Ruelle-Parallele",
       "channel_id": "1480943398218109100",
-      "title": "Scène 1 - Etoile  Isis Faerieth, Nah Jasp, Missive  De la Rage et du Sang...",
+      "title": "Scène 1 - Etoile  Isis Faerieth, Missive  De la Rage et du Sang, Nah Jasp...",
       "actors": [
         "Etoile  Isis Faerieth",
         "Nah Jasp",
@@ -9377,15 +9377,15 @@ window.rpData = {
       "id": "scene_〕Porte_2",
       "channel": "〕Porte",
       "channel_id": "1480168077416071301",
-      "title": "Scène 2 - 𓆩ɪʜʏᴀ𓆪, Lewis-Phoebe d'Ashbourne, Lewis Bamer  Historious...",
+      "title": "Scène 2 - Narrateur, Nyx, Etoile  Isis Faerieth...",
       "actors": [
-        "𓆩ɪʜʏᴀ𓆪",
+        "Narrateur",
+        "Nyx",
+        "Etoile  Isis Faerieth",
+        "Emilia Flavgan",
         "Lewis-Phoebe d'Ashbourne",
         "Lewis Bamer  Historious",
-        "Nyx",
-        "Emilia Flavgan",
-        "Etoile  Isis Faerieth",
-        "Narrateur"
+        "𓆩ɪʜʏᴀ𓆪"
       ],
       "start_time": "2026-03-10T23:01:00Z",
       "end_time": "2026-04-08T17:19:00Z",
@@ -9495,18 +9495,18 @@ window.rpData = {
       "id": "scene_🏫〕Rez_de_Chausse_2",
       "channel": "🏫〕Rez-de-Chausse",
       "channel_id": "1480168496141697127",
-      "title": "Scène 2 - Florianne Hoster, Lorna Is'Hor, Adelina Del Fuego  Mari...",
+      "title": "Scène 2 - RED, Lorna Is'Hor, Etoile  Isis Faerieth...",
       "actors": [
-        "Florianne Hoster",
+        "RED",
         "Lorna Is'Hor",
+        "Etoile  Isis Faerieth",
+        "Nyx",
         "Adelina Del Fuego  Mari",
+        "Emilia Flavgan",
+        "Ethan Jaster",
         "Lewis-Phoebe d'Ashbourne",
         "Lewis Bamer  Historious",
-        "Nyx",
-        "Ethan Jaster",
-        "Emilia Flavgan",
-        "Etoile  Isis Faerieth",
-        "RED"
+        "Florianne Hoster"
       ],
       "start_time": "2026-03-11T19:29:00Z",
       "end_time": "2026-04-07T22:32:00Z",
@@ -9912,13 +9912,13 @@ window.rpData = {
       "id": "scene_〕Petit_Salon_2",
       "channel": "〕Petit-Salon",
       "channel_id": "1480169534135730318",
-      "title": "Scène 2 - Sulyvan Vosk  Hussh, Lewis-Phoebe d'Ashbourne, Sha'al Langster...",
+      "title": "Scène 2 - RED, Etoile  Isis Faerieth, Sha'al Langster...",
       "actors": [
-        "Sulyvan Vosk  Hussh",
-        "Lewis-Phoebe d'Ashbourne",
-        "Sha'al Langster",
+        "RED",
         "Etoile  Isis Faerieth",
-        "RED"
+        "Sha'al Langster",
+        "Lewis-Phoebe d'Ashbourne",
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-03-14T18:57:00Z",
       "end_time": "2026-04-06T20:27:00Z",
@@ -10124,10 +10124,10 @@ window.rpData = {
       "id": "scene_👑〕Place_de_Grandpalais_3",
       "channel": "👑〕Place-de-Grandpalais",
       "channel_id": "1327646240132829228",
-      "title": "Scène 3 - Aryana Erhendil  Taurielle, Lydounne",
+      "title": "Scène 3 - Lydounne, Aryana Erhendil  Taurielle",
       "actors": [
-        "Aryana Erhendil  Taurielle",
-        "Lydounne"
+        "Lydounne",
+        "Aryana Erhendil  Taurielle"
       ],
       "start_time": "2026-03-15T12:39:00Z",
       "end_time": "2026-04-12T12:44:00Z",
@@ -10253,12 +10253,12 @@ window.rpData = {
       "id": "scene_️〕Bureau_de_Shaal_2",
       "channel": "️〕Bureau-de-Shaal",
       "channel_id": "1480169660031963156",
-      "title": "Scène 2 - 𓆩ɪʜʏᴀ𓆪, Etoile  Isis Faerieth, LE CONSEILLER...",
+      "title": "Scène 2 - Etoile  Isis Faerieth, Lewis-Phoebe d'Ashbourne, 𓆩ɪʜʏᴀ𓆪...",
       "actors": [
-        "𓆩ɪʜʏᴀ𓆪",
         "Etoile  Isis Faerieth",
-        "LE CONSEILLER",
-        "Lewis-Phoebe d'Ashbourne"
+        "Lewis-Phoebe d'Ashbourne",
+        "𓆩ɪʜʏᴀ𓆪",
+        "LE CONSEILLER"
       ],
       "start_time": "2026-03-15T15:59:00Z",
       "end_time": "2026-03-24T19:41:00Z",
@@ -10408,10 +10408,10 @@ window.rpData = {
       "id": "scene_🏛️〕Tribut_des_sages_1",
       "channel": "🏛️〕Tribut-des-sages",
       "channel_id": "1483590778918928547",
-      "title": "Scène 1 - LE CONSEILLER, Kanta",
+      "title": "Scène 1 - Kanta, LE CONSEILLER",
       "actors": [
-        "LE CONSEILLER",
-        "Kanta"
+        "Kanta",
+        "LE CONSEILLER"
       ],
       "start_time": "2026-03-17T23:35:00Z",
       "end_time": "2026-03-24T17:18:00Z",
@@ -10505,11 +10505,11 @@ window.rpData = {
       "id": "scene_〕La_Belette_a_Deux_Queues_2",
       "channel": "〕La-Belette-a-Deux-Queues",
       "channel_id": "1483819969174310952",
-      "title": "Scène 2 - Aryana Erhendil  Taurielle, Missive  De la Rage et du Sang, L'Oeil...",
+      "title": "Scène 2 - Missive  De la Rage et du Sang, Etoile  Isis Faerieth, Aryana Erhendil  Taurielle...",
       "actors": [
+        "Etoile  Isis Faerieth",
         "Aryana Erhendil  Taurielle",
         "L'Oeil",
-        "Etoile  Isis Faerieth",
         "Nah Jasp"
       ],
       "start_time": "2026-03-19T17:18:00Z",
@@ -11068,10 +11068,10 @@ window.rpData = {
       "id": "scene_️〕Avenue_des_armuriers_3",
       "channel": "️〕Avenue-des-armuriers",
       "channel_id": "1327646240669696042",
-      "title": "Scène 3 - Ju  Lucia Bunny Fiorella, Eita",
+      "title": "Scène 3 - Eita, Ju  Lucia Bunny Fiorella",
       "actors": [
-        "Ju  Lucia Bunny Fiorella",
-        "Eita"
+        "Eita",
+        "Ju  Lucia Bunny Fiorella"
       ],
       "start_time": "2026-03-20T21:37:00Z",
       "end_time": "2026-04-04T13:35:00Z",
@@ -11189,10 +11189,10 @@ window.rpData = {
       "id": "scene_〕Pont_des_Deux_3",
       "channel": "〕Pont-des-Deux",
       "channel_id": "1328038693902094357",
-      "title": "Scène 3 - Khem  Myrea M, Ju  Lucia Bunny Fiorella",
+      "title": "Scène 3 - Ju  Lucia Bunny Fiorella, Khem  Myrea M",
       "actors": [
-        "Khem  Myrea M",
-        "Ju  Lucia Bunny Fiorella"
+        "Ju  Lucia Bunny Fiorella",
+        "Khem  Myrea M"
       ],
       "start_time": "2026-04-04T13:23:00Z",
       "end_time": "2026-04-29T22:54:00Z",
@@ -11681,12 +11681,12 @@ window.rpData = {
       "id": "scene_🚢〕Port_du_Levant_2",
       "channel": "🚢〕Port-du-Levant",
       "channel_id": "1327646240669696043",
-      "title": "Scène 2 - Ju  Lucia Bunny Fiorella, Yuu  Katelyn Hoffmann, Sulyvan Vosk  Hussh...",
+      "title": "Scène 2 - Lewis Bamer  Historious, Yuu  Katelyn Hoffmann, Ju  Lucia Bunny Fiorella...",
       "actors": [
-        "Ju  Lucia Bunny Fiorella",
+        "Lewis Bamer  Historious",
         "Yuu  Katelyn Hoffmann",
-        "Sulyvan Vosk  Hussh",
-        "Lewis Bamer  Historious"
+        "Ju  Lucia Bunny Fiorella",
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-04-10T19:17:00Z",
       "end_time": "2026-05-23T23:01:00Z",
@@ -12164,10 +12164,10 @@ window.rpData = {
       "id": "scene_️〕Portail_Ivoire_3",
       "channel": "️〕Portail-Ivoire",
       "channel_id": "1327646239663325278",
-      "title": "Scène 3 - Tsukishiro Akane, Yidmetra Rhys",
+      "title": "Scène 3 - Yidmetra Rhys, Tsukishiro Akane",
       "actors": [
-        "Tsukishiro Akane",
-        "Yidmetra Rhys"
+        "Yidmetra Rhys",
+        "Tsukishiro Akane"
       ],
       "start_time": "2026-04-12T18:42:00Z",
       "end_time": "2026-04-13T21:06:00Z",
@@ -12558,11 +12558,11 @@ window.rpData = {
       "id": "scene_️〕Terrain_Grandblanc_2",
       "channel": "️〕Terrain-Grandblanc",
       "channel_id": "1327646240132829226",
-      "title": "Scène 2 - L'Oeil, Nah Jasp, Lewis Bamer  Historious",
+      "title": "Scène 2 - L'Oeil, Lewis Bamer  Historious, Nah Jasp",
       "actors": [
         "L'Oeil",
-        "Nah Jasp",
-        "Lewis Bamer  Historious"
+        "Lewis Bamer  Historious",
+        "Nah Jasp"
       ],
       "start_time": "2026-04-22T10:50:00Z",
       "end_time": "2026-05-27T10:38:00Z",
@@ -12696,11 +12696,11 @@ window.rpData = {
       "id": "scene_️〕Chambre_Martiale_1",
       "channel": "️〕Chambre-Martiale",
       "channel_id": "1327646241202634946",
-      "title": "Scène 1 - Tsukishiro Akane, Mael Fol'dun Astyell, Aryana Erhendil  Taurielle",
+      "title": "Scène 1 - Mael Fol'dun Astyell, Aryana Erhendil  Taurielle, Tsukishiro Akane",
       "actors": [
-        "Tsukishiro Akane",
         "Mael Fol'dun Astyell",
-        "Aryana Erhendil  Taurielle"
+        "Aryana Erhendil  Taurielle",
+        "Tsukishiro Akane"
       ],
       "start_time": "2026-04-30T20:58:00Z",
       "end_time": "2026-05-03T20:10:00Z",
@@ -12962,11 +12962,11 @@ window.rpData = {
       "id": "scene_️〕Terrains_Nacres_3",
       "channel": "️〕Terrains-Nacres",
       "channel_id": "1327646239663325280",
-      "title": "Scène 3 - Ju  Lucia Bunny Fiorella, Adelina Del Fuego  Mari, Ryo 웃  Kales Septimus",
+      "title": "Scène 3 - Ju  Lucia Bunny Fiorella, Ryo 웃  Kales Septimus, Adelina Del Fuego  Mari",
       "actors": [
         "Ju  Lucia Bunny Fiorella",
-        "Adelina Del Fuego  Mari",
-        "Ryo 웃  Kales Septimus"
+        "Ryo 웃  Kales Septimus",
+        "Adelina Del Fuego  Mari"
       ],
       "start_time": "2026-05-01T09:07:00Z",
       "end_time": "2026-05-25T10:06:00Z",
@@ -13236,7 +13236,7 @@ window.rpData = {
       "id": "scene_️〕Portail_Ivoire_4",
       "channel": "️〕Portail-Ivoire",
       "channel_id": "1327646239663325278",
-      "title": "Scène 4 - Khem  Myrea M, Vieux DEBILE  Tsutomu Yamamoto",
+      "title": "Scène 4 - Vieux DEBILE  Tsutomu Yamamoto, Khem  Myrea M",
       "actors": [
         "Khem  Myrea M"
       ],
@@ -13572,10 +13572,10 @@ window.rpData = {
       "id": "scene_↳🃏Le_Rouge_et_Le_Noir_1",
       "channel": "↳🃏Le-Rouge-et-Le-Noir",
       "channel_id": "1500068425609908275",
-      "title": "Scène 1 - LE CONSEILLER, Kenji Takahashi  Heavil",
+      "title": "Scène 1 - Kenji Takahashi  Heavil, LE CONSEILLER",
       "actors": [
-        "LE CONSEILLER",
-        "Kenji Takahashi  Heavil"
+        "Kenji Takahashi  Heavil",
+        "LE CONSEILLER"
       ],
       "start_time": "2026-05-02T11:46:00Z",
       "end_time": "2026-05-22T14:27:00Z",
@@ -13709,19 +13709,19 @@ window.rpData = {
       "id": "scene_〕Hall_Des_Fetes_1",
       "channel": "〕Hall-Des-Fetes",
       "channel_id": "1333137839482994748",
-      "title": "Scène 1 - LE CONSEILLER, Selena Moon, Raien Shogo Enjaku  Blacksheep...",
+      "title": "Scène 1 - Ju  Lucia Bunny Fiorella, Selena Moon, Raien Shogo Enjaku  Blacksheep...",
       "actors": [
-        "LE CONSEILLER",
+        "Ju  Lucia Bunny Fiorella",
         "Selena Moon",
+        "Yuu  Katelyn Hoffmann",
         "Aryana Erhendil  Taurielle",
+        "Eopia  Asior Eveus",
+        "Velka Valcyrion",
+        "Brutus Redwitch",
+        "LE CONSEILLER",
         "Lewis-Phoebe d'Ashbourne",
         "Lewis Bamer  Historious",
-        "Velka Valcyrion",
-        "Ju  Lucia Bunny Fiorella",
-        "Yuu  Katelyn Hoffmann",
-        "Eopia  Asior Eveus",
-        "Nah Jasp",
-        "Brutus Redwitch"
+        "Nah Jasp"
       ],
       "start_time": "2026-05-02T11:53:00Z",
       "end_time": "2026-05-27T23:40:00Z",
@@ -14215,10 +14215,10 @@ window.rpData = {
       "id": "scene_↳🎯Le_17_1",
       "channel": "↳🎯Le-17",
       "channel_id": "1500068135133253672",
-      "title": "Scène 1 - LE CONSEILLER, Prince Nick Sol",
+      "title": "Scène 1 - Prince Nick Sol, LE CONSEILLER",
       "actors": [
-        "LE CONSEILLER",
-        "Prince Nick Sol"
+        "Prince Nick Sol",
+        "LE CONSEILLER"
       ],
       "start_time": "2026-05-02T12:00:00Z",
       "end_time": "2026-05-09T11:58:00Z",
@@ -14312,12 +14312,12 @@ window.rpData = {
       "id": "scene_〕Le_Coin_d_Antan_1",
       "channel": "〕Le-Coin-d-Antan",
       "channel_id": "1333137677314166836",
-      "title": "Scène 1 - LE CONSEILLER, Nah Jasp, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 1 - Nah Jasp, Lewis-Phoebe d'Ashbourne, Brutus Redwitch...",
       "actors": [
-        "LE CONSEILLER",
         "Nah Jasp",
         "Lewis-Phoebe d'Ashbourne",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "LE CONSEILLER"
       ],
       "start_time": "2026-05-02T12:03:00Z",
       "end_time": "2026-05-20T16:21:00Z",
@@ -14515,10 +14515,10 @@ window.rpData = {
       "id": "scene_↳🎲Le_Bonneteau_1",
       "channel": "↳🎲Le-Bonneteau",
       "channel_id": "1500068555222286487",
-      "title": "Scène 1 - LE CONSEILLER, Mael Fol'dun Astyell, Sulyvan Vosk  Hussh",
+      "title": "Scène 1 - Mael Fol'dun Astyell, LE CONSEILLER, Sulyvan Vosk  Hussh",
       "actors": [
-        "LE CONSEILLER",
         "Mael Fol'dun Astyell",
+        "LE CONSEILLER",
         "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-05-02T12:05:00Z",
@@ -14734,10 +14734,10 @@ window.rpData = {
       "id": "scene_️〕La_Ballade_1",
       "channel": "️〕La-Ballade",
       "channel_id": "1333137725204987974",
-      "title": "Scène 1 - LE CONSEILLER, Yuu  Katelyn Hoffmann, Aryana Erhendil  Taurielle",
+      "title": "Scène 1 - Yuu  Katelyn Hoffmann, LE CONSEILLER, Aryana Erhendil  Taurielle",
       "actors": [
-        "LE CONSEILLER",
         "Yuu  Katelyn Hoffmann",
+        "LE CONSEILLER",
         "Aryana Erhendil  Taurielle"
       ],
       "start_time": "2026-05-02T12:13:00Z",
@@ -14928,11 +14928,11 @@ window.rpData = {
       "id": "scene_〕L_Epicurien_3",
       "channel": "〕L-Epicurien",
       "channel_id": "1499756423142183046",
-      "title": "Scène 3 - Khem  Myrea M, Vieux DEBILE  Tsutomu Yamamoto, Adelina Del Fuego  Mari...",
+      "title": "Scène 3 - Ryo 웃  Kales Septimus, Vieux DEBILE  Tsutomu Yamamoto, Khem  Myrea M...",
       "actors": [
+        "Ryo 웃  Kales Septimus",
         "Khem  Myrea M",
-        "Adelina Del Fuego  Mari",
-        "Ryo 웃  Kales Septimus"
+        "Adelina Del Fuego  Mari"
       ],
       "start_time": "2026-05-02T17:42:00Z",
       "end_time": "2026-05-12T23:13:00Z",
@@ -15226,14 +15226,14 @@ window.rpData = {
       "id": "scene_〕Le_Bar_des_Lions_2",
       "channel": "〕Le-Bar-des-Lions",
       "channel_id": "1333137570393096263",
-      "title": "Scène 2 - Selena Moon, Aryana Erhendil  Taurielle, Lewis-Phoebe d'Ashbourne...",
+      "title": "Scène 2 - Selena Moon, Aryana Erhendil  Taurielle, Velka Valcyrion...",
       "actors": [
         "Selena Moon",
         "Aryana Erhendil  Taurielle",
-        "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer  Historious",
+        "Velka Valcyrion",
         "Brutus Redwitch",
-        "Velka Valcyrion"
+        "Lewis-Phoebe d'Ashbourne",
+        "Lewis Bamer  Historious"
       ],
       "start_time": "2026-05-02T21:30:00Z",
       "end_time": "2026-05-24T23:32:00Z",
@@ -15798,11 +15798,11 @@ window.rpData = {
       "id": "scene_⛲〕Place_Vendome_2",
       "channel": "⛲〕Place-Vendome",
       "channel_id": "1499818405820236017",
-      "title": "Scène 2 - Tsukishiro Akane, Mael Fol'dun Astyell, Sulyvan Vosk  Hussh",
+      "title": "Scène 2 - Mael Fol'dun Astyell, Sulyvan Vosk  Hussh, Tsukishiro Akane",
       "actors": [
-        "Tsukishiro Akane",
         "Mael Fol'dun Astyell",
-        "Sulyvan Vosk  Hussh"
+        "Sulyvan Vosk  Hussh",
+        "Tsukishiro Akane"
       ],
       "start_time": "2026-05-08T21:40:00Z",
       "end_time": "2026-05-13T20:35:00Z",
@@ -16338,10 +16338,10 @@ window.rpData = {
       "id": "scene_👑〕Place_de_Grandpalais_4",
       "channel": "👑〕Place-de-Grandpalais",
       "channel_id": "1327646240132829228",
-      "title": "Scène 4 - Aryana Erhendil  Taurielle, Frey - Elear",
+      "title": "Scène 4 - Frey - Elear, Aryana Erhendil  Taurielle",
       "actors": [
-        "Aryana Erhendil  Taurielle",
-        "Frey - Elear"
+        "Frey - Elear",
+        "Aryana Erhendil  Taurielle"
       ],
       "start_time": "2026-05-14T00:00:00Z",
       "end_time": "2026-05-28T18:17:00Z",
@@ -16467,12 +16467,12 @@ window.rpData = {
       "id": "scene_️〕Grande_salle_porcelaine_2",
       "channel": "️〕Grande-salle-porcelaine",
       "channel_id": "1327646239663325281",
-      "title": "Scène 2 - Raien Shogo Enjaku  Blacksheep, Sulyvan Vosk  Hussh, L'Oeil...",
+      "title": "Scène 2 - Raien Shogo Enjaku  Blacksheep, Zaes  Ley Vaelric, Lys Dandelion...",
       "actors": [
-        "Sulyvan Vosk  Hussh",
-        "L'Oeil",
+        "Zaes  Ley Vaelric",
         "Lys Dandelion",
-        "Zaes  Ley Vaelric"
+        "L'Oeil",
+        "Sulyvan Vosk  Hussh"
       ],
       "start_time": "2026-05-27T09:15:00Z",
       "end_time": "2026-05-29T23:23:00Z",
@@ -16574,10 +16574,10 @@ window.rpData = {
       "id": "scene_🧭〕Parc_des_Cardinaux_4",
       "channel": "🧭〕Parc-des-Cardinaux",
       "channel_id": "1327646240132829229",
-      "title": "Scène 4 - Noci  Urugaki Ren, Selena Moon",
+      "title": "Scène 4 - Selena Moon, Noci  Urugaki Ren",
       "actors": [
-        "Noci  Urugaki Ren",
-        "Selena Moon"
+        "Selena Moon",
+        "Noci  Urugaki Ren"
       ],
       "start_time": "2026-05-27T18:45:00Z",
       "end_time": "2026-05-30T15:17:00Z",
