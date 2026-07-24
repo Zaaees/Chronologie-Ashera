@@ -1,950 +1,546 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
-import { Search, ZoomIn, ZoomOut, Maximize2, ShieldAlert, Award, Compass, Music, Palette, BookOpen, Star, HelpCircle, ArrowRightLeft } from 'lucide-react';
+import { 
+  Search, Calendar, Clock, Filter, User, Users, ChevronRight, 
+  ExternalLink, Sparkles, BookOpen, Layers, X, Shield, Eye, Feather, 
+  Bot, HelpCircle, ArrowUp
+} from 'lucide-react';
 
 const ROLE_ORDER: Record<string, number> = {
-  "cercle d'azur": 1,
-  "la garde pourpre": 2,
+  "la garde pourpre": 1,
+  "cercle d'azur": 2,
   "voile d'ivoire": 3,
   "l'œil": 4,
   "l'oeil": 4,
   "sans guilde": 5,
-  "autre": 6,
+  "sans rôle": 6,
   "pnj": 7
 };
 
-const THREAD_PARENT_MAP: Record<string, string> = {
-  "↳🃏𝐋e-𝐑ouge-et-𝐋e-𝐍oir": "🍻〕𝐋-𝐄picurien",
-  "↳🎯𝐋e-17": "🍻〕𝐋-𝐄picurien",
-  "↳🎲𝐋e-𝐁onneteau": "🍻〕𝐋-𝐄picurien",
-  "↳🦾𝐋e-𝐁ras-de-𝐅er": "🍻〕𝐋-𝐄picurien",
+const FACTION_COLORS: Record<string, { bg: string; text: string; border: string }> = {
+  "La Garde Pourpre": { bg: "rgba(180, 0, 0, 0.15)", text: "#ff6b6b", border: "rgba(180, 0, 0, 0.4)" },
+  "Cercle d'Azur": { bg: "rgba(48, 94, 211, 0.15)", text: "#60a5fa", border: "rgba(48, 94, 211, 0.4)" },
+  "Voile d'Ivoire": { bg: "rgba(255, 255, 212, 0.12)", text: "#fef08a", border: "rgba(255, 255, 212, 0.3)" },
+  "L'œil": { bg: "rgba(30, 30, 30, 0.6)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.4)" },
+  "Sans guilde": { bg: "rgba(226, 206, 125, 0.15)", text: "#fde047", border: "rgba(226, 206, 125, 0.4)" },
+  "Sans rôle": { bg: "rgba(148, 163, 184, 0.12)", text: "#94a3b8", border: "rgba(148, 163, 184, 0.3)" },
+  "PNJ": { bg: "rgba(168, 85, 247, 0.15)", text: "#c084fc", border: "rgba(168, 85, 247, 0.4)" }
 };
 
-const getDisplayChannel = (channel: string): string => {
-  return THREAD_PARENT_MAP[channel] || channel;
-};
+// Formater la date en français clair
+function formatDateFr(isoString: string): string {
+  if (!isoString) return 'Date inconnue';
+  try {
+    const d = new Date(isoString);
+    if (isNaN(d.getTime())) return isoString;
+    return d.toLocaleDateString('fr-FR', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  } catch (e) {
+    return isoString;
+  }
+}
+
+// Obtenir le mois et l'année pour le groupement
+function getMonthYearKey(isoString: string): { key: string; label: string } {
+  if (!isoString) return { key: 'inconnu', label: 'Période Indéterminée' };
+  try {
+    const d = new Date(isoString);
+    if (isNaN(d.getTime())) return { key: 'inconnu', label: 'Période Indéterminée' };
+    const month = d.toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' });
+    const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+    return { key, label: month.charAt(0).toUpperCase() + month.slice(1) };
+  } catch (e) {
+    return { key: 'inconnu', label: 'Période Indéterminée' };
+  }
+}
 
 export default function App() {
-  const [selectedCharacter, setSelectedCharacter] = useState<string | null>(null);
-  const [charSearch, setCharSearch] = useState('');
-  const [roleFilter, setRoleFilter] = useState('');
-  const [zoomLevel, setZoomLevel] = useState(1.0);
-  const [selectedSceneId, setSelectedSceneId] = useState<string | null>(null);
-  const [hoveredScene, setHoveredScene] = useState<Scene | null>(null);
-  const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
-
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const boardRef = useRef<HTMLDivElement>(null);
+  // États de filtres et recherche
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedRole, setSelectedRole] = useState<string>('all');
+  const [selectedActor, setSelectedActor] = useState<string>('all');
+  const [selectedChannel, setSelectedChannel] = useState<string>('all');
+  const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
-  const baseWidth = useRef(0);
-  const baseHeight = useRef(0);
+  // Scène sélectionnée pour la modale de lecture
+  const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
-  const channels = useMemo(() => {
-    return Array.from(new Set(SCENES_DATA.map(s => getDisplayChannel(s.channel))));
+  // Remonter en haut
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scenePositions = useMemo(() => {
-    const positions: Record<string, { laneIndex: number; slotIndex: number; topOffset: number; laneTop: number }> = {};
-    const laneHeights: Record<string, number> = {};
-    const laneTops: Record<string, number> = {};
-    let currentTop = 0;
-
-    channels.forEach((channel, laneIndex) => {
-      laneTops[channel] = currentTop;
-
-      const laneScenes = SCENES_DATA.filter(s => getDisplayChannel(s.channel) === channel)
-        .sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-
-      const colOccupiedCount: Record<number, number> = {};
-
-      laneScenes.forEach(scene => {
-        // Obtenir l'index de la colonne pour cette scène
-        const sortedScenes = [...SCENES_DATA].sort(
-          (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
-        );
-        
-        // Trouver la colonne chronologique
-        let colIdx = 1;
-        if (sortedScenes.length > 0) {
-          let currentColumn = 1;
-          const tempMapping: Record<string, number> = {};
-          tempMapping[sortedScenes[0].id] = currentColumn;
-
-          for (let i = 1; i < sortedScenes.length; i++) {
-            const prev = sortedScenes[i - 1];
-            const curr = sortedScenes[i];
-            
-            const prevDate = prev.start_time.split("T")[0];
-            const currDate = curr.start_time.split("T")[0];
-
-            if (prevDate !== currDate) {
-              currentColumn++;
-            }
-            tempMapping[curr.id] = currentColumn;
-          }
-          colIdx = tempMapping[scene.id] || 1;
-        }
-
-        const slotIndex = colOccupiedCount[colIdx] || 0;
-        colOccupiedCount[colIdx] = slotIndex + 1;
-
-        positions[scene.id] = {
-          laneIndex,
-          slotIndex,
-          topOffset: 20 + slotIndex * 200,
-          laneTop: 0 // Ajusté après
-        };
-      });
-
-      const maxSlots = Math.max(...Object.values(colOccupiedCount), 1);
-      const height = maxSlots * 200 + 20;
-      laneHeights[channel] = height;
-
-      // Appliquer laneTop à toutes les scènes de ce lane
-      laneScenes.forEach(scene => {
-        if (positions[scene.id]) {
-          positions[scene.id].laneTop = currentTop;
-        }
-      });
-
-      currentTop += height + 22; // 22px de gap
-    });
-
-    return { positions, laneHeights, laneTops, totalBoardHeight: currentTop };
-  }, [channels]);
-
-  const characterStats = useMemo(() => {
-    const stats: Record<string, number> = {};
-    Object.keys(CHARACTERS_DATA).forEach(actor => {
-      stats[actor] = SCENES_DATA.filter(scene => scene.actors.includes(actor)).length;
-    });
-    return stats;
+  // Liste de tous les salons uniques
+  const allChannels = useMemo(() => {
+    return Array.from(new Set(SCENES_DATA.map(s => s.channel))).sort((a, b) => a.localeCompare(b, 'fr'));
   }, []);
 
-  const distinctRoles = useMemo(() => {
-    const roles = Array.from(new Set(Object.values(CHARACTERS_DATA).map(c => c.role)));
-    return roles.sort((a, b) => {
-      const orderA = ROLE_ORDER[a.toLowerCase()] || 99;
-      const orderB = ROLE_ORDER[b.toLowerCase()] || 99;
-      return orderA - orderB;
-    });
-  }, []);
-
-  const filteredActors = useMemo(() => {
-    const list = Object.keys(CHARACTERS_DATA).filter(actor => {
-      const meta = CHARACTERS_DATA[actor];
-      const matchesSearch = actor.toLowerCase().includes(charSearch.toLowerCase()) || 
-                            meta.role.toLowerCase().includes(charSearch.toLowerCase());
-      const matchesRole = roleFilter === '' || meta.role === roleFilter;
-      return matchesSearch && matchesRole;
-    });
-    
-    return list.sort((a, b) => {
+  // Liste des acteurs filtrés
+  const sortedActors = useMemo(() => {
+    return Object.keys(CHARACTERS_DATA).sort((a, b) => {
       const roleA = CHARACTERS_DATA[a]?.role?.toLowerCase() || '';
       const roleB = CHARACTERS_DATA[b]?.role?.toLowerCase() || '';
-      
       const orderA = ROLE_ORDER[roleA] || 99;
       const orderB = ROLE_ORDER[roleB] || 99;
-      
-      if (orderA !== orderB) {
-        return orderA - orderB;
-      }
+      if (orderA !== orderB) return orderA - orderB;
       return a.localeCompare(b, 'fr');
     });
-  }, [charSearch, roleFilter]);
-
-  const { colMap, totalCols } = useMemo(() => {
-    const sortedScenes = [...SCENES_DATA].sort(
-      (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
-    );
-    const mapping: Record<string, number> = {};
-    let currentColumn = 1;
-
-    if (sortedScenes.length > 0) {
-      mapping[sortedScenes[0].id] = currentColumn;
-
-      for (let i = 1; i < sortedScenes.length; i++) {
-        const prev = sortedScenes[i - 1];
-        const curr = sortedScenes[i];
-        
-        const prevDate = prev.start_time.split("T")[0];
-        const currDate = curr.start_time.split("T")[0];
-
-        if (prevDate !== currDate) {
-          currentColumn++;
-        }
-        mapping[curr.id] = currentColumn;
-      }
-    }
-    return { colMap: mapping, totalCols: currentColumn };
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (boardRef.current) {
-        const prevTransform = boardRef.current.style.transform;
-        const prevWidth = boardRef.current.style.width;
-        const prevHeight = boardRef.current.style.height;
-
-        boardRef.current.style.transform = "none";
-        boardRef.current.style.width = "max-content";
-        boardRef.current.style.height = "auto";
-        
-        baseWidth.current = boardRef.current.scrollWidth || 3000;
-        baseHeight.current = boardRef.current.scrollHeight || 1000;
-
-        boardRef.current.style.transform = prevTransform;
-        boardRef.current.style.width = prevWidth;
-        boardRef.current.style.height = prevHeight;
-
-        const wrapper = wrapperRef.current;
-        if (wrapper && baseWidth.current > 0) {
-          const fitZoom = (wrapper.clientWidth - 40) / baseWidth.current;
-          setZoomLevel(Math.max(0.15, Math.min(1.0, fitZoom)));
+  // Filtrage des scènes par critères
+  const filteredScenes = useMemo(() => {
+    return SCENES_DATA.filter(scene => {
+      // 1. Recherche textuelle
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const inTitle = scene.title.toLowerCase().includes(q);
+        const inChannel = scene.channel.toLowerCase().includes(q);
+        const inPreview = scene.preview.toLowerCase().includes(q);
+        const inActors = scene.actors.some(a => a.toLowerCase().includes(q));
+        if (!inTitle && !inChannel && !inPreview && !inActors) {
+          return false;
         }
       }
-    }, 450);
-    return () => clearTimeout(timer);
-  }, []);
 
-  const applyZoomCentering = (targetZoom: number) => {
-    const oldZoom = zoomLevel;
-    const nextZoom = Math.max(0.15, Math.min(2.0, targetZoom));
-    setZoomLevel(nextZoom);
-
-    const wrapper = wrapperRef.current;
-    if (wrapper && baseWidth.current > 0) {
-      const viewportWidth = wrapper.clientWidth;
-      const viewportHeight = wrapper.clientHeight;
-      const centerX = (wrapper.scrollLeft + viewportWidth / 2) / oldZoom;
-      const centerY = (wrapper.scrollTop + viewportHeight / 2) / oldZoom;
-
-      setTimeout(() => {
-        wrapper.scrollLeft = centerX * nextZoom - viewportWidth / 2;
-        wrapper.scrollTop = centerY * nextZoom - viewportHeight / 2;
-      }, 10);
-    }
-  };
-
-  const fitGlobalView = () => {
-    const wrapper = wrapperRef.current;
-    if (wrapper && baseWidth.current > 0) {
-      const fitZoom = (wrapper.clientWidth - 40) / baseWidth.current;
-      setZoomLevel(Math.max(0.15, Math.min(1.0, fitZoom)));
-    } else {
-      setZoomLevel(0.35);
-    }
-  };
-
-  useEffect(() => {
-    const handleWrapperWheel = (e: WheelEvent) => {
-      if (e.ctrlKey) {
-        e.preventDefault();
-        const zoomFactor = 0.05;
-        const delta = e.deltaY < 0 ? zoomFactor : -zoomFactor;
-        const targetZoom = zoomLevel + delta;
-        const nextZoom = Math.max(0.15, Math.min(2.0, targetZoom));
-
-        const wrapper = wrapperRef.current;
-        const board = boardRef.current;
-        if (!wrapper || !board || baseWidth.current === 0) return;
-
-        const rect = wrapper.getBoundingClientRect();
-        const mouseViewportX = e.clientX - rect.left;
-        const mouseViewportY = e.clientY - rect.top;
-
-        const boardX = (wrapper.scrollLeft + mouseViewportX) / zoomLevel;
-        const boardY = (wrapper.scrollTop + mouseViewportY) / zoomLevel;
-
-        setZoomLevel(nextZoom);
-
-        wrapper.scrollLeft = boardX * nextZoom - mouseViewportX;
-        wrapper.scrollTop = boardY * nextZoom - mouseViewportY;
-      }
-    };
-
-    const wrapper = wrapperRef.current;
-    if (wrapper) {
-      wrapper.addEventListener('wheel', handleWrapperWheel, { passive: false });
-    }
-    return () => {
-      if (wrapper) {
-        wrapper.removeEventListener('wheel', handleWrapperWheel);
-      }
-    };
-  }, [zoomLevel]);
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setSelectedSceneId(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
-  const renderRoleIcon = (role: string, color: string) => {
-    const style = { color: color, flexShrink: 0 };
-    switch (role?.toLowerCase()) {
-      case 'cercle d\'azur':
-        return <BookOpen size={16} style={style} />;
-      case 'la garde pourpre':
-        return <ShieldAlert size={16} style={style} />;
-      case 'voile d\'ivoire':
-        return <Star size={16} style={style} />;
-      case 'l\'œil':
-      case "l'oeil":
-        return <Compass size={16} style={style} />;
-      case 'sans guilde':
-        return <Music size={16} style={style} />;
-      case 'pnj':
-        return <HelpCircle size={16} style={style} />;
-      default:
-        return <Palette size={16} style={style} />;
-    }
-  };
-
-  const parseMarkdown = (text: string) => {
-    if (!text) return "";
-    return text.split("\n").map((line, lineIdx) => {
-      let formatted = line;
-      formatted = formatted.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-      formatted = formatted.replace(/\*(.*?)\*/g, "<em>$1</em>");
-      return (
-        <span 
-          key={lineIdx} 
-          style={{ display: 'block', minHeight: '1.2em' }} 
-          dangerouslySetInnerHTML={{ __html: formatted }} 
-        />
-      );
-    });
-  };
-
-  const connectors = useMemo(() => {
-    let sortedConnectorScenes = [...SCENES_DATA];
-    let isGlobal = true;
-
-    if (selectedCharacter !== null) {
-      sortedConnectorScenes = SCENES_DATA.filter(s => s.actors.includes(selectedCharacter));
-      isGlobal = false;
-    }
-
-    sortedConnectorScenes.sort(
-      (a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime()
-    );
-
-    if (sortedConnectorScenes.length < 2) return { paths: [], dots: [] };
-
-    const points = sortedConnectorScenes.map(scene => {
-      const colIndex = colMap[scene.id] || 1;
-      const leftOffset = (colIndex - 1) * 360 + 30;
-      
-      const pos = scenePositions.positions[scene.id];
-      const x = 220 + leftOffset + 160;
-      const y = pos ? pos.laneTop + pos.topOffset + 90 : 110;
-      return { x, y, sceneId: scene.id };
-    });
-
-    const paths: string[] = [];
-    for (let i = 1; i < points.length; i++) {
-      const prev = points[i - 1];
-      const curr = points[i];
-
-      const cp1x = prev.x + (curr.x - prev.x) * 0.45;
-      const cp1y = prev.y;
-      const cp2x = prev.x + (curr.x - prev.x) * 0.55;
-      const cp2y = curr.y;
-
-      const d = `M ${prev.x} ${prev.y} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${curr.x} ${curr.y}`;
-      paths.push(d);
-    }
-
-    const lineColor = selectedCharacter 
-      ? (CHARACTERS_DATA[selectedCharacter]?.color || '#8b5cf6')
-      : 'rgba(234, 179, 8, 0.45)';
-
-    return { paths, dots: points, lineColor, isGlobal };
-  }, [selectedCharacter, colMap, channels, scenePositions]);
-
-  const handleCardDoubleClick = (scene: Scene) => {
-    const colIndex = colMap[scene.id] || 1;
-    const leftOffsetVal = (colIndex - 1) * 360 + 30;
-    
-    const pos = scenePositions.positions[scene.id];
-    const cardCenterX = 220 + leftOffsetVal + 160;
-    const cardCenterY = pos ? pos.laneTop + pos.topOffset + 90 : 110;
-
-    setZoomLevel(1.0);
-
-    setTimeout(() => {
-      if (wrapperRef.current) {
-        wrapperRef.current.scrollTo({
-          left: cardCenterX - wrapperRef.current.clientWidth / 2,
-          top: cardCenterY - wrapperRef.current.clientHeight / 2,
-          behavior: 'smooth'
+      // 2. Filtre par Rôle / Faction
+      if (selectedRole !== 'all') {
+        const hasMatchingActor = scene.actors.some(actorName => {
+          const charInfo = CHARACTERS_DATA[actorName];
+          return charInfo && charInfo.role === selectedRole;
         });
+        if (!hasMatchingActor) return false;
       }
-    }, 50);
+
+      // 3. Filtre par Acteur spécifique
+      if (selectedActor !== 'all') {
+        if (!scene.actors.includes(selectedActor)) return false;
+      }
+
+      // 4. Filtre par Salon
+      if (selectedChannel !== 'all') {
+        if (scene.channel !== selectedChannel) return false;
+      }
+
+      return true;
+    }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
+  }, [searchQuery, selectedRole, selectedActor, selectedChannel]);
+
+  // Groupement des scènes par Mois/Année
+  const groupedPeriodScenes = useMemo(() => {
+    const groups: { key: string; label: string; scenes: Scene[] }[] = [];
+    const groupMap: Record<string, { label: string; scenes: Scene[] }> = {};
+
+    filteredScenes.forEach(scene => {
+      const { key, label } = getMonthYearKey(scene.start_time);
+      if (!groupMap[key]) {
+        groupMap[key] = { label, scenes: [] };
+        groups.push({ key, label, scenes: groupMap[key].scenes });
+      }
+      groupMap[key].scenes.push(scene);
+    });
+
+    return groups;
+  }, [filteredScenes]);
+
+  const scrollToMonth = (monthKey: string) => {
+    setActiveMonthKey(monthKey);
+    const element = document.getElementById(`period-${monthKey}`);
+    if (element) {
+      const yOffset = -90; 
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
-  const activeModalScene = useMemo(() => {
-    return SCENES_DATA.find(s => s.id === selectedSceneId) || null;
-  }, [selectedSceneId]);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
-    <>
-      <div className="glow-orb orb-1" id="orb-1"></div>
-      <div className="glow-orb orb-2" id="orb-2"></div>
-      <div className="glow-orb orb-3" id="orb-3"></div>
+    <div className="min-h-screen bg-[#0b0f19] text-slate-100 font-sans selection:bg-purple-600 selection:text-white">
+      {/* 🌟 EN-TÊTE PRINCIPALE */}
+      <header className="sticky top-0 z-40 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            
+            {/* Logo & Titre */}
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20">
+                <BookOpen className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-purple-300">
+                  Chronologie d'Ashera
+                </h1>
+                <p className="text-xs text-slate-400">
+                  Magie & Foi • {filteredScenes.length} scènes en ordre chronologique
+                </p>
+              </div>
+            </div>
 
-      <div className="app-container">
-        
-        <aside className="sidebar" id="character-list-sidebar">
-          
-          <div className="sidebar-header">
-            <h1 className="app-title">Chronologie d'Ashera</h1>
-          </div>
-
-          <div className="section-title">Recherche & Filtres</div>
-          
-          {/* Quick search input and role selectors */}
-          <div className="search-container">
-            <input 
-              type="text" 
-              id="char-search" 
-              placeholder="Rechercher un personnage..." 
-              className="char-search-input"
-              value={charSearch}
-              onChange={(e) => setCharSearch(e.target.value)}
-            />
-
-            <div className="flex gap-2">
-              <select 
-                className="char-search-input py-2 text-xs flex-grow cursor-pointer"
-                value={roleFilter}
-                onChange={(e) => setRoleFilter(e.target.value)}
-                style={{ background: 'rgba(10, 10, 20, 0.9)', minWidth: 120 }}
-              >
-                <option value="">Tous les rôles</option>
-                {distinctRoles.map(role => (
-                  <option key={role} value={role}>{role}</option>
-                ))}
-              </select>
-
-              {roleFilter !== '' && (
+            {/* Barre de Recherche Globale */}
+            <div className="relative flex-1 max-w-md">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <input
+                type="text"
+                placeholder="Rechercher une scène, un mot, un lieu..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+              />
+              {searchQuery && (
                 <button 
-                  className="btn-reset-top py-1.5 px-3 select-none text-xs flex items-center justify-center"
-                  onClick={() => setRoleFilter('')}
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
                 >
-                  ✕
+                  <X className="w-4 h-4" />
                 </button>
               )}
             </div>
+          </div>
 
-            {selectedCharacter !== null && (
-              <button 
-                className="btn-reset-top active:scale-95 duration-100" 
-                id="btn-reset-top"
-                onClick={() => setSelectedCharacter(null)}
+          {/* BARRE DE FILTRES SECONDAIRE */}
+          <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-slate-800/80 text-xs">
+            
+            {/* Filtre Faction */}
+            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
+              <Shield className="w-3.5 h-3.5 text-purple-400" />
+              <select
+                value={selectedRole}
+                onChange={(e) => setSelectedRole(e.target.value)}
+                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer"
               >
-                ✕ Effacer le fil d'Ariane
+                <option value="all" className="bg-slate-900 text-slate-200">Toutes les Factions</option>
+                <option value="La Garde Pourpre" className="bg-slate-900 text-red-400">🔴 La Garde Pourpre</option>
+                <option value="Cercle d'Azur" className="bg-slate-900 text-blue-400">🔵 Cercle d'Azur</option>
+                <option value="Voile d'Ivoire" className="bg-slate-900 text-yellow-200">⚪ Voile d'Ivoire</option>
+                <option value="L'œil" className="bg-slate-900 text-slate-400">👁️ L'œil</option>
+                <option value="Sans guilde" className="bg-slate-900 text-yellow-500">🟡 Sans Guilde (Officiel)</option>
+                <option value="Sans rôle" className="bg-slate-900 text-slate-500">⚪ Sans Rôle</option>
+                <option value="PNJ" className="bg-slate-900 text-purple-400">🔮 PNJ / Système</option>
+              </select>
+            </div>
+
+            {/* Filtre Personnage */}
+            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
+              <User className="w-3.5 h-3.5 text-indigo-400" />
+              <select
+                value={selectedActor}
+                onChange={(e) => setSelectedActor(e.target.value)}
+                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer max-w-[160px] truncate"
+              >
+                <option value="all" className="bg-slate-900 text-slate-200">Tous les Personnages</option>
+                {sortedActors.map(actor => (
+                  <option key={actor} value={actor} className="bg-slate-900 text-slate-300">
+                    {actor}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Filtre Salon */}
+            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
+              <Layers className="w-3.5 h-3.5 text-emerald-400" />
+              <select
+                value={selectedChannel}
+                onChange={(e) => setSelectedChannel(e.target.value)}
+                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer max-w-[180px] truncate"
+              >
+                <option value="all" className="bg-slate-900 text-slate-200">Tous les Salons ({allChannels.length})</option>
+                {allChannels.map(ch => (
+                  <option key={ch} value={ch} className="bg-slate-900 text-slate-300">
+                    #{ch}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Bouton Réinitialiser */}
+            {(searchQuery || selectedRole !== 'all' || selectedActor !== 'all' || selectedChannel !== 'all') && (
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedRole('all');
+                  setSelectedActor('all');
+                  setSelectedChannel('all');
+                }}
+                className="px-2.5 py-1.5 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 rounded-lg transition-colors"
+              >
+                Réinitialiser les filtres
               </button>
             )}
           </div>
+        </div>
+      </header>
 
-          <div className="section-title">
-            Personnages ({filteredActors.length})
-          </div>
+      {/* 🚀 LAYOUT PRINCIPAL */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
+        
+        {/* 📌 NAVIGATEUR CHRONOLOGIQUE PAR MOIS (MINI-MAP SIDEBAR) */}
+        <aside className="hidden lg:block w-64 shrink-0">
+          <div className="sticky top-32 bg-slate-900/90 border border-slate-800/90 rounded-2xl p-4 shadow-xl backdrop-blur-md">
+            <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-800">
+              <Calendar className="w-4 h-4 text-purple-400" />
+              <h2 className="text-sm font-semibold text-slate-200">Fil Temporel</h2>
+            </div>
+            
+            <nav className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1 custom-scrollbar text-xs">
+              {groupedPeriodScenes.map(({ key, label, scenes }) => (
+                <button
+                  key={key}
+                  onClick={() => scrollToMonth(key)}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
+                    activeMonthKey === key
+                      ? 'bg-purple-600/30 text-purple-200 font-medium border border-purple-500/40 shadow-sm'
+                      : 'text-slate-400 hover:bg-slate-800/60 hover:text-slate-200'
+                  }`}
+                >
+                  <span className="truncate">{label}</span>
+                  <span className="px-2 py-0.5 rounded-full bg-slate-800 text-[10px] text-slate-400 font-mono">
+                    {scenes.length}
+                  </span>
+                </button>
+              ))}
 
-          <div className="character-list" id="character-list">
-            {filteredActors.length === 0 ? (
-              <div className="loading-text text-center py-6">Aucun personnage trouvé</div>
-            ) : (
-              filteredActors.map(actor => {
-                const meta = CHARACTERS_DATA[actor];
-                const isActive = selectedCharacter === actor;
-                const scenesCount = characterStats[actor] || 0;
-
-                return (
-                  <div 
-                    key={actor}
-                    className={`character-card group ${isActive ? 'active' : ''}`}
-                    onClick={() => setSelectedCharacter(isActive ? null : actor)}
-                    style={{ 
-                      color: meta.color,
-                      borderColor: isActive ? meta.color : undefined,
-                      boxShadow: isActive ? `0 0 15px ${meta.color}35` : undefined
-                    }}
-                    data-char={actor}
-                  >
-                    <div className="absolute left-0 top-0 h-full w-1 rounded-l-md" style={{ backgroundColor: meta.color }} />
-                    <div className="char-avatar" style={{ backgroundColor: meta.color }} />
-                    
-                    <div className="char-info flex-grow">
-                      <div className="flex items-center gap-2">
-                        <span className="char-name text-slate-100 group-hover:text-white transition-colors">{actor}</span>
-                        {renderRoleIcon(meta.role, meta.color)}
-                      </div>
-                      <span className="char-role block text-xs">{meta.role}</span>
-                      
-                      <span className="char-stats-indicator">
-                        {scenesCount} {scenesCount > 1 ? 'scènes' : 'scène'}
-                      </span>
-                    </div>
-
-                    <div className="opacity-0 group-hover:opacity-100 duration-200 text-xs font-mono ml-auto" style={{ color: meta.color }}>
-                      {isActive ? 'Actif' : 'Sélectionner'}
-                    </div>
-                  </div>
-                );
-              })
-            )}
-          </div>
-
-          <div className="sidebar-footer">
-            <p className="mb-2">
-              <span className="inline-block w-2.5 h-1.5 bg-yellow-500 rounded-sm mr-1"></span>
-              <strong>Fil Directeur :</strong> Ligne dorée en pointillés reliant toutes les scènes du scénario principal d'écriture.
-            </p>
-            <p>
-              <span className="inline-block w-2.5 h-1.5 bg-indigo-500 rounded-sm mr-1"></span>
-              <strong>Fil d'Ariane :</strong> Sélectionnez un personnage ci-dessus pour isoler son parcours à travers les différents salons.
-            </p>
+              {groupedPeriodScenes.length === 0 && (
+                <p className="text-xs text-slate-500 py-4 text-center">Aucune période disponible</p>
+              )}
+            </nav>
           </div>
         </aside>
 
-        <main className="timeline-container">
+        {/* 📜 FLUX DU LORE CHRONOLOGIQUE */}
+        <main className="flex-1 min-w-0">
           
-          <header className="timeline-header flex justify-between items-center">
-            
-            <div className="header-info">
-              <h2 className="text-2xl font-serif text-white flex items-center gap-3">
-                <Compass className="text-indigo-400" />
-                Scènes par ordre chronologique
-              </h2>
-            </div>
-
-            <div className="zoom-controls">
-              <button 
-                className="btn-zoom" 
-                id="btn-zoom-out" 
-                title="Dézoomer"
-                onClick={() => applyZoomCentering(zoomLevel - 0.1)}
+          {groupedPeriodScenes.length === 0 ? (
+            <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-12 text-center my-8">
+              <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-4" />
+              <h3 className="text-lg font-medium text-slate-300 mb-1">Aucune scène trouvée</h3>
+              <p className="text-sm text-slate-500 mb-6">
+                Aucun résultat ne correspond aux filtres sélectionnés.
+              </p>
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedRole('all');
+                  setSelectedActor('all');
+                  setSelectedChannel('all');
+                }}
+                className="px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-xl text-xs font-medium transition-colors"
               >
-                ➖
-              </button>
-              
-              <span className="zoom-badge" id="zoom-percent">
-                {Math.round(zoomLevel * 100)}%
-              </span>
-              
-              <button 
-                className="btn-zoom" 
-                id="btn-zoom-in" 
-                title="Zoomer"
-                onClick={() => applyZoomCentering(zoomLevel + 0.1)}
-              >
-                ➕
-              </button>
-              
-              <button 
-                className="btn-zoom-reset text-white" 
-                id="btn-zoom-reset"
-                onClick={fitGlobalView}
-              >
-                Vue Globale
+                Effacer tous les filtres
               </button>
             </div>
-
-            <div className="legend flex items-center gap-4">
-              <div className="legend-item">
-                <span className="legend-dot main-timeline"></span>
-                <span>Scène RP</span>
-              </div>
-              <div className="legend-item flex items-center gap-1">
-                <svg width="24" height="6">
-                  <line x1="0" y1="3" x2="24" y2="3" stroke="#eab308" strokeWidth="2" strokeDasharray="4 3" />
-                </svg>
-                <span>Fil Directeur Principal</span>
-              </div>
-              <div className="legend-item flex items-center gap-1">
-                <svg width="24" height="6">
-                  <line x1="0" y1="3" x2="24" y2="3" stroke="#8b5cf6" strokeWidth="2.5" />
-                </svg>
-                <span>Parcours Personnage</span>
-              </div>
-            </div>
-          </header>
-
-          <div 
-            className="lanes-wrapper" 
-            id="lanes-wrapper"
-            ref={wrapperRef}
-            onClick={() => setSelectedCharacter(null)}
-            onDoubleClick={(e) => {
-              if (e.target === e.currentTarget) {
-                fitGlobalView();
-              }
-            }}
-          >
-            <div 
-              className={`timeline-board ${zoomLevel < 0.65 ? 'zoom-out-mode' : ''}`}
-              id="timeline-board"
-              ref={boardRef}
-              style={{
-                width: baseWidth.current ? `${baseWidth.current * zoomLevel}px` : 'max-content',
-                height: baseHeight.current ? `${baseHeight.current * zoomLevel}px` : 'auto',
-                transform: `scale(${zoomLevel})`,
-                '--total-cols': totalCols
-              } as React.CSSProperties}
-            >
-              
-              <svg 
-                className="absolute inset-x-0 inset-y-0 h-full w-full pointer-events-none z-10" 
-                style={{ overflow: 'visible' }}
-              >
-                {connectors.paths.map((d, index) => (
-                  <g key={`connect-path-${index}`}>
-                    <path 
-                      d={d}
-                      className="ariane-line"
-                      stroke={connectors.lineColor}
-                      strokeWidth={connectors.isGlobal ? 3.5 : 6}
-                      opacity={connectors.isGlobal ? 0.18 : 0.35}
-                      style={{ filter: 'blur(3px)' }}
-                      fill="none"
-                    />
-                    <path 
-                      d={d}
-                      className={`ariane-line ${connectors.isGlobal ? 'global-thread' : ''}`}
-                      stroke={connectors.isGlobal ? connectors.lineColor : '#ffffff'}
-                      strokeWidth={connectors.isGlobal ? 1.8 : 2.5}
-                      opacity={connectors.isGlobal ? 0.55 : 0.95}
-                      fill="none"
-                    />
-                  </g>
-                ))}
-
-                {connectors.dots.map((dot, index) => (
-                  <g key={`connect-node-${index}-${dot.sceneId}`}>
-                    <circle 
-                      cx={dot.x} 
-                      cy={dot.y} 
-                      r={connectors.isGlobal ? 6 : 8} 
-                      fill={connectors.lineColor} 
-                      opacity={connectors.isGlobal ? 0.3 : 0.45}
-                      style={{ filter: connectors.isGlobal ? undefined : 'blur(2.5px)' }}
-                    />
-                    <circle 
-                      cx={dot.x} 
-                      cy={dot.y} 
-                      r={connectors.isGlobal ? 2.5 : 4} 
-                      fill={connectors.isGlobal ? connectors.lineColor : '#ffffff'} 
-                    />
-                  </g>
-                ))}
-              </svg>
-
-              {channels.map((channel, laneIndex) => {
-                const laneScenes = SCENES_DATA.filter(s => getDisplayChannel(s.channel) === channel);
-                const displayTitle = channel.replace(/_/g, ' ').replace(/-/g, ' ');
-                const height = scenePositions.laneHeights[channel] || 220;
-
-                return (
-                  <div 
-                    key={channel} 
-                    className="lane flex"
-                    id={`lane-${channel.replace(/\s+/g, "_")}`}
-                    style={{ height: `${height}px` }}
-                  >
-                    <div className="lane-title select-none sticky left-0">
-                      <h3 title={displayTitle}>#{displayTitle}</h3>
-                      <span>{laneScenes.length} scène{laneScenes.length > 1 ? 's' : ''} RP</span>
+          ) : (
+            <div className="space-y-12">
+              {groupedPeriodScenes.map(({ key, label, scenes }) => (
+                <section key={key} id={`period-${key}`} className="scroll-mt-32">
+                  
+                  {/* EN-TÊTE DU MOIS / PÉRIODE */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="px-4 py-2 bg-gradient-to-r from-purple-900/40 to-slate-900/60 border border-purple-500/30 rounded-2xl flex items-center gap-3 shadow-lg">
+                      <Calendar className="w-4 h-4 text-purple-400" />
+                      <h2 className="text-base font-bold text-slate-100 tracking-wide">{label}</h2>
+                      <span className="px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold">
+                        {scenes.length} {scenes.length > 1 ? 'scènes' : 'scène'}
+                      </span>
                     </div>
-
-                    <div 
-                      className="lane-cards" 
-                      id={`cards-${channel.replace(/\s+/g, "_")}`}
-                      style={{ height: `${height}px` }}
-                    >
-                      {laneScenes.map(scene => {
-                        const colIdx = colMap[scene.id] || 1;
-                        const leftOffset = (colIdx - 1) * 360 + 30;
-                        const pos = scenePositions.positions[scene.id];
-                        const topOffset = pos ? pos.topOffset : 20;
-                        
-                        const hasActiveSelection = selectedCharacter !== null;
-                        const actorParticipating = selectedCharacter !== null && scene.actors.includes(selectedCharacter);
-                        const isCardDimmed = hasActiveSelection && !actorParticipating;
-                        const isCardHighlighted = hasActiveSelection && actorParticipating;
-
-                        const start = new Date(scene.start_time);
-                        const end = new Date(scene.end_time);
-
-                        const dateStr = start.toLocaleDateString("fr-FR", { day: "numeric", month: "short" });
-                        const timeStartStr = start.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-                        const timeEndStr = end.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-
-                        const charHighlightColor = selectedCharacter && CHARACTERS_DATA[selectedCharacter]?.color;
-                        const isThreadScene = scene.channel !== getDisplayChannel(scene.channel);
-
-                        return (
-                          <div 
-                            key={scene.id}
-                            className={`scene-card ${isCardDimmed ? 'dimmed' : ''} ${isCardHighlighted ? 'highlighted text-white' : ''}`}
-                            id={scene.id}
-                            style={{ 
-                              left: `${leftOffset}px`,
-                              top: `${topOffset}px`,
-                              borderColor: isCardHighlighted ? charHighlightColor || undefined : undefined,
-                              boxShadow: isCardHighlighted ? `0 0 20px ${charHighlightColor}25` : undefined
-                            }}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSelectedSceneId(scene.id);
-                            }}
-                            onDoubleClick={(e) => {
-                              e.stopPropagation();
-                              handleCardDoubleClick(scene);
-                            }}
-                            onMouseEnter={(e) => {
-                              if (zoomLevel < 0.65) {
-                                const rect = e.currentTarget.getBoundingClientRect();
-                                setTooltipPos({
-                                  x: rect.left + rect.width / 2,
-                                  y: rect.top - 10
-                                });
-                                setHoveredScene(scene);
-                              }
-                            }}
-                            onMouseLeave={() => setHoveredScene(null)}
-                          >
-                            <div className="card-header">
-                              <span className="scene-number flex items-center gap-1.5">
-                                {scene.id.replace("scene_", "").replace(/_/g, " ").toUpperCase()}
-                                {isThreadScene && (
-                                  <span 
-                                    className="text-[9px] px-1.5 py-0.5 rounded bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 font-medium whitespace-nowrap select-none"
-                                    title={`Fil : ${scene.channel}`}
-                                  >
-                                    ↳ {scene.channel.replace('↳', '').trim()}
-                                  </span>
-                                )}
-                              </span>
-                              <span className="scene-date">
-                                {dateStr} • {timeStartStr} - {timeEndStr}
-                              </span>
-                            </div>
-
-                            <h4 
-                              className="scene-title-text" 
-                              title={scene.title}
-                              style={{ borderBottom: isCardHighlighted ? `1px solid ${charHighlightColor}44` : undefined }}
-                            >
-                              {scene.title}
-                            </h4>
-
-                            <p className="scene-preview">
-                              "{scene.preview}"
-                            </p>
-
-                            <div className="card-footer flex justify-between items-center">
-                              <div className="card-actors flex gap-1 items-center">
-                                {scene.actors.slice(0, 3).map(act => {
-                                  const c = CHARACTERS_DATA[act]?.color || '#94a3b8';
-                                  const isMatchedActor = selectedCharacter === act;
-                                  return (
-                                    <span 
-                                      key={act}
-                                      className={`actor-pill text-[10px] ${isMatchedActor ? 'active-char font-bold text-white' : ''}`}
-                                      style={{ 
-                                        color: isMatchedActor ? '#000000' : c,
-                                        backgroundColor: isMatchedActor ? c : undefined,
-                                        border: !isMatchedActor ? `1px solid ${c}35` : undefined
-                                      }}
-                                    >
-                                      {act.split(" ")[0]}
-                                    </span>
-                                  );
-                                })}
-                                {scene.actors.length > 3 && (
-                                  <span className="actor-pill text-[10px] text-slate-400">
-                                    +{scene.actors.length - 3}
-                                  </span>
-                                )}
-                              </div>
-
-                              <span className="msg-count">
-                                {scene.message_count} posts
-                              </span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
+                    <div className="h-[1px] flex-1 bg-gradient-to-r from-purple-500/20 to-transparent" />
                   </div>
-                );
-              })}
+
+                  {/* GRILLE DES SCÈNES DU MOIS */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {scenes.map(scene => {
+                      const firstDate = formatDateFr(scene.start_time);
+
+                      return (
+                        <div
+                          key={scene.id}
+                          onClick={() => setActiveScene(scene)}
+                          className="group relative bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-purple-500/50 rounded-2xl p-4 transition-all duration-200 cursor-pointer shadow-lg hover:shadow-purple-500/10 flex flex-col justify-between"
+                        >
+                          <div>
+                            {/* Ligne d'En-tête de la Carte */}
+                            <div className="flex items-center justify-between gap-2 mb-3">
+                              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-800 border border-slate-700/60 text-xs font-medium text-purple-300 truncate max-w-[70%]">
+                                #{scene.channel}
+                              </span>
+                              <span className="text-[11px] text-slate-400 flex items-center gap-1 shrink-0">
+                                <Clock className="w-3 h-3 text-slate-500" />
+                                {firstDate}
+                              </span>
+                            </div>
+
+                            {/* Titre & Aperçu */}
+                            <h3 className="text-sm font-semibold text-slate-100 group-hover:text-purple-300 transition-colors line-clamp-1 mb-2">
+                              {scene.title}
+                            </h3>
+                            
+                            <p className="text-xs text-slate-400 line-clamp-2 mb-4 leading-relaxed font-light">
+                              {scene.preview}
+                            </p>
+                          </div>
+
+                          {/* Acteurs & Bouton de Lecture */}
+                          <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                            <div className="flex flex-wrap items-center gap-1.5 max-w-[80%]">
+                              {scene.actors.slice(0, 4).map(actor => {
+                                const info = CHARACTERS_DATA[actor];
+                                const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+
+                                return (
+                                  <span
+                                    key={actor}
+                                    style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                                    className="px-2 py-0.5 rounded-md border text-[10px] font-medium truncate max-w-[120px]"
+                                  >
+                                    {actor}
+                                  </span>
+                                );
+                              })}
+                              {scene.actors.length > 4 && (
+                                <span className="text-[10px] text-slate-500 font-mono">
+                                  +{scene.actors.length - 4}
+                                </span>
+                              )}
+                            </div>
+
+                            <span className="text-slate-500 group-hover:text-purple-400 transition-colors">
+                              <ChevronRight className="w-4 h-4" />
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </section>
+              ))}
             </div>
-          </div>
+          )}
         </main>
       </div>
 
-      {hoveredScene && (
-        <div 
-          className="hover-tooltip active"
-          style={{
-            left: `${Math.max(10, Math.min(window.innerWidth - 330, tooltipPos.x - 160))}px`,
-            top: `${Math.max(10, tooltipPos.y - 190)}px`,
-            position: 'fixed'
-          }}
-        >
-          <div className="card-header">
-            <span className="scene-number">
-              {hoveredScene.id.replace("scene_", "").replace(/_/g, " ").toUpperCase()}
-            </span>
-            <span className="scene-date">
-              {new Date(hoveredScene.start_time).toLocaleDateString("fr-FR", { day: "numeric", month: "short" })}
-            </span>
-          </div>
-
-          <h4>{hoveredScene.title}</h4>
-          
-          <p className="text-slate-300">
-            "{hoveredScene.preview}"
-          </p>
-
-          <div className="card-footer">
-            <div className="card-actors">
-              {hoveredScene.actors.slice(0, 4).map(act => {
-                const col = CHARACTERS_DATA[act]?.color || 'rgba(255,255,255,0.2)';
-                return (
-                  <span 
-                    key={act} 
-                    className="actor-pill" 
-                    style={{ border: `1.5px solid ${col}35`, color: col }}
-                  >
-                    {act.split(" ")[0]}
-                  </span>
-                );
-              })}
+      {/* 🔮 MODAL DE LECTURE D'UNE SCÈNE */}
+      {activeScene && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fadeIn">
+          <div className="bg-[#0f172a] border border-slate-800 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            
+            {/* Header Modal */}
+            <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-900/60">
+              <div className="flex items-center gap-3">
+                <span className="px-3 py-1 bg-purple-500/20 border border-purple-500/30 text-purple-300 rounded-xl text-xs font-semibold">
+                  #{activeScene.channel}
+                </span>
+                <span className="text-xs text-slate-400 flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-slate-500" />
+                  {formatDateFr(activeScene.start_time)}
+                </span>
+              </div>
+              <button
+                onClick={() => setActiveScene(null)}
+                className="p-1.5 rounded-xl text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            <span className="msg-count">{hoveredScene.message_count} posts</span>
+
+            {/* Corps Modal */}
+            <div className="p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
+              
+              {/* Entête de Scène */}
+              <div>
+                <h2 className="text-lg font-bold text-slate-100 mb-2">{activeScene.title}</h2>
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="text-xs text-slate-400">Acteurs présents :</span>
+                  {activeScene.actors.map(actor => {
+                    const info = CHARACTERS_DATA[actor];
+                    const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                    return (
+                      <span
+                        key={actor}
+                        style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                        className="px-2.5 py-0.5 rounded-lg border text-xs font-medium"
+                      >
+                        {actor}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Messages de la Scène */}
+              <div className="space-y-4">
+                {activeScene.messages.map((msg, index) => {
+                  const info = CHARACTERS_DATA[msg.author];
+                  const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+
+                  return (
+                    <div key={msg.id || index} className="bg-slate-900/70 border border-slate-800/80 rounded-xl p-4 space-y-2">
+                      <div className="flex items-center justify-between border-b border-slate-800/60 pb-2">
+                        <span style={{ color: style.text }} className="text-xs font-bold">
+                          {msg.author}
+                        </span>
+                        <span className="text-[10px] text-slate-500 font-mono">
+                          {formatDateFr(msg.timestamp)}
+                        </span>
+                      </div>
+
+                      {msg.embed_title && (
+                        <h4 className="text-xs font-semibold text-purple-300">{msg.embed_title}</h4>
+                      )}
+
+                      {msg.embed_description && (
+                        <p className="text-xs text-slate-300 italic whitespace-pre-line leading-relaxed">{msg.embed_description}</p>
+                      )}
+
+                      {msg.content && (
+                        <p className="text-xs text-slate-200 whitespace-pre-line leading-relaxed">{msg.content}</p>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Footer Modal avec Lien Discord */}
+            <div className="px-6 py-4 border-t border-slate-800 bg-slate-900/60 flex items-center justify-between">
+              <span className="text-xs text-slate-500">
+                {activeScene.messages.length} message(s) dans cette scène
+              </span>
+              <a
+                href={activeScene.discord_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-xl text-xs font-semibold transition-colors shadow-lg shadow-indigo-600/20"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Ouvrir sur Discord
+              </a>
+            </div>
           </div>
         </div>
       )}
 
-      <div className={`reader-modal ${selectedSceneId ? 'active' : ''}`} id="reader-modal">
-        <div className="modal-backdrop" id="modal-backdrop" onClick={() => setSelectedSceneId(null)}></div>
-        
-        {activeModalScene && (
-          <div className="modal-content">
-            
-            <header className="modal-header">
-              <div className="modal-title-area">
-                <span className="modal-scene-number" id="modal-scene-number">
-                  {activeModalScene.id.replace("scene_", "").replace(/_/g, " ").toUpperCase()}
-                </span>
-                
-                <h2 className="modal-title text-white font-serif" id="modal-title" title={activeModalScene.title}>
-                  {activeModalScene.title}
-                </h2>
-                
-                <span className="modal-channel font-mono text-indigo-300" id="modal-channel">
-                  #{activeModalScene.channel.replace(/_/g, ' ').replace(/-/g, ' ')}
-                </span>
-              </div>
-
-              <div className="modal-header-actions">
-                {activeModalScene.discord_url && (
-                  <a 
-                    href={activeModalScene.discord_url} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn-discord-link flex items-center gap-2" 
-                    id="btn-discord-link"
-                  >
-                    <svg className="discord-svg-icon fill-white" viewBox="0 0 127.14 96.36" width="16" height="16">
-                      <path d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,52.8,6.83,77.19,77.19,0,0,0,49.5,0,105.15,105.15,0,0,0,19.06,8.07C3.58,31.21-1,53.7,1,75.8a107.84,107.84,0,0,0,32,16.15,80.39,80.39,0,0,0,6.83-11.1,68.43,68.43,0,0,1-10.75-5.18c.91-.66,1.8-1.34,2.65-2a76.08,76.08,0,0,0,62.77,0c.85.69,1.74,1.37,2.65,2a68.43,68.43,0,0,1-10.75,5.18,80.39,80.39,0,0,0,6.83,11.1,107.84,107.84,0,0,0,32-16.15C129.27,53.7,124.69,31.21,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.9,46,53.9,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.14,46,96.14,53,91,65.69,84.69,65.69Z"/>
-                    </svg>
-                    Ouvrir sur Discord
-                  </a>
-                )}
-                
-                <button 
-                  className="btn-close-modal" 
-                  id="btn-close-modal"
-                  onClick={() => setSelectedSceneId(null)}
-                >
-                  ✕
-                </button>
-              </div>
-            </header>
-
-            <div className="modal-body" id="modal-body">
-              {activeModalScene.messages.length === 0 ? (
-                <p className="loading-text text-center text-slate-400">
-                  Aucun message enregistré dans cette scène.
-                </p>
-              ) : (
-                activeModalScene.messages.map((m) => {
-                  const authorColor = CHARACTERS_DATA[m.author]?.color || "#e2e8f0";
-                  const date = new Date(m.timestamp);
-                  
-                  const formattedTitle = m.embed_title ? m.embed_title : "";
-                  const formattedDesc = m.embed_description ? m.embed_description : "";
-
-                  return (
-                    <div 
-                      key={m.id} 
-                      className="modal-message"
-                      style={{ '--msg-char-color': authorColor } as React.CSSProperties}
-                    >
-                      <div className="msg-header">
-                        <span className="msg-author cursor-pointer hover:underline" onClick={() => {
-                          setSelectedCharacter(m.author);
-                          setSelectedSceneId(null);
-                        }}>
-                          {m.author}
-                        </span>
-                        
-                        <span className="msg-timestamp">
-                          {date.toLocaleString("fr-FR", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
-                        </span>
-                      </div>
-
-                      {m.content && (
-                        <div className="msg-text mb-2">
-                          {parseMarkdown(m.content)}
-                        </div>
-                      )}
-
-                      {(m.embed_title || m.embed_description) && (
-                        <div 
-                          className="msg-embed"
-                          style={{ '--msg-char-color': authorColor } as React.CSSProperties}
-                        >
-                          {m.embed_title && (
-                            <span className="embed-title-text font-serif text-slate-100 flex items-center gap-2">
-                              {formattedTitle}
-                            </span>
-                          )}
-                          {m.embed_description && (
-                            <div className="embed-desc-text text-slate-300">
-                              {parseMarkdown(m.embed_description)}
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  );
-                })
-              )}
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+      {/* ⬆️ BOUTON RETOUR EN HAUT */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 p-3 bg-purple-600 hover:bg-purple-500 text-white rounded-full shadow-2xl transition-all transform hover:scale-110 z-40"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      )}
+    </div>
   );
 }

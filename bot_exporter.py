@@ -230,7 +230,7 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
 
     return scenes
 
-def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str):
+def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name=""):
     messages = [t[0] for t in messages_tuples]
     texts = [t[1] for t in messages_tuples]
 
@@ -262,6 +262,7 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         "id": scene_id,
         "channel": channel_name,
         "channel_id": str(channel_id),
+        "category": category_name,
         "title": f"Scène {scene_index} - {', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}",
         "actors": actors,
         "start_time": messages[0]['timestamp'],
