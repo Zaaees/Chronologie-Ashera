@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, LayoutGrid
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2
 } from 'lucide-react';
 
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
@@ -145,7 +145,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
       </div>
 
       {/* Conteneur défilable de la Frise Swimlanes */}
-      <div className="overflow-x-auto custom-scrollbar">
+      <div className="overflow-x-auto custom-scrollbar py-6">
         <div className="min-w-[950px] space-y-2">
           
           {/* Règle des dates supérieure */}
@@ -161,8 +161,8 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
           </div>
 
           {/* Lignes par Salon (Swimlanes) */}
-          <div className="space-y-2.5">
-            {tracks.map(({ channel, scenes: trackScenes }) => (
+          <div className="space-y-3">
+            {tracks.map(({ channel, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
                 {/* Nom du Salon (Colonne Gauche) */}
@@ -171,7 +171,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
-                {/* Piste Temporelle (Piste Droite) */}
+                {/* Piste Temporelle (Piste Droite avec overflow visible) */}
                 <div className="flex-1 relative h-9 bg-[#08090d] border border-slate-800 rounded gantt-track-bg overflow-visible">
                   {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
                     const info = CHARACTERS_DATA[scene.actors[0]];
@@ -179,6 +179,16 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                     const startStr = formatDateDiscord(scene.start_time);
                     const endStr = formatDateDiscord(scene.end_time);
                     const isShort = widthPercent < 10;
+
+                    // Positionnement intelligent du Tooltip (en bas pour les 2 premières lignes, en haut pour les suivantes)
+                    const tooltipVClass = trackIdx < 2 ? 'top-full mt-2' : 'bottom-full mb-2';
+                    
+                    // Ajustement horizontal du Tooltip si trop proche des bords (gauche/droite)
+                    const tooltipHClass = leftPercent < 20 
+                      ? 'left-0 translate-x-0' 
+                      : leftPercent > 70 
+                      ? 'right-0 left-auto translate-x-0' 
+                      : 'left-1/2 -translate-x-1/2';
 
                     return (
                       <div
@@ -196,7 +206,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                         <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
                           <span className="text-xs shrink-0">{style.icon}</span>
                           
-                          {/* SI LA BARRE EST RECTANGULAIRE (LARGE) */}
                           {!isShort ? (
                             <div className="flex items-center gap-2 min-w-0 w-full">
                               <span style={{ color: style.text }} className="font-semibold text-xs truncate">
@@ -209,15 +218,14 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                               )}
                             </div>
                           ) : (
-                            /* SI LA BARRE EST ÉTROITE (PETITE SCÈNE) */
                             <span style={{ color: style.text }} className="font-semibold text-[11px] truncate">
                               {scene.actors[0] || scene.title}
                             </span>
                           )}
                         </div>
 
-                        {/* INFO-BULLE RICH DARK FANTASY AU SURVOL (TOOLTIP EXACT) */}
-                        <div className="opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity">
+                        {/* INFO-BULLE RICH DARK FANTASY INTELLIGENTE (JAMAIS TRONQUÉE) */}
+                        <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
                             <span className="text-[10px] font-mono text-slate-400">{scene.messages.length} msg</span>
@@ -465,7 +473,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* BARRE DE FILTRES ET BOUTONS DE COMMUTATION DE VUE (GANTT VS CARTES) */}
+          {/* BARRE DE FILTRES ET BOUTONS */}
           <div className="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
             <div className="flex flex-wrap items-center gap-3 flex-1">
@@ -526,18 +534,18 @@ export default function App() {
               </div>
             </div>
 
-              {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedActor('all');
-                    setSelectedChannel('all');
-                  }}
-                  className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors font-medium shrink-0"
-                >
-                  Réinitialiser les filtres
-                </button>
-              )}
+            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
+              <button
+                onClick={() => {
+                  setSearchQuery('');
+                  setSelectedActor('all');
+                  setSelectedChannel('all');
+                }}
+                className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors font-medium shrink-0"
+              >
+                Réinitialiser les filtres
+              </button>
+            )}
 
           </div>
         </div>
