@@ -83,7 +83,7 @@ body {
   100% { background-position: 0% 0%; }
 }
 
-/* 🗡️ LIGNE VERTICALE DE LA CHRONOLOGIE (FIL ARGENTÉ) */
+/* 🗡️ LIGNE VERTICALE DE LA CHRONOLOGIE (FIL ARGENTÉ PRINCIPAL) */
 .timeline-spine {
   position: absolute;
   top: 0;
@@ -91,14 +91,59 @@ body {
   left: 19px;
   width: 2px;
   background: linear-gradient(180deg, 
-    rgba(226, 232, 240, 0.6) 0%, 
-    rgba(148, 163, 184, 0.25) 50%, 
-    rgba(226, 232, 240, 0.6) 100%
+    rgba(226, 232, 240, 0.65) 0%, 
+    rgba(148, 163, 184, 0.3) 50%, 
+    rgba(226, 232, 240, 0.65) 100%
   );
   box-shadow: 0 0 8px rgba(226, 232, 240, 0.25);
 }
 
-/* 🛡️ CORNIÈRES MÉTALLIQUES SCULPTÉES (CORNER ORNAMENTS) */
+/* 🌿 BRANCHEMENTS DE L'ARBRE NARRATIF (LIGNES PARALLÈLES ET CONNECTEURS) */
+.narrative-lane-line-1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 48px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(239, 68, 68, 0.5) 0%, rgba(185, 28, 28, 0.3) 100%);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.3);
+}
+
+.narrative-lane-line-2 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 77px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(168, 85, 247, 0.5) 0%, rgba(126, 34, 206, 0.3) 100%);
+  box-shadow: 0 0 6px rgba(168, 85, 247, 0.3);
+}
+
+.narrative-curve-connector {
+  position: absolute;
+  left: -28px;
+  top: 20px;
+  width: 28px;
+  height: 24px;
+  border-left: 2px solid rgba(239, 68, 68, 0.6);
+  border-bottom: 2px solid rgba(239, 68, 68, 0.6);
+  border-bottom-left-radius: 12px;
+  pointer-events: none;
+}
+
+.narrative-curve-connector-purple {
+  position: absolute;
+  left: -28px;
+  top: 20px;
+  width: 28px;
+  height: 24px;
+  border-left: 2px solid rgba(168, 85, 247, 0.6);
+  border-bottom: 2px solid rgba(168, 85, 247, 0.6);
+  border-bottom-left-radius: 12px;
+  pointer-events: none;
+}
+
+/* 🛡️ CORNIÈRES MÉTALLIQUES SCULPTÉES */
 .gothic-corner-box {
   position: relative;
 }
