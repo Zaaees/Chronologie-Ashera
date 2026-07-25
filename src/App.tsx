@@ -15,7 +15,7 @@ const FACTION_COLORS: Record<string, { bg: string; text: string; border: string;
   "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc" }
 };
 
-// Formater la date en style Discord (ex: 4 février 2026 à 22:15)
+// Formater la date en style Discord
 function formatDateDiscord(isoString: string): string {
   if (!isoString) return 'Date inconnue';
   try {
@@ -60,6 +60,157 @@ function getInitials(name: string): string {
   return name.slice(0, 2).toUpperCase();
 }
 
+// Échapper les caractères spéciaux Regex
+function escapeRegExp(string: string) {
+  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+// Surlignage du terme de recherche
+function highlightSearchQuery(text: string, query: string, baseKey: string | number): React.ReactNode {
+  const q = query.trim().toLowerCase();
+  if (!q) return text;
+
+  const parts = text.split(new RegExp(`(${escapeRegExp(q)})`, 'gi'));
+  return parts.map((part, i) => {
+    if (part.toLowerCase() === q) {
+      return (
+        <mark key={`${baseKey}-${i}`} className="bg-amber-400/45 text-amber-100 font-bold px-1 py-0.5 rounded shadow-sm ring-1 ring-amber-400/70">
+          {part}
+        </mark>
+      );
+    }
+    return part;
+  });
+}
+
+// Analyseur Inline Markdown Discord (*, **, ***, __, ~~, ||, `, surbrillance)
+function parseInlineDiscord(text: string, searchQuery: string): React.ReactNode {
+  if (!text) return null;
+
+  const regex = /(\|\|.+?\|\||`.+?`|\*\*\*.+?\*\*\*|\*\*.+?\*\*|__.+?__|~~.+?~~|\*.+?\*|_.+?_)/g;
+  const parts = text.split(regex);
+
+  return parts.map((part, index) => {
+    if (!part) return null;
+
+    if (part.startsWith('||') && part.endsWith('||')) {
+      const inner = part.slice(2, -2);
+      return (
+        <span key={index} className="bg-slate-700 text-transparent hover:text-slate-200 cursor-pointer rounded px-1 transition-colors select-none">
+          {parseInlineDiscord(inner, searchQuery)}
+        </span>
+      );
+    }
+
+    if (part.startsWith('`') && part.endsWith('`')) {
+      const inner = part.slice(1, -1);
+      return (
+        <code key={index} className="bg-[#1e1f22] border border-slate-700/60 px-1.5 py-0.5 rounded text-xs font-mono text-slate-200">
+          {inner}
+        </code>
+      );
+    }
+
+    if (part.startsWith('***') && part.endsWith('***')) {
+      const inner = part.slice(3, -3);
+      return <strong key={index} className="font-bold italic">{parseInlineDiscord(inner, searchQuery)}</strong>;
+    }
+
+    if (part.startsWith('**') && part.endsWith('**')) {
+      const inner = part.slice(2, -2);
+      return <strong key={index} className="font-bold">{parseInlineDiscord(inner, searchQuery)}</strong>;
+    }
+
+    if (part.startsWith('__') && part.endsWith('__')) {
+      const inner = part.slice(2, -2);
+      return <u key={index} className="underline decoration-slate-400">{parseInlineDiscord(inner, searchQuery)}</u>;
+    }
+
+    if (part.startsWith('~~') && part.endsWith('~~')) {
+      const inner = part.slice(2, -2);
+      return <del key={index} className="line-through text-slate-400">{parseInlineDiscord(inner, searchQuery)}</del>;
+    }
+
+    if ((part.startsWith('*') && part.endsWith('*')) || (part.startsWith('_') && part.endsWith('_'))) {
+      const inner = part.slice(1, -1);
+      return <em key={index} className="italic">{parseInlineDiscord(inner, searchQuery)}</em>;
+    }
+
+    if (searchQuery && searchQuery.trim().length > 0) {
+      return highlightSearchQuery(part, searchQuery, index);
+    }
+
+    return part;
+  });
+}
+
+// ANALYSEUR DE FORMAT MARKDOWN DISCORD COMPLET (Blocs de code, Citations >, Subtext -#, Lignes)
+function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.ReactNode {
+  if (!text) return null;
+
+  const lines = text.split('\n');
+  const renderedElements: React.ReactNode[] = [];
+
+  let inCodeBlock = false;
+  let codeBlockLines: string[] = [];
+
+  lines.forEach((line, lineIdx) => {
+    // Blocs de code ```
+    if (line.trim().startsWith('```')) {
+      if (inCodeBlock) {
+        const codeContent = codeBlockLines.join('\n');
+        renderedElements.push(
+          <pre key={`code-${lineIdx}`} className="bg-[#1e1f22] border border-slate-700/60 p-2.5 rounded text-xs font-mono text-slate-200 my-1.5 overflow-x-auto whitespace-pre-wrap select-text">
+            {codeContent}
+          </pre>
+        );
+        codeBlockLines = [];
+        inCodeBlock = false;
+      } else {
+        inCodeBlock = true;
+      }
+      return;
+    }
+
+    if (inCodeBlock) {
+      codeBlockLines.push(line);
+      return;
+    }
+
+    // Discord Subtext `-# `
+    if (line.trim().startsWith('-# ')) {
+      const subContent = line.trim().slice(3);
+      renderedElements.push(
+        <div key={`sub-${lineIdx}`} className="text-[11px] text-[#949ba4] font-sans leading-tight my-0.5">
+          {parseInlineDiscord(subContent, searchQuery)}
+        </div>
+      );
+      return;
+    }
+
+    // Discord Citation `> `
+    if (line.trim().startsWith('> ')) {
+      const quoteContent = line.trim().slice(2);
+      renderedElements.push(
+        <blockquote key={`quote-${lineIdx}`} className="border-l-4 border-[#4e5058] pl-3 py-1 my-1 text-[#dbdee1] italic bg-[#2b2d31]/50 rounded-r select-text">
+          {parseInlineDiscord(quoteContent, searchQuery)}
+        </blockquote>
+      );
+      return;
+    }
+
+    // Ligne normale
+    renderedElements.push(
+      <React.Fragment key={`line-${lineIdx}`}>
+        {lineIdx > 0 && <br />}
+        {parseInlineDiscord(line, searchQuery)}
+      </React.Fragment>
+    );
+  });
+
+  return <>{renderedElements}</>;
+}
+
 // Interface pour les pistes Gantt par salon
 interface GanttChannelTrack {
   channel: string;
@@ -74,7 +225,6 @@ interface GanttChannelTrack {
 function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
   if (scenes.length === 0) return null;
 
-  // Calcul des bornes temporelles min/max du mois
   const timestamps = scenes.flatMap(s => [
     new Date(s.start_time).getTime(),
     new Date(s.end_time || s.start_time).getTime()
@@ -84,7 +234,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
   const tMax = Math.max(...timestamps);
   const duration = Math.max(tMax - tMin, 1);
 
-  // Regroupement par salon actif
   const channelMap: Record<string, Scene[]> = {};
   scenes.forEach(s => {
     if (!channelMap[s.channel]) channelMap[s.channel] = [];
@@ -100,7 +249,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
         const eTime = new Date(sc.end_time || sc.start_time).getTime();
         const left = Math.max(0, ((sTime - tMin) / duration) * 100);
         const rawWidth = Math.max(0.5, ((eTime - sTime) / duration) * 100);
-        const width = Math.max(rawWidth, 4.5); // Largeur minimale de 4.5% pour lisibilité et clic
+        const width = Math.max(rawWidth, 4.5);
         return {
           scene: sc,
           leftPercent: Math.min(left, 94),
@@ -110,7 +259,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
     };
   });
 
-  // 6 Ticks de dates sur la règle supérieure
   const dateTicks = [0, 0.2, 0.4, 0.6, 0.8, 1].map(ratio => {
     const timeAtRatio = tMin + ratio * duration;
     const d = new Date(timeAtRatio);
@@ -124,7 +272,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
       <div className="gothic-corner gothic-corner-bl" />
       <div className="gothic-corner gothic-corner-br" />
 
-      {/* En-tête Gantt */}
       <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
         <div className="flex items-center gap-2">
           <span className="p-1.5 rounded bg-purple-950/80 border border-purple-500/40 text-purple-300">
@@ -144,11 +291,9 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
         </span>
       </div>
 
-      {/* Conteneur défilable de la Frise Swimlanes */}
       <div className="overflow-x-auto custom-scrollbar py-6">
         <div className="min-w-[950px] space-y-2">
           
-          {/* Règle des dates supérieure */}
           <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
             <div className="w-52 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300">
               Salons Actifs
@@ -160,35 +305,33 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
             </div>
           </div>
 
-          {/* Lignes par Salon (Swimlanes) */}
           <div className="space-y-3">
             {tracks.map(({ channel, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
-                {/* Nom du Salon (Colonne Gauche) */}
                 <div className="w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
                   <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
-                {/* Piste Temporelle (Piste Droite avec overflow visible) */}
                 <div className="flex-1 relative h-9 bg-[#08090d] border border-slate-800 rounded gantt-track-bg overflow-visible">
                   {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
-                    const info = CHARACTERS_DATA[scene.actors[0]];
+                    const mainActor = scene.actors[0];
+                    const info = CHARACTERS_DATA[mainActor];
                     const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
                     const startStr = formatDateDiscord(scene.start_time);
                     const endStr = formatDateDiscord(scene.end_time);
                     const isShort = widthPercent < 10;
 
-                    // Positionnement intelligent du Tooltip (en bas pour les 2 premières lignes, en haut pour les suivantes)
                     const tooltipVClass = trackIdx < 2 ? 'top-full mt-2' : 'bottom-full mb-2';
-                    
-                    // Ajustement horizontal du Tooltip si trop proche des bords (gauche/droite)
                     const tooltipHClass = leftPercent < 20 
                       ? 'left-0 translate-x-0' 
                       : leftPercent > 70 
                       ? 'right-0 left-auto translate-x-0' 
                       : 'left-1/2 -translate-x-1/2';
+
+                    // Utiliser le pseudo du serveur de l'utilisateur si disponible
+                    const mainActorDisplayName = info?.displayName || mainActor;
 
                     return (
                       <div
@@ -202,7 +345,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                         }}
                         className="gantt-bar-item absolute top-0.5 bottom-0.5 border rounded-md px-2 flex items-center justify-between cursor-pointer text-xs select-none group/bar"
                       >
-                        {/* CONTENU COMPACT CLAIR SELON LA LARGEUR DE LA BARRE */}
                         <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
                           <span className="text-xs shrink-0">{style.icon}</span>
                           
@@ -213,18 +355,18 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                               </span>
                               {scene.actors.length > 0 && (
                                 <span className="text-[10px] text-slate-300/80 font-mono truncate hidden lg:inline">
-                                  ({scene.actors.slice(0, 2).join(', ')})
+                                  ({mainActorDisplayName})
                                 </span>
                               )}
                             </div>
                           ) : (
                             <span style={{ color: style.text }} className="font-semibold text-[11px] truncate">
-                              {scene.actors[0] || scene.title}
+                              {mainActorDisplayName || scene.title}
                             </span>
                           )}
                         </div>
 
-                        {/* INFO-BULLE RICH DARK FANTASY INTELLIGENTE (JAMAIS TRONQUÉE) */}
+                        {/* INFO-BULLE */}
                         <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
@@ -236,11 +378,15 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                             <div><span className="text-slate-500">Fin :</span> {endStr}</div>
                           </div>
                           <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-800">
-                            {scene.actors.map(a => (
-                              <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
-                                {a}
-                              </span>
-                            ))}
+                            {scene.actors.map(a => {
+                              const aInfo = CHARACTERS_DATA[a];
+                              const nameDisp = aInfo?.displayName || a;
+                              return (
+                                <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
+                                  {nameDisp}
+                                </span>
+                              );
+                            })}
                           </div>
                         </div>
 
@@ -285,7 +431,7 @@ export default function App() {
     return set;
   }, []);
 
-  // Groupement des acteurs PAR FACTION (uniquement ceux participant aux scènes)
+  // Groupement des acteurs PAR FACTION (UTILISATION DU PSEUDO PERSONNALISÉ SUR LE SERVEUR)
   const groupedActorsByFaction = useMemo(() => {
     const groups: Record<string, { name: string; displayLabel: string }[]> = {
       "La Garde Pourpre": [],
@@ -303,9 +449,9 @@ export default function App() {
       const charInfo = CHARACTERS_DATA[actorName];
       const role = charInfo?.role || "Sans rôle";
       
-      const pseudo = charInfo?.username || charInfo?.displayName;
-      const displayLabel = pseudo && pseudo !== actorName 
-        ? `${actorName} (${pseudo})` 
+      const serverNickname = charInfo?.displayName || charInfo?.username;
+      const displayLabel = serverNickname && serverNickname !== actorName 
+        ? `${actorName} (${serverNickname})` 
         : actorName;
 
       if (!groups[role]) {
@@ -360,8 +506,17 @@ export default function App() {
         const inTitle = scene.title.toLowerCase().includes(q);
         const inChannel = scene.channel.toLowerCase().includes(q);
         const inPreview = scene.preview.toLowerCase().includes(q);
-        const inActors = scene.actors.some(a => a.toLowerCase().includes(q));
-        if (!inTitle && !inChannel && !inPreview && !inActors) {
+        const inActors = scene.actors.some(a => {
+          const info = CHARACTERS_DATA[a];
+          const serverNick = info?.displayName || info?.username || '';
+          return a.toLowerCase().includes(q) || serverNick.toLowerCase().includes(q);
+        });
+        const inMessages = scene.messages.some(m => 
+          (m.content && m.content.toLowerCase().includes(q)) || 
+          (m.embed_description && m.embed_description.toLowerCase().includes(q)) ||
+          (m.embed_title && m.embed_title.toLowerCase().includes(q))
+        );
+        if (!inTitle && !inChannel && !inPreview && !inActors && !inMessages) {
           return false;
         }
       }
@@ -674,7 +829,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT ET CONFORT DISCORD (AVEC SURLIGNAGE ET MARKDOWN COMPLET) */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
@@ -704,12 +859,16 @@ export default function App() {
 
             {/* En-tête de la Scène */}
             <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
-              <h2 className="text-base font-bold text-[#f2f3f5] mb-2">{activeScene.title}</h2>
+              <h2 className="text-base font-bold text-[#f2f3f5] mb-2">
+                {highlightSearchQuery(activeScene.title, searchQuery, 'title')}
+              </h2>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
                 {activeScene.actors.map(actor => {
                   const info = CHARACTERS_DATA[actor];
                   const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                  const serverNick = info?.displayName || actor;
+
                   return (
                     <span
                       key={actor}
@@ -717,19 +876,20 @@ export default function App() {
                       className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded"
                     >
                       <span>{style.icon}</span>
-                      <span>{actor}</span>
+                      <span>{highlightSearchQuery(serverNick, searchQuery, `act-${actor}`)}</span>
                     </span>
                   );
                 })}
               </div>
             </div>
 
-            {/* FLUX DES MESSAGES : FORMAT ET CONFORT DISCORD (BG #313338) */}
+            {/* FLUX DES MESSAGES : FORMAT DISCORD AVEC PARSER MARKDOWN COMPATIBLE ET SURBRILLANCE */}
             <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
               {activeScene.messages.map((msg, index) => {
                 const info = CHARACTERS_DATA[msg.author];
                 const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
-                const initials = getInitials(msg.author);
+                const serverNick = info?.displayName || msg.author;
+                const initials = getInitials(serverNick);
 
                 return (
                   <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
@@ -744,13 +904,13 @@ export default function App() {
 
                     {/* BLOC MESSAGE DISCORD */}
                     <div className="flex-1 min-w-0">
-                      {/* LIGNE AUTEUR & TIMESTAMPS */}
+                      {/* LIGNE AUTEUR (PSEUDO SERVEUR DE L'UTILISATEUR) & TIMESTAMPS */}
                       <div className="flex items-baseline gap-2 mb-1">
                         <span 
                           style={{ color: style.text }} 
                           className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
                         >
-                          {msg.author}
+                          {highlightSearchQuery(serverNick, searchQuery, `msg-author-${index}`)}
                         </span>
                         <span className="text-[12px] text-[#949ba4] font-normal select-none">
                           {formatDateDiscord(msg.timestamp)}
@@ -761,19 +921,23 @@ export default function App() {
                       {(msg.embed_title || msg.embed_description) && (
                         <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
                           {msg.embed_title && (
-                            <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">{msg.embed_title}</h4>
+                            <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
+                              {renderDiscordMarkdown(msg.embed_title, searchQuery)}
+                            </h4>
                           )}
                           {msg.embed_description && (
-                            <p className="text-[14px] text-[#dbdee1] italic whitespace-pre-line leading-relaxed">{msg.embed_description}</p>
+                            <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
+                              {renderDiscordMarkdown(msg.embed_description, searchQuery)}
+                            </div>
                           )}
                         </div>
                       )}
 
-                      {/* CONTENU TEXTE DISCORD LISIBLE */}
+                      {/* CONTENU TEXTE DISCORD LISIBLE AVEC MARKDOWN ET SURBRILLANCE */}
                       {msg.content && (
-                        <p className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
-                          {msg.content}
-                        </p>
+                        <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
+                          {renderDiscordMarkdown(msg.content, searchQuery)}
+                        </div>
                       )}
                     </div>
                   </div>
