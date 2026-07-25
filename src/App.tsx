@@ -1,9 +1,8 @@
-import React, { useState, useMemo, useRef, useEffect } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
-  Search, Calendar, Clock, Filter, User, Users, ChevronRight, 
-  ExternalLink, Sparkles, BookOpen, Layers, X, Shield, Eye, Feather, 
-  Bot, HelpCircle, ArrowUp, ChevronDown
+  Search, Calendar, Clock, User, Users, ChevronRight, 
+  ExternalLink, BookOpen, Layers, X, Shield, HelpCircle, ArrowUp
 } from 'lucide-react';
 
 const ROLE_ORDER: Record<string, number> = {
@@ -64,18 +63,30 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
-  
-  // Nombre de mois déroulés progressivement (déroulement au scroll)
-  const [visibleMonthCount, setVisibleMonthCount] = useState<number>(4);
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
-
+  
   // Scène sélectionnée pour la modale de lecture
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  // Groupement des acteurs par Faction avec leur Nom + Pseudo Discord entre parenthèses
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Ensemble des acteurs participant au moins à 1 scène
+  const activeActorsSet = useMemo(() => {
+    const set = new Set<string>();
+    SCENES_DATA.forEach(s => s.actors.forEach(a => set.add(a)));
+    return set;
+  }, []);
+
+  // Groupement des acteurs PAR FACTION (uniquement ceux participant aux scènes)
   const groupedActorsByFaction = useMemo(() => {
     const groups: Record<string, { name: string; displayLabel: string }[]> = {
       "La Garde Pourpre": [],
@@ -88,6 +99,9 @@ export default function App() {
     };
 
     Object.keys(CHARACTERS_DATA).forEach(actorName => {
+      // Exclure ceux qui ne participent à aucune scène
+      if (!activeActorsSet.has(actorName)) return;
+
       const charInfo = CHARACTERS_DATA[actorName];
       const role = charInfo?.role || "Sans rôle";
       
@@ -102,13 +116,23 @@ export default function App() {
       groups[role].push({ name: actorName, displayLabel });
     });
 
+    // Ajouter les acteurs actifs qui ne sont pas dans CHARACTERS_DATA
+    activeActorsSet.forEach(actorName => {
+      if (!CHARACTERS_DATA[actorName]) {
+        if (!groups["Sans rôle"]) groups["Sans rôle"] = [];
+        if (!groups["Sans rôle"].some(x => x.name === actorName)) {
+          groups["Sans rôle"].push({ name: actorName, displayLabel: actorName });
+        }
+      }
+    });
+
     // Trier chaque groupe par ordre alphabétique
     Object.keys(groups).forEach(role => {
       groups[role].sort((a, b) => a.displayLabel.localeCompare(b.displayLabel, 'fr'));
     });
 
     return groups;
-  }, []);
+  }, [activeActorsSet]);
 
   // Groupement des salons par Catégorie Discord
   const groupedChannelsByCategory = useMemo(() => {
@@ -163,7 +187,7 @@ export default function App() {
   }, [searchQuery, selectedActor, selectedChannel]);
 
   // Groupement complet des scènes par Mois/Année
-  const allGroupedPeriodScenes = useMemo(() => {
+  const groupedPeriodScenes = useMemo(() => {
     const groups: { key: string; label: string; scenes: Scene[] }[] = [];
     const groupMap: Record<string, { label: string; scenes: Scene[] }> = {};
 
@@ -179,46 +203,14 @@ export default function App() {
     return groups;
   }, [filteredScenes]);
 
-  // Mois visibles (déroulement au scroll)
-  const visibleGroupedPeriodScenes = useMemo(() => {
-    return allGroupedPeriodScenes.slice(0, visibleMonthCount);
-  }, [allGroupedPeriodScenes, visibleMonthCount]);
-
-  // Gestion du scroll infini pour dérouler les mois progressivement
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-
-      // Dérouler plus de mois quand l'utilisateur approche du bas
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
-        setVisibleMonthCount(prev => Math.min(prev + 3, allGroupedPeriodScenes.length));
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [allGroupedPeriodScenes.length]);
-
-  // Réinitialiser la limite de mois quand les filtres changent
-  useEffect(() => {
-    setVisibleMonthCount(4);
-  }, [searchQuery, selectedActor, selectedChannel]);
-
-  const scrollToMonth = (monthKey: string, index: number) => {
-    // Si le mois demandé est au-delà du nombre actuellement déroulé, étendre la limite
-    if (index >= visibleMonthCount) {
-      setVisibleMonthCount(index + 2);
-    }
-
+  const scrollToMonth = (monthKey: string) => {
     setActiveMonthKey(monthKey);
-    setTimeout(() => {
-      const element = document.getElementById(`period-${monthKey}`);
-      if (element) {
-        const yOffset = -90;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    }, 50);
+    const element = document.getElementById(`period-${monthKey}`);
+    if (element) {
+      const yOffset = -90;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   };
 
   const scrollToTop = () => {
@@ -243,7 +235,7 @@ export default function App() {
                   Chronologie d'Ashera
                 </h1>
                 <p className="text-xs text-slate-400">
-                  Magie & Foi • {filteredScenes.length} scènes RP répertoriées
+                  {filteredScenes.length} scènes RP répertoriées
                 </p>
               </div>
             </div>
@@ -269,10 +261,10 @@ export default function App() {
             </div>
           </div>
 
-          {/* BARRE DE SELECTIONS ERGONOMIQUE (Groupement par Faction & Catégorie) */}
+          {/* BARRE DE SELECTIONS ERGONOMIQUE */}
           <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
-            {/* 👤 SELECTION DES JOUEURS / PERSONNAGES (TRIÉS ET GROUPÉS PAR FACTION + PSEUDO DISCORD) */}
+            {/* 👤 SELECTION DES PERSONNAGES (GROUPÉS PAR FACTION) */}
             <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/70 shadow-sm flex-1 min-w-[240px]">
               <Users className="w-4 h-4 text-purple-400 shrink-0" />
               <div className="flex-1 min-w-0">
@@ -282,7 +274,7 @@ export default function App() {
                   className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
                 >
                   <option value="all" className="bg-slate-900 text-slate-200 font-semibold">
-                    Tous les Personnages / Joueurs (Toutes Factions)
+                    Tous les personnages
                   </option>
                   
                   {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
@@ -301,7 +293,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* 🏛️ SELECTION DES SALONS (GROUPÉS VISUELLEMENT PAR CATÉGORIE DISCORD) */}
+            {/* 🏛️ SELECTION DES SALONS (GROUPÉS PAR CATÉGORIE) */}
             <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/70 shadow-sm flex-1 min-w-[240px]">
               <Layers className="w-4 h-4 text-emerald-400 shrink-0" />
               <div className="flex-1 min-w-0">
@@ -311,7 +303,7 @@ export default function App() {
                   className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
                 >
                   <option value="all" className="bg-slate-900 text-slate-200 font-semibold">
-                    Tous les Salons (Toutes les Catégories)
+                    Tous les salons
                   </option>
 
                   {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
@@ -344,7 +336,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* 🚀 LAYOUT PRINCIPAL AVEC DÉROULEMENT PROGRESSIF DES MOIS */}
+      {/* 🚀 LAYOUT PRINCIPAL AVEC NAVIGATION FLUIDE DÉROULANTE */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
         {/* 📌 SIDEBAR NAVIGATEUR CHRONOLOGIQUE (MINI-MAP) */}
@@ -356,10 +348,10 @@ export default function App() {
             </div>
             
             <nav className="space-y-1 max-h-[calc(100vh-230px)] overflow-y-auto pr-1 custom-scrollbar text-xs">
-              {allGroupedPeriodScenes.map(({ key, label, scenes }, idx) => (
+              {groupedPeriodScenes.map(({ key, label, scenes }) => (
                 <button
                   key={key}
-                  onClick={() => scrollToMonth(key, idx)}
+                  onClick={() => scrollToMonth(key)}
                   className={`w-full flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
                     activeMonthKey === key
                       ? 'bg-purple-600/30 text-purple-200 font-medium border border-purple-500/40 shadow-sm'
@@ -373,17 +365,17 @@ export default function App() {
                 </button>
               ))}
 
-              {allGroupedPeriodScenes.length === 0 && (
+              {groupedPeriodScenes.length === 0 && (
                 <p className="text-xs text-slate-500 py-4 text-center">Aucun résultat</p>
               )}
             </nav>
           </div>
         </aside>
 
-        {/* 📜 FLUX CHRONOLOGIQUE DÉROULANT AU SCROLL */}
+        {/* 📜 FLUX CHRONOLOGIQUE FLUIDE */}
         <main className="flex-1 min-w-0">
           
-          {visibleGroupedPeriodScenes.length === 0 ? (
+          {groupedPeriodScenes.length === 0 ? (
             <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-12 text-center my-8">
               <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-slate-300 mb-1">Aucune scène correspondante</h3>
@@ -403,7 +395,7 @@ export default function App() {
             </div>
           ) : (
             <div className="space-y-12">
-              {visibleGroupedPeriodScenes.map(({ key, label, scenes }) => (
+              {groupedPeriodScenes.map(({ key, label, scenes }) => (
                 <section key={key} id={`period-${key}`} className="scroll-mt-36">
                   
                   {/* EN-TÊTE DU MOIS / PÉRIODE */}
@@ -485,19 +477,6 @@ export default function App() {
                   </div>
                 </section>
               ))}
-
-              {/* BOUTON / INDICATION DE DÉROULEMENT PROGRESSIF (SCROLL INFINI) */}
-              {visibleMonthCount < allGroupedPeriodScenes.length && (
-                <div className="py-8 text-center">
-                  <button
-                    onClick={() => setVisibleMonthCount(prev => Math.min(prev + 4, allGroupedPeriodScenes.length))}
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-purple-200 rounded-2xl text-xs font-semibold transition-all shadow-xl hover:scale-105"
-                  >
-                    <ChevronDown className="w-4 h-4 animate-bounce" />
-                    Dérouler les mois suivants ({allGroupedPeriodScenes.length - visibleMonthCount} restants)
-                  </button>
-                </div>
-              )}
             </div>
           )}
         </main>
