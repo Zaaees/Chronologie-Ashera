@@ -361,53 +361,7 @@ class DiscordExporterClient(discord.Client):
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
 
-        channels_to_process = []
-
-        # Récupérer la liste complète des salons via l'API REST
-        try:
-            fetched_channels = await target_guild.fetch_channels()
-        except Exception as e:
-            print(f"⚠️ Impossible de fetch les salons : {e}")
-            fetched_channels = target_guild.channels
-
-        text_channels = [ch for ch in fetched_channels if isinstance(ch, (discord.TextChannel, discord.ForumChannel))]
-        channels_to_process.extend(text_channels)
-
-        # Récupérer les fils (threads) actifs
-        try:
-            active_threads = await target_guild.active_threads()
-            for thread in active_threads:
-                if thread not in channels_to_process:
-                    channels_to_process.append(thread)
-        except Exception as e:
-            print(f"⚠️ Impossible de récupérer les threads actifs : {e}")
-
-        print("🔎 Recherche des fils archivés dans les salons...")
-        my_permissions = target_guild.me.guild_permissions if target_guild.me else None
-        
-        for ch in text_channels:
-            if hasattr(ch, 'archived_threads'):
-                # Vérifier les permissions
-                if my_permissions and not ch.permissions_for(target_guild.me).read_message_history:
-                    continue
-                try:
-                    async def fetch_archived_for_channel(channel_obj):
-                        threads_found = []
-                        try:
-                            async for arch_thread in channel_obj.archived_threads(limit=100):
-                                threads_found.append(arch_thread)
-                        except Exception:
-                            pass
-                        return threads_found
-
-                    arch_threads = await asyncio.wait_for(fetch_archived_for_channel(ch), timeout=3.0)
-                    for arch_thread in arch_threads:
-                        if arch_thread not in channels_to_process:
-                            channels_to_process.append(arch_thread)
-                except Exception:
-                    pass
-
-        # Charger les scènes existantes pour le mode incrémental
+        # 1. Charger d'abord les scènes existantes pour l'extraction incrémentale instantanée
         existing_scenes_data = {}
         existing_scenes_by_channel = {}
         last_msg_id_by_channel = {}
@@ -422,7 +376,6 @@ class DiscordExporterClient(discord.Client):
                         if is_excluded_channel(ch_name, cat_name):
                             continue
 
-                        # Nettoyer et reconstruire la liste des acteurs directement depuis les auteurs des messages
                         if 'messages' in s:
                             msg_authors = set()
                             for m in s['messages']:
@@ -437,7 +390,6 @@ class DiscordExporterClient(discord.Client):
                         if ch_key not in existing_scenes_by_channel:
                             existing_scenes_by_channel[ch_key] = []
 
-                        # Exclure la description de salon si c'est la 1ère scène, 1 seul message, envoyé par LE CONSEILLER
                         if len(existing_scenes_by_channel[ch_key]) == 0 and len(s.get("messages", [])) == 1:
                             first_author = s["messages"][0].get("author", "").strip().lower()
                             if "conseiller" in first_author:
@@ -445,7 +397,6 @@ class DiscordExporterClient(discord.Client):
 
                         existing_scenes_by_channel[ch_key].append(s)
                         
-                        # Trouver le dernier message ID
                         msgs = s.get("messages", [])
                         if msgs:
                             last_id = msgs[-1].get("id")
@@ -455,6 +406,61 @@ class DiscordExporterClient(discord.Client):
                 print("📦 Base de scènes existantes nettoyée et chargée pour l'extraction incrémentale.")
             except Exception as e:
                 print(f"⚠️ Erreur chargement scenes.json existant : {e}")
+
+        # 2. Récupérer la liste complète des salons via l'API REST
+        try:
+            fetched_channels = await target_guild.fetch_channels()
+        except Exception as e:
+            print(f"⚠️ Impossible de fetch les salons : {e}")
+            fetched_channels = target_guild.channels
+
+        # Filtrer TOUT DE SUITE les salons HRP / Non-RP
+        rp_channels = [ch for ch in fetched_channels if isinstance(ch, (discord.TextChannel, discord.ForumChannel)) and not is_character_or_fiche_channel(ch)]
+
+        channels_to_process = list(rp_channels)
+
+        # 3. Récupérer les fils (threads) actifs pour les salons RP uniquement
+        try:
+            active_threads = await target_guild.active_threads()
+            for thread in active_threads:
+                if not is_character_or_fiche_channel(thread) and thread not in channels_to_process:
+                    channels_to_process.append(thread)
+        except Exception as e:
+            print(f"⚠️ Impossible de récupérer les threads actifs : {e}")
+
+        # 4. Recherche ciblée des fils archivés uniquement pour les salons RP modifiés
+        my_permissions = target_guild.me.guild_permissions if target_guild.me else None
+        
+        for ch in rp_channels:
+            ch_id = str(ch.id)
+            ch_name = ch.name
+            last_id = last_msg_id_by_channel.get(ch_id) or last_msg_id_by_channel.get(ch_name)
+            ch_last_msg_id = getattr(ch, 'last_message_id', None)
+
+            # Si le salon n'a aucun nouveau message depuis le dernier export, sauter la recherche de threads archivés !
+            if last_id and ch_last_msg_id and ch_last_msg_id <= int(last_id):
+                continue
+
+            if hasattr(ch, 'archived_threads'):
+                if my_permissions and not ch.permissions_for(target_guild.me).read_message_history:
+                    continue
+                try:
+                    async def fetch_archived_for_channel(channel_obj):
+                        threads_found = []
+                        try:
+                            async for arch_thread in channel_obj.archived_threads(limit=100):
+                                if not is_character_or_fiche_channel(arch_thread):
+                                    threads_found.append(arch_thread)
+                        except Exception:
+                            pass
+                        return threads_found
+
+                    arch_threads = await asyncio.wait_for(fetch_archived_for_channel(ch), timeout=2.0)
+                    for arch_thread in arch_threads:
+                        if arch_thread not in channels_to_process:
+                            channels_to_process.append(arch_thread)
+                except Exception:
+                    pass
 
         all_scenes = []
         all_actors = set()
