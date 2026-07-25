@@ -2,38 +2,20 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, LayoutGrid
 } from 'lucide-react';
 
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
-  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.28)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.55)", icon: "🗡️", hexColor: "#ef4444" },
-  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.28)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.55)", icon: "🌙", hexColor: "#3b82f6" },
-  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.14)", text: "#fef08a", border: "rgba(254, 240, 138, 0.4)", icon: "⚖️", hexColor: "#fef08a" },
-  "L'œil": { bg: "rgba(30, 41, 59, 0.7)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.45)", icon: "👁️", hexColor: "#cbd5e1" },
-  "Sans guilde": { bg: "rgba(180, 83, 9, 0.28)", text: "#fde047", border: "rgba(217, 119, 6, 0.55)", icon: "☀️", hexColor: "#eab308" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.28)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.45)", icon: "🛡️", hexColor: "#94a3b8" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.28)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.55)", icon: "🔮", hexColor: "#c084fc" }
+  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.35)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.65)", icon: "🗡️", hexColor: "#ef4444" },
+  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.35)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.65)", icon: "🌙", hexColor: "#3b82f6" },
+  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.22)", text: "#fef08a", border: "rgba(254, 240, 138, 0.5)", icon: "⚖️", hexColor: "#fef08a" },
+  "L'œil": { bg: "rgba(30, 41, 59, 0.8)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.55)", icon: "👁️", hexColor: "#cbd5e1" },
+  "Sans guilde": { bg: "rgba(180, 83, 9, 0.35)", text: "#fde047", border: "rgba(217, 119, 6, 0.65)", icon: "☀️", hexColor: "#eab308" },
+  "Sans rôle": { bg: "rgba(71, 85, 105, 0.35)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.55)", icon: "🛡️", hexColor: "#94a3b8" },
+  "PNJ": { bg: "rgba(126, 34, 206, 0.35)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.65)", icon: "🔮", hexColor: "#c084fc" }
 };
 
-// Formater la date complète en français (ex: Mercredi 4 Février 2026)
-function getFullDateFr(isoString: string): string {
-  if (!isoString) return 'Date inconnue';
-  try {
-    const d = new Date(isoString);
-    if (isNaN(d.getTime())) return isoString;
-    const str = d.toLocaleDateString('fr-FR', {
-      weekday: 'long',
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    });
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  } catch (e) {
-    return isoString;
-  }
-}
-
-// Formater la date et heure au format Discord (ex: 4 février 2026 à 22:15)
+// Formater la date en style Discord (ex: 4 février 2026 à 22:15)
 function formatDateDiscord(isoString: string): string {
   if (!isoString) return 'Date inconnue';
   try {
@@ -54,7 +36,7 @@ function formatDateDiscord(isoString: string): string {
   }
 }
 
-// Obtenir la clé du mois (ex: 2026-02) et son libellé (ex: Février 2026)
+// Obtenir le mois et l'année pour le groupement
 function getMonthYearKey(isoString: string): { key: string; label: string } {
   if (!isoString) return { key: 'inconnu', label: 'Période Indéterminée' };
   try {
@@ -78,12 +60,156 @@ function getInitials(name: string): string {
   return name.slice(0, 2).toUpperCase();
 }
 
-// Structure pour le regroupement par Journée RP (Parallélisme sur la même journée)
-interface DayGroup {
-  dateKey: string;
-  dateLabel: string;
-  isParallel: boolean;
-  scenes: Scene[];
+// Interface pour les pistes Gantt par salon
+interface GanttChannelTrack {
+  channel: string;
+  scenes: {
+    scene: Scene;
+    leftPercent: number;
+    widthPercent: number;
+  }[];
+}
+
+// COMPOSANT GANTT SWIMLANES DYNAMIQUES PAR MOIS
+function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
+  if (scenes.length === 0) return null;
+
+  // Calcul des bornes temporelles min/max du mois
+  const timestamps = scenes.flatMap(s => [
+    new Date(s.start_time).getTime(),
+    new Date(s.end_time || s.start_time).getTime()
+  ]).filter(t => !isNaN(t));
+
+  const tMin = Math.min(...timestamps);
+  const tMax = Math.max(...timestamps);
+  const duration = Math.max(tMax - tMin, 1);
+
+  // Regroupement par salon actif
+  const channelMap: Record<string, Scene[]> = {};
+  scenes.forEach(s => {
+    if (!channelMap[s.channel]) channelMap[s.channel] = [];
+    channelMap[s.channel].push(s);
+  });
+
+  const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
+    const chScenes = channelMap[ch];
+    return {
+      channel: ch,
+      scenes: chScenes.map(sc => {
+        const sTime = new Date(sc.start_time).getTime();
+        const eTime = new Date(sc.end_time || sc.start_time).getTime();
+        const left = Math.max(0, ((sTime - tMin) / duration) * 100);
+        const rawWidth = Math.max(0.5, ((eTime - sTime) / duration) * 100);
+        const width = Math.max(rawWidth, 4); // Largeur minimale de 4% pour lisibilité et clic
+        return {
+          scene: sc,
+          leftPercent: Math.min(left, 95),
+          widthPercent: Math.min(width, 100 - left)
+        };
+      })
+    };
+  });
+
+  // 5 Ticks de dates sur la règle supérieure
+  const dateTicks = [0, 0.25, 0.5, 0.75, 1].map(ratio => {
+    const timeAtRatio = tMin + ratio * duration;
+    const d = new Date(timeAtRatio);
+    return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' });
+  });
+
+  return (
+    <div className="gothic-corner-box bg-[#0c0e15]/95 border border-slate-700/80 p-5 shadow-2xl space-y-4">
+      <div className="gothic-corner gothic-corner-tl" />
+      <div className="gothic-corner gothic-corner-tr" />
+      <div className="gothic-corner gothic-corner-bl" />
+      <div className="gothic-corner gothic-corner-br" />
+
+      {/* En-tête Gantt */}
+      <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
+        <div className="flex items-center gap-2">
+          <span className="p-1.5 rounded bg-purple-950/80 border border-purple-500/40 text-purple-300">
+            <BarChart2 className="w-4 h-4" />
+          </span>
+          <div>
+            <h3 className="text-xs font-bold font-serif-gothic text-slate-100 tracking-wider uppercase">
+              Frise Temporelle des Salons Actifs • {monthLabel}
+            </h3>
+            <p className="text-[11px] text-slate-400 font-mono">
+              {tracks.length} salons actifs en parallèle • {scenes.length} scènes
+            </p>
+          </div>
+        </div>
+        <span className="text-[10px] text-slate-400 font-mono bg-slate-950 px-2.5 py-1 border border-slate-800">
+          Durée : {dateTicks[0]} → {dateTicks[4]}
+        </span>
+      </div>
+
+      {/* Conteneur défilable de la Frise Swimlanes */}
+      <div className="overflow-x-auto custom-scrollbar">
+        <div className="min-w-[750px] space-y-1">
+          
+          {/* Règle des dates supérieure */}
+          <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
+            <div className="w-48 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300">
+              Salons Actifs
+            </div>
+            <div className="flex-1 flex justify-between px-2">
+              {dateTicks.map((t, idx) => (
+                <span key={idx} className="text-slate-400 font-semibold">{t}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Lignes par Salon (Swimlanes) */}
+          <div className="space-y-2">
+            {tracks.map(({ channel, scenes: trackScenes }) => (
+              <div key={channel} className="flex items-center h-10 group hover:bg-slate-900/60 rounded transition-colors">
+                
+                {/* Nom du Salon (Colonne Gauche) */}
+                <div className="w-48 shrink-0 pr-3 truncate text-xs font-mono font-medium text-slate-300 flex items-center gap-1.5 pl-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
+                  <span className="truncate" title={`#${channel}`}>#{channel}</span>
+                </div>
+
+                {/* Piste Temporelle (Piste Droite) */}
+                <div className="flex-1 relative h-7 bg-[#08090d] border border-slate-800/90 rounded gantt-track-bg overflow-hidden">
+                  {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
+                    const info = CHARACTERS_DATA[scene.actors[0]];
+                    const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                    const startStr = formatDateDiscord(scene.start_time);
+                    const endStr = formatDateDiscord(scene.end_time);
+
+                    return (
+                      <div
+                        key={scene.id}
+                        onClick={() => onSelectScene(scene)}
+                        style={{
+                          left: `${leftPercent}%`,
+                          width: `${widthPercent}%`,
+                          backgroundColor: style.bg,
+                          borderColor: style.border
+                        }}
+                        className="gantt-bar-item absolute top-0.5 bottom-0.5 border rounded px-2 flex items-center justify-between cursor-pointer text-[10px] font-sans truncate select-none"
+                        title={`${scene.title} (#${scene.channel})\nDébut: ${startStr}\nFin: ${endStr}\nActeurs: ${scene.actors.join(', ')}`}
+                      >
+                        <span style={{ color: style.text }} className="font-semibold truncate">
+                          {scene.title}
+                        </span>
+                        <span className="text-[9px] opacity-80 font-mono ml-1 shrink-0 hidden md:inline">
+                          {scene.actors[0] || ''}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function App() {
@@ -91,6 +217,7 @@ export default function App() {
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
+  const [viewMode, setViewMode] = useState<'gantt' | 'cards'>('gantt');
   
   // Scène sélectionnée pour la modale
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
@@ -206,9 +333,9 @@ export default function App() {
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
   }, [searchQuery, selectedActor, selectedChannel]);
 
-  // Groupement des scènes par Mois/Année + DÉTECTION RIGOUREUSE DES SCÈNES SIMULTANÉES PAR JOURNÉE
+  // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
-    const monthGroups: { key: string; label: string; dayGroups: DayGroup[]; totalScenes: number }[] = [];
+    const monthGroups: { key: string; label: string; scenes: Scene[]; totalScenes: number }[] = [];
     const monthMap: Record<string, { label: string; scenes: Scene[] }> = {};
 
     filteredScenes.forEach(scene => {
@@ -221,29 +348,10 @@ export default function App() {
 
     Object.keys(monthMap).forEach(mKey => {
       const { label, scenes } = monthMap[mKey];
-      
-      // Regroupement des scènes du mois par jour d'action (YYYY-MM-DD)
-      const dayMap: Record<string, Scene[]> = {};
-      scenes.forEach(sc => {
-        const dKey = sc.start_time ? sc.start_time.slice(0, 10) : 'inconnu';
-        if (!dayMap[dKey]) dayMap[dKey] = [];
-        dayMap[dKey].push(sc);
-      });
-
-      const dayGroups: DayGroup[] = Object.keys(dayMap).map(dKey => {
-        const dayScenes = dayMap[dKey];
-        return {
-          dateKey: dKey,
-          dateLabel: getFullDateFr(dayScenes[0].start_time),
-          isParallel: dayScenes.length > 1,
-          scenes: dayScenes
-        };
-      });
-
       monthGroups.push({
         key: mKey,
         label,
-        dayGroups,
+        scenes,
         totalScenes: scenes.length
       });
     });
@@ -320,83 +428,112 @@ export default function App() {
             </div>
           </div>
 
-          {/* BARRE DE FILTRES ERGONOMIQUES */}
-          <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
+          {/* BARRE DE FILTRES ET BOUTONS DE COMMUTATION DE VUE (GANTT VS CARTES) */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
-            {/* Personnages par Faction */}
-            <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
-              <Users className="w-4 h-4 text-purple-400 shrink-0" />
-              <div className="flex-1 min-w-0">
-                <select
-                  value={selectedActor}
-                  onChange={(e) => setSelectedActor(e.target.value)}
-                  className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
-                >
-                  <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
-                    Tous les personnages
-                  </option>
-                  
-                  {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
-                    if (actorList.length === 0) return null;
-                    const factionIcon = FACTION_COLORS[roleName]?.icon || "🛡️";
-                    return (
-                      <optgroup key={roleName} label={`--- ${factionIcon} ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-[#08090d] text-slate-400 font-bold">
-                        {actorList.map(({ name, displayLabel }) => (
-                          <option key={name} value={name} className="bg-[#0d0f17] text-slate-200 font-normal">
-                            {displayLabel}
+            <div className="flex flex-wrap items-center gap-3 flex-1">
+              {/* Personnages par Faction */}
+              <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
+                <Users className="w-4 h-4 text-purple-400 shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <select
+                    value={selectedActor}
+                    onChange={(e) => setSelectedActor(e.target.value)}
+                    className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
+                  >
+                    <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
+                      Tous les personnages
+                    </option>
+                    
+                    {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
+                      if (actorList.length === 0) return null;
+                      const factionIcon = FACTION_COLORS[roleName]?.icon || "🛡️";
+                      return (
+                        <optgroup key={roleName} label={`--- ${factionIcon} ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-[#08090d] text-slate-400 font-bold">
+                          {actorList.map(({ name, displayLabel }) => (
+                            <option key={name} value={name} className="bg-[#0d0f17] text-slate-200 font-normal">
+                              {displayLabel}
+                            </option>
+                          ))}
+                        </optgroup>
+                      );
+                    })}
+                  </select>
+                </div>
+              </div>
+
+              {/* Salons par Catégorie */}
+              <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
+                <Layers className="w-4 h-4 text-slate-400 shrink-0" />
+                <div className="flex-1 min-w-0">
+                  <select
+                    value={selectedChannel}
+                    onChange={(e) => setSelectedChannel(e.target.value)}
+                    className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
+                  >
+                    <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
+                      Tous les salons
+                    </option>
+
+                    {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
+                      <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#08090d] text-slate-400 font-bold">
+                        {channels.map(ch => (
+                          <option key={ch} value={ch} className="bg-[#0d0f17] text-slate-200 font-normal">
+                            #{ch}
                           </option>
                         ))}
                       </optgroup>
-                    );
-                  })}
-                </select>
+                    ))}
+                  </select>
+                </div>
               </div>
             </div>
 
-            {/* Salons par Catégorie */}
-            <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
-              <Layers className="w-4 h-4 text-slate-400 shrink-0" />
-              <div className="flex-1 min-w-0">
-                <select
-                  value={selectedChannel}
-                  onChange={(e) => setSelectedChannel(e.target.value)}
-                  className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
-                >
-                  <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
-                    Tous les salons
-                  </option>
-
-                  {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
-                    <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#08090d] text-slate-400 font-bold">
-                      {channels.map(ch => (
-                        <option key={ch} value={ch} className="bg-[#0d0f17] text-slate-200 font-normal">
-                          #{ch}
-                        </option>
-                      ))}
-                    </optgroup>
-                  ))}
-                </select>
-              </div>
-            </div>
-
-            {/* Réinitialiser */}
-            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
+            {/* BASCULE DE MODE DE VUE : GANTT SWIMLANES VS VUE CARTES */}
+            <div className="flex items-center gap-1.5 bg-[#0d0f17] p-1 border border-slate-800 shrink-0">
               <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedActor('all');
-                  setSelectedChannel('all');
-                }}
-                className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors shrink-0 font-medium"
+                onClick={() => setViewMode('gantt')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 transition-all text-xs font-semibold ${
+                  viewMode === 'gantt'
+                    ? 'bg-purple-950/80 text-purple-200 border border-purple-500/50 shadow'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                }`}
               >
-                Réinitialiser les filtres
+                <BarChart2 className="w-3.5 h-3.5" />
+                <span>Frise Gantt Swimlanes</span>
               </button>
-            )}
+
+              <button
+                onClick={() => setViewMode('cards')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 transition-all text-xs font-semibold ${
+                  viewMode === 'cards'
+                    ? 'bg-slate-800 text-slate-100 border border-slate-600 shadow'
+                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                }`}
+              >
+                <LayoutGrid className="w-3.5 h-3.5" />
+                <span>Vue Cartes</span>
+              </button>
+
+              {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    setSelectedActor('all');
+                    setSelectedChannel('all');
+                  }}
+                  className="px-2.5 py-1.5 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors ml-1 font-medium"
+                >
+                  Effacer
+                </button>
+              )}
+            </div>
+
           </div>
         </div>
       </header>
 
-      {/* 🚀 LAYOUT PRINCIPAL AVEC NAVIGATION SIDEBAR ET CHRONOLOGIE */}
+      {/* 🚀 LAYOUT PRINCIPAL AVEC GANTT SWIMLANES DYNAMIQUES */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
         {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT (STICKY TOP-28) */}
@@ -461,7 +598,7 @@ export default function App() {
           </div>
         </aside>
 
-        {/* 📜 LA CHRONOLOGIE AVEC ÉVÉNEMENTS SIMULTANÉS PAR JOURNÉE */}
+        {/* 📜 LA CHRONOLOGIE GANTT SWIMLANES DES SALONS ACTIFS */}
         <main className="flex-1 min-w-0 relative pl-8">
           
           {/* Fil argenté principal de la chronologie */}
@@ -487,11 +624,11 @@ export default function App() {
             </div>
           ) : (
             <div className="space-y-12">
-              {groupedPeriodScenes.map(({ key, label, dayGroups, totalScenes }) => (
+              {groupedPeriodScenes.map(({ key, label, scenes, totalScenes }) => (
                 <section key={key} id={`period-${key}`} className="scroll-mt-36 relative">
                   
                   {/* ANCRAGE & NOEUD DU MOIS */}
-                  <div className="flex items-center gap-4 mb-8 -ml-8">
+                  <div className="flex items-center gap-4 mb-6 -ml-8">
                     <div className="w-10 h-10 bg-[#08090d] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10">
                       <div className="w-3 h-3 bg-slate-300 transform rotate-45" />
                     </div>
@@ -506,182 +643,82 @@ export default function App() {
                     <div className="h-[1px] flex-1 bg-gradient-to-r from-slate-700/60 to-transparent" />
                   </div>
 
-                  {/* RENDU DES JOURNÉES (STANDALONE VS ÉVÉNEMENTS SIMULTANÉMENT EN CÔTE À CÔTE) */}
-                  <div className="space-y-8">
-                    {dayGroups.map((dayGroup) => {
-                      
-                      // ÉVÉNEMENTS SIMULTANÉS (Plusieurs scènes le même jour dans des salons différents)
-                      if (dayGroup.isParallel) {
-                        const channelNames = Array.from(new Set(dayGroup.scenes.map(s => `#${s.channel}`)));
+                  {/* RENDU EN FRISE GANTT SWIMLANES OU VUE CARTES */}
+                  {viewMode === 'gantt' ? (
+                    <GanttMonthView
+                      monthLabel={label}
+                      scenes={scenes}
+                      onSelectScene={(s) => setActiveScene(s)}
+                    />
+                  ) : (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {scenes.map(scene => {
+                        const firstDate = formatDateDiscord(scene.start_time);
 
                         return (
-                          <div key={dayGroup.dateKey} className="relative bg-[#0d0f17]/95 border border-purple-500/40 p-5 shadow-2xl shadow-purple-950/20">
-                            
-                            {/* En-tête des Événements Simultanés du Jour */}
-                            <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-purple-500/20">
-                              <div className="flex items-center gap-2.5">
-                                <span className="p-1.5 rounded bg-purple-950/80 border border-purple-500/40 text-purple-300">
-                                  <Zap className="w-4 h-4 text-purple-400" />
+                          <div
+                            key={scene.id}
+                            onClick={() => setActiveScene(scene)}
+                            className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between"
+                          >
+                            <div className="gothic-corner gothic-corner-tl" />
+                            <div className="gothic-corner gothic-corner-tr" />
+                            <div className="gothic-corner gothic-corner-bl" />
+                            <div className="gothic-corner gothic-corner-br" />
+
+                            <div>
+                              <div className="flex items-center justify-between gap-2 mb-3">
+                                <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300 truncate max-w-[70%]">
+                                  #{scene.channel}
                                 </span>
-                                <div>
-                                  <h4 className="text-xs font-bold font-serif-gothic text-purple-200 tracking-wider uppercase">
-                                    Événements Simultanés du {dayGroup.dateLabel}
-                                  </h4>
-                                  <p className="text-[11px] text-slate-400 font-mono">
-                                    Salons actifs en même temps : {channelNames.join(' • ')}
-                                  </p>
-                                </div>
+                                <span className="text-[11px] text-slate-400 font-mono flex items-center gap-1 shrink-0">
+                                  <Clock className="w-3 h-3 text-slate-500" />
+                                  {firstDate}
+                                </span>
                               </div>
-                              <span className="px-2.5 py-1 bg-purple-950/80 border border-purple-500/40 text-purple-300 text-[10px] font-mono font-semibold">
-                                ⚡ {dayGroup.scenes.length} Scènes en Parallèle
-                              </span>
+
+                              <h3 className="text-sm font-semibold text-slate-100 group-hover:text-slate-300 transition-colors line-clamp-1 mb-2">
+                                {scene.title}
+                              </h3>
+                              
+                              <p className="text-xs text-slate-400 line-clamp-2 mb-4 leading-relaxed font-light">
+                                {scene.preview}
+                              </p>
                             </div>
 
-                            {/* GRILLE PARALLÈLE CÔTE À CÔTE NATIVE (2 ou 3 colonnes impeccables) */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                              {dayGroup.scenes.map(scene => {
-                                const firstDate = formatDateDiscord(scene.start_time);
+                            <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                              <div className="flex flex-wrap items-center gap-1.5 max-w-[85%]">
+                                {scene.actors.slice(0, 4).map(actor => {
+                                  const info = CHARACTERS_DATA[actor];
+                                  const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
 
-                                return (
-                                  <div
-                                    key={scene.id}
-                                    onClick={() => setActiveScene(scene)}
-                                    className="gothic-card gothic-corner-box relative p-4 cursor-pointer flex flex-col justify-between border-purple-500/30 hover:border-purple-400 transition-all"
-                                  >
-                                    <div className="gothic-corner gothic-corner-tl" />
-                                    <div className="gothic-corner gothic-corner-tr" />
-                                    <div className="gothic-corner gothic-corner-bl" />
-                                    <div className="gothic-corner gothic-corner-br" />
+                                  return (
+                                    <span
+                                      key={actor}
+                                      style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                                      className="inline-flex items-center gap-1 px-2 py-0.5 border text-[10px] font-medium truncate max-w-[130px]"
+                                    >
+                                      <span className="text-[10px]">{style.icon}</span>
+                                      <span className="truncate">{actor}</span>
+                                    </span>
+                                  );
+                                })}
+                                {scene.actors.length > 4 && (
+                                  <span className="text-[10px] text-slate-500 font-mono">
+                                    +{scene.actors.length - 4}
+                                  </span>
+                                )}
+                              </div>
 
-                                    <div>
-                                      {/* En-tête Carte */}
-                                      <div className="flex items-center justify-between gap-2 mb-3">
-                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-purple-950/80 border border-purple-500/30 text-[10px] font-mono text-purple-200 truncate">
-                                          #{scene.channel}
-                                        </span>
-                                        <span className="text-[10px] text-purple-300 font-mono flex items-center gap-1 shrink-0">
-                                          <Zap className="w-3 h-3 text-purple-400" />
-                                          {firstDate}
-                                        </span>
-                                      </div>
-
-                                      {/* Titre & Résumé */}
-                                      <h3 className="text-xs font-semibold text-slate-100 group-hover:text-purple-300 transition-colors line-clamp-2 mb-2">
-                                        {scene.title}
-                                      </h3>
-                                      
-                                      <p className="text-[11px] text-slate-400 line-clamp-2 mb-4 leading-relaxed font-light">
-                                        {scene.preview}
-                                      </p>
-                                    </div>
-
-                                    {/* Acteurs & Sceaux */}
-                                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-                                      <div className="flex flex-wrap items-center gap-1.5 max-w-[85%]">
-                                        {scene.actors.slice(0, 3).map(actor => {
-                                          const info = CHARACTERS_DATA[actor];
-                                          const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
-
-                                          return (
-                                            <span
-                                              key={actor}
-                                              style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                                              className="inline-flex items-center gap-1 px-2 py-0.5 border text-[10px] font-medium truncate max-w-[120px]"
-                                            >
-                                              <span className="text-[10px]">{style.icon}</span>
-                                              <span className="truncate">{actor}</span>
-                                            </span>
-                                          );
-                                        })}
-                                        {scene.actors.length > 3 && (
-                                          <span className="text-[10px] text-slate-500 font-mono">
-                                            +{scene.actors.length - 3}
-                                          </span>
-                                        )}
-                                      </div>
-
-                                      <span className="text-purple-400 hover:text-purple-200 transition-colors">
-                                        <ChevronRight className="w-4 h-4" />
-                                      </span>
-                                    </div>
-                                  </div>
-                                );
-                              })}
+                              <span className="text-slate-500 hover:text-slate-200 transition-colors">
+                                <ChevronRight className="w-4 h-4" />
+                              </span>
                             </div>
                           </div>
                         );
-                      }
-
-                      // SCÈNE UNIQUE SUR SA JOURNÉE
-                      const scene = dayGroup.scenes[0];
-                      const firstDate = formatDateDiscord(scene.start_time);
-
-                      return (
-                        <div
-                          key={scene.id}
-                          onClick={() => setActiveScene(scene)}
-                          className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between max-w-2xl"
-                        >
-                          <div className="gothic-corner gothic-corner-tl" />
-                          <div className="gothic-corner gothic-corner-tr" />
-                          <div className="gothic-corner gothic-corner-bl" />
-                          <div className="gothic-corner gothic-corner-br" />
-
-                          <div>
-                            {/* En-tête Carte */}
-                            <div className="flex items-center justify-between gap-2 mb-3">
-                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300 truncate max-w-[70%]">
-                                #{scene.channel}
-                              </span>
-                              <span className="text-[11px] text-slate-400 font-mono flex items-center gap-1 shrink-0">
-                                <Clock className="w-3 h-3 text-slate-500" />
-                                {firstDate}
-                              </span>
-                            </div>
-
-                            {/* Titre & Résumé */}
-                            <h3 className="text-sm font-semibold text-slate-100 group-hover:text-slate-300 transition-colors line-clamp-1 mb-2">
-                              {scene.title}
-                            </h3>
-                            
-                            <p className="text-xs text-slate-400 line-clamp-2 mb-4 leading-relaxed font-light">
-                              {scene.preview}
-                            </p>
-                          </div>
-
-                          {/* Acteurs & Sceaux */}
-                          <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
-                            <div className="flex flex-wrap items-center gap-1.5 max-w-[85%]">
-                              {scene.actors.slice(0, 4).map(actor => {
-                                const info = CHARACTERS_DATA[actor];
-                                const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
-
-                                return (
-                                  <span
-                                    key={actor}
-                                    style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                                    className="inline-flex items-center gap-1 px-2 py-0.5 border text-[10px] font-medium truncate max-w-[130px]"
-                                  >
-                                    <span className="text-[10px]">{style.icon}</span>
-                                    <span className="truncate">{actor}</span>
-                                  </span>
-                                );
-                              })}
-                              {scene.actors.length > 4 && (
-                                <span className="text-[10px] text-slate-500 font-mono">
-                                  +{scene.actors.length - 4}
-                                </span>
-                              )}
-                            </div>
-
-                            <span className="text-slate-500 hover:text-slate-200 transition-colors">
-                              <ChevronRight className="w-4 h-4" />
-                            </span>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
+                      })}
+                    </div>
+                  )}
                 </section>
               ))}
             </div>

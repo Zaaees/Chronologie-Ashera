@@ -98,49 +98,21 @@ body {
   box-shadow: 0 0 8px rgba(226, 232, 240, 0.25);
 }
 
-/* 🌿 BRANCHEMENTS DE L'ARBRE NARRATIF (LIGNES PARALLÈLES ET CONNECTEURS) */
-.narrative-lane-line-1 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 48px;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(239, 68, 68, 0.5) 0%, rgba(185, 28, 28, 0.3) 100%);
-  box-shadow: 0 0 6px rgba(239, 68, 68, 0.3);
+/* 📊 GANTT SWIMLANES CSS (FRISE TEMPORELLE DES SALONS ACTIFS) */
+.gantt-track-bg {
+  background-image: linear-gradient(90deg, rgba(226, 232, 240, 0.05) 1px, transparent 1px);
+  background-size: 20% 100%;
 }
 
-.narrative-lane-line-2 {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 77px;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(168, 85, 247, 0.5) 0%, rgba(126, 34, 206, 0.3) 100%);
-  box-shadow: 0 0 6px rgba(168, 85, 247, 0.3);
+.gantt-bar-item {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
 }
 
-.narrative-curve-connector {
-  position: absolute;
-  left: -28px;
-  top: 20px;
-  width: 28px;
-  height: 24px;
-  border-left: 2px solid rgba(239, 68, 68, 0.6);
-  border-bottom: 2px solid rgba(239, 68, 68, 0.6);
-  border-bottom-left-radius: 12px;
-  pointer-events: none;
-}
-
-.narrative-curve-connector-purple {
-  position: absolute;
-  left: -28px;
-  top: 20px;
-  width: 28px;
-  height: 24px;
-  border-left: 2px solid rgba(168, 85, 247, 0.6);
-  border-bottom: 2px solid rgba(168, 85, 247, 0.6);
-  border-bottom-left-radius: 12px;
-  pointer-events: none;
+.gantt-bar-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.9), 0 0 14px rgba(226, 232, 240, 0.35);
+  z-index: 30;
 }
 
 /* 🛡️ CORNIÈRES MÉTALLIQUES SCULPTÉES */
