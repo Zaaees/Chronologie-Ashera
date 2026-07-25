@@ -137,27 +137,47 @@ def is_character_or_fiche_channel(channel):
     cat_name = ""
     if hasattr(channel, 'category') and channel.category:
         cat_name = channel.category.name
+    return is_excluded_channel(ch_name, cat_name)
 
+EXCLUDED_CATEGORIES = [
+    'CHANNELS STAFF', 'TICKETS', 'INFORMATIONS HRP', 'INFORMATIONS RP',
+    'LE GRIMOIRE D\'URIEL', 'HORS RP', 'FICHES RP', 'GUILDES - HRP',
+    'ARC I - LA GALERIE DU PRINCE LUNAIRE', 'NE PAS TOUCHER'
+]
+
+EXCLUDED_EXPLICIT_CHANNELS = [
+    'le tresor', 'le trésor', 'la folie', 'le marais', 'le sigile', 'la bete', 'la bête',
+    'statue d\'icare', 'statue-d-icare', 'statue d icare', 'le mensonge', 'le ciel', 'la force',
+    'le voyageur', 'le secret', 'l’orgueil', 'l\'orgueil', 'le guerrier', 'le temps'
+]
+
+EXCLUDED_PREFIXES = [
+    'hrp', 'ticket', 'logs', 'annonce', 'annonces', 'demande', 'statistiques',
+    'réclamations', 'reclamations', 'règlement', 'reglement', 'arrivée', 'arrivee', 'arrivé',
+    'to-do', 'moderator', 'formulaire', 'invitation', 'boutique', 'channels-rp', '◦',
+    '💬▹', '📸▹', '🎮▹', '💻▹', '🗞️▹', '🔏▹', '♻️▹', '🍂▹', '🗡️▹', '💴▹', '🌕▹', '🎨▹', '🤺▹'
+]
+
+def is_excluded_channel(ch_name, cat_name=""):
     norm_ch = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', ch_name)).lower()
     norm_cat = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', cat_name)).lower()
 
-    fiche_keywords = ['fiche', 'chambre', 'dortoir', 'effectif', 'profil', 'candidature', 'presentation', 'perso', 'valide']
+    # 1. Catégories exclues
+    if any(ex.lower() in norm_cat for ex in EXCLUDED_CATEGORIES):
+        return True
 
+    # 2. Exclusions spécifiques de salons
+    if any(ex in norm_ch for ex in EXCLUDED_EXPLICIT_CHANNELS):
+        return True
+
+    # 3. Prefixes non-RP
+    if norm_ch.startswith(tuple(p.lower() for p in EXCLUDED_PREFIXES)):
+        return True
+
+    # 4. Fiches de personnages
+    fiche_keywords = ['fiche', 'chambre', 'dortoir', 'effectif', 'profil', 'candidature', 'presentation', 'perso', 'valide']
     if any(k in norm_ch for k in fiche_keywords) or any(k in norm_cat for k in fiche_keywords):
         return True
-
-    # Exclusions spécifiques demandées par l'utilisateur
-    user_excluded_keywords = [
-        'tresor', 'folie', 'marais', 'sigile', 'bete',
-        'mensonge', 'voyageur', 'secret', 'orgueil', 'guerrier', 'temps'
-    ]
-    if any(k in norm_ch for k in user_excluded_keywords) or norm_ch in ['statue-d-icare', 'statue d icare', 'la-ciel', 'la-force', 'la force', 'ciel']:
-        return True
-
-    if any(sep in ch_name for sep in [' — ', ' - ', ' • ', ' | ']):
-        is_rp_story = any(k in norm_ch for k in ['arc', 'scene', 'quete', 'objectif', 'son', 'valeur', 'brume', 'tracer', 'charette', 'lampe', 'sang', 'fleau', 'chouette', 'debut', 'fuir', 'triple', 'soiree', 'scene', 'vertus', 'craenes', 'eclats', 'saphirs'])
-        if not is_rp_story:
-            return True
 
     return False
 
@@ -376,6 +396,11 @@ class DiscordExporterClient(discord.Client):
                     existing_data = json.load(f)
                     scenes_list = existing_data.get("scenes", [])
                     for s in scenes_list:
+                        ch_name = s.get("channel", "")
+                        cat_name = s.get("category", "")
+                        if is_excluded_channel(ch_name, cat_name):
+                            continue
+
                         # Nettoyer et reconstruire la liste des acteurs directement depuis les auteurs des messages
                         if 'messages' in s:
                             msg_authors = set()
