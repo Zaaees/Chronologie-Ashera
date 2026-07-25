@@ -259,7 +259,17 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
     if current_scene_msgs:
         scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_msgs, guild_id_str))
 
-    return scenes
+    # Filtrer les scènes de description de salon (1 seul message, 1er du salon, envoyé par LE CONSEILLER)
+    clean_scenes = []
+    for idx, s in enumerate(scenes, start=1):
+        msgs = s.get("messages", [])
+        if idx == 1 and len(msgs) == 1:
+            first_author = msgs[0].get("author", "").strip().lower()
+            if "conseiller" in first_author:
+                continue
+        clean_scenes.append(s)
+
+    return clean_scenes
 
 def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name=""):
     messages = [t[0] for t in messages_tuples]
@@ -426,6 +436,13 @@ class DiscordExporterClient(discord.Client):
                         ch_key = s.get("channel_id") or s.get("channel")
                         if ch_key not in existing_scenes_by_channel:
                             existing_scenes_by_channel[ch_key] = []
+
+                        # Exclure la description de salon si c'est la 1ère scène, 1 seul message, envoyé par LE CONSEILLER
+                        if len(existing_scenes_by_channel[ch_key]) == 0 and len(s.get("messages", [])) == 1:
+                            first_author = s["messages"][0].get("author", "").strip().lower()
+                            if "conseiller" in first_author:
+                                continue
+
                         existing_scenes_by_channel[ch_key].append(s)
                         
                         # Trouver le dernier message ID
