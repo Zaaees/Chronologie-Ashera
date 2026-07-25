@@ -5,7 +5,17 @@ import {
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin
 } from 'lucide-react';
 
-const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
+const DEFAULT_FACTION_STYLE = {
+  roleName: "Sans rôle",
+  bg: "rgba(71, 85, 105, 0.4)", 
+  text: "#cbd5e1", 
+  border: "rgba(100, 116, 139, 0.65)", 
+  icon: "🛡️", 
+  hexColor: "#94a3b8",
+  crest: "./ashera_banner.png"
+};
+
+const MAIN_FACTIONS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   "La Garde Pourpre": { 
     roleName: "La Garde Pourpre",
     bg: "rgba(153, 27, 27, 0.4)", 
@@ -44,7 +54,19 @@ const FACTION_INFO: Record<string, { bg: string; text: string; border: string; i
   }
 };
 
+const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
+  ...MAIN_FACTIONS,
+  "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
+  "Sans rôle": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "🛡️", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Sans rôle" },
+  "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" }
+};
+
 const FACTION_COLORS = FACTION_INFO;
+
+function getFactionStyle(role: string | undefined) {
+  if (!role || !FACTION_INFO[role]) return DEFAULT_FACTION_STYLE;
+  return FACTION_INFO[role];
+}
 
 // Formater la date en style Discord
 function formatDateDiscord(isoString: string): string {
@@ -361,7 +383,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                   {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
                     const mainActor = scene.actors[0];
                     const info = CHARACTERS_DATA[mainActor];
-                    const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                    const style = getFactionStyle(info?.role);
                     const startStr = formatDateDiscord(scene.start_time);
                     const endStr = formatDateDiscord(scene.end_time);
                     const isShort = widthPercent < 10;
@@ -708,7 +730,7 @@ export default function App() {
 
           {/* 🛡️ POINT 2 : HALL DES FACTIONS (BLASONS DE GUILDES AVEC IMAGES DU DOSSIER IMAGES) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
-            {Object.entries(FACTION_INFO).map(([factionName, info]) => {
+            {Object.entries(MAIN_FACTIONS).map(([factionName, info]) => {
               const isSelected = selectedFactionFilter === factionName;
 
               return (
@@ -997,7 +1019,7 @@ export default function App() {
                 <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
                 {activeScene.actors.map(actor => {
                   const info = CHARACTERS_DATA[actor];
-                  const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                  const style = getFactionStyle(info?.role);
                   const serverNick = info?.displayName || actor;
 
                   return (
@@ -1018,7 +1040,7 @@ export default function App() {
             <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
               {activeScene.messages.map((msg, index) => {
                 const info = CHARACTERS_DATA[msg.author];
-                const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                const style = getFactionStyle(info?.role);
                 const serverNick = info?.displayName || msg.author;
                 const initials = getInitials(serverNick);
 
