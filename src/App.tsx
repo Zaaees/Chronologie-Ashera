@@ -1,19 +1,50 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
+import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin
 } from 'lucide-react';
 
-const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
-  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.4)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.75)", icon: "🗡️", hexColor: "#ef4444" },
-  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.4)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.75)", icon: "🌙", hexColor: "#3b82f6" },
-  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.25)", text: "#fef08a", border: "rgba(254, 240, 138, 0.6)", icon: "⚖️", hexColor: "#fef08a" },
-  "L'œil": { bg: "rgba(30, 41, 59, 0.85)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.65)", icon: "👁️", hexColor: "#cbd5e1" },
-  "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "🛡️", hexColor: "#94a3b8" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc" }
+const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
+  "La Garde Pourpre": { 
+    roleName: "La Garde Pourpre",
+    bg: "rgba(153, 27, 27, 0.4)", 
+    text: "#fca5a5", 
+    border: "rgba(220, 38, 38, 0.75)", 
+    icon: "🗡️", 
+    hexColor: "#ef4444",
+    crest: "./factions/garde_pourpre.png"
+  },
+  "Cercle d'Azur": { 
+    roleName: "Cercle d'Azur",
+    bg: "rgba(30, 58, 138, 0.4)", 
+    text: "#93c5fd", 
+    border: "rgba(59, 130, 246, 0.75)", 
+    icon: "🌙", 
+    hexColor: "#3b82f6",
+    crest: "./factions/cercle_azur.png"
+  },
+  "Voile d'Ivoire": { 
+    roleName: "Voile d'Ivoire",
+    bg: "rgba(254, 240, 138, 0.25)", 
+    text: "#fef08a", 
+    border: "rgba(254, 240, 138, 0.6)", 
+    icon: "⚖️", 
+    hexColor: "#fef08a",
+    crest: "./factions/voile_ivoire.png"
+  },
+  "L'œil": { 
+    roleName: "L'œil",
+    bg: "rgba(30, 41, 59, 0.85)", 
+    text: "#e2e8f0", 
+    border: "rgba(148, 163, 184, 0.65)", 
+    icon: "👁️", 
+    hexColor: "#cbd5e1",
+    crest: "./factions/oeil.png"
+  }
 };
+
+const FACTION_COLORS = FACTION_INFO;
 
 // Formater la date en style Discord
 function formatDateDiscord(isoString: string): string {
@@ -60,7 +91,6 @@ function getInitials(name: string): string {
   return name.slice(0, 2).toUpperCase();
 }
 
-// Échapper les caractères spéciaux Regex
 function escapeRegExp(string: string) {
   return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -144,7 +174,7 @@ function parseInlineDiscord(text: string, searchQuery: string): React.ReactNode 
   });
 }
 
-// ANALYSEUR DE FORMAT MARKDOWN DISCORD COMPLET (Blocs de code, Citations >, Subtext -#, Lignes)
+// ANALYSEUR DE FORMAT MARKDOWN DISCORD COMPLET
 function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.ReactNode {
   if (!text) return null;
 
@@ -155,7 +185,6 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
   let codeBlockLines: string[] = [];
 
   lines.forEach((line, lineIdx) => {
-    // Blocs de code ```
     if (line.trim().startsWith('```')) {
       if (inCodeBlock) {
         const codeContent = codeBlockLines.join('\n');
@@ -177,7 +206,6 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       return;
     }
 
-    // Discord Subtext `-# `
     if (line.trim().startsWith('-# ')) {
       const subContent = line.trim().slice(3);
       renderedElements.push(
@@ -188,7 +216,6 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       return;
     }
 
-    // Discord Citation `> `
     if (line.trim().startsWith('> ')) {
       const quoteContent = line.trim().slice(2);
       renderedElements.push(
@@ -199,7 +226,6 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       return;
     }
 
-    // Ligne normale
     renderedElements.push(
       <React.Fragment key={`line-${lineIdx}`}>
         {lineIdx > 0 && <br />}
@@ -214,6 +240,7 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
 // Interface pour les pistes Gantt par salon
 interface GanttChannelTrack {
   channel: string;
+  locationImage?: string;
   scenes: {
     scene: Scene;
     leftPercent: number;
@@ -221,7 +248,7 @@ interface GanttChannelTrack {
   }[];
 }
 
-// COMPOSANT GANTT SWIMLANES DYNAMIQUES PAR MOIS
+// COMPOSANT GANTT SWIMLANES DYNAMIQUES AVEC IMAGES DE SALONS (POINT 1)
 function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
   if (scenes.length === 0) return null;
 
@@ -242,8 +269,11 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
     const chScenes = channelMap[ch];
+    const locationImg = CHANNEL_IMAGES[ch] || chScenes.find(s => s.location_image)?.location_image;
+
     return {
       channel: ch,
+      locationImage: locationImg,
       scenes: chScenes.map(sc => {
         const sTime = new Date(sc.start_time).getTime();
         const eTime = new Date(sc.end_time || sc.start_time).getTime();
@@ -272,6 +302,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
       <div className="gothic-corner gothic-corner-bl" />
       <div className="gothic-corner gothic-corner-br" />
 
+      {/* En-tête Gantt */}
       <div className="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
         <div className="flex items-center gap-2">
           <span className="p-1.5 rounded bg-purple-950/80 border border-purple-500/40 text-purple-300">
@@ -291,12 +322,15 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
         </span>
       </div>
 
+      {/* Conteneur défilable de la Frise Swimlanes */}
       <div className="overflow-x-auto custom-scrollbar py-6">
         <div className="min-w-[950px] space-y-2">
           
+          {/* Règle des dates supérieure */}
           <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
-            <div className="w-52 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300">
-              Salons Actifs
+            <div className="w-56 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300 flex items-center gap-1">
+              <MapPin className="w-3 h-3 text-purple-400" />
+              <span>Salons & Lieux</span>
             </div>
             <div className="flex-1 flex justify-between px-2">
               {dateTicks.map((t, idx) => (
@@ -305,15 +339,24 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
             </div>
           </div>
 
+          {/* Lignes par Salon avec Vignettes d'Illustration du Lieu (POINT 1) */}
           <div className="space-y-3">
-            {tracks.map(({ channel, scenes: trackScenes }, trackIdx) => (
+            {tracks.map(({ channel, locationImage, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
-                <div className="w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
-                  <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
+                {/* Nom du Salon + VIGNETTE D'ILLUSTRATION DU LIEU (POINT 1) */}
+                <div className="w-56 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
+                  {locationImage ? (
+                    <div className="w-6 h-6 rounded border border-slate-700 overflow-hidden shrink-0 shadow-sm">
+                      <img src={locationImage} alt={channel} className="w-full h-full object-cover" />
+                    </div>
+                  ) : (
+                    <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
+                  )}
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
+                {/* Piste Temporelle */}
                 <div className="flex-1 relative h-9 bg-[#08090d] border border-slate-800 rounded gantt-track-bg overflow-visible">
                   {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
                     const mainActor = scene.actors[0];
@@ -330,7 +373,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                       ? 'right-0 left-auto translate-x-0' 
                       : 'left-1/2 -translate-x-1/2';
 
-                    // Utiliser le pseudo du serveur de l'utilisateur si disponible
                     const mainActorDisplayName = info?.displayName || mainActor;
 
                     return (
@@ -366,8 +408,16 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                           )}
                         </div>
 
-                        {/* INFO-BULLE */}
+                        {/* INFO-BULLE RICH DARK FANTASY */}
                         <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
+                          
+                          {/* Image du salon dans l'info-bulle (POINT 1) */}
+                          {locationImage && (
+                            <div className="h-16 w-full overflow-hidden rounded mb-2 border border-slate-700">
+                              <img src={locationImage} alt={channel} className="w-full h-full object-cover" />
+                            </div>
+                          )}
+
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
                             <span className="text-[10px] font-mono text-slate-400">{scene.messages.length} msg</span>
@@ -406,6 +456,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedFactionFilter, setSelectedFactionFilter] = useState<string>('all');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
@@ -416,6 +467,27 @@ export default function App() {
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // 🔮 POINT 4 : ÉCLAIRAGE DYNAMIQUE D'AMBIANCE SELON LA FACTION SÉLECTIONNÉE
+  useEffect(() => {
+    const root = document.documentElement;
+    if (selectedFactionFilter === "La Garde Pourpre") {
+      root.style.setProperty('--vignette-accent', 'rgba(220, 38, 38, 0.4)');
+      root.style.setProperty('--ember-color', 'rgba(220, 38, 38, 0.6)');
+    } else if (selectedFactionFilter === "Cercle d'Azur") {
+      root.style.setProperty('--vignette-accent', 'rgba(59, 130, 246, 0.4)');
+      root.style.setProperty('--ember-color', 'rgba(59, 130, 246, 0.6)');
+    } else if (selectedFactionFilter === "Voile d'Ivoire") {
+      root.style.setProperty('--vignette-accent', 'rgba(254, 240, 138, 0.35)');
+      root.style.setProperty('--ember-color', 'rgba(254, 240, 138, 0.5)');
+    } else if (selectedFactionFilter === "L'œil") {
+      root.style.setProperty('--vignette-accent', 'rgba(147, 51, 234, 0.4)');
+      root.style.setProperty('--ember-color', 'rgba(147, 51, 234, 0.6)');
+    } else {
+      root.style.setProperty('--vignette-accent', 'rgba(6, 7, 10, 0.85)');
+      root.style.setProperty('--ember-color', 'rgba(220, 38, 38, 0.4)');
+    }
+  }, [selectedFactionFilter]);
+
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400);
@@ -424,14 +496,12 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Ensemble des acteurs participant au moins à 1 scène
   const activeActorsSet = useMemo(() => {
     const set = new Set<string>();
     SCENES_DATA.forEach(s => s.actors.forEach(a => set.add(a)));
     return set;
   }, []);
 
-  // Groupement des acteurs PAR FACTION (UTILISATION DU PSEUDO PERSONNALISÉ SUR LE SERVEUR)
   const groupedActorsByFaction = useMemo(() => {
     const groups: Record<string, { name: string; displayLabel: string }[]> = {
       "La Garde Pourpre": [],
@@ -476,7 +546,6 @@ export default function App() {
     return groups;
   }, [activeActorsSet]);
 
-  // Groupement des salons par Catégorie Discord
   const groupedChannelsByCategory = useMemo(() => {
     const groups: Record<string, string[]> = {};
 
@@ -498,9 +567,18 @@ export default function App() {
     return groups;
   }, []);
 
-  // Filtrage des scènes selon les critères
+  // Filtrage des scènes selon Faction (POINT 2), Personnage, Salon et Recherche
   const filteredScenes = useMemo(() => {
     return SCENES_DATA.filter(scene => {
+      // Filtre par Blason de Faction (POINT 2)
+      if (selectedFactionFilter !== 'all') {
+        const hasFactionActor = scene.actors.some(actor => {
+          const info = CHARACTERS_DATA[actor];
+          return info && info.role === selectedFactionFilter;
+        });
+        if (!hasFactionActor) return false;
+      }
+
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const inTitle = scene.title.toLowerCase().includes(q);
@@ -531,7 +609,7 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedActor, selectedChannel]);
+  }, [searchQuery, selectedFactionFilter, selectedActor, selectedChannel]);
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -576,7 +654,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
-      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY & ÉCLAIRAGE DYNAMIQUE (POINT 4) */}
       <div className="bg-dark-fantasy-layer" />
       <div className="bg-vignette-overlay" />
       <div className="ember-particles-bg" />
@@ -628,9 +706,41 @@ export default function App() {
             </div>
           </div>
 
-          {/* BARRE DE FILTRES ET BOUTONS */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
-            
+          {/* 🛡️ POINT 2 : HALL DES FACTIONS (BLASONS DE GUILDES AVEC IMAGES DU DOSSIER IMAGES) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
+            {Object.entries(FACTION_INFO).map(([factionName, info]) => {
+              const isSelected = selectedFactionFilter === factionName;
+
+              return (
+                <button
+                  key={factionName}
+                  onClick={() => setSelectedFactionFilter(isSelected ? 'all' : factionName)}
+                  style={{ borderColor: isSelected ? info.hexColor : 'rgba(226, 232, 240, 0.15)' }}
+                  className={`faction-crest-card relative p-2 rounded flex items-center gap-2.5 cursor-pointer text-left transition-all ${
+                    isSelected ? 'bg-slate-900 border-2' : 'bg-[#0c0e15]/90 hover:bg-slate-900/80 border'
+                  }`}
+                >
+                  {/* Blason Image du Dossier Images (POINT 2) */}
+                  <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-700/80 shrink-0 bg-black/60 shadow">
+                    <img src={info.crest} alt={factionName} className="w-full h-full object-cover object-center" />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div style={{ color: info.text }} className="text-xs font-bold font-serif-gothic truncate flex items-center gap-1">
+                      <span>{info.icon}</span>
+                      <span className="truncate">{factionName}</span>
+                    </div>
+                    <div className="text-[10px] text-slate-400 font-mono truncate">
+                      {isSelected ? '✓ Sélectionnée' : 'Filtrer par guilde'}
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* BARRE DE FILTRES SÉLECTEURS */}
+          <div className="flex flex-wrap items-center justify-between gap-3 mt-3 text-xs">
             <div className="flex flex-wrap items-center gap-3 flex-1">
               {/* Personnages par Faction */}
               <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
@@ -689,10 +799,11 @@ export default function App() {
               </div>
             </div>
 
-            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
+            {(searchQuery || selectedFactionFilter !== 'all' || selectedActor !== 'all' || selectedChannel !== 'all') && (
               <button
                 onClick={() => {
                   setSearchQuery('');
+                  setSelectedFactionFilter('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
@@ -787,6 +898,7 @@ export default function App() {
               <button
                 onClick={() => {
                   setSearchQuery('');
+                  setSelectedFactionFilter('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
@@ -829,7 +941,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT ET CONFORT DISCORD (AVEC SURLIGNAGE ET MARKDOWN COMPLET) */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD + BANNIÈRE D'ILLUSTRATION DU LIEU (POINT 1) */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
@@ -838,12 +950,31 @@ export default function App() {
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
 
+            {/* BANNIÈRE D'ILLUSTRATION DU LIEU / SALON (POINT 1) */}
+            {(activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]) && (
+              <div className="relative h-36 w-full overflow-hidden border-b border-[#1e1f22]">
+                <img 
+                  src={activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]} 
+                  alt={activeScene.channel} 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2b2d31] via-transparent to-black/50" />
+                <div className="absolute top-3 left-4 flex items-center gap-2">
+                  <span className="px-3 py-1 bg-black/70 backdrop-blur-md border border-slate-600 text-slate-100 font-mono text-xs shadow-lg">
+                    #{activeScene.channel}
+                  </span>
+                </div>
+              </div>
+            )}
+
             {/* En-tête Modal Discord */}
             <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
-                  #{activeScene.channel}
-                </span>
+                {!(activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]) && (
+                  <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
+                    #{activeScene.channel}
+                  </span>
+                )}
                 <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5 text-[#949ba4]" />
                   {formatDateDiscord(activeScene.start_time)}
@@ -883,7 +1014,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* FLUX DES MESSAGES : FORMAT DISCORD AVEC PARSER MARKDOWN COMPATIBLE ET SURBRILLANCE */}
+            {/* FLUX DES MESSAGES : FORMAT DISCORD */}
             <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
               {activeScene.messages.map((msg, index) => {
                 const info = CHARACTERS_DATA[msg.author];
@@ -904,7 +1035,7 @@ export default function App() {
 
                     {/* BLOC MESSAGE DISCORD */}
                     <div className="flex-1 min-w-0">
-                      {/* LIGNE AUTEUR (PSEUDO SERVEUR DE L'UTILISATEUR) & TIMESTAMPS */}
+                      {/* LIGNE AUTEUR */}
                       <div className="flex items-baseline gap-2 mb-1">
                         <span 
                           style={{ color: style.text }} 
@@ -917,7 +1048,7 @@ export default function App() {
                         </span>
                       </div>
 
-                      {/* EMBED DISCORD (LE CAS ÉCHÉANT) */}
+                      {/* EMBED DISCORD */}
                       {(msg.embed_title || msg.embed_description) && (
                         <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
                           {msg.embed_title && (
@@ -933,7 +1064,7 @@ export default function App() {
                         </div>
                       )}
 
-                      {/* CONTENU TEXTE DISCORD LISIBLE AVEC MARKDOWN ET SURBRILLANCE */}
+                      {/* CONTENU TEXTE DISCORD LISIBLE */}
                       {msg.content && (
                         <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
                           {renderDiscordMarkdown(msg.content, searchQuery)}

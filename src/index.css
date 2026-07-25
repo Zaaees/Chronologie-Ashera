@@ -48,17 +48,19 @@ body {
   z-index: -2;
   pointer-events: none;
   transform: scale(1.05);
+  transition: all 0.5s ease;
 }
 
-/* 🌌 VIGNETTAGE SOMBRE PAR-DESSUS POUR LISIBILITÉ TOTALE */
+/* 🌌 VIGNETTAGE SOMBRE PAR-DESSUS ET ECLAIRAGE DYNAMIQUE */
 .bg-vignette-overlay {
   position: fixed;
   inset: 0;
   background: 
-    radial-gradient(circle at 50% 20%, transparent 20%, rgba(6, 7, 10, 0.85) 80%),
-    linear-gradient(180deg, rgba(6, 7, 10, 0.6) 0%, rgba(6, 7, 10, 0.95) 100%);
+    radial-gradient(circle at 50% 20%, var(--vignette-accent, transparent) 0%, rgba(6, 7, 10, 0.88) 75%),
+    linear-gradient(180deg, rgba(6, 7, 10, 0.6) 0%, rgba(6, 7, 10, 0.96) 100%);
   z-index: -1;
   pointer-events: none;
+  transition: background 0.6s ease;
 }
 
 /* ✨ PARTICULES DE CENDRES & BRAISES EN ARRIÈRE-PLAN */
@@ -68,11 +70,11 @@ body {
   z-index: -1;
   pointer-events: none;
   background-image: 
-    radial-gradient(1.5px 1.5px at 10% 20%, rgba(220, 38, 38, 0.4), transparent),
-    radial-gradient(1.5px 1.5px at 30% 70%, rgba(254, 240, 138, 0.3), transparent),
-    radial-gradient(2px 2px at 50% 40%, rgba(147, 51, 234, 0.4), transparent),
+    radial-gradient(1.5px 1.5px at 10% 20%, var(--ember-color, rgba(220, 38, 38, 0.4)), transparent),
+    radial-gradient(1.5px 1.5px at 30% 70%, var(--ember-color, rgba(254, 240, 138, 0.3)), transparent),
+    radial-gradient(2px 2px at 50% 40%, var(--ember-color, rgba(147, 51, 234, 0.4)), transparent),
     radial-gradient(1.5px 1.5px at 70% 85%, rgba(226, 232, 240, 0.3), transparent),
-    radial-gradient(2px 2px at 90% 30%, rgba(220, 38, 38, 0.35), transparent);
+    radial-gradient(2px 2px at 90% 30%, var(--ember-color, rgba(220, 38, 38, 0.35)), transparent);
   background-size: 200% 200%;
   animation: emberRise 25s infinite linear;
 }
@@ -81,6 +83,17 @@ body {
   0% { background-position: 0% 100%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 0%; }
+}
+
+/* 🛡️ BANNIÈRES DU HALL DES FACTIONS (POINT 2) */
+.faction-crest-card {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.faction-crest-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.9), 0 0 18px currentColor;
 }
 
 /* 🗡️ LIGNE VERTICALE DE LA CHRONOLOGIE (FIL ARGENTÉ PRINCIPAL) */
