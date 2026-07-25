@@ -1927,7 +1927,8 @@
           "embed_title": "Enfin dans le Marché !\n\n◦ ─────────── ¤ ──────────── ◦ | ◦ ─────────── ¤ ──────────── ◦",
           "embed_description": "**L'être du Clergé regardera une nouvelle fois les trois personnes à ses côtés. Le grand homme ne lui donnant pas l'heure alors qu'il était à ses côtés le fera avoir une réaction de gêne. Il était venu de manière cordialement mais ne recevoir qu'une réponse d'une jeune femme était vraiment particulier. Elles avaient une bonne tête et semblaient très gentilles. Par ailleurs, le jeune garçon qui avait d'abord buté dans la dame aveugle, s'excusera avant de rejoindre l'homme religieux.**\n\n> Je ne sais pas si quelqu'un à besoin d'aide ici et maintenant. Ce que je sais c'est que le Quartier à besoin de vous et du Voile d'Ivoire. Pour ma part je suis très heureux de voir des nouvelles recrues engagées et volontaires. Vous devriez rejoindre votre commandant de la journée, il semble vous attendre.\n\n**A la suite de sa phrase, le jeune homme attrapera l'attention de l'homme d'église ce qui le forcera de s'arrêter et de s'entretenir avec lui. Il vous saluera de la main tout de même. Le jeune enfant lui montrera lui aussi ses techniques d'armes, sa mère se rapprochant en lui attrapant l'oreille. Un sermon très doux mais tout de même.**\n\n◦ ───────────────────────────────────────────── ◦ | **Au fond de la rue, se trouve un homme qui vous attend. Les gens autour de lui sont retournés à leur vie, sauf certains qui voulait eux aussi se rendre dans le marché. Il vous montre une nouvelle fois son dos un peu plus loin. Il n'y a pas vraiment de temps à perdre, c'est dans cette idée qu'une fois que vous arrivez à son niveau il poursuit son avancée pour se rendre dans le marché.**\n\n◦ ───────────────────────────────────────────── ◦"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐄gregore.jpg"
     },
     {
       "id": "scene___𝐁anque_du_sang_1",
@@ -2517,7 +2518,8 @@
           "embed_title": "Stupeur et tremblements",
           "embed_description": "*Un crissement, une plainte aiguë dont la violence hurle son courroux au creux des tympans des recrues, résonne alors… La cage de verre désormais close, la haine des voix se laisse entendre… Embrassant une colère nouvelle, elles fendent le crâne de ceux qui les écoutent, tandis que la vision de chacun se trouble…*\n\n> ***Une explosion***\n\n*Une bribe de mémoire fragmentée s’affiche, puis aussitôt déserte leurs esprits vagabonds. La cruauté prend le pas sur la raison, et la douleur met à terre quiconque a le culot d’en entendre la nouvelle chanson.*\n\n*Parsemée de fausses notes, le mal se fait insupportable. Leur esprit perd pied alors que le silence peine à être retrouvé… En quelques secondes, les corpulences des nouveaux joueurs s’effondrent. Tandis que, dans un grincement métallique, leur esprit s’endort… Les plongeant dans le même rêve sinueux que celui que leur avait présenté leur arrivée.*\n\n\n**÷¡ï· **"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔uditorium.jpg"
     },
     {
       "id": "scene___𝗞antine_2",
@@ -2746,7 +2748,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗞antine.jpg"
     },
     {
       "id": "scene___𝗔rène_𝗛urlante_2",
@@ -3711,7 +3714,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene____𝗧errain_d_entraînement_2",
@@ -3826,7 +3830,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗧errain-d-entraînement.jpg"
     },
     {
       "id": "scene___𝗦erre_de_lune_2",
@@ -4209,7 +4214,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣arc-des-𝗖ardinaux.jpg"
     },
     {
       "id": "scene___𝗕ibliothèque_𝗔zure_2",
@@ -4479,7 +4485,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗕ibliothèque-𝗔zure.jpg"
     },
     {
       "id": "scene___𝗣ort_du_𝗟evant_2",
@@ -4995,7 +5002,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ort-du-𝗟evant.jpg"
     },
     {
       "id": "scene___𝐆uet_apens_2",
@@ -5309,7 +5317,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ont-des-𝗗eux.jpg"
     },
     {
       "id": "scene___𝗣lace_de_𝗚randpalais_2",
@@ -5399,7 +5408,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene________Salle_de_Réveil_1",
@@ -5604,7 +5614,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖our-des-alchimistes.jpg"
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_2",
@@ -5816,7 +5827,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗝ardin-de-𝗤uartz.jpg"
     },
     {
       "id": "scene____𝗧errains_𝗡acrés_2",
@@ -6734,7 +6746,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗩erger-des-𝗣êchés.jpg"
     },
     {
       "id": "scene____𝗚rande_salle_porcelaine_2",
@@ -7266,7 +7279,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗙ontaine-𝗠arbrée.jpg"
     },
     {
       "id": "scene____𝗤uartier_des_𝗙orges_2",
@@ -7396,7 +7410,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗤uartier-des-𝗙orges.jpg"
     },
     {
       "id": "scene___𝗔gora_des_𝗥eines_2",
@@ -7511,7 +7526,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔gora-des-𝗥eines.jpg"
     },
     {
       "id": "scene___𝗩erger_des_𝗣êchés_3",
@@ -7617,7 +7633,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗩erger-des-𝗣êchés.jpg"
     },
     {
       "id": "scene____𝗔venue_des_armuriers_2",
@@ -7755,7 +7772,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔venue-des-armuriers.jpg"
     },
     {
       "id": "scene___𝗖antine_marbrée_2",
@@ -8423,7 +8441,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖rypte-𝗥ouge.jpg"
     },
     {
       "id": "scene____𝗖ellules_2",
@@ -8838,7 +8857,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene____𝗤uartier_des_𝗙orges_3",
@@ -8863,7 +8883,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗤uartier-des-𝗙orges.jpg"
     },
     {
       "id": "scene____𝗣ortail_𝗜voire_2",
@@ -9018,7 +9039,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ortail-𝗜voire.jpg"
     },
     {
       "id": "scene___𝗖antine_marbrée_3",
@@ -9482,7 +9504,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗙ontaine-𝗠arbrée.jpg"
     },
     {
       "id": "scene___𝗭one_𝗕uffet_2",
@@ -10428,7 +10451,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖entre-radieux.jpg"
     },
     {
       "id": "scene___𝗖ours_𝗙leurie_2",
@@ -10554,7 +10578,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖ours-𝗙leurie.jpg"
     },
     {
       "id": "scene___𝗖entre_radieux_3",
@@ -10756,7 +10781,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖entre-radieux.jpg"
     },
     {
       "id": "scene___𝗘scaliers_𝗡acrés_2",
@@ -10945,7 +10971,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗘scaliers-𝗡acrés.jpg"
     },
     {
       "id": "scene___𝗖ouloir_𝗕lanc_2",
@@ -10978,7 +11005,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖ouloir-𝗕lanc.jpg"
     },
     {
       "id": "scene___𝗣arc_des_𝗖ardinaux_3",
@@ -11084,7 +11112,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣arc-des-𝗖ardinaux.jpg"
     },
     {
       "id": "scene___𝗖ouloir_𝗕lanc_3",
@@ -11109,7 +11138,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖ouloir-𝗕lanc.jpg"
     },
     {
       "id": "scene____𝗖our_des_alchimistes_3",
@@ -11167,7 +11197,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖our-des-alchimistes.jpg"
     },
     {
       "id": "scene____𝐄gregore_2",
@@ -11568,7 +11599,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐄gregore.jpg"
     },
     {
       "id": "scene___𝐑uelle_𝐁asse_ville_1",
@@ -11961,7 +11993,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐐uartiers.jpg"
     },
     {
       "id": "scene___𝐏lace_1",
@@ -12765,7 +12798,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene____𝗔venue_des_armuriers_3",
@@ -12871,7 +12905,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔venue-des-armuriers.jpg"
     },
     {
       "id": "scene___𝐆uet_apens_5",
@@ -13305,7 +13340,8 @@
           "embed_title": "Il n'en a pas la carrure.",
           "embed_description": "**-** \"Vous avez été recommandé par un ami qui m'est cher. Et il a avancé un argument que je ne peux révoquer : j'ai un jour été comme vous. Et j'aurais aimé que l'on me donne ma chance.\"\n\n> *Les billes de ses yeux roulent vers le plafond alors que son aspiration permets à ses poumons d'une fois de plus s'intoxiquer d'une substance inconnue. Dans leur redescente, ses iris se reportent sur Lewis, puis sur sa tenue. Elle observe sur lui des vêtements adéquats, pourtant, quelque chose semble dépasser depuis qu'il s'est assis. Sha'al fronce les sourcils.*\n\n**-** \"Êtes-vous à l'aise ? Vous semblez mal assis.\"\n\n> *Rien d'important, sans doute. Cependant, une demoiselle frappe à la porte. Sha'al n'aime pas être dérangée, en aucun cas. Cependant, la Régente n'eu pas le temps de répliquer car le visage d'Emilia passa le pas de la porte. Un regard, aucun mots de plus n'étaient nécessaires pour que l'information qu'était venue délivrer Emilia passe à celle qui dirige les lieux.*\n\n**-** \"Nous allons devoir écourter notre entretien. Prenez vos amis et parte d'ici. Nous vous recontacterons pour un autre rendez-vous. Je dois m'absenter.\"\n\n> *Sans demander son reste, la Dame se retire, un peu précipitemment. Seule Emilia reste. Elle regarde Lewis et lui fais signe de la suivre.*\n\n**-** \"Je suis navrée mes Bichons, vous devrez repasser... Sha'al est une femme très occupée et vous avez un petit peu dépassé le planning de ce soir. Mais pas de panique, nous vous redonnerons, comme elle l'a dit, de nouvelles dates pour passer d'autres entretiens. Je vais vous raccompagner à la sortie. Si vous voulez bien me suivre.\""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐒alon.jpg"
     },
     {
       "id": "scene___𝗣lace_de_𝗚randpalais_4",
@@ -13467,7 +13503,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene___𝗔gora_des_𝗥eines_3",
@@ -13492,7 +13529,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔gora-des-𝗥eines.jpg"
     },
     {
       "id": "scene____𝐁ureau_de_𝐒haal_2",
@@ -14088,7 +14126,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔venue-des-armuriers.jpg"
     },
     {
       "id": "scene___𝗣ont_des_𝗗eux_3",
@@ -14170,7 +14209,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ont-des-𝗗eux.jpg"
     },
     {
       "id": "scene___𝗣arc_des_𝗖ardinaux_4",
@@ -14365,7 +14405,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣arc-des-𝗖ardinaux.jpg"
     },
     {
       "id": "scene___𝗔gora_des_𝗥eines_4",
@@ -14535,7 +14576,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔gora-des-𝗥eines.jpg"
     },
     {
       "id": "scene____𝗖our_des_alchimistes_4",
@@ -14633,7 +14675,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖our-des-alchimistes.jpg"
     },
     {
       "id": "scene___𝗣ort_du_𝗟evant_3",
@@ -15117,7 +15160,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ort-du-𝗟evant.jpg"
     },
     {
       "id": "scene____𝗣ortail_𝗜voire_3",
@@ -15214,7 +15258,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ortail-𝗜voire.jpg"
     },
     {
       "id": "scene____𝗔venue_des_armuriers_5",
@@ -15304,7 +15349,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔venue-des-armuriers.jpg"
     },
     {
       "id": "scene___𝗩erger_des_𝗣êchés_4",
@@ -15337,7 +15383,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗩erger-des-𝗣êchés.jpg"
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_3",
@@ -15571,7 +15618,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗝ardin-de-𝗤uartz.jpg"
     },
     {
       "id": "scene____𝗧errain_𝗚randblanc_3",
@@ -15849,7 +15897,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗩erger-des-𝗣êchés.jpg"
     },
     {
       "id": "scene____𝗧errains_𝗡acrés_3",
@@ -16160,7 +16209,8 @@
           "embed_title": "Le lancement des festivités.",
           "embed_description": "La fête bat son plein alors que les lumières de l'Épicurien viennent juste de s'allumer, que ses portes viennent de rouvrir après des années clôturées par un cadenas. La musique est forte, lancée par un groupe de musiciens au talent indéfectible. Percussions et cordes s'entremêlent dans un balet harmonieux qui ravira même les oreilles les plus frileuses. Les portes sont grandes ouvertes, et ne refermeront pas avant le lever du soleil à minima. \n\nLes gens sont fiers, heureux de revoir cet endroit qui avait fermé pour d'obscures raisons. Selon les rumeurs, ce n'est ni la faillite ni la folie de l'ancien propriétaire qui avaient menés à sa fermeture. Certains parlent de fantômes du passé venus hanter l'endroit, d'autres disent qu'il ne s'agit que de la mauvaise gérance qui y était instauré. \n\nMais peu importe ce que racontent les petites bouches, car ce soir, la salle est pleine. Il est 18h. La nuit n'attends que vous pour profiter des multiples activités qui sont dispensées au sein du bar à la prétention haute : celui de devenir le refuge de tous, ceux qui possèdent tout et ceux qui n'ont plus rien."
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene____𝗣ortail_𝗜voire_4",
@@ -16506,7 +16556,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ortail-𝗜voire.jpg"
     },
     {
       "id": "scene___𝐋e_𝐑ouge_et_𝐋e_𝐍oir_1",
@@ -17201,7 +17252,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐇all-𝐃es-𝐅êtes.jpg"
     },
     {
       "id": "scene___𝗟e_𝗕ar_des_𝗟ions_1",
@@ -17649,7 +17701,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗟e-𝗕ar-des-𝗟ions.jpg"
     },
     {
       "id": "scene___𝐋e_17_1",
@@ -17747,7 +17800,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋e-17.jpg"
     },
     {
       "id": "scene___𝗟e_𝗖oin_d_𝗔ntan_1",
@@ -18172,7 +18226,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐒alon.jpg"
     },
     {
       "id": "scene____𝗟a_𝐁allade_1",
@@ -18643,7 +18698,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene___𝗖antine_marbrée_4",
@@ -19071,7 +19127,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗙ontaine-𝗠arbrée.jpg"
     },
     {
       "id": "scene___𝐒ous_𝐒ol_2",
@@ -19307,7 +19364,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐑ésidences-des-𝐋ibérateurs.jpg"
     },
     {
       "id": "scene___𝐑uelles_2",
@@ -19583,7 +19641,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗕ibliothèque-𝗔zure.jpg"
     },
     {
       "id": "scene____𝗟a_𝐁allade_2",
@@ -19891,7 +19950,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene___𝐋e_centre_des_registres_3",
@@ -21346,7 +21406,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣arc-des-𝗖ardinaux.jpg"
     },
     {
       "id": "scene____𝗟e_𝗖afé_des_𝗣hilosophes_3",
@@ -21809,7 +21870,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖our-des-alchimistes.jpg"
     },
     {
       "id": "scene___𝗦erre_de_lune_6",
@@ -22053,7 +22115,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene___𝐋_𝐄picurien_4",
@@ -22111,7 +22174,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene___𝗟e_𝗖oin_d_𝗔ntan_2",
@@ -22412,7 +22476,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ont-des-𝗗eux.jpg"
     },
     {
       "id": "scene___𝗕ibliothèque_𝗔zure_4",
@@ -22437,7 +22502,8 @@
           "embed_title": "La lecture n'est offerte qu'à ceux en droit de poser un regard dessus.",
           "embed_description": "◦ ──────────────── ¤ ──────────────── ◦\n\n*Silencieux sans pour autant sombrer dans l’ivresse du sommeil, c’est sagement que le maître des lieux examine ce qui se trame dans la bibliothèque qu’on lui a léguée.*\n\n*Connecté aux entrailles du monument dont il a été sacré monarque, il trône sur la prestance de sa chaise avec l’aisance de celui qui a appris et l’harmonie de celui qui patiente.*\n\n*Sa pensée divague alors que ses interrogations se multiplient. Un calcul infiniment grand, pourtant coupé par une pointe de surprise. Une interrogation tranchante, formulée par l’inattendu… Une nouvelle mage.*\n\n*Étonné non pas de sa venue, mais de constater qu’elle est la seule intéressée par demain au sein de sa volée, il la guette d’un œil jugeant. Un regard sévère, empoisonné par le dépit. Brûlant de la quête d’une formulation cuisante à lui rétorquer.*\n\n*Pourtant, comme à son habitude, le silence règne. Ses lèvres ne se mobiliseront pas, désintéressées de souffler le moindre murmure. Alors que pourtant, dans l’esprit de la jeune fille, une voix rugit.*\n\n\n> — Vous ne trouverez rien de ce que vous cherchez en ces lieux.\n\n\n*Les terminologies s’embrasent dans le dédain qui est le sien. Son attention vacille et s’en retourne à sa plume. Un objet imbibé d’encre qu’il exploite étroitement pour rédiger quelques mots, alors que reprendra son esprit dans une autre pensée.*\n\n\n> — Le savoir est une fluctuation qui doit être méritée. Telle est la devise de celle qui s’est entêtée à rédiger les écrits que vous convoitez.\n\n\n*Sa plume griffe un peu plus fort le papier tandis qu’une longue expiration est poussée.*\n\n\n> — Cependant, et en gage de bonne volonté, je veux bien m’accorder à vous indiquer dans quelle rangée chercher.\n\n\n*Sa rédaction lui est tendue. Dessus, le numéro de la section concernant la faune et la flore d’Ashera. Hypnotisée par l’encre lue sur le papier, c’est sans la moindre hésitation que la corpulence de la jeune fille sera redirigée. Le pas souple, l’invisible la guidera vers une immense section de la bibliothèque. Des étagères gargantuesques sur lesquelles pourtant aucun livre n’a été posé… Vides, elles l’attendent alors que pourtant tout ce qui a été vu ou analysé y siège dans le plus digne des respects.*\n\n*Un murmure, le souffle émis par la démarche d’un autre mage de la cour, chatouille sa chevelure alors que, sans la moindre hésitation, il tend sa main vers l’invisible, empruntant un écrit que son œil ne peut percevoir et qui pourtant trônait habilement dans sa main.*\n\n\n**Une évidence, un enchantement.**\n\n\n*Un bienfait protecteur qui empêche le curieux de s’aventurer sur des sentiers qu’il ne connaît. La réalité frappe, et la déception aurait été immense si, au petit coin d’une vaste allée, la jeune fille n’avait pas trouvé le fragment de ce qu’elle cherchait.*\n\n\n**Trois pages.**\n\n\n*Posées sur l’étagère, destinées à ceux qui désirent se préparer sans jamais avoir été initiés. Elles l’attendent patiemment, sans pour autant nuire à la valeur du calme presque perturbant.*\n\n◦ ──────────────────────────────────── ◦"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗕ibliothèque-𝗔zure.jpg"
     },
     {
       "id": "scene____𝐄gregore_3",
@@ -22934,7 +23000,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐄gregore.jpg"
     },
     {
       "id": "scene___𝐁anque_du_sang_2",
@@ -23009,7 +23076,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene____𝐐uartiers_2",
@@ -23136,7 +23204,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐐uartiers.jpg"
     },
     {
       "id": "scene___𝐏lace_2",
@@ -23687,7 +23756,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene___𝐏etit_𝐒alon_3",
@@ -23712,7 +23782,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐒alon.jpg"
     },
     {
       "id": "scene____𝐁ureau_de_𝐒haal_3",
@@ -24397,7 +24468,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ort-du-𝗟evant.jpg"
     },
     {
       "id": "scene____𝗟a_𝐁allade_3",
@@ -24792,7 +24864,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗕ibliothèque-𝗔zure.jpg"
     },
     {
       "id": "scene___𝐋e_17_2",
@@ -24817,7 +24890,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋e-17.jpg"
     },
     {
       "id": "scene___𝐋e_𝐁onneteau_2",
@@ -24867,7 +24941,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐒alon.jpg"
     },
     {
       "id": "scene___𝐋_𝐄picurien_6",
@@ -24892,7 +24967,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene_Scène_Kalès___JAVUS_1",
@@ -26388,7 +26464,8 @@
           "embed_title": "◦ ────────── ¤ ─────────── ◦",
           "embed_description": "**La voix devient plus lourde, comme insoutenable.**\n\n> [???] Dans mes longues vies, j'ai capturé, sauvegarder, enregistrer de nombreuses espèces et de nombreux êtres tous plus formidables les uns que les autres.\n> \n> Vous. . .\n> \n> Vous êtes les pires entités que j'ai croiser au travers du temps. Vous êtes des ingrats, incapable de profiter du trésor que je vous offre en plus d'avoir l'intelligence commune d'un papillon de nuit, coincé et s'écrasant la tête continuellement contre un simple faisceau lumineux. Ma déception est immense et vous êtes l'objet d'une profonde colère comme une profonde frustration. J'ai espoir que dans toutes les lignes votre fin soit aussi oubliable que votre avenue au sein de ma galerie. \n\n*Il ne peuvent une nouvelle fois rien faire, les papillons se dressent comme par leur simple présence. Ils sont debout, mais leur corps ne répond plus. Les papillons avancent mais cette fois il n'y a pas de douleur, là ou les mages s'attendent à découvrir une nouvelle mort, rien ne les attend, ils sont sortit de cet endroit d'une manière pitoyable dirigée par une colère fondamentale.*\n\n*La vue se trouble, et l'odeur de la basse ville revient.*\n\n**Ils ne meurent pas. Même la mort ne veut pas d'eux cette fois.**\n\n◦ ────────── ¤ ─────────── ◦"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋e-𝐒ecret.jpg"
     },
     {
       "id": "scene___𝗙ontaine_𝗠arbrée_5",
@@ -26806,7 +26883,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗙ontaine-𝗠arbrée.jpg"
     },
     {
       "id": "scene___𝐀rène_3",
@@ -27992,7 +28070,8 @@
           "embed_title": "La fin d'une Mère.",
           "embed_description": "> *Seule, au milieu d'une arène en proie aux flammes impressionnantes de ses subalternes, la Mère s'avance, traîne les pieds dans le sable corrompu par le sang et s'arrête au niveau du corps de son enfant.*\n\n**-** \"...\"\n\n> *Un silence assourdissant, la peine est immense et son manque de parole est une preuve évidente que sous ses yeux il ne peut y avoir de réalité ici bas. Ce n'est pas vrai, cela n'existe pas. Le vacarme du monde s'est dissous dans un silence si profond qu'il lui déchire les tympans. Les cris, les armes, les ordres... tout s'est éloigné. Il ne reste que ce petit corps entre ses bras.*\n\n> *Ses doigts tremblants viennent repousser une mèche collée contre le front inerte de l'enfant. Un geste dérisoire, maternel jusqu'au bout des ongles, comme si remettre ses cheveux en place pouvait encore lui épargner l'inconfort d'une Mort aussi brutale. Sa tête décapitée entre ses mains, son front se pose contre le sien dans une tristesse, un vide si profond qu'elle peine à trouver les mots entre les sanglots.*\n\n> *L'arène est vide, seule avec elle au milieu des décombres, elle pleure la fin de celle en qui elle avait déposé tant d'espoirs; elle qui ne peut porter la vie avait tout de même joué le rôle de mère. Son corps est incapable de suivre, ses muscles se relâchent alors qu'à nouveau, un cri de désespoir s'élève dans l'Arène.*\n\n> *Dans son dos, la carrure du Yeshou se tient droite, attendant que celle qui s'est battue corps et âme pour revenir récupérer la dépouille de son enfant ai terminé ce rituel dont elle avait besoin.*\n\n**-** \"Ma... si petite fille... Comment ont-ils pu... ?\"\n\n> *Ses paupières se lèvent, laissant son regard noyé se poser sur celle qui possède des yeux clots à jamais. Les larmes roulent sur ses joues, elles tombent sur les joues immobiles de l'enfant, comme une pluie arrivée beaucoup trop tard.*\n\n**-** \"Tu sais ce qu'il y a de pire ? C'est que demain... le soleil va se lever quand même. Les oiseaux vont chanter. Les gens vont rire. Ils vont continuer à vivre comme si le monde ne venait pas de perdre sa plus belle lumière... Ma...Lumière...\"\n\n> *Sa main caresse avec une douceur infinie son visage juvénile.*\n\n**-** \"Tu étais ma fille... Pas parce que ton sang était le mien. Parce que mon cœur t'avait choisie bien avant que tu ne m'appelles \"maman\".\"\n\n> *Sa voix se brise.*\n\n**-** \"Pardonne-moi... Pardonne-moi de ne pas avoir été assez rapide... Pas assez forte... Pas assez tout...S'ils existent vraiment... les dieux... alors je les hais. Parce qu'ils avaient l'univers entier à reprendre... et c'est toi ce qu'ils ont choisis.\"\n\n> *Dans son regard humide, le reflet des flammes se dessinent.*\n\n**-** \"Repose-toi, mon enfant... Tu n'auras plus jamais peur. Tu n'auras plus jamais faim. Et moi... Je continuerai à vivre avec ce néant que tu laisses derrière toi. Je vivrai pour toi... Je les tuerai, tous. __Lui__ le premier.\"\n\n> *Dans un geste que seul elle peut comprendre, sa main saisit son poignard, se lève et découpe au carré la si longue chevelure rouge qu'elle mit tant de temps à faire pousser. Son corps se relève, accompagné dans ses mains de la tête de Yahaja. Elle se tourne vers celui qui lui a juré fidélité, les yeux larmoyants.*\n\n**-** \"M'aideras-tu à tout réduire en cendre ?\"\n\n> *Il n'a pas besoin de répondre, un simple hochement de tête suffit pour que l'accord soit scellé. Leurs silhouettes quittent l'endroit, dans un silence plus que solennel.*\n\n*Elle sèmera la Mort, partout où son cœur meurtrit le lui dira.*"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene_Balcon___Asior___Katelyn_1",
@@ -28270,7 +28349,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene_Scène_Lumia___Ivara_1",
@@ -29172,7 +29252,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ont-des-𝗗eux.jpg"
     },
     {
       "id": "scene___𝗖ours_𝗙leurie_3",
@@ -29382,7 +29463,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖ours-𝗙leurie.jpg"
     },
     {
       "id": "scene_Fuir___Katelyn_Hoffmann___Isis_Faerieth_1",
@@ -29852,7 +29934,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗤uartier-des-𝗙orges.jpg"
     },
     {
       "id": "scene____𝗔venue_des_armuriers_6",
@@ -30206,7 +30289,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔venue-des-armuriers.jpg"
     },
     {
       "id": "scene___𝐑uelles_3",
@@ -30762,7 +30846,8 @@
           "embed_title": "◦ ─────── ¤ ──────── ◦",
           "embed_description": "*Il regarde attentivement le premier qui s'avance, celui qui avec une arme pensait être un danger. Le colosse de Prométhée le regarde comme s'il observait une crevette, juste avant de lui dévisser le cou. Il regarde son aspect, son rire se coupe pour pencher le visage sur le côté. Il n'y a pas d'animosité et surtout : il n'y a pas de peur. Ce n'est pas par la violence que l'on combat un homme qui par son corps témoigne des horreurs qu'il a vécu. Sauf que lorsqu'il allait répondre à ses injures, ses yeux commençant à devenir légèrement noirs, il découvrira que son deal venait d'être accepté. Son visage se moue dans une réelle surprise, mais au final il se sent bien plus fort avec ses mots qu'il ne l'est avec ses poings.*\n\n> Bouahahhaha, Kenji Takahashi tu es le meilleur. \n\n*Puis vient le moment de calmer des ardeurs. Quand elle prend la parole pour profaner des menaces, il lève un sourcil, regardant ensuite __Kenji Takahashi__. Pense-t-elle avoir un futur ? Il ne sourit pas mais avance. Quand elle avance, essayant de se diriger vers le traitre, elle se retrouve directement bloquée par celui qui était la source de leur dispute. Elle frappe et le pied finit alors dans ses abdominaux, laissant une trace rouge dessus à cause du choc. Il recule d'un pas, un simple pas mais le retour du bâton n'était pas ce qu'elle espérait.*\n\n*Les yeux noirs du Prométhéen en témoigne, la gifle que la membre de la garde pourpre n'était pas une blague mais un avertissement. Il n'y a personne d'autre que lui qui fait les règles. La force qu'elle venait de prendre était un peu moins violente que celui de son coup de pied, mais l'évidence était là : dans un combat d'endurance elle ne gagnerait pas. La trace rouge sur sa joue, son visage penché sur le côté, le claquement instaure le silence. Le rouge ne perd pas le temps et la hisse sur son épaule. elle pourrait se débattre : mais en avait-elle vraiment envie ?*\n\n> Un esclave sa ferme sa gueule. Comme disait Lucas.\n\n*Puis l'homme se tourne vers Heavil et avance vers Ren. Il était maintenu et le grand gaillard ne manquera pas de lui mettre un coup dans le bide, __pauvre Ren Urugaki__, avant de reprendre la voix.*\n\n> Kenji, tu me suis en tenant lui, une clé de bras ça suffit. Si il résiste tu me le dit, j'égorge sa pute.\n\n*Il donne un petit coup d'épaule pour signifier de qui il parle. Puis il se dirige vers le bâtiment, prenant les escaliers dans la direction du sous-sol.*\n\n◦ ──────── ¤ ──────── ◦"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐑ésidences-des-𝐋ibérateurs.jpg"
     },
     {
       "id": "scene____𝗧errain_𝗚randblanc_4",
@@ -31241,7 +31326,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗝ardin-de-𝗤uartz.jpg"
     },
     {
       "id": "scene___𝐒ous_𝐒ol_3",
@@ -31777,7 +31863,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐒alon.jpg"
     },
     {
       "id": "scene___𝗔uditorium_3",
@@ -31931,7 +32018,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔uditorium.jpg"
     },
     {
       "id": "scene___𝐋e_𝐁erceau_1",
@@ -32070,7 +32158,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗩erger-des-𝗣êchés.jpg"
     },
     {
       "id": "scene___𝗖rypte_𝗥ouge_3",
@@ -32095,7 +32184,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖rypte-𝗥ouge.jpg"
     },
     {
       "id": "scene___𝗖rypte_𝗥ouge_4",
@@ -32214,7 +32304,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖rypte-𝗥ouge.jpg"
     },
     {
       "id": "scene____𝗧errains_𝗡acrés_4",
@@ -32640,7 +32731,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/-𝐂hevet-𝐒acré.jpg"
     },
     {
       "id": "scene___𝐀rmurerie_𝐄carlate_1",
@@ -33647,7 +33739,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene___𝗔gora_des_𝗥eines_5",
@@ -33770,7 +33863,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗔gora-des-𝗥eines.jpg"
     },
     {
       "id": "scene___𝗖ours_𝗙leurie_4",
@@ -33845,7 +33939,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗖ours-𝗙leurie.jpg"
     },
     {
       "id": "scene___𝗙ontaine_𝗠arbrée_6",
@@ -33894,7 +33989,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗙ontaine-𝗠arbrée.jpg"
     },
     {
       "id": "scene___𝗧errasse_couverte_2",
@@ -33984,7 +34080,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗧errasse-couverte.jpg"
     },
     {
       "id": "scene____𝗣ortail_𝗜voire_5",
@@ -34067,7 +34164,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣ortail-𝗜voire.jpg"
     },
     {
       "id": "scene___𝗖antine_marbrée_6",
@@ -34930,7 +35028,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗕ibliothèque-𝗔zure.jpg"
     },
     {
       "id": "scene___𝗣lace_de_𝗚randpalais_7",
@@ -34963,7 +35062,8 @@
           "embed_title": "L’union se répète, une troisième carte ressemble enfin à ce qu’elle devrait être.",
           "embed_description": "*Suivant les gestes de son compère, c’est en mimique que la dite Aoi interprète ce que, dans son grimoire, on a désiré glisser. Avide de solution rapide et non de réponses passant par les méandres détournés de son âme, elle s’exécute dans la sincérité du tiraillement de ses doigts. Le papier suit la rythmique dictée par le Uzen : ensemble, les deux morceaux s’animent, se rejoignent, s’épousent et, enfin, ne font plus qu’un. La fusion est parfaite, sa ligne directrice est fixe, alors que des termes se révèlent comme une évidence.*\n\n\n**“Le Guerrier.”**\n\n*Affamé par la haine et le sang, il est celui qui sera prêt à tout sacrifier pour engloutir son ennemi. Une passion qui ne vient pas de sa hargne ou de son appétit prononcé pour le sang, mais bel et bien de son amour pour le combat et de sa volonté de se définir comme puissant. Coincé entre héroïsme et désillusion, il avance sur le penchant d’une histoire qu’il a choisi d’écrire lui‑même, surpassant les aînés ayant peut‑être trop fortement marqué son avant.*\n\n*Une fois de plus, l’illusion fait alors son apparition. La vue d’un espace que la jeune femme reconnaît, un recoin subissant le lourd d’innombrables ouvrages que le premier benêt aurait certainement le culot d’appeler “bouquin”.*\n\n\n**La Bibliothèque azur l’attend.**"
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗣lace-de-𝗚randpalais.jpg"
     },
     {
       "id": "scene_Objectif___faire_exploser_la_Balafre__1",
@@ -35129,7 +35229,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐋-𝐄picurien.jpg"
     },
     {
       "id": "scene_Scène_Kalès___Kalem_1",
@@ -35244,7 +35345,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗧errain-d-entraînement.jpg"
     },
     {
       "id": "scene___𝗔rène_𝗛urlante_3",
@@ -35269,7 +35371,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene___𝗔rène_𝗛urlante_4",
@@ -35294,7 +35397,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_5",
@@ -35319,7 +35423,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗝ardin-de-𝗤uartz.jpg"
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_6",
@@ -35441,7 +35546,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝗝ardin-de-𝗤uartz.jpg"
     },
     {
       "id": "scene___𝗔rène_𝗛urlante_5",
@@ -35466,7 +35572,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene___𝗔rène_𝗛urlante_6",
@@ -35499,7 +35606,8 @@
           "embed_title": "",
           "embed_description": ""
         }
-      ]
+      ],
+      "location_image": "./channel_images/𝐀rène.jpg"
     },
     {
       "id": "scene___𝐋e_𝐁erceau_2",
@@ -35526,5 +35634,42 @@
         }
       ]
     }
-  ]
+  ],
+  "channel_images": {
+    "🏯〕𝗔rène-𝗛urlante": "./channel_images/𝐀rène.jpg",
+    "📚〕𝗕ibliothèque-𝗔zure": "./channel_images/𝗕ibliothèque-𝗔zure.jpg",
+    "🍻〕𝐋-𝐄picurien": "./channel_images/𝐋-𝐄picurien.jpg",
+    "🌸〕𝗖ours-𝗙leurie": "./channel_images/𝗖ours-𝗙leurie.jpg",
+    "⚒️〕𝗔venue-des-armuriers": "./channel_images/𝗔venue-des-armuriers.jpg",
+    "🚢〕𝗣ort-du-𝗟evant": "./channel_images/𝗣ort-du-𝗟evant.jpg",
+    "↳🎯𝐋e-17": "./channel_images/𝐋e-17.jpg",
+    "🏮〕𝗖rypte-𝗥ouge": "./channel_images/𝗖rypte-𝗥ouge.jpg",
+    "🏚️〕𝐑ésidences-des-𝐋ibérateurs": "./channel_images/𝐑ésidences-des-𝐋ibérateurs.jpg",
+    "♟️〕𝐐uartiers": "./channel_images/𝐐uartiers.jpg",
+    "🌳〕𝗩erger-des-𝗣êchés": "./channel_images/𝗩erger-des-𝗣êchés.jpg",
+    "🛡️〕𝗧errain-d-entraînement": "./channel_images/𝗧errain-d-entraînement.jpg",
+    "📿-𝐂hevet-𝐒acré": "./channel_images/-𝐂hevet-𝐒acré.jpg",
+    "✨〕𝗔gora-des-𝗥eines": "./channel_images/𝗔gora-des-𝗥eines.jpg",
+    "🚬〕𝐏etit-𝐒alon": "./channel_images/𝐒alon.jpg",
+    "👑〕𝗣lace-de-𝗚randpalais": "./channel_images/𝗣lace-de-𝗚randpalais.jpg",
+    "📓〕𝐋e-𝐒ecret": "./channel_images/𝐋e-𝐒ecret.jpg",
+    "⚪〕𝗖ouloir-𝗕lanc": "./channel_images/𝗖ouloir-𝗕lanc.jpg",
+    "🦪〕𝗘scaliers-𝗡acrés": "./channel_images/𝗘scaliers-𝗡acrés.jpg",
+    "🏫〕𝗔uditorium": "./channel_images/𝗔uditorium.jpg",
+    "☁️〕𝗣ortail-𝗜voire": "./channel_images/𝗣ortail-𝗜voire.jpg",
+    "🥗〕𝗞antine": "./channel_images/𝗞antine.jpg",
+    "🛑〕𝐀rène": "./channel_images/𝐀rène.jpg",
+    "🌟〕𝗖entre-radieux": "./channel_images/𝗖entre-radieux.jpg",
+    "🏙️〕𝐄gregore": "./channel_images/𝐄gregore.jpg",
+    "🗽〕𝗣ont-des-𝗗eux": "./channel_images/𝗣ont-des-𝗗eux.jpg",
+    "⚗️〕𝗖our-des-alchimistes": "./channel_images/𝗖our-des-alchimistes.jpg",
+    "🌠〕𝐇all-𝐃es-𝐅êtes": "./channel_images/𝐇all-𝐃es-𝐅êtes.jpg",
+    "🗡️〕𝗤uartier-des-𝗙orges": "./channel_images/𝗤uartier-des-𝗙orges.jpg",
+    "🧭〕𝗣arc-des-𝗖ardinaux": "./channel_images/𝗣arc-des-𝗖ardinaux.jpg",
+    "⛲〕𝗙ontaine-𝗠arbrée": "./channel_images/𝗙ontaine-𝗠arbrée.jpg",
+    "🦁〕𝗟e-𝗕ar-des-𝗟ions": "./channel_images/𝗟e-𝗕ar-des-𝗟ions.jpg",
+    "🍹〕𝗧errasse-couverte": "./channel_images/𝗧errasse-couverte.jpg",
+    "💮〕𝗝ardin-de-𝗤uartz": "./channel_images/𝗝ardin-de-𝗤uartz.jpg",
+    "🌃〕𝐒alon": "./channel_images/𝐒alon.jpg"
+  }
 }

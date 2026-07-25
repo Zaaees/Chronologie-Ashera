@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
+import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
@@ -271,7 +271,6 @@ function SearchableCharacterSelect({
   const [filterQuery, setFilterQuery] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Fermer le menu lors d'un clic extérieur
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -282,7 +281,6 @@ function SearchableCharacterSelect({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Libellé de l'acteur actuellement sélectionné
   const currentDisplayLabel = useMemo(() => {
     if (selectedActor === 'all') return 'Tous les personnages';
     const charInfo = CHARACTERS_DATA[selectedActor];
@@ -292,7 +290,6 @@ function SearchableCharacterSelect({
       : selectedActor;
   }, [selectedActor]);
 
-  // Groupement filtré selon la saisie manuelle de l'utilisateur
   const filteredGroupedActors = useMemo(() => {
     const q = filterQuery.toLowerCase().trim();
     if (!q) return groupedActorsByFaction;
@@ -314,7 +311,6 @@ function SearchableCharacterSelect({
       <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-1.5 border border-slate-800 shadow-sm">
         <Users className="w-4 h-4 text-purple-400 shrink-0" />
         
-        {/* Champ de Saisie Interactive */}
         <input
           type="text"
           placeholder="Taper un nom de personnage..."
@@ -351,7 +347,6 @@ function SearchableCharacterSelect({
         </button>
       </div>
 
-      {/* Dropdown Popover des Personnages par Faction */}
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-1 max-h-72 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
           <button
@@ -408,6 +403,7 @@ function SearchableCharacterSelect({
 // Interface pour les pistes Gantt par salon
 interface GanttChannelTrack {
   channel: string;
+  locationImage?: string;
   scenes: {
     scene: Scene;
     leftPercent: number;
@@ -415,7 +411,7 @@ interface GanttChannelTrack {
   }[];
 }
 
-// COMPOSANT GANTT SWIMLANES DYNAMIQUES
+// COMPOSANT GANTT SWIMLANES DYNAMIQUES AVEC IMAGES LOCALES EXTRAITES DE DISCORD
 function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
   if (scenes.length === 0) return null;
 
@@ -436,9 +432,11 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
     const chScenes = channelMap[ch];
+    const locationImg = CHANNEL_IMAGES[ch] || chScenes.find(s => s.location_image)?.location_image;
 
     return {
       channel: ch,
+      locationImage: locationImg,
       scenes: chScenes.map(sc => {
         const sTime = new Date(sc.start_time).getTime();
         const eTime = new Date(sc.end_time || sc.start_time).getTime();
@@ -506,12 +504,22 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
           {/* Lignes par Salon */}
           <div className="space-y-3">
-            {tracks.map(({ channel, scenes: trackScenes }, trackIdx) => (
+            {tracks.map(({ channel, locationImage, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
-                {/* Nom du Salon */}
+                {/* Nom du Salon + Image Locale extraite de Discord */}
                 <div className="w-56 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
-                  <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
+                  {locationImage ? (
+                    <div className="w-6 h-6 rounded border border-slate-700/80 overflow-hidden shrink-0 shadow bg-black/60">
+                      <img 
+                        src={locationImage} 
+                        alt={channel} 
+                        className="w-full h-full object-cover" 
+                      />
+                    </div>
+                  ) : (
+                    <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
+                  )}
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
@@ -567,8 +575,18 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                           )}
                         </div>
 
-                        {/* INFO-BULLE RICH DARK FANTASY */}
+                        {/* INFO-BULLE RICH DARK FANTASY AVEC ILLUSTATION DU LIEU */}
                         <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
+                          {locationImage && (
+                            <div className="h-20 w-full overflow-hidden rounded mb-2 border border-slate-700/80 bg-slate-900 shadow">
+                              <img 
+                                src={locationImage} 
+                                alt={channel} 
+                                className="w-full h-full object-cover object-center" 
+                              />
+                            </div>
+                          )}
+
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
                             <span className="text-[10px] font-mono text-[#949ba4]">{scene.messages.length} msg</span>
@@ -770,6 +788,10 @@ export default function App() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const activeSceneLocationImage = activeScene 
+    ? (CHANNEL_IMAGES[activeScene.channel] || activeScene.location_image)
+    : null;
 
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
@@ -1033,7 +1055,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD AVEC BANNIÈRE DU LIEU */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
@@ -1060,6 +1082,23 @@ export default function App() {
                 <X className="w-5 h-5" />
               </button>
             </div>
+
+            {/* BANNIÈRE DE LIEU DU SALON (SI DISPONIBLE) */}
+            {activeSceneLocationImage && (
+              <div className="h-32 w-full relative overflow-hidden border-b border-[#1e1f22] bg-slate-950 shrink-0">
+                <img 
+                  src={activeSceneLocationImage} 
+                  alt={activeScene.channel} 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2b2d31] via-transparent to-black/30" />
+                <div className="absolute bottom-2 left-6 right-6 flex items-center justify-between">
+                  <span className="text-xs font-serif-gothic font-bold text-slate-100 drop-shadow-md">
+                    Lieu : #{activeScene.channel}
+                  </span>
+                </div>
+              </div>
+            )}
 
             {/* En-tête de la Scène */}
             <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
