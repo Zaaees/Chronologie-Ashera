@@ -2,32 +2,35 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare
 } from 'lucide-react';
 
-const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string }> = {
-  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.28)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.55)", icon: "🗡️" },
-  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.28)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.55)", icon: "🌙" },
-  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.14)", text: "#fef08a", border: "rgba(254, 240, 138, 0.4)", icon: "⚖️" },
-  "L'œil": { bg: "rgba(30, 41, 59, 0.7)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.45)", icon: "👁️" },
-  "Sans guilde": { bg: "rgba(180, 83, 9, 0.28)", text: "#fde047", border: "rgba(217, 119, 6, 0.55)", icon: "☀️" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.28)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.45)", icon: "🛡️" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.28)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.55)", icon: "🔮" }
+const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
+  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.28)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.55)", icon: "🗡️", hexColor: "#ef4444" },
+  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.28)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.55)", icon: "🌙", hexColor: "#3b82f6" },
+  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.14)", text: "#fef08a", border: "rgba(254, 240, 138, 0.4)", icon: "⚖️", hexColor: "#fef08a" },
+  "L'œil": { bg: "rgba(30, 41, 59, 0.7)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.45)", icon: "👁️", hexColor: "#cbd5e1" },
+  "Sans guilde": { bg: "rgba(180, 83, 9, 0.28)", text: "#fde047", border: "rgba(217, 119, 6, 0.55)", icon: "☀️", hexColor: "#eab308" },
+  "Sans rôle": { bg: "rgba(71, 85, 105, 0.28)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.45)", icon: "🛡️", hexColor: "#94a3b8" },
+  "PNJ": { bg: "rgba(126, 34, 206, 0.28)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.55)", icon: "🔮", hexColor: "#c084fc" }
 };
 
-// Formater la date en français clair
-function formatDateFr(isoString: string): string {
+// Formater la date en style Discord (ex: 24 juillet 2026 à 22:15)
+function formatDateDiscord(isoString: string): string {
   if (!isoString) return 'Date inconnue';
   try {
     const d = new Date(isoString);
     if (isNaN(d.getTime())) return isoString;
-    return d.toLocaleDateString('fr-FR', {
+    const dateStr = d.toLocaleDateString('fr-FR', {
       day: 'numeric',
       month: 'long',
-      year: 'numeric',
+      year: 'numeric'
+    });
+    const timeStr = d.toLocaleTimeString('fr-FR', {
       hour: '2-digit',
       minute: '2-digit'
     });
+    return `${dateStr} à ${timeStr}`;
   } catch (e) {
     return isoString;
   }
@@ -47,6 +50,16 @@ function getMonthYearKey(isoString: string): { key: string; label: string } {
   }
 }
 
+// Obtenir l'initiale pour l'avatar style Discord
+function getInitials(name: string): string {
+  if (!name) return '?';
+  const parts = name.trim().split(' ');
+  if (parts.length >= 2) {
+    return (parts[0][0] + parts[1][0]).toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+}
+
 export default function App() {
   // États de filtres et recherche
   const [searchQuery, setSearchQuery] = useState('');
@@ -54,7 +67,7 @@ export default function App() {
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
-  // Scène sélectionnée pour la modale de lecture (Codex)
+  // Scène sélectionnée pour la modale de lecture (Format Discord)
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
   // Remonter en haut
@@ -207,18 +220,25 @@ export default function App() {
       <div className="bg-vignette-overlay" />
       <div className="ember-particles-bg" />
 
-      {/* 🗡️ EN-TÊTE GOTHIQUE ÉPURÉE */}
+      {/* 🗡️ EN-TÊTE AVEC L'IMAGE DU PROJET INTEGRÉE */}
       <header className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
-            {/* Logo & Titre Cinzel */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border border-slate-700 bg-slate-950 flex items-center justify-center shadow-lg shadow-black/80">
-                <Scroll className="w-5 h-5 text-slate-300" />
+            {/* Logo, Image d'Illustration du Projet & Titre */}
+            <div className="flex items-center gap-3.5">
+              {/* IMAGE DU PROJET MISE EN AVANT DANS L'EN-TÊTE */}
+              <div className="relative w-11 h-11 border border-slate-700/80 rounded-lg overflow-hidden shadow-lg shadow-black/80 shrink-0">
+                <img 
+                  src="./ashera_banner.png" 
+                  alt="Ashera Artwork" 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 ring-1 ring-inset ring-slate-400/20" />
               </div>
+
               <div>
-                <h1 className="text-xl font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">
+                <h1 className="text-xl font-bold font-serif-gothic tracking-widest text-slate-100 uppercase flex items-center gap-2">
                   Chronologie d'Ashera
                 </h1>
                 <p className="text-xs text-slate-400 font-light">
@@ -327,8 +347,31 @@ export default function App() {
       {/* 🚀 LAYOUT GOTHIQUE AVEC SIDEBAR & LA CHRONOLOGIE VERTICALE */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
-        {/* 📌 SAUT TEMPOREL (SIDEBAR MINIMALISTE AVEC CORNIÈRES) */}
-        <aside className="hidden lg:block w-64 shrink-0">
+        {/* 📌 SAUT TEMPOREL & CARTE ARTWORK EN SIDEBAR */}
+        <aside className="hidden lg:block w-64 shrink-0 space-y-6">
+          
+          {/* IMAGE DU PROJET MISE EN AVANT EN CARTE HERO EN SIDEBAR */}
+          <div className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-2 shadow-2xl overflow-hidden">
+            <div className="gothic-corner gothic-corner-tl" />
+            <div className="gothic-corner gothic-corner-tr" />
+            <div className="gothic-corner gothic-corner-bl" />
+            <div className="gothic-corner gothic-corner-br" />
+            
+            <div className="relative h-32 w-full overflow-hidden border border-slate-800">
+              <img 
+                src="./ashera_banner.png" 
+                alt="Conte d'Ashera Artwork" 
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e15] via-transparent to-transparent" />
+              <div className="absolute bottom-2 left-2 right-2 text-center">
+                <span className="text-[11px] font-serif-gothic tracking-widest text-slate-200 uppercase font-bold drop-shadow-md">
+                  Le Conte d'Ashera
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div className="sticky top-36 gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-4 shadow-2xl backdrop-blur-md">
             <div className="gothic-corner gothic-corner-tl" />
             <div className="gothic-corner gothic-corner-tr" />
@@ -340,7 +383,7 @@ export default function App() {
               <h2 className="text-xs font-bold font-serif-gothic tracking-wider uppercase text-slate-300">Saut Temporel</h2>
             </div>
             
-            <nav className="space-y-1 max-h-[calc(100vh-230px)] overflow-y-auto pr-1 text-xs">
+            <nav className="space-y-1 max-h-[calc(100vh-360px)] overflow-y-auto pr-1 text-xs">
               {groupedPeriodScenes.map(({ key, label, scenes }) => (
                 <button
                   key={key}
@@ -413,7 +456,7 @@ export default function App() {
                   {/* GRILLE DES CARTE GOTHIQUES DE SCÈNES AVEC CORNIÈRES */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {scenes.map(scene => {
-                      const firstDate = formatDateFr(scene.start_time);
+                      const firstDate = formatDateDiscord(scene.start_time);
 
                       return (
                         <div
@@ -488,103 +531,124 @@ export default function App() {
         </main>
       </div>
 
-      {/* 🔮 MODALE CODEX LECTURE DE SCÈNE GOTHIQUE */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : RENDU FIDÈLE AU CONFORT DE LECTURE DISCORD */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="gothic-corner-box bg-[#0c0e15] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative">
+          <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
             <div className="gothic-corner gothic-corner-tl" />
             <div className="gothic-corner gothic-corner-tr" />
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
 
-            {/* Header Modal */}
-            <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-[#080a0f]">
+            {/* En-tête Modal Discord */}
+            <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
               <div className="flex items-center gap-3">
-                <span className="px-2.5 py-1 bg-slate-900 border border-slate-700 text-slate-200 font-mono text-xs">
+                <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
                   #{activeScene.channel}
                 </span>
-                <span className="text-xs text-slate-400 font-mono flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-slate-500" />
-                  {formatDateFr(activeScene.start_time)}
+                <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1">
+                  <Clock className="w-3.5 h-3.5 text-[#949ba4]" />
+                  {formatDateDiscord(activeScene.start_time)}
                 </span>
               </div>
               <button
                 onClick={() => setActiveScene(null)}
-                className="p-1 rounded text-slate-400 hover:text-slate-100 hover:bg-slate-800 transition-colors"
+                className="p-1.5 rounded-full text-[#b5bac1] hover:text-[#f2f3f5] hover:bg-[#35373c] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Corps Modal */}
-            <div className="p-6 overflow-y-auto space-y-6 flex-1 custom-scrollbar">
-              
-              <div>
-                <h2 className="text-lg font-bold font-serif-gothic tracking-wide text-slate-100 mb-2">{activeScene.title}</h2>
-                <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="text-xs text-slate-400">Acteurs présents :</span>
-                  {activeScene.actors.map(actor => {
-                    const info = CHARACTERS_DATA[actor];
-                    const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
-                    return (
-                      <span
-                        key={actor}
-                        style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                        className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium"
-                      >
-                        <span>{style.icon}</span>
-                        <span>{actor}</span>
-                      </span>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Messages de la Scène */}
-              <div className="space-y-4">
-                {activeScene.messages.map((msg, index) => {
-                  const info = CHARACTERS_DATA[msg.author];
+            {/* En-tête de la Scène */}
+            <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
+              <h2 className="text-base font-bold text-[#f2f3f5] mb-2">{activeScene.title}</h2>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
+                {activeScene.actors.map(actor => {
+                  const info = CHARACTERS_DATA[actor];
                   const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
-
                   return (
-                    <div key={msg.id || index} className="bg-[#08090d] border border-slate-800/90 p-4 space-y-2">
-                      <div className="flex items-center justify-between border-b border-slate-800/60 pb-2">
-                        <span style={{ color: style.text }} className="text-xs font-bold font-serif-gothic tracking-wider inline-flex items-center gap-1.5">
-                          <span>{style.icon}</span>
-                          <span>{msg.author}</span>
-                        </span>
-                        <span className="text-[10px] text-slate-500 font-mono">
-                          {formatDateFr(msg.timestamp)}
-                        </span>
-                      </div>
-
-                      {msg.embed_title && (
-                        <h4 className="text-xs font-semibold text-slate-300 font-serif-gothic">{msg.embed_title}</h4>
-                      )}
-
-                      {msg.embed_description && (
-                        <p className="text-xs text-slate-300 italic whitespace-pre-line leading-relaxed">{msg.embed_description}</p>
-                      )}
-
-                      {msg.content && (
-                        <p className="text-xs text-slate-200 whitespace-pre-line leading-relaxed">{msg.content}</p>
-                      )}
-                    </div>
+                    <span
+                      key={actor}
+                      style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                      className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded"
+                    >
+                      <span>{style.icon}</span>
+                      <span>{actor}</span>
+                    </span>
                   );
                 })}
               </div>
             </div>
 
-            {/* Footer Modal avec Lien Discord */}
-            <div className="px-6 py-4 border-t border-slate-800 bg-[#080a0f] flex items-center justify-between">
-              <span className="text-xs text-slate-500 font-mono">
+            {/* FLUX DES MESSAGES : FORMAT ET CONFORT DISCORD (BG #313338) */}
+            <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
+              {activeScene.messages.map((msg, index) => {
+                const info = CHARACTERS_DATA[msg.author];
+                const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+                const initials = getInitials(msg.author);
+
+                return (
+                  <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
+                    
+                    {/* AVATAR ROND CONFORT DISCORD */}
+                    <div 
+                      style={{ backgroundColor: style.hexColor }} 
+                      className="w-10 h-10 rounded-full flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-sm mt-0.5 select-none"
+                    >
+                      {initials}
+                    </div>
+
+                    {/* BLOC MESSAGE DISCORD */}
+                    <div className="flex-1 min-w-0">
+                      {/* LIGNE AUTEUR & TIMESTAMPS */}
+                      <div className="flex items-baseline gap-2 mb-1">
+                        <span 
+                          style={{ color: style.text }} 
+                          className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
+                        >
+                          {msg.author}
+                        </span>
+                        <span className="text-[12px] text-[#949ba4] font-normal select-none">
+                          {formatDateDiscord(msg.timestamp)}
+                        </span>
+                      </div>
+
+                      {/* EMBED DISCORD (LE CAS ÉCHÉANT) */}
+                      {(msg.embed_title || msg.embed_description) && (
+                        <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
+                          {msg.embed_title && (
+                            <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">{msg.embed_title}</h4>
+                          )}
+                          {msg.embed_description && (
+                            <p className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">{msg.embed_description}</p>
+                          )}
+                        </div>
+                      )}
+
+                      {/* CONTENU TEXTE DISCORD LISIBLE */}
+                      {msg.content && (
+                        <p className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
+                          {msg.content}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Footer Modal Discord */}
+            <div className="px-6 py-3.5 border-t border-[#1e1f22] bg-[#2b2d31] flex items-center justify-between">
+              <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1.5">
+                <MessageSquare className="w-3.5 h-3.5 text-[#949ba4]" />
                 {activeScene.messages.length} message(s) dans cette scène
               </span>
               <a
                 href={activeScene.discord_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded text-xs font-semibold transition-colors shadow"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Ouvrir sur Discord
@@ -598,7 +662,7 @@ export default function App() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 p-3 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 shadow-2xl transition-all z-40"
+          className="fixed bottom-6 right-6 p-3 bg-[#2b2d31] hover:bg-[#35373c] text-white border border-slate-700 shadow-2xl transition-all z-40 rounded-full"
         >
           <ArrowUp className="w-5 h-5" />
         </button>
