@@ -3,7 +3,7 @@ import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data'
 import { 
   Search, Calendar, Clock, Filter, User, Users, ChevronRight, 
   ExternalLink, Sparkles, BookOpen, Layers, X, Shield, Eye, Feather, 
-  Bot, HelpCircle, ArrowUp
+  Bot, HelpCircle, ArrowUp, ChevronDown
 } from 'lucide-react';
 
 const ROLE_ORDER: Record<string, number> = {
@@ -62,40 +62,75 @@ function getMonthYearKey(isoString: string): { key: string; label: string } {
 export default function App() {
   // États de filtres et recherche
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedRole, setSelectedRole] = useState<string>('all');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
-  const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
+  // Nombre de mois déroulés progressivement (déroulement au scroll)
+  const [visibleMonthCount, setVisibleMonthCount] = useState<number>(4);
+  const [activeMonthKey, setActiveMonthKey] = useState<string>('');
+
   // Scène sélectionnée pour la modale de lecture
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
+  // Groupement des acteurs par Faction avec leur Nom + Pseudo Discord entre parenthèses
+  const groupedActorsByFaction = useMemo(() => {
+    const groups: Record<string, { name: string; displayLabel: string }[]> = {
+      "La Garde Pourpre": [],
+      "Cercle d'Azur": [],
+      "Voile d'Ivoire": [],
+      "L'œil": [],
+      "Sans guilde": [],
+      "Sans rôle": [],
+      "PNJ": []
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  // Liste de tous les salons uniques
-  const allChannels = useMemo(() => {
-    return Array.from(new Set(SCENES_DATA.map(s => s.channel))).sort((a, b) => a.localeCompare(b, 'fr'));
-  }, []);
+    Object.keys(CHARACTERS_DATA).forEach(actorName => {
+      const charInfo = CHARACTERS_DATA[actorName];
+      const role = charInfo?.role || "Sans rôle";
+      
+      const pseudo = charInfo?.username || charInfo?.displayName;
+      const displayLabel = pseudo && pseudo !== actorName 
+        ? `${actorName} (${pseudo})` 
+        : actorName;
 
-  // Liste des acteurs filtrés
-  const sortedActors = useMemo(() => {
-    return Object.keys(CHARACTERS_DATA).sort((a, b) => {
-      const roleA = CHARACTERS_DATA[a]?.role?.toLowerCase() || '';
-      const roleB = CHARACTERS_DATA[b]?.role?.toLowerCase() || '';
-      const orderA = ROLE_ORDER[roleA] || 99;
-      const orderB = ROLE_ORDER[roleB] || 99;
-      if (orderA !== orderB) return orderA - orderB;
-      return a.localeCompare(b, 'fr');
+      if (!groups[role]) {
+        groups[role] = [];
+      }
+      groups[role].push({ name: actorName, displayLabel });
     });
+
+    // Trier chaque groupe par ordre alphabétique
+    Object.keys(groups).forEach(role => {
+      groups[role].sort((a, b) => a.displayLabel.localeCompare(b.displayLabel, 'fr'));
+    });
+
+    return groups;
+  }, []);
+
+  // Groupement des salons par Catégorie Discord
+  const groupedChannelsByCategory = useMemo(() => {
+    const groups: Record<string, string[]> = {};
+
+    SCENES_DATA.forEach(scene => {
+      const cat = scene.category || "Salons Principaux";
+      const ch = scene.channel;
+      if (!groups[cat]) {
+        groups[cat] = [];
+      }
+      if (!groups[cat].includes(ch)) {
+        groups[cat].push(ch);
+      }
+    });
+
+    // Trier les catégories et leurs salons
+    Object.keys(groups).forEach(cat => {
+      groups[cat].sort((a, b) => a.localeCompare(b, 'fr'));
+    });
+
+    return groups;
   }, []);
 
   // Filtrage des scènes par critères
@@ -113,31 +148,22 @@ export default function App() {
         }
       }
 
-      // 2. Filtre par Rôle / Faction
-      if (selectedRole !== 'all') {
-        const hasMatchingActor = scene.actors.some(actorName => {
-          const charInfo = CHARACTERS_DATA[actorName];
-          return charInfo && charInfo.role === selectedRole;
-        });
-        if (!hasMatchingActor) return false;
-      }
-
-      // 3. Filtre par Acteur spécifique
+      // 2. Filtre par Acteur / Personnage spécifique
       if (selectedActor !== 'all') {
         if (!scene.actors.includes(selectedActor)) return false;
       }
 
-      // 4. Filtre par Salon
+      // 3. Filtre par Salon
       if (selectedChannel !== 'all') {
         if (scene.channel !== selectedChannel) return false;
       }
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedRole, selectedActor, selectedChannel]);
+  }, [searchQuery, selectedActor, selectedChannel]);
 
-  // Groupement des scènes par Mois/Année
-  const groupedPeriodScenes = useMemo(() => {
+  // Groupement complet des scènes par Mois/Année
+  const allGroupedPeriodScenes = useMemo(() => {
     const groups: { key: string; label: string; scenes: Scene[] }[] = [];
     const groupMap: Record<string, { label: string; scenes: Scene[] }> = {};
 
@@ -153,14 +179,46 @@ export default function App() {
     return groups;
   }, [filteredScenes]);
 
-  const scrollToMonth = (monthKey: string) => {
-    setActiveMonthKey(monthKey);
-    const element = document.getElementById(`period-${monthKey}`);
-    if (element) {
-      const yOffset = -90; 
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: y, behavior: 'smooth' });
+  // Mois visibles (déroulement au scroll)
+  const visibleGroupedPeriodScenes = useMemo(() => {
+    return allGroupedPeriodScenes.slice(0, visibleMonthCount);
+  }, [allGroupedPeriodScenes, visibleMonthCount]);
+
+  // Gestion du scroll infini pour dérouler les mois progressivement
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400);
+
+      // Dérouler plus de mois quand l'utilisateur approche du bas
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+        setVisibleMonthCount(prev => Math.min(prev + 3, allGroupedPeriodScenes.length));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [allGroupedPeriodScenes.length]);
+
+  // Réinitialiser la limite de mois quand les filtres changent
+  useEffect(() => {
+    setVisibleMonthCount(4);
+  }, [searchQuery, selectedActor, selectedChannel]);
+
+  const scrollToMonth = (monthKey: string, index: number) => {
+    // Si le mois demandé est au-delà du nombre actuellement déroulé, étendre la limite
+    if (index >= visibleMonthCount) {
+      setVisibleMonthCount(index + 2);
     }
+
+    setActiveMonthKey(monthKey);
+    setTimeout(() => {
+      const element = document.getElementById(`period-${monthKey}`);
+      if (element) {
+        const yOffset = -90;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   const scrollToTop = () => {
@@ -169,8 +227,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0b0f19] text-slate-100 font-sans selection:bg-purple-600 selection:text-white">
-      {/* 🌟 EN-TÊTE PRINCIPALE */}
-      <header className="sticky top-0 z-40 bg-[#0f172a]/90 backdrop-blur-md border-b border-slate-800 shadow-xl">
+      
+      {/* 🌟 EN-TÊTE PRINCIPALE ET SELECTIONS DE FILTRES ERGONOMIQUES */}
+      <header className="sticky top-0 z-40 bg-[#0f172a]/95 backdrop-blur-md border-b border-slate-800 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
@@ -184,20 +243,20 @@ export default function App() {
                   Chronologie d'Ashera
                 </h1>
                 <p className="text-xs text-slate-400">
-                  Magie & Foi • {filteredScenes.length} scènes en ordre chronologique
+                  Magie & Foi • {filteredScenes.length} scènes RP répertoriées
                 </p>
               </div>
             </div>
 
             {/* Barre de Recherche Globale */}
             <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
-                placeholder="Rechercher une scène, un mot, un lieu..."
+                placeholder="Rechercher une scène, un mot, un extrait..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-9 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all"
+                className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all shadow-inner"
               />
               {searchQuery && (
                 <button 
@@ -210,72 +269,73 @@ export default function App() {
             </div>
           </div>
 
-          {/* BARRE DE FILTRES SECONDAIRE */}
-          <div className="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-slate-800/80 text-xs">
+          {/* BARRE DE SELECTIONS ERGONOMIQUE (Groupement par Faction & Catégorie) */}
+          <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
-            {/* Filtre Faction */}
-            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
-              <Shield className="w-3.5 h-3.5 text-purple-400" />
-              <select
-                value={selectedRole}
-                onChange={(e) => setSelectedRole(e.target.value)}
-                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer"
-              >
-                <option value="all" className="bg-slate-900 text-slate-200">Toutes les Factions</option>
-                <option value="La Garde Pourpre" className="bg-slate-900 text-red-400">🔴 La Garde Pourpre</option>
-                <option value="Cercle d'Azur" className="bg-slate-900 text-blue-400">🔵 Cercle d'Azur</option>
-                <option value="Voile d'Ivoire" className="bg-slate-900 text-yellow-200">⚪ Voile d'Ivoire</option>
-                <option value="L'œil" className="bg-slate-900 text-slate-400">👁️ L'œil</option>
-                <option value="Sans guilde" className="bg-slate-900 text-yellow-500">🟡 Sans Guilde (Officiel)</option>
-                <option value="Sans rôle" className="bg-slate-900 text-slate-500">⚪ Sans Rôle</option>
-                <option value="PNJ" className="bg-slate-900 text-purple-400">🔮 PNJ / Système</option>
-              </select>
+            {/* 👤 SELECTION DES JOUEURS / PERSONNAGES (TRIÉS ET GROUPÉS PAR FACTION + PSEUDO DISCORD) */}
+            <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/70 shadow-sm flex-1 min-w-[240px]">
+              <Users className="w-4 h-4 text-purple-400 shrink-0" />
+              <div className="flex-1 min-w-0">
+                <select
+                  value={selectedActor}
+                  onChange={(e) => setSelectedActor(e.target.value)}
+                  className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
+                >
+                  <option value="all" className="bg-slate-900 text-slate-200 font-semibold">
+                    Tous les Personnages / Joueurs (Toutes Factions)
+                  </option>
+                  
+                  {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
+                    if (actorList.length === 0) return null;
+                    return (
+                      <optgroup key={roleName} label={`--- ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-slate-950 text-purple-400 font-bold">
+                        {actorList.map(({ name, displayLabel }) => (
+                          <option key={name} value={name} className="bg-slate-900 text-slate-200 font-normal">
+                            {displayLabel}
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  })}
+                </select>
+              </div>
             </div>
 
-            {/* Filtre Personnage */}
-            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
-              <User className="w-3.5 h-3.5 text-indigo-400" />
-              <select
-                value={selectedActor}
-                onChange={(e) => setSelectedActor(e.target.value)}
-                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer max-w-[160px] truncate"
-              >
-                <option value="all" className="bg-slate-900 text-slate-200">Tous les Personnages</option>
-                {sortedActors.map(actor => (
-                  <option key={actor} value={actor} className="bg-slate-900 text-slate-300">
-                    {actor}
+            {/* 🏛️ SELECTION DES SALONS (GROUPÉS VISUELLEMENT PAR CATÉGORIE DISCORD) */}
+            <div className="flex items-center gap-2 bg-slate-900/90 px-3 py-2 rounded-xl border border-slate-700/70 shadow-sm flex-1 min-w-[240px]">
+              <Layers className="w-4 h-4 text-emerald-400 shrink-0" />
+              <div className="flex-1 min-w-0">
+                <select
+                  value={selectedChannel}
+                  onChange={(e) => setSelectedChannel(e.target.value)}
+                  className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
+                >
+                  <option value="all" className="bg-slate-900 text-slate-200 font-semibold">
+                    Tous les Salons (Toutes les Catégories)
                   </option>
-                ))}
-              </select>
-            </div>
 
-            {/* Filtre Salon */}
-            <div className="flex items-center gap-1.5 bg-slate-900/80 px-2.5 py-1.5 rounded-lg border border-slate-800">
-              <Layers className="w-3.5 h-3.5 text-emerald-400" />
-              <select
-                value={selectedChannel}
-                onChange={(e) => setSelectedChannel(e.target.value)}
-                className="bg-transparent text-slate-300 focus:outline-none cursor-pointer max-w-[180px] truncate"
-              >
-                <option value="all" className="bg-slate-900 text-slate-200">Tous les Salons ({allChannels.length})</option>
-                {allChannels.map(ch => (
-                  <option key={ch} value={ch} className="bg-slate-900 text-slate-300">
-                    #{ch}
-                  </option>
-                ))}
-              </select>
+                  {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
+                    <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-slate-950 text-emerald-400 font-bold">
+                      {channels.map(ch => (
+                        <option key={ch} value={ch} className="bg-slate-900 text-slate-200 font-normal">
+                          #{ch}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
+              </div>
             </div>
 
             {/* Bouton Réinitialiser */}
-            {(searchQuery || selectedRole !== 'all' || selectedActor !== 'all' || selectedChannel !== 'all') && (
+            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedRole('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
-                className="px-2.5 py-1.5 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 rounded-lg transition-colors"
+                className="px-3 py-2 bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-500/30 rounded-xl transition-colors shrink-0 font-medium"
               >
                 Réinitialiser les filtres
               </button>
@@ -284,22 +344,22 @@ export default function App() {
         </div>
       </header>
 
-      {/* 🚀 LAYOUT PRINCIPAL */}
+      {/* 🚀 LAYOUT PRINCIPAL AVEC DÉROULEMENT PROGRESSIF DES MOIS */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
-        {/* 📌 NAVIGATEUR CHRONOLOGIQUE PAR MOIS (MINI-MAP SIDEBAR) */}
+        {/* 📌 SIDEBAR NAVIGATEUR CHRONOLOGIQUE (MINI-MAP) */}
         <aside className="hidden lg:block w-64 shrink-0">
-          <div className="sticky top-32 bg-slate-900/90 border border-slate-800/90 rounded-2xl p-4 shadow-xl backdrop-blur-md">
+          <div className="sticky top-36 bg-slate-900/90 border border-slate-800/90 rounded-2xl p-4 shadow-xl backdrop-blur-md">
             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-800">
               <Calendar className="w-4 h-4 text-purple-400" />
-              <h2 className="text-sm font-semibold text-slate-200">Fil Temporel</h2>
+              <h2 className="text-sm font-semibold text-slate-200">Saut Temporel</h2>
             </div>
             
-            <nav className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-1 custom-scrollbar text-xs">
-              {groupedPeriodScenes.map(({ key, label, scenes }) => (
+            <nav className="space-y-1 max-h-[calc(100vh-230px)] overflow-y-auto pr-1 custom-scrollbar text-xs">
+              {allGroupedPeriodScenes.map(({ key, label, scenes }, idx) => (
                 <button
                   key={key}
-                  onClick={() => scrollToMonth(key)}
+                  onClick={() => scrollToMonth(key, idx)}
                   className={`w-full flex items-center justify-between px-3 py-2 rounded-xl transition-all ${
                     activeMonthKey === key
                       ? 'bg-purple-600/30 text-purple-200 font-medium border border-purple-500/40 shadow-sm'
@@ -313,27 +373,26 @@ export default function App() {
                 </button>
               ))}
 
-              {groupedPeriodScenes.length === 0 && (
-                <p className="text-xs text-slate-500 py-4 text-center">Aucune période disponible</p>
+              {allGroupedPeriodScenes.length === 0 && (
+                <p className="text-xs text-slate-500 py-4 text-center">Aucun résultat</p>
               )}
             </nav>
           </div>
         </aside>
 
-        {/* 📜 FLUX DU LORE CHRONOLOGIQUE */}
+        {/* 📜 FLUX CHRONOLOGIQUE DÉROULANT AU SCROLL */}
         <main className="flex-1 min-w-0">
           
-          {groupedPeriodScenes.length === 0 ? (
+          {visibleGroupedPeriodScenes.length === 0 ? (
             <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-12 text-center my-8">
               <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-4" />
-              <h3 className="text-lg font-medium text-slate-300 mb-1">Aucune scène trouvée</h3>
+              <h3 className="text-lg font-medium text-slate-300 mb-1">Aucune scène correspondante</h3>
               <p className="text-sm text-slate-500 mb-6">
-                Aucun résultat ne correspond aux filtres sélectionnés.
+                Essayez de modifier votre recherche ou d'effacer les filtres.
               </p>
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedRole('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
@@ -344,8 +403,8 @@ export default function App() {
             </div>
           ) : (
             <div className="space-y-12">
-              {groupedPeriodScenes.map(({ key, label, scenes }) => (
-                <section key={key} id={`period-${key}`} className="scroll-mt-32">
+              {visibleGroupedPeriodScenes.map(({ key, label, scenes }) => (
+                <section key={key} id={`period-${key}`} className="scroll-mt-36">
                   
                   {/* EN-TÊTE DU MOIS / PÉRIODE */}
                   <div className="flex items-center gap-4 mb-6">
@@ -426,6 +485,19 @@ export default function App() {
                   </div>
                 </section>
               ))}
+
+              {/* BOUTON / INDICATION DE DÉROULEMENT PROGRESSIF (SCROLL INFINI) */}
+              {visibleMonthCount < allGroupedPeriodScenes.length && (
+                <div className="py-8 text-center">
+                  <button
+                    onClick={() => setVisibleMonthCount(prev => Math.min(prev + 4, allGroupedPeriodScenes.length))}
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600/30 hover:bg-purple-600/50 border border-purple-500/40 text-purple-200 rounded-2xl text-xs font-semibold transition-all shadow-xl hover:scale-105"
+                  >
+                    <ChevronDown className="w-4 h-4 animate-bounce" />
+                    Dérouler les mois suivants ({allGroupedPeriodScenes.length - visibleMonthCount} restants)
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </main>

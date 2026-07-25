@@ -4,6 +4,8 @@ export interface Character {
   role: string;
   color: string;
   colorName?: string;
+  username?: string;
+  displayName?: string;
 }
 
 export interface Message {
@@ -19,6 +21,7 @@ export interface Scene {
   id: string;
   channel: string;
   channel_id?: string;
+  category?: string;
   title: string;
   actors: string[];
   start_time: string;

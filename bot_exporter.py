@@ -74,19 +74,30 @@ FACTION_INFO = {
 }
 
 detected_member_factions = {}
+detected_member_details = {}
 
-def register_member_faction(name_str, faction_info):
+def register_member_faction(name_str, faction_info, username="", display_name=""):
     if not name_str:
         return
     cleaned = clean_character_name(name_str)
     if cleaned and len(cleaned) < 50:
         detected_member_factions[cleaned] = faction_info
+        if username or display_name:
+            detected_member_details[cleaned] = {
+                "username": username,
+                "displayName": display_name
+            }
     
     parts = re.split(r'[\(\)\-\—\•\|]', name_str)
     for p in parts:
         c_part = clean_character_name(p)
         if c_part and len(c_part) < 50:
             detected_member_factions[c_part] = faction_info
+            if username or display_name:
+                detected_member_details[c_part] = {
+                    "username": username,
+                    "displayName": display_name
+                }
 
 SYSTEM_BOTS = [
     'narrateur', 'narration', 'draftbot', 'ticket tool', 'tupperbox',
@@ -330,12 +341,12 @@ class DiscordExporterClient(discord.Client):
                 
                 if best_role:
                     faction_info = FACTION_INFO[best_role]
-                    register_member_faction(member.display_name, faction_info)
+                    register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name)
                     if member.name:
-                        register_member_faction(member.name, faction_info)
+                        register_member_faction(member.name, faction_info, username=member.name, display_name=member.display_name)
                     global_name = getattr(member, 'global_name', None)
                     if global_name:
-                        register_member_faction(global_name, faction_info)
+                        register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name)
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction identifiées.")
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
@@ -537,10 +548,13 @@ class DiscordExporterClient(discord.Client):
                 continue
             role, color, color_name = get_character_guild_and_color(actor)
             if role is not None:
+                details = detected_member_details.get(actor, {})
                 character_map[actor] = {
                     "role": role,
                     "color": color,
-                    "colorName": color_name
+                    "colorName": color_name,
+                    "username": details.get('username', ''),
+                    "displayName": details.get('displayName', '')
                 }
                 valid_actors.add(actor)
 
@@ -550,10 +564,13 @@ class DiscordExporterClient(discord.Client):
                 if any(b in char_name.lower() for b in SYSTEM_BOTS):
                     continue
                 role, color, color_name = faction_info
+                details = detected_member_details.get(char_name, {})
                 character_map[char_name] = {
                     "role": role,
                     "color": color,
-                    "colorName": color_name
+                    "colorName": color_name,
+                    "username": details.get('username', ''),
+                    "displayName": details.get('displayName', '')
                 }
                 valid_actors.add(char_name)
 
