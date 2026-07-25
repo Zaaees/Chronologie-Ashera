@@ -2,17 +2,17 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Sparkles, Scroll
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2
 } from 'lucide-react';
 
-const FACTION_COLORS: Record<string, { bg: string; text: string; border: string }> = {
-  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.25)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.5)" },
-  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.25)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.5)" },
-  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.12)", text: "#fef08a", border: "rgba(254, 240, 138, 0.35)" },
-  "L'œil": { bg: "rgba(30, 41, 59, 0.6)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.4)" },
-  "Sans guilde": { bg: "rgba(180, 83, 9, 0.25)", text: "#fde047", border: "rgba(217, 119, 6, 0.5)" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.25)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.4)" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.25)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.5)" }
+const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string }> = {
+  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.28)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.55)", icon: "🗡️" },
+  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.28)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.55)", icon: "🌙" },
+  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.14)", text: "#fef08a", border: "rgba(254, 240, 138, 0.4)", icon: "⚖️" },
+  "L'œil": { bg: "rgba(30, 41, 59, 0.7)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.45)", icon: "👁️" },
+  "Sans guilde": { bg: "rgba(180, 83, 9, 0.28)", text: "#fde047", border: "rgba(217, 119, 6, 0.55)", icon: "☀️" },
+  "Sans rôle": { bg: "rgba(71, 85, 105, 0.28)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.45)", icon: "🛡️" },
+  "PNJ": { bg: "rgba(126, 34, 206, 0.28)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.55)", icon: "🔮" }
 };
 
 // Formater la date en français clair
@@ -200,16 +200,21 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#07080c] text-slate-200 font-sans selection:bg-red-900 selection:text-white">
+    <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY DU PROJET FLOUTÉE */}
+      <div className="bg-dark-fantasy-layer" />
+      <div className="bg-vignette-overlay" />
+      <div className="ember-particles-bg" />
+
       {/* 🗡️ EN-TÊTE GOTHIQUE ÉPURÉE */}
-      <header className="sticky top-0 z-40 bg-[#0a0c12]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
+      <header className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
             {/* Logo & Titre Cinzel */}
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border border-slate-700 bg-slate-900/90 flex items-center justify-center shadow-lg shadow-black/60">
+              <div className="w-10 h-10 border border-slate-700 bg-slate-950 flex items-center justify-center shadow-lg shadow-black/80">
                 <Scroll className="w-5 h-5 text-slate-300" />
               </div>
               <div>
@@ -230,7 +235,7 @@ export default function App() {
                 placeholder="Rechercher une scène, un mot, un extrait..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0e111a] border border-slate-800 rounded-none pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-400 transition-colors shadow-inner"
+                className="w-full bg-[#0d0f17] border border-slate-800 rounded-none pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-400 transition-colors shadow-inner"
               />
               {searchQuery && (
                 <button 
@@ -247,7 +252,7 @@ export default function App() {
           <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
             {/* Personnages par Faction */}
-            <div className="flex items-center gap-2 bg-[#0e111a] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
+            <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
               <Users className="w-4 h-4 text-purple-400 shrink-0" />
               <div className="flex-1 min-w-0">
                 <select
@@ -255,16 +260,17 @@ export default function App() {
                   onChange={(e) => setSelectedActor(e.target.value)}
                   className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
                 >
-                  <option value="all" className="bg-[#0e111a] text-slate-200 font-semibold">
+                  <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
                     Tous les personnages
                   </option>
                   
                   {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
                     if (actorList.length === 0) return null;
+                    const factionIcon = FACTION_COLORS[roleName]?.icon || "🛡️";
                     return (
-                      <optgroup key={roleName} label={`--- ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-[#090b10] text-slate-400 font-bold">
+                      <optgroup key={roleName} label={`--- ${factionIcon} ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-[#08090d] text-slate-400 font-bold">
                         {actorList.map(({ name, displayLabel }) => (
-                          <option key={name} value={name} className="bg-[#0e111a] text-slate-200 font-normal">
+                          <option key={name} value={name} className="bg-[#0d0f17] text-slate-200 font-normal">
                             {displayLabel}
                           </option>
                         ))}
@@ -276,7 +282,7 @@ export default function App() {
             </div>
 
             {/* Salons par Catégorie */}
-            <div className="flex items-center gap-2 bg-[#0e111a] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
+            <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[240px]">
               <Layers className="w-4 h-4 text-slate-400 shrink-0" />
               <div className="flex-1 min-w-0">
                 <select
@@ -284,14 +290,14 @@ export default function App() {
                   onChange={(e) => setSelectedChannel(e.target.value)}
                   className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
                 >
-                  <option value="all" className="bg-[#0e111a] text-slate-200 font-semibold">
+                  <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
                     Tous les salons
                   </option>
 
                   {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
-                    <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#090b10] text-slate-400 font-bold">
+                    <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#08090d] text-slate-400 font-bold">
                       {channels.map(ch => (
-                        <option key={ch} value={ch} className="bg-[#0e111a] text-slate-200 font-normal">
+                        <option key={ch} value={ch} className="bg-[#0d0f17] text-slate-200 font-normal">
                           #{ch}
                         </option>
                       ))}
@@ -321,9 +327,14 @@ export default function App() {
       {/* 🚀 LAYOUT GOTHIQUE AVEC SIDEBAR & LA CHRONOLOGIE VERTICALE */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
-        {/* 📌 SAUT TEMPOREL (SIDEBAR MINIMALISTE) */}
+        {/* 📌 SAUT TEMPOREL (SIDEBAR MINIMALISTE AVEC CORNIÈRES) */}
         <aside className="hidden lg:block w-64 shrink-0">
-          <div className="sticky top-36 bg-[#0c0e15] border border-slate-800 p-4 shadow-2xl backdrop-blur-md">
+          <div className="sticky top-36 gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-4 shadow-2xl backdrop-blur-md">
+            <div className="gothic-corner gothic-corner-tl" />
+            <div className="gothic-corner gothic-corner-tr" />
+            <div className="gothic-corner gothic-corner-bl" />
+            <div className="gothic-corner gothic-corner-br" />
+
             <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-800">
               <Calendar className="w-4 h-4 text-slate-400" />
               <h2 className="text-xs font-bold font-serif-gothic tracking-wider uppercase text-slate-300">Saut Temporel</h2>
@@ -341,7 +352,7 @@ export default function App() {
                   }`}
                 >
                   <span className="truncate">{label}</span>
-                  <span className="px-2 py-0.5 bg-slate-900 border border-slate-800 text-[10px] text-slate-400 font-mono">
+                  <span className="px-2 py-0.5 bg-slate-950 border border-slate-800 text-[10px] text-slate-400 font-mono">
                     {scenes.length}
                   </span>
                 </button>
@@ -361,7 +372,7 @@ export default function App() {
           <div className="timeline-spine" />
 
           {groupedPeriodScenes.length === 0 ? (
-            <div className="bg-[#0d0f17] border border-slate-800 p-12 text-center my-8 shadow-xl">
+            <div className="bg-[#0c0e15] border border-slate-800 p-12 text-center my-8 shadow-xl">
               <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-4" />
               <h3 className="text-base font-bold font-serif-gothic text-slate-300 mb-1">Aucune scène correspondante</h3>
               <p className="text-xs text-slate-500 mb-6">
@@ -385,13 +396,13 @@ export default function App() {
                   
                   {/* ANCRAGE & NOEUD DE PÉRIODE (Nœud Métallique Argenté) */}
                   <div className="flex items-center gap-4 mb-6 -ml-8">
-                    <div className="w-10 h-10 bg-[#0d0f17] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10">
+                    <div className="w-10 h-10 bg-[#08090d] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10">
                       <div className="w-3 h-3 bg-slate-300 transform rotate-45" />
                     </div>
                     
                     <div className="px-4 py-2 bg-[#0c0e15] border border-slate-700/80 flex items-center gap-3 shadow-xl">
                       <h2 className="text-sm font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">{label}</h2>
-                      <span className="px-2 py-0.5 bg-slate-900 border border-slate-800 text-slate-300 text-[11px] font-mono">
+                      <span className="px-2 py-0.5 bg-slate-950 border border-slate-800 text-slate-300 text-[11px] font-mono">
                         {scenes.length} {scenes.length > 1 ? 'SCÈNES' : 'SCÈNE'}
                       </span>
                     </div>
@@ -399,7 +410,7 @@ export default function App() {
                     <div className="h-[1px] flex-1 bg-gradient-to-r from-slate-700/60 to-transparent" />
                   </div>
 
-                  {/* GRILLE DES CARTE GOTHIQUES DE SCÈNES */}
+                  {/* GRILLE DES CARTE GOTHIQUES DE SCÈNES AVEC CORNIÈRES */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {scenes.map(scene => {
                       const firstDate = formatDateFr(scene.start_time);
@@ -408,12 +419,17 @@ export default function App() {
                         <div
                           key={scene.id}
                           onClick={() => setActiveScene(scene)}
-                          className="gothic-card relative p-4.5 cursor-pointer flex flex-col justify-between"
+                          className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between"
                         >
+                          <div className="gothic-corner gothic-corner-tl" />
+                          <div className="gothic-corner gothic-corner-tr" />
+                          <div className="gothic-corner gothic-corner-bl" />
+                          <div className="gothic-corner gothic-corner-br" />
+
                           <div>
                             {/* En-tête de la carte */}
                             <div className="flex items-center justify-between gap-2 mb-3">
-                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-slate-900 border border-slate-700/80 text-[11px] font-mono text-slate-300 truncate max-w-[70%]">
+                              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 bg-slate-950 border border-slate-800 text-[11px] font-mono text-slate-300 truncate max-w-[70%]">
                                 #{scene.channel}
                               </span>
                               <span className="text-[11px] text-slate-400 font-mono flex items-center gap-1 shrink-0">
@@ -432,7 +448,7 @@ export default function App() {
                             </p>
                           </div>
 
-                          {/* Acteurs & Flèche */}
+                          {/* Acteurs & Sceaux de Faction */}
                           <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
                             <div className="flex flex-wrap items-center gap-1.5 max-w-[85%]">
                               {scene.actors.slice(0, 4).map(actor => {
@@ -443,9 +459,10 @@ export default function App() {
                                   <span
                                     key={actor}
                                     style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                                    className="px-2 py-0.5 border text-[10px] font-medium truncate max-w-[120px]"
+                                    className="inline-flex items-center gap-1 px-2 py-0.5 border text-[10px] font-medium truncate max-w-[130px]"
                                   >
-                                    {actor}
+                                    <span className="text-[10px]">{style.icon}</span>
+                                    <span className="truncate">{actor}</span>
                                   </span>
                                 );
                               })}
@@ -474,8 +491,12 @@ export default function App() {
       {/* 🔮 MODALE CODEX LECTURE DE SCÈNE GOTHIQUE */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="bg-[#0c0e15] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-            
+          <div className="gothic-corner-box bg-[#0c0e15] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative">
+            <div className="gothic-corner gothic-corner-tl" />
+            <div className="gothic-corner gothic-corner-tr" />
+            <div className="gothic-corner gothic-corner-bl" />
+            <div className="gothic-corner gothic-corner-br" />
+
             {/* Header Modal */}
             <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-[#080a0f]">
               <div className="flex items-center gap-3">
@@ -509,9 +530,10 @@ export default function App() {
                       <span
                         key={actor}
                         style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                        className="px-2.5 py-0.5 border text-xs font-medium"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium"
                       >
-                        {actor}
+                        <span>{style.icon}</span>
+                        <span>{actor}</span>
                       </span>
                     );
                   })}
@@ -525,10 +547,11 @@ export default function App() {
                   const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
 
                   return (
-                    <div key={msg.id || index} className="bg-[#090b10] border border-slate-800/90 p-4 space-y-2">
+                    <div key={msg.id || index} className="bg-[#08090d] border border-slate-800/90 p-4 space-y-2">
                       <div className="flex items-center justify-between border-b border-slate-800/60 pb-2">
-                        <span style={{ color: style.text }} className="text-xs font-bold font-serif-gothic tracking-wider">
-                          {msg.author}
+                        <span style={{ color: style.text }} className="text-xs font-bold font-serif-gothic tracking-wider inline-flex items-center gap-1.5">
+                          <span>{style.icon}</span>
+                          <span>{msg.author}</span>
                         </span>
                         <span className="text-[10px] text-slate-500 font-mono">
                           {formatDateFr(msg.timestamp)}
