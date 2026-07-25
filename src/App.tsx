@@ -6,13 +6,13 @@ import {
 } from 'lucide-react';
 
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
-  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.35)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.65)", icon: "🗡️", hexColor: "#ef4444" },
-  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.35)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.65)", icon: "🌙", hexColor: "#3b82f6" },
-  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.22)", text: "#fef08a", border: "rgba(254, 240, 138, 0.5)", icon: "⚖️", hexColor: "#fef08a" },
-  "L'œil": { bg: "rgba(30, 41, 59, 0.8)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.55)", icon: "👁️", hexColor: "#cbd5e1" },
-  "Sans guilde": { bg: "rgba(180, 83, 9, 0.35)", text: "#fde047", border: "rgba(217, 119, 6, 0.65)", icon: "☀️", hexColor: "#eab308" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.35)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.55)", icon: "🛡️", hexColor: "#94a3b8" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.35)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.65)", icon: "🔮", hexColor: "#c084fc" }
+  "La Garde Pourpre": { bg: "rgba(153, 27, 27, 0.4)", text: "#fca5a5", border: "rgba(220, 38, 38, 0.75)", icon: "🗡️", hexColor: "#ef4444" },
+  "Cercle d'Azur": { bg: "rgba(30, 58, 138, 0.4)", text: "#93c5fd", border: "rgba(59, 130, 246, 0.75)", icon: "🌙", hexColor: "#3b82f6" },
+  "Voile d'Ivoire": { bg: "rgba(254, 240, 138, 0.25)", text: "#fef08a", border: "rgba(254, 240, 138, 0.6)", icon: "⚖️", hexColor: "#fef08a" },
+  "L'œil": { bg: "rgba(30, 41, 59, 0.85)", text: "#e2e8f0", border: "rgba(148, 163, 184, 0.65)", icon: "👁️", hexColor: "#cbd5e1" },
+  "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308" },
+  "Sans rôle": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "🛡️", hexColor: "#94a3b8" },
+  "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc" }
 };
 
 // Formater la date en style Discord (ex: 4 février 2026 à 22:15)
@@ -100,18 +100,18 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
         const eTime = new Date(sc.end_time || sc.start_time).getTime();
         const left = Math.max(0, ((sTime - tMin) / duration) * 100);
         const rawWidth = Math.max(0.5, ((eTime - sTime) / duration) * 100);
-        const width = Math.max(rawWidth, 4); // Largeur minimale de 4% pour lisibilité et clic
+        const width = Math.max(rawWidth, 4.5); // Largeur minimale de 4.5% pour lisibilité et clic
         return {
           scene: sc,
-          leftPercent: Math.min(left, 95),
+          leftPercent: Math.min(left, 94),
           widthPercent: Math.min(width, 100 - left)
         };
       })
     };
   });
 
-  // 5 Ticks de dates sur la règle supérieure
-  const dateTicks = [0, 0.25, 0.5, 0.75, 1].map(ratio => {
+  // 6 Ticks de dates sur la règle supérieure
+  const dateTicks = [0, 0.2, 0.4, 0.6, 0.8, 1].map(ratio => {
     const timeAtRatio = tMin + ratio * duration;
     const d = new Date(timeAtRatio);
     return d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' });
@@ -140,17 +140,17 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
           </div>
         </div>
         <span className="text-[10px] text-slate-400 font-mono bg-slate-950 px-2.5 py-1 border border-slate-800">
-          Durée : {dateTicks[0]} → {dateTicks[4]}
+          Durée : {dateTicks[0]} → {dateTicks[5]}
         </span>
       </div>
 
       {/* Conteneur défilable de la Frise Swimlanes */}
       <div className="overflow-x-auto custom-scrollbar">
-        <div className="min-w-[750px] space-y-1">
+        <div className="min-w-[950px] space-y-2">
           
           {/* Règle des dates supérieure */}
           <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
-            <div className="w-48 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300">
+            <div className="w-52 shrink-0 font-bold uppercase tracking-wider pl-2 text-slate-300">
               Salons Actifs
             </div>
             <div className="flex-1 flex justify-between px-2">
@@ -161,23 +161,24 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
           </div>
 
           {/* Lignes par Salon (Swimlanes) */}
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {tracks.map(({ channel, scenes: trackScenes }) => (
-              <div key={channel} className="flex items-center h-10 group hover:bg-slate-900/60 rounded transition-colors">
+              <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
                 {/* Nom du Salon (Colonne Gauche) */}
-                <div className="w-48 shrink-0 pr-3 truncate text-xs font-mono font-medium text-slate-300 flex items-center gap-1.5 pl-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400 shrink-0" />
+                <div className="w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
+                  <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
                 {/* Piste Temporelle (Piste Droite) */}
-                <div className="flex-1 relative h-7 bg-[#08090d] border border-slate-800/90 rounded gantt-track-bg overflow-hidden">
+                <div className="flex-1 relative h-9 bg-[#08090d] border border-slate-800 rounded gantt-track-bg overflow-visible">
                   {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
                     const info = CHARACTERS_DATA[scene.actors[0]];
                     const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
                     const startStr = formatDateDiscord(scene.start_time);
                     const endStr = formatDateDiscord(scene.end_time);
+                    const isShort = widthPercent < 10;
 
                     return (
                       <div
@@ -189,15 +190,52 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                           backgroundColor: style.bg,
                           borderColor: style.border
                         }}
-                        className="gantt-bar-item absolute top-0.5 bottom-0.5 border rounded px-2 flex items-center justify-between cursor-pointer text-[10px] font-sans truncate select-none"
-                        title={`${scene.title} (#${scene.channel})\nDébut: ${startStr}\nFin: ${endStr}\nActeurs: ${scene.actors.join(', ')}`}
+                        className="gantt-bar-item absolute top-0.5 bottom-0.5 border rounded-md px-2 flex items-center justify-between cursor-pointer text-xs select-none group/bar"
                       >
-                        <span style={{ color: style.text }} className="font-semibold truncate">
-                          {scene.title}
-                        </span>
-                        <span className="text-[9px] opacity-80 font-mono ml-1 shrink-0 hidden md:inline">
-                          {scene.actors[0] || ''}
-                        </span>
+                        {/* CONTENU COMPACT CLAIR SELON LA LARGEUR DE LA BARRE */}
+                        <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
+                          <span className="text-xs shrink-0">{style.icon}</span>
+                          
+                          {/* SI LA BARRE EST RECTANGULAIRE (LARGE) */}
+                          {!isShort ? (
+                            <div className="flex items-center gap-2 min-w-0 w-full">
+                              <span style={{ color: style.text }} className="font-semibold text-xs truncate">
+                                {scene.title}
+                              </span>
+                              {scene.actors.length > 0 && (
+                                <span className="text-[10px] text-slate-300/80 font-mono truncate hidden lg:inline">
+                                  ({scene.actors.slice(0, 2).join(', ')})
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            /* SI LA BARRE EST ÉTROITE (PETITE SCÈNE) */
+                            <span style={{ color: style.text }} className="font-semibold text-[11px] truncate">
+                              {scene.actors[0] || scene.title}
+                            </span>
+                          )}
+                        </div>
+
+                        {/* INFO-BULLE RICH DARK FANTASY AU SURVOL (TOOLTIP EXACT) */}
+                        <div className="opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity">
+                          <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
+                            <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
+                            <span className="text-[10px] font-mono text-slate-400">{scene.messages.length} msg</span>
+                          </div>
+                          <h4 className="text-xs font-bold text-slate-100 mb-1">{scene.title}</h4>
+                          <div className="text-[11px] text-slate-300 font-mono space-y-0.5 mb-2">
+                            <div><span className="text-slate-500">Début :</span> {startStr}</div>
+                            <div><span className="text-slate-500">Fin :</span> {endStr}</div>
+                          </div>
+                          <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-800">
+                            {scene.actors.map(a => (
+                              <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
+                                {a}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
                       </div>
                     );
                   })}
