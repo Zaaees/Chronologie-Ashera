@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, Scene, Character, Message } from './data';
+import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin
@@ -260,7 +260,6 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
 // Interface pour les pistes Gantt par salon
 interface GanttChannelTrack {
   channel: string;
-  locationImage?: string;
   scenes: {
     scene: Scene;
     leftPercent: number;
@@ -289,11 +288,9 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
     const chScenes = channelMap[ch];
-    const locationImg = CHANNEL_IMAGES[ch] || chScenes.find(s => s.location_image)?.location_image;
 
     return {
       channel: ch,
-      locationImage: locationImg,
       scenes: chScenes.map(sc => {
         const sTime = new Date(sc.start_time).getTime();
         const eTime = new Date(sc.end_time || sc.start_time).getTime();
@@ -361,23 +358,12 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
           {/* Lignes par Salon */}
           <div className="space-y-3">
-            {tracks.map(({ channel, locationImage, scenes: trackScenes }, trackIdx) => (
+            {tracks.map(({ channel, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
-                {/* Nom du Salon (avec gestion d'erreur onError sur les images) */}
+                {/* Nom du Salon */}
                 <div className="w-56 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
-                  {locationImage ? (
-                    <div className="w-6 h-6 rounded border border-slate-700 overflow-hidden shrink-0 shadow-sm bg-slate-900">
-                      <img 
-                        src={locationImage} 
-                        alt={channel} 
-                        className="w-full h-full object-cover" 
-                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                      />
-                    </div>
-                  ) : (
-                    <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
-                  )}
+                  <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
                   <span className="truncate" title={`#${channel}`}>#{channel}</span>
                 </div>
 
@@ -435,18 +421,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
                         {/* INFO-BULLE RICH DARK FANTASY */}
                         <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
-                          
-                          {locationImage && (
-                            <div className="h-16 w-full overflow-hidden rounded mb-2 border border-slate-700 bg-slate-900">
-                              <img 
-                                src={locationImage} 
-                                alt={channel} 
-                                className="w-full h-full object-cover"
-                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                              />
-                            </div>
-                          )}
-
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
                             <span className="text-[10px] font-mono text-[#949ba4]">{scene.messages.length} msg</span>
@@ -652,8 +626,11 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
-      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
-      <div className="bg-dark-fantasy-layer" />
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE (AVEC SRC RELATIF SÉCURISÉ) */}
+      <div 
+        className="bg-dark-fantasy-layer" 
+        style={{ backgroundImage: "url('./dark_fantasy_bg.png')" }}
+      />
       <div className="bg-vignette-overlay" />
       <div className="ember-particles-bg" />
 
@@ -696,7 +673,7 @@ export default function App() {
               {searchQuery && (
                 <button 
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-[#35373c]"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -704,7 +681,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* 🛡️ BANNIÈRES VITRINES DES 4 FACTIONS D'ASHERA (AFFICHAGE VITRINE SANS FILTRAGE) */}
+          {/* 🛡️ BANNIÈRES DES 4 FACTIONS D'ASHERA (SANS FILTRAGE NI SURBRILLANCE AU SURVOL) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
             {Object.entries(FACTION_INFO).map(([factionName, info]) => (
               <div
@@ -723,7 +700,7 @@ export default function App() {
                     <span className="truncate">{factionName}</span>
                   </div>
                   <div className="text-[10px] text-slate-400 font-mono truncate">
-                    Ordre Majeur d'Ashera
+                    Guilde
                   </div>
                 </div>
               </div>
