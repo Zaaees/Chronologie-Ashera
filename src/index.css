@@ -39,7 +39,7 @@ body {
 .bg-dark-fantasy-layer {
   position: fixed;
   inset: -20px;
-  background-image: url('dark_fantasy_bg.png');
+  background-image: url('./dark_fantasy_bg.png'), url('../dark_fantasy_bg.png'), url('dark_fantasy_bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,7 +85,7 @@ body {
   100% { background-position: 0% 0%; }
 }
 
-/* 🛡️ BANNIÈRES DU HALL DES FACTIONS (POINT 2) */
+/* 🛡️ BANNIÈRES DU HALL DES FACTIONS */
 .faction-crest-card {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);

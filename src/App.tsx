@@ -5,17 +5,7 @@ import {
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin
 } from 'lucide-react';
 
-const DEFAULT_FACTION_STYLE = {
-  roleName: "Sans rôle",
-  bg: "rgba(71, 85, 105, 0.4)", 
-  text: "#cbd5e1", 
-  border: "rgba(100, 116, 139, 0.65)", 
-  icon: "🛡️", 
-  hexColor: "#94a3b8",
-  crest: "./ashera_banner.png"
-};
-
-const MAIN_FACTIONS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
+const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   "La Garde Pourpre": { 
     roleName: "La Garde Pourpre",
     bg: "rgba(153, 27, 27, 0.4)", 
@@ -54,18 +44,26 @@ const MAIN_FACTIONS: Record<string, { bg: string; text: string; border: string; 
   }
 };
 
-const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
-  ...MAIN_FACTIONS,
+const DEFAULT_FACTION_STYLE = {
+  roleName: "Sans rôle",
+  bg: "rgba(71, 85, 105, 0.4)", 
+  text: "#cbd5e1", 
+  border: "rgba(100, 116, 139, 0.65)", 
+  icon: "🛡️", 
+  hexColor: "#94a3b8",
+  crest: "./ashera_banner.png"
+};
+
+const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
+  ...FACTION_INFO,
   "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
   "Sans rôle": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "🛡️", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Sans rôle" },
   "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" }
 };
 
-const FACTION_COLORS = FACTION_INFO;
-
 function getFactionStyle(role: string | undefined) {
-  if (!role || !FACTION_INFO[role]) return DEFAULT_FACTION_STYLE;
-  return FACTION_INFO[role];
+  if (!role || !FACTION_COLORS[role]) return DEFAULT_FACTION_STYLE;
+  return FACTION_COLORS[role];
 }
 
 // Formater la date en style Discord
@@ -270,7 +268,7 @@ interface GanttChannelTrack {
   }[];
 }
 
-// COMPOSANT GANTT SWIMLANES DYNAMIQUES AVEC IMAGES DE SALONS (POINT 1)
+// COMPOSANT GANTT SWIMLANES DYNAMIQUES
 function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
   if (scenes.length === 0) return null;
 
@@ -361,16 +359,21 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
             </div>
           </div>
 
-          {/* Lignes par Salon avec Vignettes d'Illustration du Lieu (POINT 1) */}
+          {/* Lignes par Salon */}
           <div className="space-y-3">
             {tracks.map(({ channel, locationImage, scenes: trackScenes }, trackIdx) => (
               <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
                 
-                {/* Nom du Salon + VIGNETTE D'ILLUSTRATION DU LIEU (POINT 1) */}
+                {/* Nom du Salon (avec gestion d'erreur onError sur les images) */}
                 <div className="w-56 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
                   {locationImage ? (
-                    <div className="w-6 h-6 rounded border border-slate-700 overflow-hidden shrink-0 shadow-sm">
-                      <img src={locationImage} alt={channel} className="w-full h-full object-cover" />
+                    <div className="w-6 h-6 rounded border border-slate-700 overflow-hidden shrink-0 shadow-sm bg-slate-900">
+                      <img 
+                        src={locationImage} 
+                        alt={channel} 
+                        className="w-full h-full object-cover" 
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      />
                     </div>
                   ) : (
                     <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
@@ -433,16 +436,20 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
                         {/* INFO-BULLE RICH DARK FANTASY */}
                         <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
                           
-                          {/* Image du salon dans l'info-bulle (POINT 1) */}
                           {locationImage && (
-                            <div className="h-16 w-full overflow-hidden rounded mb-2 border border-slate-700">
-                              <img src={locationImage} alt={channel} className="w-full h-full object-cover" />
+                            <div className="h-16 w-full overflow-hidden rounded mb-2 border border-slate-700 bg-slate-900">
+                              <img 
+                                src={locationImage} 
+                                alt={channel} 
+                                className="w-full h-full object-cover"
+                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                              />
                             </div>
                           )}
 
                           <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
                             <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
-                            <span className="text-[10px] font-mono text-slate-400">{scene.messages.length} msg</span>
+                            <span className="text-[10px] font-mono text-[#949ba4]">{scene.messages.length} msg</span>
                           </div>
                           <h4 className="text-xs font-bold text-slate-100 mb-1">{scene.title}</h4>
                           <div className="text-[11px] text-slate-300 font-mono space-y-0.5 mb-2">
@@ -478,7 +485,6 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedFactionFilter, setSelectedFactionFilter] = useState<string>('all');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
@@ -488,27 +494,6 @@ export default function App() {
 
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
-
-  // 🔮 POINT 4 : ÉCLAIRAGE DYNAMIQUE D'AMBIANCE SELON LA FACTION SÉLECTIONNÉE
-  useEffect(() => {
-    const root = document.documentElement;
-    if (selectedFactionFilter === "La Garde Pourpre") {
-      root.style.setProperty('--vignette-accent', 'rgba(220, 38, 38, 0.4)');
-      root.style.setProperty('--ember-color', 'rgba(220, 38, 38, 0.6)');
-    } else if (selectedFactionFilter === "Cercle d'Azur") {
-      root.style.setProperty('--vignette-accent', 'rgba(59, 130, 246, 0.4)');
-      root.style.setProperty('--ember-color', 'rgba(59, 130, 246, 0.6)');
-    } else if (selectedFactionFilter === "Voile d'Ivoire") {
-      root.style.setProperty('--vignette-accent', 'rgba(254, 240, 138, 0.35)');
-      root.style.setProperty('--ember-color', 'rgba(254, 240, 138, 0.5)');
-    } else if (selectedFactionFilter === "L'œil") {
-      root.style.setProperty('--vignette-accent', 'rgba(147, 51, 234, 0.4)');
-      root.style.setProperty('--ember-color', 'rgba(147, 51, 234, 0.6)');
-    } else {
-      root.style.setProperty('--vignette-accent', 'rgba(6, 7, 10, 0.85)');
-      root.style.setProperty('--ember-color', 'rgba(220, 38, 38, 0.4)');
-    }
-  }, [selectedFactionFilter]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -589,18 +574,9 @@ export default function App() {
     return groups;
   }, []);
 
-  // Filtrage des scènes selon Faction (POINT 2), Personnage, Salon et Recherche
+  // Filtrage des scènes selon Personnage, Salon et Recherche
   const filteredScenes = useMemo(() => {
     return SCENES_DATA.filter(scene => {
-      // Filtre par Blason de Faction (POINT 2)
-      if (selectedFactionFilter !== 'all') {
-        const hasFactionActor = scene.actors.some(actor => {
-          const info = CHARACTERS_DATA[actor];
-          return info && info.role === selectedFactionFilter;
-        });
-        if (!hasFactionActor) return false;
-      }
-
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const inTitle = scene.title.toLowerCase().includes(q);
@@ -631,7 +607,7 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedFactionFilter, selectedActor, selectedChannel]);
+  }, [searchQuery, selectedActor, selectedChannel]);
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -676,7 +652,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
-      {/* 🖼️ IMAGE DE FOND DARK FANTASY & ÉCLAIRAGE DYNAMIQUE (POINT 4) */}
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
       <div className="bg-dark-fantasy-layer" />
       <div className="bg-vignette-overlay" />
       <div className="ember-particles-bg" />
@@ -720,7 +696,7 @@ export default function App() {
               {searchQuery && (
                 <button 
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-[#35373c]"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -728,37 +704,30 @@ export default function App() {
             </div>
           </div>
 
-          {/* 🛡️ POINT 2 : HALL DES FACTIONS (BLASONS DE GUILDES AVEC IMAGES DU DOSSIER IMAGES) */}
+          {/* 🛡️ BANNIÈRES VITRINES DES 4 FACTIONS D'ASHERA (AFFICHAGE VITRINE SANS FILTRAGE) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
-            {Object.entries(MAIN_FACTIONS).map(([factionName, info]) => {
-              const isSelected = selectedFactionFilter === factionName;
+            {Object.entries(FACTION_INFO).map(([factionName, info]) => (
+              <div
+                key={factionName}
+                style={{ borderColor: 'rgba(226, 232, 240, 0.15)' }}
+                className="faction-crest-card relative p-2 rounded flex items-center gap-2.5 bg-[#0c0e15]/90 border text-left select-none"
+              >
+                {/* Blason Image du Dossier Images */}
+                <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-700/80 shrink-0 bg-black/60 shadow">
+                  <img src={info.crest} alt={factionName} className="w-full h-full object-cover object-center" />
+                </div>
 
-              return (
-                <button
-                  key={factionName}
-                  onClick={() => setSelectedFactionFilter(isSelected ? 'all' : factionName)}
-                  style={{ borderColor: isSelected ? info.hexColor : 'rgba(226, 232, 240, 0.15)' }}
-                  className={`faction-crest-card relative p-2 rounded flex items-center gap-2.5 cursor-pointer text-left transition-all ${
-                    isSelected ? 'bg-slate-900 border-2' : 'bg-[#0c0e15]/90 hover:bg-slate-900/80 border'
-                  }`}
-                >
-                  {/* Blason Image du Dossier Images (POINT 2) */}
-                  <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-700/80 shrink-0 bg-black/60 shadow">
-                    <img src={info.crest} alt={factionName} className="w-full h-full object-cover object-center" />
+                <div className="min-w-0 flex-1">
+                  <div style={{ color: info.text }} className="text-xs font-bold font-serif-gothic truncate flex items-center gap-1">
+                    <span>{info.icon}</span>
+                    <span className="truncate">{factionName}</span>
                   </div>
-
-                  <div className="min-w-0 flex-1">
-                    <div style={{ color: info.text }} className="text-xs font-bold font-serif-gothic truncate flex items-center gap-1">
-                      <span>{info.icon}</span>
-                      <span className="truncate">{factionName}</span>
-                    </div>
-                    <div className="text-[10px] text-slate-400 font-mono truncate">
-                      {isSelected ? '✓ Sélectionnée' : 'Filtrer par guilde'}
-                    </div>
+                  <div className="text-[10px] text-slate-400 font-mono truncate">
+                    Ordre Majeur d'Ashera
                   </div>
-                </button>
-              );
-            })}
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* BARRE DE FILTRES SÉLECTEURS */}
@@ -821,11 +790,10 @@ export default function App() {
               </div>
             </div>
 
-            {(searchQuery || selectedFactionFilter !== 'all' || selectedActor !== 'all' || selectedChannel !== 'all') && (
+            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedFactionFilter('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
@@ -920,7 +888,6 @@ export default function App() {
               <button
                 onClick={() => {
                   setSearchQuery('');
-                  setSelectedFactionFilter('all');
                   setSelectedActor('all');
                   setSelectedChannel('all');
                 }}
@@ -963,7 +930,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD + BANNIÈRE D'ILLUSTRATION DU LIEU (POINT 1) */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
@@ -972,31 +939,12 @@ export default function App() {
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
 
-            {/* BANNIÈRE D'ILLUSTRATION DU LIEU / SALON (POINT 1) */}
-            {(activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]) && (
-              <div className="relative h-36 w-full overflow-hidden border-b border-[#1e1f22]">
-                <img 
-                  src={activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]} 
-                  alt={activeScene.channel} 
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2b2d31] via-transparent to-black/50" />
-                <div className="absolute top-3 left-4 flex items-center gap-2">
-                  <span className="px-3 py-1 bg-black/70 backdrop-blur-md border border-slate-600 text-slate-100 font-mono text-xs shadow-lg">
-                    #{activeScene.channel}
-                  </span>
-                </div>
-              </div>
-            )}
-
             {/* En-tête Modal Discord */}
             <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
               <div className="flex items-center gap-3">
-                {!(activeScene.location_image || CHANNEL_IMAGES[activeScene.channel]) && (
-                  <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
-                    #{activeScene.channel}
-                  </span>
-                )}
+                <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
+                  #{activeScene.channel}
+                </span>
                 <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5 text-[#949ba4]" />
                   {formatDateDiscord(activeScene.start_time)}
