@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap
 } from 'lucide-react';
 
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string }> = {
@@ -15,7 +15,7 @@ const FACTION_COLORS: Record<string, { bg: string; text: string; border: string;
   "PNJ": { bg: "rgba(126, 34, 206, 0.28)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.55)", icon: "🔮", hexColor: "#c084fc" }
 };
 
-// Formater la date en style Discord (ex: 24 juillet 2026 à 22:15)
+// Formater la date en style Discord
 function formatDateDiscord(isoString: string): string {
   if (!isoString) return 'Date inconnue';
   try {
@@ -50,7 +50,7 @@ function getMonthYearKey(isoString: string): { key: string; label: string } {
   }
 }
 
-// Obtenir l'initiale pour l'avatar style Discord
+// Initiales pour avatar
 function getInitials(name: string): string {
   if (!name) return '?';
   const parts = name.trim().split(' ');
@@ -60,14 +60,69 @@ function getInitials(name: string): string {
   return name.slice(0, 2).toUpperCase();
 }
 
+// Interface pour les grappes de scènes parallèles
+interface SceneCluster {
+  id: string;
+  isParallel: boolean;
+  startTime: string;
+  endTime: string;
+  scenes: Scene[];
+}
+
+// Algorithme de détection des scènes en parallèle (chevauchement temporel)
+function clusterScenesByOverlap(scenes: Scene[]): SceneCluster[] {
+  if (scenes.length === 0) return [];
+
+  const sorted = [...scenes].sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
+
+  const clusters: SceneCluster[] = [];
+  let currentCluster: Scene[] = [sorted[0]];
+  let currentMaxEnd = new Date(sorted[0].end_time || sorted[0].start_time).getTime();
+
+  for (let i = 1; i < sorted.length; i++) {
+    const sc = sorted[i];
+    const scStart = new Date(sc.start_time).getTime();
+    const scEnd = new Date(sc.end_time || sc.start_time).getTime();
+
+    // Condition de parallélisme : si la scène commence avant la fin maximale de la grappe courante
+    if (scStart <= currentMaxEnd) {
+      currentCluster.push(sc);
+      if (scEnd > currentMaxEnd) {
+        currentMaxEnd = scEnd;
+      }
+    } else {
+      clusters.push({
+        id: `cluster-${currentCluster[0].id}`,
+        isParallel: currentCluster.length > 1,
+        startTime: currentCluster[0].start_time,
+        endTime: new Date(currentMaxEnd).toISOString(),
+        scenes: currentCluster
+      });
+      currentCluster = [sc];
+      currentMaxEnd = scEnd;
+    }
+  }
+
+  if (currentCluster.length > 0) {
+    clusters.push({
+      id: `cluster-${currentCluster[0].id}`,
+      isParallel: currentCluster.length > 1,
+      startTime: currentCluster[0].start_time,
+      endTime: new Date(currentMaxEnd).toISOString(),
+      scenes: currentCluster
+    });
+  }
+
+  return clusters;
+}
+
 export default function App() {
-  // États de filtres et recherche
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
-  // Scène sélectionnée pour la modale de lecture (Format Discord)
+  // Scène sélectionnée pour la modale
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
   // Remonter en haut
@@ -155,7 +210,7 @@ export default function App() {
     return groups;
   }, []);
 
-  // Filtrage des scènes par critères
+  // Filtrage des scènes selon les critères
   const filteredScenes = useMemo(() => {
     return SCENES_DATA.filter(scene => {
       if (searchQuery.trim()) {
@@ -181,18 +236,28 @@ export default function App() {
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
   }, [searchQuery, selectedActor, selectedChannel]);
 
-  // Groupement complet des scènes par Mois/Année
+  // Groupement des scènes par Mois/Année + DÉTECTION DES SCÈNES SIMULTANÉES / PARALLÈLES
   const groupedPeriodScenes = useMemo(() => {
-    const groups: { key: string; label: string; scenes: Scene[] }[] = [];
+    const groups: { key: string; label: string; clusters: SceneCluster[]; totalScenes: number }[] = [];
     const groupMap: Record<string, { label: string; scenes: Scene[] }> = {};
 
     filteredScenes.forEach(scene => {
       const { key, label } = getMonthYearKey(scene.start_time);
       if (!groupMap[key]) {
         groupMap[key] = { label, scenes: [] };
-        groups.push({ key, label, scenes: groupMap[key].scenes });
       }
       groupMap[key].scenes.push(scene);
+    });
+
+    Object.keys(groupMap).forEach(key => {
+      const { label, scenes } = groupMap[key];
+      const clusters = clusterScenesByOverlap(scenes);
+      groups.push({
+        key,
+        label,
+        clusters,
+        totalScenes: scenes.length
+      });
     });
 
     return groups;
@@ -215,19 +280,18 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
-      {/* 🖼️ IMAGE DE FOND DARK FANTASY DU PROJET FLOUTÉE */}
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
       <div className="bg-dark-fantasy-layer" />
       <div className="bg-vignette-overlay" />
       <div className="ember-particles-bg" />
 
-      {/* 🗡️ EN-TÊTE AVEC L'IMAGE DU PROJET INTEGRÉE */}
+      {/* 🗡️ EN-TÊTE PRINCIPAL AVEC ARTWORK ET FILTRES */}
       <header className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
-            {/* Logo, Image d'Illustration du Projet & Titre */}
+            {/* Logo, Artwork & Titre */}
             <div className="flex items-center gap-3.5">
-              {/* IMAGE DU PROJET MISE EN AVANT DANS L'EN-TÊTE */}
               <div className="relative w-11 h-11 border border-slate-700/80 rounded-lg overflow-hidden shadow-lg shadow-black/80 shrink-0">
                 <img 
                   src="./ashera_banner.png" 
@@ -247,7 +311,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Barre de Recherche Tranchée */}
+            {/* Recherche */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
               <input
@@ -268,7 +332,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* FILTRES ERGONOMIQUES STYLE SOMBRE */}
+          {/* BARRE DE FILTRES ERGONOMIQUES (FONCTIONNE AVEC LE PARALLÉLISME) */}
           <div className="flex flex-wrap items-center gap-3 mt-3 pt-3 border-t border-slate-800/80 text-xs">
             
             {/* Personnages par Faction */}
@@ -344,13 +408,11 @@ export default function App() {
         </div>
       </header>
 
-      {/* 🚀 LAYOUT GOTHIQUE AVEC SIDEBAR & LA CHRONOLOGIE VERTICALE */}
+      {/* 🚀 LAYOUT PRINCIPAL AVEC CARREFOURS TEMPORELS (SCÈNES SIMULTANÉES/PARALLÈLES) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
-        {/* 📌 SAUT TEMPOREL & CARTE ARTWORK EN SIDEBAR */}
+        {/* 📌 SAUT TEMPOREL & BANNIÈRE */}
         <aside className="hidden lg:block w-64 shrink-0 space-y-6">
-          
-          {/* IMAGE DU PROJET MISE EN AVANT EN CARTE HERO EN SIDEBAR */}
           <div className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-2 shadow-2xl overflow-hidden">
             <div className="gothic-corner gothic-corner-tl" />
             <div className="gothic-corner gothic-corner-tr" />
@@ -384,7 +446,7 @@ export default function App() {
             </div>
             
             <nav className="space-y-1 max-h-[calc(100vh-360px)] overflow-y-auto pr-1 text-xs">
-              {groupedPeriodScenes.map(({ key, label, scenes }) => (
+              {groupedPeriodScenes.map(({ key, label, totalScenes }) => (
                 <button
                   key={key}
                   onClick={() => scrollToMonth(key)}
@@ -396,7 +458,7 @@ export default function App() {
                 >
                   <span className="truncate">{label}</span>
                   <span className="px-2 py-0.5 bg-slate-950 border border-slate-800 text-[10px] text-slate-400 font-mono">
-                    {scenes.length}
+                    {totalScenes}
                   </span>
                 </button>
               ))}
@@ -408,7 +470,7 @@ export default function App() {
           </div>
         </aside>
 
-        {/* 📜 LA CHRONOLOGIE (FIL VERTICAL ARGENTÉ) */}
+        {/* 📜 LA CHRONOLOGIE (FIL VERTICAL ARGENTÉ AVEC CARREFOURS TEMPORELS EN PARALLÈLE) */}
         <main className="flex-1 min-w-0 relative pl-8">
           
           {/* Ligne verticale de la chronologie (Spine argentée) */}
@@ -434,10 +496,10 @@ export default function App() {
             </div>
           ) : (
             <div className="space-y-12">
-              {groupedPeriodScenes.map(({ key, label, scenes }) => (
+              {groupedPeriodScenes.map(({ key, label, clusters, totalScenes }) => (
                 <section key={key} id={`period-${key}`} className="scroll-mt-36 relative">
                   
-                  {/* ANCRAGE & NOEUD DE PÉRIODE (Nœud Métallique Argenté) */}
+                  {/* ANCRAGE & NOEUD DE PÉRIODE */}
                   <div className="flex items-center gap-4 mb-6 -ml-8">
                     <div className="w-10 h-10 bg-[#08090d] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10">
                       <div className="w-3 h-3 bg-slate-300 transform rotate-45" />
@@ -446,23 +508,126 @@ export default function App() {
                     <div className="px-4 py-2 bg-[#0c0e15] border border-slate-700/80 flex items-center gap-3 shadow-xl">
                       <h2 className="text-sm font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">{label}</h2>
                       <span className="px-2 py-0.5 bg-slate-950 border border-slate-800 text-slate-300 text-[11px] font-mono">
-                        {scenes.length} {scenes.length > 1 ? 'SCÈNES' : 'SCÈNE'}
+                        {totalScenes} {totalScenes > 1 ? 'SCÈNES' : 'SCÈNE'}
                       </span>
                     </div>
                     
                     <div className="h-[1px] flex-1 bg-gradient-to-r from-slate-700/60 to-transparent" />
                   </div>
 
-                  {/* GRILLE DES CARTE GOTHIQUES DE SCÈNES AVEC CORNIÈRES */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {scenes.map(scene => {
+                  {/* RENDU DES GRAPPES DE SCÈNES (STANDALONE VS CARREFOURS PARALLÈLES) */}
+                  <div className="space-y-8">
+                    {clusters.map((cluster) => {
+                      // CARREFOUR TEMPOREL : Scènes se déroulant en parallèle (chevauchement temporel)
+                      if (cluster.isParallel) {
+                        const channelNames = Array.from(new Set(cluster.scenes.map(s => `#${s.channel}`)));
+
+                        return (
+                          <div key={cluster.id} className="relative bg-[#0d0f17]/90 border border-purple-500/40 p-4 shadow-xl shadow-purple-950/20">
+                            {/* Bannière d'en-tête du Carrefour Temporel */}
+                            <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-purple-500/20">
+                              <div className="flex items-center gap-2">
+                                <span className="p-1.5 rounded bg-purple-950/80 border border-purple-500/40 text-purple-300">
+                                  <Zap className="w-4 h-4 animate-pulse" />
+                                </span>
+                                <div>
+                                  <h4 className="text-xs font-bold font-serif-gothic text-purple-200 tracking-wider uppercase flex items-center gap-2">
+                                    Carrefour Temporel • {cluster.scenes.length} Scènes Simultanées
+                                  </h4>
+                                  <p className="text-[11px] text-slate-400 font-mono">
+                                    Salons : {channelNames.join(' & ')}
+                                  </p>
+                                </div>
+                              </div>
+                              <span className="px-2.5 py-0.5 bg-purple-950/60 border border-purple-500/30 text-purple-300 text-[10px] font-mono">
+                                ⚡ Événements en Parallèle
+                              </span>
+                            </div>
+
+                            {/* GRILLE DES SCÈNES EN PARALLÈLE */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                              {cluster.scenes.map(scene => {
+                                const firstDate = formatDateDiscord(scene.start_time);
+
+                                return (
+                                  <div
+                                    key={scene.id}
+                                    onClick={() => setActiveScene(scene)}
+                                    className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between border-purple-500/30 hover:border-purple-400"
+                                  >
+                                    <div className="gothic-corner gothic-corner-tl" />
+                                    <div className="gothic-corner gothic-corner-tr" />
+                                    <div className="gothic-corner gothic-corner-bl" />
+                                    <div className="gothic-corner gothic-corner-br" />
+
+                                    <div>
+                                      {/* En-tête Carte Parallèle */}
+                                      <div className="flex items-center justify-between gap-2 mb-3">
+                                        <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-purple-950/80 border border-purple-500/30 text-[10px] font-mono text-purple-200 truncate">
+                                          #{scene.channel}
+                                        </span>
+                                        <span className="text-[10px] text-purple-300 font-mono flex items-center gap-1 shrink-0">
+                                          <Zap className="w-3 h-3 text-purple-400" />
+                                          {firstDate}
+                                        </span>
+                                      </div>
+
+                                      {/* Titre & Aperçu */}
+                                      <h3 className="text-sm font-semibold text-slate-100 group-hover:text-purple-300 transition-colors line-clamp-1 mb-2">
+                                        {scene.title}
+                                      </h3>
+                                      
+                                      <p className="text-xs text-slate-400 line-clamp-2 mb-4 leading-relaxed font-light">
+                                        {scene.preview}
+                                      </p>
+                                    </div>
+
+                                    {/* Acteurs & Sceaux */}
+                                    <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2">
+                                      <div className="flex flex-wrap items-center gap-1.5 max-w-[85%]">
+                                        {scene.actors.slice(0, 4).map(actor => {
+                                          const info = CHARACTERS_DATA[actor];
+                                          const style = info ? FACTION_COLORS[info.role] || FACTION_COLORS["Sans rôle"] : FACTION_COLORS["Sans rôle"];
+
+                                          return (
+                                            <span
+                                              key={actor}
+                                              style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                                              className="inline-flex items-center gap-1 px-2 py-0.5 border text-[10px] font-medium truncate max-w-[130px]"
+                                            >
+                                              <span className="text-[10px]">{style.icon}</span>
+                                              <span className="truncate">{actor}</span>
+                                            </span>
+                                          );
+                                        })}
+                                        {scene.actors.length > 4 && (
+                                          <span className="text-[10px] text-slate-500 font-mono">
+                                            +{scene.actors.length - 4}
+                                          </span>
+                                        )}
+                                      </div>
+
+                                      <span className="text-purple-400 hover:text-purple-200 transition-colors">
+                                        <ChevronRight className="w-4 h-4" />
+                                      </span>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      // SCÈNE UNIQUE (NON PARALLÈLE DANS CE CRÉNEAU)
+                      const scene = cluster.scenes[0];
                       const firstDate = formatDateDiscord(scene.start_time);
 
                       return (
                         <div
                           key={scene.id}
                           onClick={() => setActiveScene(scene)}
-                          className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between"
+                          className="gothic-card gothic-corner-box relative p-4.5 cursor-pointer flex flex-col justify-between max-w-2xl"
                         >
                           <div className="gothic-corner gothic-corner-tl" />
                           <div className="gothic-corner gothic-corner-tr" />
@@ -531,7 +696,7 @@ export default function App() {
         </main>
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : RENDU FIDÈLE AU CONFORT DE LECTURE DISCORD */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT ET CONFORT DE LECTURE DISCORD */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
           <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
@@ -621,7 +786,7 @@ export default function App() {
                             <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">{msg.embed_title}</h4>
                           )}
                           {msg.embed_description && (
-                            <p className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">{msg.embed_description}</p>
+                            <p className="text-[14px] text-[#dbdee1] italic whitespace-pre-line leading-relaxed">{msg.embed_description}</p>
                           )}
                         </div>
                       )}

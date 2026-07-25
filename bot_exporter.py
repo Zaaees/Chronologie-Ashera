@@ -304,7 +304,7 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         "channel": channel_name,
         "channel_id": str(channel_id),
         "category": category_name,
-        "title": f"Scène {scene_index} - {', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}",
+        "title": f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else channel_name,
         "actors": actors,
         "start_time": messages[0]['timestamp'],
         "end_time": messages[-1]['timestamp'],
