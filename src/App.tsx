@@ -1,8 +1,8 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
 } from 'lucide-react';
 
 const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
@@ -255,6 +255,154 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
   });
 
   return <>{renderedElements}</>;
+}
+
+// 🔍 COMPOSANT INTERACTIF : SÉLECTEUR DE PERSONNAGES AVEC RECHERCHE PAR SAISIE MANUELLE
+function SearchableCharacterSelect({
+  selectedActor,
+  setSelectedActor,
+  groupedActorsByFaction
+}: {
+  selectedActor: string;
+  setSelectedActor: (name: string) => void;
+  groupedActorsByFaction: Record<string, { name: string; displayLabel: string }[]>;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [filterQuery, setFilterQuery] = useState('');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Fermer le menu lors d'un clic extérieur
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Libellé de l'acteur actuellement sélectionné
+  const currentDisplayLabel = useMemo(() => {
+    if (selectedActor === 'all') return 'Tous les personnages';
+    const charInfo = CHARACTERS_DATA[selectedActor];
+    const serverNick = charInfo?.displayName || charInfo?.username;
+    return serverNick && serverNick !== selectedActor 
+      ? `${selectedActor} (${serverNick})` 
+      : selectedActor;
+  }, [selectedActor]);
+
+  // Groupement filtré selon la saisie manuelle de l'utilisateur
+  const filteredGroupedActors = useMemo(() => {
+    const q = filterQuery.toLowerCase().trim();
+    if (!q) return groupedActorsByFaction;
+
+    const result: Record<string, { name: string; displayLabel: string }[]> = {};
+    Object.entries(groupedActorsByFaction).forEach(([role, actors]) => {
+      const matching = actors.filter(a => 
+        a.name.toLowerCase().includes(q) || a.displayLabel.toLowerCase().includes(q)
+      );
+      if (matching.length > 0) {
+        result[role] = matching;
+      }
+    });
+    return result;
+  }, [filterQuery, groupedActorsByFaction]);
+
+  return (
+    <div ref={containerRef} className="relative flex-1 min-w-[240px]">
+      <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-1.5 border border-slate-800 shadow-sm">
+        <Users className="w-4 h-4 text-purple-400 shrink-0" />
+        
+        {/* Champ de Saisie Interactive */}
+        <input
+          type="text"
+          placeholder="Taper un nom de personnage..."
+          value={isOpen ? filterQuery : (selectedActor === 'all' ? '' : currentDisplayLabel)}
+          onFocus={() => {
+            setIsOpen(true);
+            setFilterQuery('');
+          }}
+          onChange={(e) => {
+            setFilterQuery(e.target.value);
+            if (!isOpen) setIsOpen(true);
+          }}
+          className="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs truncate"
+        />
+
+        {selectedActor !== 'all' && (
+          <button 
+            onClick={() => {
+              setSelectedActor('all');
+              setFilterQuery('');
+            }}
+            className="text-slate-500 hover:text-slate-300 p-0.5"
+            title="Effacer le personnage"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        )}
+
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-slate-500 hover:text-slate-300"
+        >
+          <ChevronDown className="w-3.5 h-3.5" />
+        </button>
+      </div>
+
+      {/* Dropdown Popover des Personnages par Faction */}
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-1 max-h-72 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
+          <button
+            onClick={() => {
+              setSelectedActor('all');
+              setIsOpen(false);
+              setFilterQuery('');
+            }}
+            className={`w-full text-left px-3 py-1.5 text-xs font-semibold hover:bg-slate-800 transition-colors ${
+              selectedActor === 'all' ? 'bg-purple-950/80 text-purple-200' : 'text-slate-300'
+            }`}
+          >
+            Tous les personnages
+          </button>
+
+          {Object.entries(filteredGroupedActors).map(([roleName, actorList]) => {
+            const factionStyle = getFactionStyle(roleName);
+            return (
+              <div key={roleName} className="border-t border-slate-800/80 pt-1">
+                <div style={{ color: factionStyle.text }} className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-950/80">
+                  <span>{factionStyle.icon}</span>
+                  <span>{roleName} ({actorList.length})</span>
+                </div>
+                {actorList.map(({ name, displayLabel }) => (
+                  <button
+                    key={name}
+                    onClick={() => {
+                      setSelectedActor(name);
+                      setIsOpen(false);
+                      setFilterQuery('');
+                    }}
+                    className={`w-full text-left px-4 py-1.5 text-xs hover:bg-slate-800/80 transition-colors truncate ${
+                      selectedActor === name ? 'bg-slate-800 text-purple-300 font-semibold' : 'text-slate-300'
+                    }`}
+                  >
+                    {displayLabel}
+                  </button>
+                ))}
+              </div>
+            );
+          })}
+
+          {Object.keys(filteredGroupedActors).length === 0 && (
+            <div className="px-4 py-3 text-xs text-slate-500 text-center">
+              Aucun personnage trouvé pour "{filterQuery}"
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
 
 // Interface pour les pistes Gantt par salon
@@ -626,7 +774,7 @@ export default function App() {
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
-      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE (AVEC SRC RELATIF SÉCURISÉ) */}
+      {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
       <div 
         className="bg-dark-fantasy-layer" 
         style={{ backgroundImage: "url('./dark_fantasy_bg.png')" }}
@@ -660,7 +808,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Recherche */}
+            {/* Recherche globale */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
               <input
@@ -681,7 +829,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* 🛡️ BANNIÈRES DES 4 FACTIONS D'ASHERA (SANS FILTRAGE NI SURBRILLANCE AU SURVOL) */}
+          {/* 🛡️ BANNIÈRES DES 4 FACTIONS D'ASHERA (AFFICHAGE "GUILDE") */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
             {Object.entries(FACTION_INFO).map(([factionName, info]) => (
               <div
@@ -707,38 +855,16 @@ export default function App() {
             ))}
           </div>
 
-          {/* BARRE DE FILTRES SÉLECTEURS */}
+          {/* BARRE DE FILTRES SÉLECTEURS AVEC RECHERCHE INTERACTIVE DE PERSONNAGES */}
           <div className="flex flex-wrap items-center justify-between gap-3 mt-3 text-xs">
             <div className="flex flex-wrap items-center gap-3 flex-1">
-              {/* Personnages par Faction */}
-              <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
-                <Users className="w-4 h-4 text-purple-400 shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <select
-                    value={selectedActor}
-                    onChange={(e) => setSelectedActor(e.target.value)}
-                    className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
-                  >
-                    <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
-                      Tous les personnages
-                    </option>
-                    
-                    {Object.entries(groupedActorsByFaction).map(([roleName, actorList]) => {
-                      if (actorList.length === 0) return null;
-                      const factionIcon = FACTION_COLORS[roleName]?.icon || "🛡️";
-                      return (
-                        <optgroup key={roleName} label={`--- ${factionIcon} ${roleName.toUpperCase()} (${actorList.length}) ---`} className="bg-[#08090d] text-slate-400 font-bold">
-                          {actorList.map(({ name, displayLabel }) => (
-                            <option key={name} value={name} className="bg-[#0d0f17] text-slate-200 font-normal">
-                              {displayLabel}
-                            </option>
-                          ))}
-                        </optgroup>
-                      );
-                    })}
-                  </select>
-                </div>
-              </div>
+              
+              {/* 🔍 SÉLECTEUR DE PERSONNAGES AVEC RECHERCHE PAR SAISIE MANUELLE */}
+              <SearchableCharacterSelect
+                selectedActor={selectedActor}
+                setSelectedActor={setSelectedActor}
+                groupedActorsByFaction={groupedActorsByFaction}
+              />
 
               {/* Salons par Catégorie */}
               <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
