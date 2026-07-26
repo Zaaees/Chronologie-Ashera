@@ -37,8 +37,12 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 channel_images_map = {}
 
 def clean_filename(name):
-    clean = re.sub(r'[^\w\-_]', '_', name).strip('_')
-    return clean.lower()
+    import unicodedata
+    nfkd = unicodedata.normalize('NFKD', name)
+    ascii_name = ''.join([c for c in nfkd if not unicodedata.combining(c)])
+    clean = re.sub(r'[^\w\-]', '_', ascii_name)
+    clean = re.sub(r'_+', '_', clean).strip('_').lower()
+    return clean
 
 async def download_image(url, destination_path, session):
     try:
@@ -67,53 +71,60 @@ async def on_ready():
 
     print(f"🏰 Extraction sur le serveur : {guild.name}")
 
+    # Récupération des salons RP réellement présents dans scenes.json
+    valid_rp_channels = set()
+    if os.path.exists("scenes.json"):
+        with open("scenes.json", 'r', encoding='utf-8') as f:
+            sdata = json.load(f)
+            valid_rp_channels = set(s['channel'] for s in sdata.get('scenes', []))
+
     async with aiohttp.ClientSession() as session:
-        text_channels = [ch for ch in guild.channels if isinstance(ch, discord.TextChannel)]
-        print(f"📊 {len(text_channels)} salons textuels trouvés.")
+        text_channels = [ch for ch in guild.channels if isinstance(ch, discord.TextChannel) and ch.name in valid_rp_channels]
+        print(f"📊 {len(text_channels)} salons textuels RP trouvés sur le serveur Discord.")
 
         for channel in text_channels:
             ch_clean = clean_filename(channel.name)
             img_filename = f"{ch_clean}.jpg"
             img_local_path = os.path.join(OUTPUT_DIR, img_filename)
-            rel_web_path = f"./channel_images/{img_filename}"
+            rel_web_path = f"/channel_images/{img_filename}"
 
             print(f"\n# Inspection #{channel.name}...")
             found_image = False
 
-            # 1. Epingles
+            # Inspection de la PLUS ANCIENNE ÉPINGLE (Bannière officielle du salon)
             try:
-                async for p in channel.pins():
+                pins = [p async for p in channel.pins()]
+                # On inverse la liste des épingles pour traiter de la PLUS ANCIENNE à la plus récente
+                for p in reversed(pins):
+                    image_url = None
+
+                    # 1. Vérifier les pièces jointes (attachments)
                     if p.attachments:
                         for att in p.attachments:
-                            if any(att.filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']):
-                                ok = await download_image(att.url, img_local_path, session)
-                                if ok:
-                                    channel_images_map[channel.name] = rel_web_path
-                                    found_image = True
-                                    break
-                    if found_image:
-                        break
-            except Exception:
-                pass
+                            if any(att.filename.lower().split('?')[0].endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']):
+                                image_url = att.url
+                                break
 
-            # 2. Premiers messages
-            if not found_image:
-                try:
-                    async for msg in channel.history(limit=20, oldest_first=True):
-                        if msg.attachments:
-                            for att in msg.attachments:
-                                if any(att.filename.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png', '.webp', '.gif']):
-                                    ok = await download_image(att.url, img_local_path, session)
-                                    if ok:
-                                        channel_images_map[channel.name] = rel_web_path
-                                        found_image = True
-                                        break
-                        if found_image:
+                    # 2. Vérifier les embeds (images intégrées dans un embed Discord)
+                    if not image_url and p.embeds:
+                        for emb in p.embeds:
+                            if emb.image and emb.image.url:
+                                image_url = emb.image.url
+                                break
+                            elif emb.thumbnail and emb.thumbnail.url:
+                                image_url = emb.thumbnail.url
+                                break
+
+                    if image_url:
+                        ok = await download_image(image_url, img_local_path, session)
+                        if ok:
+                            channel_images_map[channel.name] = rel_web_path
+                            found_image = True
                             break
-                except Exception as e:
-                    print(f"  ⚠️ Limite d'accès sur #{channel.name}: {e}")
+            except Exception as e:
+                print(f"  ⚠️ Erreur lors de l'accès aux épingles de #{channel.name}: {e}")
 
-    print(f"\n✨ {len(channel_images_map)} images de salons téléchargées en local !")
+    print(f"\n✨ {len(channel_images_map)} images de salons RP téléchargées depuis les épingles !")
 
     # Mise à jour des JSONs
     for json_file in ["scenes.json", "src/scenes.json"]:

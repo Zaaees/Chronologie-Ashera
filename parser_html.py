@@ -239,6 +239,39 @@ class DiscordHTMLParser(HTMLParser):
             self.save_current_message()
         super().close()
 
+THREAD_TO_PARENT = {
+    "↳🃏𝐋e-𝐑ouge-et-𝐋e-𝐍oir": "🍻〕𝐋-𝐄picurien",
+    "↳🎯𝐋e-17": "🍻〕𝐋-𝐄picurien",
+    "↳🎲𝐋e-𝐁onneteau": "🍻〕𝐋-𝐄picurien",
+    "↳🦾𝐋e-𝐁ras-de-𝐅er": "🍻〕𝐋-𝐄picurien"
+}
+
+EXPLICIT_END_REGEX = re.compile(
+    r'(sc[èe]ne\s+termin[eé]e|salon\s+libre|fin\s+de\s+sc[èe]ne|mission\s+termin[eé]e|fin\s+du\s+rp)',
+    re.IGNORECASE
+)
+
+EXPLICIT_START_REGEX = re.compile(
+    r'(```ansi.*🎭|#\s+⊱═─────|```\s*🎭|◦\s*─────────────\s*¤)',
+    re.IGNORECASE | re.DOTALL
+)
+
+NARRATOR_ACTORS = {
+    "owl le messager", "le conseiller", "inzu", "narrateur", "l'oeil", "les missives", "soigneuse"
+}
+
+def is_initiated_session(first_msg):
+    author = (first_msg.get('author') or '').lower()
+    content = (first_msg.get('content') or '') + ' ' + (first_msg.get('embed_description') or '')
+
+    if any(n in author for n in NARRATOR_ACTORS):
+        return True
+    if EXPLICIT_START_REGEX.search(content):
+        return True
+    if '<@' in content or 'invités' in content.lower() or 'épreuve' in content.lower() or 'cérémonie' in content.lower():
+        return True
+    return False
+
 def segment_messages_into_scenes(channel_name, channel_id, messages):
     if not messages:
         return []
@@ -253,14 +286,11 @@ def segment_messages_into_scenes(channel_name, channel_id, messages):
         return []
 
     scenes = []
-    current_scene_msgs = [valid_msgs[0]]
+    current_scene_tuples = [valid_msgs[0]]
     scene_counter = 1
 
-    MAX_INACTIVITY_HOURS = 1440.0
-    NEW_CHARACTER_JOIN_LIMIT_HOURS = 168.0
-
     for i in range(1, len(valid_msgs)):
-        prev_msg, _ = valid_msgs[i - 1]
+        prev_msg, prev_text = valid_msgs[i - 1]
         curr_msg, curr_text = valid_msgs[i]
 
         try:
@@ -270,42 +300,48 @@ def segment_messages_into_scenes(channel_name, channel_id, messages):
         except Exception:
             time_diff = 0
 
-        current_scene_actors = {clean_character_name(m[0]['author']) for m in current_scene_msgs}
+        current_scene_actors = {clean_character_name(m[0]['author']) for m in current_scene_tuples}
         curr_actor = clean_character_name(curr_msg['author'])
+
+        prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
+        curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
+
+        has_previous_actor_replied = False
+        for nm, _ in valid_msgs[i:]:
+            if clean_character_name(nm['author']) in current_scene_actors:
+                has_previous_actor_replied = True
+                break
+
+        is_initiated = is_initiated_session(current_scene_tuples[0][0])
 
         is_new_scene = False
 
-        if time_diff >= MAX_INACTIVITY_HOURS:
+        if prev_is_sealed:
             is_new_scene = True
-
-        elif curr_actor not in current_scene_actors:
-            has_previous_actor_replied = False
-            remaining_msgs = valid_msgs[i:]
-            for nm, _ in remaining_msgs:
-                nm_actor = clean_character_name(nm['author'])
-                if nm_actor in current_scene_actors:
-                    has_previous_actor_replied = True
-                    break
-
-            if not has_previous_actor_replied:
-                is_new_scene = True
-            elif time_diff >= NEW_CHARACTER_JOIN_LIMIT_HOURS:
+        elif time_diff >= 720.0: # 30 jours
+            is_new_scene = True
+        elif curr_is_start and curr_actor not in current_scene_actors and time_diff >= 2.0:
+            is_new_scene = True
+        elif curr_actor in current_scene_actors:
+            is_new_scene = False
+        elif has_previous_actor_replied:
+            is_new_scene = False
+        else:
+            limit = 48.0 if is_initiated else 24.0
+            if time_diff >= limit:
                 is_new_scene = True
             else:
                 is_new_scene = False
 
-        else:
-            is_new_scene = False
-
         if is_new_scene:
-            scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_msgs))
+            scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_tuples))
             scene_counter += 1
-            current_scene_msgs = [valid_msgs[i]]
+            current_scene_tuples = [valid_msgs[i]]
         else:
-            current_scene_msgs.append(valid_msgs[i])
+            current_scene_tuples.append(valid_msgs[i])
 
-    if current_scene_msgs:
-        scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_msgs))
+    if current_scene_tuples:
+        scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_tuples))
 
     return scenes
 
@@ -315,9 +351,30 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
     texts = [t[1] for t in messages_tuples]
 
     actors = list({clean_character_name(m['author']) for m in messages})
+    parent_channel = THREAD_TO_PARENT.get(channel_name, channel_name)
 
     preview = texts[0]
     if len(preview) > 160:
+        preview = preview[:157] + "..."
+
+    sc_dict = {
+        "id": f"scene_{re.sub(r'[^a-zA-Z0-9]', '_', channel_name)}_{scene_index}",
+        "channel": parent_channel,
+        "channel_id": channel_id,
+        "category": "",
+        "title": f"Scène {scene_index} - {', '.join(actors[:3])}{'...' if len(actors)>3 else ''}",
+        "actors": actors,
+        "start_time": parse_html_timestamp(messages[0]['timestamp']),
+        "end_time": parse_html_timestamp(messages[-1]['timestamp']),
+        "preview": preview,
+        "message_count": len(messages),
+        "messages": messages
+    }
+
+    if channel_name in THREAD_TO_PARENT:
+        sc_dict["thread_name"] = channel_name
+
+    return sc_dict
         preview = preview[:157] + "..."
 
     first_msg_id = messages[0]['id']
