@@ -362,7 +362,7 @@ function SearchableCharacterSelect({
             Tous les personnages
           </button>
 
-          {Object.entries(filteredGroupedActors).map(([roleName, actorList]) => {
+          {(Object.entries(filteredGroupedActors) as [string, { name: string; displayLabel: string }[]][]).map(([roleName, actorList]) => {
             const factionStyle = getFactionStyle(roleName);
             return (
               <div key={roleName} className="border-t border-slate-800/80 pt-1">
@@ -404,15 +404,44 @@ function SearchableCharacterSelect({
 interface GanttChannelTrack {
   channel: string;
   locationImage?: string;
+  maxLanes: number;
   scenes: {
     scene: Scene;
     leftPercent: number;
     widthPercent: number;
+    lane: number;
   }[];
 }
 
 // COMPOSANT GANTT SWIMLANES DYNAMIQUES AVEC IMAGES LOCALES EXTRAITES DE DISCORD
-function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: string; scenes: Scene[]; onSelectScene: (s: Scene) => void }) {
+function GanttMonthView({ 
+  monthLabel, 
+  scenes, 
+  onSelectScene,
+  onSelectChannel
+}: { 
+  monthLabel: string; 
+  scenes: Scene[]; 
+  onSelectScene: (s: Scene) => void;
+  onSelectChannel?: (ch: string) => void;
+}) {
+  const [hoveredTooltip, setHoveredTooltip] = useState<{
+    scene: Scene;
+    channel: string;
+    locationImage?: string;
+    rect: DOMRect;
+  } | null>(null);
+
+  useEffect(() => {
+    const handleScrollOrResize = () => setHoveredTooltip(null);
+    window.addEventListener('scroll', handleScrollOrResize, true);
+    window.addEventListener('resize', handleScrollOrResize);
+    return () => {
+      window.removeEventListener('scroll', handleScrollOrResize, true);
+      window.removeEventListener('resize', handleScrollOrResize);
+    };
+  }, []);
+
   if (scenes.length === 0) return null;
 
   const timestamps = scenes.flatMap(s => [
@@ -430,25 +459,62 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
     channelMap[s.channel].push(s);
   });
 
+  const getLocationImage = (ch: string, chScenes?: Scene[]) => {
+    if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
+    const fromScene = chScenes?.find(s => s.location_image)?.location_image;
+    if (fromScene) return fromScene;
+    
+    const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
+    if (!cleanCh) return undefined;
+    
+    const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
+      const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
+      return cleanK && v && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK));
+    });
+    return entry ? entry[1] : undefined;
+  };
+
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
     const chScenes = channelMap[ch];
-    const locationImg = CHANNEL_IMAGES[ch] || chScenes.find(s => s.location_image)?.location_image;
+    const locationImg = getLocationImage(ch, chScenes);
+
+    const sortedWithPos = chScenes.map(sc => {
+      const sTime = new Date(sc.start_time).getTime();
+      const eTime = new Date(sc.end_time || sc.start_time).getTime();
+      const left = Math.max(0, ((sTime - tMin) / duration) * 100);
+      const rawWidth = Math.max(0.5, ((eTime - sTime) / duration) * 100);
+      const width = Math.max(rawWidth, 4.5);
+      return {
+        scene: sc,
+        leftPercent: Math.min(left, 94),
+        widthPercent: Math.min(width, 100 - left)
+      };
+    }).sort((a, b) => a.leftPercent - b.leftPercent);
+
+    const laneRightEdges: number[] = [];
+    const itemsWithLanes = sortedWithPos.map(item => {
+      let lane = 0;
+      const itemRight = item.leftPercent + item.widthPercent;
+
+      for (let l = 0; l < laneRightEdges.length; l++) {
+        if (laneRightEdges[l] + 0.5 <= item.leftPercent) {
+          lane = l;
+          break;
+        }
+        lane = l + 1;
+      }
+
+      laneRightEdges[lane] = itemRight;
+      return { ...item, lane };
+    });
+
+    const maxLanes = Math.max(1, laneRightEdges.length);
 
     return {
       channel: ch,
       locationImage: locationImg,
-      scenes: chScenes.map(sc => {
-        const sTime = new Date(sc.start_time).getTime();
-        const eTime = new Date(sc.end_time || sc.start_time).getTime();
-        const left = Math.max(0, ((sTime - tMin) / duration) * 100);
-        const rawWidth = Math.max(0.5, ((eTime - sTime) / duration) * 100);
-        const width = Math.max(rawWidth, 4.5);
-        return {
-          scene: sc,
-          leftPercent: Math.min(left, 94),
-          widthPercent: Math.min(width, 100 - left)
-        };
-      })
+      maxLanes,
+      scenes: itemsWithLanes
     };
   });
 
@@ -487,7 +553,7 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
 
       {/* Conteneur défilable de la Frise Swimlanes */}
       <div className="overflow-x-auto custom-scrollbar py-6">
-        <div className="min-w-[950px] space-y-2">
+        <div className="min-w-[950px] space-y-3">
           
           {/* Règle des dates supérieure */}
           <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
@@ -502,123 +568,175 @@ function GanttMonthView({ monthLabel, scenes, onSelectScene }: { monthLabel: str
             </div>
           </div>
 
-          {/* Lignes par Salon */}
+          {/* Lignes par Salon avec Arrière-plan Immersif et Hover Effect */}
           <div className="space-y-3">
-            {tracks.map(({ channel, locationImage, scenes: trackScenes }, trackIdx) => (
-              <div key={channel} className="flex items-center h-11 group hover:bg-slate-900/60 rounded transition-colors">
-                
-                {/* Nom du Salon + Image Locale extraite de Discord */}
-                <div className="w-56 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2">
-                  {locationImage ? (
-                    <div className="w-6 h-6 rounded border border-slate-700/80 overflow-hidden shrink-0 shadow bg-black/60">
-                      <img 
-                        src={locationImage} 
-                        alt={channel} 
-                        className="w-full h-full object-cover" 
-                      />
-                    </div>
-                  ) : (
-                    <span className="w-2 h-2 rounded-full bg-purple-400 shrink-0" />
-                  )}
-                  <span className="truncate" title={`#${channel}`}>#{channel}</span>
-                </div>
+            {tracks.map(({ channel, locationImage, maxLanes, scenes: trackScenes }) => {
+              const trackHeight = maxLanes * 36 + 12;
 
-                {/* Piste Temporelle */}
-                <div className="flex-1 relative h-9 bg-[#08090d] border border-slate-800 rounded gantt-track-bg overflow-visible">
-                  {trackScenes.map(({ scene, leftPercent, widthPercent }) => {
-                    const mainActor = scene.actors[0];
-                    const info = CHARACTERS_DATA[mainActor];
-                    const style = getFactionStyle(info?.role);
-                    const startStr = formatDateDiscord(scene.start_time);
-                    const endStr = formatDateDiscord(scene.end_time);
-                    const isShort = widthPercent < 10;
-
-                    const tooltipVClass = trackIdx < 2 ? 'top-full mt-2' : 'bottom-full mb-2';
-                    const tooltipHClass = leftPercent < 20 
-                      ? 'left-0 translate-x-0' 
-                      : leftPercent > 70 
-                      ? 'right-0 left-auto translate-x-0' 
-                      : 'left-1/2 -translate-x-1/2';
-
-                    const mainActorDisplayName = info?.displayName || mainActor;
-
-                    return (
-                      <div
-                        key={scene.id}
-                        onClick={() => onSelectScene(scene)}
-                        style={{
-                          left: `${leftPercent}%`,
-                          width: `${widthPercent}%`,
-                          backgroundColor: style.bg,
-                          borderColor: style.border
-                        }}
-                        className="gantt-bar-item absolute top-0.5 bottom-0.5 border rounded-md px-2 flex items-center justify-between cursor-pointer text-xs select-none group/bar"
-                      >
-                        <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
-                          <span className="text-xs shrink-0">{style.icon}</span>
-                          
-                          {!isShort ? (
-                            <div className="flex items-center gap-2 min-w-0 w-full">
-                              <span style={{ color: style.text }} className="font-semibold text-xs truncate">
-                                {scene.title}
-                              </span>
-                              {scene.actors.length > 0 && (
-                                <span className="text-[10px] text-slate-300/80 font-mono truncate hidden lg:inline">
-                                  ({mainActorDisplayName})
-                                </span>
-                              )}
-                            </div>
-                          ) : (
-                            <span style={{ color: style.text }} className="font-semibold text-[11px] truncate">
-                              {mainActorDisplayName || scene.title}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* INFO-BULLE RICH DARK FANTASY AVEC ILLUSTATION DU LIEU */}
-                        <div className={`opacity-0 group-hover/bar:opacity-100 pointer-events-none absolute ${tooltipVClass} ${tooltipHClass} w-72 bg-[#0c0e15] border border-slate-600 p-3 rounded shadow-2xl z-50 transition-opacity`}>
-                          {locationImage && (
-                            <div className="h-20 w-full overflow-hidden rounded mb-2 border border-slate-700/80 bg-slate-900 shadow">
-                              <img 
-                                src={locationImage} 
-                                alt={channel} 
-                                className="w-full h-full object-cover object-center" 
-                              />
-                            </div>
-                          )}
-
-                          <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
-                            <span className="text-[11px] font-mono text-purple-300">#{scene.channel}</span>
-                            <span className="text-[10px] font-mono text-[#949ba4]">{scene.messages.length} msg</span>
-                          </div>
-                          <h4 className="text-xs font-bold text-slate-100 mb-1">{scene.title}</h4>
-                          <div className="text-[11px] text-slate-300 font-mono space-y-0.5 mb-2">
-                            <div><span className="text-slate-500">Début :</span> {startStr}</div>
-                            <div><span className="text-slate-500">Fin :</span> {endStr}</div>
-                          </div>
-                          <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-800">
-                            {scene.actors.map(a => {
-                              const aInfo = CHARACTERS_DATA[a];
-                              const nameDisp = aInfo?.displayName || a;
-                              return (
-                                <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
-                                  {nameDisp}
-                                </span>
-                              );
-                            })}
-                          </div>
-                        </div>
-
+              return (
+                <div 
+                  key={channel} 
+                  style={{ minHeight: `${trackHeight + 12}px` }}
+                  className="group/track relative flex items-center bg-[#0a0c12]/90 hover:bg-[#0f121d] border border-slate-800 hover:border-slate-700 rounded-lg p-1.5 transition-all shadow-md"
+                >
+                  {/* 🏰 BLOC SALON : Nom du salon avec Filtre au Clic */}
+                  <div 
+                    onClick={() => onSelectChannel && onSelectChannel(channel)}
+                    className="w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2 z-10 cursor-pointer group/chan"
+                    title={`Cliquer pour filtrer par #${channel}`}
+                  >
+                    <span className="w-2.5 h-2.5 rounded-full bg-purple-400/90 group-hover/chan:bg-purple-300 group-hover/chan:scale-125 transition-all shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <div className="truncate font-semibold text-slate-200 group-hover/chan:text-purple-300 transition-colors flex items-center gap-1">
+                        <span className="text-purple-400 font-bold text-[13px]">#</span>
+                        <span className="truncate">{channel}</span>
                       </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
+                      <div className="text-[10px] text-slate-400 font-mono">
+                        {trackScenes.length} {trackScenes.length > 1 ? 'scènes' : 'scène'}
+                        {maxLanes > 1 && ` • ${maxLanes} fils/pistes`}
+                      </div>
+                    </div>
+                  </div>
 
+                  {/* 📊 PISTE TEMPORELLE AVEC IMAGE DE FOND INTÉGRÉE & VISIBLE */}
+                  <div 
+                    style={{ height: `${trackHeight}px` }}
+                    className="flex-1 relative border border-slate-700/80 rounded-md gantt-track-bg z-10"
+                  >
+                    
+                    {/* 🖼️ IMAGE DE FOND DU SALON SUR LA PISTE */}
+                    {locationImage ? (
+                      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-md select-none">
+                        <img 
+                          src={locationImage} 
+                          alt="" 
+                          className="w-full h-full object-cover object-center opacity-45 group-hover/track:opacity-75 group-hover/track:scale-105 transition-all duration-500" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#06070a]/90 via-[#06070a]/35 to-[#06070a]/80" />
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 bg-[#08090d]/60 rounded-md" />
+                    )}
+
+                    {trackScenes.map(({ scene, leftPercent, widthPercent, lane }) => {
+                      const mainActor = scene.actors[0];
+                      const info = CHARACTERS_DATA[mainActor];
+                      const style = getFactionStyle(info?.role);
+                      const isShort = widthPercent < 10;
+                      const mainActorDisplayName = info?.displayName || mainActor;
+
+                      return (
+                        <div
+                          key={scene.id}
+                          onClick={() => onSelectScene(scene)}
+                          onMouseEnter={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            setHoveredTooltip({ scene, channel, locationImage, rect });
+                          }}
+                          onMouseLeave={() => {
+                            setHoveredTooltip(null);
+                          }}
+                          style={{
+                            left: `${leftPercent}%`,
+                            width: `${widthPercent}%`,
+                            top: `${lane * 36 + 4}px`,
+                            height: '28px',
+                            backgroundColor: style.bg,
+                            borderColor: style.border
+                          }}
+                          className="gantt-bar-item absolute border rounded-md px-2 flex items-center justify-between cursor-pointer text-xs select-none group/bar z-20 shadow-md"
+                        >
+                          <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
+                            {scene.thread_name && (
+                              <span className="px-1.5 py-0.5 bg-purple-950/90 text-purple-200 border border-purple-500/50 text-[10px] rounded shrink-0 font-bold font-mono shadow">
+                                {scene.thread_name}
+                              </span>
+                            )}
+
+                            <span className="text-xs shrink-0">{style.icon}</span>
+                            
+                            {!isShort ? (
+                              <div className="flex items-center gap-2 min-w-0 w-full">
+                                <span style={{ color: style.text }} className="font-semibold text-xs truncate">
+                                  {scene.title}
+                                </span>
+                                {scene.actors.length > 0 && (
+                                  <span className="text-[10px] text-slate-300/80 font-mono truncate hidden lg:inline">
+                                    ({mainActorDisplayName})
+                                  </span>
+                                )}
+                              </div>
+                            ) : (
+                              <span style={{ color: style.text }} className="font-semibold text-[11px] truncate">
+                                {mainActorDisplayName || scene.title}
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      {/* 🚀 INFOBULLE FLOTTANTE UNIVERSELLE : TOUJOURS ORIENTÉE VERS LE HAUT ET AU-DESSUS DE TOUT (FIXED POSITION Z-99999) */}
+      {hoveredTooltip && (() => {
+        const { scene: hScene, channel: hChannel, locationImage: hLocImg, rect } = hoveredTooltip;
+        const startStr = formatDateDiscord(hScene.start_time);
+        const endStr = formatDateDiscord(hScene.end_time);
+
+        // Toujours orientée vers le haut au-dessus de la barre de scène
+        const bottomPx = window.innerHeight - rect.top + 8;
+        const targetLeft = rect.left + rect.width / 2 - 144;
+        const clampedLeft = Math.max(16, Math.min(window.innerWidth - 304, targetLeft));
+
+        return (
+          <div 
+            style={{
+              position: 'fixed',
+              left: `${clampedLeft}px`,
+              bottom: `${bottomPx}px`,
+              zIndex: 99999,
+            }}
+            className="pointer-events-none w-72 bg-[#0c0e15]/98 border border-slate-600 p-3 rounded-lg shadow-2xl drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)] backdrop-blur-md transition-all duration-150"
+          >
+            {hLocImg && (
+              <div className="h-20 w-full overflow-hidden rounded mb-2 border border-slate-700/80 bg-slate-900 shadow">
+                <img 
+                  src={hLocImg} 
+                  alt={hChannel} 
+                  className="w-full h-full object-cover object-center" 
+                />
+              </div>
+            )}
+
+            <div className="flex items-center justify-between gap-2 mb-1.5 pb-1 border-b border-slate-800">
+              <span className="text-[11px] font-mono text-purple-300">#{hScene.channel}</span>
+              <span className="text-[10px] font-mono text-[#949ba4]">{hScene.messages.length} msg</span>
+            </div>
+            <h4 className="text-xs font-bold text-slate-100 mb-1">{hScene.title}</h4>
+            <div className="text-[11px] text-slate-300 font-mono space-y-0.5 mb-2">
+              <div><span className="text-slate-500">Début :</span> {startStr}</div>
+              <div><span className="text-slate-500">Fin :</span> {endStr}</div>
+            </div>
+            <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-800">
+              {hScene.actors.map(a => {
+                const aInfo = CHARACTERS_DATA[a];
+                const nameDisp = aInfo?.displayName || a;
+                return (
+                  <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
+                    {nameDisp}
+                  </span>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
@@ -629,6 +747,20 @@ export default function App() {
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
+  const headerRef = useRef<HTMLElement>(null);
+  const [sidebarTopOffset, setSidebarTopOffset] = useState<number>(220);
+
+  useEffect(() => {
+    const updateOffset = () => {
+      if (headerRef.current) {
+        setSidebarTopOffset(headerRef.current.offsetHeight + 32);
+      }
+    };
+    updateOffset();
+    window.addEventListener('resize', updateOffset);
+    return () => window.removeEventListener('resize', updateOffset);
+  }, []);
+
   // Scène sélectionnée pour la modale
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
 
@@ -789,9 +921,21 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const activeSceneLocationImage = activeScene 
-    ? (CHANNEL_IMAGES[activeScene.channel] || activeScene.location_image)
-    : null;
+  const activeSceneLocationImage = useMemo(() => {
+    if (!activeScene) return null;
+    const ch = activeScene.channel;
+    if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
+    if (activeScene.location_image) return activeScene.location_image;
+
+    const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
+    if (!cleanCh) return null;
+
+    const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
+      const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
+      return cleanK && v && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK));
+    });
+    return entry ? entry[1] : null;
+  }, [activeScene]);
 
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
@@ -805,7 +949,7 @@ export default function App() {
       <div className="ember-particles-bg" />
 
       {/* 🗡️ EN-TÊTE PRINCIPAL AVEC ARTWORK ET FILTRES */}
-      <header className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
+      <header ref={headerRef} className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
@@ -869,9 +1013,6 @@ export default function App() {
                     <span>{info.icon}</span>
                     <span className="truncate">{factionName}</span>
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono truncate">
-                    Guilde
-                  </div>
                 </div>
               </div>
             ))}
@@ -901,7 +1042,7 @@ export default function App() {
                       Tous les salons
                     </option>
 
-                    {Object.entries(groupedChannelsByCategory).map(([catName, channels]) => (
+                    {(Object.entries(groupedChannelsByCategory) as [string, string[]][]).map(([catName, channels]) => (
                       <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#08090d] text-slate-400 font-bold">
                         {channels.map(ch => (
                           <option key={ch} value={ch} className="bg-[#0d0f17] text-slate-200 font-normal">
@@ -935,8 +1076,14 @@ export default function App() {
       {/* 🚀 LAYOUT PRINCIPAL AVEC GANTT SWIMLANES DYNAMIQUES */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
         
-        {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT (STICKY TOP-28) */}
-        <aside className="hidden lg:block w-64 shrink-0 sticky top-28 h-[calc(100vh-130px)] overflow-y-auto space-y-4 pr-1 text-xs custom-scrollbar">
+        {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT */}
+        <aside 
+          style={{ 
+            top: `${sidebarTopOffset}px`, 
+            height: `calc(100vh - ${sidebarTopOffset + 20}px)` 
+          }}
+          className="hidden lg:block w-64 shrink-0 sticky overflow-y-auto space-y-4 pr-1 text-xs custom-scrollbar"
+        >
           
           {/* BANNIÈRE ARTWORK DU PROJET */}
           <div className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-2 shadow-2xl overflow-hidden">
@@ -1047,6 +1194,7 @@ export default function App() {
                     monthLabel={label}
                     scenes={scenes}
                     onSelectScene={(s) => setActiveScene(s)}
+                    onSelectChannel={(ch) => setSelectedChannel(ch)}
                   />
                 </section>
               ))}
