@@ -404,9 +404,49 @@ def main():
     for scene in all_scenes:
         scene['actors'] = [a for a in scene['actors'] if a in valid_actors]
 
+    img_dir = "public/channel_images"
+    channel_images_map = {}
+    if os.path.exists(img_dir):
+        img_files = [f for f in os.listdir(img_dir) if f.endswith(('.jpg', '.png', '.jpeg', '.webp'))]
+        img_word_sets = []
+        for f in img_files:
+            base = os.path.splitext(f)[0]
+            words = set(re.sub(r'[^\w\s]', ' ', unicodedata.normalize('NFKD', base)).lower().split())
+            img_word_sets.append((f, words))
+
+        def get_best_image(name):
+            if not name: return None
+            ch_words = set(re.sub(r'[^\w\s]', ' ', unicodedata.normalize('NFKD', name)).lower().split())
+            if not ch_words: return None
+            best_img, best_score = None, 0
+            for f, words in img_word_sets:
+                if not words: continue
+                intersection = ch_words.intersection(words)
+                if not intersection: continue
+                score = len(intersection) / float(len(words))
+                if words.issubset(ch_words):
+                    score += 2.0
+                if score > best_score and score >= 0.7:
+                    best_score, best_img = score, f
+            return f'/channel_images/{best_img}' if best_img else None
+
+        for scene in all_scenes:
+            ch = scene.get('channel')
+            thread = scene.get('thread_name')
+            img = get_best_image(ch)
+            if img:
+                channel_images_map[ch] = img
+                scene['location_image'] = img
+            elif thread:
+                th_img = get_best_image(thread)
+                if th_img:
+                    channel_images_map[thread] = th_img
+                    scene['location_image'] = th_img
+
     output_data = {
         "characters": character_map,
-        "scenes": all_scenes
+        "scenes": all_scenes,
+        "channel_images": channel_images_map
     }
 
     output_filename = "scenes.json"

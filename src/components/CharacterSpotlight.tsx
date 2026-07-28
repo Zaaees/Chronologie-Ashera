@@ -46,20 +46,34 @@ export const CharacterSpotlight: React.FC<CharacterSpotlightProps> = ({
           <X className="w-4 h-4" />
         </button>
 
-        <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
+        <div className="relative z-10 flex flex-col gap-4 items-stretch">
           
-          {/* Left: Character Card Image / Avatar */}
-          <div className="w-full md:w-56 lg:w-64 shrink-0 flex flex-col items-center">
+          {/* Header Title & Close Button */}
+          <div className="pr-8">
+            <div className="flex flex-col gap-0.5">
+              <h2 className="text-lg sm:text-xl font-bold font-serif-gothic tracking-wide text-slate-100 leading-tight">
+                {stats.name}
+              </h2>
+              {stats.displayName && stats.displayName !== stats.name && (
+                <span className="text-xs text-slate-400 font-mono">
+                  ({stats.displayName})
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* Character Card Image / Avatar */}
+          <div className="w-full shrink-0 flex flex-col items-center">
             {stats.cardImage ? (
               <div 
                 onClick={() => setShowLightbox(true)}
-                className="relative group cursor-pointer w-full overflow-hidden border-2 shadow-2xl transition-all duration-300 transform hover:scale-[1.02]"
+                className="relative group cursor-pointer w-full overflow-hidden border-2 shadow-2xl transition-all duration-300 transform hover:scale-[1.01]"
                 style={{ borderColor: stats.color }}
               >
                 <img 
                   src={stats.cardImage} 
                   alt={stats.name}
-                  className="w-full h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-72 sm:h-80 object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-3">
                   <span className="flex items-center gap-1.5 text-xs text-white bg-black/70 px-3 py-1 border border-white/20 backdrop-blur-sm">
@@ -71,66 +85,51 @@ export const CharacterSpotlight: React.FC<CharacterSpotlightProps> = ({
             ) : (
               <div 
                 style={{ borderColor: stats.color, backgroundColor: `${stats.color}15` }}
-                className="w-full h-64 border-2 flex flex-col items-center justify-center p-4 text-center shadow-xl"
+                className="w-full h-56 border-2 flex flex-col items-center justify-center p-4 text-center shadow-xl"
               >
                 <div 
                   style={{ backgroundColor: stats.color }}
-                  className="w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold font-serif-gothic text-slate-950 mb-3 shadow-lg"
+                  className="w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold font-serif-gothic text-slate-950 mb-2 shadow-lg"
                 >
                   {stats.name.substring(0, 2).toUpperCase()}
                 </div>
-                <span className="text-xs text-slate-400 font-medium">Carte d'illustration</span>
-                <span className="text-[10px] text-slate-500 mt-1">Aucune image générée</span>
+                <span className="text-xs text-slate-400 font-medium mt-1">Aucune image</span>
               </div>
             )}
 
             {/* Guild Role Badge */}
             <div 
               style={{ borderColor: `${stats.color}60`, color: stats.color }}
-              className="mt-3 w-full text-center px-3 py-1.5 bg-[#08090d] border text-xs font-bold font-serif-gothic tracking-wider uppercase flex items-center justify-center gap-1.5 shadow-sm"
+              className="mt-2.5 w-full text-center px-3 py-1.5 bg-[#08090d] border text-xs font-bold font-serif-gothic tracking-wider uppercase flex items-center justify-center gap-1.5 shadow-sm"
             >
               <Shield className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">{stats.role}</span>
             </div>
           </div>
 
-          {/* Right: Character Info & Detailed Stats */}
-          <div className="flex-1 min-w-0 space-y-4 w-full">
+          {/* Detailed Stats */}
+          <div className="space-y-3.5 w-full">
             
-            {/* Header Title */}
-            <div>
-              <div className="flex flex-wrap items-baseline gap-2">
-                <h2 className="text-xl sm:text-2xl font-bold font-serif-gothic tracking-wide text-slate-100">
-                  {stats.name}
-                </h2>
-                {stats.displayName && stats.displayName !== stats.name && (
-                  <span className="text-xs text-slate-400 font-mono">
-                    ({stats.displayName})
-                  </span>
-                )}
-              </div>
-            </div>
-
             {/* Main Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-2 gap-3 pt-1">
+            <div className="grid grid-cols-2 gap-2">
               
-              <div className="bg-[#08090d]/80 border border-slate-800 p-3 shadow-sm">
-                <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                  <Film className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Scènes Jouées</span>
+              <div className="bg-[#08090d]/80 border border-slate-800 p-2.5 shadow-sm">
+                <div className="flex items-center gap-1.5 text-slate-400 text-[11px] mb-1">
+                  <Film className="w-3 h-3 text-purple-400 shrink-0" />
+                  <span className="truncate">Scènes Jouées</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-purple-300">
-                  {stats.totalScenes} <span className="text-xs font-normal text-slate-400">{stats.totalScenes > 1 ? 'scènes' : 'scène'}</span>
+                <div className="text-base font-bold font-mono text-purple-300">
+                  {stats.totalScenes} <span className="text-[10px] font-normal text-slate-400">{stats.totalScenes > 1 ? 'scènes' : 'scène'}</span>
                 </div>
               </div>
 
-              <div className="bg-[#08090d]/80 border border-slate-800 p-3 shadow-sm">
-                <div className="flex items-center gap-2 text-slate-400 text-xs mb-1">
-                  <MessageSquare className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Actions postées</span>
+              <div className="bg-[#08090d]/80 border border-slate-800 p-2.5 shadow-sm">
+                <div className="flex items-center gap-1.5 text-slate-400 text-[11px] mb-1">
+                  <MessageSquare className="w-3 h-3 text-blue-400 shrink-0" />
+                  <span className="truncate">Actions postées</span>
                 </div>
-                <div className="text-lg font-bold font-mono text-blue-300">
-                  {stats.totalMessages} <span className="text-xs font-normal text-slate-400">messages</span>
+                <div className="text-base font-bold font-mono text-blue-300">
+                  {stats.totalMessages} <span className="text-[10px] font-normal text-slate-400">msgs</span>
                 </div>
               </div>
 
@@ -138,21 +137,21 @@ export const CharacterSpotlight: React.FC<CharacterSpotlightProps> = ({
 
             {/* Top Channels / Lieux de RP */}
             {stats.topChannels.length > 0 && (
-              <div className="space-y-1.5 pt-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-emerald-400" />
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
+                  <MapPin className="w-3 h-3 text-emerald-400 shrink-0" />
                   Salons & Lieux principaux :
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1">
                   {stats.topChannels.map(ch => (
                     <button
                       key={ch.name}
                       onClick={() => onSelectChannel && onSelectChannel(ch.name)}
-                      className="px-2.5 py-1 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-xs text-slate-300 transition-colors flex items-center gap-1.5"
+                      className="px-2 py-0.5 bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-[11px] text-slate-300 transition-colors flex items-center gap-1"
                     >
                       <span className="text-slate-500">#</span>
-                      <span>{ch.name}</span>
-                      <span className="text-[10px] bg-slate-950 px-1.5 py-0.2 text-emerald-400 font-mono">
+                      <span className="truncate max-w-[140px]">{ch.name}</span>
+                      <span className="text-[9px] bg-slate-950 px-1 py-0.2 text-emerald-400 font-mono ml-0.5">
                         {ch.count}
                       </span>
                     </button>
@@ -163,21 +162,21 @@ export const CharacterSpotlight: React.FC<CharacterSpotlightProps> = ({
 
             {/* Frequent Co-Actors / Partenaires */}
             {stats.coActors.length > 0 && (
-              <div className="space-y-1.5 pt-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
-                  <Users className="w-3 h-3 text-amber-400" />
-                  Partenaires de scènes fréquents :
+              <div className="space-y-1.5">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1">
+                  <Users className="w-3 h-3 text-amber-400 shrink-0" />
+                  Partenaires de scènes :
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1">
                   {stats.coActors.map(co => (
                     <button
                       key={co.name}
                       onClick={() => onSelectActor(co.name)}
-                      className="px-2 py-1 bg-[#08090d] hover:bg-purple-950/40 border border-slate-800 hover:border-purple-800 text-xs text-slate-300 hover:text-purple-200 transition-all flex items-center gap-1.5 group"
+                      className="px-2 py-0.5 bg-[#08090d] hover:bg-purple-950/40 border border-slate-800 hover:border-purple-800 text-[11px] text-slate-300 hover:text-purple-200 transition-all flex items-center gap-1 group"
                     >
-                      <span className="group-hover:text-purple-300">{co.name}</span>
-                      <span className="text-[10px] bg-slate-900 text-amber-300 font-mono px-1">
-                        {co.count} {co.count > 1 ? 'scènes' : 'scène'}
+                      <span className="group-hover:text-purple-300 truncate max-w-[120px]">{co.name}</span>
+                      <span className="text-[9px] bg-slate-900 text-amber-300 font-mono px-1">
+                        {co.count}
                       </span>
                     </button>
                   ))}

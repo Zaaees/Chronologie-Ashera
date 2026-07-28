@@ -557,12 +557,57 @@ class DiscordExporterClient(discord.Client):
                 }
                 valid_actors.add(char_name)
 
-        for scene in all_scenes:
-            scene['actors'] = [a for a in scene['actors'] if a in valid_actors]
+        img_dir = "public/channel_images"
+        channel_images_map = {}
+        if os.path.exists(img_dir):
+            img_files = [f for f in os.listdir(img_dir) if f.endswith(('.jpg', '.png', '.jpeg', '.webp'))]
+            pub_clean_map = {}
+            for f in img_files:
+                base = os.path.splitext(f)[0]
+                clean = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', base)).lower()
+                pub_clean_map[clean] = f'/channel_images/{f}'
+
+            fallback_map = {
+                'Isis et Astreüs': '/channel_images/serre-de-lune.jpg',
+                'Scène Kalès / JAVUS': '/channel_images/arene-hurlante.jpg',
+                'Scène Kalès / Kalem': '/channel_images/terrain-d-entrainement.jpg',
+                'Scène Lumia | Ivara': '/channel_images/bibliotheque-azure.jpg',
+                'TRIPLE A : Asior - Akane - Aryana': '/channel_images/le-bar-des-lions.jpg',
+                '☁️〕𝗣ortail-𝗜voire': '/channel_images/couloir-blanc.jpg',
+                '️〕Portail-Ivoire': '/channel_images/couloir-blanc.jpg',
+                '🛏️  •  Salle de Réveil': '/channel_images/cellules.jpg'
+            }
+
+            for scene in all_scenes:
+                ch = scene.get('channel')
+                thread = scene.get('thread_name')
+
+                img_url = None
+                if ch in fallback_map:
+                    img_url = fallback_map[ch]
+                else:
+                    ch_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch or '')).lower()
+                    for k, url in pub_clean_map.items():
+                        if k and (k == ch_c or k in ch_c or ch_c in k):
+                            img_url = url
+                            break
+
+                if not img_url and thread:
+                    th_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', thread)).lower()
+                    for k, url in pub_clean_map.items():
+                        if k and (k == th_c or k in th_c or th_c in k):
+                            img_url = url
+                            break
+
+                if img_url:
+                    if ch: channel_images_map[ch] = img_url
+                    if thread: channel_images_map[thread] = img_url
+                    scene['location_image'] = img_url
 
         output_data = {
             "characters": character_map,
-            "scenes": all_scenes
+            "scenes": all_scenes,
+            "channel_images": channel_images_map
         }
 
         # Sauvegarder dans scenes.json

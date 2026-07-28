@@ -1156,7 +1156,7 @@ export default function App() {
       </header>
 
       {/* 🚀 LAYOUT PRINCIPAL AVEC GANTT SWIMLANES DYNAMIQUES */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-8">
+      <div className={`${selectedActor !== 'all' ? 'max-w-[1600px]' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6 lg:gap-8 transition-all duration-300`}>
         
         {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT */}
         <aside 
@@ -1277,14 +1277,16 @@ export default function App() {
           {/* Fil argenté principal de la chronologie */}
           <div className="timeline-spine" />
 
-          {/* 👤 FICHE PERSONNAGE VISUELLE SI UN PERSONNAGE EST SÉLECTIONNÉ */}
+          {/* 👤 FICHE PERSONNAGE VISUELLE SI UN PERSONNAGE EST SÉLECTIONNÉ (MOBILE/TABLETTE) */}
           {selectedActor !== 'all' && (
-            <CharacterSpotlight
-              selectedActor={selectedActor}
-              onReset={() => setSelectedActor('all')}
-              onSelectActor={(actorName) => setSelectedActor(actorName)}
-              onSelectChannel={(channelName) => setSelectedChannel(channelName)}
-            />
+            <div className="block xl:hidden mb-8">
+              <CharacterSpotlight
+                selectedActor={selectedActor}
+                onReset={() => setSelectedActor('all')}
+                onSelectActor={(actorName) => setSelectedActor(actorName)}
+                onSelectChannel={(channelName) => setSelectedChannel(channelName)}
+              />
+            </div>
           )}
 
           {groupedPeriodScenes.length === 0 ? (
@@ -1347,6 +1349,24 @@ export default function App() {
             </div>
           )}
         </main>
+
+        {/* 👤 FICHE PERSONNAGE STICKY DROITE SUR ÉCRANS DESKTOP (>= xl) */}
+        {selectedActor !== 'all' && (
+          <aside 
+            style={{ 
+              top: `${sidebarTopOffset}px`, 
+              height: `calc(100vh - ${sidebarTopOffset + 20}px)` 
+            }}
+            className="hidden xl:block w-72 lg:w-80 shrink-0 sticky overflow-y-auto pr-1 text-xs custom-scrollbar z-20"
+          >
+            <CharacterSpotlight
+              selectedActor={selectedActor}
+              onReset={() => setSelectedActor('all')}
+              onSelectActor={(actorName) => setSelectedActor(actorName)}
+              onSelectChannel={(channelName) => setSelectedChannel(channelName)}
+            />
+          </aside>
+        )}
       </div>
 
       {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD AVEC BANNIÈRE DU LIEU */}

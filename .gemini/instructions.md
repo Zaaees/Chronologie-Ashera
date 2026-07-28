@@ -35,6 +35,7 @@ Antigravity doit exécuter **automatiquement la séquence complète à 100%** sa
 - **Titres & Résumés Narratifs :** L'IA génère un titre de chapitre sémantique explicite (ex: *"L'Épreuve d'Alchimie de la Serre de Lune"*) et un aperçu propre.
 
 ### Étape 4 : Synchronisation des Fichiers & Compilation Vite
+- Préserver et réattacher automatiquement le dictionnaire `channel_images` ainsi que la propriété `location_image` pour chaque scène depuis `public/channel_images/`.
 - Mettre à jour simultanément :
   1. `scenes.json` (racine)
   2. `src/scenes.json`
