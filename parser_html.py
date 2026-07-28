@@ -428,7 +428,7 @@ def main():
                     score += 2.0
                 if score > best_score and score >= 0.7:
                     best_score, best_img = score, f
-            return f'/channel_images/{best_img}' if best_img else None
+            return f'channel_images/{best_img}' if best_img else None
 
         for scene in all_scenes:
             ch = scene.get('channel')

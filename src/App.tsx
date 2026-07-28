@@ -6,6 +6,15 @@ import {
 } from 'lucide-react';
 import { CharacterSpotlight } from './components/CharacterSpotlight';
 
+export const formatImageUrl = (url?: string | null): string | undefined => {
+  if (!url) return undefined;
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+    return url;
+  }
+  const clean = url.replace(/^\/+/, '');
+  return `./${clean}`;
+};
+
 const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   "La Garde Pourpre": { 
     roleName: "La Garde Pourpre",
@@ -461,12 +470,12 @@ function GanttMonthView({
   });
 
   const getLocationImage = (ch: string, chScenes?: Scene[]) => {
-    if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
+    if (CHANNEL_IMAGES[ch]) return formatImageUrl(CHANNEL_IMAGES[ch]);
     const fromScene = chScenes?.find(s => s.location_image)?.location_image;
-    if (fromScene) return fromScene;
+    if (fromScene) return formatImageUrl(fromScene);
 
     const parentCh = chScenes?.[0]?.channel;
-    if (parentCh && CHANNEL_IMAGES[parentCh]) return CHANNEL_IMAGES[parentCh];
+    if (parentCh && CHANNEL_IMAGES[parentCh]) return formatImageUrl(CHANNEL_IMAGES[parentCh]);
 
     const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
     const cleanParent = parentCh ? parentCh.replace(/[^\w]/g, '').toLowerCase() : '';
@@ -477,7 +486,8 @@ function GanttMonthView({
       return (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK))) ||
              (cleanParent && (cleanK.includes(cleanParent) || cleanParent.includes(cleanK)));
     });
-    return entry ? entry[1] : undefined;
+    const rawResult = entry ? entry[1] : undefined;
+    return formatImageUrl(rawResult);
   };
 
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
@@ -976,12 +986,12 @@ export default function App() {
     if (!activeScene) return null;
 
     if (activeScene.thread_name && CHANNEL_IMAGES[activeScene.thread_name]) {
-      return CHANNEL_IMAGES[activeScene.thread_name];
+      return formatImageUrl(CHANNEL_IMAGES[activeScene.thread_name]);
     }
 
     const ch = activeScene.channel;
-    if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
-    if (activeScene.location_image) return activeScene.location_image;
+    if (CHANNEL_IMAGES[ch]) return formatImageUrl(CHANNEL_IMAGES[ch]);
+    if (activeScene.location_image) return formatImageUrl(activeScene.location_image);
 
     const cleanTh = activeScene.thread_name ? activeScene.thread_name.replace(/[^\w]/g, '').toLowerCase() : '';
     const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
@@ -992,7 +1002,8 @@ export default function App() {
       return (cleanTh && (cleanK.includes(cleanTh) || cleanTh.includes(cleanK))) ||
              (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK)));
     });
-    return entry ? entry[1] : null;
+    const rawResult = entry ? entry[1] : null;
+    return formatImageUrl(rawResult);
   }, [activeScene]);
 
   return (

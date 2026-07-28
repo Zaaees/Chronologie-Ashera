@@ -96,17 +96,17 @@ def main():
         for f in img_files:
             base = os.path.splitext(f)[0]
             clean = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', base)).lower()
-            pub_clean_map[clean] = f'/channel_images/{f}'
+            pub_clean_map[clean] = f'channel_images/{f}'
 
         fallback_map = {
-            'Isis et Astreüs': '/channel_images/serre-de-lune.jpg',
-            'Scène Kalès / JAVUS': '/channel_images/arene-hurlante.jpg',
-            'Scène Kalès / Kalem': '/channel_images/terrain-d-entrainement.jpg',
-            'Scène Lumia | Ivara': '/channel_images/bibliotheque-azure.jpg',
-            'TRIPLE A : Asior - Akane - Aryana': '/channel_images/le-bar-des-lions.jpg',
-            '☁️〕𝗣ortail-𝗜voire': '/channel_images/couloir-blanc.jpg',
-            '️〕Portail-Ivoire': '/channel_images/couloir-blanc.jpg',
-            '🛏️  •  Salle de Réveil': '/channel_images/cellules.jpg'
+            'Isis et Astreüs': 'channel_images/serre-de-lune.jpg',
+            'Scène Kalès / JAVUS': 'channel_images/arene-hurlante.jpg',
+            'Scène Kalès / Kalem': 'channel_images/terrain-d-entrainement.jpg',
+            'Scène Lumia | Ivara': 'channel_images/bibliotheque-azure.jpg',
+            'TRIPLE A : Asior - Akane - Aryana': 'channel_images/le-bar-des-lions.jpg',
+            '☁️〕𝗣ortail-𝗜voire': 'channel_images/couloir-blanc.jpg',
+            '️〕Portail-Ivoire': 'channel_images/couloir-blanc.jpg',
+            '🛏️  •  Salle de Réveil': 'channel_images/cellules.jpg'
         }
 
         for scene in all_scenes:
