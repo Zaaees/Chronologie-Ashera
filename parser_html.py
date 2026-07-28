@@ -413,7 +413,8 @@ def main():
             messages = parser.messages
 
             channel_scenes = segment_messages_into_scenes(channel_name, channel_id, messages)
-            print(f"  -> {len(messages)} messages lus, divisés en {len(channel_scenes)} scène(s).")
+            channel_scenes = [s for s in channel_scenes if not s.get("start_time", "").startswith("2025")]
+            print(f"  -> {len(messages)} messages lus, divisés en {len(channel_scenes)} scène(s) (2026+).")
 
             all_scenes.extend(channel_scenes)
 

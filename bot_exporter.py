@@ -560,7 +560,9 @@ class DiscordExporterClient(discord.Client):
             except Exception as e:
                 print(f"  -> ⚠️ ERREUR lors de la lecture du salon #{ch_name}: {e}")
 
-        # Trier les scènes par date de début
+        # Exclure les scènes de 2025 et trier par date de début
+        all_scenes = [s for s in all_scenes if not s.get('start_time', '').startswith('2025')]
+        
         def get_start_time(scene):
             return scene.get('start_time', '0000-00-00')
 
