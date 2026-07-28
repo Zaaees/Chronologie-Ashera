@@ -255,6 +255,44 @@ EXPLICIT_START_REGEX = re.compile(
     re.IGNORECASE | re.DOTALL
 )
 
+def is_meaningful_rp_content(content, embed_title='', embed_description=''):
+    full_text = ' '.join([content or '', embed_title or '', embed_description or '']).strip()
+    if not full_text:
+        return False
+
+    has_mentions = ('<' in full_text and '@' in full_text) or ('@' in full_text)
+    has_image = '[Image:' in full_text or 'http://' in full_text or 'https://' in full_text
+    
+    text = re.sub(r'<@[!&]?\d+>', '', full_text)
+    text = re.sub(r'<#\d+>', '', text)
+    text = re.sub(r'\[Image:\s*https?://\S+\]', '', text)
+    text = re.sub(r'https?://\S+', '', text)
+    text = re.sub(r'@[^\n@]+?(?=\s+@|\n|$)', '', text)
+    text = re.sub(r'@\S+', '', text)
+    
+    cleaned = re.sub(r'[^\w]', '', text, flags=re.UNICODE).strip()
+    
+    if has_mentions and not has_image:
+        if len(cleaned) < 15:
+            return False
+        lower = cleaned.lower()
+        ping_phrases = ['ping', 'up', 'relance', 'atoai', 'atois', 'avous', 'hrp', 'inrp', 'repondez', 'edited', 'prochainenarration', 'lajournee']
+        if any(lower == p for p in ping_phrases):
+            return False
+
+    if has_image and not has_mentions:
+        return True
+
+    if len(cleaned) < 3 and not has_image:
+        return False
+        
+    return True
+
+SYSTEM_BOTS = [
+    'narrateur', 'narration', 'draftbot', 'ticket tool', 'tupperbox',
+    'raidprotect', 'sakuraki', 'jockie', 'liste du rp fr', 'profile', 'koya'
+]
+
 from ai_narrative_segmenter import segment_messages_into_scenes_ai
 
 def segment_messages_into_scenes(channel_name, channel_id, messages):
@@ -273,14 +311,21 @@ def segment_messages_into_scenes(channel_name, channel_id, messages):
     def scene_builder(ch_name, ch_id, idx, sub_tuples):
         return create_scene_dict(ch_name, ch_id, idx, sub_tuples)
 
-    return segment_messages_into_scenes_ai(channel_name, channel_id, valid_msgs, scene_builder)
+    scenes = segment_messages_into_scenes_ai(channel_name, channel_id, valid_msgs, scene_builder)
+    return [s for s in scenes if s.get("actors")]
 
 def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
     global GLOBAL_GUILD_ID
     messages = [t[0] for t in messages_tuples]
     texts = [t[1] for t in messages_tuples]
 
-    actors = list({clean_character_name(m['author']) for m in messages})
+    actors = list({
+        clean_character_name(m['author']) 
+        for m in messages 
+        if m.get('author') 
+        and not any(b in m['author'].lower() for b in SYSTEM_BOTS)
+        and is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', ''))
+    })
     parent_channel = THREAD_TO_PARENT.get(channel_name, channel_name)
 
     preview = texts[0]

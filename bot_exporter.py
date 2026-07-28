@@ -106,6 +106,40 @@ SYSTEM_BOTS = [
     'raidprotect', 'sakuraki', 'jockie', 'liste du rp fr', 'profile', 'koya'
 ]
 
+def is_meaningful_rp_content(content, embed_title='', embed_description=''):
+    full_text = ' '.join([content or '', embed_title or '', embed_description or '']).strip()
+    if not full_text:
+        return False
+
+    has_mentions = ('<' in full_text and '@' in full_text) or ('@' in full_text)
+    has_image = '[Image:' in full_text or 'http://' in full_text or 'https://' in full_text
+    
+    text = re.sub(r'<@[!&]?\d+>', '', full_text)
+    text = re.sub(r'<#\d+>', '', text)
+    text = re.sub(r'\[Image:\s*https?://\S+\]', '', text)
+    text = re.sub(r'https?://\S+', '', text)
+    text = re.sub(r'@[^\n@]+?(?=\s+@|\n|$)', '', text)
+    text = re.sub(r'@\S+', '', text)
+    
+    cleaned = re.sub(r'[^\w]', '', text, flags=re.UNICODE).strip()
+    
+    if has_mentions and not has_image:
+        if len(cleaned) < 15:
+            return False
+        lower = cleaned.lower()
+        ping_phrases = ['ping', 'up', 'relance', 'atoai', 'atois', 'avous', 'hrp', 'inrp', 'repondez', 'edited', 'prochainenarration', 'lajournee']
+        if any(lower == p for p in ping_phrases):
+            return False
+
+    if has_image and not has_mentions:
+        return True
+
+    if len(cleaned) < 3 and not has_image:
+        return False
+        
+    return True
+
+
 LEGITIMATE_PNJ_KEYWORDS = [
     'javus', 'conseiller', 'owl', 'messager', 'missive', 'les missives',
     'monarque', 'infranchissable', 'déesse-mère', 'deesse-mere', 'prince lunaire',
@@ -224,6 +258,8 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
             first_author = msgs[0].get("author", "").strip().lower()
             if "conseiller" in first_author:
                 continue
+        if not s.get("actors"):
+            continue
         clean_scenes.append(s)
 
     return clean_scenes
@@ -232,7 +268,13 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
     messages = [t[0] for t in messages_tuples]
     texts = [t[1] for t in messages_tuples]
 
-    actors = list({clean_character_name(m['author']) for m in messages if m.get('author') and not any(b in m['author'].lower() for b in SYSTEM_BOTS)})
+    actors = list({
+        clean_character_name(m['author']) 
+        for m in messages 
+        if m.get('author') 
+        and not any(b in m['author'].lower() for b in SYSTEM_BOTS)
+        and is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', ''))
+    })
     parent_channel = THREAD_TO_PARENT.get(channel_name, channel_name)
 
     preview = texts[0]
@@ -346,8 +388,13 @@ class DiscordExporterClient(discord.Client):
                                     cleaned_a = clean_character_name(m['author'])
                                     m['author'] = cleaned_a
                                     if cleaned_a and not any(b in cleaned_a.lower() for b in SYSTEM_BOTS):
-                                        msg_authors.add(cleaned_a)
+                                        if is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
+                                            msg_authors.add(cleaned_a)
                             s['actors'] = list(msg_authors)
+                            if not s['actors']:
+                                continue
+                            parent_ch = s.get("channel", "")
+                            s['title'] = f"{', '.join(s['actors'][:3])}{'...' if len(s['actors']) > 3 else ''}" if s['actors'] else parent_ch
 
                         ch_key = s.get("channel_id") or s.get("channel")
                         if ch_key not in existing_scenes_by_channel:

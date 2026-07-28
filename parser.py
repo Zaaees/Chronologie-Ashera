@@ -39,11 +39,48 @@ def segment_channel_into_scenes(channel_name, messages):
 
     return segment_messages_into_scenes_ai(channel_name, "0", valid_msgs, scene_builder)
 
+def is_meaningful_rp_content(content, embed_title='', embed_description=''):
+    full_text = ' '.join([content or '', embed_title or '', embed_description or '']).strip()
+    if not full_text:
+        return False
+
+    has_mentions = ('<' in full_text and '@' in full_text) or ('@' in full_text)
+    has_image = '[Image:' in full_text or 'http://' in full_text or 'https://' in full_text
+    
+    text = re.sub(r'<@[!&]?\d+>', '', full_text)
+    text = re.sub(r'<#\d+>', '', text)
+    text = re.sub(r'\[Image:\s*https?://\S+\]', '', text)
+    text = re.sub(r'https?://\S+', '', text)
+    text = re.sub(r'@[^\n@]+?(?=\s+@|\n|$)', '', text)
+    text = re.sub(r'@\S+', '', text)
+    
+    cleaned = re.sub(r'[^\w]', '', text, flags=re.UNICODE).strip()
+    
+    if has_mentions and not has_image:
+        if len(cleaned) < 15:
+            return False
+        lower = cleaned.lower()
+        ping_phrases = ['ping', 'up', 'relance', 'atoai', 'atois', 'avous', 'hrp', 'inrp', 'repondez', 'edited', 'prochainenarration', 'lajournee']
+        if any(lower == p for p in ping_phrases):
+            return False
+
+    if has_image and not has_mentions:
+        return True
+
+    if len(cleaned) < 3 and not has_image:
+        return False
+        
+    return True
+
 def create_scene_object(channel_name, scene_index, messages):
     first_msg = messages[0]
     last_msg = messages[-1]
 
-    actors = list({parse_character_name(m['author_name']) for m in messages})
+    actors = list({
+        parse_character_name(m['author_name']) 
+        for m in messages 
+        if is_meaningful_rp_content(m.get('content', ''))
+    })
 
     preview = first_msg['content']
     if len(preview) > 150:
