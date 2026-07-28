@@ -32,18 +32,74 @@ if not TOKEN:
     print("❌ Erreur : DISCORD_BOT_TOKEN non trouvé dans le fichier .env")
     sys.exit(1)
 
-# Helper pour nettoyer le nom du personnage (issu de parser_html.py)
+CANONICAL_MAP = {
+    "adelina del fuego": "Adelina Del Fuego", "adelina del fuego mari": "Adelina Del Fuego", "marigold": "Adelina Del Fuego", "_marigld": "Adelina Del Fuego",
+    "aegnor othar": "Aegnor Othar", "tcizab": "Aegnor Othar", "tcizabaegnor othar": "Aegnor Othar",
+    "akane tsukishiro": "Akane Tsukishiro", "tsukishiro akane": "Akane Tsukishiro", "doppelganger2830": "Akane Tsukishiro",
+    "arun acharya": "Arun Acharya", "arun acharya freulonlezouin": "Arun Acharya", "freulonlezouinzouin": "Arun Acharya", "nyson": "Arun Acharya",
+    "aryanna erhendil": "Aryanna Erhendil", "aryana erhendil": "Aryanna Erhendil", "aryana erhendil taurielle": "Aryanna Erhendil", "taurielle": "Aryanna Erhendil", "tutaurielle": "Aryanna Erhendil",
+    "asior eveus": "Asior Eveus", "eopia asior eveus": "Asior Eveus", "eopia": "Asior Eveus",
+    "bozdag dermirhan": "Bozdag Dermirhan", "clipmyr": "Bozdag Dermirhan", "clip demirhan bozdag": "Bozdag Dermirhan",
+    "brutus redwitch": "Brutus Redwitch", "kinoru": "Brutus Redwitch",
+    "cassian ortie": "Cassian Ortie", "chulakita": "Cassian Ortie", "chulaktm": "Cassian Ortie",
+    "frey gudfrodur": "Frey Guðfrøðr", "frey guðfrøðr": "Frey Guðfrøðr", "frey elear": "Frey Guðfrøðr", "frey - elear": "Frey Guðfrøðr", "elessai": "Frey Guðfrøðr",
+    "hedwig von glanzestern": "Hedwig Von Glanzestern", "twisted_servant": "Hedwig Von Glanzestern",
+    "idelmee cadree": "Idelmée Cadree", "idelmee cadere": "Idelmée Cadree", "momo idelmee cadere": "Idelmée Cadree", "momotarie": "Idelmée Cadree", "momo": "Idelmée Cadree",
+    "iscarioth": "Iscarioth", "zaes ley vaelric": "Iscarioth", "ley vaelric": "Iscarioth", "zaes": "Iscarioth", "zaaes": "Iscarioth",
+    "isis faerieth": "Isis Faerieth", "etoile isis faerieth": "Isis Faerieth", "etoile": "Isis Faerieth", "letoiledeminuit": "Isis Faerieth",
+    "ivara luella": "Ivara Luella", "ivara luell": "Ivara Luella", "elisabeeh ivara luell": "Ivara Luella", "elisabeeeeh": "Ivara Luella",
+    "jasp nah": "Jasp Nah", "nah jasp": "Jasp Nah",
+    "junko anarchy": "Junko Anarchy", "luden junko anarchy": "Junko Anarchy", "luden": "Junko Anarchy", "luden_chan": "Junko Anarchy",
+    "katelynn hoffmann": "Katelynn Hoffmann", "katelyn hoffmann": "Katelynn Hoffmann", "yuu katelyn hoffmann": "Katelynn Hoffmann", "its_yuu": "Katelynn Hoffmann", "yuu": "Katelynn Hoffmann",
+    "kenji takahashi": "Kenji Takahashi", "kenji takahashi heavil": "Kenji Takahashi", "heavil4444": "Kenji Takahashi", "heavil": "Kenji Takahashi",
+    "lewis bamer": "Lewis Bamer", "lewis bamer historious": "Lewis Bamer",
+    "loyis delacroix": "Loyis Delacroix", "happy loyis delacroix": "Loyis Delacroix", "happy_is_happy": "Loyis Delacroix", "happy": "Loyis Delacroix",
+    "lucia fiorella": "Lucia Fiorella", "ju lucia bunny fiorella": "Lucia Fiorella", "juju_la_best": "Lucia Fiorella",
+    "lumia faendharts": "Lumia Faendharts", "lumia lum faendhartslumiere": "Lumia Faendharts", "lueur_": "Lumia Faendharts",
+    "maell fol'dun": "Maëll Fol'Dun", "mael fol'dun": "Maëll Fol'Dun", "mael fol'dun astyell": "Maëll Fol'Dun", "astyell": "Maëll Fol'Dun",
+    "myrea m": "Myrea M", "khem myrea m": "Myrea M", "khemm": "Myrea M", "khem": "Myrea M",
+    "nick sol": "Nick Sol", "prince nick sol": "Nick Sol", "harderbae": "Nick Sol", "_aura_": "Nick Sol",
+    "ragde umbras": "Ragde Umbras", "personnes_10": "Ragde Umbras", "personne": "Ragde Umbras",
+    "red roadman": "Red Roadman", "red": "Red Roadman", "jivwd": "Red Roadman",
+    "ren urugaki": "Ren Urugaki", "noci urugaki ren": "Ren Urugaki", "urugaki ren": "Ren Urugaki", "nociferoce": "Ren Urugaki", "noci": "Ren Urugaki",
+    "selena moon": "Selena Moon", "seléna moon": "Selena Moon", "gwenphasehikena": "Selena Moon",
+    "septimus kales": "Septimus Kales", "ryo kales septimus": "Septimus Kales",
+    "tarrion tombetoile": "Tarrion Tombetoile", "tarrion tombetoile biboon": "Tarrion Tombetoile", "biboon": "Tarrion Tombetoile",
+    "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris",
+    "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
+    "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
+    "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
+    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku",
+    "kuikui - astreus mylonas": "Astreüs Mylonas", "astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
+    "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
+    "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel", "inzu sravel - garde pourpre": "Inzu Sravel", "inzu sravel": "Inzu Sravel",
+    "hector swaft - mage de rang 3": "Hector Swaft", "hector swaft": "Hector Swaft",
+    "milli enga - mange de rang 2": "Milli Enga", "milli enga": "Milli Enga",
+    "vieux debile tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "tsutomu yamamoto": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto", "reverse": "Tsutomu Yamamoto",
+    "emil camille rebenok": "Emil Camille Rebenok", "emil": "Emil Camille Rebenok", "indominushunter": "Emil Camille Rebenok",
+    "rias valdor - cheffe de la famille valdor": "Rias Valdor", "rias valdor": "Rias Valdor",
+    "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne", "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
+    "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law", "markus law": "Markus Law",
+    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates"
+}
+
+def clean_key_lookup(s):
+    s = unicodedata.normalize('NFD', str(s).lower())
+    s = re.sub(r'[\u0300-\u036f]', '', s)
+    return re.sub(r'[^a-z0-9]', '', s)
+
+CANONICAL_LOOKUP = {clean_key_lookup(k): v for k, v in CANONICAL_MAP.items()}
+
+# Helper pour nettoyer le nom du personnage
 def clean_character_name(name):
     if not name:
         return "Narrateur"
 
-    name = unicodedata.normalize('NFKD', str(name))
-    name = re.sub(r'[^\w\s\-\']', '', name)
-    name = re.sub(r'\s+', ' ', name)
-    name = name.strip()
-    name = re.sub(r'\s+BOT$', '', name, flags=re.IGNORECASE)
-
-    name_lower = name.lower()
+    name_str = unicodedata.normalize('NFKD', str(name))
+    name_str = re.sub(r'[^\w\s\-\']', '', name_str)
+    name_str = re.sub(r'\s+', ' ', name_str).strip()
+    name_str = re.sub(r'\s+BOT$', '', name_str, flags=re.IGNORECASE)
+    name_lower = name_str.lower()
 
     if 'conseiller' in name_lower:
         return "LE CONSEILLER"
@@ -54,7 +110,14 @@ def clean_character_name(name):
     elif 'missive' in name_lower:
         return "LES MISSIVES"
 
-    return name if name else "Narrateur"
+    ck = clean_key_lookup(name_str)
+    if ck in CANONICAL_LOOKUP:
+        return CANONICAL_LOOKUP[ck]
+    for k, v in CANONICAL_LOOKUP.items():
+        if len(k) >= 4 and (k in ck or ck in k):
+            return v
+
+    return name_str if name_str else "Narrateur"
 
 # Ordre de priorité des Rôles Faction Discord
 FACTION_ROLE_PRIORITY = [
@@ -88,18 +151,6 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
                 "displayName": display_name,
                 "avatarUrl": avatar_url
             }
-    
-    parts = re.split(r'[\(\)\-\—\•\|]', name_str)
-    for p in parts:
-        c_part = clean_character_name(p)
-        if c_part and len(c_part) < 50:
-            detected_member_factions[c_part] = faction_info
-            if username or display_name or avatar_url:
-                detected_member_details[c_part] = {
-                    "username": username,
-                    "displayName": display_name,
-                    "avatarUrl": avatar_url
-                }
 
 SYSTEM_BOTS = [
     'narrateur', 'narration', 'draftbot', 'ticket tool', 'tupperbox',
