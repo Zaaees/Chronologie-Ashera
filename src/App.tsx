@@ -247,13 +247,41 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       return;
     }
 
-    if (line.trim().startsWith('> ')) {
-      const quoteContent = line.trim().slice(2);
-      renderedElements.push(
-        <blockquote key={`quote-${lineIdx}`} className="border-l-4 border-[#4e5058] pl-3 py-1 my-1 text-[#dbdee1] italic bg-[#2b2d31]/50 rounded-r select-text">
-          {parseInlineDiscord(quoteContent, searchQuery)}
-        </blockquote>
-      );
+    // Gestion des citations (blockquote)
+    const isQuoteLine = line.startsWith('> ') || line === '>' || line.startsWith('>\t');
+    if (isQuoteLine) {
+      const quoteContent = line === '>' ? '' : line.startsWith('> ') ? line.slice(2) : line.slice(1);
+      
+      // Si l'élément précédent était un blockquote, on ajoute le contenu à cette citation
+      const lastElement = renderedElements[renderedElements.length - 1];
+      if (lastElement && React.isValidElement(lastElement) && (lastElement.props as any)?.['data-blockquote']) {
+        const existingChildren = (lastElement.props as any).children as React.ReactNode[];
+        renderedElements[renderedElements.length - 1] = React.cloneElement(
+          lastElement,
+          {},
+          [
+            ...existingChildren,
+            <React.Fragment key={`quote-line-${lineIdx}`}>
+              <br />
+              {parseInlineDiscord(quoteContent, searchQuery)}
+            </React.Fragment>
+          ]
+        );
+      } else {
+        renderedElements.push(
+          <blockquote 
+            key={`quote-${lineIdx}`} 
+            data-blockquote="true"
+            className="border-l-4 border-[#4e5058] pl-3 py-1 my-1 text-[#dbdee1] bg-[#2b2d31]/40 rounded-r select-text"
+          >
+            {[
+              <React.Fragment key={`quote-line-${lineIdx}`}>
+                {parseInlineDiscord(quoteContent, searchQuery)}
+              </React.Fragment>
+            ]}
+          </blockquote>
+        );
+      }
       return;
     }
 
