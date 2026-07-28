@@ -5,6 +5,7 @@ import {
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
 } from 'lucide-react';
 import { CharacterSpotlight } from './components/CharacterSpotlight';
+import { getCharacterCardImage } from './utils/characterHelper';
 
 export const formatImageUrl = (url?: string | null): string | undefined => {
   if (!url) return undefined;
@@ -1463,17 +1464,29 @@ export default function App() {
                 const style = getFactionStyle(info?.role);
                 const serverNick = info?.displayName || msg.author;
                 const initials = getInitials(serverNick);
+                const avatarImg = getCharacterCardImage(msg.author);
 
                 return (
                   <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
                     
-                    {/* AVATAR ROND CONFORT DISCORD */}
-                    <div 
-                      style={{ backgroundColor: style.hexColor }} 
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-sm mt-0.5 select-none"
-                    >
-                      {initials}
-                    </div>
+                    {/* AVATAR ROND DISCORD */}
+                    {avatarImg ? (
+                      <img
+                        src={avatarImg}
+                        alt={serverNick}
+                        style={{ borderColor: style.hexColor }}
+                        className="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm mt-0.5 border border-slate-700 select-none cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => setSelectedActor(msg.author)}
+                        title={`Voir le profil de ${serverNick}`}
+                      />
+                    ) : (
+                      <div 
+                        style={{ backgroundColor: style.hexColor }} 
+                        className="w-10 h-10 rounded-full flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-sm mt-0.5 select-none"
+                      >
+                        {initials}
+                      </div>
+                    )}
 
                     {/* BLOC MESSAGE DISCORD */}
                     <div className="flex-1 min-w-0">
