@@ -6,6 +6,7 @@ export interface Character {
   colorName?: string;
   username?: string;
   displayName?: string;
+  avatarUrl?: string;
 }
 
 export interface Message {
@@ -15,6 +16,7 @@ export interface Message {
   content: string;
   embed_title?: string;
   embed_description?: string;
+  avatar_url?: string;
 }
 
 export interface Scene {

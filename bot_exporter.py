@@ -76,16 +76,17 @@ FACTION_INFO = {
 detected_member_factions = {}
 detected_member_details = {}
 
-def register_member_faction(name_str, faction_info, username="", display_name=""):
+def register_member_faction(name_str, faction_info, username="", display_name="", avatar_url=""):
     if not name_str:
         return
     cleaned = clean_character_name(name_str)
     if cleaned and len(cleaned) < 50:
         detected_member_factions[cleaned] = faction_info
-        if username or display_name:
+        if username or display_name or avatar_url:
             detected_member_details[cleaned] = {
                 "username": username,
-                "displayName": display_name
+                "displayName": display_name,
+                "avatarUrl": avatar_url
             }
     
     parts = re.split(r'[\(\)\-\—\•\|]', name_str)
@@ -93,10 +94,11 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
         c_part = clean_character_name(p)
         if c_part and len(c_part) < 50:
             detected_member_factions[c_part] = faction_info
-            if username or display_name:
+            if username or display_name or avatar_url:
                 detected_member_details[c_part] = {
                     "username": username,
-                    "displayName": display_name
+                    "displayName": display_name,
+                    "avatarUrl": avatar_url
                 }
 
 SYSTEM_BOTS = [
@@ -311,12 +313,13 @@ class DiscordExporterClient(discord.Client):
                 
                 if best_role:
                     faction_info = FACTION_INFO[best_role]
-                    register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name)
+                    av_url = str(member.display_avatar.url) if hasattr(member, 'display_avatar') and member.display_avatar else ""
+                    register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                     if member.name:
-                        register_member_faction(member.name, faction_info, username=member.name, display_name=member.display_name)
+                        register_member_faction(member.name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                     global_name = getattr(member, 'global_name', None)
                     if global_name:
-                        register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name)
+                        register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction identifiées.")
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
@@ -464,6 +467,7 @@ class DiscordExporterClient(discord.Client):
                 async for msg in channel.history(limit=history_limit, after=after_obj, oldest_first=True):
                     # Déterminer le nom de l'auteur (affichage/surnom si disponible)
                     author_name = msg.author.display_name if hasattr(msg.author, 'display_name') else msg.author.name
+                    author_avatar_url = str(msg.author.display_avatar.url) if hasattr(msg.author, 'display_avatar') and msg.author.display_avatar else ""
                     
                     # Contenu texte + pièces jointes (ex: images)
                     content = msg.content or ""
@@ -491,7 +495,8 @@ class DiscordExporterClient(discord.Client):
                         "timestamp": ts_iso,
                         "content": content,
                         "embed_title": embed_title,
-                        "embed_description": embed_desc
+                        "embed_description": embed_desc,
+                        "avatar_url": author_avatar_url
                     })
 
                 if after_obj and len(raw_messages) == 0:
@@ -537,7 +542,8 @@ class DiscordExporterClient(discord.Client):
                     "color": color,
                     "colorName": color_name,
                     "username": details.get('username', ''),
-                    "displayName": details.get('displayName', '')
+                    "displayName": details.get('displayName', ''),
+                    "avatarUrl": details.get('avatarUrl', '')
                 }
                 valid_actors.add(actor)
 
@@ -553,7 +559,8 @@ class DiscordExporterClient(discord.Client):
                     "color": color,
                     "colorName": color_name,
                     "username": details.get('username', ''),
-                    "displayName": details.get('displayName', '')
+                    "displayName": details.get('displayName', ''),
+                    "avatarUrl": details.get('avatarUrl', '')
                 }
                 valid_actors.add(char_name)
 

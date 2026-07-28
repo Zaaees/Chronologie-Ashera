@@ -1464,7 +1464,7 @@ export default function App() {
                 const style = getFactionStyle(info?.role);
                 const serverNick = info?.displayName || msg.author;
                 const initials = getInitials(serverNick);
-                const avatarImg = getCharacterCardImage(msg.author);
+                const avatarImg = msg.avatar_url || info?.avatarUrl || getCharacterCardImage(msg.author);
 
                 return (
                   <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
