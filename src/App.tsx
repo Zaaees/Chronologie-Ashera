@@ -1220,7 +1220,7 @@ export default function App() {
             ) : (
               <div className="relative h-28 w-full overflow-hidden border border-slate-800 rounded">
                 <img 
-                  src="./ashera_banner.png" 
+                  src="./default_guild_banner.png" 
                   alt="Conte d'Ashera Artwork" 
                   className="w-full h-full object-cover object-center"
                 />
