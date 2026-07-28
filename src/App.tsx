@@ -4,6 +4,7 @@ import {
   Search, Calendar, Clock, Users, ChevronRight, 
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
 } from 'lucide-react';
+import { CharacterSpotlight } from './components/CharacterSpotlight';
 
 const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   "La Garde Pourpre": { 
@@ -463,13 +464,18 @@ function GanttMonthView({
     if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
     const fromScene = chScenes?.find(s => s.location_image)?.location_image;
     if (fromScene) return fromScene;
-    
+
+    const parentCh = chScenes?.[0]?.channel;
+    if (parentCh && CHANNEL_IMAGES[parentCh]) return CHANNEL_IMAGES[parentCh];
+
     const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
-    if (!cleanCh) return undefined;
-    
+    const cleanParent = parentCh ? parentCh.replace(/[^\w]/g, '').toLowerCase() : '';
+
     const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
       const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
-      return cleanK && v && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK));
+      if (!cleanK || !v) return false;
+      return (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK))) ||
+             (cleanParent && (cleanK.includes(cleanParent) || cleanParent.includes(cleanK)));
     });
     return entry ? entry[1] : undefined;
   };
@@ -741,14 +747,59 @@ function GanttMonthView({
   );
 }
 
+const FACTION_THEMES: Record<string, { accent: string; border: string; glow: string; motto: string; mottoAuthor: string }> = {
+  "La Garde Pourpre": {
+    accent: "#ef4444",
+    border: "rgba(220, 38, 38, 0.8)",
+    glow: "rgba(239, 68, 68, 0.5)",
+    motto: "L’inconnu et l’irrégulier sont dangereux, ils sont les outils du Mal que nous devons rayer de notre monde.",
+    mottoAuthor: "Félina Cravagant"
+  },
+  "Cercle d'Azur": {
+    accent: "#3b82f6",
+    border: "rgba(59, 130, 246, 0.8)",
+    glow: "rgba(59, 130, 246, 0.5)",
+    motto: "L’inconnu et l’irrégulier sont deux phénomènes que nous devons élucider, analyser et classifier. Ils sont l’outil du progrès que nous devons comprendre pour bâtir un monde meilleur.",
+    mottoAuthor: "Serena VIII"
+  },
+  "Voile d'Ivoire": {
+    accent: "#eab308",
+    border: "rgba(234, 179, 8, 0.8)",
+    glow: "rgba(234, 179, 8, 0.5)",
+    motto: "L'avarice empêche le partage. Le plus riche des hommes est pauvre s'il n'a plus personne avec qui partager.",
+    mottoAuthor: "Rias Valdor"
+  },
+  "L'œil": {
+    accent: "#a855f7",
+    border: "rgba(147, 51, 234, 0.8)",
+    glow: "rgba(147, 51, 234, 0.5)",
+    motto: "Oculus videt",
+    mottoAuthor: "Maël Legarde"
+  }
+};
+
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
+  const [selectedFaction, setSelectedFaction] = useState<string | null>(null);
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
   const headerRef = useRef<HTMLElement>(null);
   const [sidebarTopOffset, setSidebarTopOffset] = useState<number>(220);
+
+  useEffect(() => {
+    if (selectedFaction && FACTION_THEMES[selectedFaction]) {
+      const theme = FACTION_THEMES[selectedFaction];
+      document.documentElement.style.setProperty('--theme-accent', theme.accent);
+      document.documentElement.style.setProperty('--theme-border', theme.border);
+      document.documentElement.style.setProperty('--theme-glow', theme.glow);
+    } else {
+      document.documentElement.style.removeProperty('--theme-accent');
+      document.documentElement.style.removeProperty('--theme-border');
+      document.documentElement.style.removeProperty('--theme-glow');
+    }
+  }, [selectedFaction]);
 
   useEffect(() => {
     const updateOffset = () => {
@@ -923,16 +974,23 @@ export default function App() {
 
   const activeSceneLocationImage = useMemo(() => {
     if (!activeScene) return null;
+
+    if (activeScene.thread_name && CHANNEL_IMAGES[activeScene.thread_name]) {
+      return CHANNEL_IMAGES[activeScene.thread_name];
+    }
+
     const ch = activeScene.channel;
     if (CHANNEL_IMAGES[ch]) return CHANNEL_IMAGES[ch];
     if (activeScene.location_image) return activeScene.location_image;
 
+    const cleanTh = activeScene.thread_name ? activeScene.thread_name.replace(/[^\w]/g, '').toLowerCase() : '';
     const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
-    if (!cleanCh) return null;
 
     const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
       const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
-      return cleanK && v && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK));
+      if (!cleanK || !v) return false;
+      return (cleanTh && (cleanK.includes(cleanTh) || cleanTh.includes(cleanK))) ||
+             (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK)));
     });
     return entry ? entry[1] : null;
   }, [activeScene]);
@@ -995,27 +1053,51 @@ export default function App() {
             </div>
           </div>
 
-          {/* 🛡️ BANNIÈRES DES 4 FACTIONS D'ASHERA (AFFICHAGE "GUILDE") */}
+          {/* 🛡️ BANNIÈRES INTERACTIVES DES 4 FACTIONS D'ASHERA (CHANGEMENT DE THÈME) */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
-            {Object.entries(FACTION_INFO).map(([factionName, info]) => (
-              <div
-                key={factionName}
-                style={{ borderColor: 'rgba(226, 232, 240, 0.15)' }}
-                className="faction-crest-card relative p-2 rounded flex items-center gap-2.5 bg-[#0c0e15]/90 border text-left select-none"
-              >
-                {/* Blason Image du Dossier Images */}
-                <div className="w-8 h-8 rounded-full overflow-hidden border border-slate-700/80 shrink-0 bg-black/60 shadow">
-                  <img src={info.crest} alt={factionName} className="w-full h-full object-cover object-center" />
-                </div>
+            {Object.entries(FACTION_INFO).map(([factionName, info]) => {
+              const isSelected = selectedFaction === factionName;
+              const memberCount = groupedActorsByFaction[factionName]?.length || 0;
 
-                <div className="min-w-0 flex-1">
-                  <div style={{ color: info.text }} className="text-xs font-bold font-serif-gothic truncate flex items-center gap-1">
-                    <span>{info.icon}</span>
-                    <span className="truncate">{factionName}</span>
+              return (
+                <div
+                  key={factionName}
+                  onClick={() => setSelectedFaction(isSelected ? null : factionName)}
+                  style={{ 
+                    borderColor: isSelected ? info.hexColor : 'rgba(226, 232, 240, 0.15)',
+                    boxShadow: isSelected ? `0 0 20px ${info.hexColor}60` : undefined,
+                    backgroundColor: isSelected ? `${info.hexColor}25` : '#0c0e1590'
+                  }}
+                  className={`faction-crest-card relative p-2.5 rounded flex items-center gap-2.5 border text-left select-none cursor-pointer transition-all duration-300 transform hover:scale-[1.02] ${
+                    isSelected ? 'ring-2 ring-white/50 shadow-xl' : 'hover:border-slate-600'
+                  }`}
+                  title={`Cliquer pour appliquer le thème ${factionName}`}
+                >
+                  {/* Blason Image du Dossier Images */}
+                  <div 
+                    style={{ borderColor: info.hexColor }}
+                    className="w-8 h-8 rounded-full overflow-hidden border-2 shrink-0 bg-black/80 shadow flex items-center justify-center p-0.5"
+                  >
+                    <img src={info.crest} alt={factionName} className="w-full h-full object-cover object-center rounded-full" />
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div style={{ color: isSelected ? '#ffffff' : info.text }} className="text-xs font-bold font-serif-gothic truncate flex items-center gap-1">
+                      <span>{info.icon}</span>
+                      <span className="truncate">{factionName}</span>
+                    </div>
+                    <div className="text-[10px] font-mono text-slate-400 flex items-center justify-between gap-1 mt-0.5">
+                      <span>{memberCount} membres</span>
+                      {isSelected && (
+                        <span style={{ backgroundColor: info.hexColor }} className="px-1.5 py-0.2 text-[9px] font-bold text-black rounded font-sans">
+                          THÈME ACTIF
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* BARRE DE FILTRES SÉLECTEURS AVEC RECHERCHE INTERACTIVE DE PERSONNAGES */}
@@ -1074,7 +1156,7 @@ export default function App() {
       </header>
 
       {/* 🚀 LAYOUT PRINCIPAL AVEC GANTT SWIMLANES DYNAMIQUES */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-8">
         
         {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT */}
         <aside 
@@ -1085,26 +1167,71 @@ export default function App() {
           className="hidden lg:block w-64 shrink-0 sticky overflow-y-auto space-y-4 pr-1 text-xs custom-scrollbar"
         >
           
-          {/* BANNIÈRE ARTWORK DU PROJET */}
-          <div className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-2 shadow-2xl overflow-hidden">
+          {/* BANNIÈRE ARTWORK DU PROJET / DOCTRINE DE FACTION (CASE AU-DESSUS DE SAUT TEMPOREL) */}
+          <div 
+            style={{ 
+              borderColor: selectedFaction && FACTION_THEMES[selectedFaction] ? FACTION_THEMES[selectedFaction].border : undefined,
+              boxShadow: selectedFaction && FACTION_THEMES[selectedFaction] ? `0 0 15px ${FACTION_THEMES[selectedFaction].glow}` : undefined
+            }}
+            className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-2.5 shadow-2xl overflow-hidden transition-all"
+          >
             <div className="gothic-corner gothic-corner-tl" />
             <div className="gothic-corner gothic-corner-tr" />
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
             
-            <div className="relative h-28 w-full overflow-hidden border border-slate-800">
-              <img 
-                src="./ashera_banner.png" 
-                alt="Conte d'Ashera Artwork" 
-                className="w-full h-full object-cover object-center"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e15] via-transparent to-transparent" />
-              <div className="absolute bottom-2 left-2 right-2 text-center">
-                <span className="text-[11px] font-serif-gothic tracking-widest text-slate-200 uppercase font-bold drop-shadow-md">
-                  Le Conte d'Ashera
-                </span>
+            {selectedFaction && FACTION_THEMES[selectedFaction] ? (
+              <div className="relative min-h-[7.5rem] w-full overflow-hidden border border-slate-800/80 rounded p-2.5 flex flex-col justify-between bg-black/60">
+                {/* Artwork Blason en fond semi-transparent */}
+                {FACTION_INFO[selectedFaction]?.crest && (
+                  <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+                    <img 
+                      src={FACTION_INFO[selectedFaction].crest} 
+                      alt={selectedFaction} 
+                      className="w-full h-full object-cover opacity-25 scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e15] via-[#0c0e15]/80 to-transparent" />
+                  </div>
+                )}
+
+                {/* Titre de la Faction */}
+                <div className="relative z-10 flex items-center gap-2 pb-1.5 border-b border-slate-800/80">
+                  <div 
+                    style={{ borderColor: FACTION_THEMES[selectedFaction].accent }}
+                    className="w-6 h-6 rounded-full border shrink-0 overflow-hidden p-0.5 bg-black"
+                  >
+                    <img src={FACTION_INFO[selectedFaction]?.crest} alt="" className="w-full h-full object-cover rounded-full" />
+                  </div>
+                  <span style={{ color: FACTION_THEMES[selectedFaction].accent }} className="text-xs font-bold font-serif-gothic uppercase tracking-wider truncate">
+                    {selectedFaction}
+                  </span>
+                </div>
+
+                {/* Quote & Auteur */}
+                <div className="relative z-10 mt-2">
+                  <p className="text-[11px] italic font-serif text-slate-100 leading-snug line-clamp-4">
+                    « {FACTION_THEMES[selectedFaction].motto} »
+                  </p>
+                  <p style={{ color: FACTION_THEMES[selectedFaction].accent }} className="text-[10px] font-mono font-semibold mt-1.5 text-right">
+                    — {FACTION_THEMES[selectedFaction].mottoAuthor}
+                  </p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div className="relative h-28 w-full overflow-hidden border border-slate-800 rounded">
+                <img 
+                  src="./ashera_banner.png" 
+                  alt="Conte d'Ashera Artwork" 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0e15] via-transparent to-transparent" />
+                <div className="absolute bottom-2 left-2 right-2 text-center">
+                  <span className="text-[11px] font-serif-gothic tracking-widest text-slate-200 uppercase font-bold drop-shadow-md">
+                    Le Conte d'Ashera
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* MENU SAUT TEMPOREL CLAIR & PROPRE */}
@@ -1150,6 +1277,16 @@ export default function App() {
           {/* Fil argenté principal de la chronologie */}
           <div className="timeline-spine" />
 
+          {/* 👤 FICHE PERSONNAGE VISUELLE SI UN PERSONNAGE EST SÉLECTIONNÉ */}
+          {selectedActor !== 'all' && (
+            <CharacterSpotlight
+              selectedActor={selectedActor}
+              onReset={() => setSelectedActor('all')}
+              onSelectActor={(actorName) => setSelectedActor(actorName)}
+              onSelectChannel={(channelName) => setSelectedChannel(channelName)}
+            />
+          )}
+
           {groupedPeriodScenes.length === 0 ? (
             <div className="bg-[#0c0e15] border border-slate-800 p-12 text-center my-8 shadow-xl">
               <HelpCircle className="w-12 h-12 text-slate-600 mx-auto mb-4" />
@@ -1175,11 +1312,20 @@ export default function App() {
                   
                   {/* ANCRAGE & NOEUD DU MOIS */}
                   <div className="flex items-center gap-4 mb-6 -ml-8">
-                    <div className="w-10 h-10 bg-[#08090d] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10">
-                      <div className="w-3 h-3 bg-slate-300 transform rotate-45" />
+                    <div 
+                      style={{ borderColor: selectedFaction ? FACTION_THEMES[selectedFaction]?.accent : undefined }}
+                      className="w-10 h-10 bg-[#08090d] border-2 border-slate-400 flex items-center justify-center shadow-lg shadow-black/80 shrink-0 z-10 transition-colors"
+                    >
+                      <div 
+                        style={{ backgroundColor: selectedFaction ? FACTION_THEMES[selectedFaction]?.accent : undefined }}
+                        className="w-3 h-3 bg-slate-300 transform rotate-45 transition-colors" 
+                      />
                     </div>
                     
-                    <div className="px-4 py-2 bg-[#0c0e15] border border-slate-700/80 flex items-center gap-3 shadow-xl">
+                    <div 
+                      style={{ borderColor: selectedFaction ? FACTION_THEMES[selectedFaction]?.border : undefined }}
+                      className="px-4 py-2 bg-[#0c0e15] border border-slate-700/80 flex items-center gap-3 shadow-xl transition-colors"
+                    >
                       <h2 className="text-sm font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">{label}</h2>
                       <span className="px-2 py-0.5 bg-slate-950 border border-slate-800 text-slate-300 text-[11px] font-mono">
                         {totalScenes} {totalScenes > 1 ? 'SCÈNES' : 'SCÈNE'}
@@ -1261,14 +1407,19 @@ export default function App() {
                   const serverNick = info?.displayName || actor;
 
                   return (
-                    <span
+                    <button
                       key={actor}
+                      onClick={() => {
+                        setSelectedActor(actor);
+                        setActiveScene(null);
+                      }}
                       style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                      className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded"
+                      className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded cursor-pointer hover:opacity-85 hover:scale-105 transition-all shadow-sm"
+                      title={`Voir la fiche visuelle de ${actor}`}
                     >
                       <span>{style.icon}</span>
                       <span>{highlightSearchQuery(serverNick, searchQuery, `act-${actor}`)}</span>
-                    </span>
+                    </button>
                   );
                 })}
               </div>

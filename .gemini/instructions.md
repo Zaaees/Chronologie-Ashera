@@ -24,8 +24,12 @@ Antigravity doit exécuter **automatiquement la séquence complète à 100%** sa
 - Conserver intactes les scènes passées déjà enregistrées.
 - Traiter uniquement les nouveaux messages ayant un ID `> last_message_id`.
 
-### Étape 3 : Segmentation 100% IA Narrative & Rattachement des Fils
-- **Analyse Narrative Pure :** L'IA évalue la continuité du récit, la réponse entre personnages, les entrées/sorties de scène et le rythme du RP Long. (Aucune règle d'heures arbitraires 24h/48h).
+### Étape 3 : Segmentation Narrative IA & Attribution des Personnages (Tupperbox)
+- **Analyse Narrative Pure :** L'IA évalue la continuité du récit, les échanges entre personnages, les entrées/sorties de scène et le rythme du RP Long. (Aucune règle d'heures arbitraires 24h/48h).
+- **Attribution & Identification des Personnages (Tupperbox) par l'IA :**
+  - L'IA identifie et nettoie automatiquement les noms des personnages RP issus des webhooks/Tuppers (nettoyage des mentions BOT/HRP, extraction du nom du personnage).
+  - L'IA associe dynamiquement chaque personnage à son joueur réel (`username`, `displayName`) et à sa Guilde/Faction RP (La Garde Pourpre `#b40000`, Cercle d'Azur `#305ed3`, Voile d'Ivoire `#ffffd4`, L'œil `#0e0d0d`, PNJ `#a855f7`).
+  - Aucune liste statique de noms d'acteurs codée en dur dans les scripts Python.
 - **Marqueurs explicites :** `Scène Terminée`, `Salon libre` $\rightarrow$ Coupure immédiate.
 - **Rattachement des Fils RP (Threads) :** Les fils (`↳ Le Rouge et le Noir`, `↳ Le 17`, `↳ Le Bonneteau`, `↳ Le Bras de Fer`) sont rattachés à leur salon parent (`🍻〕𝐋-𝐄picurien`) avec la propriété `"thread_name": "..."`.
 - **Titres & Résumés Narratifs :** L'IA génère un titre de chapitre sémantique explicite (ex: *"L'Épreuve d'Alchimie de la Serre de Lune"*) et un aperçu propre.

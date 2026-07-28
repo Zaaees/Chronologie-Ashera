@@ -1,8 +1,16 @@
+import os
+import sys
 import json
 import re
 from datetime import datetime
 
-TIME_GAP_THRESHOLD_HOURS = 12
+if sys.platform.startswith('win'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass
+
+from ai_narrative_segmenter import segment_messages_into_scenes_ai
 
 def parse_character_name(author_name):
     match = re.search(r'\((.*?)\)', author_name)
@@ -10,48 +18,26 @@ def parse_character_name(author_name):
         return match.group(1).strip()
     return author_name.strip()
 
-def parse_iso_time(timestamp_str):
-    clean_ts = timestamp_str.replace('Z', '+00:00')
-    return datetime.fromisoformat(clean_ts)
-
 def segment_channel_into_scenes(channel_name, messages):
     if not messages:
         return []
 
     sorted_msgs = sorted(messages, key=lambda m: m['timestamp'])
 
-    scenes = []
-    current_scene_msgs = [sorted_msgs[0]]
-    scene_counter = 1
+    valid_msgs = []
+    for m in sorted_msgs:
+        content = m.get('content', '').strip()
+        if content:
+            valid_msgs.append((m, content))
 
-    for i in range(1, len(sorted_msgs)):
-        prev_msg = sorted_msgs[i - 1]
-        curr_msg = sorted_msgs[i]
+    if not valid_msgs:
+        return []
 
-        prev_time = parse_iso_time(prev_msg['timestamp'])
-        curr_time = parse_iso_time(curr_msg['timestamp'])
-        time_diff = (curr_time - prev_time).total_seconds() / 3600.0
+    def scene_builder(ch_name, ch_id, idx, sub_tuples):
+        msgs_list = [t[0] for t in sub_tuples]
+        return create_scene_object(ch_name, idx, msgs_list)
 
-        recent_actors = {parse_character_name(m['author_name']) for m in current_scene_msgs[-5:]}
-        curr_actor = parse_character_name(curr_msg['author_name'])
-
-        is_new_scene = False
-        if time_diff >= TIME_GAP_THRESHOLD_HOURS:
-            is_new_scene = True
-        elif curr_actor not in recent_actors and time_diff >= 4.0:
-            is_new_scene = True
-
-        if is_new_scene:
-            scenes.append(create_scene_object(channel_name, scene_counter, current_scene_msgs))
-            scene_counter += 1
-            current_scene_msgs = [curr_msg]
-        else:
-            current_scene_msgs.append(curr_msg)
-
-    if current_scene_msgs:
-        scenes.append(create_scene_object(channel_name, scene_counter, current_scene_msgs))
-
-    return scenes
+    return segment_messages_into_scenes_ai(channel_name, "0", valid_msgs, scene_builder)
 
 def create_scene_object(channel_name, scene_index, messages):
     first_msg = messages[0]

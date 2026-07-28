@@ -126,21 +126,6 @@ def get_character_guild_and_color(actor_name):
     if clean_name in detected_member_factions:
         return detected_member_factions[clean_name]
 
-    if any(x in name_lower for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn"]):
-        return "L'œil", "#0e0d0d", "char_oeil"
-
-    if any(x in name_lower for x in ["emil", "rebenok", "camille", "red", "adelina", "mari", "nyx", "lysander", "jlaus", "eucymile", "leonite", "frey", "elear", "eopia", "asior", "lewis bamer", "historious", "lucia", "bunny", "fiorella"]):
-        return "Cercle d'Azur", "#305ed3", "char_azur"
-
-    if any(x in name_lower for x in ["akane", "noci", "urugaki", "magon", "death", "yidmetra", "etoile", "isis", "faerieth"]):
-        return "Voile d'Ivoire", "#ffffd4", "char_ivoire"
-
-    if any(x in name_lower for x in ["brutus", "redwitch", "ashbourne", "velka", "chapellet", "hana", "aryana", "taurielle", "happy", "loyis", "delacroix", "kenji", "heavil", "nick sol"]):
-        return "La Garde Pourpre", "#b40000", "char_pourpre"
-
-    if any(x in name_lower for x in ["grel", "madana", "nikko", "aytaupe", "saphizu", "vidtz"]):
-        return "Autre", "#94a3b8", "char_autre"
-
     return "Sans rôle", "#94a3b8", "char_sans_role"
 
 def is_character_or_fiche_channel(channel):
@@ -209,93 +194,26 @@ EXPLICIT_START_REGEX = re.compile(
     re.IGNORECASE | re.DOTALL
 )
 
-NARRATOR_ACTORS = {
-    "owl le messager", "le conseiller", "inzu", "narrateur", "l'oeil", "les missives", "soigneuse"
-}
+from ai_narrative_segmenter import segment_messages_into_scenes_ai
 
-def is_initiated_session(first_msg):
-    author = (first_msg.get('author') or '').lower()
-    content = (first_msg.get('content') or '') + ' ' + (first_msg.get('embed_description') or '')
-
-    if any(n in author for n in NARRATOR_ACTORS):
-        return True
-    if EXPLICIT_START_REGEX.search(content):
-        return True
-    if '<@' in content or 'invités' in content.lower() or 'épreuve' in content.lower() or 'cérémonie' in content.lower():
-        return True
-    return False
-
-# Segmentation des messages en scènes
+# Segmentation des messages en scènes (100% IA Narrative)
 def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str):
     if not messages:
         return []
 
     valid_msgs = []
     for m in messages:
-        full_text = " ".join([m['content'], m['embed_title'], m['embed_description']]).strip()
+        full_text = " ".join([m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')]).strip()
         if full_text:
             valid_msgs.append((m, full_text))
 
     if not valid_msgs:
         return []
 
-    scenes = []
-    current_scene_msgs = [valid_msgs[0]]
-    scene_counter = 1
+    def scene_builder(ch_name, ch_id, idx, sub_tuples):
+        return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str)
 
-    for i in range(1, len(valid_msgs)):
-        prev_msg, prev_text = valid_msgs[i - 1]
-        curr_msg, curr_text = valid_msgs[i]
-
-        try:
-            prev_dt = datetime.datetime.fromisoformat(prev_msg['timestamp'].replace('Z', '+00:00'))
-            curr_dt = datetime.datetime.fromisoformat(curr_msg['timestamp'].replace('Z', '+00:00'))
-            time_diff = (curr_dt - prev_dt).total_seconds() / 3600.0
-        except Exception:
-            time_diff = 0
-
-        current_scene_actors = {clean_character_name(m[0]['author']) for m in current_scene_msgs}
-        curr_actor = clean_character_name(curr_msg['author'])
-
-        prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
-        curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
-
-        has_previous_actor_replied = False
-        for nm, _ in valid_msgs[i:]:
-            if clean_character_name(nm['author']) in current_scene_actors:
-                has_previous_actor_replied = True
-                break
-
-        is_initiated = is_initiated_session(current_scene_msgs[0][0])
-
-        is_new_scene = False
-
-        if prev_is_sealed:
-            is_new_scene = True
-        elif time_diff >= 720.0: # 30 jours
-            is_new_scene = True
-        elif curr_is_start and curr_actor not in current_scene_actors and time_diff >= 2.0:
-            is_new_scene = True
-        elif curr_actor in current_scene_actors:
-            is_new_scene = False
-        elif has_previous_actor_replied:
-            is_new_scene = False
-        else:
-            limit = 48.0 if is_initiated else 24.0
-            if time_diff >= limit:
-                is_new_scene = True
-            else:
-                is_new_scene = False
-
-        if is_new_scene:
-            scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_msgs, guild_id_str))
-            scene_counter += 1
-            current_scene_msgs = [valid_msgs[i]]
-        else:
-            current_scene_msgs.append(valid_msgs[i])
-
-    if current_scene_msgs:
-        scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_msgs, guild_id_str))
+    scenes = segment_messages_into_scenes_ai(channel_name, channel_id, valid_msgs, scene_builder)
 
     clean_scenes = []
     for idx, s in enumerate(scenes, start=1):

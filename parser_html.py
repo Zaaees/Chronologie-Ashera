@@ -13,7 +13,6 @@ if sys.platform.startswith('win'):
     except AttributeError:
         pass
 
-TIME_GAP_THRESHOLD_HOURS = 24
 ACTIVE_WINDOW_MESSAGES = 10
 
 COLOR_PALETTE = [
@@ -256,21 +255,7 @@ EXPLICIT_START_REGEX = re.compile(
     re.IGNORECASE | re.DOTALL
 )
 
-NARRATOR_ACTORS = {
-    "owl le messager", "le conseiller", "inzu", "narrateur", "l'oeil", "les missives", "soigneuse"
-}
-
-def is_initiated_session(first_msg):
-    author = (first_msg.get('author') or '').lower()
-    content = (first_msg.get('content') or '') + ' ' + (first_msg.get('embed_description') or '')
-
-    if any(n in author for n in NARRATOR_ACTORS):
-        return True
-    if EXPLICIT_START_REGEX.search(content):
-        return True
-    if '<@' in content or 'invités' in content.lower() or 'épreuve' in content.lower() or 'cérémonie' in content.lower():
-        return True
-    return False
+from ai_narrative_segmenter import segment_messages_into_scenes_ai
 
 def segment_messages_into_scenes(channel_name, channel_id, messages):
     if not messages:
@@ -278,72 +263,17 @@ def segment_messages_into_scenes(channel_name, channel_id, messages):
 
     valid_msgs = []
     for m in messages:
-        full_text = " ".join([m['content'], m['embed_title'], m['embed_description']]).strip()
+        full_text = " ".join([m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')]).strip()
         if full_text:
             valid_msgs.append((m, full_text))
 
     if not valid_msgs:
         return []
 
-    scenes = []
-    current_scene_tuples = [valid_msgs[0]]
-    scene_counter = 1
+    def scene_builder(ch_name, ch_id, idx, sub_tuples):
+        return create_scene_dict(ch_name, ch_id, idx, sub_tuples)
 
-    for i in range(1, len(valid_msgs)):
-        prev_msg, prev_text = valid_msgs[i - 1]
-        curr_msg, curr_text = valid_msgs[i]
-
-        try:
-            prev_dt = datetime.fromisoformat(parse_html_timestamp(prev_msg['timestamp']).replace('Z', '+00:00'))
-            curr_dt = datetime.fromisoformat(parse_html_timestamp(curr_msg['timestamp']).replace('Z', '+00:00'))
-            time_diff = (curr_dt - prev_dt).total_seconds() / 3600.0
-        except Exception:
-            time_diff = 0
-
-        current_scene_actors = {clean_character_name(m[0]['author']) for m in current_scene_tuples}
-        curr_actor = clean_character_name(curr_msg['author'])
-
-        prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
-        curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
-
-        has_previous_actor_replied = False
-        for nm, _ in valid_msgs[i:]:
-            if clean_character_name(nm['author']) in current_scene_actors:
-                has_previous_actor_replied = True
-                break
-
-        is_initiated = is_initiated_session(current_scene_tuples[0][0])
-
-        is_new_scene = False
-
-        if prev_is_sealed:
-            is_new_scene = True
-        elif time_diff >= 720.0: # 30 jours
-            is_new_scene = True
-        elif curr_is_start and curr_actor not in current_scene_actors and time_diff >= 2.0:
-            is_new_scene = True
-        elif curr_actor in current_scene_actors:
-            is_new_scene = False
-        elif has_previous_actor_replied:
-            is_new_scene = False
-        else:
-            limit = 48.0 if is_initiated else 24.0
-            if time_diff >= limit:
-                is_new_scene = True
-            else:
-                is_new_scene = False
-
-        if is_new_scene:
-            scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_tuples))
-            scene_counter += 1
-            current_scene_tuples = [valid_msgs[i]]
-        else:
-            current_scene_tuples.append(valid_msgs[i])
-
-    if current_scene_tuples:
-        scenes.append(create_scene_dict(channel_name, channel_id, scene_counter, current_scene_tuples))
-
-    return scenes
+    return segment_messages_into_scenes_ai(channel_name, channel_id, valid_msgs, scene_builder)
 
 def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
     global GLOBAL_GUILD_ID
@@ -357,10 +287,13 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
     if len(preview) > 160:
         preview = preview[:157] + "..."
 
+    first_msg_id = messages[0].get('id', '0')
+    discord_url = f"discord://discord.com/channels/{GLOBAL_GUILD_ID}/{channel_id}/{first_msg_id}"
+
     sc_dict = {
         "id": f"scene_{re.sub(r'[^a-zA-Z0-9]', '_', channel_name)}_{scene_index}",
         "channel": parent_channel,
-        "channel_id": channel_id,
+        "channel_id": str(channel_id),
         "category": "",
         "title": f"Scène {scene_index} - {', '.join(actors[:3])}{'...' if len(actors)>3 else ''}",
         "actors": actors,
@@ -368,6 +301,7 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
         "end_time": parse_html_timestamp(messages[-1]['timestamp']),
         "preview": preview,
         "message_count": len(messages),
+        "discord_url": discord_url,
         "messages": messages
     }
 
@@ -375,61 +309,18 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples):
         sc_dict["thread_name"] = channel_name
 
     return sc_dict
-        preview = preview[:157] + "..."
-
-    first_msg_id = messages[0]['id']
-    discord_url = f"discord://discord.com/channels/{GLOBAL_GUILD_ID}/{channel_id}/{first_msg_id}"
-
-    formatted_messages = []
-    for m in messages:
-        formatted_messages.append({
-            "id": m['id'],
-            "author": clean_character_name(m['author']),
-            "timestamp": parse_html_timestamp(m['timestamp']),
-            "content": m['content'],
-            "embed_title": m['embed_title'],
-            "embed_description": m['embed_description']
-        })
-
-    return {
-        "id": f"scene_{channel_name.replace('-', '_')}_{scene_index}",
-        "channel": channel_name,
-        "channel_id": channel_id,
-        "title": f"Scène {scene_index} - {', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}",
-        "actors": actors,
-        "start_time": parse_html_timestamp(messages[0]['timestamp']),
-        "end_time": parse_html_timestamp(messages[-1]['timestamp']),
-        "preview": preview,
-        "message_count": len(messages),
-        "discord_url": discord_url,
-        "messages": formatted_messages
-    }
 
 def get_character_guild_and_color(actor_name):
-    name = clean_character_name(actor_name).lower()
+    clean_name = clean_character_name(actor_name)
+    name_lower = clean_name.lower()
 
-    if any(x in name for x in ["koya", "profile"]):
+    if any(x in name_lower for x in ["koya", "profile", "carl-bot", "dyno"]):
         return None, None, None
 
-    if any(x in name for x in ["conseiller", "owl", "messager", "missive", "les missives"]) or name in ["l'oeil", "l'oeil", "l'œil", "oeil", "loeil", "lœil"]:
+    if any(x in name_lower for x in ["conseiller", "owl", "messager", "missive", "les missives"]) or name_lower in ["l'oeil", "l'oeil", "l'œil", "oeil", "loeil", "lœil"]:
         return "PNJ", "#a855f7", "char_pnj"
 
-    if any(x in name for x in ["zaes", "dandelion", "raien", "blacksheep", "vaelira", "faelthorn"]):
-        return "L'œil", "#0e0d0d", "char_oeil"
-
-    if any(x in name for x in ["emil", "rebenok", "camille", "red", "adelina", "mari", "nyx", "lysander", "jlaus", "eucymile", "leonite", "frey", "elear", "eopia", "asior", "lewis bamer", "historious", "lucia", "bunny", "fiorella"]):
-        return "Cercle d'Azur", "#305ed3", "char_azur"
-
-    if any(x in name for x in ["akane", "noci", "urugaki", "magon", "death", "yidmetra", "etoile", "isis", "faerieth"]):
-        return "Voile d'Ivoire", "#ffffd4", "char_ivoire"
-
-    if any(x in name for x in ["brutus", "redwitch", "ashbourne", "velka", "chapellet", "hana", "aryana", "taurielle", "happy", "loyis", "delacroix", "kenji", "heavil", "nick sol"]):
-        return "La Garde Pourpre", "#b40000", "char_pourpre"
-
-    if any(x in name for x in ["grel", "madana", "nikko", "aytaupe", "saphizu", "vidtz"]):
-        return "Autre", "#94a3b8", "char_autre"
-
-    return "Sans guilde", "#e2ce7d", "char_sans_guilde"
+    return "Sans rôle", "#94a3b8", "char_sans_role"
 
 def main():
     global GLOBAL_GUILD_ID
