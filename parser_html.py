@@ -432,18 +432,39 @@ def main():
 
     all_scenes.sort(key=get_start_time)
 
-    character_map = {}
-    valid_actors = set()
+    existing_character_map = {}
+    if os.path.exists("scenes.json"):
+        try:
+            with open("scenes.json", "r", encoding="utf-8") as f:
+                existing_data = json.load(f)
+                existing_character_map = existing_data.get("characters", {})
+        except Exception:
+            pass
+
+    character_map = dict(existing_character_map)
+    valid_actors = set(existing_character_map.keys())
     for actor in all_actors:
         if not actor or len(actor) >= 50:
             continue
         role, color, color_name = get_character_guild_and_color(actor)
         if role is not None:
-            character_map[actor] = {
+            # Preserve existing rich role info if available
+            existing = existing_character_map.get(actor, {})
+            if existing and existing.get("role") and existing["role"] != "Sans rôle":
+                role = existing.get("role", role)
+                color = existing.get("color", color)
+                color_name = existing.get("colorName", color_name)
+
+            char_entry = {
                 "role": role,
                 "color": color,
                 "colorName": color_name
             }
+            if existing.get("avatarUrl"): char_entry["avatarUrl"] = existing["avatarUrl"]
+            if existing.get("displayName"): char_entry["displayName"] = existing["displayName"]
+            if existing.get("username"): char_entry["username"] = existing["username"]
+
+            character_map[actor] = char_entry
             valid_actors.add(actor)
 
     for scene in all_scenes:

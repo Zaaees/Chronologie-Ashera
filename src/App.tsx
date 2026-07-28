@@ -855,8 +855,6 @@ export default function App() {
     };
 
     Object.keys(CHARACTERS_DATA).forEach(actorName => {
-      if (!activeActorsSet.has(actorName)) return;
-
       const charInfo = CHARACTERS_DATA[actorName];
       const role = charInfo?.role || "Sans rôle";
       
