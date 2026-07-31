@@ -1,0 +1,3822 @@
+{
+  "summary": {
+    "total_channels": 114,
+    "total_scenes": 165,
+    "total_inconsistencies": 107,
+    "inconsistency_breakdown": {
+      "SUSPICIOUS_ACTOR_NAME": 2,
+      "HRP_LEAK": 50,
+      "LOW_MESSAGES": 10,
+      "CRITICAL_LOW_MESSAGES": 16,
+      "SINGLE_ACTOR": 24,
+      "DUPLICATE_CHANNEL_VARIANTS": 5
+    }
+  },
+  "channels": {
+    "Kantine": [
+      {
+        "id": "scene_kantine_1",
+        "raw_channel": "🥗〕Kantine",
+        "title": "Kantine — Scène 1",
+        "actors": [
+          "Akane Tsukishiro",
+          "Isis Faerieth",
+          "Magon baldor Death"
+        ],
+        "main_actor": "Akane Tsukishiro",
+        "msg_count": 19,
+        "word_count": 3550,
+        "start_time": "2026-02-02T12:40:00Z",
+        "end_time": "2026-02-05T11:01:00Z",
+        "duration": 4221
+      }
+    ],
+    "Auditorium": [
+      {
+        "id": "scene_auditorium_1",
+        "raw_channel": "🏫〕Auditorium",
+        "title": "Auditorium — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Red Roadman",
+          "Narrateur",
+          "Emil Camille Rebenok",
+          "Saphizu Alizee Vidtz"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 14,
+        "word_count": 3546,
+        "start_time": "2026-02-02T13:19:00Z",
+        "end_time": "2026-02-11T19:57:00Z",
+        "duration": 13358
+      },
+      {
+        "id": "scene_auditorium_2",
+        "raw_channel": "🏫〕Auditorium",
+        "title": "ㅤㅤ      𝐴𝑑𝑒𝑙𝑖𝑛𝑎 𝐷𝑒𝑙 𝐹𝑢𝑒𝑔𝑜",
+        "actors": [
+          "Ragde Umbras",
+          "Adelina Del Fuego"
+        ],
+        "main_actor": "Ragde Umbras",
+        "msg_count": 12,
+        "word_count": 3854,
+        "start_time": "2026-07-11T11:35:53Z",
+        "end_time": "2026-07-21T07:21:56Z",
+        "duration": 14146
+      }
+    ],
+    "Arène-Hurlante": [
+      {
+        "id": "scene_ar_ne_hurlante_1",
+        "raw_channel": "🏯〕𝗔rène-𝗛urlante",
+        "title": "Arène-Hurlante — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Isis Faerieth",
+          "Aryanna Erhendil",
+          "Loyis Delacroix",
+          "Inzu Sravel",
+          "Star",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 67,
+        "word_count": 17328,
+        "start_time": "2026-02-02T14:01:52Z",
+        "end_time": "2026-02-18T18:50:06Z",
+        "duration": 23328
+      },
+      {
+        "id": "scene_ar_ne_hurlante_2",
+        "raw_channel": "🏯〕𝗔rène-𝗛urlante",
+        "title": "Lewis-Phoebe d'Ashbourne",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Loyis Delacroix",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 15,
+        "word_count": 4158,
+        "start_time": "2026-04-13T08:43:30Z",
+        "end_time": "2026-04-16T02:02:18Z",
+        "duration": 3918
+      },
+      {
+        "id": "scene_ar_ne_hurlante_3",
+        "raw_channel": "🏯〕𝗔rène-𝗛urlante",
+        "title": "Arène-Hurlante — Scène 3",
+        "actors": [
+          "Aryanna Erhendil",
+          "Jin Alurantes",
+          "Loyis Delacroix",
+          "Nick Sol"
+        ],
+        "main_actor": "Aryanna Erhendil",
+        "msg_count": 13,
+        "word_count": 3337,
+        "start_time": "2026-04-17T10:50:44Z",
+        "end_time": "2026-05-04T10:59:59Z",
+        "duration": 24489
+      },
+      {
+        "id": "scene_ar_ne_hurlante_4",
+        "raw_channel": "🏯〕𝗔rène-𝗛urlante",
+        "title": "Arène-Hurlante — Scène 4",
+        "actors": [
+          "Aegnor Othar",
+          "Kenji Takahashi",
+          "Arun Acharya",
+          "Nick Sol"
+        ],
+        "main_actor": "Aegnor Othar",
+        "msg_count": 10,
+        "word_count": 2395,
+        "start_time": "2026-07-24T11:49:11Z",
+        "end_time": "2026-07-30T11:40:52Z",
+        "duration": 8631
+      }
+    ],
+    "Lewis Phoebe Ashbourne": [
+      {
+        "id": "scene_lewis_phoebe_ashbourne_1",
+        "raw_channel": "Lewis Phoebe Ashbourne",
+        "title": "Lewis Phoebe Ashbourne — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Condamne",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 7,
+        "word_count": 1809,
+        "start_time": "2026-02-02T15:04:21Z",
+        "end_time": "2026-02-03T13:42:01Z",
+        "duration": 1357
+      }
+    ],
+    "Brutus Redwitch": [
+      {
+        "id": "scene_brutus_redwitch_1",
+        "raw_channel": "Brutus Redwitch",
+        "title": "Brutus Redwitch — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Brutus Redwitch",
+          "Condamne"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 7,
+        "word_count": 1473,
+        "start_time": "2026-02-02T15:04:58Z",
+        "end_time": "2026-02-05T06:20:04Z",
+        "duration": 3795
+      }
+    ],
+    "Hana Chapellet": [
+      {
+        "id": "scene_hana_chapellet_1",
+        "raw_channel": "Hana Chapellet",
+        "title": "Hana Chapellet — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Condamne",
+          "Star"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 9,
+        "word_count": 2083,
+        "start_time": "2026-02-02T15:05:30Z",
+        "end_time": "2026-02-06T05:49:26Z",
+        "duration": 5203
+      }
+    ],
+    "Eldritch Kineya": [
+      {
+        "id": "scene_eldritch_kineya_1",
+        "raw_channel": "Eldritch Kineya",
+        "title": "Eldritch Kineya — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Jean Hazagi"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 4,
+        "word_count": 821,
+        "start_time": "2026-02-02T15:05:54Z",
+        "end_time": "2026-02-06T09:06:55Z",
+        "duration": 5401
+      }
+    ],
+    "Sol Nick": [
+      {
+        "id": "scene_sol_nick_1",
+        "raw_channel": "Sol Nick",
+        "title": "Sol Nick — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Condamne",
+          "Nick Sol"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 12,
+        "word_count": 4141,
+        "start_time": "2026-02-02T15:06:15Z",
+        "end_time": "2026-02-07T08:54:39Z",
+        "duration": 6828
+      }
+    ],
+    "Loyis Delacroix": [
+      {
+        "id": "scene_loyis_delacroix_1",
+        "raw_channel": "Loyis Delacroix",
+        "title": "Loyis Delacroix — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Loyis Delacroix"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 10,
+        "word_count": 3549,
+        "start_time": "2026-02-02T15:06:38Z",
+        "end_time": "2026-02-05T08:26:17Z",
+        "duration": 3919
+      }
+    ],
+    "Terrain-d-entrainement": [
+      {
+        "id": "scene_terrain_d_entrainement_1",
+        "raw_channel": "🛡️〕Terrain-d-entrainement",
+        "title": "Terrain-d-entrainement — Scène 1",
+        "actors": [
+          "Jasp Nah",
+          "Magon baldor Death"
+        ],
+        "main_actor": "Jasp Nah",
+        "msg_count": 6,
+        "word_count": 783,
+        "start_time": "2026-02-03T11:44:00Z",
+        "end_time": "2026-02-05T04:34:00Z",
+        "duration": 2450
+      }
+    ],
+    "Serre-de-lune": [
+      {
+        "id": "scene_serre_de_lune_1",
+        "raw_channel": "🍃〕Serre-de-lune",
+        "title": "Serre-de-lune — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Emil Camille Rebenok",
+          "Saphizu Alizee Vidtz"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 7,
+        "word_count": 1946,
+        "start_time": "2026-02-05T12:24:00Z",
+        "end_time": "2026-02-06T15:04:00Z",
+        "duration": 1600
+      },
+      {
+        "id": "scene_serre_de_lune_2",
+        "raw_channel": "🍃〕Serre-de-lune",
+        "title": "Serre-de-lune — Scène 2",
+        "actors": [
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Maëll Fol'Dun",
+        "msg_count": 1,
+        "word_count": 9,
+        "start_time": "2026-06-04T11:24:39Z",
+        "end_time": "2026-06-04T11:24:39Z",
+        "duration": 1
+      }
+    ],
+    "Quartier-Ouest": [
+      {
+        "id": "scene_quartier_ouest_1",
+        "raw_channel": "️〕Quartier-Ouest",
+        "title": "Quartier-Ouest — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Katelynn Hoffmann",
+          "Isis Faerieth",
+          "Jasp Nah",
+          "Loyis Delacroix",
+          "Akane Tsukishiro",
+          "Kanta",
+          "Magon baldor Death",
+          "Lucia Fiorella",
+          "Nick Sol"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 41,
+        "word_count": 14787,
+        "start_time": "2026-02-06T06:01:00Z",
+        "end_time": "2026-04-12T06:24:00Z",
+        "duration": 93563
+      }
+    ],
+    "Le-centre-des-registres": [
+      {
+        "id": "scene_le_centre_des_registres_1",
+        "raw_channel": "📜〕Le-centre-des-registres",
+        "title": "Le-centre-des-registres — Scène 1",
+        "actors": [
+          "Nikko Aytaupe"
+        ],
+        "main_actor": "Nikko Aytaupe",
+        "msg_count": 1,
+        "word_count": 540,
+        "start_time": "2026-02-06T12:50:00Z",
+        "end_time": "2026-02-06T12:50:00Z",
+        "duration": 1
+      },
+      {
+        "id": "scene_le_centre_des_registres_2",
+        "raw_channel": "📜〕Le-centre-des-registres",
+        "title": "Le-centre-des-registres — Scène 2",
+        "actors": [
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Isis Faerieth",
+          "Jasp Nah"
+        ],
+        "main_actor": "Akane Tsukishiro",
+        "msg_count": 37,
+        "word_count": 9158,
+        "start_time": "2026-05-27T00:43:00Z",
+        "end_time": "2026-07-10T03:46:59Z",
+        "duration": 63543
+      }
+    ],
+    "Parc-des-Cardinaux": [
+      {
+        "id": "scene_parc_des_cardinaux_1",
+        "raw_channel": "🧭〕Parc-des-Cardinaux",
+        "title": "Parc-des-Cardinaux — Scène 1",
+        "actors": [
+          "Grel",
+          "Septimus Kales",
+          "Okayama"
+        ],
+        "main_actor": "Grel",
+        "msg_count": 19,
+        "word_count": 7187,
+        "start_time": "2026-02-07T09:57:00Z",
+        "end_time": "2026-03-11T18:04:00Z",
+        "duration": 46567
+      },
+      {
+        "id": "scene_parc_des_cardinaux_2",
+        "raw_channel": "🧭〕Parc-des-Cardinaux",
+        "title": "Parc-des-Cardinaux — Scène 2",
+        "actors": [
+          "Ren Urugaki",
+          "Vosk Sulyvan",
+          "Isis Faerieth",
+          "Selena Moon"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 47,
+        "word_count": 14663,
+        "start_time": "2026-04-11T13:13:00Z",
+        "end_time": "2026-07-05T04:34:31Z",
+        "duration": 121881
+      },
+      {
+        "id": "scene_parc_des_cardinaux_3",
+        "raw_channel": "🧭〕Parc-des-Cardinaux",
+        "title": "Parc-des-Cardinaux — Scène 3",
+        "actors": [
+          "Ragde Umbras",
+          "Nick Sol",
+          "Junko Anarchy",
+          "Selena Moon"
+        ],
+        "main_actor": "Ragde Umbras",
+        "msg_count": 47,
+        "word_count": 10115,
+        "start_time": "2026-07-10T04:36:09Z",
+        "end_time": "2026-07-25T05:25:32Z",
+        "duration": 21649
+      }
+    ],
+    "Lot-De-Maison": [
+      {
+        "id": "scene_lot_de_maison_1",
+        "raw_channel": "〕Lot-De-Maison",
+        "title": "Lot-De-Maison — Scène 1",
+        "actors": [
+          "Isis Faerieth",
+          "Jasp Nah",
+          "Akane Tsukishiro",
+          "Kanta",
+          "Magon baldor Death",
+          "Lucia Fiorella",
+          "Nick Sol"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 35,
+        "word_count": 10263,
+        "start_time": "2026-02-08T11:53:00Z",
+        "end_time": "2026-03-18T17:44:00Z",
+        "duration": 55071
+      }
+    ],
+    "Bibliothèque-Azure": [
+      {
+        "id": "scene_biblioth_que_azure_1",
+        "raw_channel": "📚〕𝗕ibliothèque-𝗔zure",
+        "title": "Bibliothèque-Azure — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Emil Camille Rebenok",
+          "Saphizu Alizee Vidtz",
+          "Lewis Bamer",
+          "Romy"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 26,
+        "word_count": 6681,
+        "start_time": "2026-02-09T12:23:29Z",
+        "end_time": "2026-02-25T04:49:32Z",
+        "duration": 22586
+      },
+      {
+        "id": "scene_biblioth_que_azure_2",
+        "raw_channel": "📚〕𝗕ibliothèque-𝗔zure",
+        "title": "Bibliothèque-Azure — Scène 2",
+        "actors": [
+          "Asior Eveus",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 5,
+        "word_count": 1537,
+        "start_time": "2026-05-12T08:17:53Z",
+        "end_time": "2026-05-14T08:47:58Z",
+        "duration": 2910
+      },
+      {
+        "id": "scene_biblioth_que_azure_3",
+        "raw_channel": "📚〕𝗕ibliothèque-𝗔zure",
+        "title": "Bibliothèque-Azure — Scène 3",
+        "actors": [
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Lucia Fiorella",
+        "msg_count": 2,
+        "word_count": 822,
+        "start_time": "2026-06-15T14:34:19Z",
+        "end_time": "2026-06-15T14:34:44Z",
+        "duration": 1
+      },
+      {
+        "id": "scene_biblioth_que_azure_4",
+        "raw_channel": "📚〕𝗕ibliothèque-𝗔zure",
+        "title": "Bibliothèque-Azure — Scène 4",
+        "actors": [
+          "Asior Eveus",
+          "Frey Guðfrøðr",
+          "Yunah Aoi Enjaku",
+          "Red Roadman",
+          "Emil Camille Rebenok",
+          "Ragde Umbras",
+          "Astreüs Mylonas",
+          "Adelina Del Fuego",
+          "OWL LE MESSAGER",
+          "Arun Acharya",
+          "Lucia Fiorella",
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 50,
+        "word_count": 13175,
+        "start_time": "2026-07-20T02:14:31Z",
+        "end_time": "2026-07-29T10:17:32Z",
+        "duration": 13443
+      }
+    ],
+    "Brutus Hana": [
+      {
+        "id": "scene_brutus_hana_1",
+        "raw_channel": "Brutus & Hana",
+        "title": "Brutus Hana — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Brutus Redwitch",
+          "Star",
+          "Isis Faerieth"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 20,
+        "word_count": 3851,
+        "start_time": "2026-02-10T05:26:00Z",
+        "end_time": "2026-02-15T13:33:57Z",
+        "duration": 7687
+      }
+    ],
+    "Lewis Nick": [
+      {
+        "id": "scene_lewis_nick_1",
+        "raw_channel": "Lewis & Nick",
+        "title": "Lewis Nick — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 14,
+        "word_count": 3498,
+        "start_time": "2026-02-10T05:26:21Z",
+        "end_time": "2026-02-14T07:24:47Z",
+        "duration": 5878
+      }
+    ],
+    "Eldritch Loyis": [
+      {
+        "id": "scene_eldritch_loyis_1",
+        "raw_channel": "Eldritch & Loyis",
+        "title": "Eldritch Loyis — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Jean Hazagi",
+          "Loyis Delacroix"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 5,
+        "word_count": 1285,
+        "start_time": "2026-02-10T05:26:42Z",
+        "end_time": "2026-02-15T19:18:52Z",
+        "duration": 8032
+      }
+    ],
+    "Port-du-Levant": [
+      {
+        "id": "scene_port_du_levant_1",
+        "raw_channel": "🚢〕Port-du-Levant",
+        "title": "Port-du-Levant — Scène 1",
+        "actors": [
+          "Vaelira Faelthorn",
+          "Okayama",
+          "Vosk Sulyvan",
+          "Jasp Nah"
+        ],
+        "main_actor": "Vaelira Faelthorn",
+        "msg_count": 46,
+        "word_count": 18022,
+        "start_time": "2026-02-10T08:32:00Z",
+        "end_time": "2026-03-03T10:19:00Z",
+        "duration": 30347
+      },
+      {
+        "id": "scene_port_du_levant_2",
+        "raw_channel": "🚢〕Port-du-Levant",
+        "title": "Port-du-Levant — Scène 2",
+        "actors": [
+          "Lewis Bamer",
+          "Lucia Fiorella",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Lewis Bamer",
+        "msg_count": 32,
+        "word_count": 12886,
+        "start_time": "2026-04-12T09:17:00Z",
+        "end_time": "2026-05-15T12:53:00Z",
+        "duration": 47736
+      },
+      {
+        "id": "scene_port_du_levant_3",
+        "raw_channel": "🚢〕Port-du-Levant",
+        "title": "Port-du-Levant — Scène 3",
+        "actors": [
+          "Katelynn Hoffmann",
+          "Isis Faerieth",
+          "Aryanna Erhendil",
+          "Vosk Sulyvan",
+          "Lumia Faendharts",
+          "Nick Sol"
+        ],
+        "main_actor": "Katelynn Hoffmann",
+        "msg_count": 42,
+        "word_count": 14154,
+        "start_time": "2026-05-16T02:14:00Z",
+        "end_time": "2026-07-28T04:32:24Z",
+        "duration": 105258
+      }
+    ],
+    "Boutique": [
+      {
+        "id": "scene_boutique_1",
+        "raw_channel": "〕Boutique",
+        "title": "Boutique — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Isis Faerieth",
+          "Loyis Delacroix",
+          "Akane Tsukishiro",
+          "Magon baldor Death",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 19,
+        "word_count": 6241,
+        "start_time": "2026-02-13T09:19:00Z",
+        "end_time": "2026-03-19T14:39:00Z",
+        "duration": 49280
+      }
+    ],
+    "Pont-des-Deux": [
+      {
+        "id": "scene_pont_des_deux_1",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 1",
+        "actors": [
+          "Jasp Nah",
+          "Someone Eucymile Leonite",
+          "Okayama"
+        ],
+        "main_actor": "Jasp Nah",
+        "msg_count": 10,
+        "word_count": 2758,
+        "start_time": "2026-02-13T11:53:00Z",
+        "end_time": "2026-02-25T10:00:00Z",
+        "duration": 17167
+      },
+      {
+        "id": "scene_pont_des_deux_2",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 2",
+        "actors": [
+          "Nyx",
+          "Kanta"
+        ],
+        "main_actor": "Nyx",
+        "msg_count": 11,
+        "word_count": 2677,
+        "start_time": "2026-02-25T16:52:00Z",
+        "end_time": "2026-03-04T12:28:00Z",
+        "duration": 9816
+      },
+      {
+        "id": "scene_pont_des_deux_3",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 3",
+        "actors": [
+          "Myrea M",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Myrea M",
+        "msg_count": 8,
+        "word_count": 2339,
+        "start_time": "2026-04-06T03:23:00Z",
+        "end_time": "2026-05-01T12:54:00Z",
+        "duration": 36571
+      },
+      {
+        "id": "scene_pont_des_deux_4",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 4",
+        "actors": [
+          "Isis Faerieth",
+          "Alieny"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 14,
+        "word_count": 3602,
+        "start_time": "2026-06-12T14:12:31Z",
+        "end_time": "2026-06-14T06:55:16Z",
+        "duration": 2442
+      },
+      {
+        "id": "scene_pont_des_deux_5",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 5",
+        "actors": [
+          "Lumia Faendharts",
+          "Tarrion Tombetoile"
+        ],
+        "main_actor": "Lumia Faendharts",
+        "msg_count": 15,
+        "word_count": 3698,
+        "start_time": "2026-07-02T03:02:52Z",
+        "end_time": "2026-07-11T10:36:29Z",
+        "duration": 13413
+      },
+      {
+        "id": "scene_pont_des_deux_6",
+        "raw_channel": "〕Pont-des-Deux",
+        "title": "Pont-des-Deux — Scène 6",
+        "actors": [
+          "Lumia Faendharts",
+          "Iscarioth",
+          "Arun Acharya"
+        ],
+        "main_actor": "Lumia Faendharts",
+        "msg_count": 41,
+        "word_count": 10863,
+        "start_time": "2026-07-13T12:05:11Z",
+        "end_time": "2026-07-29T06:35:59Z",
+        "duration": 22710
+      }
+    ],
+    "Place-de-Grandpalais": [
+      {
+        "id": "scene_place_de_grandpalais_1",
+        "raw_channel": "👑〕Place-de-Grandpalais",
+        "title": "Place-de-Grandpalais — Scène 1",
+        "actors": [
+          "Someone Eucymile Leonite",
+          "Aryanna Erhendil",
+          "Septimus Kales",
+          "Adelina Del Fuego",
+          "Lydounne",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Someone Eucymile Leonite",
+        "msg_count": 25,
+        "word_count": 9328,
+        "start_time": "2026-02-15T08:54:00Z",
+        "end_time": "2026-04-03T21:55:00Z",
+        "duration": 68401
+      },
+      {
+        "id": "scene_place_de_grandpalais_2",
+        "raw_channel": "👑〕Place-de-Grandpalais",
+        "title": "Place-de-Grandpalais — Scène 2",
+        "actors": [
+          "Frey Guðfrøðr",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Frey Guðfrøðr",
+        "msg_count": 21,
+        "word_count": 7588,
+        "start_time": "2026-05-15T14:00:00Z",
+        "end_time": "2026-07-15T04:26:15Z",
+        "duration": 87266
+      },
+      {
+        "id": "scene_place_de_grandpalais_3",
+        "raw_channel": "👑〕Place-de-Grandpalais",
+        "title": "Place-de-Grandpalais — Scène 3",
+        "actors": [
+          "Tenebris",
+          "Arun Acharya",
+          "Yunah Aoi Enjaku"
+        ],
+        "main_actor": "Tenebris",
+        "msg_count": 19,
+        "word_count": 4468,
+        "start_time": "2026-07-17T09:07:41Z",
+        "end_time": "2026-07-20T11:22:21Z",
+        "duration": 4454
+      }
+    ],
+    "Salle de Réveil": [
+      {
+        "id": "scene_salle_de_r_veil_1",
+        "raw_channel": "🛏️  •  Salle de Réveil",
+        "title": "Salle de Réveil — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Loyis Delacroix",
+          "Emil Camille Rebenok"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 10,
+        "word_count": 1842,
+        "start_time": "2026-02-16T05:23:38Z",
+        "end_time": "2026-03-01T09:45:08Z",
+        "duration": 18981
+      },
+      {
+        "id": "scene_salle_de_r_veil_2",
+        "raw_channel": "🛏️  •  Salle de Réveil",
+        "title": "Salle de Réveil — Scène 2",
+        "actors": [
+          "Myrea M"
+        ],
+        "main_actor": "Myrea M",
+        "msg_count": 5,
+        "word_count": 1141,
+        "start_time": "2026-07-16T21:36:18Z",
+        "end_time": "2026-07-27T14:36:11Z",
+        "duration": 15419
+      }
+    ],
+    "Cour-des-alchimistes": [
+      {
+        "id": "scene_cour_des_alchimistes_1",
+        "raw_channel": "️〕Cour-des-alchimistes",
+        "title": "Cour-des-alchimistes — Scène 1",
+        "actors": [
+          "Septimus Kales",
+          "Isis Faerieth",
+          "Okayama"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 12,
+        "word_count": 4357,
+        "start_time": "2026-02-16T13:11:00Z",
+        "end_time": "2026-03-08T12:00:00Z",
+        "duration": 28729
+      },
+      {
+        "id": "scene_cour_des_alchimistes_2",
+        "raw_channel": "️〕Cour-des-alchimistes",
+        "title": "Cour-des-alchimistes — Scène 2",
+        "actors": [
+          "Isis Faerieth",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 6,
+        "word_count": 2361,
+        "start_time": "2026-04-11T05:05:00Z",
+        "end_time": "2026-04-20T10:44:00Z",
+        "duration": 13299
+      },
+      {
+        "id": "scene_cour_des_alchimistes_3",
+        "raw_channel": "️〕Cour-des-alchimistes",
+        "title": "Cour-des-alchimistes — Scène 3",
+        "actors": [
+          "Adelina Del Fuego",
+          "Septimus Kales",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Adelina Del Fuego",
+        "msg_count": 20,
+        "word_count": 6413,
+        "start_time": "2026-06-04T04:56:40Z",
+        "end_time": "2026-07-19T13:26:20Z",
+        "duration": 65309
+      }
+    ],
+    "Jardin-de-Quartz": [
+      {
+        "id": "scene_jardin_de_quartz_1",
+        "raw_channel": "〕Jardin-de-Quartz",
+        "title": "Jardin-de-Quartz — Scène 1",
+        "actors": [
+          "Grel",
+          "Isis Faerieth",
+          "Jasp Nah",
+          "Selena Moon"
+        ],
+        "main_actor": "Grel",
+        "msg_count": 21,
+        "word_count": 6742,
+        "start_time": "2026-02-16T18:12:00Z",
+        "end_time": "2026-03-04T12:50:00Z",
+        "duration": 22718
+      },
+      {
+        "id": "scene_jardin_de_quartz_2",
+        "raw_channel": "〕Jardin-de-Quartz",
+        "title": "Jardin-de-Quartz — Scène 2",
+        "actors": [
+          "Isis Faerieth",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 15,
+        "word_count": 6987,
+        "start_time": "2026-04-22T11:34:00Z",
+        "end_time": "2026-05-29T09:13:00Z",
+        "duration": 53139
+      },
+      {
+        "id": "scene_jardin_de_quartz_3",
+        "raw_channel": "〕Jardin-de-Quartz",
+        "title": "Jardin-de-Quartz — Scène 3",
+        "actors": [
+          "Idelmée Cadree",
+          "Aegnor Othar",
+          "Astreüs Mylonas"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 27,
+        "word_count": 5316,
+        "start_time": "2026-07-08T10:00:28Z",
+        "end_time": "2026-07-24T06:51:12Z",
+        "duration": 22850
+      },
+      {
+        "id": "scene_jardin_de_quartz_4",
+        "raw_channel": "〕Jardin-de-Quartz",
+        "title": "Jardin-de-Quartz — Scène 4",
+        "actors": [
+          "Æther"
+        ],
+        "main_actor": "Æther",
+        "msg_count": 10,
+        "word_count": 2619,
+        "start_time": "2026-07-24T13:57:25Z",
+        "end_time": "2026-07-27T12:47:56Z",
+        "duration": 4250
+      }
+    ],
+    "Terrains-Nacres": [
+      {
+        "id": "scene_terrains_nacres_1",
+        "raw_channel": "️〕Terrains-Nacres",
+        "title": "Terrains-Nacres — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Jasp Nah",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 80,
+        "word_count": 18741,
+        "start_time": "2026-02-17T19:20:00Z",
+        "end_time": "2026-03-02T12:08:00Z",
+        "duration": 18288
+      },
+      {
+        "id": "scene_terrains_nacres_2",
+        "raw_channel": "️〕Terrains-Nacres",
+        "title": "Terrains-Nacres — Scène 2",
+        "actors": [
+          "Adelina Del Fuego",
+          "Septimus Kales",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Adelina Del Fuego",
+        "msg_count": 18,
+        "word_count": 4638,
+        "start_time": "2026-05-02T23:07:00Z",
+        "end_time": "2026-05-27T00:06:00Z",
+        "duration": 34619
+      }
+    ],
+    "Verger-des-Pêchés": [
+      {
+        "id": "scene_verger_des_p_ch_s_1",
+        "raw_channel": "🌳〕𝗩erger-des-𝗣êchés",
+        "title": "Verger-des-Pêchés — Scène 1",
+        "actors": [
+          "Star",
+          "Nick Sol"
+        ],
+        "main_actor": "Star",
+        "msg_count": 8,
+        "word_count": 2894,
+        "start_time": "2026-02-18T07:17:01Z",
+        "end_time": "2026-02-23T18:42:12Z",
+        "duration": 7885
+      },
+      {
+        "id": "scene_verger_des_p_ch_s_2",
+        "raw_channel": "🌳〕𝗩erger-des-𝗣êchés",
+        "title": "Verger-des-Pêchés — Scène 2",
+        "actors": [
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Aryanna Erhendil",
+        "msg_count": 2,
+        "word_count": 924,
+        "start_time": "2026-04-18T03:11:31Z",
+        "end_time": "2026-05-02T08:39:50Z",
+        "duration": 20488
+      },
+      {
+        "id": "scene_verger_des_p_ch_s_3",
+        "raw_channel": "🌳〕𝗩erger-des-𝗣êchés",
+        "title": "Verger-des-Pêchés — Scène 3",
+        "actors": [
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Aryanna Erhendil",
+        "msg_count": 2,
+        "word_count": 291,
+        "start_time": "2026-06-17T00:28:26Z",
+        "end_time": "2026-06-17T00:28:39Z",
+        "duration": 1
+      },
+      {
+        "id": "scene_verger_des_p_ch_s_4",
+        "raw_channel": "🌳〕𝗩erger-des-𝗣êchés",
+        "title": "Verger-des-Pêchés — Scène 4",
+        "actors": [
+          "Kenji Takahashi",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 8,
+        "word_count": 2142,
+        "start_time": "2026-07-14T05:38:08Z",
+        "end_time": "2026-07-15T04:30:18Z",
+        "duration": 1372
+      }
+    ],
+    "Grande-salle-porcelaine": [
+      {
+        "id": "scene_grande_salle_porcelaine_1",
+        "raw_channel": "️〕Grande-salle-porcelaine",
+        "title": "Grande-salle-porcelaine — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Red Roadman",
+          "Jasp Nah",
+          "Septimus Kales",
+          "Akane Tsukishiro",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 23,
+        "word_count": 6325,
+        "start_time": "2026-02-18T13:49:00Z",
+        "end_time": "2026-03-03T15:30:00Z",
+        "duration": 18821
+      },
+      {
+        "id": "scene_grande_salle_porcelaine_2",
+        "raw_channel": "️〕Grande-salle-porcelaine",
+        "title": "Grande-salle-porcelaine — Scène 2",
+        "actors": [
+          "Iscarioth",
+          "Tenebris",
+          "Okayama",
+          "Oeil"
+        ],
+        "main_actor": "Iscarioth",
+        "msg_count": 33,
+        "word_count": 10565,
+        "start_time": "2026-05-27T10:00:00Z",
+        "end_time": "2026-07-09T08:28:28Z",
+        "duration": 61828
+      }
+    ],
+    "Fontaine-Marbree": [
+      {
+        "id": "scene_fontaine_marbree_1",
+        "raw_channel": "⛲〕Fontaine-Marbree",
+        "title": "Fontaine-Marbree — Scène 1",
+        "actors": [
+          "Jasp Nah",
+          "Emil Camille Rebenok",
+          "Nyx",
+          "Lewis Bamer",
+          "Okayama",
+          "Lysander Armlet Jlaus",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Jasp Nah",
+        "msg_count": 27,
+        "word_count": 6245,
+        "start_time": "2026-02-18T17:41:00Z",
+        "end_time": "2026-03-02T18:16:00Z",
+        "duration": 17315
+      },
+      {
+        "id": "scene_fontaine_marbree_2",
+        "raw_channel": "⛲〕Fontaine-Marbree",
+        "title": "Fontaine-Marbree — Scène 2",
+        "actors": [
+          "Vosk Sulyvan",
+          "Adelina Del Fuego"
+        ],
+        "main_actor": "Vosk Sulyvan",
+        "msg_count": 9,
+        "word_count": 4124,
+        "start_time": "2026-03-04T19:30:00Z",
+        "end_time": "2026-03-07T15:03:00Z",
+        "duration": 4053
+      },
+      {
+        "id": "scene_fontaine_marbree_3",
+        "raw_channel": "⛲〕Fontaine-Marbree",
+        "title": "Fontaine-Marbree — Scène 3",
+        "actors": [
+          "Isis Faerieth",
+          "Nick Sol"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 14,
+        "word_count": 4622,
+        "start_time": "2026-05-10T05:18:00Z",
+        "end_time": "2026-05-29T06:27:00Z",
+        "duration": 27429
+      }
+    ],
+    "Quartier-des-Forges": [
+      {
+        "id": "scene_quartier_des_forges_1",
+        "raw_channel": "️〕Quartier-des-Forges",
+        "title": "Quartier-des-Forges — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Chapellet Hana",
+          "Magon baldor Death"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 14,
+        "word_count": 1906,
+        "start_time": "2026-02-18T19:24:00Z",
+        "end_time": "2026-02-26T13:51:52Z",
+        "duration": 11187
+      },
+      {
+        "id": "scene_quartier_des_forges_2",
+        "raw_channel": "️〕Quartier-des-Forges",
+        "title": "Quartier-des-Forges — Scène 2",
+        "actors": [
+          "Ren Urugaki",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 9,
+        "word_count": 3221,
+        "start_time": "2026-07-04T15:17:38Z",
+        "end_time": "2026-07-05T06:35:12Z",
+        "duration": 917
+      }
+    ],
+    "Agora-des-Reines": [
+      {
+        "id": "scene_agora_des_reines_1",
+        "raw_channel": "✨〕Agora-des-Reines",
+        "title": "Agora-des-Reines — Scène 1",
+        "actors": [
+          "Grel",
+          "Asior Eveus"
+        ],
+        "main_actor": "Grel",
+        "msg_count": 7,
+        "word_count": 1877,
+        "start_time": "2026-02-19T07:47:00Z",
+        "end_time": "2026-03-05T11:20:00Z",
+        "duration": 20373
+      },
+      {
+        "id": "scene_agora_des_reines_2",
+        "raw_channel": "✨〕Agora-des-Reines",
+        "title": "Agora-des-Reines — Scène 2",
+        "actors": [
+          "Vosk Sulyvan",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Vosk Sulyvan",
+        "msg_count": 17,
+        "word_count": 7682,
+        "start_time": "2026-04-10T10:24:00Z",
+        "end_time": "2026-04-17T06:46:00Z",
+        "duration": 9862
+      },
+      {
+        "id": "scene_agora_des_reines_3",
+        "raw_channel": "✨〕Agora-des-Reines",
+        "title": "Agora-des-Reines — Scène 3",
+        "actors": [
+          "Ren Urugaki",
+          "Vosk Sulyvan",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 13,
+        "word_count": 7270,
+        "start_time": "2026-07-17T13:53:09Z",
+        "end_time": "2026-07-28T17:37:15Z",
+        "duration": 16064
+      }
+    ],
+    "Avenue-des-armuriers": [
+      {
+        "id": "scene_avenue_des_armuriers_1",
+        "raw_channel": "️〕Avenue-des-armuriers",
+        "title": "Avenue-des-armuriers — Scène 1",
+        "actors": [
+          "Eita",
+          "Aryanna Erhendil",
+          "Okayama",
+          "Vosk Sulyvan",
+          "Lucia Fiorella",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Eita",
+        "msg_count": 35,
+        "word_count": 15602,
+        "start_time": "2026-02-19T15:03:00Z",
+        "end_time": "2026-04-17T06:33:00Z",
+        "duration": 81510
+      },
+      {
+        "id": "scene_avenue_des_armuriers_2",
+        "raw_channel": "️〕Avenue-des-armuriers",
+        "title": "Avenue-des-armuriers — Scène 2",
+        "actors": [
+          "Madana",
+          "Okayama"
+        ],
+        "main_actor": "Madana",
+        "msg_count": 2,
+        "word_count": 628,
+        "start_time": "2026-04-17T07:31:00Z",
+        "end_time": "2026-04-18T13:30:00Z",
+        "duration": 1799
+      },
+      {
+        "id": "scene_avenue_des_armuriers_3",
+        "raw_channel": "️〕Avenue-des-armuriers",
+        "title": "Avenue-des-armuriers — Scène 3",
+        "actors": [
+          "Okayama"
+        ],
+        "main_actor": "Okayama",
+        "msg_count": 2,
+        "word_count": 282,
+        "start_time": "2026-05-26T03:20:00Z",
+        "end_time": "2026-05-26T03:20:00Z",
+        "duration": 1
+      },
+      {
+        "id": "scene_avenue_des_armuriers_4",
+        "raw_channel": "️〕Avenue-des-armuriers",
+        "title": "Avenue-des-armuriers — Scène 4",
+        "actors": [
+          "Idelmée Cadree",
+          "Septimus Kales"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 27,
+        "word_count": 5802,
+        "start_time": "2026-07-05T03:14:13Z",
+        "end_time": "2026-07-21T07:32:28Z",
+        "duration": 23298
+      }
+    ],
+    "Cantine-marbree": [
+      {
+        "id": "scene_cantine_marbree_1",
+        "raw_channel": "〕Cantine-marbree",
+        "title": "Cantine-marbree — Scène 1",
+        "actors": [
+          "Okayama",
+          "Selena Moon"
+        ],
+        "main_actor": "Okayama",
+        "msg_count": 48,
+        "word_count": 13080,
+        "start_time": "2026-02-20T13:26:00Z",
+        "end_time": "2026-03-01T11:07:00Z",
+        "duration": 12821
+      },
+      {
+        "id": "scene_cantine_marbree_2",
+        "raw_channel": "〕Cantine-marbree",
+        "title": "Cantine-marbree — Scène 2",
+        "actors": [
+          "Red Roadman",
+          "Jasp Nah"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 2,
+        "word_count": 12,
+        "start_time": "2026-03-02T12:09:00Z",
+        "end_time": "2026-03-02T14:31:00Z",
+        "duration": 142
+      },
+      {
+        "id": "scene_cantine_marbree_3",
+        "raw_channel": "〕Cantine-marbree",
+        "title": "Cantine-marbree — Scène 3",
+        "actors": [
+          "Myrea M",
+          "Tsutomu Yamamoto"
+        ],
+        "main_actor": "Myrea M",
+        "msg_count": 3,
+        "word_count": 964,
+        "start_time": "2026-05-06T11:30:00Z",
+        "end_time": "2026-05-08T04:28:00Z",
+        "duration": 2458
+      }
+    ],
+    "Crypte-Rouge": [
+      {
+        "id": "scene_crypte_rouge_1",
+        "raw_channel": "🏮〕𝗖rypte-𝗥ouge",
+        "title": "Crypte-Rouge — Scène 1",
+        "actors": [
+          "Nick Sol"
+        ],
+        "main_actor": "Nick Sol",
+        "msg_count": 3,
+        "word_count": 405,
+        "start_time": "2026-02-22T12:42:02Z",
+        "end_time": "2026-02-22T14:53:11Z",
+        "duration": 131
+      },
+      {
+        "id": "scene_crypte_rouge_2",
+        "raw_channel": "🏮〕𝗖rypte-𝗥ouge",
+        "title": "Crypte-Rouge — Scène 2",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Loyis Delacroix",
+          "Hedwig Von Glanzestern",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 10,
+        "word_count": 3748,
+        "start_time": "2026-07-14T13:31:08Z",
+        "end_time": "2026-07-19T09:01:33Z",
+        "duration": 6930
+      }
+    ],
+    "Cellules": [
+      {
+        "id": "scene_cellules_1",
+        "raw_channel": "🗝️〕𝗖ellules",
+        "title": "Cellules — Scène 1",
+        "actors": [
+          "Loyis Delacroix"
+        ],
+        "main_actor": "Loyis Delacroix",
+        "msg_count": 1,
+        "word_count": 161,
+        "start_time": "2026-02-24T03:24:35Z",
+        "end_time": "2026-02-24T03:24:35Z",
+        "duration": 1
+      }
+    ],
+    "La-Balafre": [
+      {
+        "id": "scene_la_balafre_1",
+        "raw_channel": "🍻〕𝗟a-𝗕alafre",
+        "title": "La-Balafre — Scène 1",
+        "actors": [
+          "Red Roadman",
+          "Star",
+          "Aryanna Erhendil",
+          "Selena Moon"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 30,
+        "word_count": 5229,
+        "start_time": "2026-02-24T14:29:21Z",
+        "end_time": "2026-03-02T09:28:21Z",
+        "duration": 8339
+      },
+      {
+        "id": "scene_la_balafre_2",
+        "raw_channel": "🍻〕𝗟a-𝗕alafre",
+        "title": "La-Balafre — Scène 2",
+        "actors": [
+          "Red Roadman",
+          "Selena Moon"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 2,
+        "word_count": 345,
+        "start_time": "2026-04-02T03:48:35Z",
+        "end_time": "2026-04-02T06:05:55Z",
+        "duration": 137
+      },
+      {
+        "id": "scene_la_balafre_3",
+        "raw_channel": "🍻〕𝗟a-𝗕alafre",
+        "title": "La-Balafre — Scène 3",
+        "actors": [
+          "Idelmée Cadree",
+          "Asior Eveus",
+          "Kenji Takahashi",
+          "Brutus Redwitch",
+          "Selena Moon",
+          "Aryanna Erhendil",
+          "Loyis Delacroix",
+          "Akane Tsukishiro",
+          "Hedwig Von Glanzestern",
+          "Ren Urugaki",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 47,
+        "word_count": 12689,
+        "start_time": "2026-07-05T06:34:24Z",
+        "end_time": "2026-07-29T11:25:45Z",
+        "duration": 34851
+      }
+    ],
+    "Si c'est toi qui paye ça roule pour moi - Aryana Kenji": [
+      {
+        "id": "scene_si_c_est_toi_qui_paye__a_roule_pour_moi___aryana_kenji_1",
+        "raw_channel": "Si c'est toi qui paye, ça roule pour moi ! - Aryana & Kenji",
+        "title": "Si c'est toi qui paye ça roule pour moi - Aryana Kenji — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 24,
+        "word_count": 6682,
+        "start_time": "2026-02-24T18:20:55Z",
+        "end_time": "2026-02-26T02:09:47Z",
+        "duration": 1908
+      }
+    ],
+    "La quête de la dague de Lewis": [
+      {
+        "id": "scene_la_qu_te_de_la_dague_de_lewis_1",
+        "raw_channel": "La quête de la dague de Lewis",
+        "title": "La quête de la dague de Lewis — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 22,
+        "word_count": 3166,
+        "start_time": "2026-02-26T14:13:41Z",
+        "end_time": "2026-03-02T07:41:33Z",
+        "duration": 5367
+      }
+    ],
+    "L'équilibre est le contraire du chaos": [
+      {
+        "id": "scene_l__quilibre_est_le_contraire_du_chaos_1",
+        "raw_channel": "L'équilibre est le contraire du chaos",
+        "title": "L'équilibre est le contraire du chaos — Scène 1",
+        "actors": [
+          "Lucia Fiorella",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Lucia Fiorella",
+        "msg_count": 4,
+        "word_count": 1726,
+        "start_time": "2026-02-28T12:25:28Z",
+        "end_time": "2026-03-10T09:25:33Z",
+        "duration": 14220
+      }
+    ],
+    "Portail-Ivoire": [
+      {
+        "id": "scene_portail_ivoire_1",
+        "raw_channel": "️〕Portail-Ivoire",
+        "title": "Portail-Ivoire — Scène 1",
+        "actors": [
+          "Nyx",
+          "Jasp Nah",
+          "Nick Sol"
+        ],
+        "main_actor": "Nyx",
+        "msg_count": 13,
+        "word_count": 2470,
+        "start_time": "2026-03-02T12:09:00Z",
+        "end_time": "2026-03-07T19:28:00Z",
+        "duration": 7639
+      },
+      {
+        "id": "scene_portail_ivoire_2",
+        "raw_channel": "️〕Portail-Ivoire",
+        "title": "Portail-Ivoire — Scène 2",
+        "actors": [
+          "Myrea M",
+          "Akane Tsukishiro",
+          "Tsutomu Yamamoto",
+          "Yidmetra Rhys"
+        ],
+        "main_actor": "Myrea M",
+        "msg_count": 28,
+        "word_count": 6940,
+        "start_time": "2026-04-14T08:42:00Z",
+        "end_time": "2026-05-06T11:31:00Z",
+        "duration": 31849
+      },
+      {
+        "id": "scene_portail_ivoire_3",
+        "raw_channel": "️〕Portail-Ivoire",
+        "title": "Portail-Ivoire — Scène 3",
+        "actors": [
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Katelynn Hoffmann",
+        "msg_count": 3,
+        "word_count": 1401,
+        "start_time": "2026-07-18T06:07:34Z",
+        "end_time": "2026-07-26T17:14:36Z",
+        "duration": 12187
+      }
+    ],
+    "Terrain-Grandblanc": [
+      {
+        "id": "scene_terrain_grandblanc_1",
+        "raw_channel": "️〕Terrain-Grandblanc",
+        "title": "Terrain-Grandblanc — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Katelynn Hoffmann",
+          "Jasp Nah",
+          "Aryanna Erhendil",
+          "Lewis Bamer",
+          "Loyis Delacroix",
+          "Alieny",
+          "Lewis-Phoebe d'Ashbourne",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 36,
+        "word_count": 12167,
+        "start_time": "2026-03-02T12:09:00Z",
+        "end_time": "2026-07-07T04:07:02Z",
+        "duration": 182338
+      },
+      {
+        "id": "scene_terrain_grandblanc_2",
+        "raw_channel": "️〕Terrain-Grandblanc",
+        "title": "Terrain-Grandblanc — Scène 2",
+        "actors": [
+          "Red Roadman",
+          "Isis Faerieth",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 10,
+        "word_count": 2676,
+        "start_time": "2026-07-07T04:58:02Z",
+        "end_time": "2026-07-17T11:26:52Z",
+        "duration": 14788
+      }
+    ],
+    "La fin": [
+      {
+        "id": "scene_la_fin_1",
+        "raw_channel": "La fin",
+        "title": "La fin — Scène 1",
+        "actors": [
+          "Akane Tsukishiro"
+        ],
+        "main_actor": "Akane Tsukishiro",
+        "msg_count": 1,
+        "word_count": 213,
+        "start_time": "2026-03-02T14:10:21Z",
+        "end_time": "2026-03-02T14:10:21Z",
+        "duration": 1
+      }
+    ],
+    "Zone-Buffet": [
+      {
+        "id": "scene_zone_buffet_1",
+        "raw_channel": "〕Zone-Buffet",
+        "title": "Zone-Buffet — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Septimus Kales",
+          "Loyis Delacroix",
+          "Akane Tsukishiro",
+          "Lewis-Phoebe d'Ashbourne",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 83,
+        "word_count": 23714,
+        "start_time": "2026-03-02T16:22:00Z",
+        "end_time": "2026-03-22T19:38:00Z",
+        "duration": 28996
+      }
+    ],
+    "Centre-radieux": [
+      {
+        "id": "scene_centre_radieux_1",
+        "raw_channel": "〕Centre-radieux",
+        "title": "Centre-radieux — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Isis Faerieth",
+          "Jasp Nah",
+          "Septimus Kales",
+          "Loyis Delacroix",
+          "Akane Tsukishiro",
+          "Magon baldor Death",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 16,
+        "word_count": 4029,
+        "start_time": "2026-03-02T16:29:00Z",
+        "end_time": "2026-03-06T05:58:00Z",
+        "duration": 5129
+      }
+    ],
+    "Cours-Fleurie": [
+      {
+        "id": "scene_cours_fleurie_1",
+        "raw_channel": "〕Cours-Fleurie",
+        "title": "Cours-Fleurie — Scène 1",
+        "actors": [
+          "Nyx",
+          "Lewis Bamer",
+          "Okayama",
+          "Grel",
+          "Lucia Fiorella"
+        ],
+        "main_actor": "Nyx",
+        "msg_count": 10,
+        "word_count": 3214,
+        "start_time": "2026-03-03T15:33:00Z",
+        "end_time": "2026-03-18T18:43:00Z",
+        "duration": 21790
+      },
+      {
+        "id": "scene_cours_fleurie_2",
+        "raw_channel": "〕Cours-Fleurie",
+        "title": "Cours-Fleurie — Scène 2",
+        "actors": [
+          "Ivara Luella",
+          "Frey Guðfrøðr",
+          "Tenebris",
+          "Cassian Ortie"
+        ],
+        "main_actor": "Ivara Luella",
+        "msg_count": 29,
+        "word_count": 5584,
+        "start_time": "2026-07-02T09:58:31Z",
+        "end_time": "2026-07-20T15:13:41Z",
+        "duration": 26235
+      }
+    ],
+    "Escaliers-Nacres": [
+      {
+        "id": "scene_escaliers_nacres_1",
+        "raw_channel": "〕Escaliers-Nacres",
+        "title": "Escaliers-Nacres — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Brutus Redwitch",
+          "Akane Tsukishiro",
+          "Vosk Sulyvan"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 15,
+        "word_count": 3111,
+        "start_time": "2026-03-05T12:07:00Z",
+        "end_time": "2026-03-09T16:05:00Z",
+        "duration": 5998
+      }
+    ],
+    "Kenji et Aryana la suite": [
+      {
+        "id": "scene_kenji_et_aryana_la_suite_1",
+        "raw_channel": "Kenji et Aryana (la suite)",
+        "title": "Kenji et Aryana la suite — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 23,
+        "word_count": 7564,
+        "start_time": "2026-03-05T15:28:54Z",
+        "end_time": "2026-03-07T19:43:59Z",
+        "duration": 3135
+      }
+    ],
+    "Couloir-Blanc": [
+      {
+        "id": "scene_couloir_blanc_1",
+        "raw_channel": "〕Couloir-Blanc",
+        "title": "Couloir-Blanc — Scène 1",
+        "actors": [
+          "Isis Faerieth",
+          "Jasp Nah"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 3,
+        "word_count": 1170,
+        "start_time": "2026-03-06T07:18:00Z",
+        "end_time": "2026-03-06T14:19:00Z",
+        "duration": 421
+      }
+    ],
+    "Maison-de-Velours": [
+      {
+        "id": "scene_maison_de_velours_1",
+        "raw_channel": "〕Maison-de-Velours",
+        "title": "Maison-de-Velours — Scène 1",
+        "actors": [
+          "Red Roadman",
+          "Isis Faerieth",
+          "Lewis Bamer",
+          "Nyx",
+          "Adelina Del Fuego",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 20,
+        "word_count": 3516,
+        "start_time": "2026-03-09T12:18:00Z",
+        "end_time": "2026-04-11T12:20:00Z",
+        "duration": 47462
+      }
+    ],
+    "Porte": [
+      {
+        "id": "scene_porte_1",
+        "raw_channel": "〕Porte",
+        "title": "Porte — Scène 1",
+        "actors": [
+          "Nyx",
+          "Lewis-Phoebe d'Ashbourne",
+          "Adelina Del Fuego",
+          "Lewis Bamer"
+        ],
+        "main_actor": "Nyx",
+        "msg_count": 7,
+        "word_count": 1792,
+        "start_time": "2026-03-11T18:01:00Z",
+        "end_time": "2026-04-10T07:19:00Z",
+        "duration": 42498
+      }
+    ],
+    "Rez-de-Chausse": [
+      {
+        "id": "scene_rez_de_chausse_1",
+        "raw_channel": "🏫〕Rez-de-Chausse",
+        "title": "Rez-de-Chausse — Scène 1",
+        "actors": [
+          "Red Roadman",
+          "Isis Faerieth",
+          "Nyx",
+          "Lewis Bamer",
+          "Adelina Del Fuego",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 28,
+        "word_count": 7573,
+        "start_time": "2026-03-12T14:29:00Z",
+        "end_time": "2026-04-09T12:32:00Z",
+        "duration": 40143
+      }
+    ],
+    "Etage": [
+      {
+        "id": "scene_etage_1",
+        "raw_channel": "〕Etage",
+        "title": "Etage — Scène 1",
+        "actors": [
+          "Red Roadman",
+          "Isis Faerieth",
+          "Septimus Kales",
+          "Nyx",
+          "Adelina Del Fuego",
+          "Lewis-Phoebe d'Ashbourne"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 28,
+        "word_count": 3872,
+        "start_time": "2026-03-14T14:18:00Z",
+        "end_time": "2026-04-09T13:49:00Z",
+        "duration": 37351
+      }
+    ],
+    "Petit-Salon": [
+      {
+        "id": "scene_petit_salon_1",
+        "raw_channel": "〕Petit-Salon",
+        "title": "Petit-Salon — Scène 1",
+        "actors": [
+          "Lewis-Phoebe d'Ashbourne",
+          "Red Roadman",
+          "Vosk Sulyvan"
+        ],
+        "main_actor": "Lewis-Phoebe d'Ashbourne",
+        "msg_count": 9,
+        "word_count": 3228,
+        "start_time": "2026-03-16T08:16:00Z",
+        "end_time": "2026-04-05T14:11:00Z",
+        "duration": 29095
+      }
+    ],
+    "Bureau-de-Shaal": [
+      {
+        "id": "scene_bureau_de_shaal_1",
+        "raw_channel": "️〕Bureau-de-Shaal",
+        "title": "Bureau-de-Shaal — Scène 1",
+        "actors": [
+          "Lewis-Phoebe d'Ashbourne",
+          "Adelina Del Fuego"
+        ],
+        "main_actor": "Lewis-Phoebe d'Ashbourne",
+        "msg_count": 12,
+        "word_count": 2003,
+        "start_time": "2026-03-16T10:59:00Z",
+        "end_time": "2026-03-25T14:41:00Z",
+        "duration": 13182
+      }
+    ],
+    "Agora des Reines 2": [
+      {
+        "id": "scene_agora_des_reines_2_1",
+        "raw_channel": "Agora des Reines 2",
+        "title": "Agora des Reines 2 — Scène 1",
+        "actors": [
+          "Septimus Kales"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 2,
+        "word_count": 325,
+        "start_time": "2026-03-18T07:30:20Z",
+        "end_time": "2026-03-18T07:30:32Z",
+        "duration": 1
+      }
+    ],
+    "Isolement": [
+      {
+        "id": "scene_isolement_1",
+        "raw_channel": "𝐈solement",
+        "title": "Isolement — Scène 1",
+        "actors": [
+          "Inzu Sravel",
+          "Isis Faerieth",
+          "Alieny",
+          "Nick Sol"
+        ],
+        "main_actor": "Inzu Sravel",
+        "msg_count": 19,
+        "word_count": 4766,
+        "start_time": "2026-03-18T16:53:43Z",
+        "end_time": "2026-04-08T12:14:03Z",
+        "duration": 29900
+      }
+    ],
+    "Tribut-des-sages": [
+      {
+        "id": "scene_tribut_des_sages_1",
+        "raw_channel": "🏛️〕Tribut-des-sages",
+        "title": "Tribut-des-sages — Scène 1",
+        "actors": [
+          "Kanta"
+        ],
+        "main_actor": "Kanta",
+        "msg_count": 3,
+        "word_count": 1156,
+        "start_time": "2026-03-18T21:41:00Z",
+        "end_time": "2026-03-21T12:34:00Z",
+        "duration": 3773
+      }
+    ],
+    "Adelina Magon": [
+      {
+        "id": "scene_adelina_magon_1",
+        "raw_channel": "Adelina & Magon",
+        "title": "Adelina Magon — Scène 1",
+        "actors": [
+          "Adelina Del Fuego",
+          "Sw dark325",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Adelina Del Fuego",
+        "msg_count": 18,
+        "word_count": 2285,
+        "start_time": "2026-04-12T23:40:45Z",
+        "end_time": "2026-04-28T07:13:40Z",
+        "duration": 22052
+      }
+    ],
+    "Nouveau jour Nouvelle aventure": [
+      {
+        "id": "scene_nouveau_jour_nouvelle_aventure_1",
+        "raw_channel": "Nouveau jour, Nouvelle aventure !",
+        "title": "Lewis-Phoebe d'Ashbourne",
+        "actors": [
+          "Red Roadman",
+          "Jin Alurantes",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Red Roadman",
+        "msg_count": 42,
+        "word_count": 4321,
+        "start_time": "2026-04-17T08:42:51Z",
+        "end_time": "2026-05-29T00:10:09Z",
+        "duration": 59967
+      }
+    ],
+    "Hall-Des-Fetes": [
+      {
+        "id": "scene_hall_des_fetes_1",
+        "raw_channel": "〕Hall-Des-Fetes",
+        "title": "Hall-Des-Fetes — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Brutus Redwitch",
+          "Selena Moon",
+          "Jasp Nah",
+          "Velka Valcyrion",
+          "Aryanna Erhendil",
+          "Lewis Bamer",
+          "Okayama",
+          "Lewis-Phoebe d'Ashbourne",
+          "Lucia Fiorella",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 40,
+        "word_count": 13304,
+        "start_time": "2026-05-04T04:01:00Z",
+        "end_time": "2026-05-29T13:40:00Z",
+        "duration": 36579
+      }
+    ],
+    "Le-Rouge-et-Le-Noir": [
+      {
+        "id": "scene_le_rouge_et_le_noir_1",
+        "raw_channel": "↳🃏Le-Rouge-et-Le-Noir",
+        "title": "Le-Rouge-et-Le-Noir — Scène 1",
+        "actors": [
+          "Kenji Takahashi"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 7,
+        "word_count": 1302,
+        "start_time": "2026-05-04T05:13:00Z",
+        "end_time": "2026-05-24T04:27:00Z",
+        "duration": 28754
+      }
+    ],
+    "Le-Bras-de-Fer": [
+      {
+        "id": "scene_le_bras_de_fer_1",
+        "raw_channel": "↳🦾Le-Bras-de-Fer",
+        "title": "Le-Bras-de-Fer — Scène 1",
+        "actors": [
+          "Magon baldor Death"
+        ],
+        "main_actor": "Magon baldor Death",
+        "msg_count": 2,
+        "word_count": 132,
+        "start_time": "2026-05-04T05:41:00Z",
+        "end_time": "2026-05-06T06:57:00Z",
+        "duration": 2956
+      }
+    ],
+    "La-Ballade": [
+      {
+        "id": "scene_la_ballade_1",
+        "raw_channel": "️〕La-Ballade",
+        "title": "La-Ballade — Scène 1",
+        "actors": [
+          "Velka Valcyrion",
+          "Katelynn Hoffmann",
+          "Vosk Sulyvan",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Velka Valcyrion",
+        "msg_count": 26,
+        "word_count": 11215,
+        "start_time": "2026-05-04T05:55:00Z",
+        "end_time": "2026-06-15T07:44:57Z",
+        "duration": 60589
+      }
+    ],
+    "L-Epicurien": [
+      {
+        "id": "scene_l_epicurien_1",
+        "raw_channel": "〕L-Epicurien",
+        "title": "L-Epicurien — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Tsutomu Yamamoto",
+          "Isis Faerieth",
+          "Ivara Luella",
+          "Septimus Kales",
+          "Adelina Del Fuego",
+          "OWL LE MESSAGER",
+          "Myrea M",
+          "Ren Urugaki"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 30,
+        "word_count": 6113,
+        "start_time": "2026-05-04T07:42:00Z",
+        "end_time": "2026-07-23T11:10:06Z",
+        "duration": 115408
+      }
+    ],
+    "Le-Bonneteau": [
+      {
+        "id": "scene_le_bonneteau_1",
+        "raw_channel": "↳🎲Le-Bonneteau",
+        "title": "Le-Bonneteau — Scène 1",
+        "actors": [
+          "Vosk Sulyvan",
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Vosk Sulyvan",
+        "msg_count": 11,
+        "word_count": 1944,
+        "start_time": "2026-05-04T08:05:00Z",
+        "end_time": "2026-05-10T11:23:00Z",
+        "duration": 8838
+      }
+    ],
+    "Le-Bar-des-Lions": [
+      {
+        "id": "scene_le_bar_des_lions_1",
+        "raw_channel": "〕Le-Bar-des-Lions",
+        "title": "Le-Bar-des-Lions — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Velka Valcyrion",
+          "Aryanna Erhendil",
+          "Lewis Bamer",
+          "Lewis-Phoebe d'Ashbourne",
+          "Selena Moon"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 31,
+        "word_count": 9231,
+        "start_time": "2026-05-04T11:30:00Z",
+        "end_time": "2026-06-24T03:38:03Z",
+        "duration": 72968
+      }
+    ],
+    "Le-Coin-d-Antan": [
+      {
+        "id": "scene_le_coin_d_antan_1",
+        "raw_channel": "〕Le-Coin-d-Antan",
+        "title": "Le-Coin-d-Antan — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Lewis-Phoebe d'Ashbourne",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 18,
+        "word_count": 4769,
+        "start_time": "2026-05-04T11:45:00Z",
+        "end_time": "2026-06-17T00:19:36Z",
+        "duration": 62674
+      }
+    ],
+    "Le-17": [
+      {
+        "id": "scene_le_17_1",
+        "raw_channel": "↳🎯Le-17",
+        "title": "Le-17 — Scène 1",
+        "actors": [
+          "Nick Sol"
+        ],
+        "main_actor": "Nick Sol",
+        "msg_count": 5,
+        "word_count": 994,
+        "start_time": "2026-05-05T01:44:00Z",
+        "end_time": "2026-05-11T01:58:00Z",
+        "duration": 8654
+      }
+    ],
+    "Place-Vendome": [
+      {
+        "id": "scene_place_vendome_1",
+        "raw_channel": "⛲〕Place-Vendome",
+        "title": "Place-Vendome — Scène 1",
+        "actors": [
+          "Akane Tsukishiro",
+          "Vosk Sulyvan",
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Akane Tsukishiro",
+        "msg_count": 16,
+        "word_count": 3572,
+        "start_time": "2026-05-10T11:40:00Z",
+        "end_time": "2026-05-15T10:35:00Z",
+        "duration": 7135
+      }
+    ],
+    "La-Taniere-de-l-Ours": [
+      {
+        "id": "scene_la_taniere_de_l_ours_1",
+        "raw_channel": "🐻〕La-Taniere-de-l-Ours",
+        "title": "La-Taniere-de-l-Ours — Scène 1",
+        "actors": [
+          "Iscarioth"
+        ],
+        "main_actor": "Iscarioth",
+        "msg_count": 3,
+        "word_count": 638,
+        "start_time": "2026-05-11T16:02:00Z",
+        "end_time": "2026-05-11T16:02:00Z",
+        "duration": 1
+      }
+    ],
+    "Ruelle-Adjacente": [
+      {
+        "id": "scene_ruelle_adjacente_1",
+        "raw_channel": "〕Ruelle-Adjacente",
+        "title": "Ruelle-Adjacente — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Iscarioth"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 20,
+        "word_count": 4658,
+        "start_time": "2026-05-11T16:03:00Z",
+        "end_time": "2026-05-29T13:16:00Z",
+        "duration": 25753
+      }
+    ],
+    "Les Demoiselles de la Haute plus ou moins": [
+      {
+        "id": "scene_les_demoiselles_de_la_haute_plus_ou_moins_1",
+        "raw_channel": "Les Demoiselles de la Haute… plus ou moins",
+        "title": "Les Demoiselles de la Haute plus ou moins — Scène 1",
+        "actors": [
+          "Akane Tsukishiro",
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Akane Tsukishiro",
+        "msg_count": 7,
+        "word_count": 996,
+        "start_time": "2026-05-17T13:54:10Z",
+        "end_time": "2026-05-18T13:50:44Z",
+        "duration": 1436
+      }
+    ],
+    "Terrains-Nacrés": [
+      {
+        "id": "scene_terrains_nacr_s_1",
+        "raw_channel": "⚔️〕𝗧errains-𝗡acrés",
+        "title": "Terrains-Nacrés — Scène 1",
+        "actors": [
+          "Septimus Kales",
+          "Lucia Fiorella",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 6,
+        "word_count": 872,
+        "start_time": "2026-05-30T05:34:29Z",
+        "end_time": "2026-06-11T02:28:28Z",
+        "duration": 17093
+      },
+      {
+        "id": "scene_terrains_nacr_s_2",
+        "raw_channel": "⚔️〕𝗧errains-𝗡acrés",
+        "title": "Terrains-Nacrés — Scène 2",
+        "actors": [
+          "Vosk Sulyvan",
+          "Hedwig Von Glanzestern"
+        ],
+        "main_actor": "Vosk Sulyvan",
+        "msg_count": 4,
+        "word_count": 888,
+        "start_time": "2026-06-14T10:17:05Z",
+        "end_time": "2026-06-26T10:21:39Z",
+        "duration": 17284
+      },
+      {
+        "id": "scene_terrains_nacr_s_3",
+        "raw_channel": "⚔️〕𝗧errains-𝗡acrés",
+        "title": "Terrains-Nacrés — Scène 3",
+        "actors": [
+          "Lucia Fiorella",
+          "Aryanna Erhendil",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Lucia Fiorella",
+        "msg_count": 25,
+        "word_count": 6003,
+        "start_time": "2026-07-14T23:08:31Z",
+        "end_time": "2026-07-28T05:00:43Z",
+        "duration": 19072
+      }
+    ],
+    "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement": [
+      {
+        "id": "scene_il__tait_une_fois_une_princesse_et_sa_chevaleresse_sur_un_terrain_d_entra_nement_1",
+        "raw_channel": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement",
+        "title": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement — Scène 1",
+        "actors": [
+          "Katelynn Hoffmann",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Katelynn Hoffmann",
+        "msg_count": 28,
+        "word_count": 10845,
+        "start_time": "2026-05-30T05:53:16Z",
+        "end_time": "2026-06-15T09:48:08Z",
+        "duration": 23274
+      }
+    ],
+    "Fontaine-Marbrée": [
+      {
+        "id": "scene_fontaine_marbr_e_1",
+        "raw_channel": "⛲〕𝗙ontaine-𝗠arbrée",
+        "title": "Fontaine-Marbrée — Scène 1",
+        "actors": [
+          "Ragde Umbras",
+          "Isis Faerieth",
+          "Cassian Ortie",
+          "Nick Sol"
+        ],
+        "main_actor": "Ragde Umbras",
+        "msg_count": 65,
+        "word_count": 14566,
+        "start_time": "2026-06-02T10:04:16Z",
+        "end_time": "2026-07-04T04:13:35Z",
+        "duration": 45729
+      },
+      {
+        "id": "scene_fontaine_marbr_e_2",
+        "raw_channel": "⛲〕𝗙ontaine-𝗠arbrée",
+        "title": "Fontaine-Marbrée — Scène 2",
+        "actors": [
+          "Alieny"
+        ],
+        "main_actor": "Alieny",
+        "msg_count": 5,
+        "word_count": 1292,
+        "start_time": "2026-07-17T23:16:39Z",
+        "end_time": "2026-07-30T03:57:38Z",
+        "duration": 17560
+      }
+    ],
+    "Le-Café-des-Philosophes": [
+      {
+        "id": "scene_le_caf__des_philosophes_1",
+        "raw_channel": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
+        "title": "Le-Café-des-Philosophes — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Iscarioth"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 19,
+        "word_count": 4972,
+        "start_time": "2026-06-03T09:47:13Z",
+        "end_time": "2026-07-29T14:18:10Z",
+        "duration": 80910
+      }
+    ],
+    "Un début de soirée à la serre de lune": [
+      {
+        "id": "scene_un_d_but_de_soir_e___la_serre_de_lune_1",
+        "raw_channel": "Un début de soirée à la serre de lune",
+        "title": "Un début de soirée à la serre de lune — Scène 1",
+        "actors": [
+          "Frey Guðfrøðr",
+          "Maëll Fol'Dun"
+        ],
+        "main_actor": "Frey Guðfrøðr",
+        "msg_count": 22,
+        "word_count": 4556,
+        "start_time": "2026-06-04T11:24:40Z",
+        "end_time": "2026-07-17T04:56:26Z",
+        "duration": 61531
+      }
+    ],
+    "scène RenYuu": [
+      {
+        "id": "scene_sc_ne_renyuu_1",
+        "raw_channel": "scène Ren/Yuu",
+        "title": "scène RenYuu — Scène 1",
+        "actors": [
+          "Ren Urugaki",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 72,
+        "word_count": 24753,
+        "start_time": "2026-06-05T12:41:49Z",
+        "end_time": "2026-06-16T02:00:06Z",
+        "duration": 15198
+      }
+    ],
+    "Hall-Des-Fêtes": [
+      {
+        "id": "scene_hall_des_f_tes_1",
+        "raw_channel": "🌠〕𝐇all-𝐃es-𝐅êtes",
+        "title": "Hall-Des-Fêtes — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Okayama"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 2,
+        "word_count": 918,
+        "start_time": "2026-06-07T04:38:46Z",
+        "end_time": "2026-06-09T05:38:24Z",
+        "duration": 2939
+      }
+    ],
+    "Passage": [
+      {
+        "id": "scene_passage_1",
+        "raw_channel": "🛤️〕𝗣assage",
+        "title": "Passage — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 29,
+        "word_count": 7572,
+        "start_time": "2026-06-16T03:36:27Z",
+        "end_time": "2026-06-18T08:30:56Z",
+        "duration": 3174
+      }
+    ],
+    "Ruelle-Basse-ville": [
+      {
+        "id": "scene_ruelle_basse_ville_1",
+        "raw_channel": "🌇〕𝐑uelle-𝐁asse-ville",
+        "title": "Ruelle-Basse-ville — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Red Roadman",
+          "Asior Eveus",
+          "Vosk Sulyvan",
+          "Hedwig Von Glanzestern",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 34,
+        "word_count": 8678,
+        "start_time": "2026-06-16T06:10:53Z",
+        "end_time": "2026-06-19T10:12:45Z",
+        "duration": 4561
+      }
+    ],
+    "Scène Kalès JAVUS": [
+      {
+        "id": "scene_sc_ne_kal_s_javus_1",
+        "raw_channel": "Scène Kalès / JAVUS",
+        "title": "Scène Kalès JAVUS — Scène 1",
+        "actors": [
+          "Septimus Kales"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 5,
+        "word_count": 1319,
+        "start_time": "2026-06-18T01:47:01Z",
+        "end_time": "2026-07-02T03:53:48Z",
+        "duration": 20286
+      }
+    ],
+    "Egregore": [
+      {
+        "id": "scene_egregore_1",
+        "raw_channel": "🏙️〕𝐄gregore",
+        "title": "Egregore — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 45,
+        "word_count": 12852,
+        "start_time": "2026-06-18T09:44:35Z",
+        "end_time": "2026-06-23T06:56:46Z",
+        "duration": 7032
+      }
+    ],
+    "Quartiers": [
+      {
+        "id": "scene_quartiers_1",
+        "raw_channel": "♟️〕𝐐uartiers",
+        "title": "Quartiers — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Asior Eveus",
+          "Red Roadman",
+          "Isis Faerieth",
+          "Vosk Sulyvan",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 10,
+        "word_count": 1710,
+        "start_time": "2026-06-18T14:44:12Z",
+        "end_time": "2026-06-23T07:28:17Z",
+        "duration": 6764
+      }
+    ],
+    "Le son de l'Innocence": [
+      {
+        "id": "scene_le_son_de_l_innocence_1",
+        "raw_channel": "🟧 Le son de l'Innocence",
+        "title": "Le son de l'Innocence — Scène 1",
+        "actors": [
+          "Vosk Sulyvan",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Vosk Sulyvan",
+        "msg_count": 10,
+        "word_count": 4821,
+        "start_time": "2026-06-19T03:17:00Z",
+        "end_time": "2026-06-23T08:27:54Z",
+        "duration": 6070
+      }
+    ],
+    "Brume de Soie": [
+      {
+        "id": "scene_brume_de_soie_1",
+        "raw_channel": "🟪 Brume de Soie.",
+        "title": "Brume de Soie — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Hedwig Von Glanzestern"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 17,
+        "word_count": 3614,
+        "start_time": "2026-06-19T22:18:37Z",
+        "end_time": "2026-06-23T07:44:08Z",
+        "duration": 4885
+      }
+    ],
+    "Tracer la suite": [
+      {
+        "id": "scene_tracer_la_suite_1",
+        "raw_channel": "🟩 Tracer la suite",
+        "title": "Tracer la suite — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Red Roadman"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 12,
+        "word_count": 3215,
+        "start_time": "2026-06-20T06:32:48Z",
+        "end_time": "2026-06-23T07:18:43Z",
+        "duration": 4365
+      }
+    ],
+    "Course-Poursuite": [
+      {
+        "id": "scene_course_poursuite_1",
+        "raw_channel": "🏗️〕𝐂ourse-𝐏oursuite",
+        "title": "Course-Poursuite — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 13,
+        "word_count": 2679,
+        "start_time": "2026-06-20T09:22:03Z",
+        "end_time": "2026-06-24T05:43:46Z",
+        "duration": 5541
+      }
+    ],
+    "La Valeur d'une Vie": [
+      {
+        "id": "scene_la_valeur_d_une_vie_1",
+        "raw_channel": "🟨 La Valeur d'une Vie.",
+        "title": "La Valeur d'une Vie — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Asior Eveus",
+          "Red Roadman",
+          "Vosk Sulyvan",
+          "Hedwig Von Glanzestern",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 33,
+        "word_count": 9434,
+        "start_time": "2026-06-23T08:54:20Z",
+        "end_time": "2026-06-28T08:20:27Z",
+        "duration": 7166
+      }
+    ],
+    "Guet-apens": [
+      {
+        "id": "scene_guet_apens_1",
+        "raw_channel": "🕋〕𝐆uet-apens",
+        "title": "Guet-apens — Scène 1",
+        "actors": [
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Alieny",
+          "Ren Urugaki",
+          "Jin Alurantes",
+          "Nick Sol"
+        ],
+        "main_actor": "Brutus Redwitch",
+        "msg_count": 31,
+        "word_count": 6797,
+        "start_time": "2026-06-23T13:12:05Z",
+        "end_time": "2026-06-29T07:40:41Z",
+        "duration": 8308
+      }
+    ],
+    "Place": [
+      {
+        "id": "scene_place_1",
+        "raw_channel": "🌆〕𝐏lace",
+        "title": "Place — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Red Roadman",
+          "Asior Eveus",
+          "Jin Alurantes",
+          "Aryanna Erhendil",
+          "Nick Sol",
+          "Akane Tsukishiro",
+          "Vosk Sulyvan",
+          "Ren Urugaki",
+          "Hedwig Von Glanzestern",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 43,
+        "word_count": 12412,
+        "start_time": "2026-06-24T23:43:55Z",
+        "end_time": "2026-07-05T06:49:55Z",
+        "duration": 14826
+      }
+    ],
+    "Le-Secret": [
+      {
+        "id": "scene_le_secret_1",
+        "raw_channel": "📓〕𝐋e-𝐒ecret",
+        "title": "Le-Secret — Scène 1",
+        "actors": [
+          "Ren Urugaki",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 26,
+        "word_count": 9422,
+        "start_time": "2026-06-25T13:18:53Z",
+        "end_time": "2026-06-29T06:47:26Z",
+        "duration": 5368
+      }
+    ],
+    "Arène": [
+      {
+        "id": "scene_ar_ne_1",
+        "raw_channel": "🛑〕𝐀rène",
+        "title": "Arène — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Brutus Redwitch",
+          "Kenji Takahashi",
+          "Idelmée Cadree",
+          "Red Roadman",
+          "Isis Faerieth",
+          "Aryanna Erhendil",
+          "Nick Sol",
+          "Akane Tsukishiro",
+          "Vosk Sulyvan",
+          "Hedwig Von Glanzestern",
+          "Ren Urugaki",
+          "Jin Alurantes",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 108,
+        "word_count": 28748,
+        "start_time": "2026-06-29T09:54:07Z",
+        "end_time": "2026-07-04T08:08:32Z",
+        "duration": 7094
+      }
+    ],
+    "Balcon - Asior Katelyn": [
+      {
+        "id": "scene_balcon___asior_katelyn_1",
+        "raw_channel": "Balcon - Asior & Katelyn",
+        "title": "Balcon - Asior Katelyn — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Vosk Sulyvan",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 21,
+        "word_count": 7201,
+        "start_time": "2026-06-30T12:13:29Z",
+        "end_time": "2026-07-04T03:04:00Z",
+        "duration": 5210
+      }
+    ],
+    "Scène Lumia Ivara": [
+      {
+        "id": "scene_sc_ne_lumia_ivara_1",
+        "raw_channel": "Scène Lumia | Ivara",
+        "title": "Scène Lumia Ivara — Scène 1",
+        "actors": [
+          "Ivara Luella",
+          "Lumia Faendharts"
+        ],
+        "main_actor": "Ivara Luella",
+        "msg_count": 32,
+        "word_count": 8021,
+        "start_time": "2026-06-30T13:10:33Z",
+        "end_time": "2026-07-19T07:41:15Z",
+        "duration": 27030
+      }
+    ],
+    "Fuir - Katelyn Hoffmann Isis Faerieth": [
+      {
+        "id": "scene_fuir___katelyn_hoffmann_isis_faerieth_1",
+        "raw_channel": "Fuir - Katelyn Hoffmann & Isis Faerieth",
+        "title": "Fuir - Katelyn Hoffmann Isis Faerieth — Scène 1",
+        "actors": [
+          "Isis Faerieth",
+          "Katelynn Hoffmann"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 23,
+        "word_count": 12394,
+        "start_time": "2026-07-04T11:28:00Z",
+        "end_time": "2026-07-17T06:18:41Z",
+        "duration": 18410
+      }
+    ],
+    "Ruelles": [
+      {
+        "id": "scene_ruelles_1",
+        "raw_channel": "🧱〕𝐑uelles",
+        "title": "Ruelles — Scène 1",
+        "actors": [
+          "Ren Urugaki",
+          "Kenji Takahashi",
+          "Alieny",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 13,
+        "word_count": 4185,
+        "start_time": "2026-07-05T05:20:40Z",
+        "end_time": "2026-07-06T05:46:25Z",
+        "duration": 1465
+      }
+    ],
+    "Ils ne souhaitent qu'une seule chose La paix": [
+      {
+        "id": "scene_ils_ne_souhaitent_qu_une_seule_chose_la_paix_1",
+        "raw_channel": "Ils ne souhaitent qu'une seule chose : La paix.",
+        "title": "Ils ne souhaitent qu'une seule chose La paix — Scène 1",
+        "actors": [
+          "Ren Urugaki",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Ren Urugaki",
+        "msg_count": 19,
+        "word_count": 7968,
+        "start_time": "2026-07-05T07:10:23Z",
+        "end_time": "2026-07-15T09:22:15Z",
+        "duration": 14531
+      }
+    ],
+    "Résidences-des-Libérateurs": [
+      {
+        "id": "scene_r_sidences_des_lib_rateurs_1",
+        "raw_channel": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
+        "title": "Résidences-des-Libérateurs — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Ren Urugaki",
+          "Alieny",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 11,
+        "word_count": 4649,
+        "start_time": "2026-07-07T02:43:09Z",
+        "end_time": "2026-07-10T09:51:57Z",
+        "duration": 4748
+      }
+    ],
+    "Sous-Sol": [
+      {
+        "id": "scene_sous_sol_1",
+        "raw_channel": "🌃〕𝐒ous-𝐒ol",
+        "title": "Sous-Sol — Scène 1",
+        "actors": [
+          "Isis Faerieth",
+          "Ren Urugaki",
+          "Alieny",
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Isis Faerieth",
+        "msg_count": 34,
+        "word_count": 12026,
+        "start_time": "2026-07-10T10:56:05Z",
+        "end_time": "2026-07-16T15:40:59Z",
+        "duration": 8924
+      }
+    ],
+    "Salon": [
+      {
+        "id": "scene_salon_1",
+        "raw_channel": "🌃〕𝐒alon",
+        "title": "Salon — Scène 1",
+        "actors": [
+          "Kenji Takahashi"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 4,
+        "word_count": 1412,
+        "start_time": "2026-07-11T10:16:47Z",
+        "end_time": "2026-07-14T06:36:15Z",
+        "duration": 4099
+      }
+    ],
+    "Armurerie-Ecarlate": [
+      {
+        "id": "scene_armurerie_ecarlate_1",
+        "raw_channel": "🏹〕𝐀rmurerie-𝐄carlate",
+        "title": "Armurerie-Ecarlate — Scène 1",
+        "actors": [
+          "Kenji Takahashi",
+          "Isis Faerieth",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Kenji Takahashi",
+        "msg_count": 17,
+        "word_count": 3150,
+        "start_time": "2026-07-15T04:58:10Z",
+        "end_time": "2026-07-16T10:14:20Z",
+        "duration": 1756
+      }
+    ],
+    "-Chevet-Sacré": [
+      {
+        "id": "scene__chevet_sacr__1",
+        "raw_channel": "📿-𝐂hevet-𝐒acré",
+        "title": "-Chevet-Sacré — Scène 1",
+        "actors": [
+          "Septimus Kales",
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Iscarioth"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 17,
+        "word_count": 4027,
+        "start_time": "2026-07-15T05:29:16Z",
+        "end_time": "2026-07-29T06:14:11Z",
+        "duration": 20204
+      }
+    ],
+    "Terrasse-couverte": [
+      {
+        "id": "scene_terrasse_couverte_1",
+        "raw_channel": "🍹〕𝗧errasse-couverte",
+        "title": "Terrasse-couverte — Scène 1",
+        "actors": [
+          "Ivara Luella",
+          "Ren Urugaki"
+        ],
+        "main_actor": "Ivara Luella",
+        "msg_count": 12,
+        "word_count": 3219,
+        "start_time": "2026-07-18T04:01:06Z",
+        "end_time": "2026-07-27T09:56:21Z",
+        "duration": 13315
+      }
+    ],
+    "Cantine-marbrée": [
+      {
+        "id": "scene_cantine_marbr_e_1",
+        "raw_channel": "🍖〕𝗖antine-marbrée",
+        "title": "Cantine-marbrée — Scène 1",
+        "actors": [
+          "Alieny"
+        ],
+        "main_actor": "Alieny",
+        "msg_count": 5,
+        "word_count": 549,
+        "start_time": "2026-07-18T13:57:53Z",
+        "end_time": "2026-07-26T12:24:20Z",
+        "duration": 11426
+      }
+    ],
+    "Isis et Astreüs": [
+      {
+        "id": "scene_isis_et_astre_s_1",
+        "raw_channel": "Isis et Astreüs",
+        "title": "Isis et Astreüs — Scène 1",
+        "actors": [
+          "Astreüs Mylonas",
+          "Isis Faerieth"
+        ],
+        "main_actor": "Astreüs Mylonas",
+        "msg_count": 13,
+        "word_count": 3276,
+        "start_time": "2026-07-19T04:00:20Z",
+        "end_time": "2026-07-27T14:49:33Z",
+        "duration": 12169
+      }
+    ],
+    "TRIPLE A Asior - Akane - Aryana": [
+      {
+        "id": "scene_triple_a_asior___akane___aryana_1",
+        "raw_channel": "TRIPLE A : Asior - Akane - Aryana",
+        "title": "TRIPLE A Asior - Akane - Aryana — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Aryanna Erhendil",
+          "Akane Tsukishiro",
+          "Ren Urugaki",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 28,
+        "word_count": 7395,
+        "start_time": "2026-07-19T04:57:48Z",
+        "end_time": "2026-07-29T12:51:23Z",
+        "duration": 14873
+      }
+    ],
+    "Salle-d’Alchimie": [
+      {
+        "id": "scene_salle_d_alchimie_1",
+        "raw_channel": "🧪〕𝐒alle-d’𝐀lchimie",
+        "title": "Salle-d’Alchimie — Scène 1",
+        "actors": [
+          "Aryanna Erhendil"
+        ],
+        "main_actor": "Aryanna Erhendil",
+        "msg_count": 2,
+        "word_count": 918,
+        "start_time": "2026-07-19T08:11:01Z",
+        "end_time": "2026-07-26T04:22:35Z",
+        "duration": 9851
+      }
+    ],
+    "Objectif faire exploser la Balafre": [
+      {
+        "id": "scene_objectif_faire_exploser_la_balafre_1",
+        "raw_channel": "Objectif : faire exploser la Balafre.",
+        "title": "Objectif faire exploser la Balafre — Scène 1",
+        "actors": [
+          "Asior Eveus",
+          "Idelmée Cadree",
+          "Ren Urugaki",
+          "Jin Alurantes"
+        ],
+        "main_actor": "Asior Eveus",
+        "msg_count": 8,
+        "word_count": 1532,
+        "start_time": "2026-07-22T07:33:05Z",
+        "end_time": "2026-07-29T06:58:40Z",
+        "duration": 10045
+      }
+    ],
+    "Une chouette découvre enfin l'eau": [
+      {
+        "id": "scene_une_chouette_d_couvre_enfin_l_eau_1",
+        "raw_channel": "Une chouette découvre enfin l'eau",
+        "title": "Une chouette découvre enfin l'eau — Scène 1",
+        "actors": [
+          "Lumia Faendharts",
+          "Alieny"
+        ],
+        "main_actor": "Lumia Faendharts",
+        "msg_count": 5,
+        "word_count": 1353,
+        "start_time": "2026-07-23T10:02:39Z",
+        "end_time": "2026-07-28T02:14:21Z",
+        "duration": 6731
+      }
+    ],
+    "Scène Kalès Kalem": [
+      {
+        "id": "scene_sc_ne_kal_s_kalem_1",
+        "raw_channel": "Scène Kalès / Kalem",
+        "title": "Scène Kalès Kalem — Scène 1",
+        "actors": [
+          "Septimus Kales",
+          "OWL LE MESSAGER"
+        ],
+        "main_actor": "Septimus Kales",
+        "msg_count": 7,
+        "word_count": 1273,
+        "start_time": "2026-07-23T11:10:07Z",
+        "end_time": "2026-07-29T02:48:51Z",
+        "duration": 8138
+      }
+    ],
+    "Terrain-d-entraînement": [
+      {
+        "id": "scene_terrain_d_entra_nement_1",
+        "raw_channel": "🛡️〕𝗧errain-d-entraînement",
+        "title": "Terrain-d-entraînement — Scène 1",
+        "actors": [
+          "Idelmée Cadree",
+          "Aegnor Othar"
+        ],
+        "main_actor": "Idelmée Cadree",
+        "msg_count": 5,
+        "word_count": 1075,
+        "start_time": "2026-07-24T06:17:23Z",
+        "end_time": "2026-07-30T10:40:44Z",
+        "duration": 8903
+      }
+    ],
+    "Le-Berceau": [
+      {
+        "id": "scene_le_berceau_1",
+        "raw_channel": "⚫▹𝐋e-𝐁erceau",
+        "title": "Le-Berceau — Scène 1",
+        "actors": [
+          "Iscarioth"
+        ],
+        "main_actor": "Iscarioth",
+        "msg_count": 1,
+        "word_count": 5,
+        "start_time": "2026-07-26T13:11:01Z",
+        "end_time": "2026-07-26T13:11:01Z",
+        "duration": 1
+      }
+    ]
+  },
+  "inconsistencies": [
+    {
+      "type": "SUSPICIOUS_ACTOR_NAME",
+      "severity": "LOW",
+      "scene_id": "scene_auditorium_1",
+      "channel": "Auditorium",
+      "title": "Auditorium — Scène 1",
+      "details": "Nom d'acteur suspect ou générique détecté: 'Narrateur'"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_ar_ne_hurlante_1",
+      "channel": "Arène-Hurlante",
+      "title": "Arène-Hurlante — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_hana_chapellet_1",
+      "channel": "Hana Chapellet",
+      "title": "Hana Chapellet — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_eldritch_kineya_1",
+      "channel": "Eldritch Kineya",
+      "title": "Eldritch Kineya — Scène 1",
+      "details": "Scène courte avec seulement 4 messages."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_quartier_ouest_1",
+      "channel": "Quartier-Ouest",
+      "title": "Quartier-Ouest — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "HIGH",
+      "scene_id": "scene_le_centre_des_registres_1",
+      "channel": "Le-centre-des-registres",
+      "title": "Le-centre-des-registres — Scène 1",
+      "details": "Scène avec seulement 1 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_centre_des_registres_1",
+      "channel": "Le-centre-des-registres",
+      "title": "Le-centre-des-registres — Scène 1",
+      "details": "Un seul participant détecté (Nikko Aytaupe). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_lot_de_maison_1",
+      "channel": "Lot-De-Maison",
+      "title": "Lot-De-Maison — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_brutus_hana_1",
+      "channel": "Brutus Hana",
+      "title": "Brutus Hana — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_salle_de_r_veil_1",
+      "channel": "Salle de Réveil",
+      "title": "Salle de Réveil — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_terrains_nacres_1",
+      "channel": "Terrains-Nacres",
+      "title": "Terrains-Nacres — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_fontaine_marbree_1",
+      "channel": "Fontaine-Marbree",
+      "title": "Fontaine-Marbree — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_quartier_des_forges_1",
+      "channel": "Quartier-des-Forges",
+      "title": "Quartier-des-Forges — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_cantine_marbree_1",
+      "channel": "Cantine-marbree",
+      "title": "Cantine-marbree — Scène 1",
+      "details": "5 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_crypte_rouge_1",
+      "channel": "Crypte-Rouge",
+      "title": "Crypte-Rouge — Scène 1",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_crypte_rouge_1",
+      "channel": "Crypte-Rouge",
+      "title": "Crypte-Rouge — Scène 1",
+      "details": "Un seul participant détecté (Nick Sol). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "HIGH",
+      "scene_id": "scene_cellules_1",
+      "channel": "Cellules",
+      "title": "Cellules — Scène 1",
+      "details": "Scène avec seulement 1 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_cellules_1",
+      "channel": "Cellules",
+      "title": "Cellules — Scène 1",
+      "details": "Un seul participant détecté (Loyis Delacroix). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_la_balafre_1",
+      "channel": "La-Balafre",
+      "title": "La-Balafre — Scène 1",
+      "details": "9 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_si_c_est_toi_qui_paye__a_roule_pour_moi___aryana_kenji_1",
+      "channel": "Si c'est toi qui paye ça roule pour moi - Aryana Kenji",
+      "title": "Si c'est toi qui paye ça roule pour moi - Aryana Kenji — Scène 1",
+      "details": "5 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_la_qu_te_de_la_dague_de_lewis_1",
+      "channel": "La quête de la dague de Lewis",
+      "title": "La quête de la dague de Lewis — Scène 1",
+      "details": "7 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_l__quilibre_est_le_contraire_du_chaos_1",
+      "channel": "L'équilibre est le contraire du chaos",
+      "title": "L'équilibre est le contraire du chaos — Scène 1",
+      "details": "Scène courte avec seulement 4 messages."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_cantine_marbree_2",
+      "channel": "Cantine-marbree",
+      "title": "Cantine-marbree — Scène 2",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_portail_ivoire_1",
+      "channel": "Portail-Ivoire",
+      "title": "Portail-Ivoire — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "HIGH",
+      "scene_id": "scene_la_fin_1",
+      "channel": "La fin",
+      "title": "La fin — Scène 1",
+      "details": "Scène avec seulement 1 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_la_fin_1",
+      "channel": "La fin",
+      "title": "La fin — Scène 1",
+      "details": "Un seul participant détecté (Akane Tsukishiro). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_fontaine_marbree_2",
+      "channel": "Fontaine-Marbree",
+      "title": "Fontaine-Marbree — Scène 2",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_kenji_et_aryana_la_suite_1",
+      "channel": "Kenji et Aryana la suite",
+      "title": "Kenji et Aryana la suite — Scène 1",
+      "details": "6 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_couloir_blanc_1",
+      "channel": "Couloir-Blanc",
+      "title": "Couloir-Blanc — Scène 1",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_maison_de_velours_1",
+      "channel": "Maison-de-Velours",
+      "title": "Maison-de-Velours — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_rez_de_chausse_1",
+      "channel": "Rez-de-Chausse",
+      "title": "Rez-de-Chausse — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_etage_1",
+      "channel": "Etage",
+      "title": "Etage — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_agora_des_reines_2_1",
+      "channel": "Agora des Reines 2",
+      "title": "Agora des Reines 2 — Scène 1",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_agora_des_reines_2_1",
+      "channel": "Agora des Reines 2",
+      "title": "Agora des Reines 2 — Scène 1",
+      "details": "Un seul participant détecté (Septimus Kales). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_agora_des_reines_2_1",
+      "channel": "Agora des Reines 2",
+      "title": "Agora des Reines 2 — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_tribut_des_sages_1",
+      "channel": "Tribut-des-sages",
+      "title": "Tribut-des-sages — Scène 1",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_tribut_des_sages_1",
+      "channel": "Tribut-des-sages",
+      "title": "Tribut-des-sages — Scène 1",
+      "details": "Un seul participant détecté (Kanta). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_la_balafre_2",
+      "channel": "La-Balafre",
+      "title": "La-Balafre — Scène 2",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_adelina_magon_1",
+      "channel": "Adelina Magon",
+      "title": "Adelina Magon — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_avenue_des_armuriers_2",
+      "channel": "Avenue-des-armuriers",
+      "title": "Avenue-des-armuriers — Scène 2",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_nouveau_jour_nouvelle_aventure_1",
+      "channel": "Nouveau jour Nouvelle aventure",
+      "title": "Lewis-Phoebe d'Ashbourne",
+      "details": "7 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_verger_des_p_ch_s_2",
+      "channel": "Verger-des-Pêchés",
+      "title": "Verger-des-Pêchés — Scène 2",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_verger_des_p_ch_s_2",
+      "channel": "Verger-des-Pêchés",
+      "title": "Verger-des-Pêchés — Scène 2",
+      "details": "Un seul participant détecté (Aryanna Erhendil). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_hall_des_fetes_1",
+      "channel": "Hall-Des-Fetes",
+      "title": "Hall-Des-Fetes — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_rouge_et_le_noir_1",
+      "channel": "Le-Rouge-et-Le-Noir",
+      "title": "Le-Rouge-et-Le-Noir — Scène 1",
+      "details": "Un seul participant détecté (Kenji Takahashi). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_bras_de_fer_1",
+      "channel": "Le-Bras-de-Fer",
+      "title": "Le-Bras-de-Fer — Scène 1",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_bras_de_fer_1",
+      "channel": "Le-Bras-de-Fer",
+      "title": "Le-Bras-de-Fer — Scène 1",
+      "details": "Un seul participant détecté (Magon baldor Death). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_l_epicurien_1",
+      "channel": "L-Epicurien",
+      "title": "L-Epicurien — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_le_bar_des_lions_1",
+      "channel": "Le-Bar-des-Lions",
+      "title": "Le-Bar-des-Lions — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_le_coin_d_antan_1",
+      "channel": "Le-Coin-d-Antan",
+      "title": "Le-Coin-d-Antan — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_17_1",
+      "channel": "Le-17",
+      "title": "Le-17 — Scène 1",
+      "details": "Un seul participant détecté (Nick Sol). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_cantine_marbree_3",
+      "channel": "Cantine-marbree",
+      "title": "Cantine-marbree — Scène 3",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_la_taniere_de_l_ours_1",
+      "channel": "La-Taniere-de-l-Ours",
+      "title": "La-Taniere-de-l-Ours — Scène 1",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_la_taniere_de_l_ours_1",
+      "channel": "La-Taniere-de-l-Ours",
+      "title": "La-Taniere-de-l-Ours — Scène 1",
+      "details": "Un seul participant détecté (Iscarioth). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_place_de_grandpalais_2",
+      "channel": "Place-de-Grandpalais",
+      "title": "Place-de-Grandpalais — Scène 2",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_port_du_levant_3",
+      "channel": "Port-du-Levant",
+      "title": "Port-du-Levant — Scène 3",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_avenue_des_armuriers_3",
+      "channel": "Avenue-des-armuriers",
+      "title": "Avenue-des-armuriers — Scène 3",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_avenue_des_armuriers_3",
+      "channel": "Avenue-des-armuriers",
+      "title": "Avenue-des-armuriers — Scène 3",
+      "details": "Un seul participant détecté (Okayama). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "SUSPICIOUS_ACTOR_NAME",
+      "severity": "LOW",
+      "scene_id": "scene_grande_salle_porcelaine_2",
+      "channel": "Grande-salle-porcelaine",
+      "title": "Grande-salle-porcelaine — Scène 2",
+      "details": "Nom d'acteur suspect ou générique détecté: 'Oeil'"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_il__tait_une_fois_une_princesse_et_sa_chevaleresse_sur_un_terrain_d_entra_nement_1",
+      "channel": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement",
+      "title": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_fontaine_marbr_e_1",
+      "channel": "Fontaine-Marbrée",
+      "title": "Fontaine-Marbrée — Scène 1",
+      "details": "4 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "HIGH",
+      "scene_id": "scene_serre_de_lune_2",
+      "channel": "Serre-de-lune",
+      "title": "Serre-de-lune — Scène 2",
+      "details": "Scène avec seulement 1 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_serre_de_lune_2",
+      "channel": "Serre-de-lune",
+      "title": "Serre-de-lune — Scène 2",
+      "details": "Un seul participant détecté (Maëll Fol'Dun). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_un_d_but_de_soir_e___la_serre_de_lune_1",
+      "channel": "Un début de soirée à la serre de lune",
+      "title": "Un début de soirée à la serre de lune — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_hall_des_f_tes_1",
+      "channel": "Hall-Des-Fêtes",
+      "title": "Hall-Des-Fêtes — Scène 1",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_pont_des_deux_4",
+      "channel": "Pont-des-Deux",
+      "title": "Pont-des-Deux — Scène 4",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_terrains_nacr_s_2",
+      "channel": "Terrains-Nacrés",
+      "title": "Terrains-Nacrés — Scène 2",
+      "details": "Scène courte avec seulement 4 messages."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_biblioth_que_azure_3",
+      "channel": "Bibliothèque-Azure",
+      "title": "Bibliothèque-Azure — Scène 3",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_biblioth_que_azure_3",
+      "channel": "Bibliothèque-Azure",
+      "title": "Bibliothèque-Azure — Scène 3",
+      "details": "Un seul participant détecté (Lucia Fiorella). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_verger_des_p_ch_s_3",
+      "channel": "Verger-des-Pêchés",
+      "title": "Verger-des-Pêchés — Scène 3",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_verger_des_p_ch_s_3",
+      "channel": "Verger-des-Pêchés",
+      "title": "Verger-des-Pêchés — Scène 3",
+      "details": "Un seul participant détecté (Aryanna Erhendil). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_sc_ne_kal_s_javus_1",
+      "channel": "Scène Kalès JAVUS",
+      "title": "Scène Kalès JAVUS — Scène 1",
+      "details": "Un seul participant détecté (Septimus Kales). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_brume_de_soie_1",
+      "channel": "Brume de Soie",
+      "title": "Brume de Soie — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_guet_apens_1",
+      "channel": "Guet-apens",
+      "title": "Guet-apens — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_ar_ne_1",
+      "channel": "Arène",
+      "title": "Arène — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_sc_ne_lumia_ivara_1",
+      "channel": "Scène Lumia Ivara",
+      "title": "Scène Lumia Ivara — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_cours_fleurie_2",
+      "channel": "Cours-Fleurie",
+      "title": "Cours-Fleurie — Scène 2",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_avenue_des_armuriers_4",
+      "channel": "Avenue-des-armuriers",
+      "title": "Avenue-des-armuriers — Scène 4",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_la_balafre_3",
+      "channel": "La-Balafre",
+      "title": "La-Balafre — Scène 3",
+      "details": "8 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_ils_ne_souhaitent_qu_une_seule_chose_la_paix_1",
+      "channel": "Ils ne souhaitent qu'une seule chose La paix",
+      "title": "Ils ne souhaitent qu'une seule chose La paix — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_parc_des_cardinaux_3",
+      "channel": "Parc-des-Cardinaux",
+      "title": "Parc-des-Cardinaux — Scène 3",
+      "details": "7 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_sous_sol_1",
+      "channel": "Sous-Sol",
+      "title": "Sous-Sol — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_salon_1",
+      "channel": "Salon",
+      "title": "Salon — Scène 1",
+      "details": "Scène courte avec seulement 4 messages."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_salon_1",
+      "channel": "Salon",
+      "title": "Salon — Scène 1",
+      "details": "Un seul participant détecté (Kenji Takahashi). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_pont_des_deux_6",
+      "channel": "Pont-des-Deux",
+      "title": "Pont-des-Deux — Scène 6",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_verger_des_p_ch_s_4",
+      "channel": "Verger-des-Pêchés",
+      "title": "Verger-des-Pêchés — Scène 4",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_terrains_nacr_s_3",
+      "channel": "Terrains-Nacrés",
+      "title": "Terrains-Nacrés — Scène 3",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_armurerie_ecarlate_1",
+      "channel": "Armurerie-Ecarlate",
+      "title": "Armurerie-Ecarlate — Scène 1",
+      "details": "5 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_salle_de_r_veil_2",
+      "channel": "Salle de Réveil",
+      "title": "Salle de Réveil — Scène 2",
+      "details": "Un seul participant détecté (Myrea M). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_fontaine_marbr_e_2",
+      "channel": "Fontaine-Marbrée",
+      "title": "Fontaine-Marbrée — Scène 2",
+      "details": "Un seul participant détecté (Alieny). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_terrasse_couverte_1",
+      "channel": "Terrasse-couverte",
+      "title": "Terrasse-couverte — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "LOW_MESSAGES",
+      "severity": "LOW",
+      "scene_id": "scene_portail_ivoire_3",
+      "channel": "Portail-Ivoire",
+      "title": "Portail-Ivoire — Scène 3",
+      "details": "Scène courte avec seulement 3 messages."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_portail_ivoire_3",
+      "channel": "Portail-Ivoire",
+      "title": "Portail-Ivoire — Scène 3",
+      "details": "Un seul participant détecté (Katelynn Hoffmann). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_cantine_marbr_e_1",
+      "channel": "Cantine-marbrée",
+      "title": "Cantine-marbrée — Scène 1",
+      "details": "Un seul participant détecté (Alieny). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_triple_a_asior___akane___aryana_1",
+      "channel": "TRIPLE A Asior - Akane - Aryana",
+      "title": "TRIPLE A Asior - Akane - Aryana — Scène 1",
+      "details": "1 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "MEDIUM",
+      "scene_id": "scene_salle_d_alchimie_1",
+      "channel": "Salle-d’Alchimie",
+      "title": "Salle-d’Alchimie — Scène 1",
+      "details": "Scène avec seulement 2 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_salle_d_alchimie_1",
+      "channel": "Salle-d’Alchimie",
+      "title": "Salle-d’Alchimie — Scène 1",
+      "details": "Un seul participant détecté (Aryanna Erhendil). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_objectif_faire_exploser_la_balafre_1",
+      "channel": "Objectif faire exploser la Balafre",
+      "title": "Objectif faire exploser la Balafre — Scène 1",
+      "details": "3 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "HRP_LEAK",
+      "severity": "LOW",
+      "scene_id": "scene_sc_ne_kal_s_kalem_1",
+      "channel": "Scène Kalès Kalem",
+      "title": "Scène Kalès Kalem — Scène 1",
+      "details": "2 message(s) contiennent encore des résidus HRP, excuses ou pings."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_jardin_de_quartz_4",
+      "channel": "Jardin-de-Quartz",
+      "title": "Jardin-de-Quartz — Scène 4",
+      "details": "Un seul participant détecté (Æther). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "CRITICAL_LOW_MESSAGES",
+      "severity": "HIGH",
+      "scene_id": "scene_le_berceau_1",
+      "channel": "Le-Berceau",
+      "title": "Le-Berceau — Scène 1",
+      "details": "Scène avec seulement 1 message(s) (souvent une scène avortée, un message système ou un faux découpage)."
+    },
+    {
+      "type": "SINGLE_ACTOR",
+      "severity": "MEDIUM",
+      "scene_id": "scene_le_berceau_1",
+      "channel": "Le-Berceau",
+      "title": "Le-Berceau — Scène 1",
+      "details": "Un seul participant détecté (Iscarioth). Est-ce un monologue RP, une scène solo ou un second joueur non identifié ?"
+    },
+    {
+      "type": "DUPLICATE_CHANNEL_VARIANTS",
+      "severity": "HIGH",
+      "scene_id": "N/A",
+      "channel": "Terrain-d-entrainement, Terrain-d-entraînement",
+      "title": "Variantes de salon dupliquées",
+      "details": "Doublon de salon lié aux accents ou à la casse: ['Terrain-d-entrainement', 'Terrain-d-entraînement']"
+    },
+    {
+      "type": "DUPLICATE_CHANNEL_VARIANTS",
+      "severity": "HIGH",
+      "scene_id": "N/A",
+      "channel": "Terrains-Nacres, Terrains-Nacrés",
+      "title": "Variantes de salon dupliquées",
+      "details": "Doublon de salon lié aux accents ou à la casse: ['Terrains-Nacres', 'Terrains-Nacrés']"
+    },
+    {
+      "type": "DUPLICATE_CHANNEL_VARIANTS",
+      "severity": "HIGH",
+      "scene_id": "N/A",
+      "channel": "Fontaine-Marbree, Fontaine-Marbrée",
+      "title": "Variantes de salon dupliquées",
+      "details": "Doublon de salon lié aux accents ou à la casse: ['Fontaine-Marbree', 'Fontaine-Marbrée']"
+    },
+    {
+      "type": "DUPLICATE_CHANNEL_VARIANTS",
+      "severity": "HIGH",
+      "scene_id": "N/A",
+      "channel": "Cantine-marbree, Cantine-marbrée",
+      "title": "Variantes de salon dupliquées",
+      "details": "Doublon de salon lié aux accents ou à la casse: ['Cantine-marbree', 'Cantine-marbrée']"
+    },
+    {
+      "type": "DUPLICATE_CHANNEL_VARIANTS",
+      "severity": "HIGH",
+      "scene_id": "N/A",
+      "channel": "Hall-Des-Fetes, Hall-Des-Fêtes",
+      "title": "Variantes de salon dupliquées",
+      "details": "Doublon de salon lié aux accents ou à la casse: ['Hall-Des-Fetes', 'Hall-Des-Fêtes']"
+    }
+  ]
+}

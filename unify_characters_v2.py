@@ -1,0 +1,239 @@
+import json
+import sys
+import re
+import unicodedata
+import os
+
+if sys.platform.startswith('win'):
+    try:
+        sys.stdout.reconfigure(encoding='utf-8')
+    except AttributeError:
+        pass
+
+# Discord Faction Role IDs mapping rules
+FACTION_ROLE_IDS = {
+    1467532532261322813: ("L'œil", "#cbd5e1"),
+    1327646236760608802: ("Cercle d'Azur", "#3b82f6"),
+    1327646236760608803: ("La Garde Pourpre", "#ef4444"),
+    1327646236760608801: ("Voile d'Ivoire", "#fef08a"),
+    1475090340557095003: ("Sans guilde", "#eab308")
+}
+
+# Administrative moderation bots to exclude completely from RP
+SYSTEM_MODERATION_BOTS = {"carl-bot", "dyno", "mee6", "ticket tool", "ticket-tool", "disboard", "raidprotect", "jockie", "koya"}
+
+# Explicit PNJ / Lore NPCs keywords or exact names
+PNJ_NAMES = {
+    "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur", "Oeil", "L'Oeil", "L'œil",
+    "Inzu Sravel", "Hector Swaft", "Milli Enga", "Tsutomu Yamamoto",
+    "Emil Camille Rebenok", "Rias Valdor", "Lewis-Phoebe d'Ashbourne",
+    "Léonore Edelweiss", "Markus Law", "Kalem Crowley", "Eldren Gates",
+    "Yunah Aoi Enjaku", "Astreüs Mylonas", "Jin Alurantes", "Par-delà le Voile",
+    "Le Monarque du Silence", "L'Infranchissable", "La Déesse-Mère"
+}
+
+# Main canonical mapping rules for names
+CANONICAL_MAP = {
+    # 35 Main Characters
+    "adelina del fuego": "Adelina Del Fuego", "adelina del fuego mari": "Adelina Del Fuego", "marigold": "Adelina Del Fuego", "_marigld": "Adelina Del Fuego",
+    "aegnor othar": "Aegnor Othar", "tcizab": "Aegnor Othar", "tcizabaegnor othar": "Aegnor Othar", "tcizab aegnor othar": "Aegnor Othar",
+    "akane tsukishiro": "Akane Tsukishiro", "tsukishiro akane": "Akane Tsukishiro", "doppelganger2830": "Akane Tsukishiro",
+    "arun acharya": "Arun Acharya", "arun acharya freulonlezouin": "Arun Acharya", "freulonlezouinzouin": "Arun Acharya", "nyson": "Arun Acharya",
+    "aryanna erhendil": "Aryanna Erhendil", "aryana erhendil": "Aryanna Erhendil", "aryana erhendil taurielle": "Aryanna Erhendil", "taurielle": "Aryanna Erhendil", "tutaurielle": "Aryanna Erhendil",
+    "asior eveus": "Asior Eveus", "eopia asior eveus": "Asior Eveus", "eopia": "Asior Eveus",
+    "bozdag dermirhan": "Bozdag Dermirhan", "clipmyr": "Bozdag Dermirhan", "clip demirhan bozdag": "Bozdag Dermirhan",
+    "brutus redwitch": "Brutus Redwitch", "kinoru": "Brutus Redwitch",
+    "cassian ortie": "Cassian Ortie", "chulakita": "Cassian Ortie", "chulak cassian ortie": "Cassian Ortie", "chulaktm": "Cassian Ortie",
+    "frey gudfrodur": "Frey Guðfrøðr", "frey guðfrøðr": "Frey Guðfrøðr", "frey elear": "Frey Guðfrøðr", "frey - elear": "Frey Guðfrøðr", "elessai": "Frey Guðfrøðr",
+    "hedwig von glanzestern": "Hedwig Von Glanzestern", "twisted_servant": "Hedwig Von Glanzestern",
+    "idelmee cadree": "Idelmée Cadree", "idelmee cadere": "Idelmée Cadree", "momo idelmee cadere": "Idelmée Cadree", "momotarie": "Idelmée Cadree", "momo": "Idelmée Cadree",
+    "iscarioth": "Iscarioth", "zaes ley vaelric": "Iscarioth", "ley vaelric": "Iscarioth", "zaes": "Iscarioth", "zaaes": "Iscarioth",
+    "isis faerieth": "Isis Faerieth", "etoile isis faerieth": "Isis Faerieth", "etoile": "Isis Faerieth", "letoiledeminuit": "Isis Faerieth",
+    "ivara luella": "Ivara Luella", "ivara luell": "Ivara Luella", "elisabeeh ivara luell": "Ivara Luella", "elisabeeeeh": "Ivara Luella",
+    "jasp nah": "Jasp Nah", "nah jasp": "Jasp Nah",
+    "junko anarchy": "Junko Anarchy", "luden junko anarchy": "Junko Anarchy", "luden": "Junko Anarchy", "luden_chan": "Junko Anarchy",
+    "katelynn hoffmann": "Katelynn Hoffmann", "katelyn hoffmann": "Katelynn Hoffmann", "yuu katelyn hoffmann": "Katelynn Hoffmann", "its_yuu": "Katelynn Hoffmann", "yuu": "Katelynn Hoffmann",
+    "kenji takahashi": "Kenji Takahashi", "kenji takahashi heavil": "Kenji Takahashi", "heavil4444": "Kenji Takahashi", "heavil": "Kenji Takahashi",
+    "lewis bamer": "Lewis Bamer", "lewis bamer historious": "Lewis Bamer",
+    "loyis delacroix": "Loyis Delacroix", "happy loyis delacroix": "Loyis Delacroix", "happy_is_happy": "Loyis Delacroix", "happy": "Loyis Delacroix",
+    "lucia fiorella": "Lucia Fiorella", "ju lucia bunny fiorella": "Lucia Fiorella", "juju_la_best": "Lucia Fiorella",
+    "lumia faendharts": "Lumia Faendharts", "lumia lum faendhartslumiere": "Lumia Faendharts", "lueur_": "Lumia Faendharts",
+    "maell fol'dun": "Maëll Fol'Dun", "mael fol'dun": "Maëll Fol'Dun", "mael fol'dun astyell": "Maëll Fol'Dun", "astyell": "Maëll Fol'Dun",
+    "myrea m": "Myrea M", "khem myrea m": "Myrea M", "khemm": "Myrea M", "khem": "Myrea M",
+    "nick sol": "Nick Sol", "prince nick sol": "Nick Sol", "harderbae": "Nick Sol", "_aura_": "Nick Sol",
+    "ragde umbras": "Ragde Umbras", "personnes_10": "Ragde Umbras", "personne": "Ragde Umbras",
+    "red roadman": "Red Roadman", "red": "Red Roadman", "jivwd": "Red Roadman",
+    "ren urugaki": "Ren Urugaki", "noci urugaki ren": "Ren Urugaki", "urugaki ren": "Ren Urugaki", "nociferoce": "Ren Urugaki", "noci": "Ren Urugaki",
+    "selena moon": "Selena Moon", "seléna moon": "Selena Moon", "gwenphasehikena": "Selena Moon",
+    "septimus kales": "Septimus Kales", "ryo kales septimus": "Septimus Kales",
+    "tarrion tombetoile": "Tarrion Tombetoile", "tarrion tombetoile biboon": "Tarrion Tombetoile", "biboon": "Tarrion Tombetoile",
+    "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris", "lys dandelion": "Tenebris", "lys": "Tenebris", "lys dandelion / tenebris": "Tenebris",
+    "okayama": "Okayama", "raien shogo enjaku blacksheep": "Okayama", "raien shogo enjaku": "Okayama", "shogo enjaku": "Okayama", "raien": "Okayama", "vesper": "Okayama", "okayama [ash]": "Okayama", "𝓞𝓴𝓪𝔂𝓪𝓶𝓪 [ASH]": "Okayama",
+    "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
+    "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
+
+    # Additional lore & NPC characters
+    "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
+    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku",
+    "kuikui - astreus mylonas": "Astreüs Mylonas", "astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
+    "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
+    "inzu sravel": "Inzu Sravel", "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel",
+    "hector swaft": "Hector Swaft", "hector swaft - mage de rang 3": "Hector Swaft",
+    "milli enga": "Milli Enga", "milli enga - mange de rang 2": "Milli Enga",
+    "tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto",
+    "emil camille rebenok": "Emil Camille Rebenok", "indominushunter": "Emil Camille Rebenok",
+    "rias valdor": "Rias Valdor", "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne",
+    "leonore edelweiss": "Léonore Edelweiss", "markus law": "Markus Law", "kalem crowley": "Kalem Crowley", "eldren gates": "Eldren Gates",
+    "par-dela le voile": "Oeil", "par dela le voile": "Oeil", "par-delà le voile": "Oeil", "par delà le voile": "Oeil",
+    "que le seigneur ouvre": "Oeil", "le seigneur ouvre": "Oeil",
+
+    # System & special narrators
+    "le conseiller": "LE CONSEILLER", "conseiller": "LE CONSEILLER",
+    "owl le messager": "OWL LE MESSAGER", "owl": "OWL LE MESSAGER",
+    "l'oeil": "Oeil", "l'œil": "Oeil", "loeil": "Oeil", "lœil": "Oeil", "oeil": "Oeil",
+    "les missives": "LES MISSIVES", "missive": "LES MISSIVES"
+}
+
+# Roles strictly assigned based on Discord Role IDs + Separate PNJ role
+CHARACTER_METADATA_V2 = {
+    "Adelina Del Fuego": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Aegnor Othar": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Akane Tsukishiro": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Arun Acharya": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Aryanna Erhendil": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Asior Eveus": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Bozdag Dermirhan": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Brutus Redwitch": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Cassian Ortie": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Frey Guðfrøðr": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Hedwig Von Glanzestern": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Idelmée Cadree": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Iscarioth": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
+    "Isis Faerieth": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Ivara Luella": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Jasp Nah": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Junko Anarchy": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Katelynn Hoffmann": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Kenji Takahashi": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Lewis Bamer": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Loyis Delacroix": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Lucia Fiorella": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Lumia Faendharts": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Maëll Fol'Dun": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Myrea M": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Nick Sol": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Okayama": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Ragde Umbras": {"role": "Indéfini", "color": "#94a3b8", "status": "MAIN_PC"},
+    "Red Roadman": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Ren Urugaki": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Selena Moon": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Septimus Kales": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Tarrion Tombetoile": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Tenebris": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
+    "Velka Valcyrion": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
+
+    # System & NPCs (Role explicitely 'PNJ')
+    "Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "L'Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "OWL LE MESSAGER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "LES MISSIVES": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "Par-delà le Voile": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "Inzu Sravel": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Milli Enga": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Tsutomu Yamamoto": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Emil Camille Rebenok": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Lewis-Phoebe d'Ashbourne": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Léonore Edelweiss": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Markus Law": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Kalem Crowley": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
+    "Eldren Gates": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"}
+}
+
+VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "Sans guilde", "PNJ"}
+
+def clean_key_v2(s):
+    if not s: return ""
+    s = unicodedata.normalize('NFD', str(s).lower())
+    s = re.sub(r'[\u0300-\u036f]', '', s)
+    return re.sub(r'[^a-z0-9]', '', s)
+
+LOOKUP_V2 = {clean_key_v2(k): v for k, v in CANONICAL_MAP.items()}
+
+def get_canonical_name_v2(raw_name):
+    if not raw_name:
+        return "Narrateur"
+
+    raw_str = str(raw_name).strip()
+    raw_lower = raw_str.lower()
+
+    if any(m_bot in raw_lower for m_bot in SYSTEM_MODERATION_BOTS):
+        return "Narrateur"
+    
+    match = re.search(r'\((.*?)\)', raw_str)
+    if match and len(match.group(1).strip()) >= 3:
+        inside = match.group(1).strip()
+        ck_inside = clean_key_v2(inside)
+        if ck_inside in LOOKUP_V2:
+            return LOOKUP_V2[ck_inside]
+
+    name_clean = re.sub(r'\[.*?\]', '', raw_str).strip()
+    ck = clean_key_v2(name_clean)
+
+    if ck in LOOKUP_V2:
+        return LOOKUP_V2[ck]
+
+    for k, v in LOOKUP_V2.items():
+        if len(k) >= 4 and (k in ck or ck in k):
+            return v
+
+    return name_clean if name_clean else "Narrateur"
+
+def build_unified_characters_dict_v2(all_scenes):
+    scene_actors_counts = {}
+    scene_messages_counts = {}
+
+    for scene in all_scenes:
+        actors = scene.get('actors', [])
+        for act in actors:
+            scene_actors_counts[act] = scene_actors_counts.get(act, 0) + 1
+
+        for msg in scene.get('messages', []):
+            author = msg.get('author')
+            if author:
+                scene_messages_counts[author] = scene_messages_counts.get(author, 0) + 1
+
+    chars_dict = {}
+
+    for name, meta in CHARACTER_METADATA_V2.items():
+        role = meta["role"]
+        color = meta["color"]
+        chars_dict[name] = {
+            "name": name,
+            "role": role,
+            "color": color,
+            "status": meta["status"],
+            "totalScenes": scene_actors_counts.get(name, 0),
+            "totalMessages": scene_messages_counts.get(name, 0)
+        }
+
+    for act, s_count in scene_actors_counts.items():
+        if act not in chars_dict:
+            is_pnj = act in PNJ_NAMES or "pnj" in act.lower() or "narrat" in act.lower() or "bot" in act.lower()
+            role = "PNJ" if is_pnj else "Indéfini"
+            color = "#c084fc" if is_pnj else "#94a3b8"
+            chars_dict[act] = {
+                "name": act,
+                "role": role,
+                "color": color,
+                "status": "RECURRING_NPC",
+                "totalScenes": s_count,
+                "totalMessages": scene_messages_counts.get(act, 0)
+            }
+
+    return chars_dict

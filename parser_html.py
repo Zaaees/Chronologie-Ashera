@@ -352,8 +352,8 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
     return True
 
 SYSTEM_BOTS = [
-    'narrateur', 'narration', 'draftbot', 'ticket tool', 'tupperbox',
-    'raidprotect', 'sakuraki', 'jockie', 'liste du rp fr', 'profile', 'koya'
+    'carl-bot', 'dyno', 'mee6', 'ticket tool', 'ticket-tool',
+    'disboard', 'raidprotect', 'sakuraki', 'jockie', 'koya', 'draftbot'
 ]
 
 from ai_narrative_segmenter import segment_messages_into_scenes_ai

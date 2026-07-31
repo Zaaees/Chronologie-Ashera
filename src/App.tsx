@@ -216,7 +216,22 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
   let codeBlockLines: string[] = [];
 
   lines.forEach((line, lineIdx) => {
-    if (line.trim().startsWith('```')) {
+    const trimmed = line.trim();
+
+    if (trimmed.startsWith('```')) {
+      // Prise en charge des blocs de code mono-ligne (ex: ```L'aîné```)
+      if (!inCodeBlock && trimmed.endsWith('```') && trimmed.length >= 6) {
+        const codeContent = trimmed.slice(3, -3).trim();
+        if (codeContent) {
+          renderedElements.push(
+            <pre key={`code-${lineIdx}`} className="bg-[#1e1f22] border border-slate-700/60 p-2.5 rounded text-xs font-mono text-slate-200 my-1.5 overflow-x-auto whitespace-pre-wrap select-text">
+              {codeContent}
+            </pre>
+          );
+        }
+        return;
+      }
+
       if (inCodeBlock) {
         const codeContent = codeBlockLines.join('\n');
         renderedElements.push(
@@ -237,8 +252,8 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       return;
     }
 
-    if (line.trim().startsWith('-# ')) {
-      const subContent = line.trim().slice(3);
+    if (trimmed.startsWith('-# ')) {
+      const subContent = trimmed.slice(3);
       renderedElements.push(
         <div key={`sub-${lineIdx}`} className="text-[11px] text-[#949ba4] font-sans leading-tight my-0.5">
           {parseInlineDiscord(subContent, searchQuery)}
@@ -292,6 +307,16 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
       </React.Fragment>
     );
   });
+
+  // Restitution de tout bloc de code non fermé en fin de message
+  if (inCodeBlock && codeBlockLines.length > 0) {
+    const codeContent = codeBlockLines.join('\n');
+    renderedElements.push(
+      <pre key="code-unclosed" className="bg-[#1e1f22] border border-slate-700/60 p-2.5 rounded text-xs font-mono text-slate-200 my-1.5 overflow-x-auto whitespace-pre-wrap select-text">
+        {codeContent}
+      </pre>
+    );
+  }
 
   return <>{renderedElements}</>;
 }

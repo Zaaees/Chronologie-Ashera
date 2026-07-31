@@ -153,8 +153,8 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
             }
 
 SYSTEM_BOTS = [
-    'narrateur', 'narration', 'draftbot', 'ticket tool', 'tupperbox',
-    'raidprotect', 'sakuraki', 'jockie', 'liste du rp fr', 'profile', 'koya'
+    'carl-bot', 'dyno', 'mee6', 'ticket tool', 'ticket-tool',
+    'disboard', 'raidprotect', 'sakuraki', 'jockie', 'koya', 'draftbot'
 ]
 
 def is_meaningful_rp_content(content, embed_title='', embed_description=''):
@@ -194,7 +194,8 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
 LEGITIMATE_PNJ_KEYWORDS = [
     'javus', 'conseiller', 'owl', 'messager', 'missive', 'les missives',
     'monarque', 'infranchissable', 'déesse-mère', 'deesse-mere', 'prince lunaire',
-    'prince azur', 'prince du vide', 'roi des rampants', 'nephilim'
+    'prince azur', 'prince du vide', 'roi des rampants', 'nephilim',
+    'oeil', 'l\'oeil', 'l\'œil', 'par-delà le voile', 'que le seigneur ouvre', 'narrateur'
 ]
 
 def get_character_guild_and_color(actor_name):
@@ -206,8 +207,8 @@ def get_character_guild_and_color(actor_name):
         return None, None, None
 
     # 2. PNJ RP officiels
-    if any(pnj_kw in name_lower for pnj_kw in LEGITIMATE_PNJ_KEYWORDS) or clean_name in ['JAVUS', 'LE CONSEILLER', 'OWL LE MESSAGER', 'LES MISSIVES', 'LE MONARQUE DU SILENCE', 'L\'Infranchissable', 'La Déesse-Mère']:
-        return "PNJ", "#a855f7", "char_pnj"
+    if any(pnj_kw in name_lower for pnj_kw in LEGITIMATE_PNJ_KEYWORDS) or clean_name in ['JAVUS', 'LE CONSEILLER', 'OWL LE MESSAGER', 'LES MISSIVES', 'LE MONARQUE DU SILENCE', 'L\'Infranchissable', 'La Déesse-Mère', 'Oeil', 'L\'Oeil']:
+        return "PNJ", "#c084fc", "char_pnj"
 
     # 3. Vérifier si une faction a été détectée via les rôles Discord du membre
     if clean_name in detected_member_factions:
