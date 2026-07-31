@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "2.0-ULTIMATE",
-    "generated_at": "2026-07-31T11:07:26.446284",
+    "generated_at": "2026-07-31T11:16:04.835277",
     "total_scenes": 147,
     "total_characters": 76
   },
@@ -462,14 +462,6 @@
       "totalScenes": 3,
       "totalMessages": 5
     },
-    "Star": {
-      "name": "Star",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "RECURRING_NPC",
-      "totalScenes": 5,
-      "totalMessages": 26
-    },
     "Jin Alurantes": {
       "name": "Jin Alurantes",
       "role": "PNJ",
@@ -477,6 +469,14 @@
       "status": "RECURRING_NPC",
       "totalScenes": 20,
       "totalMessages": 138
+    },
+    "Star": {
+      "name": "Star",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "RECURRING_NPC",
+      "totalScenes": 5,
+      "totalMessages": 26
     },
     "Condamne": {
       "name": "Condamne",
@@ -542,14 +542,6 @@
       "totalScenes": 1,
       "totalMessages": 5
     },
-    "Lysander Armlet Jlaus": {
-      "name": "Lysander Armlet Jlaus",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "RECURRING_NPC",
-      "totalScenes": 1,
-      "totalMessages": 4
-    },
     "Nyx": {
       "name": "Nyx",
       "role": "Indéfini",
@@ -557,6 +549,14 @@
       "status": "RECURRING_NPC",
       "totalScenes": 8,
       "totalMessages": 33
+    },
+    "Lysander Armlet Jlaus": {
+      "name": "Lysander Armlet Jlaus",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "RECURRING_NPC",
+      "totalScenes": 1,
+      "totalMessages": 4
     },
     "Chapellet Hana": {
       "name": "Chapellet Hana",
@@ -623,11 +623,11 @@
       "channel_clean": "Kantine",
       "title": "Kantine — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Magon baldor Death",
         "Isis Faerieth",
-        "Magon baldor Death"
+        "Akane Tsukishiro"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Magon baldor Death",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T12:40:00Z",
@@ -754,8 +754,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 2,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -768,8 +768,8 @@
         "Asior Eveus",
         "Narrateur",
         "Emil Camille Rebenok",
-        "Red Roadman",
-        "Saphizu Alizee Vidtz"
+        "Saphizu Alizee Vidtz",
+        "Red Roadman"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -880,16 +880,16 @@
       "channel_clean": "Arène-Hurlante",
       "title": "Arène-Hurlante — Scène 1",
       "actors": [
+        "Jin Alurantes",
         "Star",
-        "Loyis Delacroix",
-        "Brutus Redwitch",
         "Isis Faerieth",
-        "Aryanna Erhendil",
         "Inzu Sravel",
+        "Aryanna Erhendil",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Loyis Delacroix"
       ],
-      "main_actor": "Star",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T14:01:52Z",
@@ -1304,11 +1304,11 @@
         }
       ],
       "faction_distribution": {
+        "PNJ": 2,
         "Indéfini": 1,
-        "Sans guilde": 1,
-        "La Garde Pourpre": 3,
         "Cercle d'Azur": 1,
-        "PNJ": 2
+        "La Garde Pourpre": 3,
+        "Sans guilde": 1
       }
     },
     {
@@ -1318,11 +1318,11 @@
       "channel_clean": "Lewis Phoebe Ashbourne",
       "title": "Lewis Phoebe Ashbourne — Scène 1",
       "actors": [
-        "Condamne",
         "Jin Alurantes",
+        "Condamne",
         "Inzu Sravel"
       ],
-      "main_actor": "Condamne",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T15:04:21Z",
@@ -1377,8 +1377,8 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "PNJ": 2
+        "PNJ": 2,
+        "Indéfini": 1
       }
     },
     {
@@ -1388,11 +1388,11 @@
       "channel_clean": "Brutus Redwitch",
       "title": "Brutus Redwitch — Scène 1",
       "actors": [
-        "Condamne",
         "Brutus Redwitch",
+        "Condamne",
         "Inzu Sravel"
       ],
-      "main_actor": "Condamne",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T15:04:58Z",
@@ -1447,8 +1447,8 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
         "La Garde Pourpre": 1,
+        "Indéfini": 1,
         "PNJ": 1
       }
     },
@@ -1460,8 +1460,8 @@
       "title": "Hana Chapellet — Scène 1",
       "actors": [
         "Star",
-        "Condamne",
-        "Inzu Sravel"
+        "Inzu Sravel",
+        "Condamne"
       ],
       "main_actor": "Star",
       "is_solo": false,
@@ -1541,10 +1541,10 @@
       "channel_clean": "Eldritch Kineya",
       "title": "Eldritch Kineya — Scène 1",
       "actors": [
-        "Jean Hazagi",
-        "Inzu Sravel"
+        "Inzu Sravel",
+        "Jean Hazagi"
       ],
-      "main_actor": "Jean Hazagi",
+      "main_actor": "Inzu Sravel",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T15:05:54Z",
@@ -1581,8 +1581,8 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -1593,8 +1593,8 @@
       "title": "Sol Nick — Scène 1",
       "actors": [
         "Nick Sol",
-        "Condamne",
-        "Inzu Sravel"
+        "Inzu Sravel",
+        "Condamne"
       ],
       "main_actor": "Nick Sol",
       "is_solo": false,
@@ -1682,8 +1682,8 @@
       ],
       "faction_distribution": {
         "La Garde Pourpre": 1,
-        "Indéfini": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -1693,10 +1693,10 @@
       "channel_clean": "Loyis Delacroix",
       "title": "Loyis Delacroix — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Inzu Sravel"
+        "Inzu Sravel",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Inzu Sravel",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T15:06:38Z",
@@ -1769,8 +1769,8 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -1780,10 +1780,10 @@
       "channel_clean": "Terrain-d-entraînement",
       "title": "Terrain-d-entraînement — Scène 1",
       "actors": [
-        "Jasp Nah",
-        "Magon baldor Death"
+        "Magon baldor Death",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Magon baldor Death",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-03T11:44:00Z",
@@ -1832,8 +1832,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -1914,18 +1914,18 @@
       "channel_clean": "Quartier-Ouest",
       "title": "Quartier-Ouest — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Akane Tsukishiro",
         "Kanta",
-        "Kenji Takahashi",
-        "Isis Faerieth",
-        "Katelynn Hoffmann",
+        "Loyis Delacroix",
+        "Jasp Nah",
         "Magon baldor Death",
         "Lucia Fiorella",
-        "Jasp Nah",
-        "Nick Sol"
+        "Isis Faerieth",
+        "Akane Tsukishiro",
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Kanta",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-06T06:01:00Z",
@@ -2184,10 +2184,10 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 3,
-        "Cercle d'Azur": 2,
         "Indéfini": 2,
-        "La Garde Pourpre": 3
+        "Sans guilde": 3,
+        "La Garde Pourpre": 3,
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -2197,11 +2197,11 @@
       "channel_clean": "Parc-des-Cardinaux",
       "title": "Parc-des-Cardinaux — Scène 1",
       "actors": [
+        "Septimus Kales",
         "Okayama",
-        "Grel",
-        "Septimus Kales"
+        "Grel"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Septimus Kales",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-07T09:57:00Z",
@@ -2328,9 +2328,9 @@
         }
       ],
       "faction_distribution": {
+        "La Garde Pourpre": 1,
         "Sans guilde": 1,
-        "Indéfini": 1,
-        "La Garde Pourpre": 1
+        "Indéfini": 1
       }
     },
     {
@@ -2340,15 +2340,15 @@
       "channel_clean": "Lot-De-Maison",
       "title": "Lot-De-Maison — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
         "Kanta",
-        "Isis Faerieth",
+        "Jasp Nah",
         "Magon baldor Death",
         "Lucia Fiorella",
-        "Jasp Nah",
+        "Isis Faerieth",
+        "Akane Tsukishiro",
         "Nick Sol"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Kanta",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-08T11:53:00Z",
@@ -2571,10 +2571,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 2,
         "Indéfini": 2,
+        "La Garde Pourpre": 2,
         "Sans guilde": 1,
-        "La Garde Pourpre": 2
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -2585,9 +2585,9 @@
       "title": "Bibliothèque-Azure — Scène 1",
       "actors": [
         "Asior Eveus",
-        "Lewis Bamer",
         "Emil Camille Rebenok",
         "Saphizu Alizee Vidtz",
+        "Lewis Bamer",
         "Romy"
       ],
       "main_actor": "Asior Eveus",
@@ -2760,9 +2760,9 @@
       ],
       "faction_distribution": {
         "Sans guilde": 1,
-        "Cercle d'Azur": 1,
         "PNJ": 1,
-        "Indéfini": 2
+        "Indéfini": 2,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -2772,12 +2772,12 @@
       "channel_clean": "Brutus Hana",
       "title": "Brutus Hana — Scène 1",
       "actors": [
-        "Star",
-        "Isis Faerieth",
         "Brutus Redwitch",
+        "Isis Faerieth",
+        "Star",
         "Inzu Sravel"
       ],
-      "main_actor": "Star",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-10T05:26:00Z",
@@ -2910,9 +2910,9 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "Cercle d'Azur": 1,
         "La Garde Pourpre": 1,
+        "Cercle d'Azur": 1,
+        "Indéfini": 1,
         "PNJ": 1
       }
     },
@@ -2923,11 +2923,11 @@
       "channel_clean": "Lewis Nick",
       "title": "Lewis Nick — Scène 1",
       "actors": [
-        "Nick Sol",
         "Jin Alurantes",
+        "Nick Sol",
         "Inzu Sravel"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-10T05:26:21Z",
@@ -3024,8 +3024,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "PNJ": 2
+        "PNJ": 2,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -3035,11 +3035,11 @@
       "channel_clean": "Eldritch Loyis",
       "title": "Eldritch Loyis — Scène 1",
       "actors": [
-        "Loyis Delacroix",
+        "Inzu Sravel",
         "Jean Hazagi",
-        "Inzu Sravel"
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Inzu Sravel",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-10T05:26:42Z",
@@ -3082,9 +3082,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
+        "PNJ": 1,
         "Indéfini": 1,
-        "PNJ": 1
+        "Sans guilde": 1
       }
     },
     {
@@ -3094,12 +3094,12 @@
       "channel_clean": "Port-du-Levant",
       "title": "Port-du-Levant — Scène 1",
       "actors": [
+        "Vaelira Faelthorn",
         "Jasp Nah",
         "Okayama",
-        "Vaelira Faelthorn",
         "Vosk Sulyvan"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Vaelira Faelthorn",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-10T08:32:00Z",
@@ -3388,9 +3388,9 @@
         }
       ],
       "faction_distribution": {
+        "Indéfini": 1,
         "La Garde Pourpre": 1,
-        "Sans guilde": 2,
-        "Indéfini": 1
+        "Sans guilde": 2
       }
     },
     {
@@ -3400,14 +3400,14 @@
       "channel_clean": "Boutique",
       "title": "Boutique — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Akane Tsukishiro",
-        "Kenji Takahashi",
+        "Magon baldor Death",
         "Isis Faerieth",
-        "Katelynn Hoffmann",
-        "Magon baldor Death"
+        "Akane Tsukishiro",
+        "Loyis Delacroix",
+        "Kenji Takahashi",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Magon baldor Death",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-13T09:19:00Z",
@@ -3534,10 +3534,10 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 2,
+        "Indéfini": 1,
         "Cercle d'Azur": 2,
-        "La Garde Pourpre": 1,
-        "Indéfini": 1
+        "Sans guilde": 2,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -3547,11 +3547,11 @@
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 1",
       "actors": [
+        "Someone Eucymile Leonite",
         "Jasp Nah",
-        "Okayama",
-        "Someone Eucymile Leonite"
+        "Okayama"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Someone Eucymile Leonite",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-13T11:53:00Z",
@@ -3624,9 +3624,9 @@
         }
       ],
       "faction_distribution": {
+        "Indéfini": 1,
         "La Garde Pourpre": 1,
-        "Sans guilde": 1,
-        "Indéfini": 1
+        "Sans guilde": 1
       }
     },
     {
@@ -3637,11 +3637,11 @@
       "title": "Place-de-Grandpalais — Scène 1",
       "actors": [
         "Someone Eucymile Leonite",
-        "Septimus Kales",
-        "Adelina Del Fuego",
+        "Lydounne",
         "Lucia Fiorella",
         "Aryanna Erhendil",
-        "Lydounne"
+        "Adelina Del Fuego",
+        "Septimus Kales"
       ],
       "main_actor": "Someone Eucymile Leonite",
       "is_solo": false,
@@ -3807,9 +3807,9 @@
       ],
       "faction_distribution": {
         "Indéfini": 2,
+        "Sans guilde": 1,
         "La Garde Pourpre": 2,
-        "Cercle d'Azur": 1,
-        "Sans guilde": 1
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -3820,8 +3820,8 @@
       "title": "Salle de Réveil — Scène 1",
       "actors": [
         "Emil Camille Rebenok",
-        "Loyis Delacroix",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Loyis Delacroix"
       ],
       "main_actor": "Emil Camille Rebenok",
       "is_solo": false,
@@ -3907,11 +3907,11 @@
       "channel_clean": "Cour-des-alchimistes",
       "title": "Cour-des-alchimistes — Scène 1",
       "actors": [
-        "Okayama",
+        "Septimus Kales",
         "Isis Faerieth",
-        "Septimus Kales"
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Septimus Kales",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-16T13:11:00Z",
@@ -3996,9 +3996,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
+        "La Garde Pourpre": 1,
         "Cercle d'Azur": 1,
-        "La Garde Pourpre": 1
+        "Sans guilde": 1
       }
     },
     {
@@ -4008,12 +4008,12 @@
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 1",
       "actors": [
-        "Jasp Nah",
-        "Isis Faerieth",
         "Selena Moon",
+        "Isis Faerieth",
+        "Jasp Nah",
         "Grel"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Selena Moon",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-16T18:12:00Z",
@@ -4152,8 +4152,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
         "Cercle d'Azur": 2,
+        "La Garde Pourpre": 1,
         "Indéfini": 1
       }
     },
@@ -4164,13 +4164,13 @@
       "channel_clean": "Terrains-Nacrés",
       "title": "Terrains-Nacrés — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
-        "Brutus Redwitch",
+        "Jasp Nah",
         "Lewis-Phoebe d'Ashbourne",
         "Aryanna Erhendil",
-        "Jasp Nah"
+        "Akane Tsukishiro",
+        "Brutus Redwitch"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Jasp Nah",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-17T19:20:00Z",
@@ -4663,9 +4663,9 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
         "La Garde Pourpre": 3,
-        "PNJ": 1
+        "PNJ": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -4675,10 +4675,10 @@
       "channel_clean": "Verger-des-Pêchés",
       "title": "Verger-des-Pêchés — Scène 1",
       "actors": [
-        "Star",
-        "Nick Sol"
+        "Nick Sol",
+        "Star"
       ],
-      "main_actor": "Star",
+      "main_actor": "Nick Sol",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T07:17:01Z",
@@ -4739,8 +4739,8 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -4750,14 +4750,14 @@
       "channel_clean": "Grande-salle-porcelaine",
       "title": "Grande-salle-porcelaine — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
         "Asior Eveus",
-        "Septimus Kales",
+        "Jasp Nah",
         "Lewis-Phoebe d'Ashbourne",
         "Red Roadman",
-        "Jasp Nah"
+        "Akane Tsukishiro",
+        "Septimus Kales"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T13:49:00Z",
@@ -4908,10 +4908,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
         "Sans guilde": 2,
         "La Garde Pourpre": 2,
-        "PNJ": 1
+        "PNJ": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -4921,15 +4921,15 @@
       "channel_clean": "Fontaine-Marbrée",
       "title": "Fontaine-Marbrée — Scène 1",
       "actors": [
-        "Lysander Armlet Jlaus",
-        "Nyx",
-        "Lewis Bamer",
+        "Jasp Nah",
         "Emil Camille Rebenok",
         "Lucia Fiorella",
-        "Jasp Nah",
-        "Okayama"
+        "Lewis Bamer",
+        "Okayama",
+        "Nyx",
+        "Lysander Armlet Jlaus"
       ],
-      "main_actor": "Lysander Armlet Jlaus",
+      "main_actor": "Jasp Nah",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T17:41:00Z",
@@ -5104,11 +5104,11 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 2,
-        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1,
         "PNJ": 1,
         "Sans guilde": 2,
-        "La Garde Pourpre": 1
+        "Cercle d'Azur": 1,
+        "Indéfini": 2
       }
     },
     {
@@ -5118,11 +5118,11 @@
       "channel_clean": "Quartier-des-Forges",
       "title": "Quartier-des-Forges — Scène 1",
       "actors": [
-        "Chapellet Hana",
         "Magon baldor Death",
-        "Kenji Takahashi"
+        "Kenji Takahashi",
+        "Chapellet Hana"
       ],
-      "main_actor": "Chapellet Hana",
+      "main_actor": "Magon baldor Death",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T19:24:00Z",
@@ -5230,10 +5230,10 @@
       "channel_clean": "Agora-des-Reines",
       "title": "Agora-des-Reines — Scène 1",
       "actors": [
-        "Grel",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Grel"
       ],
-      "main_actor": "Grel",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-19T07:47:00Z",
@@ -5288,8 +5288,8 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -5299,14 +5299,14 @@
       "channel_clean": "Avenue-des-armuriers",
       "title": "Avenue-des-armuriers — Scène 1",
       "actors": [
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
-        "Eita",
         "Lucia Fiorella",
         "Aryanna Erhendil",
-        "Okayama"
+        "Okayama",
+        "Vosk Sulyvan",
+        "Eita",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Vosk Sulyvan",
+      "main_actor": "Lucia Fiorella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-19T15:03:00Z",
@@ -5541,10 +5541,10 @@
       "channel_clean": "Cantine-marbrée",
       "title": "Cantine-marbrée — Scène 1",
       "actors": [
-        "Okayama",
-        "Selena Moon"
+        "Selena Moon",
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Selena Moon",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-20T13:26:00Z",
@@ -5845,8 +5845,8 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -5899,12 +5899,12 @@
       "channel_clean": "La-Balafre",
       "title": "La-Balafre — Scène 1",
       "actors": [
-        "Red Roadman",
+        "Aryanna Erhendil",
         "Selena Moon",
-        "Star",
-        "Aryanna Erhendil"
+        "Red Roadman",
+        "Star"
       ],
-      "main_actor": "Red Roadman",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-24T14:29:21Z",
@@ -6097,10 +6097,10 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
+        "La Garde Pourpre": 1,
         "Cercle d'Azur": 1,
-        "Indéfini": 1,
-        "La Garde Pourpre": 1
+        "Sans guilde": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -6281,10 +6281,10 @@
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 2",
       "actors": [
-        "Nyx",
-        "Kanta"
+        "Kanta",
+        "Nyx"
       ],
-      "main_actor": "Nyx",
+      "main_actor": "Kanta",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-25T16:52:00Z",
@@ -6532,10 +6532,10 @@
       "channel_clean": "L'équilibre est le contraire du chaos",
       "title": "L'équilibre est le contraire du chaos — Scène 1",
       "actors": [
-        "Lucia Fiorella",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Lucia Fiorella"
       ],
-      "main_actor": "Lucia Fiorella",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-28T12:25:28Z",
@@ -6572,8 +6572,8 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -6583,11 +6583,11 @@
       "channel_clean": "Portail-Ivoire",
       "title": "Portail-Ivoire — Scène 1",
       "actors": [
-        "Jasp Nah",
         "Nick Sol",
+        "Jasp Nah",
         "Nyx"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Nick Sol",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T12:09:00Z",
@@ -6689,18 +6689,18 @@
       "channel_clean": "Terrain-Grandblanc",
       "title": "Terrain-Grandblanc — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Brutus Redwitch",
+        "Alieny",
+        "Jasp Nah",
         "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer",
-        "Kenji Takahashi",
         "Katelynn Hoffmann",
         "Aryanna Erhendil",
-        "Jasp Nah",
+        "Lewis Bamer",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Alieny"
+        "Kenji Takahashi",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Alieny",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T12:09:00Z",
@@ -6929,11 +6929,11 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 2,
+        "Indéfini": 1,
         "La Garde Pourpre": 5,
         "PNJ": 1,
         "Cercle d'Azur": 1,
-        "Indéfini": 1
+        "Sans guilde": 2
       }
     },
     {
@@ -6943,16 +6943,16 @@
       "channel_clean": "Zone-Buffet",
       "title": "Zone-Buffet — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Akane Tsukishiro",
-        "Septimus Kales",
-        "Brutus Redwitch",
         "Lewis-Phoebe d'Ashbourne",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Nick Sol"
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
+        "Septimus Kales",
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Lewis-Phoebe d'Ashbourne",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T16:22:00Z",
@@ -7463,10 +7463,10 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 2,
-        "Cercle d'Azur": 1,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
-        "PNJ": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 2
       }
     },
     {
@@ -7476,16 +7476,16 @@
       "channel_clean": "Centre-radieux",
       "title": "Centre-radieux — Scène 1",
       "actors": [
-        "Loyis Delacroix",
-        "Akane Tsukishiro",
         "Asior Eveus",
-        "Septimus Kales",
+        "Jasp Nah",
         "Lewis-Phoebe d'Ashbourne",
-        "Isis Faerieth",
         "Magon baldor Death",
-        "Jasp Nah"
+        "Isis Faerieth",
+        "Akane Tsukishiro",
+        "Septimus Kales",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T16:29:00Z",
@@ -7595,10 +7595,10 @@
       ],
       "faction_distribution": {
         "Sans guilde": 2,
-        "Cercle d'Azur": 2,
         "La Garde Pourpre": 2,
         "PNJ": 1,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -7608,13 +7608,13 @@
       "channel_clean": "Cours-Fleurie",
       "title": "Cours-Fleurie — Scène 1",
       "actors": [
-        "Grel",
-        "Nyx",
-        "Lewis Bamer",
         "Lucia Fiorella",
-        "Okayama"
+        "Lewis Bamer",
+        "Okayama",
+        "Nyx",
+        "Grel"
       ],
-      "main_actor": "Grel",
+      "main_actor": "Lucia Fiorella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-03T15:33:00Z",
@@ -7687,9 +7687,9 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 2,
+        "Sans guilde": 2,
         "Cercle d'Azur": 1,
-        "Sans guilde": 2
+        "Indéfini": 2
       }
     },
     {
@@ -7780,12 +7780,12 @@
       "channel_clean": "Escaliers-Nacres",
       "title": "Escaliers-Nacres — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Brutus Redwitch",
         "Asior Eveus",
-        "Vosk Sulyvan",
-        "Brutus Redwitch"
+        "Akane Tsukishiro",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-05T12:07:00Z",
@@ -7888,9 +7888,9 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1,
         "Sans guilde": 2,
-        "La Garde Pourpre": 1
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -8065,10 +8065,10 @@
       "channel_clean": "Couloir-Blanc",
       "title": "Couloir-Blanc — Scène 1",
       "actors": [
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-06T07:18:00Z",
@@ -8099,8 +8099,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -8111,11 +8111,11 @@
       "title": "Maison-de-Velours — Scène 1",
       "actors": [
         "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer",
-        "Nyx",
-        "Adelina Del Fuego",
         "Isis Faerieth",
-        "Red Roadman"
+        "Lewis Bamer",
+        "Red Roadman",
+        "Adelina Del Fuego",
+        "Nyx"
       ],
       "main_actor": "Lewis-Phoebe d'Ashbourne",
       "is_solo": false,
@@ -8252,8 +8252,8 @@
       "faction_distribution": {
         "PNJ": 1,
         "Cercle d'Azur": 3,
-        "Indéfini": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -8263,12 +8263,12 @@
       "channel_clean": "Porte",
       "title": "Porte — Scène 1",
       "actors": [
-        "Lewis-Phoebe d'Ashbourne",
-        "Adelina Del Fuego",
+        "Lewis Bamer",
         "Nyx",
-        "Lewis Bamer"
+        "Adelina Del Fuego",
+        "Lewis-Phoebe d'Ashbourne"
       ],
-      "main_actor": "Lewis-Phoebe d'Ashbourne",
+      "main_actor": "Lewis Bamer",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-11T18:01:00Z",
@@ -8323,9 +8323,9 @@
         }
       ],
       "faction_distribution": {
-        "PNJ": 1,
         "Cercle d'Azur": 2,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "PNJ": 1
       }
     },
     {
@@ -8336,11 +8336,11 @@
       "title": "Rez-de-Chausse — Scène 1",
       "actors": [
         "Lewis-Phoebe d'Ashbourne",
-        "Nyx",
-        "Lewis Bamer",
-        "Adelina Del Fuego",
         "Isis Faerieth",
-        "Red Roadman"
+        "Lewis Bamer",
+        "Red Roadman",
+        "Adelina Del Fuego",
+        "Nyx"
       ],
       "main_actor": "Lewis-Phoebe d'Ashbourne",
       "is_solo": false,
@@ -8524,9 +8524,9 @@
       ],
       "faction_distribution": {
         "PNJ": 1,
-        "Indéfini": 1,
         "Cercle d'Azur": 3,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -8536,14 +8536,14 @@
       "channel_clean": "Etage",
       "title": "Etage — Scène 1",
       "actors": [
-        "Septimus Kales",
         "Lewis-Phoebe d'Ashbourne",
-        "Nyx",
-        "Adelina Del Fuego",
         "Isis Faerieth",
-        "Red Roadman"
+        "Red Roadman",
+        "Adelina Del Fuego",
+        "Septimus Kales",
+        "Nyx"
       ],
-      "main_actor": "Septimus Kales",
+      "main_actor": "Lewis-Phoebe d'Ashbourne",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-14T14:18:00Z",
@@ -8724,11 +8724,11 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
         "PNJ": 1,
-        "Indéfini": 1,
         "Cercle d'Azur": 2,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "La Garde Pourpre": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -8738,11 +8738,11 @@
       "channel_clean": "Petit-Salon",
       "title": "Petit-Salon — Scène 1",
       "actors": [
+        "Red Roadman",
         "Lewis-Phoebe d'Ashbourne",
-        "Vosk Sulyvan",
-        "Red Roadman"
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Lewis-Phoebe d'Ashbourne",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-16T08:16:00Z",
@@ -8809,8 +8809,8 @@
         }
       ],
       "faction_distribution": {
-        "PNJ": 1,
-        "Sans guilde": 2
+        "Sans guilde": 2,
+        "PNJ": 1
       }
     },
     {
@@ -8820,10 +8820,10 @@
       "channel_clean": "Bureau-de-Shaal",
       "title": "Bureau-de-Shaal — Scène 1",
       "actors": [
-        "Lewis-Phoebe d'Ashbourne",
-        "Adelina Del Fuego"
+        "Adelina Del Fuego",
+        "Lewis-Phoebe d'Ashbourne"
       ],
-      "main_actor": "Lewis-Phoebe d'Ashbourne",
+      "main_actor": "Adelina Del Fuego",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-16T10:59:00Z",
@@ -8908,8 +8908,8 @@
         }
       ],
       "faction_distribution": {
-        "PNJ": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "PNJ": 1
       }
     },
     {
@@ -8919,12 +8919,12 @@
       "channel_clean": "Isolement",
       "title": "Isolement — Scène 1",
       "actors": [
-        "Nick Sol",
-        "Isis Faerieth",
         "Inzu Sravel",
+        "Isis Faerieth",
+        "Nick Sol",
         "Alieny"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "Inzu Sravel",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-18T16:53:43Z",
@@ -9051,9 +9051,9 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Cercle d'Azur": 1,
         "PNJ": 1,
+        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1,
         "Indéfini": 1
       }
     },
@@ -9182,10 +9182,10 @@
       "channel_clean": "Agora-des-Reines",
       "title": "Agora-des-Reines — Scène 2",
       "actors": [
-        "Katelynn Hoffmann",
-        "Vosk Sulyvan"
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Vosk Sulyvan",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-10T10:24:00Z",
@@ -9300,8 +9300,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -9311,10 +9311,10 @@
       "channel_clean": "Cour-des-alchimistes",
       "title": "Cour-des-alchimistes — Scène 2",
       "actors": [
-        "Isis Faerieth",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Isis Faerieth"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-11T05:05:00Z",
@@ -9363,8 +9363,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -9374,12 +9374,12 @@
       "channel_clean": "Parc-des-Cardinaux",
       "title": "Parc-des-Cardinaux — Scène 2",
       "actors": [
-        "Isis Faerieth",
         "Ren Urugaki",
-        "Vosk Sulyvan",
-        "Selena Moon"
+        "Selena Moon",
+        "Isis Faerieth",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Ren Urugaki",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-11T13:13:00Z",
@@ -9674,8 +9674,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 2,
         "La Garde Pourpre": 1,
+        "Cercle d'Azur": 2,
         "Sans guilde": 1
       }
     },
@@ -9686,11 +9686,11 @@
       "channel_clean": "Port-du-Levant",
       "title": "Port-du-Levant — Scène 2",
       "actors": [
-        "Katelynn Hoffmann",
+        "Lucia Fiorella",
         "Lewis Bamer",
-        "Lucia Fiorella"
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Lucia Fiorella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-12T09:17:00Z",
@@ -9895,9 +9895,9 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
+        "Sans guilde": 1,
         "Cercle d'Azur": 1,
-        "Sans guilde": 1
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -9907,11 +9907,11 @@
       "channel_clean": "Adelina Magon",
       "title": "Adelina Magon — Scène 1",
       "actors": [
-        "Adelina Del Fuego",
         "Aryanna Erhendil",
-        "Sw dark325"
+        "Sw dark325",
+        "Adelina Del Fuego"
       ],
-      "main_actor": "Adelina Del Fuego",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-12T23:40:45Z",
@@ -10032,9 +10032,9 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
         "La Garde Pourpre": 1,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -10044,14 +10044,14 @@
       "channel_clean": "Arène-Hurlante",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Loyis Delacroix",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
+        "Jin Alurantes",
         "Aryanna Erhendil",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Kenji Takahashi",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-13T08:43:30Z",
@@ -10154,9 +10154,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 2,
+        "PNJ": 1,
         "La Garde Pourpre": 3,
-        "PNJ": 1
+        "Sans guilde": 2
       }
     },
     {
@@ -10166,12 +10166,12 @@
       "channel_clean": "Portail-Ivoire",
       "title": "Portail-Ivoire — Scène 2",
       "actors": [
-        "Akane Tsukishiro",
         "Tsutomu Yamamoto",
-        "Yidmetra Rhys",
-        "Myrea M"
+        "Myrea M",
+        "Akane Tsukishiro",
+        "Yidmetra Rhys"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Tsutomu Yamamoto",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-14T08:42:00Z",
@@ -10352,10 +10352,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
         "PNJ": 1,
-        "Indéfini": 1,
-        "Voile d'Ivoire": 1
+        "Voile d'Ivoire": 1,
+        "Cercle d'Azur": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -10365,11 +10365,11 @@
       "channel_clean": "Nouveau jour Nouvelle aventure",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Red Roadman",
         "Aryanna Erhendil",
-        "Jin Alurantes"
+        "Jin Alurantes",
+        "Red Roadman"
       ],
-      "main_actor": "Red Roadman",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-17T08:42:51Z",
@@ -10634,9 +10634,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
         "La Garde Pourpre": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -10646,12 +10646,12 @@
       "channel_clean": "Arène-Hurlante",
       "title": "Arène-Hurlante — Scène 3",
       "actors": [
-        "Loyis Delacroix",
-        "Nick Sol",
         "Aryanna Erhendil",
-        "Jin Alurantes"
+        "Jin Alurantes",
+        "Nick Sol",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-17T10:50:44Z",
@@ -10742,9 +10742,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
         "La Garde Pourpre": 2,
-        "PNJ": 1
+        "PNJ": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -10754,10 +10754,10 @@
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 2",
       "actors": [
-        "Katelynn Hoffmann",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-22T11:34:00Z",
@@ -10860,8 +10860,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -10871,12 +10871,12 @@
       "channel_clean": "Terrains-Nacrés",
       "title": "Terrains-Nacrés — Scène 2",
       "actors": [
+        "Lucia Fiorella",
         "Septimus Kales",
         "Adelina Del Fuego",
-        "Lucia Fiorella",
         "Aryanna Erhendil"
       ],
-      "main_actor": "Septimus Kales",
+      "main_actor": "Lucia Fiorella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-02T23:07:00Z",
@@ -11033,9 +11033,9 @@
         }
       ],
       "faction_distribution": {
+        "Sans guilde": 1,
         "La Garde Pourpre": 2,
-        "Cercle d'Azur": 1,
-        "Sans guilde": 1
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -11046,16 +11046,16 @@
       "title": "Hall-Des-Fêtes — Scène 1",
       "actors": [
         "Asior Eveus",
-        "Brutus Redwitch",
-        "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer",
-        "Katelynn Hoffmann",
-        "Lucia Fiorella",
-        "Aryanna Erhendil",
         "Jasp Nah",
-        "Okayama",
+        "Lewis-Phoebe d'Ashbourne",
+        "Lucia Fiorella",
         "Selena Moon",
-        "Velka Valcyrion"
+        "Aryanna Erhendil",
+        "Lewis Bamer",
+        "Okayama",
+        "Brutus Redwitch",
+        "Velka Valcyrion",
+        "Katelynn Hoffmann"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -11402,12 +11402,12 @@
       "channel_clean": "La-Ballade",
       "title": "La-Ballade — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
-        "Vosk Sulyvan",
         "Aryanna Erhendil",
-        "Velka Valcyrion"
+        "Vosk Sulyvan",
+        "Velka Valcyrion",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-04T05:55:00Z",
@@ -11587,17 +11587,17 @@
       "channel_clean": "L-Epicurien",
       "title": "L-Epicurien — Scène 1",
       "actors": [
-        "OWL LE MESSAGER",
-        "Ren Urugaki",
-        "Septimus Kales",
+        "Ivara Luella",
         "Tsutomu Yamamoto",
-        "Kenji Takahashi",
-        "Adelina Del Fuego",
+        "Ren Urugaki",
+        "OWL LE MESSAGER",
         "Isis Faerieth",
         "Myrea M",
-        "Ivara Luella"
+        "Adelina Del Fuego",
+        "Septimus Kales",
+        "Kenji Takahashi"
       ],
-      "main_actor": "OWL LE MESSAGER",
+      "main_actor": "Ivara Luella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-04T07:42:00Z",
@@ -11790,11 +11790,11 @@
         }
       ],
       "faction_distribution": {
+        "Voile d'Ivoire": 2,
         "PNJ": 2,
         "La Garde Pourpre": 2,
-        "Sans guilde": 1,
         "Cercle d'Azur": 2,
-        "Voile d'Ivoire": 2
+        "Sans guilde": 1
       }
     },
     {
@@ -11804,10 +11804,10 @@
       "channel_clean": "Le-Bonneteau",
       "title": "Le-Bonneteau — Scène 1",
       "actors": [
-        "Vosk Sulyvan",
-        "Maëll Fol'Dun"
+        "Maëll Fol'Dun",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Vosk Sulyvan",
+      "main_actor": "Maëll Fol'Dun",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-04T08:05:00Z",
@@ -11886,8 +11886,8 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -11897,14 +11897,14 @@
       "channel_clean": "Le-Bar-des-Lions",
       "title": "Le-Bar-des-Lions — Scène 1",
       "actors": [
-        "Brutus Redwitch",
         "Lewis-Phoebe d'Ashbourne",
-        "Lewis Bamer",
-        "Aryanna Erhendil",
         "Selena Moon",
+        "Aryanna Erhendil",
+        "Lewis Bamer",
+        "Brutus Redwitch",
         "Velka Valcyrion"
       ],
-      "main_actor": "Brutus Redwitch",
+      "main_actor": "Lewis-Phoebe d'Ashbourne",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-04T11:30:00Z",
@@ -12103,9 +12103,9 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 3,
         "PNJ": 1,
-        "Cercle d'Azur": 2
+        "Cercle d'Azur": 2,
+        "La Garde Pourpre": 3
       }
     },
     {
@@ -12115,11 +12115,11 @@
       "channel_clean": "Le-Coin-d-Antan",
       "title": "Le-Coin-d-Antan — Scène 1",
       "actors": [
-        "Lewis-Phoebe d'Ashbourne",
+        "Brutus Redwitch",
         "Aryanna Erhendil",
-        "Brutus Redwitch"
+        "Lewis-Phoebe d'Ashbourne"
       ],
-      "main_actor": "Lewis-Phoebe d'Ashbourne",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-04T11:45:00Z",
@@ -12240,8 +12240,8 @@
         }
       ],
       "faction_distribution": {
-        "PNJ": 1,
-        "La Garde Pourpre": 2
+        "La Garde Pourpre": 2,
+        "PNJ": 1
       }
     },
     {
@@ -12351,12 +12351,12 @@
       "channel_clean": "Fontaine-Marbrée",
       "title": "Fontaine-Marbrée — Scène 3",
       "actors": [
-        "Ragde Umbras",
-        "Nick Sol",
         "Isis Faerieth",
+        "Nick Sol",
+        "Ragde Umbras",
         "Cassian Ortie"
       ],
-      "main_actor": "Ragde Umbras",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-10T05:18:00Z",
@@ -12843,9 +12843,9 @@
         }
       ],
       "faction_distribution": {
-        "Indéfini": 1,
-        "La Garde Pourpre": 1,
         "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1,
+        "Indéfini": 1,
         "Voile d'Ivoire": 1
       }
     },
@@ -12856,11 +12856,11 @@
       "channel_clean": "Place-Vendome",
       "title": "Place-Vendome — Scène 1",
       "actors": [
+        "Maëll Fol'Dun",
         "Akane Tsukishiro",
-        "Vosk Sulyvan",
-        "Maëll Fol'Dun"
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Maëll Fol'Dun",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-10T11:40:00Z",
@@ -13023,10 +13023,10 @@
       "channel_clean": "Ruelle-Adjacente",
       "title": "Ruelle-Adjacente — Scène 1",
       "actors": [
-        "Iscarioth",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Iscarioth"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-11T16:03:00Z",
@@ -13159,8 +13159,8 @@
         }
       ],
       "faction_distribution": {
-        "L'œil": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "L'œil": 1
       }
     },
     {
@@ -13226,10 +13226,10 @@
       "channel_clean": "Place-de-Grandpalais",
       "title": "Place-de-Grandpalais — Scène 2",
       "actors": [
-        "Frey Guðfrøðr",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Frey Guðfrøðr"
       ],
-      "main_actor": "Frey Guðfrøðr",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-15T14:00:00Z",
@@ -13368,8 +13368,8 @@
         }
       ],
       "faction_distribution": {
-        "Voile d'Ivoire": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Voile d'Ivoire": 1
       }
     },
     {
@@ -13379,14 +13379,14 @@
       "channel_clean": "Port-du-Levant",
       "title": "Port-du-Levant — Scène 3",
       "actors": [
-        "Lumia Faendharts",
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
         "Isis Faerieth",
         "Aryanna Erhendil",
-        "Nick Sol"
+        "Vosk Sulyvan",
+        "Lumia Faendharts",
+        "Nick Sol",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Lumia Faendharts",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-16T02:14:00Z",
@@ -13652,8 +13652,8 @@
       ],
       "faction_distribution": {
         "Cercle d'Azur": 2,
-        "Sans guilde": 1,
-        "La Garde Pourpre": 3
+        "La Garde Pourpre": 3,
+        "Sans guilde": 1
       }
     },
     {
@@ -13663,10 +13663,10 @@
       "channel_clean": "Les Demoiselles de la Haute plus ou moins",
       "title": "Les Demoiselles de la Haute plus ou moins — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
-        "Maëll Fol'Dun"
+        "Maëll Fol'Dun",
+        "Akane Tsukishiro"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Maëll Fol'Dun",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-17T13:54:10Z",
@@ -13731,12 +13731,12 @@
       "channel_clean": "Le-centre-des-registres",
       "title": "Le-centre-des-registres — Scène 2",
       "actors": [
+        "Isis Faerieth",
         "Jasp Nah",
         "Akane Tsukishiro",
-        "Isis Faerieth",
         "Ren Urugaki"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-27T00:43:00Z",
@@ -13971,8 +13971,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 2,
-        "Cercle d'Azur": 2
+        "Cercle d'Azur": 2,
+        "La Garde Pourpre": 2
       }
     },
     {
@@ -13982,12 +13982,12 @@
       "channel_clean": "Grande-salle-porcelaine",
       "title": "Grande-salle-porcelaine — Scène 2",
       "actors": [
-        "Iscarioth",
         "Okayama",
-        "Tenebris",
-        "Oeil"
+        "Oeil",
+        "Iscarioth",
+        "Tenebris"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Okayama",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-27T10:00:00Z",
@@ -14198,9 +14198,9 @@
         }
       ],
       "faction_distribution": {
-        "L'œil": 2,
         "Sans guilde": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "L'œil": 2
       }
     },
     {
@@ -14210,10 +14210,10 @@
       "channel_clean": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement",
       "title": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-30T05:53:16Z",
@@ -14404,10 +14404,10 @@
       "channel_clean": "Le-Café-des-Philosophes",
       "title": "Le-Café-des-Philosophes — Scène 1",
       "actors": [
-        "Iscarioth",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Iscarioth"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-03T09:47:13Z",
@@ -14534,8 +14534,8 @@
         }
       ],
       "faction_distribution": {
-        "L'œil": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "L'œil": 1
       }
     },
     {
@@ -14546,8 +14546,8 @@
       "title": "Cour-des-alchimistes — Scène 3",
       "actors": [
         "Lucia Fiorella",
-        "Adelina Del Fuego",
-        "Septimus Kales"
+        "Septimus Kales",
+        "Adelina Del Fuego"
       ],
       "main_actor": "Lucia Fiorella",
       "is_solo": false,
@@ -14683,8 +14683,8 @@
       ],
       "faction_distribution": {
         "Sans guilde": 1,
-        "Cercle d'Azur": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -14694,10 +14694,10 @@
       "channel_clean": "Un début de soirée à la serre de lune",
       "title": "Un début de soirée à la serre de lune — Scène 1",
       "actors": [
-        "Maëll Fol'Dun",
-        "Frey Guðfrøðr"
+        "Frey Guðfrøðr",
+        "Maëll Fol'Dun"
       ],
-      "main_actor": "Maëll Fol'Dun",
+      "main_actor": "Frey Guðfrøðr",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-04T11:24:40Z",
@@ -14842,8 +14842,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "Voile d'Ivoire": 1
+        "Voile d'Ivoire": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -15473,15 +15473,15 @@
       "channel_clean": "Passage",
       "title": "Passage — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Kenji Takahashi"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-16T03:36:27Z",
@@ -15668,10 +15668,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -15681,14 +15681,14 @@
       "channel_clean": "Ruelle-Basse-ville",
       "title": "Ruelle-Basse-ville — Scène 1",
       "actors": [
-        "Hedwig Von Glanzestern",
         "Asior Eveus",
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
+        "Hedwig Von Glanzestern",
         "Red Roadman",
-        "Idelmée Cadree"
+        "Idelmée Cadree",
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Hedwig Von Glanzestern",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-16T06:10:53Z",
@@ -15905,8 +15905,8 @@
         }
       ],
       "faction_distribution": {
-        "Voile d'Ivoire": 1,
         "Sans guilde": 4,
+        "Voile d'Ivoire": 1,
         "La Garde Pourpre": 1
       }
     },
@@ -15972,15 +15972,15 @@
       "channel_clean": "Egregore",
       "title": "Egregore — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Kenji Takahashi"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-18T09:44:35Z",
@@ -16263,10 +16263,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -16277,11 +16277,11 @@
       "title": "Quartiers — Scène 1",
       "actors": [
         "Asior Eveus",
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
         "Isis Faerieth",
+        "Red Roadman",
         "Idelmée Cadree",
-        "Red Roadman"
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -16357,8 +16357,8 @@
       ],
       "faction_distribution": {
         "Sans guilde": 4,
-        "La Garde Pourpre": 1,
-        "Cercle d'Azur": 1
+        "Cercle d'Azur": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -16368,10 +16368,10 @@
       "channel_clean": "Le son de l'Innocence",
       "title": "Le son de l'Innocence — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
-        "Vosk Sulyvan"
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Vosk Sulyvan",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-19T03:17:00Z",
@@ -16444,8 +16444,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -16682,14 +16682,14 @@
       "channel_clean": "Course-Poursuite",
       "title": "Course-Poursuite — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Jin Alurantes"
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
+        "Kenji Takahashi"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-20T09:22:03Z",
@@ -16780,10 +16780,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
+        "PNJ": 1,
         "La Garde Pourpre": 3,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -16793,14 +16793,14 @@
       "channel_clean": "La Valeur d'une Vie",
       "title": "La Valeur d'une Vie — Scène 1",
       "actors": [
-        "Hedwig Von Glanzestern",
         "Asior Eveus",
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
+        "Hedwig Von Glanzestern",
+        "Red Roadman",
         "Idelmée Cadree",
-        "Red Roadman"
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Hedwig Von Glanzestern",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-23T08:54:20Z",
@@ -17011,8 +17011,8 @@
         }
       ],
       "faction_distribution": {
-        "Voile d'Ivoire": 1,
         "Sans guilde": 4,
+        "Voile d'Ivoire": 1,
         "La Garde Pourpre": 1
       }
     },
@@ -17023,16 +17023,16 @@
       "channel_clean": "Guet-apens",
       "title": "Guet-apens — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
-        "Alieny",
         "Aryanna Erhendil",
+        "Kenji Takahashi",
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Alieny"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-23T13:12:05Z",
@@ -17231,11 +17231,11 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
         "Sans guilde": 1,
-        "Indéfini": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 1,
+        "Indéfini": 1
       }
     },
     {
@@ -17245,19 +17245,19 @@
       "channel_clean": "Place",
       "title": "Place — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
-        "Hedwig Von Glanzestern",
         "Asior Eveus",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
-        "Idelmée Cadree",
-        "Red Roadman",
+        "Hedwig Von Glanzestern",
         "Aryanna Erhendil",
+        "Red Roadman",
+        "Idelmée Cadree",
+        "Akane Tsukishiro",
+        "Vosk Sulyvan",
         "Nick Sol",
-        "Jin Alurantes"
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-24T23:43:55Z",
@@ -17528,11 +17528,11 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "Voile d'Ivoire": 1,
         "Sans guilde": 4,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
-        "PNJ": 1
+        "Voile d'Ivoire": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -17542,10 +17542,10 @@
       "channel_clean": "Le-Secret",
       "title": "Le-Secret — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-25T13:18:53Z",
@@ -17724,22 +17724,22 @@
       "channel_clean": "Arène",
       "title": "Arène — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
-        "Ren Urugaki",
         "Asior Eveus",
-        "Brutus Redwitch",
+        "Jin Alurantes",
+        "Ren Urugaki",
         "Hedwig Von Glanzestern",
-        "Vosk Sulyvan",
-        "Kenji Takahashi",
-        "Katelynn Hoffmann",
         "Isis Faerieth",
         "Aryanna Erhendil",
-        "Idelmée Cadree",
         "Red Roadman",
+        "Idelmée Cadree",
+        "Akane Tsukishiro",
+        "Vosk Sulyvan",
+        "Brutus Redwitch",
         "Nick Sol",
-        "Jin Alurantes"
+        "Kenji Takahashi",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-29T09:54:07Z",
@@ -18400,11 +18400,11 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 2,
-        "La Garde Pourpre": 5,
         "Sans guilde": 5,
+        "PNJ": 1,
+        "La Garde Pourpre": 5,
         "Voile d'Ivoire": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -18414,11 +18414,11 @@
       "channel_clean": "Balcon - Asior Katelyn",
       "title": "Balcon - Asior Katelyn — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
         "Asior Eveus",
-        "Vosk Sulyvan"
+        "Vosk Sulyvan",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-30T12:13:29Z",
@@ -18557,8 +18557,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Sans guilde": 2
+        "Sans guilde": 2,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -18787,10 +18787,10 @@
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 5",
       "actors": [
-        "Lumia Faendharts",
-        "Tarrion Tombetoile"
+        "Tarrion Tombetoile",
+        "Lumia Faendharts"
       ],
-      "main_actor": "Lumia Faendharts",
+      "main_actor": "Tarrion Tombetoile",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-02T03:02:52Z",
@@ -18893,8 +18893,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "La Garde Pourpre": 1
+        "La Garde Pourpre": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -18904,12 +18904,12 @@
       "channel_clean": "Cours-Fleurie",
       "title": "Cours-Fleurie — Scène 2",
       "actors": [
+        "Frey Guðfrøðr",
         "Ivara Luella",
         "Cassian Ortie",
-        "Tenebris",
-        "Frey Guðfrøðr"
+        "Tenebris"
       ],
-      "main_actor": "Ivara Luella",
+      "main_actor": "Frey Guðfrøðr",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-02T09:58:31Z",
@@ -19272,10 +19272,10 @@
       "channel_clean": "Quartier-des-Forges",
       "title": "Quartier-des-Forges — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-04T15:17:38Z",
@@ -19541,12 +19541,12 @@
       "channel_clean": "Ruelles",
       "title": "Ruelles — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Alieny"
+        "Kenji Takahashi",
+        "Alieny",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-05T05:20:40Z",
@@ -19649,20 +19649,20 @@
       "channel_clean": "La-Balafre",
       "title": "La-Balafre — Scène 3",
       "actors": [
-        "Loyis Delacroix",
-        "Akane Tsukishiro",
-        "Ren Urugaki",
         "Asior Eveus",
+        "Jin Alurantes",
+        "Ren Urugaki",
         "Hedwig Von Glanzestern",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
-        "Idelmée Cadree",
-        "Aryanna Erhendil",
-        "Nick Sol",
         "Selena Moon",
-        "Jin Alurantes"
+        "Aryanna Erhendil",
+        "Idelmée Cadree",
+        "Akane Tsukishiro",
+        "Brutus Redwitch",
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-05T06:34:24Z",
@@ -19958,10 +19958,10 @@
       ],
       "faction_distribution": {
         "Sans guilde": 4,
-        "Cercle d'Azur": 2,
+        "PNJ": 1,
         "La Garde Pourpre": 4,
         "Voile d'Ivoire": 1,
-        "PNJ": 1
+        "Cercle d'Azur": 2
       }
     },
     {
@@ -19971,10 +19971,10 @@
       "channel_clean": "Ils ne souhaitent qu'une seule chose La paix",
       "title": "Ils ne souhaitent qu'une seule chose La paix — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-05T07:10:23Z",
@@ -20111,12 +20111,12 @@
       "channel_clean": "Résidences-des-Libérateurs",
       "title": "Résidences-des-Libérateurs — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Alieny"
+        "Kenji Takahashi",
+        "Alieny",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-07T02:43:09Z",
@@ -20207,11 +20207,11 @@
       "channel_clean": "Terrain-Grandblanc",
       "title": "Terrain-Grandblanc — Scène 2",
       "actors": [
+        "Jin Alurantes",
         "Isis Faerieth",
-        "Red Roadman",
-        "Jin Alurantes"
+        "Red Roadman"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-07T04:58:02Z",
@@ -20284,9 +20284,9 @@
         }
       ],
       "faction_distribution": {
+        "PNJ": 1,
         "Cercle d'Azur": 1,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "Sans guilde": 1
       }
     },
     {
@@ -20296,11 +20296,11 @@
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 3",
       "actors": [
-        "Aegnor Othar",
         "Idelmée Cadree",
+        "Aegnor Othar",
         "Astreüs Mylonas"
       ],
-      "main_actor": "Aegnor Othar",
+      "main_actor": "Idelmée Cadree",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-08T10:00:28Z",
@@ -20475,8 +20475,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
         "Sans guilde": 1,
+        "La Garde Pourpre": 1,
         "PNJ": 1
       }
     },
@@ -20487,12 +20487,12 @@
       "channel_clean": "Parc-des-Cardinaux",
       "title": "Parc-des-Cardinaux — Scène 3",
       "actors": [
+        "Junko Anarchy",
         "Nick Sol",
         "Ragde Umbras",
-        "Junko Anarchy",
         "Selena Moon"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "Junko Anarchy",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-10T04:36:09Z",
@@ -20787,9 +20787,9 @@
         }
       ],
       "faction_distribution": {
+        "Sans guilde": 1,
         "La Garde Pourpre": 1,
         "Indéfini": 1,
-        "Sans guilde": 1,
         "Cercle d'Azur": 1
       }
     },
@@ -20800,12 +20800,12 @@
       "channel_clean": "Sous-Sol",
       "title": "Sous-Sol — Scène 1",
       "actors": [
-        "Isis Faerieth",
-        "Ren Urugaki",
         "Aryanna Erhendil",
-        "Alieny"
+        "Isis Faerieth",
+        "Alieny",
+        "Ren Urugaki"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-10T10:56:05Z",
@@ -21022,8 +21022,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
         "La Garde Pourpre": 2,
+        "Cercle d'Azur": 1,
         "Indéfini": 1
       }
     },
@@ -21083,10 +21083,10 @@
       "channel_clean": "Auditorium",
       "title": "ㅤㅤ      𝐴𝑑𝑒𝑙𝑖𝑛𝑎 𝐷𝑒𝑙 𝐹𝑢𝑒𝑔𝑜",
       "actors": [
-        "Adelina Del Fuego",
-        "Ragde Umbras"
+        "Ragde Umbras",
+        "Adelina Del Fuego"
       ],
-      "main_actor": "Adelina Del Fuego",
+      "main_actor": "Ragde Umbras",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-11T11:35:53Z",
@@ -21171,8 +21171,8 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "Indéfini": 1
+        "Indéfini": 1,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -21456,10 +21456,10 @@
       "channel_clean": "Verger-des-Pêchés",
       "title": "Verger-des-Pêchés — Scène 4",
       "actors": [
-        "Kenji Takahashi",
-        "Jin Alurantes"
+        "Jin Alurantes",
+        "Kenji Takahashi"
       ],
-      "main_actor": "Kenji Takahashi",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-14T05:38:08Z",
@@ -21520,8 +21520,8 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -21531,14 +21531,14 @@
       "channel_clean": "Crypte-Rouge",
       "title": "Crypte-Rouge — Scène 2",
       "actors": [
-        "Loyis Delacroix",
         "Hedwig Von Glanzestern",
-        "Brutus Redwitch",
-        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Nick Sol"
+        "Brutus Redwitch",
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Loyis Delacroix"
       ],
-      "main_actor": "Loyis Delacroix",
+      "main_actor": "Hedwig Von Glanzestern",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-14T13:31:08Z",
@@ -21611,9 +21611,9 @@
         }
       ],
       "faction_distribution": {
-        "Sans guilde": 2,
         "Voile d'Ivoire": 1,
-        "La Garde Pourpre": 3
+        "La Garde Pourpre": 3,
+        "Sans guilde": 2
       }
     },
     {
@@ -21623,12 +21623,12 @@
       "channel_clean": "Terrains-Nacrés",
       "title": "Terrains-Nacrés — Scène 4",
       "actors": [
-        "Nick Sol",
-        "Lucia Fiorella",
         "Aryanna Erhendil",
-        "Jin Alurantes"
+        "Jin Alurantes",
+        "Nick Sol",
+        "Lucia Fiorella"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-14T23:08:31Z",
@@ -21792,8 +21792,8 @@
       ],
       "faction_distribution": {
         "La Garde Pourpre": 2,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "Sans guilde": 1
       }
     },
     {
@@ -21803,11 +21803,11 @@
       "channel_clean": "Armurerie-Ecarlate",
       "title": "Armurerie-Ecarlate — Scène 1",
       "actors": [
+        "Jin Alurantes",
         "Isis Faerieth",
-        "Kenji Takahashi",
-        "Jin Alurantes"
+        "Kenji Takahashi"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Jin Alurantes",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-15T04:58:10Z",
@@ -21922,9 +21922,9 @@
         }
       ],
       "faction_distribution": {
+        "PNJ": 1,
         "Cercle d'Azur": 1,
-        "Sans guilde": 1,
-        "PNJ": 1
+        "Sans guilde": 1
       }
     },
     {
@@ -21934,12 +21934,12 @@
       "channel_clean": "-Chevet-Sacré",
       "title": "-Chevet-Sacré — Scène 1",
       "actors": [
-        "Iscarioth",
         "Akane Tsukishiro",
-        "Ren Urugaki",
-        "Septimus Kales"
+        "Septimus Kales",
+        "Iscarioth",
+        "Ren Urugaki"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Akane Tsukishiro",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-15T05:29:16Z",
@@ -22054,9 +22054,9 @@
         }
       ],
       "faction_distribution": {
-        "L'œil": 1,
         "Cercle d'Azur": 1,
-        "La Garde Pourpre": 2
+        "La Garde Pourpre": 2,
+        "L'œil": 1
       }
     },
     {
@@ -22121,11 +22121,11 @@
       "channel_clean": "Place-de-Grandpalais",
       "title": "Place-de-Grandpalais — Scène 3",
       "actors": [
+        "Yunah Aoi Enjaku",
         "Arun Acharya",
-        "Tenebris",
-        "Yunah Aoi Enjaku"
+        "Tenebris"
       ],
-      "main_actor": "Arun Acharya",
+      "main_actor": "Yunah Aoi Enjaku",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-17T09:07:41Z",
@@ -22252,9 +22252,9 @@
         }
       ],
       "faction_distribution": {
+        "PNJ": 1,
         "Cercle d'Azur": 1,
-        "L'œil": 1,
-        "PNJ": 1
+        "L'œil": 1
       }
     },
     {
@@ -22264,11 +22264,11 @@
       "channel_clean": "Agora-des-Reines",
       "title": "Agora-des-Reines — Scène 3",
       "actors": [
-        "Katelynn Hoffmann",
+        "Vosk Sulyvan",
         "Ren Urugaki",
-        "Vosk Sulyvan"
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Vosk Sulyvan",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-17T13:53:09Z",
@@ -22359,8 +22359,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 2,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "La Garde Pourpre": 2
       }
     },
     {
@@ -22727,13 +22727,13 @@
       "channel_clean": "TRIPLE A Asior - Akane - Aryana",
       "title": "TRIPLE A Asior - Akane - Aryana — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
-        "Ren Urugaki",
         "Asior Eveus",
+        "Jin Alurantes",
+        "Ren Urugaki",
         "Aryanna Erhendil",
-        "Jin Alurantes"
+        "Akane Tsukishiro"
       ],
-      "main_actor": "Akane Tsukishiro",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-19T04:57:48Z",
@@ -22914,10 +22914,10 @@
         }
       ],
       "faction_distribution": {
-        "Cercle d'Azur": 1,
-        "La Garde Pourpre": 2,
         "Sans guilde": 1,
-        "PNJ": 1
+        "PNJ": 1,
+        "La Garde Pourpre": 2,
+        "Cercle d'Azur": 1
       }
     },
     {
@@ -22927,20 +22927,20 @@
       "channel_clean": "Bibliothèque-Azure",
       "title": "Bibliothèque-Azure — Scène 4",
       "actors": [
-        "OWL LE MESSAGER",
-        "Ragde Umbras",
         "Asior Eveus",
         "Frey Guðfrøðr",
-        "Astreüs Mylonas",
-        "Maëll Fol'Dun",
-        "Emil Camille Rebenok",
-        "Adelina Del Fuego",
         "Arun Acharya",
+        "Yunah Aoi Enjaku",
+        "Emil Camille Rebenok",
+        "OWL LE MESSAGER",
         "Lucia Fiorella",
+        "Maëll Fol'Dun",
+        "Ragde Umbras",
         "Red Roadman",
-        "Yunah Aoi Enjaku"
+        "Adelina Del Fuego",
+        "Astreüs Mylonas"
       ],
-      "main_actor": "OWL LE MESSAGER",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-20T02:14:31Z",
@@ -23253,11 +23253,11 @@
         }
       ],
       "faction_distribution": {
-        "PNJ": 4,
-        "Indéfini": 1,
         "Sans guilde": 3,
         "Voile d'Ivoire": 1,
-        "Cercle d'Azur": 3
+        "Cercle d'Azur": 3,
+        "PNJ": 4,
+        "Indéfini": 1
       }
     },
     {
@@ -23267,12 +23267,12 @@
       "channel_clean": "Objectif faire exploser la Balafre",
       "title": "Objectif faire exploser la Balafre — Scène 1",
       "actors": [
-        "Ren Urugaki",
         "Asior Eveus",
+        "Jin Alurantes",
         "Idelmée Cadree",
-        "Jin Alurantes"
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-22T07:33:05Z",
@@ -23333,9 +23333,9 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
         "Sans guilde": 2,
-        "PNJ": 1
+        "PNJ": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -23471,10 +23471,10 @@
       "channel_clean": "Terrain-d-entraînement",
       "title": "Terrain-d-entraînement — Scène 2",
       "actors": [
-        "Aegnor Othar",
-        "Idelmée Cadree"
+        "Idelmée Cadree",
+        "Aegnor Othar"
       ],
-      "main_actor": "Aegnor Othar",
+      "main_actor": "Idelmée Cadree",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-24T06:17:23Z",
@@ -23517,8 +23517,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 1,
-        "Sans guilde": 1
+        "Sans guilde": 1,
+        "La Garde Pourpre": 1
       }
     },
     {
@@ -23528,12 +23528,12 @@
       "channel_clean": "Arène-Hurlante",
       "title": "Arène-Hurlante — Scène 4",
       "actors": [
-        "Aegnor Othar",
-        "Nick Sol",
         "Arun Acharya",
-        "Kenji Takahashi"
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Aegnor Othar"
       ],
-      "main_actor": "Aegnor Othar",
+      "main_actor": "Arun Acharya",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-24T11:49:11Z",
@@ -23606,8 +23606,8 @@
         }
       ],
       "faction_distribution": {
-        "La Garde Pourpre": 2,
         "Cercle d'Azur": 1,
+        "La Garde Pourpre": 2,
         "Sans guilde": 1
       }
     },
