@@ -22,15 +22,9 @@ FACTION_ROLE_IDS = {
 # Administrative moderation bots to exclude completely from RP
 SYSTEM_MODERATION_BOTS = {"carl-bot", "dyno", "mee6", "ticket tool", "ticket-tool", "disboard", "raidprotect", "jockie", "koya"}
 
-# Explicit PNJ / Lore NPCs keywords or exact names
-PNJ_NAMES = {
-    "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur", "Oeil", "L'Oeil", "L'œil",
-    "Inzu Sravel", "Hector Swaft", "Milli Enga", "Tsutomu Yamamoto",
-    "Emil Camille Rebenok", "Rias Valdor", "Lewis-Phoebe d'Ashbourne",
-    "Léonore Edelweiss", "Markus Law", "Kalem Crowley", "Eldren Gates",
-    "Yunah Aoi Enjaku", "Astreüs Mylonas", "Jin Alurantes", "Par-delà le Voile",
-    "Le Monarque du Silence", "L'Infranchissable", "La Déesse-Mère"
-}
+# Pure Webhook-based PNJ Classification Rule
+# Note: PNJ_NAMES hardcoded dictionary removed as requested.
+# Webhook messages are classified as PNJ (Role: PNJ, Color: #c084fc).
 
 # Main canonical mapping rules for names
 CANONICAL_MAP = {
@@ -71,30 +65,18 @@ CANONICAL_MAP = {
     "okayama": "Okayama", "raien shogo enjaku blacksheep": "Okayama", "raien shogo enjaku": "Okayama", "shogo enjaku": "Okayama", "raien": "Okayama", "vesper": "Okayama", "okayama [ash]": "Okayama", "𝓞𝓴𝓪𝔂𝓪𝓶𝓪 [ASH]": "Okayama",
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
-
-    # Additional lore & NPC characters
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
-    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku",
-    "kuikui - astreus mylonas": "Astreüs Mylonas", "astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
-    "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
-    "inzu sravel": "Inzu Sravel", "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel",
-    "hector swaft": "Hector Swaft", "hector swaft - mage de rang 3": "Hector Swaft",
-    "milli enga": "Milli Enga", "milli enga - mange de rang 2": "Milli Enga",
-    "tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto",
-    "emil camille rebenok": "Emil Camille Rebenok", "indominushunter": "Emil Camille Rebenok",
-    "rias valdor": "Rias Valdor", "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne",
-    "leonore edelweiss": "Léonore Edelweiss", "markus law": "Markus Law", "kalem crowley": "Kalem Crowley", "eldren gates": "Eldren Gates",
+
+    # Webhook entities & System Narrators
     "par-dela le voile": "Oeil", "par dela le voile": "Oeil", "par-delà le voile": "Oeil", "par delà le voile": "Oeil",
     "que le seigneur ouvre": "Oeil", "le seigneur ouvre": "Oeil",
-
-    # System & special narrators
     "le conseiller": "LE CONSEILLER", "conseiller": "LE CONSEILLER",
     "owl le messager": "OWL LE MESSAGER", "owl": "OWL LE MESSAGER",
     "l'oeil": "Oeil", "l'œil": "Oeil", "loeil": "Oeil", "lœil": "Oeil", "oeil": "Oeil",
     "les missives": "LES MISSIVES", "missive": "LES MISSIVES"
 }
 
-# Roles strictly assigned based on Discord Role IDs + Separate PNJ role
+# Roles strictly assigned based on Discord Role IDs (Webhooks are classified dynamically as PNJ)
 CHARACTER_METADATA_V2 = {
     "Adelina Del Fuego": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Aegnor Othar": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
@@ -134,25 +116,13 @@ CHARACTER_METADATA_V2 = {
     "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
     "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
 
-    # System & NPCs (Role explicitely 'PNJ')
+    # Webhooks (System & PNJ entities)
     "Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "L'Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "OWL LE MESSAGER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "LES MISSIVES": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "Par-delà le Voile": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "Inzu Sravel": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Milli Enga": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Tsutomu Yamamoto": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Emil Camille Rebenok": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Lewis-Phoebe d'Ashbourne": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Léonore Edelweiss": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Markus Law": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Kalem Crowley": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"},
-    "Eldren Gates": {"role": "PNJ", "color": "#c084fc", "status": "RECURRING_NPC"}
+    "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"}
 }
 
 VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "Sans guilde", "PNJ"}
@@ -224,14 +194,14 @@ def build_unified_characters_dict_v2(all_scenes):
 
     for act, s_count in scene_actors_counts.items():
         if act not in chars_dict:
-            is_pnj = act in PNJ_NAMES or "pnj" in act.lower() or "narrat" in act.lower() or "bot" in act.lower()
+            is_pnj = "pnj" in act.lower() or "narrat" in act.lower() or "bot" in act.lower() or act in {"Oeil", "L'Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES"}
             role = "PNJ" if is_pnj else "Indéfini"
             color = "#c084fc" if is_pnj else "#94a3b8"
             chars_dict[act] = {
                 "name": act,
                 "role": role,
                 "color": color,
-                "status": "RECURRING_NPC",
+                "status": "PNJ" if is_pnj else "MAIN_PC",
                 "totalScenes": s_count,
                 "totalMessages": scene_messages_counts.get(act, 0)
             }

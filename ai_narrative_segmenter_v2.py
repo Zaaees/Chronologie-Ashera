@@ -2,22 +2,20 @@ import re
 from datetime import datetime
 from unify_characters_v2 import get_canonical_name_v2
 
-# Explicit RP closing markers
+# Marqueurs explicites de fermeture et d'ouverture de RP (Logique GitHub d'origine créée par l'utilisateur)
 EXPLICIT_END_REGEX = re.compile(
-    r'(sc[èe]ne\s+termin[eé]|salon\s+libre|fin\s+de\s+sc[èe]ne|mission\s+termin[eé]|fin\s+du\s+rp|fin\s+d\'?acte|rp\s+clos|sc[eè]ne\s+close)',
+    r'(sc[èe]ne\s+termin[eé]|salon\s+libre|fin\s+de\s+sc[èe]ne|mission\s+termin[eé]|fin\s+du\s+rp|rp\s+clos|sc[eè]ne\s+close)',
     re.IGNORECASE
 )
 
-# Explicit Event / Mission start markers
+# Marqueurs majeurs de démarrage RP (incluant convocations et bannières de mission)
 EXPLICIT_START_REGEX = re.compile(
-    r'(```ansi.*🎭|#\s+⊱═─────|```\s*🎭|◦\s*─────────────\s*¤|#\s+.*🎭|\bacte\s+\d+\b|@L\'Oeil|@Garde Pourpre|@Cercle d\'Azur|@Voile d\'Ivoire|@Sans guilde)',
+    r'(```ansi.*🎭|#\s+⊱═─────|```\s*🎭|◦\s*─────────────\s*¤|\bacte\s+\d+\b|béni\s+soit\s+le\s+fruit|que\s+le\s+seigneur\s+ouvre|par-delà\s+le\s+voile)',
     re.IGNORECASE | re.DOTALL
 )
 
-# Purely administrative / moderation bots (Tupperbox & RP Webhooks ARE NOT included)
 SYSTEM_BOTS = {"carl-bot", "dyno", "mee6", "ticket-tool", "disboard", "raidprotect"}
-
-GAP_LIMIT_SECONDS = 30 * 24 * 3600  # 30 jours (720h) au lieu de 7 jours pour éviter le morcellement d'une même scène RP
+GM_BOT_ACTORS = {"LE CONSEILLER", "Oeil", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}
 
 def parse_timestamp_v2(ts_str):
     if not ts_str:
@@ -74,8 +72,8 @@ def extract_title_from_text(text, channel_clean, scene_index):
 
 def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func):
     """
-    Segmentation V2 avec prise en compte INTÉGRALE de tous les Tupperbots, webhooks et narrateurs RP.
-    Aucune scène n'est supprimée ou morcelée à cause de la présence d'un bot RP / Tupperbot MJ.
+    Segmentation Narrative des messages RP (Logique GitHub pure).
+    Suit la continuité du récit et le fil de répliques entre personnages joueurs.
     """
     if not valid_msgs:
         return []
@@ -99,29 +97,36 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
         curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
 
-        prev_ts = parse_timestamp_v2(prev_msg.get('timestamp'))
-        curr_ts = parse_timestamp_v2(curr_msg.get('timestamp'))
-        time_gap = (curr_ts - prev_ts) if (curr_ts > 0 and prev_ts > 0) else 0
+        # Exclure les GMs neutres lors du contrôle des réponses des personnages joueurs
+        player_scene_actors = current_scene_actors - GM_BOT_ACTORS
 
-        has_previous_actor_replied = False
+        has_player_actor_replied = False
         for nm, _ in valid_msgs_sorted[i:]:
             act = get_canonical_name_v2(nm.get('author_name', nm.get('author', '')))
-            if act in current_scene_actors:
-                has_previous_actor_replied = True
+            if act in player_scene_actors:
+                has_player_actor_replied = True
                 break
 
         is_new_scene = False
 
+        # 1. Marqueur explicite de fin de RP
         if prev_is_sealed:
             is_new_scene = True
-        elif time_gap > GAP_LIMIT_SECONDS:
+        # 2. Bannière/Convocation majeure lancée sans qu'aucun des joueurs de la scène précédente ne réponde plus tard
+        elif curr_is_start and not has_player_actor_replied:
             is_new_scene = True
-        elif curr_is_start and curr_actor not in current_scene_actors and not has_previous_actor_replied and time_gap > 24 * 3600:
-            is_new_scene = True
-        elif curr_actor in current_scene_actors or has_previous_actor_replied or time_gap <= 7 * 24 * 3600:
+        # 3. Si le début de la scène est un PNJ/GM neutre -> la scène continue avec le joueur qui répond
+        elif current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = False
+        # 4. Continuité narrative : si l'acteur participe ou si les joueurs répliquent plus loin dans le salon -> Continuer la scène
+        elif curr_actor in player_scene_actors or has_player_actor_replied:
+            is_new_scene = False
+        # 5. Bannière d'ouverture majeure lancée par un groupe indépendant
+        elif curr_is_start and curr_actor not in current_scene_actors:
+            is_new_scene = True
+        # 6. Nouveau fil RP sans lien avec le groupe précédent
         else:
-            is_new_scene = False
+            is_new_scene = True
 
         if is_new_scene:
             scenes.append(create_scene_func(

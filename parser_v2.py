@@ -11,7 +11,12 @@ if sys.platform.startswith('win'):
     except AttributeError:
         pass
 
-from ai_narrative_segmenter_v2 import segment_messages_into_scenes_v2, parse_timestamp_v2
+from ai_narrative_segmenter_v2 import (
+    segment_messages_into_scenes_v2,
+    extract_title_from_text,
+    parse_timestamp_v2,
+    GM_BOT_ACTORS
+)
 from unify_characters_v2 import get_canonical_name_v2, build_unified_characters_dict_v2, CHARACTER_METADATA_V2
 
 # Advanced HRP / Excuse / Ping filtering regex
@@ -554,6 +559,47 @@ def main():
 
     all_v2_scenes.sort(key=lambda s: parse_timestamp_v2(s.get('start_time', '')))
 
+    # Post-processing — Passe 1 : fusionner les en-têtes isolées (1 msg) dans la scène suivante du même canal (< 24h)
+    pass1 = []
+    idx = 0
+    while idx < len(all_v2_scenes):
+        sc = all_v2_scenes[idx]
+        if (
+            sc.get('message_count', 0) == 1
+            and idx + 1 < len(all_v2_scenes)
+            and all_v2_scenes[idx + 1].get('channel_clean') == sc.get('channel_clean')
+        ):
+            next_sc = all_v2_scenes[idx + 1]
+            gap = parse_timestamp_v2(next_sc.get('start_time')) - parse_timestamp_v2(sc.get('end_time'))
+            if gap <= 24 * 3600:
+                next_sc['messages'] = sc['messages'] + next_sc['messages']
+                next_sc['start_time'] = sc['start_time']
+                next_sc['actors'] = list(set(sc['actors'] + next_sc['actors']))
+                next_sc['message_count'] = len(next_sc['messages'])
+                idx += 1
+                continue
+        pass1.append(sc)
+        idx += 1
+
+    # Post-processing — Passe 2 : fusionner les conclusions isolées (1 msg) dans la scène précédente du même canal
+    pass2 = []
+    for sc in pass1:
+        if sc.get('message_count', 0) == 1:
+            # Chercher la scène précédente dans le même canal (pas forcément la dernière dans pass2)
+            prev_same = None
+            for prev in reversed(pass2):
+                if prev.get('channel_clean') == sc.get('channel_clean'):
+                    prev_same = prev
+                    break
+            if prev_same is not None:
+                prev_same['messages'] = prev_same['messages'] + sc['messages']
+                prev_same['end_time'] = sc['end_time']
+                prev_same['actors'] = list(set(prev_same['actors'] + sc['actors']))
+                prev_same['message_count'] = len(prev_same['messages'])
+                continue
+        pass2.append(sc)
+
+    all_v2_scenes = pass2
     characters_v2 = build_unified_characters_dict_v2(all_v2_scenes)
 
     for sc in all_v2_scenes:

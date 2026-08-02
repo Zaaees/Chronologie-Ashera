@@ -277,14 +277,9 @@ EXPLICIT_END_REGEX = re.compile(
     re.IGNORECASE
 )
 
-EXPLICIT_START_REGEX = re.compile(
-    r'(```ansi.*🎭|#\s+⊱═─────|```\s*🎭|◦\s*─────────────\s*¤)',
-    re.IGNORECASE | re.DOTALL
-)
+from ai_narrative_segmenter_v2 import segment_messages_into_scenes_v2
 
-from ai_narrative_segmenter import segment_messages_into_scenes_ai
-
-# Segmentation des messages en scènes (100% IA Narrative)
+# Segmentation des messages en scènes (Logique Narrative V2)
 def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str):
     if not messages:
         return []
@@ -298,23 +293,12 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
     if not valid_msgs:
         return []
 
-    def scene_builder(ch_name, ch_id, idx, sub_tuples):
+    def scene_builder(ch_name, ch_id, idx, sub_tuples, title):
         return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str)
 
-    scenes = segment_messages_into_scenes_ai(channel_name, channel_id, valid_msgs, scene_builder)
+    scenes = segment_messages_into_scenes_v2(channel_name, channel_id, valid_msgs, scene_builder)
 
-    clean_scenes = []
-    for idx, s in enumerate(scenes, start=1):
-        msgs = s.get("messages", [])
-        if idx == 1 and len(msgs) == 1:
-            first_author = msgs[0].get("author", "").strip().lower()
-            if "conseiller" in first_author:
-                continue
-        if not s.get("actors"):
-            continue
-        clean_scenes.append(s)
-
-    return clean_scenes
+    return [s for s in scenes if s.get("actors")]
 
 def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name=""):
     messages = [t[0] for t in messages_tuples]
@@ -579,14 +563,39 @@ class DiscordExporterClient(discord.Client):
 
                     embed_title = ""
                     embed_desc = ""
+                    embed_texts = []
                     if msg.embeds:
                         titles = [e.title for e in msg.embeds if e.title]
                         descs = [e.description for e in msg.embeds if e.description]
                         embed_title = " | ".join(titles)
                         embed_desc = " | ".join(descs)
 
+                        for e in msg.embeds:
+                            if e.title:
+                                embed_texts.append(e.title)
+                            if hasattr(e, 'author') and e.author and hasattr(e.author, 'name') and e.author.name:
+                                embed_texts.append(e.author.name)
+                            if e.description:
+                                embed_texts.append(e.description)
+                            if hasattr(e, 'fields') and e.fields:
+                                for f in e.fields:
+                                    field_str = f"{f.name}\n{f.value}" if hasattr(f, 'name') and f.name else f.value
+                                    embed_texts.append(field_str)
+                            if hasattr(e, 'footer') and e.footer and hasattr(e.footer, 'text') and e.footer.text:
+                                embed_texts.append(e.footer.text)
+                            if hasattr(e, 'image') and e.image and hasattr(e.image, 'url') and e.image.url:
+                                embed_texts.append(f"[Image: {e.image.url}]")
+
+                        if embed_texts:
+                            embed_full = "\n".join(embed_texts)
+                            if content:
+                                content = content + "\n\n" + embed_full
+                            else:
+                                content = embed_full
+
                     # Format du timestamp ISO
                     ts_iso = msg.created_at.strftime("%Y-%m-%dT%H:%M:%SZ")
+                    is_wh = getattr(msg, 'webhook_id', None) is not None or (hasattr(msg.author, 'bot') and msg.author.bot)
 
                     raw_messages.append({
                         "id": str(msg.id),
@@ -595,7 +604,8 @@ class DiscordExporterClient(discord.Client):
                         "content": content,
                         "embed_title": embed_title,
                         "embed_description": embed_desc,
-                        "avatar_url": author_avatar_url
+                        "avatar_url": author_avatar_url,
+                        "is_webhook": is_wh
                     })
 
                 if after_obj and len(raw_messages) == 0:
