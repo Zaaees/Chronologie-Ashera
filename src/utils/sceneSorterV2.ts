@@ -18,6 +18,7 @@ export interface SceneV2 {
   message_count: number;
   word_count: number;
   location_image?: string | null;
+  location_description?: string | null;
   faction_distribution?: Record<string, number>;
   messages?: SceneMessageV2[];
 }

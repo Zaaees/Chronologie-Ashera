@@ -16,6 +16,53 @@ export const formatImageUrl = (url?: string | null): string | undefined => {
   return `./${clean}`;
 };
 
+export interface DiscordCategoryRule {
+  name: string;
+  icon: string;
+  hexColor: string;
+  text: string;
+}
+
+export const DISCORD_CATEGORY_ORDER: string[] = [
+  "| ✵ |  GRANDE SALLE PORCELAINE",
+  "| ✵ |  ATRIUM CANOPUS",
+  "| ❖ |   ESPERIA COURS",
+  "| ✵ |  LE HEAUME BLANC",
+  "| ✠ |   LE BASTION ÉCARLATE",
+  "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
+  "| ♖ |  LE FORUM ÉBURNÉEN",
+  "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "| ✦ |  BASSE-VILLE",
+  "Demeure du Sabre",
+  "ARC I - La Galerie du Prince Lunaire",
+  "Évent - Couper le Mal à la Racine",
+  "Évent - Ce que le Rouge révèlera",
+  "Évent - ELDREN GATES",
+  "🎭 Scènes Privées & Duos"
+];
+
+export const DISCORD_CATEGORIES_RULES: DiscordCategoryRule[] = [
+  { name: "| ✵ |  GRANDE SALLE PORCELAINE", icon: "🌸", hexColor: "#ec4899", text: "#fbcfe8" },
+  { name: "| ✵ |  ATRIUM CANOPUS", icon: "🏛️", hexColor: "#38bdf8", text: "#7dd3fc" },
+  { name: "| ❖ |   ESPERIA COURS", icon: "❖", hexColor: "#38bdf8", text: "#7dd3fc" },
+  { name: "| ✵ |  LE HEAUME BLANC", icon: "❇️", hexColor: "#94a3b8", text: "#cbd5e1" },
+  { name: "| ✠ |   LE BASTION ÉCARLATE", icon: "⚔️", hexColor: "#ef4444", text: "#fca5a5" },
+  { name: "| ۩ |   L'OBSERVATOIRE CÉRULÉEN", icon: "🏛️", hexColor: "#3b82f6", text: "#93c5fd" },
+  { name: "| ♖ |  LE FORUM ÉBURNÉEN", icon: "⌛", hexColor: "#eab308", text: "#fde047" },
+  { name: "𝑼𝒎𝒃𝒓𝒂𝒆𝒍", icon: "👁️", hexColor: "#a855f7", text: "#e9d5ff" },
+  { name: "Demeure du Sabre", icon: "🗡️", hexColor: "#64748b", text: "#94a3b8" },
+  { name: "| ✦ |  BASSE-VILLE", icon: "✦", hexColor: "#f97316", text: "#fdba74" },
+  { name: "Évent - Couper le Mal à la Racine", icon: "🍃", hexColor: "#22c55e", text: "#86efac" },
+  { name: "Évent - Ce que le Rouge révèlera", icon: "🌹", hexColor: "#f43f5e", text: "#fda4af" },
+  { name: "Évent - ELDREN GATES", icon: "🚪", hexColor: "#eab308", text: "#fef08a" },
+  { name: "🎭 Scènes Privées & Duos", icon: "🎭", hexColor: "#10b981", text: "#a7f3d0" }
+];
+
+export function getChannelDiscordCategory(chName: string, sceneCat?: string): string {
+  if (sceneCat && sceneCat.trim()) return sceneCat;
+  return 'Sans catégorie';
+}
+
 const FACTION_INFO: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   "La Garde Pourpre": { 
     roleName: "La Garde Pourpre",
@@ -68,7 +115,7 @@ const DEFAULT_FACTION_STYLE = {
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   ...FACTION_INFO,
   "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
-  "Sans rôle": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "🛡️", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Sans rôle" },
+  "Indéfini": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "❓", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Indéfini" },
   "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" }
 };
 
@@ -96,6 +143,33 @@ function formatDateDiscord(isoString: string): string {
   } catch (e) {
     return isoString;
   }
+}
+
+const DISCORD_GUILD_ID = '1327646236534112318';
+
+function getSceneDiscordUrl(scene: Scene, useAppScheme: boolean = true): string {
+  const firstMsgId = scene.messages && scene.messages.length > 0 ? scene.messages[0].id : null;
+  const channelId = scene.channel_id || firstMsgId || DISCORD_GUILD_ID;
+  const scheme = useAppScheme ? 'discord://' : 'https://';
+  
+  if (scene.discord_url) {
+    let cleanUrl = scene.discord_url.replace(/^(discord:\/\/|https:\/\/)/, '');
+    if (firstMsgId && !cleanUrl.includes(firstMsgId)) {
+      const parts = cleanUrl.split('/').filter(Boolean);
+      if (parts.length >= 2) {
+        const lastPart = parts[parts.length - 1];
+        if (lastPart !== firstMsgId) {
+          cleanUrl = `${cleanUrl}/${firstMsgId}`;
+        }
+      }
+    }
+    return `${scheme}${cleanUrl}`;
+  }
+
+  if (firstMsgId) {
+    return `${scheme}discord.com/channels/${DISCORD_GUILD_ID}/${channelId}/${firstMsgId}`;
+  }
+  return `${scheme}discord.com/channels/${DISCORD_GUILD_ID}/${channelId}`;
 }
 
 // Obtenir le mois et l'année pour le groupement
@@ -321,18 +395,18 @@ function renderDiscordMarkdown(text: string, searchQuery: string = ''): React.Re
   return <>{renderedElements}</>;
 }
 
-// 🔍 COMPOSANT INTERACTIF : SÉLECTEUR DE PERSONNAGES AVEC RECHERCHE PAR SAISIE MANUELLE
 function SearchableCharacterSelect({
   selectedActor,
   setSelectedActor,
   groupedActorsByFaction
 }: {
   selectedActor: string;
-  setSelectedActor: (name: string) => void;
+  setSelectedActor: (actor: string) => void;
   groupedActorsByFaction: Record<string, { name: string; displayLabel: string }[]>;
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [filterQuery, setFilterQuery] = useState('');
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -345,13 +419,14 @@ function SearchableCharacterSelect({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const toggleCategory = (roleName: string) => {
+    setOpenCategories(prev => ({ ...prev, [roleName]: !prev[roleName] }));
+  };
+
   const currentDisplayLabel = useMemo(() => {
     if (selectedActor === 'all') return 'Tous les personnages';
     const charInfo = CHARACTERS_DATA[selectedActor];
-    const serverNick = charInfo?.displayName || charInfo?.username;
-    return serverNick && serverNick !== selectedActor 
-      ? `${selectedActor} (${serverNick})` 
-      : selectedActor;
+    return charInfo?.displayName || charInfo?.username || selectedActor;
   }, [selectedActor]);
 
   const filteredGroupedActors = useMemo(() => {
@@ -360,9 +435,11 @@ function SearchableCharacterSelect({
 
     const result: Record<string, { name: string; displayLabel: string }[]> = {};
     Object.entries(groupedActorsByFaction).forEach(([role, actors]) => {
-      const matching = actors.filter(a => 
-        a.name.toLowerCase().includes(q) || a.displayLabel.toLowerCase().includes(q)
-      );
+      const matching = actors.filter(a => {
+        const info = CHARACTERS_DATA[a.name];
+        const nick = info?.displayName || info?.username || '';
+        return a.name.toLowerCase().includes(q) || a.displayLabel.toLowerCase().includes(q) || nick.toLowerCase().includes(q) || role.toLowerCase().includes(q);
+      });
       if (matching.length > 0) {
         result[role] = matching;
       }
@@ -372,12 +449,12 @@ function SearchableCharacterSelect({
 
   return (
     <div ref={containerRef} className="relative flex-1 min-w-[240px]">
-      <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-1.5 border border-slate-800 shadow-sm">
+      <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm focus-within:border-purple-500/60 transition-colors">
         <Users className="w-4 h-4 text-purple-400 shrink-0" />
         
         <input
           type="text"
-          placeholder="Taper un nom de personnage..."
+          placeholder="Chercher un personnage..."
           value={isOpen ? filterQuery : (selectedActor === 'all' ? '' : currentDisplayLabel)}
           onFocus={() => {
             setIsOpen(true);
@@ -387,12 +464,13 @@ function SearchableCharacterSelect({
             setFilterQuery(e.target.value);
             if (!isOpen) setIsOpen(true);
           }}
-          className="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs truncate"
+          className="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs truncate cursor-text"
         />
 
         {selectedActor !== 'all' && (
           <button 
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               setSelectedActor('all');
               setFilterQuery('');
             }}
@@ -405,36 +483,37 @@ function SearchableCharacterSelect({
 
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="text-slate-500 hover:text-slate-300"
+          className="text-slate-500 hover:text-slate-300 p-0.5"
         >
           <ChevronDown className="w-3.5 h-3.5" />
         </button>
       </div>
 
       {isOpen && (
-        <div className="absolute top-full left-0 right-0 mt-1 max-h-72 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
-          <button
-            onClick={() => {
-              setSelectedActor('all');
-              setIsOpen(false);
-              setFilterQuery('');
-            }}
-            className={`w-full text-left px-3 py-1.5 text-xs font-semibold hover:bg-slate-800 transition-colors ${
-              selectedActor === 'all' ? 'bg-purple-950/80 text-purple-200' : 'text-slate-300'
-            }`}
-          >
-            Tous les personnages
-          </button>
-
+        <div className="absolute top-full left-0 right-0 mt-1 max-h-80 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
           {(Object.entries(filteredGroupedActors) as [string, { name: string; displayLabel: string }[]][]).map(([roleName, actorList]) => {
             const factionStyle = getFactionStyle(roleName);
+            const isCatOpen = filterQuery.trim().length > 0 || !!openCategories[roleName];
+
             return (
               <div key={roleName} className="border-t border-slate-800/80 pt-1">
-                <div style={{ color: factionStyle.text }} className="px-3 py-1 text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 bg-slate-950/80">
-                  <span>{factionStyle.icon}</span>
-                  <span>{roleName} ({actorList.length})</span>
-                </div>
-                {actorList.map(({ name, displayLabel }) => (
+                <button
+                  type="button"
+                  onClick={() => toggleCategory(roleName)}
+                  style={{ color: factionStyle.text }}
+                  className="w-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between bg-slate-950/90 border-l-2 border-slate-700 hover:bg-slate-900/90 transition-colors select-none text-left"
+                >
+                  <div className="flex items-center gap-1.5 truncate">
+                    {isCatOpen ? <ChevronDown className="w-3.5 h-3.5 shrink-0" /> : <ChevronRight className="w-3.5 h-3.5 shrink-0" />}
+                    <span>{factionStyle.icon}</span>
+                    <span className="truncate">{roleName}</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400 shrink-0 ml-2">
+                    {actorList.length} membre{actorList.length > 1 ? 's' : ''}
+                  </span>
+                </button>
+
+                {isCatOpen && actorList.map(({ name, displayLabel }) => (
                   <button
                     key={name}
                     onClick={() => {
@@ -442,8 +521,8 @@ function SearchableCharacterSelect({
                       setIsOpen(false);
                       setFilterQuery('');
                     }}
-                    className={`w-full text-left px-4 py-1.5 text-xs hover:bg-slate-800/80 transition-colors truncate ${
-                      selectedActor === name ? 'bg-slate-800 text-purple-300 font-semibold' : 'text-slate-300'
+                    className={`w-full text-left px-6 py-1.5 text-xs hover:bg-slate-800/80 transition-colors truncate ${
+                      selectedActor === name ? 'bg-slate-800 text-purple-300 font-semibold border-l-2 border-purple-400' : 'text-slate-300'
                     }`}
                   >
                     {displayLabel}
@@ -456,6 +535,168 @@ function SearchableCharacterSelect({
           {Object.keys(filteredGroupedActors).length === 0 && (
             <div className="px-4 py-3 text-xs text-slate-500 text-center">
               Aucun personnage trouvé pour "{filterQuery}"
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// 💬 COMPOSANT INTERACTIF : SÉLECTEUR DE SALONS PAR CATÉGORIE AVEC RECHERCHE PAR SAISIE MANUELLE
+function SearchableChannelSelect({
+  selectedChannel,
+  setSelectedChannel,
+  groupedChannelsByCategory
+}: {
+  selectedChannel: string;
+  setSelectedChannel: (channel: string) => void;
+  groupedChannelsByCategory: Record<string, { channel: string; count: number }[]>;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [filterQuery, setFilterQuery] = useState('');
+  const [openCategories, setOpenCategories] = useState<Record<string, boolean>>({});
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const toggleCategory = (catName: string) => {
+    setOpenCategories(prev => ({ ...prev, [catName]: !prev[catName] }));
+  };
+
+  const currentDisplayLabel = useMemo(() => {
+    if (selectedChannel === 'all') return 'Tous les salons';
+    return `#${selectedChannel}`;
+  }, [selectedChannel]);
+
+  const filteredGroupedChannels = useMemo(() => {
+    const q = filterQuery.toLowerCase().trim();
+    if (!q) return groupedChannelsByCategory;
+
+    const result: Record<string, { channel: string; count: number }[]> = {};
+    Object.entries(groupedChannelsByCategory).forEach(([category, channels]) => {
+      const matching = channels.filter(ch => 
+        ch.channel.toLowerCase().includes(q) || category.toLowerCase().includes(q)
+      );
+      if (matching.length > 0) {
+        result[category] = matching;
+      }
+    });
+    return result;
+  }, [filterQuery, groupedChannelsByCategory]);
+
+  const getCategoryIcon = (category: string) => {
+    const rule = DISCORD_CATEGORIES_RULES.find(r => r.name === category);
+    if (rule) return rule.icon;
+    const catLower = category.toLowerCase();
+    if (catLower.includes('principal') || catLower.includes('général')) return '💬';
+    if (catLower.includes('quartier') || catLower.includes('lieu') || catLower.includes('ville')) return '🏰';
+    if (catLower.includes('événement') || catLower.includes('quête')) return '⚔️';
+    if (catLower.includes('archive') || catLower.includes('passé')) return '📜';
+    if (catLower.includes('forêt') || catLower.includes('nature')) return '🌲';
+    return '📁';
+  };
+
+  return (
+    <div ref={containerRef} className="relative flex-1 min-w-[240px]">
+      <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm focus-within:border-cyan-500/60 transition-colors">
+        <Layers className="w-4 h-4 text-cyan-400 shrink-0" />
+        
+        <input
+          type="text"
+          placeholder="Chercher un salon par nom ou catégorie..."
+          value={isOpen ? filterQuery : (selectedChannel === 'all' ? '' : currentDisplayLabel)}
+          onFocus={() => {
+            setIsOpen(true);
+            setFilterQuery('');
+          }}
+          onChange={(e) => {
+            setFilterQuery(e.target.value);
+            if (!isOpen) setIsOpen(true);
+          }}
+          className="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs truncate cursor-text"
+        />
+
+        {selectedChannel !== 'all' && (
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedChannel('all');
+              setFilterQuery('');
+            }}
+            className="text-slate-500 hover:text-slate-300 p-0.5"
+            title="Effacer le salon"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        )}
+
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          className="text-slate-500 hover:text-slate-300 p-0.5"
+        >
+          <ChevronDown className="w-3.5 h-3.5" />
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-1 max-h-80 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
+
+          {(Object.entries(filteredGroupedChannels) as [string, { channel: string; count: number }[]][]).map(([catName, channels]) => {
+            const icon = getCategoryIcon(catName);
+            const totalCategoryScenes = channels.reduce((acc, c) => acc + c.count, 0);
+            const isCatOpen = filterQuery.trim().length > 0 || !!openCategories[catName];
+
+            return (
+              <div key={catName} className="border-t border-slate-800/80 pt-1">
+                {/* Header de catégorie cliquable accordion */}
+                <button
+                  type="button"
+                  onClick={() => toggleCategory(catName)}
+                  className="w-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between bg-slate-950/90 text-cyan-400 border-l-2 border-cyan-500/60 hover:bg-slate-900/90 transition-colors select-none text-left"
+                >
+                  <div className="flex items-center gap-1.5 truncate">
+                    {isCatOpen ? <ChevronDown className="w-3.5 h-3.5 shrink-0" /> : <ChevronRight className="w-3.5 h-3.5 shrink-0" />}
+                    <span>{icon}</span>
+                    <span className="truncate">{catName}</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-400 shrink-0 ml-2">
+                    {channels.length} salon{channels.length > 1 ? 's' : ''} ({totalCategoryScenes} scènes)
+                  </span>
+                </button>
+
+                {/* Liste des salons sous la catégorie */}
+                {isCatOpen && channels.map(({ channel, count }) => (
+                  <button
+                    key={channel}
+                    onClick={() => {
+                      setSelectedChannel(channel);
+                      setIsOpen(false);
+                      setFilterQuery('');
+                    }}
+                    className={`w-full text-left px-6 py-1.5 text-xs hover:bg-slate-800/80 transition-colors flex items-center justify-between truncate ${
+                      selectedChannel === channel ? 'bg-slate-800 text-cyan-300 font-semibold border-l-2 border-cyan-400' : 'text-slate-300'
+                    }`}
+                  >
+                    <span className="truncate font-mono">#{channel}</span>
+                    <span className="text-[10px] text-slate-500 shrink-0 ml-2 font-mono">{count} scène{count > 1 ? 's' : ''}</span>
+                  </button>
+                ))}
+              </div>
+            );
+          })}
+
+          {Object.keys(filteredGroupedChannels).length === 0 && (
+            <div className="px-4 py-3 text-xs text-slate-500 text-center">
+              Aucun salon trouvé pour "{filterQuery}"
             </div>
           )}
         </div>
@@ -847,6 +1088,7 @@ export default function App() {
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [selectedFaction, setSelectedFaction] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
   
   const headerRef = useRef<HTMLElement>(null);
@@ -903,13 +1145,16 @@ export default function App() {
       "Voile d'Ivoire": [],
       "L'œil": [],
       "Sans guilde": [],
-      "Sans rôle": [],
+      "Indéfini": [],
       "PNJ": []
     };
 
     Object.keys(CHARACTERS_DATA).forEach(actorName => {
       const charInfo = CHARACTERS_DATA[actorName];
-      const role = charInfo?.role || "Sans rôle";
+      let role = charInfo?.role || "Indéfini";
+      if (role === "Sans rôle" || role === "Inconnu") {
+        role = "Indéfini";
+      }
       
       const serverNickname = charInfo?.displayName || charInfo?.username;
       const displayLabel = serverNickname && serverNickname !== actorName 
@@ -924,42 +1169,100 @@ export default function App() {
 
     activeActorsSet.forEach(actorName => {
       if (!CHARACTERS_DATA[actorName]) {
-        if (!groups["Sans rôle"]) groups["Sans rôle"] = [];
-        if (!groups["Sans rôle"].some(x => x.name === actorName)) {
-          groups["Sans rôle"].push({ name: actorName, displayLabel: actorName });
+        if (!groups["Indéfini"]) groups["Indéfini"] = [];
+        if (!groups["Indéfini"].some(x => x.name === actorName)) {
+          groups["Indéfini"].push({ name: actorName, displayLabel: actorName });
         }
       }
     });
 
+    delete groups["Sans rôle"];
+
     Object.keys(groups).forEach(role => {
-      groups[role].sort((a, b) => a.displayLabel.localeCompare(b.displayLabel, 'fr'));
+      if (groups[role].length === 0) {
+        delete groups[role];
+      } else {
+        groups[role].sort((a, b) => a.displayLabel.localeCompare(b.displayLabel, 'fr'));
+      }
     });
 
     return groups;
   }, [activeActorsSet]);
 
   const groupedChannelsByCategory = useMemo(() => {
-    const groups: Record<string, string[]> = {};
+    const groups: Record<string, { channel: string; count: number }[]> = {};
+    const channelCounts: Record<string, number> = {};
 
     SCENES_DATA.forEach(scene => {
-      const cat = scene.category || "Salons Principaux";
       const ch = scene.channel;
-      if (!groups[cat]) {
-        groups[cat] = [];
+      channelCounts[ch] = (channelCounts[ch] || 0) + 1;
+    });
+
+    const channelsSeen = new Set<string>();
+    SCENES_DATA.forEach(scene => {
+      const ch = scene.channel;
+      if (!channelsSeen.has(ch)) {
+        channelsSeen.add(ch);
+        const cat = getChannelDiscordCategory(ch, scene.category);
+        if (!groups[cat]) groups[cat] = [];
+        groups[cat].push({ channel: ch, count: channelCounts[ch] || 0 });
       }
-      if (!groups[cat].includes(ch)) {
-        groups[cat].push(ch);
+    });
+
+    const channelPositionMap: Record<string, number> = {};
+    SCENES_DATA.forEach(scene => {
+      const ch = scene.channel;
+      const pos = (scene as any).discord_position;
+      if (pos !== undefined && pos !== null) {
+        if (!(ch in channelPositionMap) || pos < channelPositionMap[ch]) {
+          channelPositionMap[ch] = pos;
+        }
       }
     });
 
     Object.keys(groups).forEach(cat => {
-      groups[cat].sort((a, b) => a.localeCompare(b, 'fr'));
+      groups[cat].sort((a, b) => {
+        const posA = channelPositionMap[a.channel] ?? 999;
+        const posB = channelPositionMap[b.channel] ?? 999;
+        if (posA !== posB) return posA - posB;
+        return a.channel.localeCompare(b.channel, 'fr');
+      });
     });
 
-    return groups;
+    const getDiscordOrderIndex = (cat: string) => {
+      const idx = DISCORD_CATEGORY_ORDER.findIndex(
+        o => o.normalize('NFKC').toLowerCase().replace(/[^\w]/g, '') === cat.normalize('NFKC').toLowerCase().replace(/[^\w]/g, '')
+      );
+      return idx >= 0 ? idx : 999;
+    };
+
+    const sortedGroups: Record<string, { channel: string; count: number }[]> = {};
+    Object.keys(groups)
+      .sort((a, b) => getDiscordOrderIndex(a) - getDiscordOrderIndex(b))
+      .forEach(cat => {
+        sortedGroups[cat] = groups[cat];
+      });
+
+    return sortedGroups;
   }, []);
 
-  // Filtrage des scènes selon Personnage, Salon et Recherche
+  const activeCategoryRules = useMemo(() => {
+    const knownMap = new Map(DISCORD_CATEGORIES_RULES.map(r => [r.name, r]));
+    const categoryNames = Object.keys(groupedChannelsByCategory).filter(cat => (groupedChannelsByCategory[cat]?.length || 0) > 0);
+
+    return categoryNames.map(name => {
+      const existing = knownMap.get(name);
+      if (existing) return existing;
+      return {
+        name,
+        icon: '📁',
+        hexColor: '#38bdf8',
+        text: '#7dd3fc'
+      };
+    });
+  }, [groupedChannelsByCategory]);
+
+  // Filtrage des scènes selon Faction, Catégorie Discord, Personnage, Salon et Recherche
   const filteredScenes = useMemo(() => {
     return SCENES_DATA.filter(scene => {
       if (searchQuery.trim()) {
@@ -982,6 +1285,16 @@ export default function App() {
         }
       }
 
+      if (selectedFaction) {
+        const factionActors = groupedActorsByFaction[selectedFaction]?.map(a => a.name) || [];
+        if (!scene.actors.some(a => factionActors.includes(a))) return false;
+      }
+
+      if (selectedCategory) {
+        const catChannels = groupedChannelsByCategory[selectedCategory]?.map(c => c.channel) || [];
+        if (!catChannels.includes(scene.channel)) return false;
+      }
+
       if (selectedActor !== 'all') {
         if (!scene.actors.includes(selectedActor)) return false;
       }
@@ -992,7 +1305,7 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedActor, selectedChannel]);
+  }, [searchQuery, selectedFaction, selectedCategory, selectedActor, selectedChannel, groupedActorsByFaction, groupedChannelsByCategory]);
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -1134,7 +1447,7 @@ export default function App() {
                   className={`faction-crest-card relative p-2.5 rounded flex items-center gap-2.5 border text-left select-none cursor-pointer transition-all duration-300 transform hover:scale-[1.02] ${
                     isSelected ? 'ring-2 ring-white/50 shadow-xl' : 'hover:border-slate-600'
                   }`}
-                  title={`Cliquer pour appliquer le thème ${factionName}`}
+                  title={`Cliquer pour filtrer/appliquer le thème ${factionName}`}
                 >
                   {/* Blason Image du Dossier Images */}
                   <div 
@@ -1153,7 +1466,7 @@ export default function App() {
                       <span>{memberCount} membres</span>
                       {isSelected && (
                         <span style={{ backgroundColor: info.hexColor }} className="px-1.5 py-0.2 text-[9px] font-bold text-black rounded font-sans">
-                          THÈME ACTIF
+                          ACTIF
                         </span>
                       )}
                     </div>
@@ -1162,6 +1475,8 @@ export default function App() {
               );
             })}
           </div>
+
+
 
           {/* BARRE DE FILTRES SÉLECTEURS AVEC RECHERCHE INTERACTIVE DE PERSONNAGES */}
           <div className="flex flex-wrap items-center justify-between gap-3 mt-3 text-xs">
@@ -1174,39 +1489,22 @@ export default function App() {
                 groupedActorsByFaction={groupedActorsByFaction}
               />
 
-              {/* Salons par Catégorie */}
-              <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm flex-1 min-w-[220px]">
-                <Layers className="w-4 h-4 text-slate-400 shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <select
-                    value={selectedChannel}
-                    onChange={(e) => setSelectedChannel(e.target.value)}
-                    className="w-full bg-transparent text-slate-200 focus:outline-none cursor-pointer text-xs truncate"
-                  >
-                    <option value="all" className="bg-[#0d0f17] text-slate-200 font-semibold">
-                      Tous les salons
-                    </option>
-
-                    {(Object.entries(groupedChannelsByCategory) as [string, string[]][]).map(([catName, channels]) => (
-                      <optgroup key={catName} label={`--- ${catName.toUpperCase()} ---`} className="bg-[#08090d] text-slate-400 font-bold">
-                        {channels.map(ch => (
-                          <option key={ch} value={ch} className="bg-[#0d0f17] text-slate-200 font-normal">
-                            #{ch}
-                          </option>
-                        ))}
-                      </optgroup>
-                    ))}
-                  </select>
-                </div>
-              </div>
+              {/* 💬 SÉLECTEUR DE SALONS PAR CATÉGORIE AVEC RECHERCHE */}
+              <SearchableChannelSelect
+                selectedChannel={selectedChannel}
+                setSelectedChannel={setSelectedChannel}
+                groupedChannelsByCategory={groupedChannelsByCategory}
+              />
             </div>
 
-            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all') && (
+            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all' || selectedFaction !== null || selectedCategory !== null) && (
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedActor('all');
                   setSelectedChannel('all');
+                  setSelectedFaction(null);
+                  setSelectedCategory(null);
                 }}
                 className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors font-medium shrink-0"
               >
@@ -1432,172 +1730,219 @@ export default function App() {
         )}
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD AVEC BANNIÈRE DU LIEU */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD AVEC PANNEAU DE LIEU À DROITE SUR ÉCRANS ULTRAWIDE */}
       {activeScene && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1]">
-            <div className="gothic-corner gothic-corner-tl" />
-            <div className="gothic-corner gothic-corner-tr" />
-            <div className="gothic-corner gothic-corner-bl" />
-            <div className="gothic-corner gothic-corner-br" />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-x-auto overflow-y-auto">
+          
+          {/* CONTENEUR FLEX SPACIÉ POUR ÉCRANS LARGE ET ULTRAWIDE (34") */}
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-10 xl:gap-16 my-auto max-w-[1800px] w-full px-4">
+            
+            {/* 1. CASE CENTRALE PRINCIPALE (LECTEUR DISCORD DE SCÈNE) */}
+            <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full lg:w-[46rem] xl:w-[50rem] 2xl:w-[54rem] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1] shrink-0">
+              <div className="gothic-corner gothic-corner-tl" />
+              <div className="gothic-corner gothic-corner-tr" />
+              <div className="gothic-corner gothic-corner-bl" />
+              <div className="gothic-corner gothic-corner-br" />
 
-            {/* En-tête Modal Discord */}
-            <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
-              <div className="flex items-center gap-3">
-                <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
-                  #{activeScene.channel}
-                </span>
-                <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#949ba4]" />
-                  {formatDateDiscord(activeScene.start_time)}
-                </span>
-              </div>
-              <button
-                onClick={() => setActiveScene(null)}
-                className="p-1.5 rounded-full text-[#b5bac1] hover:text-[#f2f3f5] hover:bg-[#35373c] transition-colors"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* BANNIÈRE DE LIEU DU SALON (SI DISPONIBLE) */}
-            {activeSceneLocationImage && (
-              <div className="h-32 w-full relative overflow-hidden border-b border-[#1e1f22] bg-slate-950 shrink-0">
-                <img 
-                  src={activeSceneLocationImage} 
-                  alt={activeScene.channel} 
-                  className="w-full h-full object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2b2d31] via-transparent to-black/30" />
-                <div className="absolute bottom-2 left-6 right-6 flex items-center justify-between">
-                  <span className="text-xs font-serif-gothic font-bold text-slate-100 drop-shadow-md">
-                    Lieu : #{activeScene.channel}
+              {/* En-tête Modal Discord */}
+              <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
+                <div className="flex items-center gap-3">
+                  <span className="px-3 py-1 bg-[#1e1f22] border border-slate-700/60 text-[#f2f3f5] font-semibold text-xs rounded">
+                    #{activeScene.channel}
+                  </span>
+                  <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1">
+                    <Clock className="w-3.5 h-3.5 text-[#949ba4]" />
+                    {formatDateDiscord(activeScene.start_time)}
                   </span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={getSceneDiscordUrl(activeScene, true)}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded text-xs font-semibold transition-colors shadow cursor-pointer"
+                    title="Ouvrir directement dans l'application Discord"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Ouvrir dans l'application</span>
+                  </a>
+                  <button
+                    onClick={() => setActiveScene(null)}
+                    className="p-1.5 rounded-full text-[#b5bac1] hover:text-[#f2f3f5] hover:bg-[#35373c] transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
-            )}
 
-            {/* En-tête de la Scène */}
-            <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
-              <h2 className="text-base font-bold text-[#f2f3f5] mb-2">
-                {highlightSearchQuery(activeScene.title, searchQuery, 'title')}
-              </h2>
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
-                {activeScene.actors.map(actor => {
-                  const info = CHARACTERS_DATA[actor];
+              {/* En-tête de la Scène */}
+              <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
+                <h2 className="text-base font-bold text-[#f2f3f5] mb-2">
+                  {highlightSearchQuery(activeScene.title, searchQuery, 'title')}
+                </h2>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
+                  {activeScene.actors.map(actor => {
+                    const info = CHARACTERS_DATA[actor];
+                    const style = getFactionStyle(info?.role);
+                    const serverNick = info?.displayName || actor;
+
+                    return (
+                      <button
+                        key={actor}
+                        onClick={() => {
+                          setSelectedActor(actor);
+                          setActiveScene(null);
+                        }}
+                        style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded cursor-pointer hover:opacity-85 hover:scale-105 transition-all shadow-sm"
+                        title={`Voir la fiche visuelle de ${actor}`}
+                      >
+                        <span>{style.icon}</span>
+                        <span>{highlightSearchQuery(serverNick, searchQuery, `act-${actor}`)}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* FLUX DES MESSAGES : FORMAT DISCORD */}
+              <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
+                {activeScene.messages.map((msg, index) => {
+                  const info = CHARACTERS_DATA[msg.author];
                   const style = getFactionStyle(info?.role);
-                  const serverNick = info?.displayName || actor;
+                  const serverNick = info?.displayName || msg.author;
+                  const initials = getInitials(serverNick);
+                  const avatarImg = msg.avatar_url || info?.avatarUrl || getCharacterCardImage(msg.author);
+                  const msgDiscordAppUrl = msg.id 
+                    ? `discord://discord.com/channels/${DISCORD_GUILD_ID}/${activeScene.channel_id || (activeScene.messages[0] ? activeScene.messages[0].id : DISCORD_GUILD_ID)}/${msg.id}`
+                    : null;
 
                   return (
-                    <button
-                      key={actor}
-                      onClick={() => {
-                        setSelectedActor(actor);
-                        setActiveScene(null);
-                      }}
-                      style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
-                      className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded cursor-pointer hover:opacity-85 hover:scale-105 transition-all shadow-sm"
-                      title={`Voir la fiche visuelle de ${actor}`}
-                    >
-                      <span>{style.icon}</span>
-                      <span>{highlightSearchQuery(serverNick, searchQuery, `act-${actor}`)}</span>
-                    </button>
+                    <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
+                      
+                      {/* AVATAR ROND DISCORD */}
+                      {avatarImg ? (
+                        <img
+                          src={avatarImg}
+                          alt={serverNick}
+                          style={{ borderColor: style.hexColor }}
+                          className="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm mt-0.5 border border-slate-700 select-none cursor-pointer hover:opacity-90 transition-opacity"
+                          onClick={() => setSelectedActor(msg.author)}
+                          title={`Voir le profil de ${serverNick}`}
+                        />
+                      ) : (
+                        <div 
+                          style={{ backgroundColor: style.hexColor }} 
+                          className="w-10 h-10 rounded-full flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-sm mt-0.5 select-none"
+                        >
+                          {initials}
+                        </div>
+                      )}
+
+                      {/* BLOC MESSAGE DISCORD */}
+                      <div className="flex-1 min-w-0">
+                        {/* LIGNE AUTEUR */}
+                        <div className="flex items-baseline justify-between gap-2 mb-1">
+                          <div className="flex items-baseline gap-2">
+                            <span 
+                              style={{ color: style.text }} 
+                              className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
+                            >
+                              {highlightSearchQuery(serverNick, searchQuery, `msg-author-${index}`)}
+                            </span>
+                            <span className="text-[12px] text-[#949ba4] font-normal select-none">
+                              {formatDateDiscord(msg.timestamp)}
+                            </span>
+                          </div>
+                          {msgDiscordAppUrl && (
+                            <a
+                              href={msgDiscordAppUrl}
+                              className="opacity-0 group-hover:opacity-100 text-[11px] text-[#949ba4] hover:text-[#5865f2] transition-all flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-[#1e1f22]"
+                              title="Ouvrir ce message dans l'application Discord"
+                            >
+                              <ExternalLink className="w-3 h-3" />
+                              <span className="text-[10px]">App Discord</span>
+                            </a>
+                          )}
+                        </div>
+
+                        {/* EMBED DISCORD */}
+                        {(msg.embed_title || msg.embed_description) && (
+                          <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
+                            {msg.embed_title && (
+                              <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
+                                {renderDiscordMarkdown(msg.embed_title, searchQuery)}
+                              </h4>
+                            )}
+                            {msg.embed_description && (
+                              <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
+                                {renderDiscordMarkdown(msg.embed_description, searchQuery)}
+                              </div>
+                            )}
+                          </div>
+                        )}
+
+                        {/* CONTENU TEXTE DISCORD LISIBLE */}
+                        {msg.content && (
+                          <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
+                            {renderDiscordMarkdown(msg.content, searchQuery)}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                   );
                 })}
               </div>
+
+              {/* Footer Modal Discord */}
+              <div className="px-6 py-3.5 border-t border-[#1e1f22] bg-[#2b2d31] flex flex-wrap items-center justify-between gap-3 shrink-0">
+                <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1.5">
+                  <MessageSquare className="w-3.5 h-3.5 text-[#949ba4]" />
+                  {activeScene.messages.length} message(s) dans cette scène
+                </span>
+              </div>
             </div>
 
-            {/* FLUX DES MESSAGES : FORMAT DISCORD */}
-            <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
-              {activeScene.messages.map((msg, index) => {
-                const info = CHARACTERS_DATA[msg.author];
-                const style = getFactionStyle(info?.role);
-                const serverNick = info?.displayName || msg.author;
-                const initials = getInitials(serverNick);
-                const avatarImg = msg.avatar_url || info?.avatarUrl || getCharacterCardImage(msg.author);
+            {/* 2. CASE DE DESCRIPTION DU LIEU (TEXTE + IMAGE ENSEMBLE, DANS LA ZONE ROUGE À DROITE SUR ÉCRAN 34") */}
+            {(activeScene.location_description || activeSceneLocationImage) && (
+              <aside className="gothic-corner-box bg-[#1e1f22] border border-slate-700/90 w-full lg:w-[26rem] xl:w-[30rem] 2xl:w-[32rem] shrink-0 shadow-2xl p-5 flex flex-col gap-4 text-slate-200 max-h-[90vh] overflow-y-auto custom-scrollbar relative">
+                <div className="gothic-corner gothic-corner-tl" />
+                <div className="gothic-corner gothic-corner-tr" />
+                <div className="gothic-corner gothic-corner-bl" />
+                <div className="gothic-corner gothic-corner-br" />
 
-                return (
-                  <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
-                    
-                    {/* AVATAR ROND DISCORD */}
-                    {avatarImg ? (
-                      <img
-                        src={avatarImg}
-                        alt={serverNick}
-                        style={{ borderColor: style.hexColor }}
-                        className="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm mt-0.5 border border-slate-700 select-none cursor-pointer hover:opacity-90 transition-opacity"
-                        onClick={() => setSelectedActor(msg.author)}
-                        title={`Voir le profil de ${serverNick}`}
+                {/* En-tête */}
+                <div className="flex items-center gap-2 pb-2.5 border-b border-slate-700/80 shrink-0">
+                  <MapPin className="w-4.5 h-4.5 text-amber-400 shrink-0" />
+                  <h3 className="text-xs font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">
+                    Description du Lieu
+                  </h3>
+                </div>
+
+                {/* Texte descriptif du salon par le narrateur (sans paragraphes doublons) */}
+                {activeScene.location_description && (
+                  <div className="text-[13px] text-slate-300 leading-relaxed font-sans whitespace-pre-wrap italic bg-[#111214]/80 p-4 border border-slate-800 rounded shadow-inner">
+                    {renderDiscordMarkdown(activeScene.location_description, searchQuery)}
+                  </div>
+                )}
+
+                {/* Image du lieu juste en-dessous */}
+                {activeSceneLocationImage && (
+                  <div className="flex flex-col gap-1.5 mt-1 shrink-0">
+                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
+                      🖼️ Aperçu du salon :
+                    </span>
+                    <div className="relative rounded-lg overflow-hidden border border-slate-700 shadow-xl">
+                      <img 
+                        src={activeSceneLocationImage} 
+                        alt={activeScene.channel} 
+                        className="w-full h-auto max-h-72 2xl:max-h-80 object-cover object-center"
                       />
-                    ) : (
-                      <div 
-                        style={{ backgroundColor: style.hexColor }} 
-                        className="w-10 h-10 rounded-full flex items-center justify-center text-slate-950 font-bold text-xs shrink-0 shadow-sm mt-0.5 select-none"
-                      >
-                        {initials}
-                      </div>
-                    )}
-
-                    {/* BLOC MESSAGE DISCORD */}
-                    <div className="flex-1 min-w-0">
-                      {/* LIGNE AUTEUR */}
-                      <div className="flex items-baseline gap-2 mb-1">
-                        <span 
-                          style={{ color: style.text }} 
-                          className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
-                        >
-                          {highlightSearchQuery(serverNick, searchQuery, `msg-author-${index}`)}
-                        </span>
-                        <span className="text-[12px] text-[#949ba4] font-normal select-none">
-                          {formatDateDiscord(msg.timestamp)}
-                        </span>
-                      </div>
-
-                      {/* EMBED DISCORD */}
-                      {(msg.embed_title || msg.embed_description) && (
-                        <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
-                          {msg.embed_title && (
-                            <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
-                              {renderDiscordMarkdown(msg.embed_title, searchQuery)}
-                            </h4>
-                          )}
-                          {msg.embed_description && (
-                            <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
-                              {renderDiscordMarkdown(msg.embed_description, searchQuery)}
-                            </div>
-                          )}
-                        </div>
-                      )}
-
-                      {/* CONTENU TEXTE DISCORD LISIBLE */}
-                      {msg.content && (
-                        <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
-                          {renderDiscordMarkdown(msg.content, searchQuery)}
-                        </div>
-                      )}
+                      <div className="absolute inset-0 ring-1 ring-inset ring-slate-400/20 pointer-events-none" />
                     </div>
                   </div>
-                );
-              })}
-            </div>
-
-            {/* Footer Modal Discord */}
-            <div className="px-6 py-3.5 border-t border-[#1e1f22] bg-[#2b2d31] flex items-center justify-between">
-              <span className="text-xs text-[#949ba4] font-medium flex items-center gap-1.5">
-                <MessageSquare className="w-3.5 h-3.5 text-[#949ba4]" />
-                {activeScene.messages.length} message(s) dans cette scène
-              </span>
-              <a
-                href={activeScene.discord_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded text-xs font-semibold transition-colors shadow"
-              >
-                <ExternalLink className="w-3.5 h-3.5" />
-                Ouvrir sur Discord
-              </a>
-            </div>
+                )}
+              </aside>
+            )}
           </div>
         </div>
       )}

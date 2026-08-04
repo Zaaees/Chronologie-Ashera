@@ -1,0 +1,2406 @@
+{
+  "La Citadelle du Temps": {
+    "[HRP] Tickets": [
+      {
+        "id": "1354821114362069022",
+        "name": "【❔】𝙰ction-espace-vlad",
+        "type": "text"
+      },
+      {
+        "id": "1317570651028066367",
+        "name": "【🎭】𝙰zryn-kailora",
+        "type": "text"
+      },
+      {
+        "id": "1317990810704281620",
+        "name": "【💫】𝙸mmuabilité-terre",
+        "type": "text"
+      },
+      {
+        "id": "1325541052182036622",
+        "name": "【⭐】𝚁éflexion-créative",
+        "type": "text"
+      },
+      {
+        "id": "1325847981710119013",
+        "name": "【⭐】𝙳ioxyde-de-silicium",
+        "type": "text"
+      },
+      {
+        "id": "1326159621529931817",
+        "name": "【⭐】𝙴ncre",
+        "type": "text"
+      },
+      {
+        "id": "1326646752891109498",
+        "name": "【⭐】𝙲est-tout-là-le-problème",
+        "type": "text"
+      },
+      {
+        "id": "1325211681432797205",
+        "name": "【】𝚁éunion",
+        "type": "text"
+      },
+      {
+        "id": "1339125024073846887",
+        "name": "【🎭】𝙰ru-ghuh",
+        "type": "text"
+      },
+      {
+        "id": "1359435323616264192",
+        "name": "【🎭】𝙰ntonio-tenorio",
+        "type": "text"
+      }
+    ],
+    "[HRP] Staff": [
+      {
+        "id": "1328168904572534825",
+        "name": "test-bot",
+        "type": "text"
+      },
+      {
+        "id": "1074602372380246036",
+        "name": "【🔨】𝙲hangelog",
+        "type": "text"
+      },
+      {
+        "id": "1230946716849799381",
+        "name": "【🔨】𝙻ogs",
+        "type": "text"
+      },
+      {
+        "id": "1017797004019105844",
+        "name": "【🔨】𝙰dmin",
+        "type": "text"
+      },
+      {
+        "id": "1097883902279946360",
+        "name": "【🔨】𝙼𝙹",
+        "type": "text"
+      },
+      {
+        "id": "1380704586016362626",
+        "name": "【🔨】𝚂cenes-en-cours",
+        "type": "text"
+      },
+      {
+        "id": "1363231361938231417",
+        "name": "【🔨】tempo-event-cartes",
+        "type": "text"
+      },
+      {
+        "id": "1326831305492795445",
+        "name": "【🔨】𝚄tiliser-le-bot",
+        "type": "text"
+      },
+      {
+        "id": "1135629687469650071",
+        "name": "【🔨】𝚂alon-aide-action",
+        "type": "text"
+      },
+      {
+        "id": "1090016514075271300",
+        "name": "【🔨】𝚂taff",
+        "type": "text"
+      },
+      {
+        "id": "1083665295232729120",
+        "name": "【🔨】𝙴vents-perso",
+        "type": "text"
+      },
+      {
+        "id": "1084140286210474085",
+        "name": "【🔨】𝙴volution-perso",
+        "type": "text"
+      },
+      {
+        "id": "1132927847145680967",
+        "name": "【🔨】𝚃upperbot",
+        "type": "text"
+      },
+      {
+        "id": "1083516816699162694",
+        "name": "【🔨】𝙸dées",
+        "type": "text"
+      },
+      {
+        "id": "1136039325738479667",
+        "name": "【🔨】𝙰𝙸-mj",
+        "type": "text"
+      },
+      {
+        "id": "1020285400532647947",
+        "name": "【🔨】𝙿𝙽𝙹-𝙱lack-hole",
+        "type": "text"
+      },
+      {
+        "id": "1130132596383297566",
+        "name": "【🔨】𝙰ide-pnj",
+        "type": "text"
+      },
+      {
+        "id": "1020285440437272576",
+        "name": "【🔨】𝙿𝙽𝙹-𝙵ondateurs",
+        "type": "text"
+      },
+      {
+        "id": "1022152361801682965",
+        "name": "【🔨】𝙿𝙽𝙹-𝙿rofs",
+        "type": "text"
+      },
+      {
+        "id": "1074194892835799081",
+        "name": "【🔨】𝙿ersonnages-notables",
+        "type": "text"
+      },
+      {
+        "id": "1024440743391137822",
+        "name": "【🔨】𝙿euple-magique",
+        "type": "text"
+      },
+      {
+        "id": "1022951465964273694",
+        "name": "【🔨】𝙱estiaire",
+        "type": "text"
+      },
+      {
+        "id": "1019722670163644587",
+        "name": "【🔨】𝙿réparation-cours",
+        "type": "text"
+      },
+      {
+        "id": "1020352954110320691",
+        "name": "【🔨】𝙱anque-images",
+        "type": "text"
+      },
+      {
+        "id": "1025549683373908018",
+        "name": "【🔨】𝙸dée-joueurs",
+        "type": "text"
+      },
+      {
+        "id": "1031999400383348757",
+        "name": "【🔨】𝙲ommandes",
+        "type": "text"
+      },
+      {
+        "id": "1337344404070993920",
+        "name": "【🔨】truc-à-se-souvenir",
+        "type": "text"
+      },
+      {
+        "id": "1078890707122663434",
+        "name": "【🔨】𝙰rticles-en-vente",
+        "type": "text"
+      },
+      {
+        "id": "1081675729047138506",
+        "name": "mots-architectes",
+        "type": "text"
+      },
+      {
+        "id": "1185458844625813584",
+        "name": "espace",
+        "type": "text"
+      },
+      {
+        "id": "1202309011282853948",
+        "name": "apocalix",
+        "type": "text"
+      },
+      {
+        "id": "1224603509396209746",
+        "name": "pub",
+        "type": "text"
+      },
+      {
+        "id": "1082215135541739573",
+        "name": "【🔨】𝚂cénario",
+        "type": "forum"
+      }
+    ],
+    "[RP] Préparation RP": [
+      {
+        "id": "1354960295608586260",
+        "name": "【⚔】𝙲lub-des-gens-qui-vont-mourir",
+        "type": "text"
+      },
+      {
+        "id": "1362693469570596955",
+        "name": "【⚔】𝙲lub-des-gens-de-la-planque-à-logan",
+        "type": "text"
+      },
+      {
+        "id": "1376930835000725625",
+        "name": "【🔨】𝙾natah-mj",
+        "type": "text"
+      },
+      {
+        "id": "1373354259071893644",
+        "name": "【⚔】𝙾natah",
+        "type": "text"
+      },
+      {
+        "id": "1373355244045598730",
+        "name": "【⚔】𝚁echerche-dans-la-planque",
+        "type": "text"
+      },
+      {
+        "id": "1373363709170155621",
+        "name": "【⚔】𝙹asmina-et-ferdinand",
+        "type": "text"
+      },
+      {
+        "id": "1379399737832243210",
+        "name": "【🔨】𝚁êveur-et-marie",
+        "type": "text"
+      },
+      {
+        "id": "1373367299909881957",
+        "name": "【⚔】𝚁êveur-et-marie",
+        "type": "text"
+      },
+      {
+        "id": "1379400433738579978",
+        "name": "【🔨】𝙴xile",
+        "type": "text"
+      },
+      {
+        "id": "1379400593419800679",
+        "name": "【⚔】𝙴xile",
+        "type": "text"
+      }
+    ],
+    "[HRP] Clubs": [
+      {
+        "id": "1215649488136572928",
+        "name": "【📰】𝙲lub-de-journalisme",
+        "type": "text"
+      },
+      {
+        "id": "1240554036730527765",
+        "name": "【🏛】𝙲lub-d-histoire",
+        "type": "text"
+      },
+      {
+        "id": "1240554125150785596",
+        "name": "【🦖】𝙲lub-d-animaux-magiques",
+        "type": "text"
+      },
+      {
+        "id": "1240554170180829214",
+        "name": "【🌍】𝙲lub-de-peuples-magiques",
+        "type": "text"
+      },
+      {
+        "id": "1240554953773158431",
+        "name": "【⚔】𝙲lub-militaire",
+        "type": "text"
+      }
+    ],
+    "[HRP] Salons": [
+      {
+        "id": "1124836464904118482",
+        "name": "【👀】𝙶énéral",
+        "type": "text"
+      },
+      {
+        "id": "1141832308173844490",
+        "name": "【🌮】𝙼édia",
+        "type": "text"
+      },
+      {
+        "id": "1024710731683344455",
+        "name": "【💡】𝚅os-créations",
+        "type": "text"
+      },
+      {
+        "id": "1135579604820688896",
+        "name": "【🔮】𝙸𝙰",
+        "type": "text"
+      },
+      {
+        "id": "1033817520337063977",
+        "name": "【🦥】𝙳emande-de-rp",
+        "type": "text"
+      },
+      {
+        "id": "1129020312017719397",
+        "name": "【🧐】𝚃héories",
+        "type": "text"
+      },
+      {
+        "id": "1024712224037679134",
+        "name": "【❔】𝚀uestions",
+        "type": "text"
+      },
+      {
+        "id": "1017905046127661086",
+        "name": "【💞】𝚂uggestion",
+        "type": "text"
+      },
+      {
+        "id": "1024711538491265224",
+        "name": "【🧾】𝚁éservation",
+        "type": "text"
+      },
+      {
+        "id": "1023985192278446181",
+        "name": "【🤖】𝙲ommandes",
+        "type": "text"
+      },
+      {
+        "id": "1018087532363251792",
+        "name": "【🕵】𝙰bsences",
+        "type": "text"
+      },
+      {
+        "id": "1218912629284667493",
+        "name": "【🌐】𝙳emande-partenariat",
+        "type": "text"
+      }
+    ],
+    "[HRP] Cartes": [
+      {
+        "id": "1362815692260245787",
+        "name": "【🃏】𝙰nnonces-cartes",
+        "type": "text"
+      },
+      {
+        "id": "1361993326215172218",
+        "name": "【🃏】𝚃irages",
+        "type": "text"
+      },
+      {
+        "id": "1361993389515739156",
+        "name": "【🃏】𝙴changes",
+        "type": "text"
+      },
+      {
+        "id": "1361993378627063888",
+        "name": "【🃏】𝙿roposition-de-cartes",
+        "type": "text"
+      },
+      {
+        "id": "1386299170406531123",
+        "name": "【🃏】𝙼ur-des-cartes",
+        "type": "forum"
+      }
+    ],
+    "[HRP] Écriture": [
+      {
+        "id": "1224611425373392969",
+        "name": "【❔】𝙰ide-générale",
+        "type": "text"
+      },
+      {
+        "id": "1090043674336952380",
+        "name": "【🥂】𝚅itrine-du-rp",
+        "type": "text"
+      },
+      {
+        "id": "1224619861993324544",
+        "name": "【✍】𝙲ommentaires",
+        "type": "text"
+      },
+      {
+        "id": "1273659420101971970",
+        "name": "【📚】𝚅ocabulaire",
+        "type": "text"
+      },
+      {
+        "id": "1224621753888935986",
+        "name": "【📝】𝙿roposition-𝙰ide",
+        "type": "text"
+      },
+      {
+        "id": "1224643834798145607",
+        "name": "【💞】𝚂uggestion-écriture",
+        "type": "text"
+      },
+      {
+        "id": "1224612971037196340",
+        "name": "【🌄】𝙳escriptions",
+        "type": "forum"
+      },
+      {
+        "id": "1224620796706820117",
+        "name": "【📒】𝙰ide-création",
+        "type": "forum"
+      }
+    ],
+    "[HRP] Informations": [
+      {
+        "id": "1017906514838700032",
+        "name": "【👊】𝙰nnonces",
+        "type": "text"
+      },
+      {
+        "id": "1085300906981085366",
+        "name": "【👊】𝙰nnonces-rp",
+        "type": "text"
+      },
+      {
+        "id": "1081902733713477714",
+        "name": "【📜】𝚁èglement",
+        "type": "text"
+      },
+      {
+        "id": "1017904788958089247",
+        "name": "【👋】𝙱ienvenue",
+        "type": "text"
+      },
+      {
+        "id": "1089623716851363930",
+        "name": "【⭐】𝙲andidature",
+        "type": "text"
+      },
+      {
+        "id": "1020814380838957057",
+        "name": "【🌐】𝙿ubs",
+        "type": "text"
+      },
+      {
+        "id": "1023685178536775700",
+        "name": "【🧾】𝙴mploi-du-temps",
+        "type": "text"
+      },
+      {
+        "id": "1214092904595980299",
+        "name": "【📖】𝚂cènes-rp-actives",
+        "type": "text"
+      }
+    ],
+    "[INFO] Le monde": [
+      {
+        "id": "1024591030076592178",
+        "name": "【🎇】𝙿our-commencer",
+        "type": "text"
+      },
+      {
+        "id": "1090087750277021776",
+        "name": "【📖】𝙻ois",
+        "type": "text"
+      },
+      {
+        "id": "1017804237650022400",
+        "name": "【📚】𝙰cadémie",
+        "type": "text"
+      },
+      {
+        "id": "1174047046261559308",
+        "name": "【⭐】𝚀uête-principale",
+        "type": "text"
+      },
+      {
+        "id": "1035468353034268693",
+        "name": "【⏳】𝚁ésumé-des-cours",
+        "type": "text"
+      },
+      {
+        "id": "1025550245033152592",
+        "name": "【🌠】𝙽iveau-de-menace",
+        "type": "text"
+      },
+      {
+        "id": "1024699224614518834",
+        "name": "【🧤】𝙲hronologie-humaine",
+        "type": "text"
+      },
+      {
+        "id": "1076206029920026735",
+        "name": "【🎁】𝙼agasins",
+        "type": "text"
+      },
+      {
+        "id": "1085905662464249926",
+        "name": "【📰】𝙹ournal",
+        "type": "text"
+      }
+    ],
+    "[INFO] Magie": [
+      {
+        "id": "1185833766804017204",
+        "name": "【⌛】𝚃emps",
+        "type": "text"
+      },
+      {
+        "id": "1137670680750588025",
+        "name": "【💦】𝙴xcès",
+        "type": "text"
+      },
+      {
+        "id": "1187031427922002052",
+        "name": "【🌳】𝚃echniques-et-spécificités",
+        "type": "text"
+      },
+      {
+        "id": "1137670877115318313",
+        "name": "【🔥】𝙴léments-𝙿rimordiaux",
+        "type": "forum"
+      },
+      {
+        "id": "1137670941820846150",
+        "name": "【💨】𝚂ous-𝙴lément",
+        "type": "forum"
+      }
+    ],
+    "[INFO] Faune et PNJ": [
+      {
+        "id": "1161778423044259993",
+        "name": "【🎓】𝙿rofesseurs",
+        "type": "forum"
+      },
+      {
+        "id": "1161778493911203940",
+        "name": "【👑】𝙵ondateurs",
+        "type": "forum"
+      },
+      {
+        "id": "1161778785327251476",
+        "name": "【🏺】𝙿euples",
+        "type": "forum"
+      },
+      {
+        "id": "1161778709540384778",
+        "name": "【🐍】𝙱estiaire",
+        "type": "forum"
+      },
+      {
+        "id": "1161778618268131460",
+        "name": "【🧿】𝙿ersonnages-historiques",
+        "type": "forum"
+      }
+    ],
+    "[INFO] Personnages": [
+      {
+        "id": "1098135094071410688",
+        "name": "【🎫】𝙿ersonnage",
+        "type": "text"
+      },
+      {
+        "id": "1020823380640944190",
+        "name": "【📕】𝙼odèle-𝙵iche",
+        "type": "text"
+      },
+      {
+        "id": "1018159303422656582",
+        "name": "【🥇】𝙸nventaire",
+        "type": "text"
+      },
+      {
+        "id": "1205496492522086460",
+        "name": "【🥇】𝚁éclamations",
+        "type": "text"
+      },
+      {
+        "id": "1097214607531200582",
+        "name": "【🧠】𝙿athologies",
+        "type": "text"
+      },
+      {
+        "id": "1090463730904604682",
+        "name": "【🧒】𝙵iches",
+        "type": "forum"
+      },
+      {
+        "id": "1152643359568044094",
+        "name": "【🧒】𝙵iches-2",
+        "type": "forum"
+      },
+      {
+        "id": "1217215470445269032",
+        "name": "【🧒】𝙵iches-3",
+        "type": "forum"
+      }
+    ],
+    "[RP] L'Académie": [
+      {
+        "id": "1018871634049908766",
+        "name": "█╚-𝙸𝙽𝚃𝙴𝚁𝙸𝙴𝚄𝚁-╝█",
+        "type": "text"
+      },
+      {
+        "id": "1018871822789382185",
+        "name": "𝙷all-𝙿rincipal",
+        "type": "text"
+      },
+      {
+        "id": "1018871710847619082",
+        "name": "𝙲ouloirs-et-allées",
+        "type": "text"
+      },
+      {
+        "id": "1018870564976349235",
+        "name": "𝚂alles-de-classe",
+        "type": "text"
+      },
+      {
+        "id": "1018870717028253726",
+        "name": "𝙿ermanence",
+        "type": "text"
+      },
+      {
+        "id": "1018876775721336945",
+        "name": "𝙸nfirmerie",
+        "type": "text"
+      },
+      {
+        "id": "1018877021360771083",
+        "name": "𝙱ibliothèque",
+        "type": "text"
+      },
+      {
+        "id": "1018876964309827662",
+        "name": "𝚂alle-commune",
+        "type": "text"
+      },
+      {
+        "id": "1019236039900012554",
+        "name": "𝙳ortoirs",
+        "type": "text"
+      },
+      {
+        "id": "1018877392166600766",
+        "name": "𝚂alle-des-professeurs",
+        "type": "text"
+      },
+      {
+        "id": "1018877571053666385",
+        "name": "𝙱ureau-de-la-direction",
+        "type": "text"
+      },
+      {
+        "id": "1018877129196314694",
+        "name": "𝙲afeteria",
+        "type": "text"
+      },
+      {
+        "id": "1018877053065494549",
+        "name": "𝙲uisine",
+        "type": "text"
+      },
+      {
+        "id": "1105957599632969888",
+        "name": "𝙲ellules",
+        "type": "text"
+      },
+      {
+        "id": "1018871358542844004",
+        "name": "█╚-𝙲𝙾𝚄𝚁-╝█",
+        "type": "text"
+      },
+      {
+        "id": "1018870226508587078",
+        "name": "𝙱iome-𝙴lémentaire-𝚃erre",
+        "type": "text"
+      },
+      {
+        "id": "1018870372038344724",
+        "name": "𝙱iome-𝙴lémentaire-𝙴au",
+        "type": "text"
+      },
+      {
+        "id": "1018871029461942393",
+        "name": "𝚃errain-d-entrainement",
+        "type": "text"
+      },
+      {
+        "id": "1038502922499141692",
+        "name": "𝚃erre-d-ascension",
+        "type": "text"
+      },
+      {
+        "id": "1018870300408021012",
+        "name": "𝙱iome-𝙴lémentaire-𝚅ent",
+        "type": "text"
+      },
+      {
+        "id": "1018869844126486639",
+        "name": "𝙱iome-𝙴lémentaire-𝙵eu",
+        "type": "text"
+      },
+      {
+        "id": "1090663243833417820",
+        "name": "𝙲lubs",
+        "type": "forum"
+      },
+      {
+        "id": "1090666970162139207",
+        "name": "𝙲hambres",
+        "type": "forum"
+      }
+    ],
+    "[RP] La Citadelle Extérieure": [
+      {
+        "id": "1176691127617859594",
+        "name": "𝙾uverture-illégale",
+        "type": "text"
+      },
+      {
+        "id": "1103019802508922880",
+        "name": "𝙵osse-des-𝙳amnés",
+        "type": "text"
+      },
+      {
+        "id": "1019692106975031396",
+        "name": "█╚-𝚉𝙾𝙽𝙴-𝚁𝙸𝚂𝚀𝚄𝙴𝙴-╝█",
+        "type": "text"
+      },
+      {
+        "id": "1019993586948907018",
+        "name": "𝙼arché-noir",
+        "type": "text"
+      },
+      {
+        "id": "1018899520437878965",
+        "name": "𝙻a-𝙶alerie",
+        "type": "text"
+      },
+      {
+        "id": "1020793341283143720",
+        "name": "𝙱ar-insalubre",
+        "type": "text"
+      },
+      {
+        "id": "1020792630956785704",
+        "name": "𝚁uelles-sombres",
+        "type": "text"
+      },
+      {
+        "id": "1019995754774937682",
+        "name": "𝚀uartier-𝙰rtek",
+        "type": "text"
+      },
+      {
+        "id": "1019982437335433216",
+        "name": "𝚂outerrains",
+        "type": "text"
+      },
+      {
+        "id": "1201567643375779960",
+        "name": "𝙽ew-𝙶alatée",
+        "type": "text"
+      },
+      {
+        "id": "1019692130068856863",
+        "name": "█╚-𝚉𝙾𝙽𝙴-𝙲𝙸𝚅𝙸𝙻𝙴-╝█",
+        "type": "text"
+      },
+      {
+        "id": "1018879725269159937",
+        "name": "𝙷abitations",
+        "type": "text"
+      },
+      {
+        "id": "1019988083673935953",
+        "name": "𝙷opital",
+        "type": "text"
+      },
+      {
+        "id": "1018876865135509545",
+        "name": "𝙶rande-arène",
+        "type": "text"
+      },
+      {
+        "id": "1020793547798106122",
+        "name": "𝙿arc",
+        "type": "text"
+      },
+      {
+        "id": "1020793672415068190",
+        "name": "𝚁ues",
+        "type": "text"
+      },
+      {
+        "id": "1018870912575094854",
+        "name": "𝙾uverture-temporelle",
+        "type": "text"
+      },
+      {
+        "id": "1019699215649230928",
+        "name": "𝙼usée",
+        "type": "text"
+      },
+      {
+        "id": "1018876911742627880",
+        "name": "𝚁éserve-naturelle",
+        "type": "text"
+      },
+      {
+        "id": "1019982682484125777",
+        "name": "𝙰vant-postes",
+        "type": "text"
+      },
+      {
+        "id": "1018877416816529489",
+        "name": "𝙾bservatoire",
+        "type": "text"
+      },
+      {
+        "id": "1019692144715382795",
+        "name": "█╚-𝚉𝙾𝙽𝙴-𝙶𝙰𝚁𝙳𝙴𝙴-╝█",
+        "type": "text"
+      },
+      {
+        "id": "1019982215045730336",
+        "name": "𝚀uartier-major",
+        "type": "text"
+      },
+      {
+        "id": "1019982793318604931",
+        "name": "𝙲aserne",
+        "type": "text"
+      },
+      {
+        "id": "1019982967201874030",
+        "name": "𝚁atelier",
+        "type": "text"
+      },
+      {
+        "id": "1019988494208217168",
+        "name": "𝙲entre-militaire",
+        "type": "text"
+      },
+      {
+        "id": "1131887614572630088",
+        "name": "𝙼agasins",
+        "type": "forum"
+      }
+    ],
+    "[RP] Chronologie Temporelle": [
+      {
+        "id": "1184706528889020487",
+        "name": "𝙰tlantide-𝙰rène-𝙷yperion",
+        "type": "text"
+      },
+      {
+        "id": "1091983922306498591",
+        "name": "𝙼ogoi",
+        "type": "forum"
+      },
+      {
+        "id": "1324856068463132713",
+        "name": "𝙿aléozoïque",
+        "type": "forum"
+      },
+      {
+        "id": "1094449680500408331",
+        "name": "𝙼ésozoïque",
+        "type": "forum"
+      },
+      {
+        "id": "1093160353615073371",
+        "name": "𝙽éolithique",
+        "type": "forum"
+      },
+      {
+        "id": "1093160241543262258",
+        "name": "𝙼ésolithique",
+        "type": "forum"
+      },
+      {
+        "id": "1093160075050373170",
+        "name": "𝙿aléolithique-inférieur",
+        "type": "forum"
+      },
+      {
+        "id": "1093160130184486942",
+        "name": "𝙿aléolithique-moyen",
+        "type": "forum"
+      },
+      {
+        "id": "1093160279895982190",
+        "name": "𝙿aléolithique-supérieur",
+        "type": "forum"
+      },
+      {
+        "id": "1093160394610200666",
+        "name": "𝙰ge-du-bronze",
+        "type": "forum"
+      },
+      {
+        "id": "1093160430479876197",
+        "name": "𝙰ge-du-fer",
+        "type": "forum"
+      },
+      {
+        "id": "1093160466336993383",
+        "name": "𝙰ntiquité",
+        "type": "forum"
+      },
+      {
+        "id": "1093160494338150490",
+        "name": "𝙼oyen-âge",
+        "type": "forum"
+      },
+      {
+        "id": "1093160530442723409",
+        "name": "𝙴poque-moderne",
+        "type": "forum"
+      },
+      {
+        "id": "1093160563229605998",
+        "name": "𝙴poque-contemporaine",
+        "type": "forum"
+      },
+      {
+        "id": "1093160628392312883",
+        "name": "𝙴poque-post-nucléaire",
+        "type": "forum"
+      },
+      {
+        "id": "1093160663578317001",
+        "name": "𝙼utation-progressive",
+        "type": "forum"
+      },
+      {
+        "id": "1093160711137525860",
+        "name": "𝙿ersistance-radioactive",
+        "type": "forum"
+      },
+      {
+        "id": "1093194390723379360",
+        "name": "𝙸nconnu",
+        "type": "forum"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1020820787583799358",
+        "name": "[INFO] Personnages",
+        "type": "category"
+      },
+      {
+        "id": "1018543594518347939",
+        "name": "[RP] La Citadelle Extérieure",
+        "type": "category"
+      },
+      {
+        "id": "1017797004019105842",
+        "name": "[HRP] Salons",
+        "type": "category"
+      },
+      {
+        "id": "1240553817393594439",
+        "name": "[HRP] Clubs",
+        "type": "category"
+      },
+      {
+        "id": "1093159899749417010",
+        "name": "[RP] Chronologie Temporelle",
+        "type": "category"
+      },
+      {
+        "id": "1175022020749168662",
+        "name": "[HRP] Écriture",
+        "type": "category"
+      },
+      {
+        "id": "1020827427888435210",
+        "name": "[HRP] Tickets",
+        "type": "category"
+      },
+      {
+        "id": "1498244648169115731",
+        "name": "règles",
+        "type": "text"
+      },
+      {
+        "id": "1017800402319704065",
+        "name": "[INFO] Le monde",
+        "type": "category"
+      },
+      {
+        "id": "1020350862880682054",
+        "name": "[HRP] Staff",
+        "type": "category"
+      },
+      {
+        "id": "1137670315405754389",
+        "name": "[INFO] Magie",
+        "type": "category"
+      },
+      {
+        "id": "1017906485092692058",
+        "name": "[HRP] Informations",
+        "type": "category"
+      },
+      {
+        "id": "1498244648169115734",
+        "name": "modérateur-uniquement",
+        "type": "text"
+      },
+      {
+        "id": "1018441801847287810",
+        "name": "[RP] L'Académie",
+        "type": "category"
+      },
+      {
+        "id": "1084527109826945154",
+        "name": "[INFO] Faune et PNJ",
+        "type": "category"
+      },
+      {
+        "id": "1361993020370849892",
+        "name": "[HRP] Cartes",
+        "type": "category"
+      },
+      {
+        "id": "1373354130588045323",
+        "name": "[RP] Préparation RP",
+        "type": "category"
+      }
+    ]
+  },
+  "Playground": {
+    "Salons textuels": [
+      {
+        "id": "1115113936954589254",
+        "name": "ark",
+        "type": "text"
+      },
+      {
+        "id": "1120340005156573255",
+        "name": "dernières-vidéos-de-bob",
+        "type": "text"
+      },
+      {
+        "id": "1124442360114319599",
+        "name": "wake-up",
+        "type": "text"
+      },
+      {
+        "id": "1168867935566172232",
+        "name": "lieux",
+        "type": "text"
+      },
+      {
+        "id": "1171592005860728868",
+        "name": "ost",
+        "type": "text"
+      },
+      {
+        "id": "1200851593885646929",
+        "name": "citadelle",
+        "type": "text"
+      },
+      {
+        "id": "1243267758708494407",
+        "name": "comptes-openai",
+        "type": "text"
+      },
+      {
+        "id": "1285320656623243274",
+        "name": "critique",
+        "type": "text"
+      },
+      {
+        "id": "1323279220427718726",
+        "name": "code",
+        "type": "text"
+      },
+      {
+        "id": "1326366255996862464",
+        "name": "musique",
+        "type": "text"
+      },
+      {
+        "id": "1362861332218777750",
+        "name": "ia",
+        "type": "text"
+      },
+      {
+        "id": "1376128921916932147",
+        "name": "jdr-mouton",
+        "type": "text"
+      },
+      {
+        "id": "1425916780114874438",
+        "name": "instruction",
+        "type": "text"
+      },
+      {
+        "id": "1427678598587879424",
+        "name": "jeux",
+        "type": "text"
+      },
+      {
+        "id": "1440074482239934554",
+        "name": "rimworld",
+        "type": "text"
+      },
+      {
+        "id": "1452399248686583962",
+        "name": "activity",
+        "type": "text"
+      },
+      {
+        "id": "1452590012532002816",
+        "name": "cs",
+        "type": "text"
+      },
+      {
+        "id": "1458579039148183635",
+        "name": "bmad",
+        "type": "text"
+      },
+      {
+        "id": "1459560464466837749",
+        "name": "cartes-citadelle-jeu",
+        "type": "text"
+      },
+      {
+        "id": "1474551905131954337",
+        "name": "test",
+        "type": "text"
+      }
+    ],
+    "[RP] test": [
+      {
+        "id": "1456559735632298095",
+        "name": "test",
+        "type": "forum"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1115081748812935229",
+        "name": "Salons textuels",
+        "type": "category"
+      },
+      {
+        "id": "1456559709342531585",
+        "name": "[RP] test",
+        "type": "category"
+      }
+    ]
+  },
+  "JJK RP": {
+    "Salons textuels": [
+      {
+        "id": "1184613744072998955",
+        "name": "𝗚é𝗻é𝗿𝗮𝗹",
+        "type": "text"
+      },
+      {
+        "id": "1185944479048413254",
+        "name": "𝗜𝗱é𝗲",
+        "type": "text"
+      }
+    ],
+    "Personnages": [
+      {
+        "id": "1184613830832173097",
+        "name": "𝗪𝗮𝗱𝗲-𝘀𝘁𝗲𝗿𝗹𝗶𝗻𝗴",
+        "type": "text"
+      },
+      {
+        "id": "1184613847173169204",
+        "name": "𝗭𝗲𝘁𝘁𝗮𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1184613857944162395",
+        "name": "𝗥𝗼𝘀𝘀𝗶-𝗹𝘂𝗰𝗰𝗵𝗲𝘀𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1184613868866117733",
+        "name": "𝗔𝗹𝗲𝘅",
+        "type": "text"
+      },
+      {
+        "id": "1184788873335803944",
+        "name": "𝗟𝘂𝗰𝘆-𝗺𝗶𝗿𝗶𝗻𝗮",
+        "type": "text"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1184613744072998953",
+        "name": "Salons textuels",
+        "type": "category"
+      },
+      {
+        "id": "1184613799349714964",
+        "name": "Personnages",
+        "type": "category"
+      }
+    ]
+  },
+  "La récréation de Nyarlathotep": {
+    "MJ": [
+      {
+        "id": "1236753069950369963",
+        "name": "𝗣𝗲𝗿𝘀𝗼𝗻𝗻𝗮𝗴𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1237248633879920672",
+        "name": "𝗦𝗰é𝗻𝗮𝗿𝗶𝗼",
+        "type": "text"
+      },
+      {
+        "id": "1237252034718072833",
+        "name": "𝗟𝗮-𝗰𝗼𝗻𝘁𝗿é𝗲-𝗱𝗲𝘀-𝗿ê𝘃𝗲𝘀",
+        "type": "text"
+      }
+    ],
+    "Salons textuels": [
+      {
+        "id": "1237319800036786186",
+        "name": "𝗔𝗻𝗻𝗼𝗻𝗰𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1236750866292150356",
+        "name": "𝗚é𝗻é𝗿𝗮𝗹",
+        "type": "text"
+      },
+      {
+        "id": "1239025042915065928",
+        "name": "𝗣𝗲𝗿𝗹𝗲𝘀-𝗱𝗲𝘀-𝗯𝗹𝗮𝗴𝘂𝗲𝘀",
+        "type": "text"
+      }
+    ],
+    "Personnages": [
+      {
+        "id": "1236757488301510696",
+        "name": "𝗦𝗶𝗻𝗰𝗹𝗮𝗶𝗿-𝗲𝗺𝗶𝗹",
+        "type": "text"
+      },
+      {
+        "id": "1236757469808820244",
+        "name": "𝗖𝗮𝗹𝘆𝗽𝘀𝗼-𝘃𝗮𝗹𝗱𝗲𝘇",
+        "type": "text"
+      },
+      {
+        "id": "1236757521025208461",
+        "name": "𝗙𝗿𝗲𝗮-𝗵𝗼𝗿𝗻𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1236757546346483922",
+        "name": "𝗡𝗶𝗸𝗼𝗹𝗮𝘆-𝗱𝗺𝗶𝘁𝗿𝗶𝗲𝘃𝗶𝗰𝗵",
+        "type": "text"
+      },
+      {
+        "id": "1236757600562053312",
+        "name": "𝗝𝗼𝗵𝗻-𝗮𝗯𝗿𝘂𝘇𝘇𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1236757555359780956",
+        "name": "𝗭𝗮𝗰𝗸-𝗺𝗮𝗹𝗲𝘁",
+        "type": "text"
+      },
+      {
+        "id": "1236761486534377533",
+        "name": "𝗝𝗮𝗰𝗼𝗯-𝘄𝗵𝗶𝘁𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1236763434465366187",
+        "name": "𝗡𝗼𝗮𝗵-𝗱𝗮𝗻𝗶𝗲𝗹𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1237064591364591637",
+        "name": "𝗜𝘃𝘆-𝗯𝗲𝗹𝗶𝗻𝘀𝗸𝗶",
+        "type": "text"
+      }
+    ],
+    "Section Privée": [
+      {
+        "id": "1237272617451388978",
+        "name": "𝗦𝗶𝗻𝗰𝗹𝗮𝗶𝗿-𝗲𝗺𝗶𝗹",
+        "type": "text"
+      },
+      {
+        "id": "1237275985045360640",
+        "name": "𝗦𝗶𝗻𝗰𝗹𝗮𝗶𝗿-𝗲𝗺𝗶𝗹-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237275871803347015",
+        "name": "𝗖𝗮𝗹𝘆𝗽𝘀𝗼-𝘃𝗮𝗹𝗱𝗲𝘇",
+        "type": "text"
+      },
+      {
+        "id": "1237280391338131467",
+        "name": "𝗖𝗮𝗹𝘆𝗽𝘀𝗼-𝘃𝗮𝗹𝗱𝗲𝘇-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237285455456763995",
+        "name": "𝗙𝗿𝗲𝗮-𝗵𝗼𝗿𝗻𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1237285484951109643",
+        "name": "𝗙𝗿𝗲𝗮-𝗵𝗼𝗿𝗻𝘀-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237285777277194293",
+        "name": "𝗡𝗶𝗸𝗼𝗹𝗮𝘆-𝗱𝗺𝗶𝘁𝗿𝗶𝗲𝘃𝗶𝗰𝗵",
+        "type": "text"
+      },
+      {
+        "id": "1237285799783960616",
+        "name": "𝗡𝗶𝗸𝗼𝗹𝗮𝘆-𝗱𝗺𝗶𝘁𝗿𝗶𝗲𝘃𝗶𝗰𝗵-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237296638737780787",
+        "name": "𝗝𝗼𝗵𝗻-𝗮𝗯𝗿𝘂𝘇𝘇𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1237296863053479977",
+        "name": "𝗝𝗼𝗵𝗻-𝗮𝗯𝗿𝘂𝘇𝘇𝗶-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237298620420849736",
+        "name": "𝗭𝗮𝗰𝗸-𝗺𝗮𝗹𝗲𝘁",
+        "type": "text"
+      },
+      {
+        "id": "1237298677614248027",
+        "name": "𝗭𝗮𝗰𝗸-𝗺𝗮𝗹𝗲𝘁-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237298781066891314",
+        "name": "𝗝𝗮𝗰𝗼𝗯-𝘄𝗵𝗶𝘁𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1237303764608618556",
+        "name": "𝗝𝗮𝗰𝗼𝗯-𝘄𝗵𝗶𝘁𝗲-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237298808241655840",
+        "name": "𝗡𝗼𝗮𝗵-𝗱𝗮𝗻𝗶𝗲𝗹𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1237310618848202774",
+        "name": "𝗡𝗼𝗮𝗵-𝗱𝗮𝗻𝗶𝗲𝗹𝘀-𝗵𝗿𝗽",
+        "type": "text"
+      },
+      {
+        "id": "1237298834573492295",
+        "name": "𝗜𝘃𝘆-𝗯𝗲𝗹𝗶𝗻𝘀𝗸𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1237317282502283305",
+        "name": "𝗜𝘃𝘆-𝗯𝗲𝗹𝗶𝗻𝘀𝗸𝗶-𝗵𝗿𝗽",
+        "type": "text"
+      }
+    ],
+    "Salon RP": [
+      {
+        "id": "1237317522471129088",
+        "name": "𝗠𝗮𝗶𝘀𝗼𝗻-𝗱𝗲-𝗰𝗮𝗺𝗽𝗮𝗴𝗻𝗲",
+        "type": "text"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1237317428812189727",
+        "name": "Salon RP",
+        "type": "category"
+      },
+      {
+        "id": "1236750866292150354",
+        "name": "Salons textuels",
+        "type": "category"
+      },
+      {
+        "id": "1237272531346391050",
+        "name": "Section Privée",
+        "type": "category"
+      },
+      {
+        "id": "1236757285024305343",
+        "name": "MJ",
+        "type": "category"
+      },
+      {
+        "id": "1236757336475959468",
+        "name": "Personnages",
+        "type": "category"
+      }
+    ]
+  },
+  "D&D MJ": {
+    "CHAPITRE 1 : Un monde bien à vous": [
+      {
+        "id": "1242850342102634728",
+        "name": "1-vue-d-ensemble",
+        "type": "forum"
+      },
+      {
+        "id": "1242852031622942741",
+        "name": "2-dieux",
+        "type": "forum"
+      },
+      {
+        "id": "1242854312229605396",
+        "name": "3-cartographie",
+        "type": "forum"
+      },
+      {
+        "id": "1242854745702404176",
+        "name": "4-communauté",
+        "type": "forum"
+      },
+      {
+        "id": "1242856926002544681",
+        "name": "5-factions-et-organisations",
+        "type": "forum"
+      },
+      {
+        "id": "1242857698765050027",
+        "name": "6-la-magie-dans-le-monde",
+        "type": "forum"
+      },
+      {
+        "id": "1242858347955486780",
+        "name": "7-créer-une-campagne",
+        "type": "forum"
+      },
+      {
+        "id": "1242859098421334136",
+        "name": "8-événements-de-la-campagne",
+        "type": "forum"
+      },
+      {
+        "id": "1242862769003565147",
+        "name": "9-style-de-jeu",
+        "type": "forum"
+      },
+      {
+        "id": "1242865816202907750",
+        "name": "10-catégories-de-jeu",
+        "type": "forum"
+      },
+      {
+        "id": "1242868739138130064",
+        "name": "11-diverses-colorations-de-fantasy",
+        "type": "forum"
+      }
+    ],
+    "Chapitre 2 : Créer un multivers": [
+      {
+        "id": "1242899985826185387",
+        "name": "introduction",
+        "type": "text"
+      },
+      {
+        "id": "1299074732259541212",
+        "name": "commandes",
+        "type": "text"
+      },
+      {
+        "id": "1242900435359105024",
+        "name": "1-les-plans",
+        "type": "forum"
+      },
+      {
+        "id": "1242903364443050065",
+        "name": "2-voyage-planaire",
+        "type": "forum"
+      },
+      {
+        "id": "1242905665735884811",
+        "name": "3-plan-astral",
+        "type": "forum"
+      },
+      {
+        "id": "1242909940893356043",
+        "name": "4-plan-éthéré",
+        "type": "forum"
+      },
+      {
+        "id": "1296056948361527336",
+        "name": "5-feywild",
+        "type": "forum"
+      },
+      {
+        "id": "1296059493389570079",
+        "name": "6-shadowfell",
+        "type": "forum"
+      },
+      {
+        "id": "1296061428179927123",
+        "name": "7-les-plans-intérieurs",
+        "type": "forum"
+      },
+      {
+        "id": "1299076580517216416",
+        "name": "8-les-plans-extérieurs",
+        "type": "forum"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1242850040880435271",
+        "name": "CHAPITRE 1 : Un monde bien à vous",
+        "type": "category"
+      },
+      {
+        "id": "1242850271332405269",
+        "name": "rules",
+        "type": "text"
+      },
+      {
+        "id": "1242850271332405270",
+        "name": "moderator-only",
+        "type": "text"
+      },
+      {
+        "id": "1242861655461728408",
+        "name": "table-matière",
+        "type": "text"
+      },
+      {
+        "id": "1242862133939802273",
+        "name": "général",
+        "type": "text"
+      },
+      {
+        "id": "1242898685810184292",
+        "name": "Chapitre 2 : Créer un multivers",
+        "type": "category"
+      }
+    ]
+  },
+  "Azami Papatte server": {
+    "Bienvenue !!": [
+      {
+        "id": "1276529545595453444",
+        "name": "「👋」𝗛𝗲𝘆𝘆-𝗯𝗶𝗲𝗻𝘃𝗲𝗻𝘂𝗲",
+        "type": "text"
+      }
+    ],
+    "Information": [
+      {
+        "id": "1280449307882950686",
+        "name": "「📖」𝗥è𝗴𝗹𝗲𝗺𝗲𝗻𝘁",
+        "type": "text"
+      },
+      {
+        "id": "1280461439751950359",
+        "name": "「🚨」𝗔𝗻𝗻𝗼𝗻𝗰𝗲",
+        "type": "news"
+      },
+      {
+        "id": "1276537209381457961",
+        "name": "「📣」𝗦𝘁𝗿𝗲𝗮𝗺-𝗮𝗻𝗻𝗼𝘂𝗻𝗰𝗲𝗺𝗲𝗻𝘁",
+        "type": "text"
+      },
+      {
+        "id": "1276556447856984115",
+        "name": "「⌚」𝗛𝗼𝗿𝗮𝗶𝗿𝗲-𝘀𝘁𝗿𝗲𝗮𝗺",
+        "type": "text"
+      },
+      {
+        "id": "1276557191347703831",
+        "name": "「🧪」𝗥ô𝗹𝗲",
+        "type": "text"
+      }
+    ],
+    "Général": [
+      {
+        "id": "1276556352554008677",
+        "name": "「🤯」𝗕𝗹𝗮𝗯𝗹𝗮",
+        "type": "text"
+      },
+      {
+        "id": "1276529545595453445",
+        "name": "「🥣」𝗠𝗲𝗱𝗶𝗮",
+        "type": "text"
+      },
+      {
+        "id": "1280456342875799612",
+        "name": "「💮」𝗗𝗲𝘀𝘀𝗶𝗻",
+        "type": "text"
+      },
+      {
+        "id": "1276529545595453446",
+        "name": "「🤖」𝗕𝗼𝘁𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1280464801654378537",
+        "name": "「⭐」𝗔𝗻𝗶𝗺𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1280464670519595113",
+        "name": "「🌀」𝗛𝗼𝘆𝗼𝘃𝗲𝗿𝘀𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1280457708579065948",
+        "name": "「🎮」𝗚𝗮𝗺𝗲-𝘂𝗻𝗶𝘃𝗲𝗿𝘀",
+        "type": "forum"
+      }
+    ],
+    "Les gens spéciaux": [
+      {
+        "id": "1286407331722166282",
+        "name": "「⭐」𝗟𝗲𝘀-𝘀𝘁𝗮𝗿𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1286407381059637391",
+        "name": "「🔯」𝗟𝗲𝘀-𝗮𝗺𝗶𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1286407064142348449",
+        "name": "「⭐」𝗟𝗲𝘀 𝘀𝘁𝗮𝗿𝘀 𝗹𝗲 𝟮",
+        "type": "voice"
+      },
+      {
+        "id": "1286406359545282734",
+        "name": "「🔯」𝗟𝗲𝘀 𝗮𝗺𝗶𝘀 𝗹𝗲 𝟮",
+        "type": "voice"
+      }
+    ],
+    "Salons vocaux": [
+      {
+        "id": "1276529545595453448",
+        "name": "「🎴」𝗕𝗹𝗮𝗹𝗮𝗰𝗮𝗽𝗲𝗹𝗮⭐",
+        "type": "voice"
+      },
+      {
+        "id": "1276558463983423530",
+        "name": "「🎴」𝗕𝗹𝗮𝗹𝗮𝗰𝗮𝗽𝗲𝗹𝗮⭐⭐",
+        "type": "voice"
+      },
+      {
+        "id": "1276558499735932938",
+        "name": "「🎴」𝗕𝗹𝗮𝗹𝗮𝗰𝗮𝗽𝗲𝗹𝗮⭐⭐⭐",
+        "type": "voice"
+      },
+      {
+        "id": "1276529545930870804",
+        "name": "「🎴」𝗦𝗮𝗹𝗹𝗲 𝗱𝗲 𝘀𝘁𝗿𝗲𝗮𝗺",
+        "type": "voice"
+      },
+      {
+        "id": "1276540773386424455",
+        "name": "「🎴」𝗪𝘁𝗳 𝗯𝗿𝗼 𝗿𝗲𝘃𝗶𝗲𝗻𝘀",
+        "type": "voice"
+      }
+    ],
+    "satff": [
+      {
+        "id": "1276549389531353138",
+        "name": "「🌈」𝗢𝘂𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1276555865016766606",
+        "name": "「🌈」𝗔𝗻𝗻𝗼𝗻𝗰𝗲-𝗼𝘂𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1276557759307055135",
+        "name": "「🌈」𝗕𝗼𝘁𝘀-𝗼𝘂𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1276559185756291183",
+        "name": "「🌈」𝗦𝗮𝗻𝗰𝘁𝗶𝗼𝗻-𝗼𝘂𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1276559308527632488",
+        "name": "「🌈」𝗔𝗱𝗺𝗶𝗻-𝗼𝘂𝗶",
+        "type": "text"
+      },
+      {
+        "id": "1276549416802713703",
+        "name": "「🌈」𝗢𝘂𝗶",
+        "type": "voice"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1276549255422541835",
+        "name": "satff",
+        "type": "category"
+      },
+      {
+        "id": "1276529545595453440",
+        "name": "Bienvenue !!",
+        "type": "category"
+      },
+      {
+        "id": "1276529545595453447",
+        "name": "Salons vocaux",
+        "type": "category"
+      },
+      {
+        "id": "1286407204538155140",
+        "name": "Les gens spéciaux",
+        "type": "category"
+      },
+      {
+        "id": "1276537147775778816",
+        "name": "Information",
+        "type": "category"
+      },
+      {
+        "id": "1276529545595453443",
+        "name": "Général",
+        "type": "category"
+      }
+    ]
+  },
+  "Pas JDR": {
+    "Pour le MJ": [
+      {
+        "id": "1368064979697275072",
+        "name": "𝗦𝘁𝗼𝗰𝗸",
+        "type": "text"
+      }
+    ],
+    "Général": [
+      {
+        "id": "1372558554241695744",
+        "name": "𝗥𝗲𝘀𝘀𝗼𝘂𝗿𝗰𝗲𝘀-𝘂𝘁𝗶𝗹𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1521258397494939778",
+        "name": "annonces",
+        "type": "text"
+      },
+      {
+        "id": "1296783290966999134",
+        "name": "𝗚é𝗻é𝗿𝗮𝗹",
+        "type": "text"
+      },
+      {
+        "id": "1341899076685267055",
+        "name": "𝗚𝗮𝗴𝗻𝗮𝗻𝘁𝘀-𝗼𝘀𝘁",
+        "type": "text"
+      },
+      {
+        "id": "1505218788650389705",
+        "name": "jeux-à-faire",
+        "type": "text"
+      }
+    ],
+    "MH": [
+      {
+        "id": "1429903630525534319",
+        "name": "annonces",
+        "type": "text"
+      },
+      {
+        "id": "1439631906730807367",
+        "name": "indisponibilité",
+        "type": "text"
+      },
+      {
+        "id": "1430069498118934548",
+        "name": "mj",
+        "type": "text"
+      },
+      {
+        "id": "1434668275580538910",
+        "name": "dessins",
+        "type": "text"
+      },
+      {
+        "id": "1429465826049658951",
+        "name": "niro",
+        "type": "text"
+      },
+      {
+        "id": "1429465956945498135",
+        "name": "ranga",
+        "type": "text"
+      },
+      {
+        "id": "1429466097316266014",
+        "name": "ziko",
+        "type": "text"
+      },
+      {
+        "id": "1429466288568143872",
+        "name": "funa-ura-setsu",
+        "type": "text"
+      },
+      {
+        "id": "1429467709372104807",
+        "name": "zer-niga",
+        "type": "text"
+      },
+      {
+        "id": "1434176260984148000",
+        "name": "bot",
+        "type": "text"
+      },
+      {
+        "id": "1429561118166093978",
+        "name": "ressources-utiles",
+        "type": "forum"
+      }
+    ],
+    "La Citadelle Radieuse": [
+      {
+        "id": "1304813086871650357",
+        "name": "𝗔𝗻𝗻𝗼𝗻𝗰𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1296786716694155305",
+        "name": "𝗜𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1309481990504054874",
+        "name": "𝗖𝗮𝗿𝘁𝗲-𝗱𝗲-𝗿𝗼𝘂𝘁𝗲",
+        "type": "text"
+      },
+      {
+        "id": "1309481963119448125",
+        "name": "𝗤𝘂ê𝘁𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1309481146991513701",
+        "name": "𝗦𝗵𝗮𝗿𝗸𝘆",
+        "type": "text"
+      },
+      {
+        "id": "1368568945853861996",
+        "name": "𝗖𝗼𝗺𝗽é𝘁𝗲𝗻𝗰𝗲𝘀",
+        "type": "forum"
+      }
+    ],
+    "La Malédiction de Strahd": [
+      {
+        "id": "1322589421509542020",
+        "name": "scene-1",
+        "type": "text"
+      },
+      {
+        "id": "1404782284858724444",
+        "name": "scene-2",
+        "type": "text"
+      },
+      {
+        "id": "1404782871469621380",
+        "name": "scene-3",
+        "type": "text"
+      }
+    ],
+    "JDR Val": [
+      {
+        "id": "1431026442711334963",
+        "name": "histoire-général",
+        "type": "text"
+      },
+      {
+        "id": "1431026995029872803",
+        "name": "histoire-styx",
+        "type": "text"
+      },
+      {
+        "id": "1431027345757569217",
+        "name": "styx",
+        "type": "text"
+      },
+      {
+        "id": "1431027072771297301",
+        "name": "histoire-kordal",
+        "type": "text"
+      },
+      {
+        "id": "1431027390775169094",
+        "name": "kordal",
+        "type": "text"
+      },
+      {
+        "id": "1431027133018407024",
+        "name": "histoire-gargasha",
+        "type": "text"
+      },
+      {
+        "id": "1431027436455465101",
+        "name": "gargasha",
+        "type": "text"
+      }
+    ],
+    "Vocal": [
+      {
+        "id": "1297172435522555964",
+        "name": "JDR",
+        "type": "voice"
+      },
+      {
+        "id": "1296895507674824745",
+        "name": "Pas JDR",
+        "type": "voice"
+      },
+      {
+        "id": "1299837377027641405",
+        "name": "Pas Privé",
+        "type": "voice"
+      },
+      {
+        "id": "1523712022230077640",
+        "name": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOUI",
+        "type": "voice"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1368568847996686389",
+        "name": "𝗥𝘂𝗹𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1322587741636132926",
+        "name": "La Malédiction de Strahd",
+        "type": "category"
+      },
+      {
+        "id": "1368568847996686392",
+        "name": "𝗠𝗼𝗱𝗲𝗿𝗮𝘁𝗼𝗿-𝗼𝗻𝗹𝘆",
+        "type": "text"
+      },
+      {
+        "id": "1371392713181888633",
+        "name": "La Citadelle Radieuse",
+        "type": "category"
+      },
+      {
+        "id": "1296895383481614461",
+        "name": "Vocal",
+        "type": "category"
+      },
+      {
+        "id": "1298961642188439572",
+        "name": "Pour le MJ",
+        "type": "category"
+      },
+      {
+        "id": "1429211952927866961",
+        "name": "MH",
+        "type": "category"
+      },
+      {
+        "id": "1424495207814271046",
+        "name": "JDR Val",
+        "type": "category"
+      },
+      {
+        "id": "1296783290966999132",
+        "name": "Général",
+        "type": "category"
+      }
+    ]
+  },
+  "Lyse": {
+    "MJ": [
+      {
+        "id": "1336108888059150337",
+        "name": "𝗦𝗰é𝗻𝗮𝗿𝗶𝗼",
+        "type": "text"
+      },
+      {
+        "id": "1333215727292907540",
+        "name": "𝗦𝘁𝗮𝗳𝗳",
+        "type": "text"
+      },
+      {
+        "id": "1336113526506258513",
+        "name": "𝗦𝘆𝘀𝘁è𝗺𝗲",
+        "type": "forum"
+      },
+      {
+        "id": "1336104436669485066",
+        "name": "𝗙𝗶𝗺",
+        "type": "forum"
+      },
+      {
+        "id": "1336071249155067904",
+        "name": "𝟬𝟱",
+        "type": "forum"
+      }
+    ],
+    "SCP": [
+      {
+        "id": "1336070504943059038",
+        "name": "𝗦𝗰𝗽-𝗽𝗼𝘂𝘃𝗼𝗶𝗿𝘀",
+        "type": "forum"
+      },
+      {
+        "id": "1336073795336802408",
+        "name": "𝗦𝗰𝗽-𝗼𝗯𝗷𝗲𝘁",
+        "type": "forum"
+      },
+      {
+        "id": "1336099717532090509",
+        "name": "𝗦𝗰𝗽-𝗿é𝘀𝗲𝗿𝘃𝗲",
+        "type": "forum"
+      },
+      {
+        "id": "1336100220127416461",
+        "name": "𝗦𝗰𝗽-𝘀𝗰é𝗻𝗮𝗿𝗶𝗼",
+        "type": "forum"
+      }
+    ],
+    "Interface utilisateur": [
+      {
+        "id": "1333066735766470789",
+        "name": "𝗖𝗮𝗻𝗮𝗹-𝗱𝗲-𝗰𝗼𝗺𝗺𝘂𝗻𝗶𝗰𝗮𝘁𝗶𝗼𝗻",
+        "type": "text"
+      },
+      {
+        "id": "1336105605538119770",
+        "name": "𝗖𝗹𝗮𝘀𝘀𝗶𝗳𝗶𝗰𝗮𝘁𝗶𝗼𝗻",
+        "type": "forum"
+      }
+    ],
+    "Interventions": [
+      {
+        "id": "1333075611530559488",
+        "name": "𝗘𝘅𝗽é𝗿𝗶𝗲𝗻𝗰𝗲-𝗱-𝟲𝟴",
+        "type": "text"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1333066735766470787",
+        "name": "Interface utilisateur",
+        "type": "category"
+      },
+      {
+        "id": "1333071644280750121",
+        "name": "MJ",
+        "type": "category"
+      },
+      {
+        "id": "1333075497613000837",
+        "name": "Interventions",
+        "type": "category"
+      },
+      {
+        "id": "1333905255896846449",
+        "name": "SCP",
+        "type": "category"
+      },
+      {
+        "id": "1336070415507918949",
+        "name": "𝗥𝘂𝗹𝗲𝘀",
+        "type": "text"
+      },
+      {
+        "id": "1336070415507918952",
+        "name": "𝗠𝗼𝗱𝗲𝗿𝗮𝘁𝗼𝗿-𝗼𝗻𝗹𝘆",
+        "type": "text"
+      }
+    ]
+  },
+  "The World of Darkness": {
+    "Salons textuels": [
+      {
+        "id": "1454186583749165358",
+        "name": "mj",
+        "type": "text"
+      },
+      {
+        "id": "1457856977660022844",
+        "name": "logs",
+        "type": "text"
+      },
+      {
+        "id": "1454913811567083734",
+        "name": "a-faire",
+        "type": "text"
+      },
+      {
+        "id": "1453015592130052298",
+        "name": "𝚁𝚎𝚐𝚕𝚎𝚖𝚎𝚗𝚝",
+        "type": "text"
+      },
+      {
+        "id": "1454047369325842452",
+        "name": "𝙶𝚎𝚗𝚎𝚛𝚊𝚕",
+        "type": "text"
+      },
+      {
+        "id": "1454190178963816479",
+        "name": "bot",
+        "type": "text"
+      },
+      {
+        "id": "1455206147534491810",
+        "name": "images-perso",
+        "type": "text"
+      },
+      {
+        "id": "1457475638398025892",
+        "name": "tabulae-mj",
+        "type": "forum"
+      }
+    ],
+    "[INFO] Vampire": [
+      {
+        "id": "1454182154270670848",
+        "name": "𝑵𝒆𝒙𝒖𝒔",
+        "type": "text"
+      },
+      {
+        "id": "1457067153604870164",
+        "name": "𝑹𝒆𝒈𝒍𝒆𝒎𝒆𝒏𝒕-𝑽𝒂𝒎𝒑𝒊𝒓𝒆",
+        "type": "text"
+      },
+      {
+        "id": "1454438955503325368",
+        "name": "𝑽𝒊𝒔-𝑽𝒊𝒕𝒂𝒆",
+        "type": "text"
+      },
+      {
+        "id": "1455470106703560747",
+        "name": "𝑽𝒆𝒏𝒂𝒕𝒊𝒐",
+        "type": "text"
+      },
+      {
+        "id": "1455197317387911343",
+        "name": "𝑻𝒂𝒃𝒖𝒍𝒂𝒆",
+        "type": "forum"
+      }
+    ],
+    "[INFO] Loup-garou": [
+      {
+        "id": "1462941781761986732",
+        "name": "fiches",
+        "type": "forum"
+      }
+    ],
+    "[RP] Test": [
+      {
+        "id": "1453856416971624450",
+        "name": "test",
+        "type": "text"
+      }
+    ],
+    "[RP] Le Coeur": [
+      {
+        "id": "1455831154077863987",
+        "name": "district-des-flèches",
+        "type": "forum"
+      },
+      {
+        "id": "1455858560348061729",
+        "name": "place-financière",
+        "type": "forum"
+      },
+      {
+        "id": "1455858387609718951",
+        "name": "avenue-néon",
+        "type": "forum"
+      }
+    ],
+    "[RP] Vieille Ville": [
+      {
+        "id": "1455915693169184935",
+        "name": "quartier-de-la-cathédrale",
+        "type": "forum"
+      },
+      {
+        "id": "1455930242576285777",
+        "name": "dédale-pavé",
+        "type": "forum"
+      },
+      {
+        "id": "1455930192286449664",
+        "name": "rue-des-antiquaires",
+        "type": "forum"
+      }
+    ],
+    "[RP] Quartier Chinois": [
+      {
+        "id": "1456307005210755112",
+        "name": "porte-du-dragon",
+        "type": "forum"
+      },
+      {
+        "id": "1456374881254900014",
+        "name": "rue-des-lanternes",
+        "type": "forum"
+      },
+      {
+        "id": "1456385387965452481",
+        "name": "quartier-des-temples",
+        "type": "forum"
+      }
+    ],
+    "[RP] Les Quais": [
+      {
+        "id": "1456529534722642128",
+        "name": "front-de-mer",
+        "type": "forum"
+      },
+      {
+        "id": "1456532024306438154",
+        "name": "disitrict-des-entrepots",
+        "type": "forum"
+      },
+      {
+        "id": "1456539404259688500",
+        "name": "champs-de-conteneurs",
+        "type": "forum"
+      },
+      {
+        "id": "1456553225237954600",
+        "name": "marché-aux-poissons",
+        "type": "forum"
+      },
+      {
+        "id": "1456555852814094387",
+        "name": "plage-du-démantèlement",
+        "type": "forum"
+      },
+      {
+        "id": "1456557085281226937",
+        "name": "antre-des-contrebandiers",
+        "type": "forum"
+      }
+    ],
+    "[RP] Les Entrailles": [
+      {
+        "id": "1456574350357692416",
+        "name": "cités-hlm",
+        "type": "forum"
+      },
+      {
+        "id": "1456578146945208471",
+        "name": "marché-de-rue",
+        "type": "forum"
+      },
+      {
+        "id": "1456582437554618438",
+        "name": "cité-abandonnée",
+        "type": "forum"
+      }
+    ],
+    "[RP] Les Bois": [
+      {
+        "id": "1456615078441914511",
+        "name": "orée-urbaine",
+        "type": "forum"
+      },
+      {
+        "id": "1456630439090323711",
+        "name": "forêt-profonde",
+        "type": "forum"
+      },
+      {
+        "id": "1456645445789945949",
+        "name": "étang-de-la-carrière",
+        "type": "forum"
+      },
+      {
+        "id": "1456643812880289936",
+        "name": "lisière-sauvage",
+        "type": "forum"
+      },
+      {
+        "id": "1456652128125845557",
+        "name": "domaine-des-music",
+        "type": "forum"
+      }
+    ],
+    "[RP] La Périphérie": [
+      {
+        "id": "1457328181731131473",
+        "name": "zone-commerciale",
+        "type": "forum"
+      },
+      {
+        "id": "1457386853224153219",
+        "name": "zone-industrielle",
+        "type": "forum"
+      }
+    ],
+    "Sans Categorie": [
+      {
+        "id": "1456529488723578946",
+        "name": "[RP] Les Quais",
+        "type": "category"
+      },
+      {
+        "id": "1452926332118892614",
+        "name": "Salons textuels",
+        "type": "category"
+      },
+      {
+        "id": "1456574285769609219",
+        "name": "[RP] Les Entrailles",
+        "type": "category"
+      },
+      {
+        "id": "1457326428537491538",
+        "name": "[RP] La Périphérie",
+        "type": "category"
+      },
+      {
+        "id": "1455830771792089201",
+        "name": "[RP] Le Coeur",
+        "type": "category"
+      },
+      {
+        "id": "1456615031084027991",
+        "name": "[RP] Les Bois",
+        "type": "category"
+      },
+      {
+        "id": "1454017661095772223",
+        "name": "[INFO] Vampire",
+        "type": "category"
+      },
+      {
+        "id": "1453015592130052301",
+        "name": "moderator-only",
+        "type": "text"
+      },
+      {
+        "id": "1455915590790283398",
+        "name": "[RP] Vieille Ville",
+        "type": "category"
+      },
+      {
+        "id": "1453856456456536074",
+        "name": "[RP] Test",
+        "type": "category"
+      },
+      {
+        "id": "1456306916199235789",
+        "name": "[RP] Quartier Chinois",
+        "type": "category"
+      },
+      {
+        "id": "1454017771066101902",
+        "name": "[INFO] Loup-garou",
+        "type": "category"
+      }
+    ]
+  }
+}

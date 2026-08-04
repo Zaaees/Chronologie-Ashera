@@ -277,10 +277,10 @@ EXPLICIT_END_REGEX = re.compile(
     re.IGNORECASE
 )
 
-from ai_narrative_segmenter_v2 import segment_messages_into_scenes_v2
+from segmenteur_narratif import segment_messages_into_scenes_v2
 
 # Segmentation des messages en scènes (Logique Narrative V2)
-def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str):
+def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str, category_name="", discord_position=999):
     if not messages:
         return []
 
@@ -294,13 +294,13 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
         return []
 
     def scene_builder(ch_name, ch_id, idx, sub_tuples, title):
-        return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str)
+        return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str, category_name=category_name, discord_position=discord_position)
 
     scenes = segment_messages_into_scenes_v2(channel_name, channel_id, valid_msgs, scene_builder)
 
     return [s for s in scenes if s.get("actors")]
 
-def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name=""):
+def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name="", discord_position=999):
     messages = [t[0] for t in messages_tuples]
     texts = [t[1] for t in messages_tuples]
 
@@ -339,6 +339,7 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         "channel": parent_channel,
         "channel_id": str(channel_id),
         "category": category_name,
+        "discord_position": discord_position,
         "title": f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else parent_channel,
         "actors": actors,
         "start_time": messages[0]['timestamp'],
@@ -536,7 +537,7 @@ class DiscordExporterClient(discord.Client):
                 all_scenes.extend(old_scenes)
                 continue
 
-            after_obj = discord.Object(id=int(last_id)) if last_id else None
+            after_obj = None  # Extraction complète depuis l'origine pour ne rater aucun message/description
 
             # Limiter l'historique sur les salons HRP/Généraux/Staff/Jeux/Bots/Demandes
             history_limit = None
@@ -546,8 +547,8 @@ class DiscordExporterClient(discord.Client):
 
             raw_messages = []
             try:
-                # Si after est spécifié, n'extraire que les nouveaux messages
-                async for msg in channel.history(limit=history_limit, after=after_obj, oldest_first=True):
+                # Extraire tous les messages sans filtre after_obj pour capturer les messages de description
+                async for msg in channel.history(limit=history_limit, oldest_first=True):
                     # Déterminer le nom de l'auteur (affichage/surnom si disponible)
                     author_name = msg.author.display_name if hasattr(msg.author, 'display_name') else msg.author.name
                     author_avatar_url = str(msg.author.display_avatar.url) if hasattr(msg.author, 'display_avatar') and msg.author.display_avatar else ""
@@ -608,23 +609,16 @@ class DiscordExporterClient(discord.Client):
                         "is_webhook": is_wh
                     })
 
-                if after_obj and len(raw_messages) == 0:
-                    old_scenes = existing_scenes_by_channel.get(ch_id) or existing_scenes_by_channel.get(ch_name) or []
-                    print(f"  -> ⏩ Aucune nouveauté ({len(old_scenes)} scènes conservées).")
-                    all_scenes.extend(old_scenes)
-                else:
-                    channel_scenes = segment_messages_into_scenes(ch_name, ch_id, raw_messages, str(target_guild.id))
-                    old_scenes = existing_scenes_by_channel.get(ch_id) or existing_scenes_by_channel.get(ch_name) or [] if after_obj else []
-                    merged_scenes = old_scenes + channel_scenes
-                    print(f"  -> {len(raw_messages)} message(s) lu(s) ({len(merged_scenes)} scène(s) au total).")
-                    all_scenes.extend(merged_scenes)
+                cat_name = channel.category.name if hasattr(channel, 'category') and channel.category else ""
+                pos = channel.position if hasattr(channel, 'position') else 999
+                channel_scenes = segment_messages_into_scenes(ch_name, ch_id, raw_messages, str(target_guild.id), category_name=cat_name, discord_position=pos)
+                print(f"  -> {len(raw_messages)} message(s) lu(s) ({len(channel_scenes)} scène(s) au total).")
+                all_scenes.extend(channel_scenes)
 
             except Exception as e:
                 print(f"  -> ⚠️ ERREUR lors de la lecture du salon #{ch_name}: {e}")
 
-        # Exclure les scènes de 2025 et trier par date de début
-        all_scenes = [s for s in all_scenes if not s.get('start_time', '').startswith('2025')]
-        
+        # conserver tous les messages sans filtrer l'année 2025
         def get_start_time(scene):
             return scene.get('start_time', '0000-00-00')
 

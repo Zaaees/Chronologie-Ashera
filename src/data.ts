@@ -35,6 +35,7 @@ export interface Scene {
   message_count: number;
   discord_url?: string;
   location_image?: string;
+  location_description?: string;
   thread_name?: string;
   messages: Message[];
 }
