@@ -16,6 +16,7 @@ FACTION_ROLE_IDS = {
     1327646236760608802: ("Cercle d'Azur", "#3b82f6"),
     1327646236760608803: ("La Garde Pourpre", "#ef4444"),
     1327646236760608801: ("Voile d'Ivoire", "#fef08a"),
+    1525469197935841371: ("JAVUS", "#ffffff"),
     1475090340557095003: ("Sans guilde", "#eab308")
 }
 
@@ -114,19 +115,19 @@ CHARACTER_METADATA_V2 = {
     "Velka Valcyrion": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
 
-    # Explicit "Sans guilde" Role Holders on Discord
-    "Asior Eveus": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Idelmée Cadree": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Junko Anarchy": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Kenji Takahashi": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Loyis Delacroix": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Lucia Fiorella": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    # Faction Roles (Real Player Discord Roles)
+    "Asior Eveus": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Idelmée Cadree": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Junko Anarchy": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Kenji Takahashi": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Loyis Delacroix": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+    "Lucia Fiorella": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Okayama": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Red Roadman": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Red Roadman": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-
-    # Characters with No Role on Discord ("Indéfini")
-    "Ragde Umbras": {"role": "Indéfini", "color": "#94a3b8", "status": "MAIN_PC"},
+    "Ragde Umbras": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Yunah Aoi Enjaku": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Eldren Gates": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
 
     # Webhooks (System & PNJ entities)
     "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
@@ -142,7 +143,7 @@ CHARACTER_METADATA_V2 = {
     "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"}
 }
 
-VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "Sans guilde", "PNJ", "Indéfini"}
+VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "JAVUS", "Sans guilde", "PNJ", "Indéfini"}
 
 def clean_key_v2(s):
     if not s: return ""
@@ -181,6 +182,8 @@ def get_canonical_name_v2(raw_name):
 
     return name_clean if name_clean else "Narrateur"
 
+from guild_resolver import resolve_role_from_member_roles, is_pnj_character
+
 def build_unified_characters_dict_v2(all_scenes):
     scene_actors_counts = {}
     scene_messages_counts = {}
@@ -195,32 +198,47 @@ def build_unified_characters_dict_v2(all_scenes):
             if author:
                 scene_messages_counts[author] = scene_messages_counts.get(author, 0) + 1
 
+    dynamic_factions = {}
+    if os.path.exists("discord_member_factions.json"):
+        try:
+            with open("discord_member_factions.json", "r", encoding="utf-8") as f:
+                dynamic_factions = json.load(f)
+        except Exception:
+            pass
+
     chars_dict = {}
 
-    for name, meta in CHARACTER_METADATA_V2.items():
-        role = meta["role"]
-        color = meta["color"]
-        chars_dict[name] = {
-            "name": name,
+    for act, s_count in scene_actors_counts.items():
+        if is_pnj_character(act):
+            role = "PNJ"
+            color = "#c084fc"
+            status = "PNJ"
+        elif act in dynamic_factions:
+            dyn_info = dynamic_factions[act]
+            if isinstance(dyn_info, (list, tuple)):
+                role, color = dyn_info[0], dyn_info[1]
+            elif isinstance(dyn_info, dict):
+                role, color = dyn_info.get("role", "Indéfini"), dyn_info.get("color", "#94a3b8")
+            else:
+                role, color = "Indéfini", "#94a3b8"
+            status = "MAIN_PC"
+        elif act in CHARACTER_METADATA_V2:
+            meta = CHARACTER_METADATA_V2[act]
+            role = meta["role"]
+            color = meta["color"]
+            status = meta["status"]
+        else:
+            role = "Indéfini"
+            color = "#94a3b8"
+            status = "MAIN_PC"
+
+        chars_dict[act] = {
+            "name": act,
             "role": role,
             "color": color,
-            "status": meta["status"],
-            "totalScenes": scene_actors_counts.get(name, 0),
-            "totalMessages": scene_messages_counts.get(name, 0)
+            "status": status,
+            "totalScenes": s_count,
+            "totalMessages": scene_messages_counts.get(act, 0)
         }
-
-    for act, s_count in scene_actors_counts.items():
-        if act not in chars_dict:
-            is_pnj = "pnj" in act.lower() or "narrat" in act.lower() or "bot" in act.lower() or act in {"Oeil", "L'Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES"}
-            role = "PNJ" if is_pnj else "Indéfini"
-            color = "#c084fc" if is_pnj else "#94a3b8"
-            chars_dict[act] = {
-                "name": act,
-                "role": role,
-                "color": color,
-                "status": "PNJ" if is_pnj else "MAIN_PC",
-                "totalScenes": s_count,
-                "totalMessages": scene_messages_counts.get(act, 0)
-            }
 
     return chars_dict

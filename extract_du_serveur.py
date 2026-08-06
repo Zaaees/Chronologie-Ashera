@@ -125,6 +125,7 @@ FACTION_ROLE_PRIORITY = [
     1327646236760608802, # Cercle d'Azur
     1327646236760608801, # Voile d'Ivoire
     1467532532261322813, # L'œil
+    1525469197935841371, # JAVUS
     1475090340557095003  # Sans guilde
 ]
 
@@ -133,6 +134,7 @@ FACTION_INFO = {
     1327646236760608802: ("Cercle d'Azur", "#305ed3", "char_azur"),
     1327646236760608801: ("Voile d'Ivoire", "#ffffd4", "char_ivoire"),
     1467532532261322813: ("L'œil", "#0e0d0d", "char_oeil"),
+    1525469197935841371: ("JAVUS", "#ffffff", "char_javus"),
     1475090340557095003: ("Sans guilde", "#e2ce7d", "char_sans_guilde")
 }
 
@@ -400,6 +402,8 @@ class DiscordExporterClient(discord.Client):
                     if global_name:
                         register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction identifiées.")
+            with open("discord_member_factions.json", "w", encoding="utf-8") as f:
+                json.dump(detected_member_factions, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
 

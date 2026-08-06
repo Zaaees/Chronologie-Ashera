@@ -114,6 +114,15 @@ const DEFAULT_FACTION_STYLE = {
 
 const FACTION_COLORS: Record<string, { bg: string; text: string; border: string; icon: string; hexColor: string; crest: string; roleName: string }> = {
   ...FACTION_INFO,
+  "JAVUS": {
+    roleName: "JAVUS",
+    bg: "rgba(255, 255, 255, 0.25)",
+    text: "#ffffff",
+    border: "rgba(255, 255, 255, 0.75)",
+    icon: "⚡",
+    hexColor: "#ffffff",
+    crest: "./ashera_banner.png"
+  },
   "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
   "Indéfini": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "❓", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Indéfini" },
   "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" }
@@ -1151,6 +1160,11 @@ export default function App() {
       document.documentElement.style.setProperty('--theme-accent', theme.accent);
       document.documentElement.style.setProperty('--theme-border', theme.border);
       document.documentElement.style.setProperty('--theme-glow', theme.glow);
+    } else if (selectedFaction && FACTION_COLORS[selectedFaction]) {
+      const color = FACTION_COLORS[selectedFaction];
+      document.documentElement.style.setProperty('--theme-accent', color.hexColor);
+      document.documentElement.style.setProperty('--theme-border', color.border);
+      document.documentElement.style.setProperty('--theme-glow', `${color.hexColor}80`);
     } else {
       document.documentElement.style.removeProperty('--theme-accent');
       document.documentElement.style.removeProperty('--theme-border');
@@ -1195,6 +1209,7 @@ export default function App() {
       "Cercle d'Azur": [],
       "Voile d'Ivoire": [],
       "L'œil": [],
+      "JAVUS": [],
       "Sans guilde": [],
       "Indéfini": [],
       "PNJ": []
@@ -1336,11 +1351,6 @@ export default function App() {
         }
       }
 
-      if (selectedFaction) {
-        const factionActors = groupedActorsByFaction[selectedFaction]?.map(a => a.name) || [];
-        if (!scene.actors.some(a => factionActors.includes(a))) return false;
-      }
-
       if (selectedCategory) {
         const catChannels = groupedChannelsByCategory[selectedCategory]?.map(c => c.channel) || [];
         if (!catChannels.includes(scene.channel)) return false;
@@ -1356,7 +1366,7 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedFaction, selectedCategory, selectedActor, selectedChannel, groupedActorsByFaction, groupedChannelsByCategory]);
+  }, [searchQuery, selectedCategory, selectedActor, selectedChannel, groupedChannelsByCategory]);
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -1498,7 +1508,7 @@ export default function App() {
                   className={`faction-crest-card relative p-2.5 rounded flex items-center gap-2.5 border text-left select-none cursor-pointer transition-all duration-300 transform hover:scale-[1.02] ${
                     isSelected ? 'ring-2 ring-white/50 shadow-xl' : 'hover:border-slate-600'
                   }`}
-                  title={`Cliquer pour filtrer/appliquer le thème ${factionName}`}
+                  title={`Cliquer pour appliquer le thème ${factionName}`}
                 >
                   {/* Blason Image du Dossier Images */}
                   <div 
@@ -1550,13 +1560,12 @@ export default function App() {
               />
             </div>
 
-            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all' || selectedFaction !== null || selectedCategory !== null) && (
+            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all' || selectedCategory !== null) && (
               <button
                 onClick={() => {
                   setSearchQuery('');
                   setSelectedActor('all');
                   setSelectedChannel('all');
-                  setSelectedFaction(null);
                   setSelectedCategory(null);
                 }}
                 className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors font-medium shrink-0"
@@ -1594,13 +1603,13 @@ export default function App() {
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
             
-            {selectedFaction && FACTION_THEMES[selectedFaction] ? (
+            {selectedFaction && (FACTION_THEMES[selectedFaction] || FACTION_COLORS[selectedFaction]) ? (
               <div className="relative min-h-[7.5rem] w-full overflow-hidden border border-slate-800/80 rounded p-2.5 flex flex-col justify-between bg-black/60">
                 {/* Artwork Blason en fond semi-transparent */}
-                {FACTION_INFO[selectedFaction]?.crest && (
+                {FACTION_COLORS[selectedFaction]?.crest && (
                   <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
                     <img 
-                      src={FACTION_INFO[selectedFaction].crest} 
+                      src={FACTION_COLORS[selectedFaction].crest} 
                       alt={selectedFaction} 
                       className="w-full h-full object-cover opacity-25 scale-110" 
                     />
@@ -1611,25 +1620,33 @@ export default function App() {
                 {/* Titre de la Faction */}
                 <div className="relative z-10 flex items-center gap-2 pb-1.5 border-b border-slate-800/80">
                   <div 
-                    style={{ borderColor: FACTION_THEMES[selectedFaction].accent }}
+                    style={{ borderColor: FACTION_THEMES[selectedFaction]?.accent || FACTION_COLORS[selectedFaction]?.hexColor }}
                     className="w-6 h-6 rounded-full border shrink-0 overflow-hidden p-0.5 bg-black"
                   >
-                    <img src={FACTION_INFO[selectedFaction]?.crest} alt="" className="w-full h-full object-cover rounded-full" />
+                    <img src={FACTION_COLORS[selectedFaction]?.crest} alt="" className="w-full h-full object-cover rounded-full" />
                   </div>
-                  <span style={{ color: FACTION_THEMES[selectedFaction].accent }} className="text-xs font-bold font-serif-gothic uppercase tracking-wider truncate">
+                  <span style={{ color: FACTION_THEMES[selectedFaction]?.accent || FACTION_COLORS[selectedFaction]?.hexColor }} className="text-xs font-bold font-serif-gothic uppercase tracking-wider truncate">
                     {selectedFaction}
                   </span>
                 </div>
 
                 {/* Quote & Auteur */}
-                <div className="relative z-10 mt-2">
-                  <p className="text-[11px] italic font-serif text-slate-100 leading-snug line-clamp-4">
-                    « {FACTION_THEMES[selectedFaction].motto} »
-                  </p>
-                  <p style={{ color: FACTION_THEMES[selectedFaction].accent }} className="text-[10px] font-mono font-semibold mt-1.5 text-right">
-                    — {FACTION_THEMES[selectedFaction].mottoAuthor}
-                  </p>
-                </div>
+                {FACTION_THEMES[selectedFaction] ? (
+                  <div className="relative z-10 mt-2">
+                    <p className="text-[11px] italic font-serif text-slate-100 leading-snug line-clamp-4">
+                      « {FACTION_THEMES[selectedFaction].motto} »
+                    </p>
+                    <p style={{ color: FACTION_THEMES[selectedFaction].accent }} className="text-[10px] font-mono font-semibold mt-1.5 text-right">
+                      — {FACTION_THEMES[selectedFaction].mottoAuthor}
+                    </p>
+                  </div>
+                ) : (
+                  <div className="relative z-10 mt-2">
+                    <p style={{ color: FACTION_COLORS[selectedFaction]?.hexColor }} className="text-[11px] font-serif italic text-slate-300">
+                      Thème {selectedFaction} appliqué
+                    </p>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="relative h-28 w-full overflow-hidden border border-slate-800 rounded">
