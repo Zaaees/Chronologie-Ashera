@@ -2,9 +2,9 @@ import re
 from datetime import datetime
 from unify_characters_v2 import get_canonical_name_v2
 
-# Marqueurs explicites de fermeture et d'ouverture de RP (Logique GitHub d'origine créée par l'utilisateur)
+# Marqueurs explicites de fermeture et d'ouverture de RP
 EXPLICIT_END_REGEX = re.compile(
-    r'(sc[èe]ne\s+termin[eé]|salon\s+libre|fin\s+de\s+sc[èe]ne|mission\s+termin[eé]|fin\s+du\s+rp|rp\s+clos|sc[eè]ne\s+close)',
+    r'(sc[èe]ne\s+termin[eé]|salon\s+libre|fin\s+de\s+sc[èe]ne|mission\s+termin[eé]|fin\s+du\s+rp|rp\s+clos|sc[eè]ne\s+close|sc[èe]ne\s+abr[eé]g[eé]e|sc[eè]ne\s+de\s+rp\s+fini|rp\s+fini|rp\s+termin[eé])',
     re.IGNORECASE
 )
 
@@ -70,9 +70,9 @@ def extract_title_from_text(text, channel_clean, scene_index):
 
     return f"{channel_clean} — Scène {scene_index}"
 
-def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func):
+def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func, max_inactivity_days=5.0):
     """
-    Segmentation Narrative des messages RP (Logique GitHub pure).
+    Segmentation Narrative des messages RP.
     Suit la continuité du récit et le fil de répliques entre personnages joueurs.
     """
     if not valid_msgs:
@@ -107,26 +107,33 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
                 has_player_actor_replied = True
                 break
 
+        prev_ts = parse_timestamp_v2(prev_msg.get('timestamp'))
+        curr_ts = parse_timestamp_v2(curr_msg.get('timestamp'))
+        diff_days = (curr_ts - prev_ts) / 86400.0 if (prev_ts and curr_ts) else 0.0
+
         is_new_scene = False
 
-        # 1. Marqueur explicite de fin de RP
+        # 1. Marqueur explicite de fin de RP dans le message précédent
         if prev_is_sealed:
             is_new_scene = True
-        # 2. Bannière/Convocation majeure lancée sans qu'aucun des joueurs de la scène précédente ne réponde plus tard
-        elif curr_is_start and not has_player_actor_replied:
+        # 2. Inactivité prolongée du salon (> 5 jours) sans réponse ultérieure des joueurs (sauf si le début n'était que du GM)
+        elif diff_days > max_inactivity_days and not has_player_actor_replied and not current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = True
-        # 3. Si le début de la scène est un PNJ/GM neutre -> la scène continue avec le joueur qui répond
-        elif current_scene_actors.issubset(GM_BOT_ACTORS):
+        # 3. Bannière/Convocation majeure lancée par un joueur (hors GM) sans réponse des joueurs précédents
+        elif curr_is_start and not has_player_actor_replied and curr_actor not in GM_BOT_ACTORS and curr_actor not in current_scene_actors:
+            is_new_scene = True
+        # 4. Message d'un GM/Bot neutre (Le Conseiller, Oeil, Narrateur...) ou début de scène par GM -> continuation de la scène
+        elif curr_actor in GM_BOT_ACTORS or current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = False
-        # 4. Continuité narrative : si l'acteur participe ou si les joueurs répliquent plus loin dans le salon -> Continuer la scène
+        # 5. Continuité narrative : l'acteur fait déjà partie des joueurs de la scène, ou un des joueurs réplique plus tard
         elif curr_actor in player_scene_actors or has_player_actor_replied:
             is_new_scene = False
-        # 5. Bannière d'ouverture majeure lancée par un groupe indépendant
+        # 6. Bannière d'ouverture majeure lancée par un nouveau groupe de joueurs
         elif curr_is_start and curr_actor not in current_scene_actors:
             is_new_scene = True
-        # 6. Nouveau fil RP sans lien avec le groupe précédent
+        # 7. Sinon, continuation naturelle du fil RP dans le salon (joueurs rejoignant la scène au fil des heures/jours)
         else:
-            is_new_scene = True
+            is_new_scene = False
 
         if is_new_scene:
             scenes.append(create_scene_func(
