@@ -78,45 +78,62 @@ CANONICAL_MAP = {
 
 # Roles strictly assigned based on Discord Role IDs (Webhooks are classified dynamically as PNJ)
 CHARACTER_METADATA_V2 = {
+    # Main Guilds
     "Adelina Del Fuego": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Aegnor Othar": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Akane Tsukishiro": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Arun Acharya": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Aryanna Erhendil": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Asior Eveus": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Astreüs Mylonas": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Bozdag Dermirhan": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Brutus Redwitch": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Cassian Ortie": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Frey Guðfrøðr": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
+    "Emil Camille Rebenok": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Frey Guðfrøðr": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Hector Swaft": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "PNJ"},
     "Hedwig Von Glanzestern": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Idelmée Cadree": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Inzu Sravel": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "PNJ"},
     "Iscarioth": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
     "Isis Faerieth": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Ivara Luella": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
     "Jasp Nah": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Junko Anarchy": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Jin Alurantes": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Katelynn Hoffmann": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Kenji Takahashi": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
     "Lewis Bamer": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Loyis Delacroix": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Lucia Fiorella": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
     "Lumia Faendharts": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Maëll Fol'Dun": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Milli Enga": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "PNJ"},
     "Myrea M": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
     "Nick Sol": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Okayama": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Ragde Umbras": {"role": "Indéfini", "color": "#94a3b8", "status": "MAIN_PC"},
-    "Red Roadman": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
     "Ren Urugaki": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Selena Moon": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Septimus Kales": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Tarrion Tombetoile": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Tenebris": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
+    "Tsutomu Yamamoto": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "PNJ"},
     "Velka Valcyrion": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
     "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
 
+    # Explicit "Sans guilde" Role Holders on Discord
+    "Asior Eveus": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Idelmée Cadree": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Junko Anarchy": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Kenji Takahashi": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Loyis Delacroix": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Lucia Fiorella": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Okayama": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Red Roadman": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+    "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
+
+    # Characters with No Role on Discord ("Indéfini")
+    "Ragde Umbras": {"role": "Indéfini", "color": "#94a3b8", "status": "MAIN_PC"},
+
     # Webhooks (System & PNJ entities)
+    "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
+    "Captain Hook": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
+    "L'Ost du Sang": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
+    "LE MONARQUE DU SILENCE": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
+    "Regisseur du Centre de l'Histoire": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "L'Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
@@ -125,7 +142,7 @@ CHARACTER_METADATA_V2 = {
     "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"}
 }
 
-VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "Sans guilde", "PNJ"}
+VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "Sans guilde", "PNJ", "Indéfini"}
 
 def clean_key_v2(s):
     if not s: return ""

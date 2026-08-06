@@ -70,10 +70,12 @@ def extract_title_from_text(text, channel_clean, scene_index):
 
     return f"{channel_clean} — Scène {scene_index}"
 
-def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func, max_inactivity_days=5.0):
+def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func, max_inactivity_days=5.0, hard_cutoff_days=45.0):
     """
     Segmentation Narrative des messages RP.
     Suit la continuité du récit et le fil de répliques entre personnages joueurs.
+    Prend en compte le RP Long (réponses lentes entre mêmes acteurs) tout en coupant lors de
+    l'arrivée d'un nouveau personnage après inactivité ou après arrêt prolongé (> 45 jours).
     """
     if not valid_msgs:
         return []
@@ -97,41 +99,47 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
         curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
 
-        # Exclure les GMs neutres lors du contrôle des réponses des personnages joueurs
         player_scene_actors = current_scene_actors - GM_BOT_ACTORS
-
-        has_player_actor_replied = False
-        for nm, _ in valid_msgs_sorted[i:]:
-            act = get_canonical_name_v2(nm.get('author_name', nm.get('author', '')))
-            if act in player_scene_actors:
-                has_player_actor_replied = True
-                break
 
         prev_ts = parse_timestamp_v2(prev_msg.get('timestamp'))
         curr_ts = parse_timestamp_v2(curr_msg.get('timestamp'))
         diff_days = (curr_ts - prev_ts) / 86400.0 if (prev_ts and curr_ts) else 0.0
+
+        # Vérification des réponses ultérieures des joueurs dans la fenêtre active (max hard_cutoff_days)
+        has_player_actor_replied = False
+        for nm, _ in valid_msgs_sorted[i:]:
+            nts = parse_timestamp_v2(nm.get('timestamp'))
+            if nts and curr_ts and (nts - curr_ts) / 86400.0 > hard_cutoff_days:
+                break
+            act = get_canonical_name_v2(nm.get('author_name', nm.get('author', '')))
+            if act in player_scene_actors:
+                has_player_actor_replied = True
+                break
 
         is_new_scene = False
 
         # 1. Marqueur explicite de fin de RP dans le message précédent
         if prev_is_sealed:
             is_new_scene = True
-        # 2. Inactivité prolongée du salon (> 5 jours) sans réponse ultérieure des joueurs (sauf si le début n'était que du GM)
-        elif diff_days > max_inactivity_days and not has_player_actor_replied and not current_scene_actors.issubset(GM_BOT_ACTORS):
+        # 2. Coupure ferme après inactivité totale prolongée (> 45 jours) du salon (sauf si début par GM bot)
+        elif diff_days > hard_cutoff_days and not current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = True
-        # 3. Bannière/Convocation majeure lancée par un joueur (hors GM) sans réponse des joueurs précédents
-        elif curr_is_start and not has_player_actor_replied and curr_actor not in GM_BOT_ACTORS and curr_actor not in current_scene_actors:
+        # 3. Arrivée d'un NOUVEAU personnage après inactivité (> 5 jours)
+        elif diff_days > max_inactivity_days and curr_actor not in current_scene_actors and curr_actor not in GM_BOT_ACTORS:
             is_new_scene = True
-        # 4. Message d'un GM/Bot neutre (Le Conseiller, Oeil, Narrateur...) ou début de scène par GM -> continuation de la scène
+        # 4. Bannière d'ouverture majeure lancée après inactivité (> 5 jours)
+        elif diff_days > max_inactivity_days and curr_is_start:
+            is_new_scene = True
+        # 5. Message d'un GM/Bot neutre (Le Conseiller, Oeil, Narrateur...) ou début de scène par GM -> continuation
         elif curr_actor in GM_BOT_ACTORS or current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = False
-        # 5. Continuité narrative : l'acteur fait déjà partie des joueurs de la scène, ou un des joueurs réplique plus tard
+        # 6. Continuité RP Long : si l'acteur fait déjà partie des joueurs de la scène ou réplique dans la scène active
         elif curr_actor in player_scene_actors or has_player_actor_replied:
             is_new_scene = False
-        # 6. Bannière d'ouverture majeure lancée par un nouveau groupe de joueurs
+        # 7. Bannière d'ouverture majeure lancée par un nouveau groupe de joueurs
         elif curr_is_start and curr_actor not in current_scene_actors:
             is_new_scene = True
-        # 7. Sinon, continuation naturelle du fil RP dans le salon (joueurs rejoignant la scène au fil des heures/jours)
+        # 8. Sinon, continuation naturelle du fil RP
         else:
             is_new_scene = False
 
