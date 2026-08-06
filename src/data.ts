@@ -55,6 +55,7 @@ interface RawDataTypeV2 {
   };
   characters: Record<string, CharacterV2>;
   scenes: SceneV2[];
+  channel_images?: Record<string, string>;
 }
 
 const typedRawData = rawData as unknown as RawDataType;
@@ -62,7 +63,7 @@ const typedRawDataV2 = rawDataV2 as unknown as RawDataTypeV2;
 
 export const CHARACTERS_DATA: Record<string, Character> = typedRawData.characters;
 export const SCENES_DATA: Scene[] = typedRawData.scenes;
-export const CHANNEL_IMAGES: Record<string, string> = typedRawData.channel_images || {};
+export const CHANNEL_IMAGES: Record<string, string> = typedRawData.channel_images || typedRawDataV2.channel_images || {};
 
 export const CHARACTERS_DATA_V2: Record<string, CharacterV2> = typedRawDataV2.characters;
 export const SCENES_DATA_V2: SceneV2[] = typedRawDataV2.scenes;

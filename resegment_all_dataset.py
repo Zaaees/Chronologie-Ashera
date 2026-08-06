@@ -75,6 +75,72 @@ def save_description_map(desc_map):
     with open(DESCRIPTION_JSON_PATH, 'w', encoding='utf-8') as f:
         json.dump(desc_map, f, ensure_ascii=False, indent=2)
 
+def attach_channel_images_to_dataset(all_scenes):
+    import unicodedata
+    img_dir = "public/channel_images"
+    channel_images_map = {}
+    if not os.path.exists(img_dir):
+        return channel_images_map
+
+    img_files = [f for f in os.listdir(img_dir) if f.endswith(('.jpg', '.png', '.jpeg', '.webp'))]
+    pub_clean_map = {}
+    for f in img_files:
+        base = os.path.splitext(f)[0]
+        clean = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', base)).lower()
+        if clean:
+            pub_clean_map[clean] = f'channel_images/{f}'
+
+    fallback_map = {
+        'Isis et Astreüs': 'channel_images/serre-de-lune.jpg',
+        'Scène Kalès / JAVUS': 'channel_images/arene-hurlante.jpg',
+        'Scène Kalès / Kalem': 'channel_images/terrain-d-entrainement.jpg',
+        'Scène Lumia | Ivara': 'channel_images/bibliotheque-azure.jpg',
+        'TRIPLE A : Asior - Akane - Aryana': 'channel_images/le-bar-des-lions.jpg',
+        '☁️〕𝗣ortail-𝗜voire': 'channel_images/couloir-blanc.jpg',
+        '️〕Portail-Ivoire': 'channel_images/couloir-blanc.jpg',
+        '🛏️  •  Salle de Réveil': 'channel_images/cellules.jpg',
+        'isolement': 'channel_images/cellules.jpg',
+        'kalesiscariothaether': 'channel_images/arene-hurlante.jpg',
+        'unechouettedecouvreenfinleau': 'channel_images/port-du-levant.jpg',
+        'fuirkatelynhoffmannisisfaerieth': 'channel_images/port-du-levant.jpg',
+        'ilsnesouhaitentquuneseulechoselapaix': 'channel_images/egregore.jpg'
+    }
+
+    for scene in all_scenes:
+        ch = scene.get('channel') or scene.get('channel_raw') or scene.get('channel_clean') or ''
+        thread = scene.get('thread_name') or ''
+        ch_clean_val = scene.get('channel_clean') or ''
+
+        local_img = None
+        th_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', thread)).lower()
+        ch_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch)).lower()
+        ch_clean_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch_clean_val)).lower()
+
+        for candidate in [thread, ch, ch_clean_val, th_c, ch_c, ch_clean_c]:
+            if candidate in fallback_map:
+                local_img = fallback_map[candidate]
+                break
+
+        if not local_img:
+            for c in [th_c, ch_c, ch_clean_c]:
+                if not c:
+                    continue
+                for k, url in pub_clean_map.items():
+                    if k and (k == c or k in c or c in k):
+                        local_img = url
+                        break
+                if local_img:
+                    break
+
+        img_url = local_img or scene.get('location_image')
+
+        if img_url:
+            if ch: channel_images_map[ch] = img_url
+            if thread: channel_images_map[thread] = img_url
+            scene['location_image'] = img_url
+
+    return channel_images_map
+
 def main():
     src_path = 'scenes.json'
     with open(src_path, 'r', encoding='utf-8') as f:
@@ -241,6 +307,7 @@ def main():
     all_scenes.sort(key=lambda s: parse_timestamp_v2(s.get('start_time', '')))
 
     characters = build_unified_characters_dict_v2(all_scenes)
+    channel_images_map = attach_channel_images_to_dataset(all_scenes)
 
     output_data = {
         "metadata": {
@@ -250,7 +317,8 @@ def main():
             "total_characters": len(characters)
         },
         "characters": characters,
-        "scenes": all_scenes
+        "scenes": all_scenes,
+        "channel_images": channel_images_map
     }
 
     file_paths = ['scenes.json', 'src/scenes.json', 'scenes_v2.json', 'src/scenes_v2.json']
@@ -261,7 +329,7 @@ def main():
     with open('data.js', 'w', encoding='utf-8') as f:
         f.write('window.RP_DATA = ' + json.dumps(output_data, ensure_ascii=False, indent=2) + ';')
 
-    print(f"✅ Resegmentation avec nettoyage des paragraphes doublons terminée !")
+    print(f"✅ Resegmentation avec nettoyage des paragraphes doublons et {len(channel_images_map)} images de salons rattachées terminée !")
 
 if __name__ == '__main__':
     main()

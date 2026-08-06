@@ -687,29 +687,41 @@ class DiscordExporterClient(discord.Client):
                 'TRIPLE A : Asior - Akane - Aryana': 'channel_images/le-bar-des-lions.jpg',
                 '☁️〕𝗣ortail-𝗜voire': 'channel_images/couloir-blanc.jpg',
                 '️〕Portail-Ivoire': 'channel_images/couloir-blanc.jpg',
-                '🛏️  •  Salle de Réveil': 'channel_images/cellules.jpg'
+                '🛏️  •  Salle de Réveil': 'channel_images/cellules.jpg',
+                'isolement': 'channel_images/cellules.jpg',
+                'kalesiscariothaether': 'channel_images/arene-hurlante.jpg',
+                'unechouettedecouvreenfinleau': 'channel_images/port-du-levant.jpg',
+                'fuirkatelynhoffmannisisfaerieth': 'channel_images/port-du-levant.jpg',
+                'ilsnesouhaitentquuneseulechoselapaix': 'channel_images/egregore.jpg'
             }
 
             for scene in all_scenes:
-                ch = scene.get('channel')
-                thread = scene.get('thread_name')
+                ch = scene.get('channel') or scene.get('channel_raw') or scene.get('channel_clean') or ''
+                thread = scene.get('thread_name') or ''
+                ch_clean_val = scene.get('channel_clean') or ''
 
-                img_url = None
-                if ch in fallback_map:
-                    img_url = fallback_map[ch]
-                else:
-                    ch_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch or '')).lower()
-                    for k, url in pub_clean_map.items():
-                        if k and (k == ch_c or k in ch_c or ch_c in k):
-                            img_url = url
+                local_img = None
+                th_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', thread)).lower()
+                ch_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch)).lower()
+                ch_clean_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', ch_clean_val)).lower()
+
+                for candidate in [thread, ch, ch_clean_val, th_c, ch_c, ch_clean_c]:
+                    if candidate in fallback_map:
+                        local_img = fallback_map[candidate]
+                        break
+
+                if not local_img:
+                    for c in [th_c, ch_c, ch_clean_c]:
+                        if not c:
+                            continue
+                        for k, url in pub_clean_map.items():
+                            if k and (k == c or k in c or c in k):
+                                local_img = url
+                                break
+                        if local_img:
                             break
 
-                if not img_url and thread:
-                    th_c = re.sub(r'[^\w]', '', unicodedata.normalize('NFKD', thread)).lower()
-                    for k, url in pub_clean_map.items():
-                        if k and (k == th_c or k in th_c or th_c in k):
-                            img_url = url
-                            break
+                img_url = local_img or scene.get('location_image')
 
                 if img_url:
                     if ch: channel_images_map[ch] = img_url
@@ -722,17 +734,12 @@ class DiscordExporterClient(discord.Client):
             "channel_images": channel_images_map
         }
 
-        # Sauvegarder dans scenes.json
-        output_filename = "scenes.json"
-        with open(output_filename, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2, ensure_ascii=False)
-
-        # Sauvegarder dans src/scenes.json
-        src_scenes_path = os.path.join("src", "scenes.json")
-        if os.path.isdir("src"):
-            with open(src_scenes_path, 'w', encoding='utf-8') as f:
+        # Sauvegarder dans scenes.json et scenes_v2.json
+        for p in ['scenes.json', 'src/scenes.json', 'scenes_v2.json', 'src/scenes_v2.json']:
+            if os.path.dirname(p) and not os.path.exists(os.path.dirname(p)):
+                continue
+            with open(p, 'w', encoding='utf-8') as f:
                 json.dump(output_data, f, indent=2, ensure_ascii=False)
-            print(f"💾 Fichier React mis à jour : {src_scenes_path}")
 
         # Sauvegarder dans data.js
         js_filename = "data.js"

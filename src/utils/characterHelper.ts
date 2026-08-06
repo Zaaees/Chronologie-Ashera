@@ -156,11 +156,15 @@ export function getCharacterStats(actorName: string): CharacterStats | null {
       channelCounts[ch] = (channelCounts[ch] || 0) + 1;
     }
 
-    // Co-actor stats
+    // Co-actor stats (exclut les PNJ)
     if (scene.actors) {
       scene.actors.forEach(co => {
         if (co !== actorName) {
-          coActorCounts[co] = (coActorCounts[co] || 0) + 1;
+          const coInfo = CHARACTERS_DATA[co];
+          const isPnj = coInfo?.role === 'PNJ' || coInfo?.role === 'pnj' || (coInfo as any)?.status === 'SYSTEM' || (coInfo as any)?.status === 'RECURRING_NPC';
+          if (!isPnj) {
+            coActorCounts[co] = (coActorCounts[co] || 0) + 1;
+          }
         }
       });
     }

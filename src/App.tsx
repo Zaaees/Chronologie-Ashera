@@ -543,14 +543,18 @@ function SearchableCharacterSelect({
   );
 }
 
-// 💬 COMPOSANT INTERACTIF : SÉLECTEUR DE SALONS PAR CATÉGORIE AVEC RECHERCHE PAR SAISIE MANUELLE
+// 💬 COMPOSANT INTERACTIF : SÉLECTEUR DE SALONS ET DE CATÉGORIES AVEC RECHERCHE
 function SearchableChannelSelect({
   selectedChannel,
   setSelectedChannel,
+  selectedCategory,
+  setSelectedCategory,
   groupedChannelsByCategory
 }: {
   selectedChannel: string;
   setSelectedChannel: (channel: string) => void;
+  selectedCategory: string | null;
+  setSelectedCategory: (cat: string | null) => void;
   groupedChannelsByCategory: Record<string, { channel: string; count: number }[]>;
 }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -568,14 +572,16 @@ function SearchableChannelSelect({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const toggleCategory = (catName: string) => {
+  const toggleCategory = (catName: string, e: React.MouseEvent) => {
+    e.stopPropagation();
     setOpenCategories(prev => ({ ...prev, [catName]: !prev[catName] }));
   };
 
   const currentDisplayLabel = useMemo(() => {
+    if (selectedCategory) return `📁 Catégorie : ${selectedCategory}`;
     if (selectedChannel === 'all') return 'Tous les salons';
     return `#${selectedChannel}`;
-  }, [selectedChannel]);
+  }, [selectedChannel, selectedCategory]);
 
   const filteredGroupedChannels = useMemo(() => {
     const q = filterQuery.toLowerCase().trim();
@@ -606,14 +612,16 @@ function SearchableChannelSelect({
   };
 
   return (
-    <div ref={containerRef} className="relative flex-1 min-w-[240px]">
-      <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm focus-within:border-cyan-500/60 transition-colors">
-        <Layers className="w-4 h-4 text-cyan-400 shrink-0" />
+    <div ref={containerRef} className="relative flex-1 min-w-[260px]">
+      <div className={`flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border shadow-sm transition-colors ${
+        selectedCategory ? 'border-cyan-500/80 bg-cyan-950/20' : 'border-slate-800 focus-within:border-cyan-500/60'
+      }`}>
+        <Layers className={`w-4 h-4 shrink-0 ${selectedCategory ? 'text-cyan-300' : 'text-cyan-400'}`} />
         
         <input
           type="text"
           placeholder="Chercher un salon par nom ou catégorie..."
-          value={isOpen ? filterQuery : (selectedChannel === 'all' ? '' : currentDisplayLabel)}
+          value={isOpen ? filterQuery : currentDisplayLabel}
           onFocus={() => {
             setIsOpen(true);
             setFilterQuery('');
@@ -625,15 +633,16 @@ function SearchableChannelSelect({
           className="w-full bg-transparent text-slate-200 placeholder-slate-500 focus:outline-none text-xs truncate cursor-text"
         />
 
-        {selectedChannel !== 'all' && (
+        {(selectedChannel !== 'all' || selectedCategory !== null) && (
           <button 
             onClick={(e) => {
               e.stopPropagation();
               setSelectedChannel('all');
+              setSelectedCategory(null);
               setFilterQuery('');
             }}
             className="text-slate-500 hover:text-slate-300 p-0.5"
-            title="Effacer le salon"
+            title="Effacer le filtre"
           >
             <X className="w-3.5 h-3.5" />
           </button>
@@ -650,28 +659,69 @@ function SearchableChannelSelect({
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-1 max-h-80 overflow-y-auto bg-[#08090d] border border-slate-700 shadow-2xl z-50 rounded custom-scrollbar py-1">
 
+          {/* Option : Réinitialiser salon / catégorie */}
+          {(selectedChannel !== 'all' || selectedCategory !== null) && (
+            <button
+              onClick={() => {
+                setSelectedChannel('all');
+                setSelectedCategory(null);
+                setIsOpen(false);
+              }}
+              className="w-full px-3 py-1.5 text-xs text-left text-cyan-400 hover:bg-cyan-950/40 border-b border-slate-800 font-medium flex items-center gap-2"
+            >
+              <X className="w-3.5 h-3.5" /> Voir tous les salons et catégories
+            </button>
+          )}
+
           {(Object.entries(filteredGroupedChannels) as [string, { channel: string; count: number }[]][]).map(([catName, channels]) => {
             const icon = getCategoryIcon(catName);
             const totalCategoryScenes = channels.reduce((acc, c) => acc + c.count, 0);
             const isCatOpen = filterQuery.trim().length > 0 || !!openCategories[catName];
+            const isSelectedCat = selectedCategory === catName;
 
             return (
               <div key={catName} className="border-t border-slate-800/80 pt-1">
-                {/* Header de catégorie cliquable accordion */}
-                <button
-                  type="button"
-                  onClick={() => toggleCategory(catName)}
-                  className="w-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between bg-slate-950/90 text-cyan-400 border-l-2 border-cyan-500/60 hover:bg-slate-900/90 transition-colors select-none text-left"
+                {/* Header de catégorie cliquable */}
+                <div
+                  className={`w-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider flex items-center justify-between transition-colors select-none ${
+                    isSelectedCat 
+                      ? 'bg-cyan-950/80 text-cyan-300 border-l-4 border-cyan-400' 
+                      : 'bg-slate-950/90 text-cyan-400 border-l-2 border-cyan-500/60 hover:bg-slate-900/90'
+                  }`}
                 >
-                  <div className="flex items-center gap-1.5 truncate">
-                    {isCatOpen ? <ChevronDown className="w-3.5 h-3.5 shrink-0" /> : <ChevronRight className="w-3.5 h-3.5 shrink-0" />}
+                  <div className="flex items-center gap-1.5 truncate flex-1 cursor-pointer" onClick={(e) => toggleCategory(catName, e)}>
+                    <span>{isCatOpen ? <ChevronDown className="w-3.5 h-3.5 shrink-0" /> : <ChevronRight className="w-3.5 h-3.5 shrink-0" />}</span>
                     <span>{icon}</span>
                     <span className="truncate">{catName}</span>
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400 shrink-0 ml-2">
-                    {channels.length} salon{channels.length > 1 ? 's' : ''} ({totalCategoryScenes} scènes)
-                  </span>
-                </button>
+
+                  <div className="flex items-center gap-2 shrink-0 ml-2">
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (isSelectedCat) {
+                          setSelectedCategory(null);
+                        } else {
+                          setSelectedCategory(catName);
+                          setSelectedChannel('all');
+                        }
+                        setIsOpen(false);
+                      }}
+                      className={`px-1.5 py-0.5 text-[9px] rounded font-sans font-bold transition-all ${
+                        isSelectedCat
+                          ? 'bg-cyan-500 text-black shadow-inner'
+                          : 'bg-slate-800 hover:bg-cyan-900 text-slate-300 hover:text-cyan-200 border border-slate-700'
+                      }`}
+                      title={isSelectedCat ? "Désactiver le filtre catégorie" : "Filtrer toutes les scènes de cette catégorie"}
+                    >
+                      {isSelectedCat ? 'FILTRÉ' : 'FILTRER'}
+                    </button>
+                    <span className="text-[10px] font-mono text-slate-400">
+                      ({totalCategoryScenes})
+                    </span>
+                  </div>
+                </div>
 
                 {/* Liste des salons sous la catégorie */}
                 {isCatOpen && channels.map(({ channel, count }) => (
@@ -679,6 +729,7 @@ function SearchableChannelSelect({
                     key={channel}
                     onClick={() => {
                       setSelectedChannel(channel);
+                      setSelectedCategory(null);
                       setIsOpen(false);
                       setFilterQuery('');
                     }}
@@ -696,7 +747,7 @@ function SearchableChannelSelect({
 
           {Object.keys(filteredGroupedChannels).length === 0 && (
             <div className="px-4 py-3 text-xs text-slate-500 text-center">
-              Aucun salon trouvé pour "{filterQuery}"
+              Aucun salon ou catégorie trouvé pour "{filterQuery}"
             </div>
           )}
         </div>
@@ -1489,10 +1540,12 @@ export default function App() {
                 groupedActorsByFaction={groupedActorsByFaction}
               />
 
-              {/* 💬 SÉLECTEUR DE SALONS PAR CATÉGORIE AVEC RECHERCHE */}
+              {/* 💬 SÉLECTEUR DE SALONS ET DE CATÉGORIES AVEC RECHERCHE */}
               <SearchableChannelSelect
                 selectedChannel={selectedChannel}
                 setSelectedChannel={setSelectedChannel}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
                 groupedChannelsByCategory={groupedChannelsByCategory}
               />
             </div>
@@ -1730,20 +1783,22 @@ export default function App() {
         )}
       </div>
 
-      {/* 💬 MODALE LECTEUR DE SCÈNE : FORMAT DISCORD AVEC PANNEAU DE LIEU À DROITE SUR ÉCRANS ULTRAWIDE */}
+      {/* 💬 MODALE LECTEUR DE SCÈNE : SCÈNE AU CENTRE ET IMAGE À DROITE SUR ÉCRAN LARGE / ULTRAWIDE */}
       {activeScene && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-x-auto overflow-y-auto">
           
-          {/* CONTENEUR FLEX SPACIÉ POUR ÉCRANS LARGE ET ULTRAWIDE (34") */}
-          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-6 lg:gap-10 xl:gap-16 my-auto max-w-[1800px] w-full px-4">
+          {/* CONTENEUR GRILLE À 3 COLONNES (SPACER GAUCHE, SCÈNE CENTRE, IMAGE DROITE) */}
+          <div className="w-full max-w-[1920px] my-auto flex flex-col xl:grid xl:grid-cols-[1fr_auto_1fr] items-center xl:items-start justify-items-center gap-6 xl:gap-8 px-4">
             
-            {/* 1. CASE CENTRALE PRINCIPALE (LECTEUR DISCORD DE SCÈNE) */}
-            <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full lg:w-[46rem] xl:w-[50rem] 2xl:w-[54rem] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1] shrink-0">
-              <div className="gothic-corner gothic-corner-tl" />
-              <div className="gothic-corner gothic-corner-tr" />
-              <div className="gothic-corner gothic-corner-bl" />
-              <div className="gothic-corner gothic-corner-br" />
+            {/* 1. SPACER À GAUCHE (Équilibre l'image à droite pour garder la scène au centre absolu de l'écran) */}
+            {activeSceneLocationImage ? (
+              <div className="hidden xl:block w-full max-w-[22rem] 2xl:max-w-[26rem] shrink-0" />
+            ) : (
+              <div className="hidden xl:block w-0" />
+            )}
 
+            {/* 2. CASE CENTRALE PRINCIPALE (LECTEUR DISCORD DE SCÈNE) */}
+            <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-[46rem] xl:w-[48rem] 2xl:w-[52rem] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1] shrink-0">
               {/* En-tête Modal Discord */}
               <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
                 <div className="flex items-center gap-3">
@@ -1902,47 +1957,36 @@ export default function App() {
               </div>
             </div>
 
-            {/* 2. CASE DE DESCRIPTION DU LIEU (TEXTE + IMAGE ENSEMBLE, DANS LA ZONE ROUGE À DROITE SUR ÉCRAN 34") */}
-            {(activeScene.location_description || activeSceneLocationImage) && (
-              <aside className="gothic-corner-box bg-[#1e1f22] border border-slate-700/90 w-full lg:w-[26rem] xl:w-[30rem] 2xl:w-[32rem] shrink-0 shadow-2xl p-5 flex flex-col gap-4 text-slate-200 max-h-[90vh] overflow-y-auto custom-scrollbar relative">
-                <div className="gothic-corner gothic-corner-tl" />
-                <div className="gothic-corner gothic-corner-tr" />
-                <div className="gothic-corner gothic-corner-bl" />
-                <div className="gothic-corner gothic-corner-br" />
+            {/* 3. CASE D'APERÇU DU LIEU (IMAGE DU SALON À DROITE) */}
+            <div className="w-full max-w-[22rem] 2xl:max-w-[26rem] flex justify-start">
+              {activeSceneLocationImage && (
+                <aside className="gothic-corner-box bg-[#1e1f22] border border-slate-700/90 w-full shrink-0 shadow-2xl p-5 flex flex-col gap-4 text-slate-200 max-h-[90vh] overflow-y-auto custom-scrollbar relative">
+                  <div className="gothic-corner gothic-corner-tl" />
+                  <div className="gothic-corner gothic-corner-tr" />
+                  <div className="gothic-corner gothic-corner-bl" />
+                  <div className="gothic-corner gothic-corner-br" />
 
-                {/* En-tête */}
-                <div className="flex items-center gap-2 pb-2.5 border-b border-slate-700/80 shrink-0">
-                  <MapPin className="w-4.5 h-4.5 text-amber-400 shrink-0" />
-                  <h3 className="text-xs font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">
-                    Description du Lieu
-                  </h3>
-                </div>
-
-                {/* Texte descriptif du salon par le narrateur (sans paragraphes doublons) */}
-                {activeScene.location_description && (
-                  <div className="text-[13px] text-slate-300 leading-relaxed font-sans whitespace-pre-wrap italic bg-[#111214]/80 p-4 border border-slate-800 rounded shadow-inner">
-                    {renderDiscordMarkdown(activeScene.location_description, searchQuery)}
+                  {/* En-tête */}
+                  <div className="flex items-center gap-2 pb-2.5 border-b border-slate-700/80 shrink-0">
+                    <MapPin className="w-4.5 h-4.5 text-amber-400 shrink-0" />
+                    <h3 className="text-xs font-bold font-serif-gothic tracking-widest text-slate-100 uppercase">
+                      Aperçu du lieu
+                    </h3>
                   </div>
-                )}
 
-                {/* Image du lieu juste en-dessous */}
-                {activeSceneLocationImage && (
-                  <div className="flex flex-col gap-1.5 mt-1 shrink-0">
-                    <span className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-                      🖼️ Aperçu du salon :
-                    </span>
-                    <div className="relative rounded-lg overflow-hidden border border-slate-700 shadow-xl">
-                      <img 
-                        src={activeSceneLocationImage} 
-                        alt={activeScene.channel} 
-                        className="w-full h-auto max-h-72 2xl:max-h-80 object-cover object-center"
-                      />
-                      <div className="absolute inset-0 ring-1 ring-inset ring-slate-400/20 pointer-events-none" />
-                    </div>
+                  {/* Image du lieu */}
+                  <div className="relative rounded-lg overflow-hidden border border-slate-700 shadow-xl">
+                    <img 
+                      src={activeSceneLocationImage} 
+                      alt={activeScene.channel} 
+                      className="w-full h-auto max-h-80 2xl:max-h-[32rem] object-cover object-center"
+                    />
+                    <div className="absolute inset-0 ring-1 ring-inset ring-slate-400/20 pointer-events-none" />
                   </div>
-                )}
-              </aside>
-            )}
+                </aside>
+              )}
+            </div>
+
           </div>
         </div>
       )}

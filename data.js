@@ -1,7 +1,7 @@
 window.RP_DATA = {
   "metadata": {
     "version": "2.0",
-    "generated_at": "2026-08-06T02:21:18.081993",
+    "generated_at": "2026-08-06T02:34:21.378283",
     "total_scenes": 118,
     "total_characters": 76
   },
@@ -350,14 +350,6 @@ window.RP_DATA = {
       "totalScenes": 0,
       "totalMessages": 0
     },
-    "Jin Alurantes": {
-      "name": "Jin Alurantes",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "MAIN_PC",
-      "totalScenes": 27,
-      "totalMessages": 209
-    },
     "Hector Swaft": {
       "name": "Hector Swaft",
       "role": "Indéfini",
@@ -365,6 +357,14 @@ window.RP_DATA = {
       "status": "MAIN_PC",
       "totalScenes": 5,
       "totalMessages": 16
+    },
+    "Jin Alurantes": {
+      "name": "Jin Alurantes",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 27,
+      "totalMessages": 209
     },
     "Emil Camille Rebenok": {
       "name": "Emil Camille Rebenok",
@@ -390,14 +390,6 @@ window.RP_DATA = {
       "totalScenes": 6,
       "totalMessages": 21
     },
-    "Inzu Sravel": {
-      "name": "Inzu Sravel",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "MAIN_PC",
-      "totalScenes": 5,
-      "totalMessages": 16
-    },
     "Star": {
       "name": "Star",
       "role": "Indéfini",
@@ -405,6 +397,14 @@ window.RP_DATA = {
       "status": "MAIN_PC",
       "totalScenes": 4,
       "totalMessages": 24
+    },
+    "Inzu Sravel": {
+      "name": "Inzu Sravel",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 5,
+      "totalMessages": 16
     },
     "Milli Enga": {
       "name": "Milli Enga",
@@ -430,14 +430,6 @@ window.RP_DATA = {
       "totalScenes": 4,
       "totalMessages": 11
     },
-    "Romy": {
-      "name": "Romy",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "MAIN_PC",
-      "totalScenes": 8,
-      "totalMessages": 33
-    },
     "LE MONARQUE DU SILENCE": {
       "name": "LE MONARQUE DU SILENCE",
       "role": "Indéfini",
@@ -445,6 +437,14 @@ window.RP_DATA = {
       "status": "MAIN_PC",
       "totalScenes": 1,
       "totalMessages": 1
+    },
+    "Romy": {
+      "name": "Romy",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 8,
+      "totalMessages": 33
     },
     "Shin": {
       "name": "Shin",
@@ -526,6 +526,14 @@ window.RP_DATA = {
       "totalScenes": 1,
       "totalMessages": 3
     },
+    "Lorna Is'Hor": {
+      "name": "Lorna Is'Hor",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 3
+    },
     "Ethan Jaster": {
       "name": "Ethan Jaster",
       "role": "Indéfini",
@@ -541,14 +549,6 @@ window.RP_DATA = {
       "status": "MAIN_PC",
       "totalScenes": 1,
       "totalMessages": 1
-    },
-    "Lorna Is'Hor": {
-      "name": "Lorna Is'Hor",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "MAIN_PC",
-      "totalScenes": 1,
-      "totalMessages": 3
     },
     "Sha'al Langster": {
       "name": "Sha'al Langster",
@@ -590,14 +590,6 @@ window.RP_DATA = {
       "totalScenes": 3,
       "totalMessages": 14
     },
-    "Eldren Gates": {
-      "name": "Eldren Gates",
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "status": "MAIN_PC",
-      "totalScenes": 3,
-      "totalMessages": 7
-    },
     "Yunah Aoi Enjaku": {
       "name": "Yunah Aoi Enjaku",
       "role": "Indéfini",
@@ -605,6 +597,14 @@ window.RP_DATA = {
       "status": "MAIN_PC",
       "totalScenes": 2,
       "totalMessages": 10
+    },
+    "Eldren Gates": {
+      "name": "Eldren Gates",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 7
     },
     "Captain Hook": {
       "name": "Captain Hook",
@@ -624,18 +624,18 @@ window.RP_DATA = {
       "title": "🧱​​​ • Arrière place",
       "actors": [
         "LE CONSEILLER",
-        "Isis Faerieth",
-        "Nick Sol",
+        "Brutus Redwitch",
+        "Katelynn Hoffmann",
+        "Hector Swaft",
+        "Akane Tsukishiro",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Katelynn Hoffmann",
-        "Jasp Nah",
-        "Hector Swaft",
-        "Aryanna Erhendil",
         "Loyis Delacroix",
+        "Jasp Nah",
+        "Nick Sol",
         "Ren Urugaki",
-        "Akane Tsukishiro",
-        "Brutus Redwitch"
+        "Aryanna Erhendil",
+        "Isis Faerieth"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -1062,7 +1062,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "**🧱​​​ • Arrière place**\n\n*Vous êtes enfin arrivé à l'origine de l'ennuis. Le cri devient presque étouffé quand la femme à son origine voit une main passer dans sa bouche et sombre immédiatement dans un long et profond sommeil. La place est déserte, il n'y a personne d'autre que vous et les ravisseurs encapuchonnés. Un accès un peu plus loin semble donner suite sur une rue un peu sombre.*",
-      "location_image": "https://i.pinimg.com/1200x/15/28/36/15283698d3ae8d14ea26b24034cafd97.jpg"
+      "location_image": "channel_images/guet-apens.jpg"
     },
     {
       "id": "scene_auditorium_1",
@@ -1071,13 +1071,13 @@ window.RP_DATA = {
       "channel_clean": "Auditorium",
       "title": "Auditorium — Scène 1",
       "actors": [
-        "Emil Camille Rebenok",
-        "Saphizu Alizee Vidtz",
-        "OWL LE MESSAGER",
         "Asior Eveus",
-        "Red Roadman"
+        "Emil Camille Rebenok",
+        "Red Roadman",
+        "Saphizu Alizee Vidtz",
+        "OWL LE MESSAGER"
       ],
-      "main_actor": "Emil Camille Rebenok",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T04:01:47Z",
@@ -1184,7 +1184,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Reprise de conscience et éveil forcé\n\n*Plusieurs longues minutes s'écoulèrent avant que les premiers mages ne daignent à se réveiller. L'esprit flouté, encore embourbé dans un ancrage qu'ils avaient abandonnés. Leurs esprits ne finirent par émerger qu'une fois la brume dissipée. Un instant peinible, un retour à la réalité brutale qui n'en fut que plus déconcertant lorsque que le groupe découvrit que l'espace dans lequel ils étaient arrivés n'avait rien de commun avec celui qu'ils avaient abandonnés.*\n\n*Le corps courbé par les bras de morphées, les plus rapides à se relever eurent tout le luxe d'admirer la chaleur de l'auditorium au sein duquel ils avaient atterri. Un lieu de connaissance plus où moins rangé, un espace d'apprentissage et de savoir rythmé par une absence pesante... Celle du moindre son... Tout s'était tut... Le silence était de marbre alors que la suite les attendait telle la pomme qui rougit là-haut dans l'arbre.*\n\n*Face à eux... Une phrase, une simple rédaction tissée sur le noir d'un tableau à craie. Un message énigmatique laissé comme indice sur ce en quoi les prémices de ce fameux examen allaient consister.*\n\n> **\"Toute chose mesurée possède un terme...Toute chose interrompue perd son sens.. Ce qui s'écoule ne doit ni être hâté, ni être entravé mais bel et bien respecté.\"**\n\n*Ces termes désormais lus et intégré, c'est dans un léger grincement que les portes s'ouvrir. Un vaste couloir à présent visible, l'assemblée eut tout le luxe de contempler le chemin vers le plus loin tandis qu'un bruit sourd se fit entendre, sur la table du pupitre habituellement réservé au conférencier, un sablier venait de se retourner...*\n\nLà-bas n'est peut être que là-bas qu'au propice instant ?",
-      "location_image": "https://i.pinimg.com/1200x/70/da/ec/70daec8ff6e9cce0756281113f1e3138.jpg"
+      "location_image": "channel_images/auditorium.jpg"
     },
     {
       "id": "scene_kantine_1",
@@ -1193,12 +1193,12 @@ window.RP_DATA = {
       "channel_clean": "Kantine",
       "title": "Kantine — Scène 1",
       "actors": [
-        "Sw dark325",
-        "Hector Swaft",
+        "Isis Faerieth",
         "Akane Tsukishiro",
-        "Isis Faerieth"
+        "Sw dark325",
+        "Hector Swaft"
       ],
-      "main_actor": "Sw dark325",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T04:40:58Z",
@@ -1351,7 +1351,8 @@ window.RP_DATA = {
           "timestamp": "2026-02-05T03:01:49Z",
           "content": "Tsukishiro termina de manger son plat avant de se lever de son siège, signe qu’elle s’apprêtait à quitter les lieux sous peu. Comme à son habitude, la recrue tint à exprimer sa gratitude envers Hector pour son accueil impeccable avant qu’il ne s’éclipse.\n\n— « Commandant, ce fut un plaisir d’apprendre à vous connaître. Merci pour ce repas et passez une excellente nuit. »\n\nElle s’inclina légèrement, sans en faire trop, afin de témoigner de sa reconnaissance envers le doyen du groupe. Lorsque celui-ci s’éloigna, vraisemblablement en direction de sa chambre, l’aveugle tourna l’entièreté de son corps vers Isis.\n\n— « Madame Far— Isis. Souhaitez— ah… » Elle tourna sa langue deux fois avant de reprendre, adoptant cette fois un ton bien plus personnel, délaissant le vouvoiement. « Pardon, c’est l’habitude… Tu veux qu’on fasse la route ensemble pour rentrer ? »"
         }
-      ]
+      ],
+      "location_image": "channel_images/kantine.jpg"
     },
     {
       "id": "scene_ar_ne_hurlante_1",
@@ -1360,17 +1361,17 @@ window.RP_DATA = {
       "channel_clean": "Arène-Hurlante",
       "title": "Arène-Hurlante — Scène 1",
       "actors": [
-        "Inzu Sravel",
-        "Nick Sol",
-        "Isis Faerieth",
-        "Jin Alurantes",
-        "Aryanna Erhendil",
-        "Loyis Delacroix",
-        "Star",
         "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Star",
+        "Brutus Redwitch",
+        "Jin Alurantes",
+        "Loyis Delacroix",
+        "Nick Sol",
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Inzu Sravel"
       ],
-      "main_actor": "Inzu Sravel",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-02T06:01:52Z",
@@ -1799,7 +1800,8 @@ window.RP_DATA = {
           "timestamp": "2026-02-18T10:50:06Z",
           "content": "``` Scène Terminée || Salon libre ```"
         }
-      ]
+      ],
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_terrain_d_entra_nement_1",
@@ -1808,10 +1810,10 @@ window.RP_DATA = {
       "channel_clean": "Terrain-d-entraînement",
       "title": "Terrain-d-entraînement — Scène 1",
       "actors": [
-        "Milli Enga",
-        "Sw dark325"
+        "Sw dark325",
+        "Milli Enga"
       ],
-      "main_actor": "Milli Enga",
+      "main_actor": "Sw dark325",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-03T03:44:34Z",
@@ -1874,7 +1876,8 @@ window.RP_DATA = {
           "timestamp": "2026-02-04T06:07:34Z",
           "content": "**Magon voyant que ça dague n'a pas fait de dégâts sur le verre de l'homme, il rangera son arme dans sa poche et aussi que le poignet qu'il tente de casser n'avait aucune effet il comprendra que cette jeûne femme a renforcé c'est personne en verre pour éviter de les détruire facilement, ils auto boost c'est propre os et faire plus de dégâts comme de défense, en voyant que c'est homme en verre feront les même attaque, il fera une retourné pour les déstabiliser tous en même temps et avec se même coups boosté il donnera un coups de poings dans le visage de c'est homme en verre pour les détruire et inutilisable pour la mages qui était très bavard mais peu dans l'action.**\n\nJ'en ai affronté des personnes qui voulaient ma peau, et je peux te dire que j'ai l'habitude de me battre et de prendre des coups comme ça... C'est rien comparé se que j'ai vécu...\n\n**Dit-il en regardant le sol avec un regard vide qu'elle peut voir comme s'il n'a jamais eu de bonnes choses dans sa vie, c'est comme ci il avait une carapace autour de lui-même et qu'il ne voulait pas lâcher prise sur ses émotions.\n\nIl dira ensuite**\n\nTu sais peut-être pas, mais je n'ai jamais eu le bonheur que j'ai aujourd'hui, je ne connais même pas qui sont mes réels parents, donc oui je suis une honte pour cette guilde et surtout je veux pas que vous mêlez de mes problèmes qui sont déjà assez compliqué pour moi...\n\n**Dit-il après ces paroles sur sa vie d'avant et même maintenant il prendra sa veste qui était aux sol tout en prenant son repas sur le côté de l'une des vitres tout en commençant à partir des lieux et dira donc avant de partir.**\n\nMerci pour l'entraînement et peut-être à bientôt j'espère..."
         }
-      ]
+      ],
+      "location_image": "channel_images/terrain-d-entrainement.jpg"
     },
     {
       "id": "scene_serre_de_lune_1",
@@ -1933,7 +1936,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "May Sohun, une nature bienveillante | Une concoction à effectuer\n\n*Les secondes se firent longues avant que le cliquetis d’ouverture de la troisième porte ne soit entendu. Gracieux, délicat pour ne pas dire inespérément adéquat. C’est en feignant le bourdonnement sourd d’un essaim de velours que les loquets furent remués, sans pour autant venir se presser.\n\nUn éclat, une lumière chaleureuse, un rayon de soleil tout droit venu de plaines joyeuses. Des espaces jalousement gardés, dépourvus de chaos et de toute autre entité néfaste. Des écosystèmes de tranquillité où seules faune et flore avaient été invitées.\n\nCharmante, cette étincelle ne restera pourtant que trop peu de temps le centre d’attention premier. Rapidement destituée par le grincement d’un coffre en bois et les piaillements d’un étrange oiseau de joie. Sa lueur ne mit que trop peu de temps à être effacée par celle d’une jeune femme qui, à son zénith, s’était dressée.*\n\n> — Tiens… Vous ici ? Quelle surprise ! On ne m’avait prévenue de votre arrivée que pour midi… Or il est à peine…\n\n*Son œil se tourne et fixe alors la lumière qui, dès leur entrée, s’était présentée en quête d’une réponse rapide.*\n\n> — Quoi ? Midi et quart, dis-tu ? Nom d’une Vyilspurah, je suis en retard sur le planning… Et zut, monsieur L va encore me sermonner.\n\n*Ni une ni deux, c’est sur-le-champ que son apparence se tourna vers le sérieux. D’un pas rigide, elle valsa sur elle-même avant que ses doigts ne claquent et que le merveilleux ne prenne les devants de la scène.*\n\n*Valsant et zigzagant le long d’un habile tissage, c’est dans la grâce qu’une nuée de racines fit vœu de s’extirper du sol, afin de concevoir les établis qui allaient accueillir les bleus. Un incongru chantier au sein duquel elle vint à se balader, déposant sur chaque plan de travail un nécessaire à potion et une feuille sur laquelle on était venu griffonner une liste précise d’instructions à réaliser.*\n\n> — Pour cette épreuve, rien de bien compliqué et pas d’énigme ou de duel singulier. C’est une potion que vous allez devoir préparer !\n\n*Un sourire se dresse sur son visage tandis que, d’un air triomphant, elle remet son panier sur le dos.*\n\n> — Voilà voilà, je vous laisse prendre place et bonne chance à vous ! Si jamais vous rencontrez le moindre problème, surtout n’hésitez pas à crier !\n\n*Sur ces mots, la silhouette fait volte-face et retourne se perdre parmi les hautes herbes de la serre, laissant le groupe seul face à l’intitulé d’un copieux mystère.*\n\n**— ꕥ —**\n\nMay Sohun, une nature bienveillante\n\nD'un regard quelque peu perdu, elle contemple les jeunes pousses, comme intriguée par leur venue...\n\nUne concoction à effectuer\n\nMéfiez vous, mal prononcé, vous pourriez mal arriver....",
-      "location_image": "https://i.pinimg.com/1200x/0b/68/3d/0b683de8b90731c49bd3308837ba5d21.jpg"
+      "location_image": "channel_images/serre-de-lune.jpg"
     },
     {
       "id": "scene_egregore_1",
@@ -1942,24 +1945,24 @@ window.RP_DATA = {
       "channel_clean": "Egregore",
       "title": "Egregore — Scène 1",
       "actors": [
-        "Kanta",
-        "Akane Tsukishiro",
-        "Isis Faerieth",
-        "Nick Sol",
-        "Jin Alurantes",
-        "Lucia Fiorella",
-        "Kenji Takahashi",
-        "Katelynn Hoffmann",
-        "Sw dark325",
-        "Hector Swaft",
-        "Jasp Nah",
-        "Aryanna Erhendil",
-        "Loyis Delacroix",
-        "Ren Urugaki",
         "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "Katelynn Hoffmann",
+        "Hector Swaft",
+        "Akane Tsukishiro",
+        "Jin Alurantes",
+        "Kenji Takahashi",
+        "Lucia Fiorella",
+        "Nick Sol",
+        "Loyis Delacroix",
+        "Jasp Nah",
+        "Sw dark325",
+        "Ren Urugaki",
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Kanta"
       ],
-      "main_actor": "Kanta",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-05T10:10:01Z",
@@ -2606,7 +2609,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Début de la patrouille !\n\n**Pour les membres du Voile d'Ivoire, la soirée s'était terminée de manière plus calme que l'après-midi et la soirée. Le buffet était bien évidement excellent, mais aussi les gens de la guilde avait laissé des petites attentions assez douces pour les nouveaux venus. De quoi se changer dans des tenues sympathiques pour la vie dans le forum, mais aussi une tenue pour se balader dans les rues et porter les fières couleurs de la guilde. Elle ne sont bien évidement pas obligatoire, ce qui l'est par contre c'est la médaille qui atteste la réussite du test d'entrée à la cour des mages mais aussi leur appartenance. **\n\n**Les recrues se sont alors levés de bonne heure, peut-être qu'individuellement ils sont matinaux, mais cette fois c'était la guilde entière qui l'était. Pour leur donner quelques minutes de plus Hector étaient venus les chercher après le meeting matinal, sa bonté le perdra surement, mais ensuite il s'était assuré de passer de bonne heure pour réveiller tout le monde et leur donner rendez-vous à l'entrée de la guilde. Une fois ceci fait, Hector prit les devants pour partir. Il avait annoncé que sur le chemin il annoncerait les tenants et aboutissants de la patrouille, et le voilà qu'il commence.**\n\n> Avant toute choses, ne prenez peur de rien, ce qu'on fait aujourd'hui peut-être angoissant mais il deviendra habituel avec la pratique et l'habitude. \n\n**Son dos droit et sa démarche très tranquille, Hector avant les bras ballants comme presque pas préoccupé par l'idée qu'il puisse être en danger. Sans voix était un peu plus grave étant donné que le matin avait cet effet sur les hommes, mais elle était toujours aussi douce.**\n\n> Chaque membre du Voile d'Ivoire est dans une escouade du matin ou de l'après-midi, sauf si vous êtes partit dans une mission. Les escouades sont souvent supervisées par un mage de rang 3, comme moi actuellement et dans ces dernières il peut se trouver des mages de rang 2 ou 1 si le but est de le faire venir dans notre guilde. Lors de ces patrouilles, l'escouade se balade dans la zone qui lui a été donnée, qui est très petite vu que nous sommes très nombreux, et on aide les habitants. Aider à mettre en place un marchant, aider une mère avec son linge ou un enfant à récupérer un chat. On assure la sécurité de cette zone et les habitants savent nous le rendre. \n\n**La marche du capitaine de l'escouade se fini en face du petit pont qui passe au dessus de la rivière. Dans son dos se trouvait leur destination. Pour les habitant d'Esperia qui connaisse la strate de la classe moyenne, il savent que derrière lui se trouve le marché du Quartier Sud-Ouest, très réputé pour son activité matinale, qu'elle soit bonne ou mauvaise. C'est une place qui saura tester les recrues à garder leur sang-froid mais aussi leur montrer ce qu'est le véritable point fort du Voile d'Ivoire. Hector se tient droit comme un piquet avec un regard fier en leur direction, imbibé d'espoir. C'est nouveau pour lui et l'ambition qui brule dans ses yeux est presque enivrante. Une personne tant motivé sait donner la patate à ses comparses d'un simple regard.**\n\n> Des questions ?\n\n**Pour les âmes plus curieuse, dans le fond de l'autre côté du pont légèrement sur la gauche, se dessine des visages. Un jeune garçon qui pointe alors Hector du doigt et ce qui semble être sa mère avec un panier en osier qui le tient pour éviter qu'il s'excite un peu trop et dérange l'homme aux cheveux gris.**",
-      "location_image": "https://i.pinimg.com/736x/2d/a5/95/2da595898c39d92a0f0ababc933d6dc7.jpg"
+      "location_image": "channel_images/egregore.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_1",
@@ -2712,7 +2715,8 @@ window.RP_DATA = {
           "content": "```Suite.```\n\n*Le vent commence à tourner, les pauses entres les phrases se font de plus en plus ressentir. Sans même un mot, n'importe qui est capable de comprendre que la fin est proche. Vesper replacera sa tête face à lui, l'horizon avait perdu bien des couleurs. L'obscurité les entourant tel un voile noir se répandant de partout, se révèle être le point final de cette journée. On ne peut combattre la fin, que l'accepter.*\n\n> \"Cette proposition me semble bien sympathique, si le destin vient à nous accorder à tout deux un crédit supplémentaire d'ici la, je serais ravi de vous retrouver.\"\n\n*Le jeune prométhéen se lèvera finalement de son trône, lui qui s'était assit au pieds d'une statue qui lui est anonyme. Il décidera d'accepter cette fin, tout doit en avoir une, alors autant s'accorder pour que celle ci soit la plus douce et agréable, jusqu'à la fin finale. Sa mission lui fut donné il y a peu, il ne peut se permettre de se tourner les pouces tant qu'il n'a pas déjà identifié sa cible. Quelle image renverrai-t-il, le pire, c'est qu'en faisant cela il donnerait raison à son père, impossible.*\n\n> \"J-\"\n\n*Sans même avoir le temps de prononcer un mot il fut couper, le mouvement de la dame face à lui l'interrompu. Sa réponse devra donc mûrir avec lui, la question elle même nécessite bien plus de réflexion qu'il n'y parait. Qu'est ce qu'une bonne personne au final ? Qui est assez bon pour dire qu'autrui est mauvais ? Un oui ou un non ne peuvent pas suffire à cette question.*\n\n*Alors il baissera la tête, acquiesçant, comprenant que le temps qu'elle venait de lui offrir devra être utilisé pour méditer sur cette question. Un petit sourire, satisfait de l'échange qu'il put avoir, il en ressortira nouveau. Lui qui est entré l'esprit brouiller, en ressortira avec un esprit fixé sur un objectif, une idée, un but.*\n\n> \"Après __ça__ ?\"\n\n*Il posera sa main sur son menton s'y accrochant légèrement faisant mine de réfléchir vers le sol.*\n\n> \"Ce n'est pas une mauvaise idée, nous auront alors pleinement le temps de nous consacrer à notre tache d'ici la.\"\n\n*Vesper hochera la tête, approuvant ses dires et ceux de Nox. Puis vient le moment de partir __accepter la fin__, tourner le dos. Alors c'est ce qu'il fera, il tournera les talons, prêt à partir il se tournera une dernière fois vers elle, lui adressant un léger sourire.*\n\n> \"Ce fut un plaisir d'avoir pu échanger avec vous, je vous souhaite bon courage pour __vos premier pas__, aurevoir.\"\n\n*Dans ces mots, le garçon marqué au visage disparaitra dans un silence brisé par des pas de plus en plus lointain. Une page se tourne, une autre s'écrit.*\n\n```Fermeture des rideaux.```\n[Image: https://cdn.discordapp.com/attachments/1327646240132829229/1473397240088363049/94525202f866dca70c89ae5ec0350862.jpg?ex=6a70e89c&is=6a6f971c&hm=2c850188f8c42807a648595ee1744103e32260107b9341f3b9c884742bdb48fa&]"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_banque_du_sang_1",
@@ -2721,17 +2725,17 @@ window.RP_DATA = {
       "channel_clean": "Banque-du-sang",
       "title": "Banque-du-sang — Scène 1",
       "actors": [
-        "Kanta",
-        "Isis Faerieth",
         "LE CONSEILLER",
-        "Nick Sol",
-        "Lucia Fiorella",
-        "Sw dark325",
-        "Jasp Nah",
         "Hector Swaft",
-        "Akane Tsukishiro"
+        "Akane Tsukishiro",
+        "Lucia Fiorella",
+        "Jasp Nah",
+        "Nick Sol",
+        "Sw dark325",
+        "Isis Faerieth",
+        "Kanta"
       ],
-      "main_actor": "Kanta",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-08T00:49:13Z",
@@ -3005,7 +3009,8 @@ window.RP_DATA = {
           "content": "** **\n**La voix de Niel brisa ce qui restait de la scène. Alicia tourna légèrement la tête vers elle, observant un instant la jeune femme soulever le corps inconscient du grand blanc avec une facilité presque dérangeante. Aucun commentaire, ni question. Elle se contenta d’un simple mouvement de tête.**\n\n> — …Compris.\n\n**Un mot discret et suffisant. Sans discuter, elle se mit en mouvement, suivant le chemin indiqué. Son regard glissa brièvement vers Euros, notant sa difficulté à se déplacer, la manière dont il devait s’appuyer sur son arme pour simplement rester debout. Elle ralentit légèrement le pas, s’alignant naturellement à son rythme sans jamais le faire remarquer.**\n\n**Cette fois, il n’y avait plus de place pour les initiatives inutiles. Plus de place pour les écarts. Juste avancer. Observer. Comprendre. Et survivre.**"
         }
       ],
-      "location_description": "L'arrivée dans le Marché des Carottes !\n\n**Mon dieu. Quand vous passez la rue en arrivant dans la grande place ouverte, c'est un festival de senteurs et de petits artifices visuels. Il est impossible de garder son regard sur quelque chose plus de cinq secondes tant il y a de choses à regarder. Auditivement parlant, la pollution sonore est acceptable, il y a des gens qui souhaitent vendre leur produit alors il est bien évident qu'ils hurlent. Du poisson frais, de la viande bien sanglante et juteuses, des outils manufacturés et des pièces d'armure flamboyante ainsi que des livres encore jamais vu. Pour Magon et Isis, c'est un véritable spectacle visuel. Tout est beau, tout à l'air succulent et les gens le vende si bien quel naturellement vos pieds se déplacent presque seul pour avancer regarder. Hector tends un bras devant pour empêcher les membres de s'avancer trop, restant sur la route. Il tends son autre main pour Akane afin qu'elle ait un guide dans un endroit très dense en personnes. Il ne faut pas se perdre de vue.**\n\n> Prends ma main Akane, vous quartes suivez moi. Nous ne sommes pas ici pour faire des emplètes mais surveiller que tout se passe bien. Il est hors de question qu'on se sépare. \n\n**Si le spectacle dans la rue était déjà assez étouffant, mais une fois dans le Marché le nom d'Hector sera dit énormément de fois. Si les membres de la guilde voulaient se faire discrets c'était foncièrement devenus impossible. Mais pour le moment pas de débordement, juste des gens qui vous regardent, qui vous appellent et qui semble vous demander de l'attention. Que faites vous ?**"
+      "location_description": "L'arrivée dans le Marché des Carottes !\n\n**Mon dieu. Quand vous passez la rue en arrivant dans la grande place ouverte, c'est un festival de senteurs et de petits artifices visuels. Il est impossible de garder son regard sur quelque chose plus de cinq secondes tant il y a de choses à regarder. Auditivement parlant, la pollution sonore est acceptable, il y a des gens qui souhaitent vendre leur produit alors il est bien évident qu'ils hurlent. Du poisson frais, de la viande bien sanglante et juteuses, des outils manufacturés et des pièces d'armure flamboyante ainsi que des livres encore jamais vu. Pour Magon et Isis, c'est un véritable spectacle visuel. Tout est beau, tout à l'air succulent et les gens le vende si bien quel naturellement vos pieds se déplacent presque seul pour avancer regarder. Hector tends un bras devant pour empêcher les membres de s'avancer trop, restant sur la route. Il tends son autre main pour Akane afin qu'elle ait un guide dans un endroit très dense en personnes. Il ne faut pas se perdre de vue.**\n\n> Prends ma main Akane, vous quartes suivez moi. Nous ne sommes pas ici pour faire des emplètes mais surveiller que tout se passe bien. Il est hors de question qu'on se sépare. \n\n**Si le spectacle dans la rue était déjà assez étouffant, mais une fois dans le Marché le nom d'Hector sera dit énormément de fois. Si les membres de la guilde voulaient se faire discrets c'était foncièrement devenus impossible. Mais pour le moment pas de débordement, juste des gens qui vous regardent, qui vous appellent et qui semble vous demander de l'attention. Que faites vous ?**",
+      "location_image": "channel_images/banque-du-sang.jpg"
     },
     {
       "id": "scene_biblioth_que_azure_1",
@@ -3014,16 +3019,16 @@ window.RP_DATA = {
       "channel_clean": "Bibliothèque-Azure",
       "title": "Bibliothèque-Azure — Scène 1",
       "actors": [
+        "Asior Eveus",
         "Emil Camille Rebenok",
+        "LE MONARQUE DU SILENCE",
         "Lucia Fiorella",
         "Saphizu Alizee Vidtz",
-        "OWL LE MESSAGER",
-        "Asior Eveus",
         "Romy",
-        "LE MONARQUE DU SILENCE",
+        "OWL LE MESSAGER",
         "Lewis Bamer"
       ],
-      "main_actor": "Emil Camille Rebenok",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-09T02:54:19Z",
@@ -3256,7 +3261,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Parmi les livres, le Gardien trône.\n\n*Un crissement résonne, les alentours se floutent tandis que l’ailleurs aspire. Sagement, il appelle. Prudemment, il attend. De sa patience infinie et perpétuellement en avance, il a appris que jamais on ne le rattraperait, car il est le là-bas, ce point que l’on cible du doigt et qui n’est plus lorsqu’on l’atteint. Condamné à systématiquement fuir lorsqu’un momentum ou un espace le contraint à devenir le ici.*\n\n*C’est doucement qu’il s’extirpe, tandis que la vue des arrivants se refocalise. L’œil désormais en pleine possession de ses moyens. Les jeunes gens seront finalement capables de contempler les lieux dans lesquels ils venaient de reprendre connaissance. À présent disposés au sein d’un endroit aussi étrange que familier. C’est dans la tourmente qu’ils découvrent l’éblouissant d’une bibliothèque, au milieu de laquelle un silencieux conseiller les attendait.*\n\n*La canne longue, tissée de sentiments, nourrie de savoir. Le jeune homme fixait le groupe à la manière d’une introduction pendant la lecture d’un avant-propos. Tel un là-bas se métamorphosant en ici.*\n\n> — Bienvenue à la Bibliothèque Azure.\n\n*Finira-t-il par déclarer.*\n\nLa Bibliotèque Azure, bibliotèque du savoir, un des trois joyaux du cercle.",
-      "location_image": "https://media.discordapp.net/attachments/1463557725245149265/1470060497033367573/f4d947ca95e86c341c1b64339920200d.png?ex=6a70a286&is=6a6f5106&hm=470256c4c3b826b2a651d738c240897e19053dde6e1fce3b72202366c9cdf794&format=webp&quality=lossless&width=897&height=974&"
+      "location_image": "channel_images/bibliotheque-azure.jpg"
     },
     {
       "id": "scene_port_du_levant_1",
@@ -3265,15 +3270,15 @@ window.RP_DATA = {
       "channel_clean": "Port-du-Levant",
       "title": "Port-du-Levant — Scène 1",
       "actors": [
-        "Okayama",
-        "Lucia Fiorella",
         "Katelynn Hoffmann",
+        "Lucia Fiorella",
         "Jasp Nah",
-        "Vosk Sulyvan",
+        "Shin",
         "Lewis Bamer",
-        "Shin"
+        "Vosk Sulyvan",
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Katelynn Hoffmann",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-10T00:32:22Z",
@@ -3764,7 +3769,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*Songes*\n\n*Des cernes protubérantes habitent le dessous de ses yeux, offrant un ton violacé à ses prunelles de jais. Sulyvan n'est pas quelqu'un de nécessairement malin, lorsqu'il s'agit de sa santé, de son propre bien-être. Il n'accorde que peu d'importance à son propre corps et encore moins à son esprit, qui se fragmente au rythme de l'horloge du temps. Il est difficile pour lui, héraut des cauchemars, de voir le sommeil comme une source de réconfort, d'apaisement. Les vagues s'écrasent avec violence contre les statues des sages, signe de protection, entité du bien, de la paix et de la prospérité. Mais ce concept lui semble si étranger, au même titre que son âme n'appartient pas aux murs dorées de cette cité qui se ronge elle-même, de l'intérieur.*\n\n— Oru'kin, tu sembles furieux. . .\n\n*Remous*\n\n*Le Sans-foyer s'adresse à la mer comme l'on s'adresse à un ami, un confident. Les Nephilims, créatures divines et créations de la Déesse-Mère, se montrent peu bavard lorsque c'est lui qui appel. Est-il exclu de tout les cercles, de tout les chants, par son manque de lumière ? Est-ce son opposition avec l'Ange qui contraint le ciel à le punir ? Difficile à dire, dans un quotidien nouveau, exempt des souffrances quotidiennes, qui l'ont accablé jusqu'à présent.*\n\n— J'aimerais vraiment qu'on accorde le droit de revoir cette bâtisse. Ou bien, est-ce là ma sanction, divinité des mers et des océans ?\n\n*Confession*\n\n*Sully est étrangement bavard. Le discours de sa Majesté lui a valu de remettre certaines de ses décisions, certains de ses choix, en question. Le doute s'insinue dans les moindres failles et même les prométhéens, n'échappent pas à cette règle, arrogantes créatures. La solitude qu'induit la suffisance est bien trop souvent sous-estimé, écarté car l'on ne voit que le narcissisme flagrant des \" génies \", ceux ayant la prestance du Dieu Solaire, père du premier péché.*\n\n— Il fait frais.\n\n*Absurdisme*\n\n*Voilà bien trop longtemps que l'enfant des Vosk se tient ici, à contempler un océan qu'il ne peut dompter, qu'il ne peut trancher. La question l'amuse néanmoins ; est-ce qu'un Homme, à un jour eu l'audace de vouloir trancher l'océan en deux ? Une idée aussi stupide que celle de trancher le ciel. Personne ne le peut.*",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646240669696043/1470396913105768552/SPOILER_43090b39f20b75512ce151df550e7ee2.png?ex=6a708a56&is=6a6f38d6&hm=d70d9a6c519af2efd257abee3fd44ca1ea7e9c7f3381dde5b6c0d1ec77fb4f60&"
+      "location_image": "channel_images/port-du-levant.jpg"
     },
     {
       "id": "scene_pont_des_deux_1",
@@ -3773,11 +3778,11 @@ window.RP_DATA = {
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 1",
       "actors": [
+        "Jasp Nah",
         "Someone",
-        "Okayama",
-        "Jasp Nah"
+        "Okayama"
       ],
-      "main_actor": "Someone",
+      "main_actor": "Jasp Nah",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-13T03:53:17Z",
@@ -3847,7 +3852,8 @@ window.RP_DATA = {
           "content": "``` Fin de scène```"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_place_de_grandpalais_1",
@@ -3904,7 +3910,8 @@ window.RP_DATA = {
           "timestamp": "2026-02-16T04:55:41Z",
           "content": "*Elle ne savait pas trop à quoi s'attendre de lui comme réponse. Ce n'était certainement pas des choses intéressantes qu'elle venait de prononcer, de quoi donner.. amorcer, une bonne conversation. Non, c'était ennuyant et.. fatiguant.*\n\n*Elle avait connu des gens qui étaient partis pour moins que ça. Enfin, une.. Une personne était.. Elle avait envie de rentrer chez elle.*\n\n*Mais elle allait attendre qu'il parte, ou qu'il parle. Elle allait être polie et comme les gens se doivent de vraiment être. Même si c'est vrai que ce sol est inconfortable, et même que si elle se considère pas très soucieuse du regard des autres, elle peut quand même les sentir. Les sentir passer sur elle.. Elle a jamais aimé être regardé, c'est dingue. Et.. Elle vieillit et ça guérit pas.*\n\n*Elle l'écouta. Attentivement? Mmh, sa voix était la seule chose vraiment distincte à ses oreilles.*\n\n\"Personne n'a encore prouvé que les objets ne ressentent rien quand on les tape, non?\" *Elle n'était juste pas trop dans la violence. Et puis.. C'est vrai que personne n'a encore prouvé que les objets ressentent effectivement rien.*\n\n*Elle releva son dos. et passa une main sur sa chemise pour la.. nettoyer?* \"Promis, je taperai pas sur toi, si un jour je dois le faire.\"\n\n*Peut-être que s'il est un méchant elle devra le faire. Non, le cercle d'Azur est plutôt pas violent. Elle croit? Et s'il est d'une autre guilde.. Y a pas de violence entre guilde. Elle leva un bras pour faire craquer son dos et sa main se coinça sur un sac mis sur un cheval au galop.*\n\n\"Ah\" *eut-elle le temps de prononcer avant que son corps soit embarqué.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
       "id": "scene_salle_de_r_veil_1",
@@ -3979,7 +3986,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-01T01:45:08Z",
           "content": "** **\n*Eveus. Le nom avait été prononcé presque comme dans un souffle, un presque murmure, trop léger pour être qualifié d’un ton classique, mais bien trop fort pour être chuchoté, un nom empli de paradoxes. Peut-être Camille le reconnaîtrait-il, s’il était féru d’histoire, comme un nom réputé de la Noblesse Asherienne, ayant perdu en influence et en pouvoir depuis plusieurs générations, désormais oublié du grand publique, une chute restée des plus mystérieuses pour toute la population, encore à ce jour inexpliquée.*\n\n*Ou bien peut-être ce nom ne lui évoquerait rien de plus qu’une banale présentation, comme à la plupart des gens l’entendant de nos jours. Ce qui était sûr en revanche, c’était l’étrange insistance placé sur **son** nom. Prononcé avec juste un peu plus de force que le reste de la phrase, pas assez pour être réellement étrange, mais trop pour être un simple accent, comme s’il avait été souligné, en plus d’un regard inquisiteur toujours fixé sur son visage. Une question à demi dissimulée.*\n\n*Asior sentait qu’on lui cachait quelque chose, il ne savait pas quoi, et n’avait pas l’air déterminé à creuser l’affaire de manière trop directe, cela marchait rarement de toute façon.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/cellules.jpg"
     },
     {
       "id": "scene_cour_des_alchimistes_1",
@@ -3988,15 +3996,15 @@ window.RP_DATA = {
       "channel_clean": "Cour-des-alchimistes",
       "title": "Cour-des-alchimistes — Scène 1",
       "actors": [
-        "Okayama",
-        "Isis Faerieth",
-        "Lucia Fiorella",
-        "Aryanna Erhendil",
         "Oeil",
+        "Lucia Fiorella",
         "Septimus Kales",
-        "Adelina Del Fuego"
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Adelina Del Fuego",
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-16T05:11:50Z",
@@ -4240,7 +4248,8 @@ window.RP_DATA = {
           "content": "```Kalès Septimus\n```\n\n**Des dagues jumelles. Soit la sournoiserie, soit l'agilité. Ce ne sont certainement pas des armes pour faire des combats de longue durée, mais pour être incisif, vif, rapide. C'est aussi les armes qui laissent le plus les parties du corps à disposition de son adversaire. Très peu de garde, très peu de protection. Mais avec le petit bouclier, attaché directement à l'avant-bras, ça pourrait le faire.**\n\n**Kalès hoche simplement la tête, avec ses yeux sages qu'il a volé à quelques passants qui le sont bien plus que lui. Les sages, c'est plutôt chez le Cercle Azur qu'ils se trouvent. Des têtes pensantes, ceux qui se battent avec les pensées et les mots, une parole poudrière, plutôt que des armes et des échafauds. Compliqué à manier, difficile à dompter. Mais un cerveau lisse peut encore être gravée de quelques écritures fortuites qui passeraient par là.**\n\nOn se voit à minima une fois par semaine. Le mercredi matin. Si je n'ai rien pour toi ce jour, je te le dirai. Si on doit se voir plus de fois, je te le dirai un samedi matin aussi.\n\n**Celui qui rend un autre puissant prépare sa propre ruine. Celui qui est à la cause de la puissance d'un autre, creuse, sans le voir, sa propre tombe. Aider quelqu'un à monter, c'est ouvrir ses portes, ses contacts, son savoir. Au début, il remercie, avant de s'habituer, et il vous dépasse. Et le jour où il n'a plus besoin, il ne voit plus comme un allié, mais un témoin de sa faiblesse d'avant. On n'aime pas devoir sa réussite à un autre, alors on efface souvent à qui on la doit.**\n\nNe dis pas aux autres que tu suis mes enseignements. Invente quelque chose. Sur ce, rentre te reposer. Ou bouquiner. J'sais pas ce que font les jeunes de nos jours. Taper un foot c'est bien aussi."
         }
       ],
-      "location_description": "```Kalès Septimus\n```\n\n**Des fragrances enivrantes qui transperce les conduits de l'odorat. Des odeurs qui vous ouvrent grand les bras comme le Corcovado. Des bras qui s'enroulent autour des passants, les aspergeant de ces senteurs amicales, ou désagréables. Toute épice n'est pas bonne à humer, et toute senteur n'est pas si alambiquée que l'accoutumée. Les vents ne font que les transporter vers des sentiers inexplorés, et en temps de tempête, la Cour des Alchimistes n'a pas besoin de crier pour faire sentir son existence. Un lieu qui attire les différents métiers, pour différentes raisons, à différent moment de l'année. Mais un habitué, aujourd'hui, en ces temps calmes et ensoleillés sous les draps métamorphosant de l'ombre, se pavane les mains dans les poches.**\n\n**Un grand gaillard, aux cheveux hérissés et d'un blond épicé, et aux prunelles dorées pour l'argent qu'il doit à tous les crédits contractés envers ces nombreux marchands. Il les rembourse au compte goutte, et baisse les yeux face à certains qui le dévisageant en pensant reconnaître l'un de ses endettés. Kalès rembourse toujours ses dettes, il est simplement toujours en retard, alors peu de gens sont inquiets. Car pour lui, si tout est grave il s'en fout, car si tout est grave o s'en remettra. Pour les nuits noires et les nuits pâles, domptant les jours éphémères, Kalès n'est ni venu faire preuve de ses talents ou de sa précision d'orfèvre.**\n\n**Il est venu acheter de l'herbe.**\n\n**Ce n'était pas une blague. Il faut bien un peu de matière pour éteindre son cerveau à la suite d'une quête désordonnée dont l'habilitation fut mal orchestrée. Il ne sert à rien de courir après l'aube, il faut profiter de la nuit tant que les criquets ont encore la force de rythmer leur symphonie si caractéristique. Et en parlant d'acheter de l'herbe...**\n\n**Un petit amas de visiteurs, d'habitués, ou de familles venues acheter tout un tas de choses ici s'est assemblé autour d'un petit stand. Tel un amphitéâtre, formé en arc de cercle autour d'une personne, qui n'est autre que le Kalès susdit. Que vaut un tel spectacle ? Une négociation houleuse. Car quand le marchand refuse, c'est là que la négociation commence. Et après avoir bataillé durant plusieurs longues minutes avec le marchand, lorsque la négociation fut terminée, entendez donc les applaudissements pour cette vente si avantageuse pour une seule et même personne. Et cette fois, sans être endetté...**"
+      "location_description": "```Kalès Septimus\n```\n\n**Des fragrances enivrantes qui transperce les conduits de l'odorat. Des odeurs qui vous ouvrent grand les bras comme le Corcovado. Des bras qui s'enroulent autour des passants, les aspergeant de ces senteurs amicales, ou désagréables. Toute épice n'est pas bonne à humer, et toute senteur n'est pas si alambiquée que l'accoutumée. Les vents ne font que les transporter vers des sentiers inexplorés, et en temps de tempête, la Cour des Alchimistes n'a pas besoin de crier pour faire sentir son existence. Un lieu qui attire les différents métiers, pour différentes raisons, à différent moment de l'année. Mais un habitué, aujourd'hui, en ces temps calmes et ensoleillés sous les draps métamorphosant de l'ombre, se pavane les mains dans les poches.**\n\n**Un grand gaillard, aux cheveux hérissés et d'un blond épicé, et aux prunelles dorées pour l'argent qu'il doit à tous les crédits contractés envers ces nombreux marchands. Il les rembourse au compte goutte, et baisse les yeux face à certains qui le dévisageant en pensant reconnaître l'un de ses endettés. Kalès rembourse toujours ses dettes, il est simplement toujours en retard, alors peu de gens sont inquiets. Car pour lui, si tout est grave il s'en fout, car si tout est grave o s'en remettra. Pour les nuits noires et les nuits pâles, domptant les jours éphémères, Kalès n'est ni venu faire preuve de ses talents ou de sa précision d'orfèvre.**\n\n**Il est venu acheter de l'herbe.**\n\n**Ce n'était pas une blague. Il faut bien un peu de matière pour éteindre son cerveau à la suite d'une quête désordonnée dont l'habilitation fut mal orchestrée. Il ne sert à rien de courir après l'aube, il faut profiter de la nuit tant que les criquets ont encore la force de rythmer leur symphonie si caractéristique. Et en parlant d'acheter de l'herbe...**\n\n**Un petit amas de visiteurs, d'habitués, ou de familles venues acheter tout un tas de choses ici s'est assemblé autour d'un petit stand. Tel un amphitéâtre, formé en arc de cercle autour d'une personne, qui n'est autre que le Kalès susdit. Que vaut un tel spectacle ? Une négociation houleuse. Car quand le marchand refuse, c'est là que la négociation commence. Et après avoir bataillé durant plusieurs longues minutes avec le marchand, lorsque la négociation fut terminée, entendez donc les applaudissements pour cette vente si avantageuse pour une seule et même personne. Et cette fois, sans être endetté...**",
+      "location_image": "channel_images/cour-des-alchimistes.jpg"
     },
     {
       "id": "scene_jardin_de_quartz_1",
@@ -4249,13 +4258,13 @@ window.RP_DATA = {
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 1",
       "actors": [
-        "Historia Fay Ruaidhri Grel",
-        "Selena Moon",
-        "Isis Faerieth",
         "Katelynn Hoffmann",
-        "Jasp Nah"
+        "Selena Moon",
+        "Jasp Nah",
+        "Historia Fay Ruaidhri Grel",
+        "Isis Faerieth"
       ],
-      "main_actor": "Historia Fay Ruaidhri Grel",
+      "main_actor": "Katelynn Hoffmann",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-16T10:12:14Z",
@@ -4487,7 +4496,8 @@ window.RP_DATA = {
           "content": "**Le silence qui suivit se posa doucement entre les deux Pandorienne, presque avec pudeur, telle une couverture légère qui se déposait sur quelque chose de fragile pour éviter qu’il ne prenne froid. Katelyn oublia pendant une fraction de seconde tout le reste, les problématiques ou les solutions de son quotidien, la fatigue, le doute, le déséquilibre. Tout cela n’exista plus le temps des derniers mots d’Isis.**\n\n**Il y avait quelque chose d’étrange dans cette rencontre après tout, quelque chose de simple, insignifiant même, d’un point de vue extérieur. Un jardin, un banc, quelques mèches de cheveux et une conversation née du hasard. Le Cygne avait l’impression qu’un fil discret venait de se nouer là, au milieu des tresses dans cette lumière de fin d’après midi. Peut-être parce que l’Immaculée lui rappelait ces fleurs que l’on croit trop délicates pour survivre aux tempêtes, avant de les voir repousser encore malgré les intempéries, ou peut-être parce qu’au fond, elles portaient toutes les deux cette même maladresse face au monde. Celle de vouloir encore croire qu’il pouvait rester des choses douces malgré ce que la violence attendaient d’elles.** \n\n**Lorsque Isis parla de Lumière, d’espoir et de ce souhait presque timide de la voir rester telle qu’elle était, le regard de la Noble s’assombrit un simple instant, tandis que quelque chose en elle se contracta, semblable à une peur pourtant insignifiante mais impossible à nommer. Des mots sombres traversèrent son esprit telle une ombre familière, de cette certitude froide qu’un jour elle finirait par tomber et se fissurer comme tout le reste.** \n\n\" - Ne laisse personne te convaincre que ta lumière fatigue le monde, même quand cela te semble plus simple de la cacher. \"\n\n**Ses doigts remontèrent jusqu’à sa nuque de manière inconsciente, là où la broche aurait dû se trouver. C’était vide y était. Mais lorsqu’elle releva ses prunelles azur vers sa camarade, quelque chose de plus calme revint habiter son expression malgré tout. Ses yeux restèrent accrocher sur Isis, comme si le Cygne voulait retenir quelque chose de cette rencontre avant qu’elle ne glisse à son tour dans le mouvement routinier du monde.** \n\n\" - Et moi j’espère que le monde te laissera respirer un peu plus longtemps que ce qu’il t’a habituée jusque là. Mais si il devient un jour trop lourd … \" **Sa voix se fit plus claire** \" Tu pourras toujours te réfugier là où je serais. \" \n\n**Katelyn observa celle qui lui avait apprit bien plus qu’une simple coiffure se tourner vers ce qui l’attendait ailleurs, et quelque chose dans sa poitrine se serra légèrement, telle une sensation étrange de ces rencontres trop courtes, où l’on réalise qu’un instant paisible touche déjà à sa fin. Ses doigts glissèrent le long de sa tresse imparfaite, comme pour vérifier qu’elle existait encore, et qu’au moins cela resterait un peu.** \n\n\" - Je suis vraiment contente de t’avoir rencontrée, Isis. \"\n\n**Il n’y avait aucune politesse dans ses paroles, uniquement cette honnêteté qui lui était propre. Alors le Cygne leva finalement une main dans un geste discret d’au revoir, le regard encore accroché quelques secondes à la silhouette de l’Immaculée tandis qu’elle s’éloignait dans les allées baignées de lumière du Jardin.** \n\n\" - J’espère que l’on se reverra vite … \"\n\n**Ce souffle ne fut qu’entendu par le Cygne, qui ne bougea pas de suite. Le Jardin de Quartz semblait différent maintenant, toujours aussi calme et pur mais moins vide. Et lorsque la silhouette d’Isis disparu complètement au loin, la Noble baissa lentement les yeux vers sa tresse imparfaite et un sourire discret traversa ses lèvres.** \n\n**Il était temps de rentrer.**"
         }
       ],
-      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*"
+      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*",
+      "location_image": "channel_images/jardin-de-quartz.jpg"
     },
     {
       "id": "scene_terrains_nacr_s_1",
@@ -4496,16 +4506,16 @@ window.RP_DATA = {
       "channel_clean": "Terrains-Nacrés",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
+        "Brutus Redwitch",
+        "Akane Tsukishiro",
         "Jin Alurantes",
         "Lucia Fiorella",
         "Jasp Nah",
-        "Aryanna Erhendil",
         "Septimus Kales",
-        "Akane Tsukishiro",
-        "Brutus Redwitch",
+        "Aryanna Erhendil",
         "Adelina Del Fuego"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-17T11:20:23Z",
@@ -5151,7 +5161,8 @@ window.RP_DATA = {
           "content": "**Suite : <#1327646240132829230>**\n\n```Scène close | Salon libre.```"
         }
       ],
-      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *"
+      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *",
+      "location_image": "channel_images/terrains-nacres.jpg"
     },
     {
       "id": "scene_verger_des_p_ch_s_1",
@@ -5161,8 +5172,8 @@ window.RP_DATA = {
       "title": "Verger-des-Pêchés — Scène 1",
       "actors": [
         "Star",
-        "Nick Sol",
-        "Oeil"
+        "Oeil",
+        "Nick Sol"
       ],
       "main_actor": "Star",
       "is_solo": false,
@@ -5247,7 +5258,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "``` ``` \n\n**Durant sa visite du Bastion Écarlate, Hana finira par poser pied au sein de cet endroit elle viendra alors l'observer marchant calmement sur ces chemins blanc entouré de plantes d'une couleur écarlate. Elle commencera alors une simple balade dans ce verger déposant son regard sur ce paysage qu'elle ne pouvait s'empêcher d'admirer, durant cette dîte marche Hana s'accroupira à nombreuses reprises pour être au plus proche des plantes et ainsi pouvoir mieux observer les détails de ces dernières. La jeune femme ne connaissait pas l'histoire de ce verger ne pouvant réellement imaginer ce qui a bien pu se passer entres ces arbres blancs, cependant quel que soit l'évènement qui a pu se dérouler en ces lieux cela appartient à l'histoire de la Garde Pourpre qu'elle a décider de rejoindre et elle ne le regrette en aucun cas.**\n\n**Hana s'enfoncera de plus en plus au sein du verger admirant le paysage s'offrant à elle, un lieu pour le moment calme. La jeune femme souhaitait en profiter avant que le brouhaha d'un rassemblement en ces lieux viennent déranger le silence que lui offre la nature, elle n'était pas contre une rencontre avec d'autres individus mais il est vrai qu'elle n'était pas la plus grande amatrice de rassemblement de masse où les voix peuvent se superposer sans qu'on puisse comprendre au final un traitre mot de son interlocuteur, c'est bien pour cette raison qu'Hana avait décider de pour le moment faire bande appart et de ne pas forcément se mélanger à un groupe. Cela pouvait être une bonne comme une mauvaise chose pour elle ne pas se rapprocher de ses camarades dans l'immédiat pourrait lui fermer certaines portes dans le futur cependant la prométhéenne ne se fiais pas à cela.**\n\n **Durant sa longue marche du coin de l'oeil Hana pourra voir quelque chose d'intriguant, venant se rapprocher de ce petit détails entre les plantes un léger sourire s'affichera sur son visage tandis qu'elle était accroupi en observant ce sang se cachant entre les plantes. Comme elle pouvait le penser ce lieu possède une histoire qu'elle soit récente ou non, ses suppositions ont pu s'accentuer lorsqu'elle releva le regard et vu sur ces arbres blancs des éraflures, ce n'était pas naturel cela Hana en était convaincu mais elle n'était pas non plus trop surprise après tout  rien que l'arène hurlante annonçant l'ambiance de la Garde Pourpre. La jeune femme viendra alors se redresser après avoir pu observer ce sang et ces éraflures venant doucement s'étirer, elle reprendra alors sa marche s'enfonçant encore une fois dans ce verger.**\n\n**Après un certain moment elle finira par arriver dans un coin qui l'attirait, venant se rapprocher d'un arbre elle déposera sa main contre le tronc de celui-ci toujours ce petit sourire afficher sur son visage**\n\n*\"Quelque soit l'endroit, la nature reste magnifique dans la plus part des cas.\"*\n\n**Suite à ces quelques mots prononcés par la prométhéenne cette dernière viendra décrocher le bâton de son dos venant lentement s'assoir dos contre cet arbre, elle sortira un petit chiffon de l'une de ses poches récupérés au préalable dans sa chambre puis elle déposera son bâton sur ses genoux et débutera un simple nettoyage de ce dernier. Des gestes simple mais lent prenant soin de ce qui lui sert de catalyseur, un cadeau offert par son père lorsqu'elle fût capable de maîtriser son manaclyste comme il fallait un simplement souvenir parcourant l'esprit d'Hana fît son sourire s'agrandir sur son visage tandis qu'après avoir entretenue son bâton elle vient le déposer à côté d'elle puis profitera alors de ces fleurs l'entourant, de ces arbres dissimulant le paysage et de ce calme offert par ce lieu possédant une grande histoire pour Hana cet endroit était parfait, elle l'appréciait et était heureuse d'avoir pu découvrir un lieu comme celui-là au sein du Bastion Écarlate de la Garde Pourpre.**",
-      "location_image": "https://cdn.discordapp.com/attachments/1328715287704371210/1473277052995240090/8ddeb80719d2bf136c8488c287982fd7.png?ex=6a7078ad&is=6a6f272d&hm=1422dad60d5dbfb801d2e82f8ef0d6ebf689cd2e426ae13eb8e20588722ac813&"
+      "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
       "id": "scene_grande_salle_porcelaine_1",
@@ -5256,16 +5267,16 @@ window.RP_DATA = {
       "channel_clean": "Grande-salle-porcelaine",
       "title": "Grande-salle-porcelaine — Scène 1",
       "actors": [
-        "Jin Alurantes",
         "Red Roadman",
-        "Jasp Nah",
         "Asior Eveus",
         "Oeil",
-        "Septimus Kales",
         "Rias Valdor",
-        "Akane Tsukishiro"
+        "Akane Tsukishiro",
+        "Jin Alurantes",
+        "Jasp Nah",
+        "Septimus Kales"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T05:49:07Z",
@@ -5478,7 +5489,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-03T07:30:19Z",
           "content": "# ⊱═───── ⚜️  Lewis-Phoebe d'Ashbourne  ⚜️  ───────═⊰\n\n\n- Le devoir, en effet. Vos prédécesseurs ont été réquisitionnés pour l'occasion.\n\n\n*Faut-il bien qu'ils se rendent utiles, les ivoiriens, même si c'est en tant que vigiles. Lewis reste perplexe un instant, tout-de-même. Si les ainés ont été pris en renfort, les gens de cette promotion assisteront certainement au discours et il est inadmissibles qu'aucun ne se soit dévoué pour aider leur camarade. Enfin... le sujet n'est pas de ceux qu'on lance pour quelqu'un d'autre et Tsukishiro a dû amplement y réfléchir, même sans l'aide du prométhéen.*\n\n\n*Son interlocutrice répond ensuite à cette petite blague qui est de celles qu'on ne voudrait pas faire en face du principal concerné. Mais visiblement, la farce a fait mouche et l'image dépeinte correspond à Lewis, qui n'ira pas particulièrement donner tort à quiconque prétend cela. C'est donc par simple ressort comique qu'il lève les mains au ciel, marqué d'une offuscation volontairement peu crédible.*\n\n\n- Moi, des plans ? Allons ma chère... nous savons bien que ce n'est pas ma manière de faire.\n\n\n*Le sujet se recentre ensuite et bien qu'il s'agisse de suppositions sans grand fondement, celles-ci suffisent à  maintenir la curiosité du comte d'Ashbourne sous contrôle. Celui-ci ressent en effet la même excitation que lors de sa dernière visite ici, voire peut-être plus. Si les paroles du roi sont d'une importance capitale, celles de l'Ashen ont quelque-chose de plus personnel pour tout mage qui se respecte et ce que dit Tsukishiro et suffisamment pertinent pour qu'il se contente d'acquiescer jusqu'à ce que son bras sois saisi.*\n\n\n- Très bien, en route !\n\n\n*Scande Lewis, qui part déjà. Il contient du mieux possible son énergie et adapte sa démarche. Non-pas qu'il soupçonne sa comparse d'être plus lente que lui, mais en guidant quelqu'un, il est de bon ton de s'adapter plutôt que d'attendre l'inverse. Voici donc le duo qui se met en route... pour les escaliers *?"
         }
-      ]
+      ],
+      "location_image": "channel_images/grande-salle-porcelaine.jpg"
     },
     {
       "id": "scene_fontaine_marbr_e_1",
@@ -5487,15 +5499,15 @@ window.RP_DATA = {
       "channel_clean": "Fontaine-Marbrée",
       "title": "Fontaine-Marbrée — Scène 1",
       "actors": [
-        "Okayama",
         "Emil Camille Rebenok",
         "Lucia Fiorella",
         "Jasp Nah",
         "Romy",
+        "Abrihicot",
         "Lewis Bamer",
-        "Abrihicot"
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Emil Camille Rebenok",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T09:41:14Z",
@@ -5672,7 +5684,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-02T10:16:21Z",
           "content": "**Suite :** https://discord.com/channels/1327646236534112318/1334878212110549033/1478113085053993150\n\n```Salon Libre.```"
         }
-      ]
+      ],
+      "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
       "id": "scene_quartier_des_forges_1",
@@ -5681,10 +5694,10 @@ window.RP_DATA = {
       "channel_clean": "Quartier-des-Forges",
       "title": "Quartier-des-Forges — Scène 1",
       "actors": [
-        "Star",
-        "Sw dark325"
+        "Sw dark325",
+        "Star"
       ],
-      "main_actor": "Star",
+      "main_actor": "Sw dark325",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T11:24:08Z",
@@ -5772,7 +5785,8 @@ window.RP_DATA = {
           "content": "``` ``` \n\n**Hana gardera ce léger sourire afficher sur son visage tandis qu'elle écoutes les propos de Magon, il est vrai que demander le passé de quelqu'un qu'elle vient d'à peine rencontrée était quelque chose d'assez impoli la jeune femme le savait mais elle remarqua qu'elle n'avais pas vraiment pris le temps d'être un peu plus clair dans sa question. Elle viendra alors reprendre la parole venant réajuster sa question pour qu'elle paraisse moins indiscrète**\n\n*\"Et bien maintenant, peut être faites-vous partis de l'une des grandes guildes ? De mon côté je fais partie de la Garde Pourpre.\"*\n\n``` ```"
         }
       ],
-      "location_description": "``` ``` \n\n**Après une longue marche, Hana finira par arriver dans le quartier des forges ce n'était pas forcément l'endroit où elle souhaitais se rendre au départ mais au final elle eu l'envie d'en découvrir un peu plus sur cet endroit et de le visiter étant donner que pour le moment elle a du temps libre. De ce fait avant que les missions de la Garde Pourpre vienne se succéder les unes après les autres, la jeune prométhéenne en profite afin d'en découvrir le plus possible. Portant son uniforme de la Garde Pourpre elle ne passait pas forcément inaperçu mais cela ne la dérangeais pas réellement depuis son enfance elle avait l'habitude de ressentir de nombreux regarder se poser sur elle alors désormais elle y était habituée, Hana commença sa visite de ce quartier n'hésitant pas à se rapprocher des différents commerce pour ainsi observer de plus près le travail de ces artisans sans pour autant avoir en tête d'achetée quelque chose.**\n\n**Au du fait qu'elle se battais le plus souvent à distance avec son manaclyste utilisant son bâton comme catalyseur elle ne se voyait pas demandée une épée ou un autre type d'arme à un forgeron mais cela n'empêchait pas la prométhéenne d'être curieuse au sujet de leur artisanat, travailler le métal n'est pas quelque chose de facile ce n'était pas son domaine et elle ne se sentait pas capable alors elle ressentait une légère admiration envers ceux qui ont décider d'y vouer leur vie entière afin d'être capable de forger les meilleures armes possible. Après une longue visite elle viendra se poser sur l'un des nombreux ponts son regard se déposant sur l'eau et le reflet que Hana pouvait apercevoir, une expression assez neutre était dessiner sur le visage de la jeune femme tandis qu'elle pouvait entendre de nombreuses personnes discutés entre elles.**\n\n**Elle viendra légèrement sourire ce lieu était bien différent du verger dans lequel elle se trouvais plutôt dans la journée mais en soit c'est ce qu'elle souhaitait découvrir un quartier bondés où elle pourrais faire de nouvelle rencontre surprenante ou en apprendre plus sur différent sujets dont elle n'a aucune informations ou très peu. La prométhéenne était au final bien contente d'être arrivé dans ce quartier satisfaisant ce qu'elle voulait découvrir après avoir quitté le Bastion Écarlate.**\n\n|| <@1450440060209074293> ||"
+      "location_description": "``` ``` \n\n**Après une longue marche, Hana finira par arriver dans le quartier des forges ce n'était pas forcément l'endroit où elle souhaitais se rendre au départ mais au final elle eu l'envie d'en découvrir un peu plus sur cet endroit et de le visiter étant donner que pour le moment elle a du temps libre. De ce fait avant que les missions de la Garde Pourpre vienne se succéder les unes après les autres, la jeune prométhéenne en profite afin d'en découvrir le plus possible. Portant son uniforme de la Garde Pourpre elle ne passait pas forcément inaperçu mais cela ne la dérangeais pas réellement depuis son enfance elle avait l'habitude de ressentir de nombreux regarder se poser sur elle alors désormais elle y était habituée, Hana commença sa visite de ce quartier n'hésitant pas à se rapprocher des différents commerce pour ainsi observer de plus près le travail de ces artisans sans pour autant avoir en tête d'achetée quelque chose.**\n\n**Au du fait qu'elle se battais le plus souvent à distance avec son manaclyste utilisant son bâton comme catalyseur elle ne se voyait pas demandée une épée ou un autre type d'arme à un forgeron mais cela n'empêchait pas la prométhéenne d'être curieuse au sujet de leur artisanat, travailler le métal n'est pas quelque chose de facile ce n'était pas son domaine et elle ne se sentait pas capable alors elle ressentait une légère admiration envers ceux qui ont décider d'y vouer leur vie entière afin d'être capable de forger les meilleures armes possible. Après une longue visite elle viendra se poser sur l'un des nombreux ponts son regard se déposant sur l'eau et le reflet que Hana pouvait apercevoir, une expression assez neutre était dessiner sur le visage de la jeune femme tandis qu'elle pouvait entendre de nombreuses personnes discutés entre elles.**\n\n**Elle viendra légèrement sourire ce lieu était bien différent du verger dans lequel elle se trouvais plutôt dans la journée mais en soit c'est ce qu'elle souhaitait découvrir un quartier bondés où elle pourrais faire de nouvelle rencontre surprenante ou en apprendre plus sur différent sujets dont elle n'a aucune informations ou très peu. La prométhéenne était au final bien contente d'être arrivé dans ce quartier satisfaisant ce qu'elle voulait découvrir après avoir quitté le Bastion Écarlate.**\n\n|| <@1450440060209074293> ||",
+      "location_image": "channel_images/quartier-des-forges.jpg"
     },
     {
       "id": "scene_agora_des_reines_1",
@@ -5781,11 +5795,11 @@ window.RP_DATA = {
       "channel_clean": "Agora-des-Reines",
       "title": "Agora-des-Reines — Scène 1",
       "actors": [
-        "Historia Fay Ruaidhri Grel",
         "Asior Eveus",
+        "Historia Fay Ruaidhri Grel",
         "Aryanna Erhendil"
       ],
-      "main_actor": "Historia Fay Ruaidhri Grel",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-18T23:47:38Z",
@@ -5842,7 +5856,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-05T03:21:25Z",
           "content": "** **\n*Il est maintenant à peu près convaincu que la jeune femme peut le percevoir, d’une certaine façon au moins. C’est pour cela que sa main reste tendue, à plat entre eux, présentant le mouchoir à celle dont les larmes de cristal teintent les joues. Si l’autorisation lui est donnée, il les essuiera délicatement lui-même, dans une volonté de lui faciliter la tâche. Sinon, Lerche n’aura qu’à se saisir de ce qui lui est tendu et s’en occuper elle-même.*\n\n*Ce n’est qu’après avoir séché ses larmes qu’il reprendra à nouveau la parole.*\n\nJe ne saurai parler à la place de votre amie, mais je trouve personnellement que l’Oeil est trop sévèrement jugé pour ses actions. Il semble normal à mes yeux que seuls les meilleurs et les plus déterminés soient chargés de protéger la Couronne, et je ne trouve pas choquant que cette garde ait recours à n’importe quels moyens pour accomplir son devoir… De plus, si elle vous porte réellement dans son coeur, je l’imagine mal vous tenir rigueur de quelque chose s’avérant être hors de votre portée, et elle s’accordera certainement avec moi dans l’idée que vos larmes représentent un affront que je souhaite ne plus jamais causer.\n\n*Suite à ces déclarations, il laissa gracieusement le sujet dérivé.*\n\nPour ma part c’est bien le paysage qui m’a attiré, et la balade nocturne. J’ai toujours été parmi les oiseaux de nuit.\n[Image: https://cdn.discordapp.com/attachments/1328038646019919872/1478774375544258772/Asior_13.jpg?ex=6a70b1f5&is=6a6f6075&hm=f59d89e446ad853ad8dae039d5a5fde5c8d150f67da2d7e258b046dea366eb26&]"
         }
-      ]
+      ],
+      "location_image": "channel_images/agora-des-reines.jpg"
     },
     {
       "id": "scene_avenue_des_armuriers_1",
@@ -5851,14 +5866,14 @@ window.RP_DATA = {
       "channel_clean": "Avenue-des-armuriers",
       "title": "Avenue-des-armuriers — Scène 1",
       "actors": [
-        "Eita",
-        "Okayama",
-        "Lucia Fiorella",
         "Katelynn Hoffmann",
+        "Eita",
+        "Lucia Fiorella",
         "Aryanna Erhendil",
-        "Vosk Sulyvan"
+        "Vosk Sulyvan",
+        "Okayama"
       ],
-      "main_actor": "Eita",
+      "main_actor": "Katelynn Hoffmann",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-19T07:03:21Z",
@@ -6083,7 +6098,8 @@ window.RP_DATA = {
           "timestamp": "2026-04-16T14:33:47Z",
           "content": "```Recherches```\n\n> *Maintenant sa mission terminée, le prométhéen a réussi à sortir en vie des bas quartiers. Son corps gardera une marque bien ancrée dans sa peau. Ses côtes lui font toujours un peu mal mais il réussit à tenir le coup. Ses vêtements rouge le font se mêler aux couleurs rougeâtres du lieu sans trop attirer l’attention. Sous ses vêtements se trouvent plusieurs bandages, quelques compresses uniquement dans le but de cicatriser ses blessures plus vite. Bien heureusement son visage n’a miraculeusement pas été touché, malgré que sa tache de brûlures au visage soit présente, il s’en sort sans nouvelle blessure visible.*\n\n> *Marchant au travers de la foule, le masque anciennement récupéré par le prométhéen lors de sa mission avait été gardé, non pas sur son visage mais dissimulé à l'intérieur de son manteau en guise de pièce à conviction pour son rapport. Sa tenue est un mélange de rouge et de noir, passant entre les gens on ne le différencie que graçe à son badge de l’Oeil de ses confrère lointain de la garde pourpre. Pas besoin de tourner la tête pour ressentir les regards méprisants ou méfiants de ceux qui aperçoivent son badge, Corvax Siegfried n’était clairement pas un cas isolé.*\n\n> {Je devrais être apte à en trouver ici, je l’espère..}\n\n> *Traversant la foule, il accepte sa condition, si il ne peut forcer la sympathie d’autrui, alors il vivra avec leur mépris. Arrivant à un stand, ses yeux ne se posent pas d’abord sur la marchandise, mais en premier sur le marchand. Un jeu de regard se lance, n’accordant plus trop d'intérêt au son des offres aux alentours non loin d’ici, il faut croire que même pour acheter quoique ce soit ici, il doit gagner son droit. En peu de temps le vendeur cède avant d'acquiescer face au jeune homme.*\n\n> *Un court soupir du nez, c’est tout ce que Vesper ne lâchera en réponse. Ses mains tâtonnent les marchandises, des dagues. Conscient du regard que portent autrui sur un prométhéen usant d'armes, il ne peut cependant pas se permettre de perdre sa vie à cause de préjugés. Dans sa recherche il n’hésite pas à saisir certains modèles, tester leur prises, leur poids, leur maniabilitée. Puis il s’arrête devant une paire de double dague, d’un noir profond, le trachant de la lame est aussi évident que la chaleur d’une flamme.*\n\n> **“Quel est son prix ?”**\n\n> *Pointant cette arme au vendeur, il en demande le prix, et comme il le pensait, c’est cher. Vérifiant ses fonds il fera le compte dans l’espoir d’avoir assez sans dépasser son budget. Grimaçant un petit instant, il sera bien obligé de se rabattre sur un modèle juste en dessous, moins cher afin de rester dans les clous. Testant l'arme, il y trouve une satisfaction mais toujours hésitant, il patiente devant le stand, l’arme en main incapable de savoir si oui ou non celle ci lui plait.*\n\n> **“Vous n’auriez pas d’autre modèle comme celle-ci ?”**\n[Image: https://cdn.discordapp.com/attachments/1327646240669696042/1493982680017276948/ff99f190b55a1674f3ff4bf45f0ba1b4.jpg?ex=6a70a6cb&is=6a6f554b&hm=14e187ebd62a6806064e49bdf865f0e1f9abf8ad7abdbebe9ddffafc52e335e9&]"
         }
-      ]
+      ],
+      "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
       "id": "scene_cantine_marbr_e_1",
@@ -6512,7 +6528,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-01T03:07:46Z",
           "content": "*C'est, donc, l'heure du départ, hein ? Pour le coup, la jeune demoiselle reste un moment silencieuse. Elle le regarde, elle l'écoute parler sans vraiment faire la moindre intervention. Ce moment fut plaisant. Peut-être qu'elle va rester, encore un instant, ici pour ancrer la vie en elle. Mais pour l'heure, celle-ci acquiesce d'un signe de tête. Mais sans fournir plus de réponses au garçon. En même temps... Pourquoi ne pas le laisser mijoter tout ça ? \n\nNe pas offrir de réponses, c'est aussi un moyen d'attirer son attention pour une prochaine conversation. La blanche rêvasse un bref instant, puis elle reporte son attention sur lui.*\n\n-Alors à une prochaine. Merci d'avoir passé... Un peu de temps avec moi.\n\n*C'est une réponse assez timide de dire \"merci d'être rester avec moi pour le temps du repas. Je me suis sentis moins seule l'espace d'un instant.\" Mais bon, c'est une fille peut-être un peu trop timide pour ça. Alors forcément, elle ne s'attarde pas plus que ça dessus.\n\nElle rougit, même, à l'idée d'avoir pu prononcer ce genre de mots ! Mais, heh, ce n'est pas la réaction qu'aurait pu avoir sa copie, pas vrai ? Enfin, elle a déjà ses réponses, elle sait très bien ce que ça veut dire participer à un combat, ou ne pas le faire. Alors oui, elle ne les lui a pas donné, mais elle sait. Et le fait même de le savoir la rend pensive. Elle aurait préféré que ce soit plus simple, parfois.\n\nMais maintenant que tout ça est fait, elle pose son regard vers l'exterieur une fois le garçon partis. Elle se lève, et débarrasse son plateau sans un mot. Le temps est bon. Peut-être propice même ? Enfin, peut-être pas, elle ne se sent pas encore d'une humeur \"mystique\". Donc ce sera pour une prochaine fois. Sans doute.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/cantine-marbree.jpg"
     },
     {
       "id": "scene_crypte_rouge_1",
@@ -6521,16 +6538,16 @@ window.RP_DATA = {
       "channel_clean": "Crypte-Rouge",
       "title": "Crypte-Rouge — Scène 1",
       "actors": [
-        "Nick Sol",
-        "Kenji Takahashi",
-        "Frantz Oley",
-        "Aryanna Erhendil",
-        "Loyis Delacroix",
-        "Hedwig Von Glanzestern",
         "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "Kenji Takahashi",
+        "Nick Sol",
+        "Loyis Delacroix",
+        "Aryanna Erhendil",
+        "Frantz Oley",
+        "Hedwig Von Glanzestern"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-22T04:42:02Z",
@@ -6641,7 +6658,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-18T17:01:33Z",
           "content": "**Il s'en alla. Oui, pas grand chose de plus. Le discours de Frantz ne lui apprit rien : se laisser consumer par la haine ? Cela fait un petit moment qu'il avait comprit que dans ce cas précis, foncer tête baissée vers la mort ne lui apporterait rien de plus qu'une nouvelle perte, voir même pire : la fin de son livre.**\n\n**Pour autant, il n'agira pas de manière hautaine ou détachée face à la tirade de son supérieur. Il est clair que même si c'est évident pour lui, certains ici ont du mal à garder leur sang-froid, surtout un certain homme, le plus endeuillé de nous tous ici. Le regard de Kenji était focalisé sur le plus calme de tous, ou du moins celui qui devait le rester, mais l'Uzen jeta quelques coups d'oeil au camarade à sa droite sans jamais voir son visage. Ce n'était pas son but, il se fichait de savoir qui se cachait derrière les bandages qui recouvraient sa face, il reste un homme tout comme lui, possédant des émotions, une âme, bref rien ne le différenciait du jeune Takahashi. Et surtout, par respect pour cet homme qui se cachait derrière un amas de bandage, voir son visage serait vu comme un affront, observer l'interdit, admirer ce qui se trouve au delà des barrières.**\n\n**Enfin bref, discours terminé, Kenji ne prit pas le temps d'écouter la moindre question de ses camarades qu'il se retira, n'adressant la parole à personne. Les mains dans les poches, il retourna dans sa cellule, remettant le cadeau empoisonné dans sa boite, le laissant de côté jusqu'à ce que son idée se mette à exécution.**"
         }
-      ]
+      ],
+      "location_image": "channel_images/crypte-rouge.jpg"
     },
     {
       "id": "scene_la_balafre_1",
@@ -6650,23 +6668,23 @@ window.RP_DATA = {
       "channel_clean": "La-Balafre",
       "title": "La-Balafre — Scène 1",
       "actors": [
-        "Hedwig Von Glanzestern",
+        "Red Roadman",
+        "LE CONSEILLER",
+        "Asior Eveus",
+        "Star",
+        "Brutus Redwitch",
         "Selena Moon",
         "Akane Tsukishiro",
-        "Nick Sol",
-        "Idelmée Cadree",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Asior Eveus",
-        "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Red Roadman",
-        "Star",
+        "Nick Sol",
+        "Idelmée Cadree",
         "Ren Urugaki",
-        "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Aryanna Erhendil",
+        "Hedwig Von Glanzestern"
       ],
-      "main_actor": "Hedwig Von Glanzestern",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-24T06:29:21Z",
@@ -7185,7 +7203,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-28T19:33:55Z",
           "content": "(<@407613483853676555> Sorry pour le ping, je ne sais pas s'il fallait que je te ping, ou non. ^^)"
         }
-      ]
+      ],
+      "location_image": "channel_images/la-balafre.jpg"
     },
     {
       "id": "scene_place_de_grandpalais_2",
@@ -7248,7 +7267,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-08T02:57:53Z",
           "content": "```ansi\n\u001b[2;35m🃏 Une Rencontre Suspendue 🃏\u001b[0m```\n\n🐰 **Les yeux rosés de la Pandorienne suivirent le mouvement du bras d’Ava avec une attention presque enfantine. Lorsqu’elle désigna enfin l’un des deux poings, un bref silence s’installa, suspendu entre les deux jeunes femmes. Puis le sourire de l’illusionniste s’élargit légèrement.**\n\n**Un détail pourtant invisible venait déjà de sceller l’issue du pari : la pièce n’était plus dans ses mains depuis plusieurs secondes. Profitant du petit numéro de dextérité qu’elle avait exécuté plus tôt, la lapine l’avait discrètement fait disparaître ailleurs sur elle, bien loin des deux poings désormais présentés comme des choix décisifs. Autrement dit : il n’y avait jamais vraiment eu de bonne réponse.**\n\n**La jeune mage éclairée inclina légèrement la tête, observant la Sisyphe comme si elle jaugeait la gravité de ce moment pourtant ridiculement simple. Lentement, elle ouvrit la main qu’Ava venait de désigner.**\n\n**Dans sa paume reposait… un petit bonbon coloré. La poupée de porcelaine eut un léger rire silencieux, presque satisfaite de son petit tour.**\n\n> — Dommaaage !\n\n**La demoiselle attrapa le bonbon entre deux doigts et le déposa doucement dans la main de la guerrière, comme si elle lui remettait un prix de consolation particulièrement solennel.**\n\n> — Lot de consolation !\n\n**L’autre main resta fermée, tranquillement abaissée le long de son corps, comme si elle n’avait plus la moindre importance. En vérité, elle n’en avait aucune : elle était vide depuis le début.**\n\n**Son regard pétillait toujours de cette malice tranquille qui semblait accompagner chacun de ses gestes.**\n\n> — Je suppose que ça veut dire que tu as perdu.\n\n**Elle semblait prête à ajouter quelque chose, peut-être même à respecter le pari et entraîner la sans-guilde dans cette fameuse promenade improvisée. Son corps s’était déjà légèrement tourné vers la place, comme pour l’inviter à marcher.**\n\n**Soudain, son expression changea. Ses yeux s’écarquillèrent légèrement, comme si une pensée venait de la frapper en plein vol.**\n\n> — …Oh. **Une courte pause.** Oh non.\n\n**Lucia porta une main à son front, l’air presque dramatique.**\n\n> — J’avais complèèètement oublié !\n\n**La noble héritière de Fiorella recula déjà d’un pas, comme si l’urgence venait de la rattraper d’un seul coup.**\n\n> — Une affaire. Très, très importante. Terriiiblement importante !\n\n**Son ton était léger, mais son mouvement, lui, ne laissait aucun doute : elle allait partir. Déjà en train de s’éloigner, après une petite acrobatie qui la fit atterrir sans un bruit sur le sol, elle leva une main dans un geste rapide, sourire vif aux lèvres.**\n\n> — On reprendra cette conversation la prochaine fois, d’accord ?\n\n**Un clin d’œil accompagna ses derniers mots.**\n\n> — Promis.\n\n**Et avant que la Sisyphe n’ait réellement le temps de protester ou de répondre, la petite espiègle s’était déjà éclipsée avec la même légèreté imprévisible qu’à son arrivée, laissant derrière elle une question, un bonbon… et une interaction suspendue.**"
         }
-      ]
+      ],
+      "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
       "id": "scene_pont_des_deux_2",
@@ -7257,10 +7277,10 @@ window.RP_DATA = {
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 2",
       "actors": [
-        "Kanta",
-        "Romy"
+        "Romy",
+        "Kanta"
       ],
-      "main_actor": "Kanta",
+      "main_actor": "Romy",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-02-25T08:52:59Z",
@@ -7336,7 +7356,8 @@ window.RP_DATA = {
           "content": "**Euros, déjà, avait commencé à tapoter ses poches, à la recherche de quelque chose. Un instant, il détourna le regard, se tortillant sur place comme un ver pour tenter de trouver son calepin. Normalement, ce petit carnet était destiné à la prise de notes sur son pouvoir. Il traquait ses limites de portée, de durée et de tant d'autre chose, afin de mieux se représenter la puissance de son pouvoir : le rêve de tout power-scaler, en résumé.**\n\n\"Ah ! Tiens, t'as qu'à uti-\"\n\n**Après avoir fini par l'extraire d'une poche à fermeture, Euros s'était retourné sur du vide. Avec un temps de retard, il avait réalisé qu'il tendait son carnet à l'homme invisible, et un regard alentour des plus circonspects lui apprit qu'il avait loupé le départ de la demoiselle. Il s'éclaircit donc la gorge, tentant d'effacer cette gêne, et rangea son calepin dans la poche de son pantalon.**\n\n*\"Dommage... Le silence a son charme...\"*\n\n**Il croisa les bras et baissa la tête, un instant. L'avait-il vexé ? Il faut dire, essayer de se faire comprendre par des énigmes muettes auprès d'un idiot dont le seul talent est de savoir travailler sans relache, c'était audacieux. Non, ce n'était pas ça, selon lui. Quelqu'un de réellement intelligent ne cherche pas à s'éloigner de l'idiotie, mais à s'en faire comprendre... En tous cas, c'est le genre de phrase toute faite qui soulageait son esprit.**\n\n**Se retournant, il se décida enfin à abandonner. De toutes les choses, Euros appréciait la simplicité : comprendre le complexe était donc complètement impossible pour lui. Il la recroiserait surement un jour, il pourrait lui demander à ce moment là pourquoi elle était partie. Et tandis qu'il passait à nouveau la rambarde du pont, lévitant au dessus d'elle, il nota pour lui-même : la prochaine fois, il irait la voir avec son calepin dans les mains.**"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_cantine_marbr_e_2",
@@ -7345,13 +7366,13 @@ window.RP_DATA = {
       "channel_clean": "Cantine-marbrée",
       "title": "Cantine-marbrée — Scène 2",
       "actors": [
+        "Red Roadman",
+        "Myrea M",
         "Jasp Nah",
         "Tsutomu Yamamoto",
-        "JAVUS",
-        "Red Roadman",
-        "Myrea M"
+        "JAVUS"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T04:09:34Z",
@@ -7462,7 +7483,8 @@ window.RP_DATA = {
           "timestamp": "2026-08-03T09:36:44Z",
           "content": "```Fin de scène```"
         }
-      ]
+      ],
+      "location_image": "channel_images/cantine-marbree.jpg"
     },
     {
       "id": "scene_terrain_grandblanc_1",
@@ -7471,22 +7493,22 @@ window.RP_DATA = {
       "channel_clean": "Terrain-Grandblanc",
       "title": "Terrain-Grandblanc — Scène 1",
       "actors": [
-        "Inzu Sravel",
-        "Nick Sol",
-        "Isis Faerieth",
+        "L'Ost du Sang",
+        "Red Roadman",
+        "Oeil",
+        "Brutus Redwitch",
+        "Katelynn Hoffmann",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Katelynn Hoffmann",
-        "Red Roadman",
         "Jasp Nah",
-        "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Oeil",
-        "Lewis Bamer",
-        "L'Ost du Sang",
-        "Brutus Redwitch"
+        "Nick Sol",
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Inzu Sravel",
+        "Lewis Bamer"
       ],
-      "main_actor": "Inzu Sravel",
+      "main_actor": "L'Ost du Sang",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T04:09:38Z",
@@ -7832,7 +7854,8 @@ window.RP_DATA = {
           "content": "> *Sa poigne l'attrape, son corps tombe à la renverse alors que la surprise le guette.*\n\n**-** \"Heh ?\"\n\n> *Son corps flanche, et c'est au dessus de Red qu'il atterit. Le temps de croiser son regard, le Sisyphe effectue une roulade au dessus de son corps, atterrissant derrière Red. Dans son retour, l'arme tranche le tissu de l'inspecteur. Il ne s'en rends pas compte tout de suite. Dans un reflexe étonnant, sa main intercepte l'arme, et la rends à son propriétaire, la relâchant sur son corps encore au sol.*\n\n> *C'est en se relevant que l'instructeur se rends compte que le tranchant à découpé de façon nette le rouge du tissu. Le jeune homme fait la moue, mais tourne son regard vers Red.*\n\n**-** \"Hum... Aller, continue.\"\n\n> *Il se remets en garde, attendant que Red se relève.*"
         }
       ],
-      "location_description": "``` Acte 1 - Le retour de l'Ashen ```"
+      "location_description": "``` Acte 1 - Le retour de l'Ashen ```",
+      "location_image": "channel_images/terrain-grandblanc.jpg"
     },
     {
       "id": "scene_zone_buffet_1",
@@ -7841,17 +7864,17 @@ window.RP_DATA = {
       "channel_clean": "Zone-Buffet",
       "title": "La flaque rouge s'est déplacée",
       "actors": [
-        "Nick Sol",
+        "Oeil",
+        "Brutus Redwitch",
+        "Akane Tsukishiro",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Oeil",
+        "Nick Sol",
         "Septimus Kales",
-        "Akane Tsukishiro",
-        "Brutus Redwitch"
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Nick Sol",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-02T08:22:20Z",
@@ -8432,7 +8455,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Introduction des festivités\n\n*L'entrée se dresse devant dans un endroit de la belle ville non loin du Quartier Est, elle se présente au dessus d'un petit monticule, une certaine colline appelée Atrium, et la belle habitation dessus porte le même nom. D'en bas, des chariot très stylisés se sont mis à disposition pour vous remonter, mais c'est aussi là que ce font les vérifications des identités. Il y a plusieurs moyens d'attester de votre identité, que ce soit votre médaillon ou votre grimoire d'Uriel, vous êtes facilement reconnus. Pour ceux qui ne font pas partit du clergé, de la noblesse ou de la bourgeoisie, vous devrez attendre que votre binôme se présente avec vous autrement vous ne rentrerez tout simplement pas. Une fois en haut, le trajet étant relativement court puisque les chevaux sont des braves bêtes.*\n\n*Une fois arrivés devant les grandes portes, un homme se tient devant elle. Il est très... élégant mais aussi brillant. Un homme au style élégant et aux manières raffinées, il se tient devant vous discutant avec une autre femme qui elle aussi est au summum de l'élégance. Un couple qui attiserait les plus grandes jalousies, mais la distance entre eux éprouve une certitude : ils sont uniquement collègues de travail. Rigide et droit, il vous regarde alors qu'une très grande partie des gens se sont présentés dans le jardin d'entrée. Il lève alors une coupe, ordonnant de son simple geste aux servants qui se tenaient sur les côtés du jardin pour former un endroit de réception de passer dans les rangs pour offrir aux jeunes mages et nobles des coupes d'alcool sophistiqué. La meilleure crue d'il y a quelques ans.*\n\n> Bonsoir. Bienvenue à l'Atrium Canopus, la maison de vacances de Sa Majesté, la maison ou les Princes et Princesses ont grandit. En cette belle soirée mais aussi pour fêter votre première mais pas dernière réussite pour Esperia, nous vous accueillons dans un sublime bal. Amusez-vous avec modération !\n\n*Puis dans un volte-face magistral alors que sa coupe de vin se change ne or solide mais liquide à l'intérieur dans une manipulation de l'arcane très fine, il ouvre la porte avec sa collègue. L'intérieur est lumineux mais aussi fournis de nombreux mets avec des personnes responsables qui n'attendent que vous offrir les meilleurs plats d'Esperia.*\n\nVous êtes libre d'après une action d'arrivé de vous rendre dans les différents channels pour discuter avec des joueurs ou les PNJ qui sont mis à disposition. \n\nIci se trouve M. Léonard Mireald, celui qui a ouvert l'Atrium Canopus.",
-      "location_image": "https://i.pinimg.com/1200x/e8/9a/6c/e89a6c56b8c5805efb7774492f48a7e8.jpg"
+      "location_image": "channel_images/zone-buffet.jpg"
     },
     {
       "id": "scene_cours_fleurie_1",
@@ -8441,14 +8464,14 @@ window.RP_DATA = {
       "channel_clean": "Cours-Fleurie",
       "title": "Cours-Fleurie — Scène 1",
       "actors": [
-        "Historia Fay Ruaidhri Grel",
-        "Okayama",
-        "Lucia Fiorella",
         "Kenji Takahashi",
+        "Lucia Fiorella",
         "Romy",
-        "Lewis Bamer"
+        "Historia Fay Ruaidhri Grel",
+        "Lewis Bamer",
+        "Okayama"
       ],
-      "main_actor": "Historia Fay Ruaidhri Grel",
+      "main_actor": "Kenji Takahashi",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-03T07:33:41Z",
@@ -8524,7 +8547,8 @@ window.RP_DATA = {
           "content": "```Scène close.```"
         }
       ],
-      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**"
+      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**",
+      "location_image": "channel_images/cours-fleurie.jpg"
     },
     {
       "id": "scene_centre_radieux_1",
@@ -8533,17 +8557,17 @@ window.RP_DATA = {
       "channel_clean": "Centre-radieux",
       "title": "Centre-radieux — Scène 1",
       "actors": [
-        "Isis Faerieth",
+        "Asior Eveus",
+        "Oeil",
+        "Akane Tsukishiro",
         "Jin Alurantes",
         "Jasp Nah",
-        "Asior Eveus",
-        "JAVUS",
         "Loyis Delacroix",
-        "Oeil",
         "Septimus Kales",
-        "Akane Tsukishiro"
+        "Isis Faerieth",
+        "JAVUS"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-04T00:17:29Z",
@@ -8662,7 +8686,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "L'Ashen\n\n*Un homme à la tenue atypique et au parfum... inoubliable, prend place au centre du cercle.*\n\n*Si au début sa présence dérange, questionne, les choses changent très vite. De ses pieds, s'échappe une brume d'un rose pâle sublime, rappelant des pétales de fleurs s'agitant au rythme du vent. Il attire l'attention, bien que la grimace sur son visage indique clairement que cette tâche ne lui sied guère. Cette attention, il ne semble pas en vouloir. Mais pourtant, il __doit l'obtenir__. Sans attendre. Sa voix résonne alors, comme par \" Magie \" dans l'ensemble du Heaume Blanc.*\n\n— Qu'est-ce que. . . l'Arcane. . ?\n\n*Au creux de sa main, un petit papier, qu'il lit sans vraiment se dissimuler.  Se frottant les yeux, il laisse se passer de longues secondes avant, dans un lourd soupir, se débarrasser du papier, qu'il laisse allègrement tomber sur le sol.*\n\n— Oh et puis merde.\n\n*Discours.*\n\n> Je suis l'Ashen, Aaron Solar.\n> \n> Si je suis ici aujourd'hui c'est pour observer les nouveaux mages de la cour, les conseiller, les guider. Mais comme vous pouvez le voir, ça ne me motive pas plus que ça de savoir que vous avez envie de rejoindre telle ou telle guilde, rendre fier votre famille ou venger votre frère. En vérité je m'en cogne. \n\n*Franchise implaccable.*\n\n> Cela peut paraître un peu brutal, mais je ne peux pas être plus franc, envers vous tous.\n> Je suis ici par obligation, pour donner l'exemple, être \" l'espoir \" de cette grande cité. Il n'en est rien, malheureusement pour vous. Je dispose de ce poste, car ici-bas, je suis le meilleur d'entre nous. Mais à l'extérieur de ces murs...\n\n*Sa voix est calme, il s'exprime clairement, sans le moindre doute. Lorsqu'il parle de l'extérieur, un éclat s'allume dans ses prunelles. Le sujet qu'il s'apprête à aborder le passionne, aucun doute.*\n\n> Oui à l'extérieur de ces murs, je ne suis plus rien.\n> Nous somme tous nés ici, en rêvant d'un monde vaste par-delà ces palissades fades, écho d'une grandeur disparue. Aujourd'hui , cette grandeur annonce son retour, nous ouvrons nos portes au monde, à l'inconnu. Et pour ça, vous devez être prêt.\n\n*Menaces.*\n\n> Notre monde, Ashera, regorge de créatures surprenantes, de mages terrifiants et de cultures diverses et variées. Jusqu'à présent, nous avons rejeté ce Monde, dans cette cage dorée. Mais les choses changes, elles évoluent, toujours.\n> Et vous êtes les premiers à l'expérimenter, vous, mages de la Cour.\n\n*Quelque chose se dégage de sa voix.*\n\n> C'est peut-être égoïste, voir tyrannique, mais j'attends de vous d'éclairer ce chemin que j'arpente depuis maintenant de nombreuses années. Il faut dégager la voie, partager l'infinie richesse d'Ashera, à vous comme aux générations futures.\n\n*Ouverture.*\n\n> Mais pour accomplir cela, nous devons au préalable, assurer l'équilibre de la capitale.\n> Et pour cela, j'ai besoin de votre aide.\n\n*La Balance.*\n\n[ HRP : Vous pouvez déjà réagir à cette première partie du discours, dans les différents channels. Vous pouvez également vous adresser directement au Ashen.]",
-      "location_image": "https://ih1.redbubble.net/image.5849564695.9958/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+      "location_image": "channel_images/centre-radieux.jpg"
     },
     {
       "id": "scene_fontaine_marbr_e_2",
@@ -8737,7 +8761,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-07T07:03:47Z",
           "content": "> ⋄ **Pour Adelina c’est une constatation de ce qu’elle voit pas forcément une leçon qu’elle veut donne à Sulyvan. Alors elle inspira lentement et ses épaules se soulevant à peine avant de retomber avec une souplesse naturelle. Adelina ramena alors son attention vers Sulyvan. Cette fois, elle le regarda vraiment malgré qu’il a demandé ce qu’elle voulait, elle avait une idée en tête mais préfère ne pas y répondre et va juste faire un signe de tête de lui disant que non.  Ses yeux s’attardèrent un peu plus longtemps sur lui, détaillant les traits de son visage, la manière dont il se tenait, cette présence étrange qui semblait toujours un peu en retrait du monde autour de lui, un homme qui observait plus qu’il ne participait.**\n\n— Et puis… si on évitait tout ce qui peut nous faire souffrir…\n\n> ⋄ **Elle pencha légèrement la tête, comme si elle cherchait à capter la moindre variation dans son expression, un brise légère traversa la cour à cet instant. Elle souleva brièvement les mèches rouges qui encadraient son visage, faisant danser quelques fils de cuivre autour de ses tempes avant de retomber contre ses épaules.** \n\n— On passerait probablement à côté de beaucoup de choses intéressantes.\n\n> ⋄ **Dit-elle accompagné d’un léger sourire étira alors le coin de ses lèvres qui n’est rien d’arrogant plutôt la sincérité tranquille de quelqu’un qui avait déjà accepté cette idée depuis longtemps. Pendant quelques secondes, elle continua simplement de le regarder, elle était intrigué par lui.  Plutôt avec cette attention silencieuse de quelqu’un qui essaie de comprendre ce qui se cache derrière les mots… et derrière le regard d’un inconnu. Un mage de la Cour qui semblait préférer analyser le monde plutôt que s’y perdre. Un homme qui cherchait des réponses dans les autres comme on observe une énigme. Adelina croisa finalement légèrement les bras contre elle, non pas pour se fermer, mais comme si elle se calait simplement plus confortablement dans sa position. Son poids se déplaça subtilement d’une hanche à l’autre tandis que Cardan resta assis, immobile, sentinelle silencieuse à ses côtés.** \n\n— Mais dis-moi, Sulyvan… Tu analyses toujours les gens comme ça ?\n\n> ⋄ **Ses sourcils se haussèrent très légèrement, une pointe d’amusement traversant son regard. Mais avec cette curiosité sincère qui depuis le début de leur échange, semblait briller doucement derrière ses yeux.** \n\n— Ou bien Cardan et moi avons simplement éveillé ta curiosité ?\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯"
         }
-      ]
+      ],
+      "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
       "id": "scene_escaliers_nacr_s_1",
@@ -8748,8 +8773,8 @@ window.RP_DATA = {
       "actors": [
         "Asior Eveus",
         "Akane Tsukishiro",
-        "Brutus Redwitch",
-        "Oeil"
+        "Oeil",
+        "Brutus Redwitch"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -8862,7 +8887,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-09T08:05:53Z",
           "content": "*Le signe de camaraderie de Brutus se verra récompensé d’un simple signe de tête de la part du Damné. Tant mieux si le mauvais sort s’est jeté sur lui, il avait au moins l’avantage d’être légèrement moins dépaysé par les… originalités, que se permettaient Oscar.*\n\n*Les questions du Pourpre sont pertinentes, et les réponses de l’Ashen vagues, ce qui ne sert qu’à renforcer les soupçons d’Asior qui emboîtent le pas à ses compagnons, sa théorie semble rejoindre, ou du moins compléter, celle d’Akane, ce qui n’a rien de rassurant. Il aurait pu faire porter le chapeau de ses doutes à une forme de paranoïa, mais il semblerait qu’ils soient fondés dans une réalité bien palpable par le plus grand nombre.*\n\n*C’est en chemin pour se restaurer qu’il fait également part de ses observations à son équipe.*\n\nJe suis d’accord il faut rester sur nos gardes, et ce tout du long.\n\n*Un silence, son visage semble se fermer dans la réflexion, quelque chose le tracasse et le jeune homme semble réfléchir à la meilleure façon de formuler son propos sans délibérément critiquer la Couronne.*\n\n… Ils le sous-estiment. Au moins en partie. Ces jeux de pouvoirs sont assez communs dans les hautes sphères, et il n’est pas étonnant que la Couronne et ses cercles les considèrent comme une forme de bluff, parce qu’il s’agit certainement en partie de cela. Mais je suis inquiet de la proportion de bluff qu’ils ont attribué à ce comportement, un noble n’est jamais arrogant sans raison, il cache quelque chose de suffisamment gros pour qu’il pense pouvoir se permettre ce genre d'excentricité avec le mage le plus puissant de la Cour, c’est mauvais signe. Nous devons comprendre ce qu’il trame au plus vite.\n\n*Cette confession, faite hors de portée des oreilles de ceux qu’elle attaque, semble clore la discussion sur le reste du trajet, et Asior n’exsude plus du tout la même confiance qu’auparavant.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/escaliers-nacres.jpg"
     },
     {
       "id": "scene_couloir_blanc_1",
@@ -8896,7 +8922,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "```Nah Jasp - Complot.```\n\n*Le silence était venu avec lui mais aussi sortit avec lui. Poussant la porte d'une seule main alors que des perles de liqueur coulait encore sur son visage, marqué par la colère et la haine, ses veines gonflées et sa temple battant au rythme de son cœur. Il ne voulait pas y croire, il ne voulait pas croire que ce qui venait de se passer était tout bonnement normal. La porte se fermant dans son dos, il avance alors simplement au niveau de la fenêtre. Ses mains viendront d'abord se poser sur les murs à côté de la fenêtre son reflet se posant dans la vitre mais aussi disponible pour les personnes derrière la fenêtre. Il avait le regard d'une personne qui ne pouvait plus perdre, une personne prête à tout dans sa colère. Il y avait beaucoup de choses à faire, à lire mais aussi à dire. Son visage s'offrant à des personnes qui n'avaient pas eu le droit de rentrer était source d'attraction mais aussi de peur globale. Nah prit le temps de regarder dans ce faux miroir à la recherche de quelque chose.*\n\n> J'aime pas avoir raison.\n\n*Fermant son poing, il viendra le cogner contre le mur avant de se tourner, une figure blanche venait de se pointer devant elle et il fallait bien qu'il arrête de montrer ce visage si la collaboration devait bien se passer. Il passe alors son autre main sur son visage, le temps de calmer ses traits mais son regard restait le même, à la recherche de quelque chose sur lequel il pouvait se tenir pour ne pas hurler et casser la vitre qui se trouvait désormais dans son dos. Il avait prit l'occasion de s'adosser au mur avant de regarder qui se trouvait dans le couloir.*\n\n> Ils se pavanent de leurs couleurs mais il n'y a personne capable de faire tourner des neurones correctement. Les guildes sont juste là pour cacher un grand fiasco qui s'annonce.\n\n*Puis ensuite il repose son regard déjà un peu plus léger sur Isis. Il avait besoin d'elle. Le papier dans sa main il le pointera en sa direction pour l'inviter à côté de lui pour le lire.*\n\n> En échange de cette information, tu vas devoir m'aider avec un membre de ta guilde. Celle qui est partie avec l'Ashen. Je veux tout savoir. Nous avons un avantage qu'ils n'ont pas. \n\n*Le papier n'avait pas des mots qui pourraient donner une telle réaction chez le jeune homme. Il y avait des choses sur lesquelles il ne pouvait pas être d'accord mais rien de choquant. Un simple papier écrit par le Conseiller. Ce n'est pas une personne anodine, bien évidement qu'il est connu étant donné qu'une entrée est à son nom sur le grimoire d'Uriel témoignant de son importance au sein de la famille Royale. Mais c'est justement ce fait là qui avait réussi à faire bouillir le sang du pauvre en une seule ligne.*\n\n# Cette putain de première ligne. # \n\n```\" Bon retour, je suis ravie que vous ayez mis nos. . . \" différents \" de côté. \"```\n\n*Cette simple phrase validait la théorie de Nah, celle qu'il avait mit en avant lors de leur première rencontre et discussion. Sa colère pouvait s'animer à la simple vue des mots employés. Le Ashen était traité comme un simple enfant boudeur ? Comme quelqu'un pouvait parler ainsi à une figure de l'Arcane ? sa simple volonté pourrait briser des villes et anéantir Esperia. Celui qui de sa puissance brille venait d'être mis dans une cage ? Il venait de se soumettre ?*\n\n> Il est temps d'agir. Personne n'est pur, mais je le serais bien plus qu'un torchon sale.",
-      "location_image": "https://cdn.discordapp.com/attachments/1333138163308302418/1479075557764370555/b68e94008f980c292639004a46691e1c.png?ex=6a7078f4&is=6a6f2774&hm=e9de452898e6617930ada3d0145b63b929df2aede1fe2ceba8150365aedca7d3&"
+      "location_image": "channel_images/couloir-blanc.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_2",
@@ -8972,7 +8998,8 @@ window.RP_DATA = {
           "content": "**En espérant qu'il apprenne des dingueries. Pas plus de questions. Car il sait que tout viendra à point après avoir attendu. Si JAVUS sait tout de ses faits et gestes, alors les informations nécessaires viendront quand elles devront venir. Pas avant, ni après. S'embrouiller l'esprit tout de suite, c'est pas bon pour la concentration.**"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_ruelle_basse_ville_1",
@@ -8981,21 +9008,21 @@ window.RP_DATA = {
       "channel_clean": "Ruelle-Basse-ville",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Isis Faerieth",
-        "Idelmée Cadree",
+        "Red Roadman",
+        "LE CONSEILLER",
+        "Asior Eveus",
+        "Katelynn Hoffmann",
         "Jin Alurantes",
         "Myrane Jaster",
-        "Katelynn Hoffmann",
-        "Asior Eveus",
         "Romy",
         "Vosk Sulyvan",
-        "Red Roadman",
+        "Idelmée Cadree",
+        "Isis Faerieth",
         "Hedwig Von Glanzestern",
         "Lewis Bamer",
-        "LE CONSEILLER",
         "Adelina Del Fuego"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-09T04:18:00Z",
@@ -9383,7 +9410,8 @@ window.RP_DATA = {
           "content": "> *La lueur qui émanait des torches s’évanouit, et avec elle le bruit des pas qui s’éloignaient, frappant le pavé avec la régularité d’un métronome. Mais Hedwig resta tapie dans l’ombre, les doigts crispés sur la pierre, les paupières closes, le souffle toujours retenu. Même bien après que le sifflement du Pourpre se fut dissous dans le silence, elle n’osa pas bouger, redoutant que tout cela ne fût qu’un piège destiné à les attirer hors de leur trou.\n> Elle finit tout de même par émerger de sa cachette, avec, en poche, la confirmation, partielle, mais précieuse, de sa petite théorie. La marquise ne chercherait pas à tuer Oscar, pas maintenant. Peut-être s’estimait-elle redevable envers lui, voire reconnaissante des efforts qu’il déployait ? Peut-être croyait-elle réellement en sa cause, malgré les paroles de ce François qui s’évertuait à la convaincre de se débarrasser de lui pour le meilleur ? Mystère. Quoi qu’il en soit, se perdre en conjectures ne rimait à rien tant qu’ils n’auraient pas déniché davantage qu’un simple fragment de conversation glané en chemin vers ce cher Oscar.*\n\n> *Néanmoins, une petite leçon se grava en elle au sortir de cet épisode humiliant mais combien utile qu'il fallait apprendre à scruter, jauger, absorber chaque recoin de son environnement, où qu’elle se trouve, pour ne plus jamais se laisser surprendre que ce soit pour se cacher, pour fuir, pour piéger l’ennemi et ainsi de suite ; Ils avaient bien de la chance que Sir Sravel Inzu fût là pour veiller au grain et les tirer du bourbier en cas de coup dur, comme avec Idelmée ou encore Sulyvan, qui aurait sans nul doute fait capoter l’opération et conduit tout le monde à la tombe… Bon, sa propre cachette n’avait guère été plus glorieuse, alors autant redoubler de vigilance la prochaine fois et cette fois, avec la manière, de quoi en mettre plein la vue au Pourpre !*"
         }
       ],
-      "location_description": "*Le rouge d'une éclipse qui entache un ciel azur. Lewis est l'unique représentant de sa guilde et est, pour ainsi dire, entouré de bleus. Il reconnaît quelques visages qu'il a l'impression d'avoir déjà vu lors de cérémonies antérieures, mais aucun nom, aucune individualité. Le prométhéen n'a pas l'habitude de ce genre d'endroits et avait prévu qu'il mettrait du temps à trouver sa destination, il a donc pris les devants en partant plus tôt et cela paye visiblement, puisqu'il est le premier sur les lieux.*\n\n*À gauche et à droite, Lewis voit des gens de la basse-ville. Des murmures, des railleries, un décors avec lequel il n'est pas familier. Et au milieu de tout trône l'objet d'intérêt: l'établissement. Un peu plus loin, le premier symbole familier qui s'offre au pourpre un uniforme similaire a sien, si ce n'est qu'il est coloré de blanc. Sans attendre, l'homme part à la rencontre de celle dont la description correspond à ce qui lui a été donné et l'aborde une fois à proximité.*\n\n- Lewis-Phoebe d'Ashbourne, garde pourpre, au rapport. Je présume que vous êtes celle que je recherche ?"
+      "location_description": "*Le rouge d'une éclipse qui entache un ciel azur. Lewis est l'unique représentant de sa guilde et est, pour ainsi dire, entouré de bleus. Il reconnaît quelques visages qu'il a l'impression d'avoir déjà vu lors de cérémonies antérieures, mais aucun nom, aucune individualité. Le prométhéen n'a pas l'habitude de ce genre d'endroits et avait prévu qu'il mettrait du temps à trouver sa destination, il a donc pris les devants en partant plus tôt et cela paye visiblement, puisqu'il est le premier sur les lieux.*\n\n*À gauche et à droite, Lewis voit des gens de la basse-ville. Des murmures, des railleries, un décors avec lequel il n'est pas familier. Et au milieu de tout trône l'objet d'intérêt: l'établissement. Un peu plus loin, le premier symbole familier qui s'offre au pourpre un uniforme similaire a sien, si ce n'est qu'il est coloré de blanc. Sans attendre, l'homme part à la rencontre de celle dont la description correspond à ce qui lui a été donné et l'aborde une fois à proximité.*\n\n- Lewis-Phoebe d'Ashbourne, garde pourpre, au rapport. Je présume que vous êtes celle que je recherche ?",
+      "location_image": "channel_images/ruelle-basse-ville.jpg"
     },
     {
       "id": "scene_quartiers_1",
@@ -9468,7 +9496,8 @@ window.RP_DATA = {
           "content": "# ⊱═──────── ⚜️  Lewis-Phoebe d'Ashbourne  ⚜️  ──────────═⊰\n\n\n- Ce n'est rien... En tous les cas, je doute que mon  profil lui ai tapé dans l'oeil !\n\n\n*Un rire gêné plus tard, Lewis se fait raccompagner auprès du groupe qui lui-même est renvoyé vers l'entrée. Le prométhéen prend le soin de fermer la marche, s'assurant d'un coup d'oeil que le compte semble bon, comme pour se rassurer. Tout s'est bien passé et s'il est bien le \"personnage de roman\" que Nick prétend, toute cette histoire ne pourra se conclure sans une énième péripétie. C'est donc à l'affût que l'homme gagne la porte.*\n\n\n-# 💭Enfin... Je vais pouvoir me changer.\n\n\n*Ses pensées s'apaisent lorsqu'il arrive finalement devant Emilia. La pauvre semble gênée... De quoi rappeler à toutes et à tous que s'ils présentent des obstacles à la mission, ces gens sont aussi de véritables personnes avec leurs propres problèmes et aspirations. Un sourire radieux se dessine alors qu'il ajoute.**\n\n\n- Avec plaisir, l'endroit est FA-BU-LEUX~\n\n\n*Ceci dit, Lewis suit. L'homme adresse à leur hôte une mimique des plus sucrées qu'il espère être la dernière et quitte les lieux, son esprit ne se soulage qu'après avoir quitté les lieux... et fait quelques pas pour être certain qu'une main ne se posera pas sur son épaule. Afin d'éviter toute mauvaise surprise, il fait évidemment mine de se mêler à la foule, quelques pas par-ci, quelques pas par-là, et rejoint finalement Myrane.*\n\n\n- Quelle affaires... Je n'ai pour ma part rien qui fasse office de preuve devant un tribunal, mais bien assez pour rendre légitimes vos soupçons.\n\n\n*Adresse-t-il simplement à leur coordinatrice avant de se tenir droit, attendant qu'on le débarrasse magiquement de cette horrible tenue dans un premier temps et que ses camarades fassent part de leurs propres découvertes dans un second.*"
         }
       ],
-      "location_description": "*Suite à une transformation qui lui aura provoqué une gêne encore plus grande, Lewis se tourne vers la camarade qui questionne l'ensemble du groupe. La réponse est assez évidente, en l'occurence, alros il se contente de la souligner en montrant sa tenue et s'avance le premier vers la taverne. Sa posture, toujours élégante, montre tout-de-même plus de réserve qu'à l'accoutumée et les muscles de son visage son contractés. Ce qui pourrait passer pour du stress est en réalité la conséquence d'une position à laquelle il lui faudra un pue de temps pour s'adapter.*\n\n-# 💭 C'est elle, la superviseuse. Très bien...\n\n*Long soupir. Lewis doit se reprendre... et heureusement, son aisance sociale l'y aide. Le \"drame\" est passé, il porte cette ignoble tenue et a été vu dedans. Maintenant, seule la mission demeure, il se permet donc de prendre la parole d'une voix un peu plus aiguë et d'un ton un peu plus pressé qu'à l'accoutumée.*\n\n- Bonjour bonjour. Je suis Alan, des Bichons. Nous avons rendez-vous pour des entretiens !\n\n*Un large sourire suit. Lewis est animé d'une fougue qui, mêlée à sa gêne, devrait lui donner l'air du danseur stressé par un entretien d'embauche qu'il est supposé incarner. À l'arrivée de ses comparses, il ne manquera d'ailleurs pas de présenter ceux qui sont vêtus similairement à lui comme les autres membres de la joyeuse troupe.*"
+      "location_description": "*Suite à une transformation qui lui aura provoqué une gêne encore plus grande, Lewis se tourne vers la camarade qui questionne l'ensemble du groupe. La réponse est assez évidente, en l'occurence, alros il se contente de la souligner en montrant sa tenue et s'avance le premier vers la taverne. Sa posture, toujours élégante, montre tout-de-même plus de réserve qu'à l'accoutumée et les muscles de son visage son contractés. Ce qui pourrait passer pour du stress est en réalité la conséquence d'une position à laquelle il lui faudra un pue de temps pour s'adapter.*\n\n-# 💭 C'est elle, la superviseuse. Très bien...\n\n*Long soupir. Lewis doit se reprendre... et heureusement, son aisance sociale l'y aide. Le \"drame\" est passé, il porte cette ignoble tenue et a été vu dedans. Maintenant, seule la mission demeure, il se permet donc de prendre la parole d'une voix un peu plus aiguë et d'un ton un peu plus pressé qu'à l'accoutumée.*\n\n- Bonjour bonjour. Je suis Alan, des Bichons. Nous avons rendez-vous pour des entretiens !\n\n*Un large sourire suit. Lewis est animé d'une fougue qui, mêlée à sa gêne, devrait lui donner l'air du danseur stressé par un entretien d'embauche qu'il est supposé incarner. À l'arrivée de ses comparses, il ne manquera d'ailleurs pas de présenter ceux qui sont vêtus similairement à lui comme les autres membres de la joyeuse troupe.*",
+      "location_image": "channel_images/quartiers.jpg"
     },
     {
       "id": "scene_place_1",
@@ -9477,28 +9506,28 @@ window.RP_DATA = {
       "channel_clean": "Place",
       "title": "Place — Scène 1",
       "actors": [
-        "Ethan Jaster",
-        "Asior Eveus",
-        "Red Roadman",
-        "LE CONSEILLER",
-        "Florianne Hoster",
-        "Adelina Del Fuego",
-        "Isis Faerieth",
-        "Jin Alurantes",
-        "Katelynn Hoffmann",
-        "Romy",
-        "Aryanna Erhendil",
-        "Hedwig Von Glanzestern",
-        "Lewis Bamer",
         "Lorna Is'Hor",
-        "Idelmée Cadree",
-        "Vosk Sulyvan",
-        "Ren Urugaki",
+        "Romy",
+        "Adelina Del Fuego",
+        "LE CONSEILLER",
+        "Katelynn Hoffmann",
         "Akane Tsukishiro",
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Lewis Bamer",
+        "Red Roadman",
+        "Ethan Jaster",
+        "Jin Alurantes",
+        "Florianne Hoster",
+        "Ren Urugaki",
+        "Idelmée Cadree",
+        "Hedwig Von Glanzestern",
+        "Asior Eveus",
         "Emil Camille Rebenok",
-        "Nick Sol"
+        "Nick Sol",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Ethan Jaster",
+      "main_actor": "Lorna Is'Hor",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-12T06:29:43Z",
@@ -10085,7 +10114,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Début de la patrouille !\n\n**Pour les membres du Voile d'Ivoire, la soirée s'était terminée de manière plus calme que l'après-midi et la soirée. Le buffet était bien évidement excellent, mais aussi les gens de la guilde avait laissé des petites attentions assez douces pour les nouveaux venus. De quoi se changer dans des tenues sympathiques pour la vie dans le forum, mais aussi une tenue pour se balader dans les rues et porter les fières couleurs de la guilde. Elle ne sont bien évidement pas obligatoire, ce qui l'est par contre c'est la médaille qui atteste la réussite du test d'entrée à la cour des mages mais aussi leur appartenance. **\n\n**Les recrues se sont alors levés de bonne heure, peut-être qu'individuellement ils sont matinaux, mais cette fois c'était la guilde entière qui l'était. Pour leur donner quelques minutes de plus Hector étaient venus les chercher après le meeting matinal, sa bonté le perdra surement, mais ensuite il s'était assuré de passer de bonne heure pour réveiller tout le monde et leur donner rendez-vous à l'entrée de la guilde. Une fois ceci fait, Hector prit les devants pour partir. Il avait annoncé que sur le chemin il annoncerait les tenants et aboutissants de la patrouille, et le voilà qu'il commence.**\n\n> Avant toute choses, ne prenez peur de rien, ce qu'on fait aujourd'hui peut-être angoissant mais il deviendra habituel avec la pratique et l'habitude. \n\n**Son dos droit et sa démarche très tranquille, Hector avant les bras ballants comme presque pas préoccupé par l'idée qu'il puisse être en danger. Sans voix était un peu plus grave étant donné que le matin avait cet effet sur les hommes, mais elle était toujours aussi douce.**\n\n> Chaque membre du Voile d'Ivoire est dans une escouade du matin ou de l'après-midi, sauf si vous êtes partit dans une mission. Les escouades sont souvent supervisées par un mage de rang 3, comme moi actuellement et dans ces dernières il peut se trouver des mages de rang 2 ou 1 si le but est de le faire venir dans notre guilde. Lors de ces patrouilles, l'escouade se balade dans la zone qui lui a été donnée, qui est très petite vu que nous sommes très nombreux, et on aide les habitants. Aider à mettre en place un marchant, aider une mère avec son linge ou un enfant à récupérer un chat. On assure la sécurité de cette zone et les habitants savent nous le rendre. \n\n**La marche du capitaine de l'escouade se fini en face du petit pont qui passe au dessus de la rivière. Dans son dos se trouvait leur destination. Pour les habitant d'Esperia qui connaisse la strate de la classe moyenne, il savent que derrière lui se trouve le marché du Quartier Sud-Ouest, très réputé pour son activité matinale, qu'elle soit bonne ou mauvaise. C'est une place qui saura tester les recrues à garder leur sang-froid mais aussi leur montrer ce qu'est le véritable point fort du Voile d'Ivoire. Hector se tient droit comme un piquet avec un regard fier en leur direction, imbibé d'espoir. C'est nouveau pour lui et l'ambition qui brule dans ses yeux est presque enivrante. Une personne tant motivé sait donner la patate à ses comparses d'un simple regard.**\n\n> Des questions ?\n\n**Pour les âmes plus curieuse, dans le fond de l'autre côté du pont légèrement sur la gauche, se dessine des visages. Un jeune garçon qui pointe alors Hector du doigt et ce qui semble être sa mère avec un panier en osier qui le tient pour éviter qu'il s'excite un peu trop et dérange l'homme aux cheveux gris.**",
-      "location_image": "https://i.pinimg.com/736x/2d/a5/95/2da595898c39d92a0f0ababc933d6dc7.jpg"
+      "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
       "id": "scene_ar_ne_1",
@@ -10094,28 +10123,28 @@ window.RP_DATA = {
       "channel_clean": "Arène",
       "title": "Arène — Scène 1",
       "actors": [
-        "Asior Eveus",
-        "Red Roadman",
-        "LE CONSEILLER",
-        "Adelina Del Fuego",
-        "Isis Faerieth",
-        "Jin Alurantes",
-        "Katelynn Hoffmann",
-        "Romy",
-        "Aryanna Erhendil",
-        "Hedwig Von Glanzestern",
-        "Brutus Redwitch",
-        "Idelmée Cadree",
-        "Kenji Takahashi",
-        "Vosk Sulyvan",
         "Oeil",
-        "Septimus Kales",
-        "Ren Urugaki",
-        "Akane Tsukishiro",
+        "Brutus Redwitch",
+        "Romy",
         "Sha'al Langster",
-        "Nick Sol"
+        "Septimus Kales",
+        "Adelina Del Fuego",
+        "LE CONSEILLER",
+        "Katelynn Hoffmann",
+        "Akane Tsukishiro",
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Red Roadman",
+        "Jin Alurantes",
+        "Kenji Takahashi",
+        "Ren Urugaki",
+        "Idelmée Cadree",
+        "Hedwig Von Glanzestern",
+        "Asior Eveus",
+        "Nick Sol",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Asior Eveus",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-14T06:18:54Z",
@@ -11114,7 +11143,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-03T16:08:32Z",
           "content": "> *Ce fut un rire fou, déchirant, qui secoua ses épaules voûtées, fit danser ses mains tremblantes autour de sa tête en hoquets convulsifs. Des larmes jaillirent de son unique œil tandis que son ventre se crispait de spasmes douloureux tellement ce qui vient de se passer est juste incroyable incroyables ! Ils s’en sortaient, ils s’extirpaient enfin de ce cauchemar... Elle prodigua ensuite lui mettre des superbes doigts d’honneur en direction de ce qui restait de Lucas, crachant tout ce qu’il lui inspirait pour ce qu’il avait dit et fait.*\n\n- ON VA T'ENTERRER DANS UNE BOÎTE À SOUPE, MISÉRABLE PITOYABLE IMBÉCILE DE GUIGNOL QUI S’EST CONDUIT À SA PROPRE AUTODESTRUCTION ! NIAH~\n\n> *Les flammes jaillirent, dévorant tout ce qui se trouvait dans l’arène, stoppant net la frénésie de la Pourpre, signe qu'il fallait fuir vers l’issue par où ils sont entrées, aux côtés des camarades, abandonnant derrière elle ce brasier infernal direction la place de tout à l’heure ; Elle espérait y retrouver son œil.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_petit_salon_1",
@@ -11123,12 +11153,12 @@ window.RP_DATA = {
       "channel_clean": "Petit-Salon",
       "title": "Petit-Salon — Scène 1",
       "actors": [
-        "Sha'al Langster",
+        "Red Roadman",
         "Jin Alurantes",
-        "Vosk Sulyvan",
-        "Red Roadman"
+        "Sha'al Langster",
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Sha'al Langster",
+      "main_actor": "Red Roadman",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-15T05:57:13Z",
@@ -11247,7 +11277,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "**-** \"Alors, dites moi, qu'est-ce que vous venez chercher dans mon établissement ? Qu'est-ce que vous avez à m'apporter, jeune *Bichon* ?\"\n\n> *La musique règne pour briser le silence qu'inflige un endroit pareil. La pièce est tout aussi richement ornée que le reste de la Maison de Velours. Les multiples bibliothèques semblent renfermer un savoir immense qui contraste avec la dure réalité du lieux : ici, la luxure et l'argent sont le seul langage qui valent vraiment quelque chose aux yeux de la Régente.*\n\n> *Assise sur un long banc molletonné, la Dame aux cheveux d'un rouge éclatant prends place dans cet endroit qu'elle a tant cotoyé. La fumée vient encombrer les poumons de Red, ne lui laissant pas tellement le choix que de la respirer. Elle ne semble pas gênante pour ses organes, mais son corps interprète l'information différemment : il ne s'agit pas que d'une fumée ordinaire. Elle est artificielle. Les muscles de Red se détendent, à mesure qu'il reste dans la pièce. Le regard perçant de Sha'al s'ancre dans ses yeux à son tour : elle attends des réponses. Aurait-elle d'ailleurs omis de demander son nom et prénom ? Son identité n'avait-elle aucune réelles à ses yeux ?*",
-      "location_image": "https://i.goopics.net/vaicwp.jpg"
+      "location_image": "channel_images/petit-salon.jpg"
     },
     {
       "id": "scene_place_de_grandpalais_3",
@@ -11256,11 +11286,11 @@ window.RP_DATA = {
       "channel_clean": "Place-de-Grandpalais",
       "title": "Place-de-Grandpalais — Scène 3",
       "actors": [
+        "Lydounne",
         "Frey Guðfrøðr",
-        "Aryanna Erhendil",
-        "Lydounne"
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Frey Guðfrøðr",
+      "main_actor": "Lydounne",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-15T23:39:00Z",
@@ -11497,7 +11527,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-14T12:26:15Z",
           "content": "``` Scène terminée | Salon Libre ```"
         }
-      ]
+      ],
+      "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
       "id": "scene_bureau_de_shaal_1",
@@ -11506,11 +11537,11 @@ window.RP_DATA = {
       "channel_clean": "Bureau-de-Shaal",
       "title": "Bureau-de-Shaal — Scène 1",
       "actors": [
-        "Jin Alurantes",
         "LE CONSEILLER",
+        "Jin Alurantes",
         "Adelina Del Fuego"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-16T02:59:42Z",
@@ -11609,7 +11640,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-25T06:41:59Z",
           "content": "# ⊱═──────── ⚜️  Lewis-Phoebe d'Ashbourne  ⚜️  ──────────═⊰\n\n\n*Le signal. Lewis venait de l'entendre et en croisant le regard d'Ava, il s'assure que sa camarade est aussi renseignée que lui. Malheureusement, la fouille doit prendre fin. L'homme replace  donc en vitesse tout ce qu'il a touché, ferme correctement les tiroirs et, ayant heureusement pris le soin de refermer la cache où il avait trouvé la dague, il quitte le bureau sans demander son reste...*"
         }
-      ]
+      ],
+      "location_image": "channel_images/bureau-de-shaal.jpg"
     },
     {
       "id": "scene_isolement_1",
@@ -11619,8 +11651,8 @@ window.RP_DATA = {
       "title": "Isolement — Scène 1",
       "actors": [
         "Inzu Sravel",
-        "Jasp Nah",
-        "Nick Sol"
+        "Nick Sol",
+        "Jasp Nah"
       ],
       "main_actor": "Inzu Sravel",
       "is_solo": false,
@@ -11740,7 +11772,8 @@ window.RP_DATA = {
           "content": "**Nick continue de manger, fixant droit dans les yeux la femme en face de lui. Il se demande qui elle était. Était-elle aussi importante qu'Inzu ? Peut-être pas, mais il serait content d'en savoir un peu plus sur elle. Heureusement, sa bouche ne laisse sortir aucun mot, car l'idiot se gave la gueule de nourriture pour éviter qu'un son s'en échappe.**\n\n> Mmh mmh !\n\n**Grogne doucement Nick tout en hochant la tête, ayant la bouche pleine il ne pouvait que faire ce bruit pour montrer son attention. Il écoute attentivement les instructions et les informations que peut lui donner la femme. Elle est la seule à croire ouvertement en sa victoire, et cela lui fait terriblement chaud au cœur, assez pour que la flamme de l'espoir s'embrase de nouveau en lui comme un feu de joie.\n\nLe grand blanc, à la fin des explications, fixe les deux hommes. Il pose ses couverts et se lève de sa chaise tout en faisant le salut militaire en fixant la dame devant lui.**\n\n> Oui, cheffe !\n\n**S'exclame t-il joyeusement, comme si la suite n'allait pas être un cauchemar certain.**\n\n> Je ferai de mon mieux ! Puis Inzu a dit que je devais rendre la fierté à mon uniforme. Je ne veux pas le décevoir et veux honorer la confiance qu'il a placée en moi. Je ferai de mon mieux pour réussir à battre Hector, même si... même s'il paraît presque imbattable... MAIS ! Il y a une chance que ce duel se termine par une victoire pour moi\n\n**Il bombe le torse, comme pour montrer qu'il en est capable, même si les probabilités sont contre lui lors de ce futur duel. Nick fixe les documents sur la table et tend une main pour essayer de les prendre et les lire. Il se dit que ce sont certainement des documents au sujet d'Hector et qu'il se doit de les lire.**"
         }
       ],
-      "location_description": "```Les pas lourds s'abiment sur le sol. Combien de temps a passé alors qu'il était encore entrain de parler avec les membres de son escouade dans la mission ? Son dernier souvenir est le contact froid et puissant d'un Fouet qui s'abat contre sa mâchoire, qui la brise d'ailleurs par la même occasion. Brisée ? Il suffit d'un contact de ses doigts, d'une estimation par son cerveau pour voir qu'il a été soigné. Ses mains ? Il ne peut pas les buger, elles sont solidement attachées contre une chaise qui ne le laisse pas libre de ses mouvements. Ses pieds ? Idem mais au niveau des pieds de lac chaise. Son visage ne lui donne pas d'information, un sac de féculents est placé sur son visage, sa bouche est solidement nouée laissant juste de quoi respirer.\n\nLa situation est familière, il est à la place de l'homme qu'il avait du juger lors de ses premiers pas dans la guilde pourpre.```"
+      "location_description": "```Les pas lourds s'abiment sur le sol. Combien de temps a passé alors qu'il était encore entrain de parler avec les membres de son escouade dans la mission ? Son dernier souvenir est le contact froid et puissant d'un Fouet qui s'abat contre sa mâchoire, qui la brise d'ailleurs par la même occasion. Brisée ? Il suffit d'un contact de ses doigts, d'une estimation par son cerveau pour voir qu'il a été soigné. Ses mains ? Il ne peut pas les buger, elles sont solidement attachées contre une chaise qui ne le laisse pas libre de ses mouvements. Ses pieds ? Idem mais au niveau des pieds de lac chaise. Son visage ne lui donne pas d'information, un sac de féculents est placé sur son visage, sa bouche est solidement nouée laissant juste de quoi respirer.\n\nLa situation est familière, il est à la place de l'homme qu'il avait du juger lors de ses premiers pas dans la guilde pourpre.```",
+      "location_image": "channel_images/cellules.jpg"
     },
     {
       "id": "scene_tribut_des_sages_1",
@@ -11749,10 +11782,10 @@ window.RP_DATA = {
       "channel_clean": "Tribut-des-sages",
       "title": "Tribut-des-sages — Scène 1",
       "actors": [
-        "Kanta",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Kanta"
       ],
-      "main_actor": "Kanta",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-03-18T13:41:08Z",
@@ -11785,7 +11818,8 @@ window.RP_DATA = {
           "timestamp": "2026-03-21T04:34:53Z",
           "content": "\"J'ai été désigné responsable de l'équipe comportant Alicia du cercle d'azur - elle ne m'a pas donné son nom de famille - et de Nick Sol, de la garde pourpre. Nous avions pour ordres d'explorer le quartier et de joindre madame Swaft, de la garde pourpre. Nous nous sommes dirigés selon le plan fourni par monsieur Swaft.\n\nAu fur et à mesure que nous avancions, nous sommes tombés dans une embuscade, nous nous en sommes rendu compte trop tard et Alicia et moi avons tenté de désamorcer la situation. Un homme chapeauté et masqué par un motif de cible, nous a alors attaqué.\n\nJ'ai lancé mon épée vers lui, ou plus exactement entre lui et nous, pour tenter de créer une couverture et pouvoir nous enfuir. C'était en tous cas ce que je projetais de faire. Au moment ou j'ai lancé mon épée, il était à une centaine de mètres de nous. Au moment où elle a atterri, mon épée le séparait de Nick, qui s'était mis devant Alicia pour la protéger et était en train de se faire étrangler.\n\nNous nous sommes enfui vers l'église occupée par madame Swaft - sans vraiment le savoir, je dois vous l'avouer. Madame Swaft s'est présentée à nous, et nous à elle. Elle nous a également donné de nouveaux ordres : ceux de porter un message pour elle. Je vais d'ailleurs m'acquitter de cette tâche dès à présent.\n\n'Les libérateurs ont une hiérarchie évidente' d'après elle. Ils lui ont donné un nom : Jack, qui serait un homme de main de leur chef, un certain Lukas Monthe. Cependant, elle n'a pas encore eu d'informations concernant le meurtrier de feu Albrecht, si ce n'est que ç'a été le déclencheur de leur invasion.\n\nJe lui ai dit que nous porterions ce message, mais qu'il nous fallait quelques minutes de repos. En effet, Nick Sol, lorsqu'il s'est fait attaqué, a pris beaucoup de dégâts à la gorge. Quand il s'est enfui, il s'est également tordu la cheville. Cela dit, ce ne sont pas les pires blessures qu'il ait reçu de cette mission.\n\nMadame Swaft semblait s'amuser à torturer - non, \"soumettre\" serait plus exact. Elle s'amusait, donc, à soumettre un homme, vraisemblablement un membre des libérateurs. Elle semblait avoir plusieurs hommes brisés à sa solde, certains physiquement, d'autres psychologiquement.\n\nMadame Swaft nous a reproché notre manque de discernement et notre retard. Nick Sol nous a demandé pendant ce sermon, en désignant les hommes soumis que je vous ai évoqué, si nous pensions que monsieur Swaft aimait lui aussi ce genre de pratiques.\n\nL'incongruité de la question m'a fait… C'était à mi-chemin entre l'exaspération et un rire. Toujours est-il que je n'ai pas su garder mon sérieux. Je me tournais vers Nick pour lui répondre que je ne savais pas, et lui demander de se taire et d'éviter les blagues de mauvais goût.\n\nAvant que je ne puisse faire quoi que ce soit, madame Swaft lui a asséné un coup. Au vu de la violence de l'impact, il aurait pu être mortel. Je ne crois pas qu'il l'ait été, cela dit, Nick respirait encore quand je l'ai quitté. Elle m'a également blessé au mollet, ce qui m'a fait tomber au sol. Elle nous a ensuite fait davantage de reproches, tout en m'écrasant la cage thoracique.\n\nJe n'ai pas bougé, j'ai simplement écouté en silence. Au delà du fait que lutter contre ma supérieure ne servirait à rien, je pense que si j'avais essayé, elle aurait tenté de me tuer à mon tour.\n\nAprès avoir mis hors de combat notre camarade, elle a décrété l'échec de notre mission, y a mis fin, et nous a ordonné de retourner à l'entrée du quartier Ouest, tandis qu'une femme nommée Niel - elle fait partie du Voile, mais je ne la connaissais pas - nous a accompagné en s'occupant du corps de Nick.\n\nFin du rapport, monsieur Swaft m'ayant ordonné de venir ici au plus vite.\""
         }
-      ]
+      ],
+      "location_image": "channel_images/tribut-des-sages.jpg"
     },
     {
       "id": "scene_pont_des_deux_3",
@@ -11849,7 +11883,8 @@ window.RP_DATA = {
           "content": "```Scène close.```"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_agora_des_reines_2",
@@ -11858,11 +11893,11 @@ window.RP_DATA = {
       "channel_clean": "Agora-des-Reines",
       "title": "Agora-des-Reines — Scène 2",
       "actors": [
-        "Ren Urugaki",
         "Vosk Sulyvan",
+        "Ren Urugaki",
         "Katelynn Hoffmann"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Vosk Sulyvan",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-09T18:24:02Z",
@@ -12069,7 +12104,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-30T13:47:52Z",
           "content": "``` Scène terminée | Salon libre ```"
         }
-      ]
+      ],
+      "location_image": "channel_images/agora-des-reines.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_3",
@@ -12078,11 +12114,11 @@ window.RP_DATA = {
       "channel_clean": "Parc-des-Cardinaux",
       "title": "Parc-des-Cardinaux — Scène 3",
       "actors": [
-        "Vosk Sulyvan",
         "Isis Faerieth",
+        "Vosk Sulyvan",
         "Aryanna Erhendil"
       ],
-      "main_actor": "Vosk Sulyvan",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-10T21:13:40Z",
@@ -12200,7 +12236,8 @@ window.RP_DATA = {
           "content": "*Pourtant, elle ne possède toujours pas son nom.*\n\n> *Ses pas s'éloignent. La silhouette du Sombre Rêveur se dissipe dans l'horizon, alors que celle de l'Incomprise reste immobile. L'accumulation des incompréhensions sont nombreuses, elles s'empilent, à mesure qu'elles ont été prononcées. Ses paupières ne daignent pas humidifier ses rétines sèches. Le sentiment de stupéfaction est ancré et s'est emparé de ses mouvements sans aucun doute. Son épaule est pressée, mais son regard ne se détourne pas de l'Horizon. Ses mots sonnent faux ? Ou est-ce là la Peur qui s'exprime ? Qu'est-elle, finalement ?*\n\n*Hein ?*\n\n> *Des milliards de questions qui s'impriment dans l'esprit de la demoiselle au Chaos sans trouver de réponses satisfaisantes. Quelle est la venue de celui qui s'impose comme un émissaire de la Vérité, sème le doute et repars sans demander son reste ? Sa magie blesse le Voile ? Est-ce là une allégorie de ce torrent en bichromie noir et blanc qu'elle observe lors de ses moments d'incertitudes ou parle-t-il de l'ivoire qui orne son médaillon ? Comment peut-elle représenter une menace, elle qui ne cesse de fuir chaque conflit, chaque difficulté comme un enfant désemparé ? Quelle menace sa magie peut-elle engendrer ? Est-ce Némésis ? Erèbe ? Nyx ? Lequel de ceux-là sont la menace imminente ? Ou bien il s'agit de l'usage qu'elle en fait, de les appeler, les implorer ? Vont-ils la blesser un jour ? Némésis, dans son équilibre légendaire, fera-t-elle payer de sa vie à la Mage pour ces aides quotidiennes ? Ou s'en ira-t-elle chercher auprès des proches qu'elle apprécie ? Aryana, Nah ? Inconcevable, elle ne peut tout de même pas mettre leur vie en danger, si ?*\n\n*L'incertitude s'empare de ses larmes et les fait couler sans raisonnement; dans un silence de mort.*\n\n> *Une porte d'entrée ? Alors, ils sont physiques ? Au final, que sait-elle d'Eux ? Ils lui confèrent force et sorts, dans un ballet qu'ils doivent trouver plus qu'amusant, mais qu'ont-ils à y gagner ? Est-ce __elle__,le prix désigné ? La modique somme à payer ? Et ci ce n'est elle, serait-ce ses proches ? Alors, la question continue de se poser, elle se prolonge dans un dilemme éthique qui n'a aucun putain de sens, arrêter ou continuer ? Arrêter, c'est refuser tout ce qui lui reste, cette fragile liberté que le Voile d'ivoire lui offre et renoncer à l'indépendance qui lui est offerte ? Arrêter, c'est devenir la Mage la plus lâche de tous les temps ? Continuer, c'est condamner ceux et ce qui l'entoure ? Continuer, c'est offrir une porte à ces entités ? Est-ce une mauvaise chose ?*\n\n*Il(s) sera là pour la voir chuter.*\n\n> *Il le sera sûrement; car elle chutera. Sa personne disparaît, et ses mots cruels raisonnent et résonnent dans sa boîte crânienne. Une douleur s'y loge, dans le cortex frontal. Enfin, ses paupières se ferment un bref instant pour hydrater la surface de sa cornée. Un clignement rapide et le Voile se dévoile.*\n\n*Hein ?*\n\n> *Pourquoi cette griffure obstrue sa vue dans un bleu des plus azur ?*\n\n*Frénétiquement, elle cligne des yeux.*\n\n> *Elle ne disparaît pas, elle s'obstine à rester et à entraver sa vision. Pourtant, une Voix s'exclame. Un frisson parcours l'échine de la demoiselle, mais il a toujours été là, elle le sent. Une envie de vomir s'empare de sa gorge alors que celle-ci se noue de force pour conserver tout cela à l'intérieur. La Peur, la vraie, celle qui la traverse est froide comme la mort. Mais ce n'est pas lui, ça ne peut pas, ce n'est pas lui.? C'est autre chose. Elle en est convaincue.*\n\n*Sur le rebord de cette fontaine où un vœu à été formulé dans la plus pure des trahisons, c'est transcendée par une présence inconnue que la silhouette de l'Incomprise se tient, désemparée.*"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_ar_ne_hurlante_2",
@@ -12209,15 +12246,15 @@ window.RP_DATA = {
       "channel_clean": "Arène-Hurlante",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Inzu Sravel",
-        "Nick Sol",
+        "Brutus Redwitch",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Brutus Redwitch"
+        "Nick Sol",
+        "Aryanna Erhendil",
+        "Inzu Sravel"
       ],
-      "main_actor": "Inzu Sravel",
+      "main_actor": "Brutus Redwitch",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-12T16:43:30Z",
@@ -12322,7 +12359,8 @@ window.RP_DATA = {
           "timestamp": "2026-04-15T10:02:18Z",
           "content": "**Mission terminée. La pression ne peut redescendre pour autant, il ne peut oublier toutes les atrocités ainsi que toutes les horreurs qu’il a vu lors du périple accompagné de ses deux compagnons. Mais fort heureusement, ils en sont sortis (presque) indemnes. \n\nM’enfin, l’heure n’est plus à la tourmente, en tout cas pas pour lui, mais pour un autre Uzen, qui plus est de la Garde Pourpre, un miroir parfait de ce qu’était Kenji, sans la stupidité bien sûr. \n\nEn parlant de ce stupide Uzen, il était l’heure pour lui de payer le prix de son insolence : un duel de sang. Pendant ce temps dans les gradins, chacun des membres de la guilde rougeâtre entrent en scène. Et celle du Sisyphe fut l’une des dernières, si ce n’est la dernière. Observant que tout le monde était déjà la, l’homme alla s’installer un peu à l’écart de tous, se contentant de se sustenter des pommes qu’il venait tout juste de se procurer.**\n\n- Quel con sérieux. Regarde ou ça t’a mené d’être arrogant. \n\n{En pensée : Donc c’était lui, l’insolent dont faisant référence Dame Swaft. Je sais pas pourquoi ça ne m’étonne pas de ce type.}\n\n**Visiblement, ils étaient tous là pour une chose : soutenir leur camarade qui, on le sait tous, va évidemment se faire écraser par son adversaire, bien trop puissant pour lui. Mais pour autant, une guilde se doit de se soutenir jusqu’au bout. Alors l’homme se devait de rejoindre ses comparses dans cet esprit de camaraderie, en le faisant à sa manière..**\n\n- Oh l’abruti de service, si tu te fais humilier je descends te casser la gueule personnellement, compris bouffon ? J’te conseille de faire honneur à la guilde."
         }
-      ]
+      ],
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_ar_ne_hurlante_3",
@@ -12331,18 +12369,18 @@ window.RP_DATA = {
       "channel_clean": "Arène-Hurlante",
       "title": "Arène-Hurlante — Scène 3",
       "actors": [
-        "Inzu Sravel",
+        "Oeil",
         "Aegnor Othar",
-        "Nick Sol",
+        "Hector Swaft",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Hector Swaft",
-        "Aryanna Erhendil",
+        "Nick Sol",
         "Loyis Delacroix",
+        "Aryanna Erhendil",
         "Arun Acharya",
-        "Oeil"
+        "Inzu Sravel"
       ],
-      "main_actor": "Inzu Sravel",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-04-16T07:15:46Z",
@@ -12525,7 +12563,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-29T19:40:52Z",
           "content": "> C'est évident, mais la chose qui me tracasse c'est que nous sommes que nous 4. Difficile de penser que nous sommes les seuls Uzen de ce royaume \n\n**Il pointe le sang sur le sol avant de fixer l'homme au grand égo avec insistance avant de finalement devoir le quitter des yeux, il s'avance lui aussi mais de manière beaucoup plus rapide que les autres prenant donc de l'avance au niveau de sa position face à ses collègues, arrivant directement sur la droite de l'homme à 5 mètres de lui, cherchant clairement à passer derrière lui pour le prendre en traître.**\n\n> Rentre ta langue, c'est un conseil\n\n**Dit-il de manière presque arrogante, osant sous entendre qu'il sait mieux que lui se qu'il devrait faire, Nick ralentit la cadence en arrivant sur le flanc de l'homme fou, ne le quittant pas du regard. Nick initie l'assaut au moment où chacun seront en position, frappant de manière violente le sol pour faire voler des multiples graviers et sables dans la direction de l'homme qui se dresse comme une bête face à lui. Il fonce de suite vers l'homme pour essayer de lui attraper avec ses deux mains un de ses bras. Nick sait pertinemment que le danger se dresse en face de lui mais il va tenter tout de même un assaut, si avec une énorme chance il arrive à l'attraper, Nick va essayer de tirer l'homme au sol de toutes ses forces, même si cela lui coûtera le fait que ses épaules se deboites**"
         }
-      ]
+      ],
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_verger_des_p_ch_s_2",
@@ -12584,7 +12623,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "``` ``` \n\n**Durant sa visite du Bastion Écarlate, Hana finira par poser pied au sein de cet endroit elle viendra alors l'observer marchant calmement sur ces chemins blanc entouré de plantes d'une couleur écarlate. Elle commencera alors une simple balade dans ce verger déposant son regard sur ce paysage qu'elle ne pouvait s'empêcher d'admirer, durant cette dîte marche Hana s'accroupira à nombreuses reprises pour être au plus proche des plantes et ainsi pouvoir mieux observer les détails de ces dernières. La jeune femme ne connaissait pas l'histoire de ce verger ne pouvant réellement imaginer ce qui a bien pu se passer entres ces arbres blancs, cependant quel que soit l'évènement qui a pu se dérouler en ces lieux cela appartient à l'histoire de la Garde Pourpre qu'elle a décider de rejoindre et elle ne le regrette en aucun cas.**\n\n**Hana s'enfoncera de plus en plus au sein du verger admirant le paysage s'offrant à elle, un lieu pour le moment calme. La jeune femme souhaitait en profiter avant que le brouhaha d'un rassemblement en ces lieux viennent déranger le silence que lui offre la nature, elle n'était pas contre une rencontre avec d'autres individus mais il est vrai qu'elle n'était pas la plus grande amatrice de rassemblement de masse où les voix peuvent se superposer sans qu'on puisse comprendre au final un traitre mot de son interlocuteur, c'est bien pour cette raison qu'Hana avait décider de pour le moment faire bande appart et de ne pas forcément se mélanger à un groupe. Cela pouvait être une bonne comme une mauvaise chose pour elle ne pas se rapprocher de ses camarades dans l'immédiat pourrait lui fermer certaines portes dans le futur cependant la prométhéenne ne se fiais pas à cela.**\n\n **Durant sa longue marche du coin de l'oeil Hana pourra voir quelque chose d'intriguant, venant se rapprocher de ce petit détails entre les plantes un léger sourire s'affichera sur son visage tandis qu'elle était accroupi en observant ce sang se cachant entre les plantes. Comme elle pouvait le penser ce lieu possède une histoire qu'elle soit récente ou non, ses suppositions ont pu s'accentuer lorsqu'elle releva le regard et vu sur ces arbres blancs des éraflures, ce n'était pas naturel cela Hana en était convaincu mais elle n'était pas non plus trop surprise après tout  rien que l'arène hurlante annonçant l'ambiance de la Garde Pourpre. La jeune femme viendra alors se redresser après avoir pu observer ce sang et ces éraflures venant doucement s'étirer, elle reprendra alors sa marche s'enfonçant encore une fois dans ce verger.**\n\n**Après un certain moment elle finira par arriver dans un coin qui l'attirait, venant se rapprocher d'un arbre elle déposera sa main contre le tronc de celui-ci toujours ce petit sourire afficher sur son visage**\n\n*\"Quelque soit l'endroit, la nature reste magnifique dans la plus part des cas.\"*\n\n**Suite à ces quelques mots prononcés par la prométhéenne cette dernière viendra décrocher le bâton de son dos venant lentement s'assoir dos contre cet arbre, elle sortira un petit chiffon de l'une de ses poches récupérés au préalable dans sa chambre puis elle déposera son bâton sur ses genoux et débutera un simple nettoyage de ce dernier. Des gestes simple mais lent prenant soin de ce qui lui sert de catalyseur, un cadeau offert par son père lorsqu'elle fût capable de maîtriser son manaclyste comme il fallait un simplement souvenir parcourant l'esprit d'Hana fît son sourire s'agrandir sur son visage tandis qu'après avoir entretenue son bâton elle vient le déposer à côté d'elle puis profitera alors de ces fleurs l'entourant, de ces arbres dissimulant le paysage et de ce calme offert par ce lieu possédant une grande histoire pour Hana cet endroit était parfait, elle l'appréciait et était heureuse d'avoir pu découvrir un lieu comme celui-là au sein du Bastion Écarlate de la Garde Pourpre.**",
-      "location_image": "https://cdn.discordapp.com/attachments/1328715287704371210/1473277052995240090/8ddeb80719d2bf136c8488c287982fd7.png?ex=6a7078ad&is=6a6f272d&hm=1422dad60d5dbfb801d2e82f8ef0d6ebf689cd2e426ae13eb8e20588722ac813&"
+      "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
       "id": "scene_avenue_des_armuriers_2",
@@ -12622,7 +12661,8 @@ window.RP_DATA = {
           "timestamp": "2026-05-25T11:21:03Z",
           "content": "`scène libre`"
         }
-      ]
+      ],
+      "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
       "id": "scene_l_epicurien_1",
@@ -12631,18 +12671,18 @@ window.RP_DATA = {
       "channel_clean": "L-Epicurien",
       "title": "__Règles du jeu :__",
       "actors": [
-        "Septimus Kales",
-        "Nick Sol",
-        "Kenji Takahashi",
-        "Tsutomu Yamamoto",
-        "Maëll Fol'Dun",
-        "Vosk Sulyvan",
-        "Myrea M",
-        "Ren Urugaki",
         "LE CONSEILLER",
+        "Myrea M",
+        "Kenji Takahashi",
+        "Nick Sol",
+        "Maëll Fol'Dun",
+        "Septimus Kales",
+        "Vosk Sulyvan",
+        "Ren Urugaki",
+        "Tsutomu Yamamoto",
         "Adelina Del Fuego"
       ],
-      "main_actor": "Septimus Kales",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T09:48:19Z",
@@ -13073,7 +13113,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Le Rouge et le Noir.\n\n**__Règles du jeu :__**\nChaque joueur démarre le jeu avec une base de 100 points. A chaque fois que le joueur se trompe, il boit un shot. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n*Exemple :* Pierre et Jacques jouent au jeu. Pierre à 2 en résistance, Jacques n'a qu'1. Lorsque Pierre se trompera, il perdra 10 points sur les 100 qui lui sont octroyés. Lorsque Jacques se trompera, il perdra 15 points sur les 100 qui lui sont octroyés. \n\n**__Déroulé du jeu :__**\n\nCe jeu d’alcool se déroule en 4 tours. Les cartes sont posées alignées par 4, faces cachées. \n\n**Premier tour :** le joueur doit deviner si la carte est rouge ou noire. S’il a tort, il boit une gorgée, s’il a raison, il fait boire quelqu’un d’autre. Il garde la carte face à lui.\n\n**Deuxième tour :** le joueur doit dire « plus » ou « moins » que la première carte qu’il a reçue. S’il gagne, il fait boire 2 gorgées à qui il veut, s’il perd, c’est lui qui boit.\n\n**Troisième tour :** Il doit deviner si la prochaine carte se situera à l’intérieur des deux qu’il possède déjà ou à l’extérieur.\n\n**Dernier tour :** deviner si la carte à piocher sera un carreau, un cœur, un pique ou un trèfle.\n\nLe tour de chaque joueur s'arrête lorsqu'il se trompe et le tour passe à un autre joueur.\n\nUn jeu de chance, et de résistance.",
-      "location_image": "https://i.goopics.net/sr8x3r.jpg"
+      "location_image": "channel_images/l-epicurien.jpg"
     },
     {
       "id": "scene_hall_des_f_tes_1",
@@ -13082,20 +13122,20 @@ window.RP_DATA = {
       "channel_clean": "Hall-Des-Fêtes",
       "title": "Hall-Des-Fêtes — Scène 1",
       "actors": [
-        "Okayama",
+        "Asior Eveus",
+        "LE CONSEILLER",
+        "Brutus Redwitch",
+        "Katelynn Hoffmann",
         "Selena Moon",
         "Jin Alurantes",
         "Lucia Fiorella",
-        "Katelynn Hoffmann",
-        "Velka Valcyrion",
         "Jasp Nah",
-        "Asior Eveus",
+        "Velka Valcyrion",
         "Aryanna Erhendil",
         "Lewis Bamer",
-        "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Okayama"
       ],
-      "main_actor": "Okayama",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T11:21:14Z",
@@ -13400,7 +13440,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Introduction des festivités\n\n*L'entrée se dresse devant dans un endroit de la belle ville non loin du Quartier Est, elle se présente au dessus d'un petit monticule, une certaine colline appelée Atrium, et la belle habitation dessus porte le même nom. D'en bas, des chariot très stylisés se sont mis à disposition pour vous remonter, mais c'est aussi là que ce font les vérifications des identités. Il y a plusieurs moyens d'attester de votre identité, que ce soit votre médaillon ou votre grimoire d'Uriel, vous êtes facilement reconnus. Pour ceux qui ne font pas partit du clergé, de la noblesse ou de la bourgeoisie, vous devrez attendre que votre binôme se présente avec vous autrement vous ne rentrerez tout simplement pas. Une fois en haut, le trajet étant relativement court puisque les chevaux sont des braves bêtes.*\n\n*Une fois arrivés devant les grandes portes, un homme se tient devant elle. Il est très... élégant mais aussi brillant. Un homme au style élégant et aux manières raffinées, il se tient devant vous discutant avec une autre femme qui elle aussi est au summum de l'élégance. Un couple qui attiserait les plus grandes jalousies, mais la distance entre eux éprouve une certitude : ils sont uniquement collègues de travail. Rigide et droit, il vous regarde alors qu'une très grande partie des gens se sont présentés dans le jardin d'entrée. Il lève alors une coupe, ordonnant de son simple geste aux servants qui se tenaient sur les côtés du jardin pour former un endroit de réception de passer dans les rangs pour offrir aux jeunes mages et nobles des coupes d'alcool sophistiqué. La meilleure crue d'il y a quelques ans.*\n\n> Bonsoir. Bienvenue à l'Atrium Canopus, la maison de vacances de Sa Majesté, la maison ou les Princes et Princesses ont grandit. En cette belle soirée mais aussi pour fêter votre première mais pas dernière réussite pour Esperia, nous vous accueillons dans un sublime bal. Amusez-vous avec modération !\n\n*Puis dans un volte-face magistral alors que sa coupe de vin se change ne or solide mais liquide à l'intérieur dans une manipulation de l'arcane très fine, il ouvre la porte avec sa collègue. L'intérieur est lumineux mais aussi fournis de nombreux mets avec des personnes responsables qui n'attendent que vous offrir les meilleurs plats d'Esperia.*\n\nVous êtes libre d'après une action d'arrivé de vous rendre dans les différents channels pour discuter avec des joueurs ou les PNJ qui sont mis à disposition. \n\nIci se trouve M. Léonard Mireald, celui qui a ouvert l'Atrium Canopus.",
-      "location_image": "https://i.pinimg.com/1200x/e8/9a/6c/e89a6c56b8c5805efb7774492f48a7e8.jpg"
+      "location_image": "channel_images/hall-des-fetes.jpg"
     },
     {
       "id": "scene_la_ballade_1",
@@ -13409,13 +13449,13 @@ window.RP_DATA = {
       "channel_clean": "La-Ballade",
       "title": "La-Ballade — Scène 1",
       "actors": [
+        "LE CONSEILLER",
         "Katelynn Hoffmann",
         "Aryanna Erhendil",
-        "Vosk Sulyvan",
         "Velka Valcyrion",
-        "LE CONSEILLER"
+        "Vosk Sulyvan"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T11:31:06Z",
@@ -13606,7 +13646,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Une figure distante générant de l'intrigue et de l'admiration\n\n*Il était une évidence que cela faisait quelques longues minutes que cet individu se trouvait ici, par ailleurs il est même possible qui était déjà là alors que les portes de l'Atrium Canopus n'étaient pas encore ouvertes. Il se tient lui aussi droit avec une main posée sur la rambarde de ce lieu. Il ne parle à personne, regardant simplement l'horizon comme s'il était obligé de venir en ces lieux. Sa tenue est digne d'un noble de haut rang, peut-être même siégeant dans les plus hauts conseils. Sa tenue hurle le rouge mais il est impossible de connaître son affiliation à une maison sans lui demander. Par ailleurs s'il était mage de la Cour, son médaillon ne serait pas visible d'un simple coup d'œil. Il reste de marbre, refoulant les personnes intrigués de sa présence de simples présentations mais aussi d'un regard un peu froid. Il attends quelqu'un si ce n'est quelque chose.*\n\nVous êtes libre d'après une action d'arrivé de vous rendre dans les différents channels pour discuter avec des joueurs ou les PNJ qui sont mis à disposition. \n\nIci se trouve M. Salazare Paster, une figure mystérieuse.",
-      "location_image": "https://i.pinimg.com/1200x/71/44/57/7144576ecf0c3e1355a17edd92911aae.jpg"
+      "location_image": "channel_images/la-ballade.jpg"
     },
     {
       "id": "scene_le_bar_des_lions_1",
@@ -13615,15 +13655,15 @@ window.RP_DATA = {
       "channel_clean": "Le-Bar-des-Lions",
       "title": "Le-Bar-des-Lions — Scène 1",
       "actors": [
-        "Selena Moon",
-        "Lewis Bamer",
-        "Jin Alurantes",
-        "Aryanna Erhendil",
-        "Velka Valcyrion",
         "LE CONSEILLER",
-        "Brutus Redwitch"
+        "Brutus Redwitch",
+        "Selena Moon",
+        "Jin Alurantes",
+        "Lewis Bamer",
+        "Aryanna Erhendil",
+        "Velka Valcyrion"
       ],
-      "main_actor": "Selena Moon",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T11:47:31Z",
@@ -13886,7 +13926,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Dans son canapé de velours, elle juge et apprécie les créatures.\n\n*Les mages sont tous prostrés au bar, les choppes bien habillé de cristaux dans les mains alors que dans le fond, au niveau des quelques pauvres tables aux banc de velours carmins se tient une femme seule qui se démarque des autres. Un regard de braise alors qu'elle démontre la noblesse de son personnage à la manière de manger ses différents aliments. Elle n'est pas la seul à apporter une assiette de la grande salle ici, mais elle est la seule à faire preuve d'une telle diligence quand aux respects de la bonne tenue. Des couverts d'un alliage maîtrisé avec véritable finesse, elle observe les mages avec un certain sourire. Nostalgique ou passion intense, il est dur de maintenir un échange visuel avec elle, si ce n'est impossible. Dominatrice née, visiblement puissante et capable, une femme fatale comme ils n'en auraient jamais vu auparavant. Ses mains gantés glissent sur les couverts alors qu'elle continue son simple manège, trouver quelqu'un qui serait digne de partager sa table alors que sa pression féminine s'abat sur lui. Elle fixe les hommes comme les femmes, ajustant sa belle coiffure de flammes pour jouer de ses charmes.*\n\nVous êtes libre d'après une action d'arrivé de vous rendre dans les différents channels pour discuter avec des joueurs ou les PNJ qui sont mis à disposition. \n\nIci se trouve Mme. Félicia Langley, la lionne sortie de sa cage.",
-      "location_image": "https://i.redd.it/reign-of-nightfall-main-story-art-cgs-as-of-2nd-beta-test-v0-ze5y2jj9b8mg1.jpg?width=2800&format=pjpg&auto=webp&s=79fdf8c3a5eb61018f8bcf96225c9e9e177c0272"
+      "location_image": "channel_images/le-bar-des-lions.jpg"
     },
     {
       "id": "scene_salon_1",
@@ -13895,10 +13935,10 @@ window.RP_DATA = {
       "channel_clean": "Salon",
       "title": "Salon — Scène 1",
       "actors": [
-        "Sw dark325",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Sw dark325"
       ],
-      "main_actor": "Sw dark325",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T13:41:44Z",
@@ -13927,7 +13967,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "**Magon lui entrera dans la salle du bras de fer pour voir se qu'il a dans le ventre en terme de force brutes, il était habillé en tenue toute noir avec c'est cheveux longs qui tombé sur ses épaules et le bas du dos.**\n\n{Voyant voir se que j'ai dans le ventres...}\n\n**Se dit-il resserrent la mains dans le creux de sa paume pour en faire un poing.**",
-      "location_image": "https://cdn.discordapp.com/attachments/1500068649174827058/1500130174589731019/133b20b67739d39d34c894231209e434-1-1.jpg?ex=6a709a98&is=6a6f4918&hm=52bdd6624117de6efeaec5c1a1aa5cf7393997bc74ee8660848a9e37065aeffd&"
+      "location_image": "channel_images/petit-salon.jpg"
     },
     {
       "id": "scene_le_coin_d_antan_1",
@@ -13936,11 +13976,11 @@ window.RP_DATA = {
       "channel_clean": "Le-Coin-d-Antan",
       "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Jin Alurantes",
         "LE CONSEILLER",
+        "Jin Alurantes",
         "Brutus Redwitch"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-03T19:45:38Z",
@@ -14034,7 +14074,8 @@ window.RP_DATA = {
           "content": "*La pièce leur correspond on ne peut mieux... à se demander ce que ces olibrius de la garde font ici. Enfin, le mélange des guildes, c'est important ! En voyant son ami se redresser, Lewis sait pertinemment ce que la suite annonce: d'autres rencontres ! Et sa réponse à la question posée ne déçoit pas. Le sourire jusqu'aux oreilles, le comte répond avec amusement.*\n\n\n- Je te reconnais bien là, mon cher Brutus. Même si l'heure n'est pas au repas, nous avons certainement le droit de nous délecter. Hé bien... en piste.\n\n\n*Brutus a raison, le prochain épisode attend. Un épisode mouvementé, espérons-le, après cette interlude plus calme. L'observation est étoiles est une chose, l'appréciation du bal en est une autre. Et comme tout homme droit dans ses bottes le sait: chaque chose en son temps.*\n\n\n*Un geste du doigt accompagne la rotation du comte, rendait clair qu'il est d'ores et déjà prêt à quitter les lieux. Il ne peut s'empêcher de jeter un ultime regard en direction de sa partenaire d'astronomie, comme pour se rappeler de la promesse qu'il lui a faite, puis il se dirige vers la sortie de la pièce.*\n\n\n- S'il est un endroit où nous trouverons quelques grandes oreilles, c'est bien celui où le spectacle bat son plein. Et mon petit doigt me dit que ce spectacle n'attend que nous.\n\n\n*Ce lieu si mystérieux, quel est-il ? La question n'est pas bien difficile: entre la nostalgie silencieuse du coin d'antan et l'ambiance paisible de la ballade, difficile d'imaginer que Lewis parle d'autre-chose que https://discord.com/channels/1327646236534112318/1333137570393096263. C'est d'ailleurs là qu'il va guider Brutus, l'homme au chapeau sachant très certainement déjà où le duo se dirige.*"
         }
       ],
-      "location_description": "## D'une bulle à l'autre.\n\n*À peine arrivé, Lewis baisse d'un ton. Le calme règne en ces lieux, ce qui ne fait qu'ajouter au côté \"cinématographique\" de la scène lorsque son regard se pose non-pas sur un lapin, mais sur une demoiselle. Belle, mystérieuse, volatile... et seule. S'il est loin de sa manière de faire, Lewis ne peut s'empêcher de penser au disgracié de la garde et à la façon dont il aurait abordé cette dame. Un sourire en coin apparaît et, d'un coup de coude, il demande à Brutus de lui laisser la chance d'un instant partagé avec elle.*\n\n-# 💭 Sans médaillon, j'ai l'assurance qu'il ne s'agit pas d'une collègue. Mon ambition me ferait regretter de ne pas au moins la saluer.\n\n*L'esprit fixé sur l'idée de tisser le genre de liens que tout homme avec des idéaux de grandeur souhaite tisser, Lewis se met en marche. Il a déjà été dans cette situation des centaines de fois: les acteurs changent, mais la scène reste identique. C'est avec son élégance naturelle qu'il progresse à pas de velours, ses épaules se déhanchent et finalement, son buste s'incline une fois face à Anne et une main s'étend, offrant le baise-main courtois que l'homme pâle réserve à toutes les dames croisant sa route.*\n\n- Lewis-Phoebe, comte d'Ashbourne.\n\n*Ce geste accompli, il se relève simplement et poursuit d'un ton presque frivole justifiant grossièrement son acte. Son est désormais fait de plastique, l'expression même que l'on offre naturellement à ses compatriotes de la \"haute\". Et pourtant, une étincelle de la malice partagée avec ses amis les plus proches demeure.*\n\n- Je n'ai pu m'empêcher de remarquer que vous étiez seule. Que ce soit volontaire ou non, je me devais de vous offrir tout ce que vous pourrez trouver de plus divertissant dans mon être."
+      "location_description": "## D'une bulle à l'autre.\n\n*À peine arrivé, Lewis baisse d'un ton. Le calme règne en ces lieux, ce qui ne fait qu'ajouter au côté \"cinématographique\" de la scène lorsque son regard se pose non-pas sur un lapin, mais sur une demoiselle. Belle, mystérieuse, volatile... et seule. S'il est loin de sa manière de faire, Lewis ne peut s'empêcher de penser au disgracié de la garde et à la façon dont il aurait abordé cette dame. Un sourire en coin apparaît et, d'un coup de coude, il demande à Brutus de lui laisser la chance d'un instant partagé avec elle.*\n\n-# 💭 Sans médaillon, j'ai l'assurance qu'il ne s'agit pas d'une collègue. Mon ambition me ferait regretter de ne pas au moins la saluer.\n\n*L'esprit fixé sur l'idée de tisser le genre de liens que tout homme avec des idéaux de grandeur souhaite tisser, Lewis se met en marche. Il a déjà été dans cette situation des centaines de fois: les acteurs changent, mais la scène reste identique. C'est avec son élégance naturelle qu'il progresse à pas de velours, ses épaules se déhanchent et finalement, son buste s'incline une fois face à Anne et une main s'étend, offrant le baise-main courtois que l'homme pâle réserve à toutes les dames croisant sa route.*\n\n- Lewis-Phoebe, comte d'Ashbourne.\n\n*Ce geste accompli, il se relève simplement et poursuit d'un ton presque frivole justifiant grossièrement son acte. Son est désormais fait de plastique, l'expression même que l'on offre naturellement à ses compatriotes de la \"haute\". Et pourtant, une étincelle de la malice partagée avec ses amis les plus proches demeure.*\n\n- Je n'ai pu m'empêcher de remarquer que vous étiez seule. Que ce soit volontaire ou non, je me devais de vous offrir tout ce que vous pourrez trouver de plus divertissant dans mon être.",
+      "location_image": "channel_images/le-coin-d-antan.jpg"
     },
     {
       "id": "scene_fontaine_marbr_e_3",
@@ -14247,7 +14288,8 @@ window.RP_DATA = {
           "timestamp": "2026-06-11T21:43:40Z",
           "content": "``` Scène cloturée  ```"
         }
-      ]
+      ],
+      "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
       "id": "scene_sous_sol_1",
@@ -14365,7 +14407,8 @@ window.RP_DATA = {
           "timestamp": "2026-05-13T17:46:31Z",
           "content": "( <@198061752108187651> Je te laisse répondre peut-être sur place directement, non ?)"
         }
-      ]
+      ],
+      "location_image": "channel_images/sous-sol.jpg"
     },
     {
       "id": "scene_r_sidences_des_lib_rateurs_1",
@@ -14403,7 +14446,8 @@ window.RP_DATA = {
           "timestamp": "2026-05-11T00:02:51Z",
           "content": "> *Tout en se levant, il saisit  la choppe de bois, poursuivant d'une démarche décontractée, vers la foule.*\n> *En lieu et place du contenant, tournoyait désormais une pièce d'or, que le vieil homme s'empressa de faucher.*\n> ﻿\n> *Au comptoir, Ley fit glisser la choppe sans la lâcher, captant l'attention du barman.*\n> **-** **Hey, tu m'ouvres la cour intérieure ? Mon collègue a besoin d'eau, je vais au puit.**\n> \n> *Le grognement du barman semblait vouloir dire \"mais c'est qui c'lui là\".*\n> *D'un autre côté, ce brave inconnu lui évitait certainement d'éponger plus de vomi que nécessaire.*\n> ﻿\n> *La porte arrière s'ouvrit d'un cliquetis.*\n> **-** **Dépêche toi, tu fais partir la chaleur !**\n> ﻿\n> *Après quelques minutes d'attente, le barman sortit d'un pas lourd, des insultes plein la tête.*\n> *Il trouvât une choppe, vide, posée sur un puit.*\n> *Rien d'autre.*\n> ﻿\n> -# *Suite dans https://discord.com/channels/1327646236534112318/1499802361588351066/1502823464317227151.*\n> \n> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n> -# *Rez-de-chaussée, aux alentours de 22h45.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/residences-des-liberateurs.jpg"
     },
     {
       "id": "scene_ruelles_1",
@@ -14412,10 +14456,10 @@ window.RP_DATA = {
       "channel_clean": "Ruelles",
       "title": "Ruelles — Scène 1",
       "actors": [
-        "Iscarioth",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Iscarioth"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-11T00:03:55Z",
@@ -14546,7 +14590,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Début de la patrouille !\n\n**Pour les membres du Voile d'Ivoire, la soirée s'était terminée de manière plus calme que l'après-midi et la soirée. Le buffet était bien évidement excellent, mais aussi les gens de la guilde avait laissé des petites attentions assez douces pour les nouveaux venus. De quoi se changer dans des tenues sympathiques pour la vie dans le forum, mais aussi une tenue pour se balader dans les rues et porter les fières couleurs de la guilde. Elle ne sont bien évidement pas obligatoire, ce qui l'est par contre c'est la médaille qui atteste la réussite du test d'entrée à la cour des mages mais aussi leur appartenance. **\n\n**Les recrues se sont alors levés de bonne heure, peut-être qu'individuellement ils sont matinaux, mais cette fois c'était la guilde entière qui l'était. Pour leur donner quelques minutes de plus Hector étaient venus les chercher après le meeting matinal, sa bonté le perdra surement, mais ensuite il s'était assuré de passer de bonne heure pour réveiller tout le monde et leur donner rendez-vous à l'entrée de la guilde. Une fois ceci fait, Hector prit les devants pour partir. Il avait annoncé que sur le chemin il annoncerait les tenants et aboutissants de la patrouille, et le voilà qu'il commence.**\n\n> Avant toute choses, ne prenez peur de rien, ce qu'on fait aujourd'hui peut-être angoissant mais il deviendra habituel avec la pratique et l'habitude. \n\n**Son dos droit et sa démarche très tranquille, Hector avant les bras ballants comme presque pas préoccupé par l'idée qu'il puisse être en danger. Sans voix était un peu plus grave étant donné que le matin avait cet effet sur les hommes, mais elle était toujours aussi douce.**\n\n> Chaque membre du Voile d'Ivoire est dans une escouade du matin ou de l'après-midi, sauf si vous êtes partit dans une mission. Les escouades sont souvent supervisées par un mage de rang 3, comme moi actuellement et dans ces dernières il peut se trouver des mages de rang 2 ou 1 si le but est de le faire venir dans notre guilde. Lors de ces patrouilles, l'escouade se balade dans la zone qui lui a été donnée, qui est très petite vu que nous sommes très nombreux, et on aide les habitants. Aider à mettre en place un marchant, aider une mère avec son linge ou un enfant à récupérer un chat. On assure la sécurité de cette zone et les habitants savent nous le rendre. \n\n**La marche du capitaine de l'escouade se fini en face du petit pont qui passe au dessus de la rivière. Dans son dos se trouvait leur destination. Pour les habitant d'Esperia qui connaisse la strate de la classe moyenne, il savent que derrière lui se trouve le marché du Quartier Sud-Ouest, très réputé pour son activité matinale, qu'elle soit bonne ou mauvaise. C'est une place qui saura tester les recrues à garder leur sang-froid mais aussi leur montrer ce qu'est le véritable point fort du Voile d'Ivoire. Hector se tient droit comme un piquet avec un regard fier en leur direction, imbibé d'espoir. C'est nouveau pour lui et l'ambition qui brule dans ses yeux est presque enivrante. Une personne tant motivé sait donner la patate à ses comparses d'un simple regard.**\n\n> Des questions ?\n\n**Pour les âmes plus curieuse, dans le fond de l'autre côté du pont légèrement sur la gauche, se dessine des visages. Un jeune garçon qui pointe alors Hector du doigt et ce qui semble être sa mère avec un panier en osier qui le tient pour éviter qu'il s'excite un peu trop et dérange l'homme aux cheveux gris.**",
-      "location_image": "https://i.pinimg.com/736x/2d/a5/95/2da595898c39d92a0f0ababc933d6dc7.jpg"
+      "location_image": "channel_images/ruelles.jpg"
     },
     {
       "id": "scene_port_du_levant_2",
@@ -14647,7 +14691,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*Songes*\n\n*Des cernes protubérantes habitent le dessous de ses yeux, offrant un ton violacé à ses prunelles de jais. Sulyvan n'est pas quelqu'un de nécessairement malin, lorsqu'il s'agit de sa santé, de son propre bien-être. Il n'accorde que peu d'importance à son propre corps et encore moins à son esprit, qui se fragmente au rythme de l'horloge du temps. Il est difficile pour lui, héraut des cauchemars, de voir le sommeil comme une source de réconfort, d'apaisement. Les vagues s'écrasent avec violence contre les statues des sages, signe de protection, entité du bien, de la paix et de la prospérité. Mais ce concept lui semble si étranger, au même titre que son âme n'appartient pas aux murs dorées de cette cité qui se ronge elle-même, de l'intérieur.*\n\n— Oru'kin, tu sembles furieux. . .\n\n*Remous*\n\n*Le Sans-foyer s'adresse à la mer comme l'on s'adresse à un ami, un confident. Les Nephilims, créatures divines et créations de la Déesse-Mère, se montrent peu bavard lorsque c'est lui qui appel. Est-il exclu de tout les cercles, de tout les chants, par son manque de lumière ? Est-ce son opposition avec l'Ange qui contraint le ciel à le punir ? Difficile à dire, dans un quotidien nouveau, exempt des souffrances quotidiennes, qui l'ont accablé jusqu'à présent.*\n\n— J'aimerais vraiment qu'on accorde le droit de revoir cette bâtisse. Ou bien, est-ce là ma sanction, divinité des mers et des océans ?\n\n*Confession*\n\n*Sully est étrangement bavard. Le discours de sa Majesté lui a valu de remettre certaines de ses décisions, certains de ses choix, en question. Le doute s'insinue dans les moindres failles et même les prométhéens, n'échappent pas à cette règle, arrogantes créatures. La solitude qu'induit la suffisance est bien trop souvent sous-estimé, écarté car l'on ne voit que le narcissisme flagrant des \" génies \", ceux ayant la prestance du Dieu Solaire, père du premier péché.*\n\n— Il fait frais.\n\n*Absurdisme*\n\n*Voilà bien trop longtemps que l'enfant des Vosk se tient ici, à contempler un océan qu'il ne peut dompter, qu'il ne peut trancher. La question l'amuse néanmoins ; est-ce qu'un Homme, à un jour eu l'audace de vouloir trancher l'océan en deux ? Une idée aussi stupide que celle de trancher le ciel. Personne ne le peut.*",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646240669696043/1470396913105768552/SPOILER_43090b39f20b75512ce151df550e7ee2.png?ex=6a708a56&is=6a6f38d6&hm=d70d9a6c519af2efd257abee3fd44ca1ea7e9c7f3381dde5b6c0d1ec77fb4f60&"
+      "location_image": "channel_images/port-du-levant.jpg"
     },
     {
       "id": "scene_grande_salle_porcelaine_2",
@@ -14657,9 +14701,9 @@ window.RP_DATA = {
       "title": "Grande-salle-porcelaine — Scène 2",
       "actors": [
         "Iscarioth",
+        "Oeil",
         "Okayama",
-        "Tenebris",
-        "Oeil"
+        "Tenebris"
       ],
       "main_actor": "Iscarioth",
       "is_solo": false,
@@ -14910,7 +14954,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-08T16:28:28Z",
           "content": "> *Une pression normative qui cultive l’inconnu.*\n> *Qui permet de préserver le silence, autant dans la forme que dans le fond.*\n> ***C’est intelligent.***\n> \n> *L’horloger appréciait l’architecture intime des montres qui se révélaient à lui,*\n> *C’était aussi le cas de Ley, quand les structures du monde bougeaient.*\n> \n> *Le cercle vicieux de la polarisation politique,*\n> *La transformation de l’être par l’idiolecte,*\n> *Le subtil effet miroir capable de se faire ami de n’importe qui,*\n> *Jusqu’aux règles mathématiques occultes qui déterminent l’organisation des bancs de poissons comme celles des vols d’oiseaux.*\n> \n> *Dans l’oeil terne de Ley,*\n> *La vie était un mécanisme inerte.*\n> \n> *Un engrenage qu’il déduisait de son infime connaissance*\n> *Qui lui permettait, parfois, d’éviter les plus gros rouages.*\n> \n> *Ce n’étaient pas encore ses pensées,*\n> *Mais il aspirera à, un jour, la réparer,*\n> *L’horloge du temps.*\n> \n> *Soudain, une désorientation brutale l’assaillit.*\n> *Voilà quelques minutes qu’il déambulait dans les couloirs,*\n> *Sans jamais que son esprit ne se fige sur une idée nette.*\n> \n> *Le labyrinthe pouvait permettre de rejoindre la surface,*\n> *Mais, sans consigne, il dérivait sur la ligne du Crépuscule.*\n> *Territoire antonyme à l’existence.*\n> *Entre lumière et ténèbres.*\n> \n> *Il sentait monter au plus profond de lui un mal-être incompréhensible.*\n> *Une ombre entre deux battements de son coeur, un air qu’il ne pouvait respirer s’immisca dans ses narines,*\n> *Et un nom, sur ses lèvres.*\n> \n> ***Âlu***\n> \n> *D’une pensée consciente, sa journée défila dans son esprit.*\n> *Celui qui l’avait poursuivi, Asior Eveus.*\n> *Lui, ou la ruelle, qu’importe.*\n> *Quelque part, d’urgence.*\n> \n> *Et, dans la panique,*\n> *Il émergea d’une ombre.*\n> \n> *Quelque part, en surface.*\n> \n> ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\n> -# *Labyrinthes de l’Umbrae.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/grande-salle-porcelaine.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_4",
@@ -15112,7 +15157,8 @@ window.RP_DATA = {
           "content": "```Scène terminée```"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_le_centre_des_registres_1",
@@ -15121,12 +15167,12 @@ window.RP_DATA = {
       "channel_clean": "Le-centre-des-registres",
       "title": "Le-centre-des-registres — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Regisseur du Centre de l'Histoire",
+        "Isis Faerieth",
         "Akane Tsukishiro",
-        "Isis Faerieth"
+        "Regisseur du Centre de l'Histoire",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-05-30T17:45:51Z",
@@ -15387,7 +15433,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-11T20:25:47Z",
           "content": "◦ ─────────── ¤ ──────────── ◦\n\n*Elle prend un temps pour les observer mais elle répondra à chacun du tac au tac. Elle n'a pas besoin de penser à ses mots, ses phrases sont sans interruption et sa voix caresse leurs oreilles de sa fraicheur. Rias, une belle femme comme on ne trouve beaucoup dans Esperia, mais pourtant elle semble dérangée par sa présence ici. Son regard oscille quelques fois derrière elle, comme s'il y avait quelqu'un ou quelque chose.*\n\n> **[ Rias Valdor ]** Ce n'est pas \"Monsieur Marcus\" mais Monsieur Valdor. Le nom de famille des lignées principales ne sont pas une simple décoration, Tsukishiro.\n\n*Bien que c'est une correction qui pourrait sembler vénale, le ton de la vois n'y est pas. Elle fait juste une correction, comme si elle expliquait quelque chose qui serait important pour eux, dans le très soudain futur ou lointain. Elle leur tourne le dos quelques instant avant de retirer un des livres de la bibliothèque. Elle porte un doigt à son menton.*\n\n> **[ Rias Valdor ]** Mh. \n\n*Elle se retourne, donnant un regard en direction de Ren Urugaki, bien qu'il ait lui aussi transgressé des règles évidentes, elle ne le réprimande pas encore.*\n\n> **[ Rias Valdor ]** Urugaki, ça me dit quelque chose. Tâche de ne pas faire de bêtises avec la garde, j'ai quelques informations à retirer avant.\n\n*Elle fixe l'autre Pandorienne, un peu moins longtemps que les deux autres.*\n\n> **[ Rias Valdor ]** Mon Oncle est déjà au courant, vous ne le voyez pas mais il vous observe depuis le début. \n\n*Elle pointe le plafond, mais vos yeux ne sont pas capable de voir quelque chose d'humain. Il y a des sorte de verreries mais rien n'indiquant la présence de quelqu'un.*\n\n> **[ Rias Valdor ]** Je dois vous laisser, Mages. Mais je pense que vous entendrez très bientôt mon nom. Au revoir.\n\n*Elle part alors du centre des registres, sans se retourner.*\n\n```Fin de la première mission secondaire du Voile d'Ivoire ! Félicitation.```\n\n◦ ─────────── ¤ ──────────── ◦\n\n◦ ─────────── ¤ ──────────── ◦\nLa lumière est satisfaite.\n*Elle prend un temps pour les observer mais elle répondra à chacun du tac au tac. Elle n'a pas besoin de penser à ses mots, ses phrases sont sans interruption et sa voix caresse leurs oreilles de sa fraicheur. Rias, une belle femme comme on ne trouve beaucoup dans Esperia, mais pourtant elle semble dérangée par sa présence ici. Son regard oscille quelques fois derrière elle, comme s'il y avait quelqu'un ou quelque chose.*\n\n> **[ Rias Valdor ]** Ce n'est pas \"Monsieur Marcus\" mais Monsieur Valdor. Le nom de famille des lignées principales ne sont pas une simple décoration, Tsukishiro.\n\n*Bien que c'est une correction qui pourrait sembler vénale, le ton de la vois n'y est pas. Elle fait juste une correction, comme si elle expliquait quelque chose qui serait important pour eux, dans le très soudain futur ou lointain. Elle leur tourne le dos quelques instant avant de retirer un des livres de la bibliothèque. Elle porte un doigt à son menton.*\n\n> **[ Rias Valdor ]** Mh. \n\n*Elle se retourne, donnant un regard en direction de Ren Urugaki, bien qu'il ait lui aussi transgressé des règles évidentes, elle ne le réprimande pas encore.*\n\n> **[ Rias Valdor ]** Urugaki, ça me dit quelque chose. Tâche de ne pas faire de bêtises avec la garde, j'ai quelques informations à retirer avant.\n\n*Elle fixe l'autre Pandorienne, un peu moins longtemps que les deux autres.*\n\n> **[ Rias Valdor ]** Mon Oncle est déjà au courant, vous ne le voyez pas mais il vous observe depuis le début. \n\n*Elle pointe le plafond, mais vos yeux ne sont pas capable de voir quelque chose d'humain. Il y a des sorte de verreries mais rien n'indiquant la présence de quelqu'un.*\n\n> **[ Rias Valdor ]** Je dois vous laisser, Mages. Mais je pense que vous entendrez très bientôt mon nom. Au revoir.\n\n*Elle part alors du centre des registres, sans se retourner.*\n\n```Fin de la première mission secondaire du Voile d'Ivoire ! Félicitation.```\n\n◦ ─────────── ¤ ──────────── ◦\n◦ ─────────── ¤ ──────────── ◦\nUne chance. Une opportunité.\n[Image: https://i.pinimg.com/736x/bb/23/bf/bb23bf0cf6b67fdf2072dd9173ddc99a.jpg]"
         }
-      ]
+      ],
+      "location_image": "channel_images/le-centre-des-registres.jpg"
     },
     {
       "id": "scene_le_caf__des_philosophes_1",
@@ -15397,8 +15444,8 @@ window.RP_DATA = {
       "title": "Le-Café-des-Philosophes — Scène 1",
       "actors": [
         "Asior Eveus",
-        "Iscarioth",
-        "Oeil"
+        "Oeil",
+        "Iscarioth"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -15564,10 +15611,10 @@ window.RP_DATA = {
       "channel_clean": "Un début de soirée à la serre de lune",
       "title": "Un début de soirée à la serre de lune — Scène 1",
       "actors": [
-        "Frey Guðfrøðr",
-        "Maëll Fol'Dun"
+        "Maëll Fol'Dun",
+        "Frey Guðfrøðr"
       ],
-      "main_actor": "Frey Guðfrøðr",
+      "main_actor": "Maëll Fol'Dun",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-03T19:24:40Z",
@@ -15710,7 +15757,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "May Sohun, une nature bienveillante | Une concoction à effectuer\n\n*Les secondes se firent longues avant que le cliquetis d’ouverture de la troisième porte ne soit entendu. Gracieux, délicat pour ne pas dire inespérément adéquat. C’est en feignant le bourdonnement sourd d’un essaim de velours que les loquets furent remués, sans pour autant venir se presser.\n\nUn éclat, une lumière chaleureuse, un rayon de soleil tout droit venu de plaines joyeuses. Des espaces jalousement gardés, dépourvus de chaos et de toute autre entité néfaste. Des écosystèmes de tranquillité où seules faune et flore avaient été invitées.\n\nCharmante, cette étincelle ne restera pourtant que trop peu de temps le centre d’attention premier. Rapidement destituée par le grincement d’un coffre en bois et les piaillements d’un étrange oiseau de joie. Sa lueur ne mit que trop peu de temps à être effacée par celle d’une jeune femme qui, à son zénith, s’était dressée.*\n\n> — Tiens… Vous ici ? Quelle surprise ! On ne m’avait prévenue de votre arrivée que pour midi… Or il est à peine…\n\n*Son œil se tourne et fixe alors la lumière qui, dès leur entrée, s’était présentée en quête d’une réponse rapide.*\n\n> — Quoi ? Midi et quart, dis-tu ? Nom d’une Vyilspurah, je suis en retard sur le planning… Et zut, monsieur L va encore me sermonner.\n\n*Ni une ni deux, c’est sur-le-champ que son apparence se tourna vers le sérieux. D’un pas rigide, elle valsa sur elle-même avant que ses doigts ne claquent et que le merveilleux ne prenne les devants de la scène.*\n\n*Valsant et zigzagant le long d’un habile tissage, c’est dans la grâce qu’une nuée de racines fit vœu de s’extirper du sol, afin de concevoir les établis qui allaient accueillir les bleus. Un incongru chantier au sein duquel elle vint à se balader, déposant sur chaque plan de travail un nécessaire à potion et une feuille sur laquelle on était venu griffonner une liste précise d’instructions à réaliser.*\n\n> — Pour cette épreuve, rien de bien compliqué et pas d’énigme ou de duel singulier. C’est une potion que vous allez devoir préparer !\n\n*Un sourire se dresse sur son visage tandis que, d’un air triomphant, elle remet son panier sur le dos.*\n\n> — Voilà voilà, je vous laisse prendre place et bonne chance à vous ! Si jamais vous rencontrez le moindre problème, surtout n’hésitez pas à crier !\n\n*Sur ces mots, la silhouette fait volte-face et retourne se perdre parmi les hautes herbes de la serre, laissant le groupe seul face à l’intitulé d’un copieux mystère.*\n\n**— ꕥ —**\n\nMay Sohun, une nature bienveillante\n\nD'un regard quelque peu perdu, elle contemple les jeunes pousses, comme intriguée par leur venue...\n\nUne concoction à effectuer\n\nMéfiez vous, mal prononcé, vous pourriez mal arriver....",
-      "location_image": "https://i.pinimg.com/1200x/0b/68/3d/0b683de8b90731c49bd3308837ba5d21.jpg"
+      "location_image": "channel_images/serre-de-lune.jpg"
     },
     {
       "id": "scene_le_coin_d_antan_2",
@@ -15719,10 +15766,10 @@ window.RP_DATA = {
       "channel_clean": "Le-Coin-d-Antan",
       "title": "Le-Coin-d-Antan — Scène 2",
       "actors": [
-        "Aryanna Erhendil",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Aryanna Erhendil",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-06T13:11:32Z",
@@ -15798,7 +15845,8 @@ window.RP_DATA = {
           "content": "\"C'est mon travail de regarder la ville dans tous ses aspects\" ? La phrase a de quoi surprendre la noiraude qui en vient à se poser une multitude de question. Qui peut porter un tel rôle sur ses épaules ? Dans quelle guilde elle devrait appartenir pour agir de la sorte ? Une informatrice de la cour, voilà ce qu'elle semble être. \n\n⸻ **\"Il faut l'arrêter hein....\"**\n\nSoupire-t-elle lorsque la dites femme vient à sauter dans le vide, un dernier signe de patte en sa direction. Une main contre sa nuque, les évènements de ce bal viennent de prendre une étrange tournure à laquelle elle ne s'attendait pas. Voilà qu'elle va devoir se rendre au Voile d'Ivoire pour partager ses nouvelles connaissances. Et encore, il faut qu'elle se décide à y aller....Comme par hasard, il faut que ce soit toujours au Voile d'Ivoire. Elle n'a pas envie d'y remettre les pieds de si tôt. \n\nA la fois....a-t-elle assez d'information pour pouvoir permettre une enquête sur le dos de Nah Jasp ? Avec seulement des paroles d'une Sisyphe Yeshou en forme de chat dont elle ne connaît presque rien ? C'est ridicule de se présenter de la sorte au Voile d'Ivoire sans aucune véritable preuve. Alors, si preuve il y a, elle va devoir aller en chercher des plus concrètes avant de se présenter à la Guilde Immaculée. Un grand travail l'attend, pour son plus grand malheur. Un nouveau soupir sort de ses lèvres alors qu'elle prendra place sur la table, désormais solitaire, prenant quelques coups de champagne en compagnie de la beauté du paysage : les étoiles."
         }
       ],
-      "location_description": "## D'une bulle à l'autre.\n\n*À peine arrivé, Lewis baisse d'un ton. Le calme règne en ces lieux, ce qui ne fait qu'ajouter au côté \"cinématographique\" de la scène lorsque son regard se pose non-pas sur un lapin, mais sur une demoiselle. Belle, mystérieuse, volatile... et seule. S'il est loin de sa manière de faire, Lewis ne peut s'empêcher de penser au disgracié de la garde et à la façon dont il aurait abordé cette dame. Un sourire en coin apparaît et, d'un coup de coude, il demande à Brutus de lui laisser la chance d'un instant partagé avec elle.*\n\n-# 💭 Sans médaillon, j'ai l'assurance qu'il ne s'agit pas d'une collègue. Mon ambition me ferait regretter de ne pas au moins la saluer.\n\n*L'esprit fixé sur l'idée de tisser le genre de liens que tout homme avec des idéaux de grandeur souhaite tisser, Lewis se met en marche. Il a déjà été dans cette situation des centaines de fois: les acteurs changent, mais la scène reste identique. C'est avec son élégance naturelle qu'il progresse à pas de velours, ses épaules se déhanchent et finalement, son buste s'incline une fois face à Anne et une main s'étend, offrant le baise-main courtois que l'homme pâle réserve à toutes les dames croisant sa route.*\n\n- Lewis-Phoebe, comte d'Ashbourne.\n\n*Ce geste accompli, il se relève simplement et poursuit d'un ton presque frivole justifiant grossièrement son acte. Son est désormais fait de plastique, l'expression même que l'on offre naturellement à ses compatriotes de la \"haute\". Et pourtant, une étincelle de la malice partagée avec ses amis les plus proches demeure.*\n\n- Je n'ai pu m'empêcher de remarquer que vous étiez seule. Que ce soit volontaire ou non, je me devais de vous offrir tout ce que vous pourrez trouver de plus divertissant dans mon être."
+      "location_description": "## D'une bulle à l'autre.\n\n*À peine arrivé, Lewis baisse d'un ton. Le calme règne en ces lieux, ce qui ne fait qu'ajouter au côté \"cinématographique\" de la scène lorsque son regard se pose non-pas sur un lapin, mais sur une demoiselle. Belle, mystérieuse, volatile... et seule. S'il est loin de sa manière de faire, Lewis ne peut s'empêcher de penser au disgracié de la garde et à la façon dont il aurait abordé cette dame. Un sourire en coin apparaît et, d'un coup de coude, il demande à Brutus de lui laisser la chance d'un instant partagé avec elle.*\n\n-# 💭 Sans médaillon, j'ai l'assurance qu'il ne s'agit pas d'une collègue. Mon ambition me ferait regretter de ne pas au moins la saluer.\n\n*L'esprit fixé sur l'idée de tisser le genre de liens que tout homme avec des idéaux de grandeur souhaite tisser, Lewis se met en marche. Il a déjà été dans cette situation des centaines de fois: les acteurs changent, mais la scène reste identique. C'est avec son élégance naturelle qu'il progresse à pas de velours, ses épaules se déhanchent et finalement, son buste s'incline une fois face à Anne et une main s'étend, offrant le baise-main courtois que l'homme pâle réserve à toutes les dames croisant sa route.*\n\n- Lewis-Phoebe, comte d'Ashbourne.\n\n*Ce geste accompli, il se relève simplement et poursuit d'un ton presque frivole justifiant grossièrement son acte. Son est désormais fait de plastique, l'expression même que l'on offre naturellement à ses compatriotes de la \"haute\". Et pourtant, une étincelle de la malice partagée avec ses amis les plus proches demeure.*\n\n- Je n'ai pu m'empêcher de remarquer que vous étiez seule. Que ce soit volontaire ou non, je me devais de vous offrir tout ce que vous pourrez trouver de plus divertissant dans mon être.",
+      "location_image": "channel_images/le-coin-d-antan.jpg"
     },
     {
       "id": "scene_pont_des_deux_4",
@@ -15807,10 +15855,10 @@ window.RP_DATA = {
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 4",
       "actors": [
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-11T22:12:31Z",
@@ -15904,7 +15952,8 @@ window.RP_DATA = {
           "content": "```Salon libre ```"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_terrains_nacr_s_2",
@@ -15950,7 +15999,8 @@ window.RP_DATA = {
           "content": "```Scène close | Salon libre.```"
         }
       ],
-      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *"
+      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *",
+      "location_image": "channel_images/terrains-nacres.jpg"
     },
     {
       "id": "scene_quartiers_2",
@@ -15959,14 +16009,14 @@ window.RP_DATA = {
       "channel_clean": "Quartiers",
       "title": "Quartiers — Scène 2",
       "actors": [
-        "Isis Faerieth",
-        "Idelmée Cadree",
-        "Katelynn Hoffmann",
         "Asior Eveus",
+        "LE CONSEILLER",
         "Red Roadman",
-        "LE CONSEILLER"
+        "Katelynn Hoffmann",
+        "Idelmée Cadree",
+        "Isis Faerieth"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-14T09:47:31Z",
@@ -16042,7 +16092,8 @@ window.RP_DATA = {
           "content": "🟨 La Valeur d'une Vie."
         }
       ],
-      "location_description": "*Suite à une transformation qui lui aura provoqué une gêne encore plus grande, Lewis se tourne vers la camarade qui questionne l'ensemble du groupe. La réponse est assez évidente, en l'occurence, alros il se contente de la souligner en montrant sa tenue et s'avance le premier vers la taverne. Sa posture, toujours élégante, montre tout-de-même plus de réserve qu'à l'accoutumée et les muscles de son visage son contractés. Ce qui pourrait passer pour du stress est en réalité la conséquence d'une position à laquelle il lui faudra un pue de temps pour s'adapter.*\n\n-# 💭 C'est elle, la superviseuse. Très bien...\n\n*Long soupir. Lewis doit se reprendre... et heureusement, son aisance sociale l'y aide. Le \"drame\" est passé, il porte cette ignoble tenue et a été vu dedans. Maintenant, seule la mission demeure, il se permet donc de prendre la parole d'une voix un peu plus aiguë et d'un ton un peu plus pressé qu'à l'accoutumée.*\n\n- Bonjour bonjour. Je suis Alan, des Bichons. Nous avons rendez-vous pour des entretiens !\n\n*Un large sourire suit. Lewis est animé d'une fougue qui, mêlée à sa gêne, devrait lui donner l'air du danseur stressé par un entretien d'embauche qu'il est supposé incarner. À l'arrivée de ses comparses, il ne manquera d'ailleurs pas de présenter ceux qui sont vêtus similairement à lui comme les autres membres de la joyeuse troupe.*"
+      "location_description": "*Suite à une transformation qui lui aura provoqué une gêne encore plus grande, Lewis se tourne vers la camarade qui questionne l'ensemble du groupe. La réponse est assez évidente, en l'occurence, alros il se contente de la souligner en montrant sa tenue et s'avance le premier vers la taverne. Sa posture, toujours élégante, montre tout-de-même plus de réserve qu'à l'accoutumée et les muscles de son visage son contractés. Ce qui pourrait passer pour du stress est en réalité la conséquence d'une position à laquelle il lui faudra un pue de temps pour s'adapter.*\n\n-# 💭 C'est elle, la superviseuse. Très bien...\n\n*Long soupir. Lewis doit se reprendre... et heureusement, son aisance sociale l'y aide. Le \"drame\" est passé, il porte cette ignoble tenue et a été vu dedans. Maintenant, seule la mission demeure, il se permet donc de prendre la parole d'une voix un peu plus aiguë et d'un ton un peu plus pressé qu'à l'accoutumée.*\n\n- Bonjour bonjour. Je suis Alan, des Bichons. Nous avons rendez-vous pour des entretiens !\n\n*Un large sourire suit. Lewis est animé d'une fougue qui, mêlée à sa gêne, devrait lui donner l'air du danseur stressé par un entretien d'embauche qu'il est supposé incarner. À l'arrivée de ses comparses, il ne manquera d'ailleurs pas de présenter ceux qui sont vêtus similairement à lui comme les autres membres de la joyeuse troupe.*",
+      "location_image": "channel_images/quartiers.jpg"
     },
     {
       "id": "scene_port_du_levant_3",
@@ -16051,12 +16102,12 @@ window.RP_DATA = {
       "channel_clean": "Port-du-Levant",
       "title": "Port-du-Levant — Scène 3",
       "actors": [
-        "Lumia Faendharts",
         "Isis Faerieth",
+        "Lumia Faendharts",
         "Aryanna Erhendil",
         "Nick Sol"
       ],
-      "main_actor": "Lumia Faendharts",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-14T13:15:32Z",
@@ -16241,7 +16292,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*Songes*\n\n*Des cernes protubérantes habitent le dessous de ses yeux, offrant un ton violacé à ses prunelles de jais. Sulyvan n'est pas quelqu'un de nécessairement malin, lorsqu'il s'agit de sa santé, de son propre bien-être. Il n'accorde que peu d'importance à son propre corps et encore moins à son esprit, qui se fragmente au rythme de l'horloge du temps. Il est difficile pour lui, héraut des cauchemars, de voir le sommeil comme une source de réconfort, d'apaisement. Les vagues s'écrasent avec violence contre les statues des sages, signe de protection, entité du bien, de la paix et de la prospérité. Mais ce concept lui semble si étranger, au même titre que son âme n'appartient pas aux murs dorées de cette cité qui se ronge elle-même, de l'intérieur.*\n\n— Oru'kin, tu sembles furieux. . .\n\n*Remous*\n\n*Le Sans-foyer s'adresse à la mer comme l'on s'adresse à un ami, un confident. Les Nephilims, créatures divines et créations de la Déesse-Mère, se montrent peu bavard lorsque c'est lui qui appel. Est-il exclu de tout les cercles, de tout les chants, par son manque de lumière ? Est-ce son opposition avec l'Ange qui contraint le ciel à le punir ? Difficile à dire, dans un quotidien nouveau, exempt des souffrances quotidiennes, qui l'ont accablé jusqu'à présent.*\n\n— J'aimerais vraiment qu'on accorde le droit de revoir cette bâtisse. Ou bien, est-ce là ma sanction, divinité des mers et des océans ?\n\n*Confession*\n\n*Sully est étrangement bavard. Le discours de sa Majesté lui a valu de remettre certaines de ses décisions, certains de ses choix, en question. Le doute s'insinue dans les moindres failles et même les prométhéens, n'échappent pas à cette règle, arrogantes créatures. La solitude qu'induit la suffisance est bien trop souvent sous-estimé, écarté car l'on ne voit que le narcissisme flagrant des \" génies \", ceux ayant la prestance du Dieu Solaire, père du premier péché.*\n\n— Il fait frais.\n\n*Absurdisme*\n\n*Voilà bien trop longtemps que l'enfant des Vosk se tient ici, à contempler un océan qu'il ne peut dompter, qu'il ne peut trancher. La question l'amuse néanmoins ; est-ce qu'un Homme, à un jour eu l'audace de vouloir trancher l'océan en deux ? Une idée aussi stupide que celle de trancher le ciel. Personne ne le peut.*",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646240669696043/1470396913105768552/SPOILER_43090b39f20b75512ce151df550e7ee2.png?ex=6a708a56&is=6a6f38d6&hm=d70d9a6c519af2efd257abee3fd44ca1ea7e9c7f3381dde5b6c0d1ec77fb4f60&"
+      "location_image": "channel_images/port-du-levant.jpg"
     },
     {
       "id": "scene_passage_1",
@@ -16251,13 +16302,13 @@ window.RP_DATA = {
       "title": "__Deuxième Mission : Couper le Mal à la Racine.__",
       "actors": [
         "LE CONSEILLER",
-        "Nick Sol",
+        "Brutus Redwitch",
+        "Akane Tsukishiro",
         "Jin Alurantes",
         "Kenji Takahashi",
-        "Aryanna Erhendil",
+        "Nick Sol",
         "Ren Urugaki",
-        "Akane Tsukishiro",
-        "Brutus Redwitch"
+        "Aryanna Erhendil"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -16474,7 +16525,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "**__Deuxième Mission : Couper le Mal à la Racine.__**\n\n*Il est temps de partir, après la missive royale reçue pour convoquer toutes les personnes pour la mission, ils sont attendus non loin du Quartier Ouest. Un endroit qui avait déjà été repéré, mais pas analysé la dernière fois. Cette fois, le lieu de rencontre n'est qu'une simple porte sans poignée, qui se dresse comme un miroir. Un homme les attends, analysant le miroir pensif comme s'il étudiait quelque chose. Puis il se baisse, lisant alors la dalle avec les différentes inscriptions comme pour énoncer une énigme.*\n\n```Je garde les secrets dans ma toile, créant mes enfants pour libérer les secrets. Qui suis-je ?```\n\n*Theodore, le seul homme qui se tient devant le miroir reste accroupi, patient.*\n\nPensif, il attend simplement le début de ce qui s'annonce compliqué.",
-      "location_image": "https://i.pinimg.com/736x/0e/40/1f/0e401f97ef2d4fa9fe6f2ca21d7c2a0c.jpg"
+      "location_image": "channel_images/passage.jpg"
     },
     {
       "id": "scene_sc_ne_kal_s_javus_1",
@@ -16557,7 +16608,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Convocation.\n\n*\"On ira s'boire une bière après ?\"*\n\n> *Le lieu de leur deuxième rencontre n'a rien de fortuit, Caleb l'avait choisi avec autant de rigueur qu'il choisit les candidats pour JAVUS. Il serait même juste de dire qu'il est aux petits soins de ceux qu'il envoie en première ligne; afin de nourrir les intérêts de cette organisation. Car il ne s'agit là non pas d'une Guilde mais d'une instance aux volontés propres; parfois trop dépendantes de celles de la Couronne.*\n\n> *Sur la main de Kalès, le symbole qui jusqu'ici s'était estompé pour laisser place à un épiderme parfait avait refait surface. Un picotement, puis une faible lumière clignotait comme des illuminations de fêtes l'avait avertit qu'il était temps de prendre contact, pour la deuxième fois. Sur le dos de sa dextre, une carte de la Basse-Ville semblait intéragir avec son environnement. Si Kalès bougeait, le petit point blanc sur celle-ci suivait ses pas. Et de toute évidence, sa destination se trouvait être l'Epicurien. Un savant dispositif GPS intégré au corps humain; une praticité à toute épreuve. A l'issue de sa balade nocturne, il aurait trouvé Caleb installé au comptoir du bar, deux bières fraîchement servies devant lui.*\n\n> *L'objet de leur \"réunion\" était plutôt évidente, puisque la dernière visite s'était soldée par une Missive Royale plus ou moins atypique. Une demande de l'Ashen lui-même, ce n'est pas souvent que cela arrive. Et pourtant, Caleb avait quelque peu traîné à contacter le jeune || guetteur||  espion. Des contres-temps, sûrement.*\n\nVox Populi.",
-      "location_image": "https://i.goopics.net/os4ayz.jpg"
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_course_poursuite_1",
@@ -16567,10 +16618,10 @@ window.RP_DATA = {
       "title": "Course-Poursuite — Scène 1",
       "actors": [
         "LE CONSEILLER",
+        "Akane Tsukishiro",
         "Jin Alurantes",
-        "Aryanna Erhendil",
         "Ren Urugaki",
-        "Akane Tsukishiro"
+        "Aryanna Erhendil"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -16673,7 +16724,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "[*Un sentiment lourd, mais des responsabilités plus grandes*](https://youtu.be/mZxwGnOz7ZQ?list=RDmZxwGnOz7ZQ)\n\n```Mini-jeu : course poursuite.\n\nPour les mages qui suivront Theodore dans sa course poursuite, chaque action à du sens, à partir de la prochaine narration vous allez avoir des choix à faire comme des QTE, chaque bon choix vous donnera des points de réussite. A 10 points de réussite, vous rattrapez votre cible. Mais à 10 points d'échecs, vous perdez sa trace. Il les choix seront justes sans avoir de \"gamble\". Vos personnages vont devoir réfléchir et agir vite.```\n\n*__Theodore__, le premier partit et des Mages qui avancent pour finalement suivre le seul objectif de la mission, pose un pied plus lourd sur le sol. Il ne peut pas laisser les Mages seuls face à la mort, il avait déjà du les protéger mais il ne pouvait pas tourner le dos pour regarder ceux qui le suivraient. Alors il fera des sacrifices qui lui coûteront surement chers. Il poursuit sa course de plus belle son allure est équivalente à celle de la cible, il faut dire que le plus fort des mages de la mission n'est pourtant pas le plus rapide. Mais il ralentira tout de même, son bâton en main pour modeler le sol à son envie. Pour ceux qui le suivent, il fera deux accès, le premier pour aller sur la partie supérieure de l'image et courir au niveau des balcons. Le second chemin qu'il modèle est un qui se creuse un petit peu dans le sol, la personne qui court dedans perdra juste 1m de auteur mais ne sera pas embêté par des projectiles.*\n\n*__Akane__, tu arrives à la suite de Theodore aux côtés de Ren. Avec ton allure, tu sais que tu pourras rattraper la personne en face de toi. Enfin... Au vu du son de ses pas tu te dis dans quelques mouvements tu seras capable de le rattraper. Tu arrives assez aux côtés de Theodore qui, manipulant l'Arcane vous assure des chemins. Tu entends quelque chose qui siffle devant toi, un projectile. Tu ne sais pas ce que c'est mais tu supposes que c'est assez grand pour te ralentir de quelques secondes, surement pour te dépatouiller des poissons... poissons ? L'objets en ta direction à une forte odeur de poisson.*\n\n**/!\\ A LIRIE SI TU ACTIVES TON ARCANE /!\\ : || C'est une caisse de 50cm de haut et de large remplie de poisson qui semble assez fragile. ||**\n\n*__Ren__, pour toi c'est la même chose. En arrivant aux côté de la petite blanche, tu te rends compte qu'en quelques vingtaines de secondes si tu n'es pas dérangé tu seras capables de poser ta main sur son épaule. Le fait est que pour le moment comme tu le vois avec ta camarade, il vous lance des objets dessus. Il lance une première casse vers elle, mais la seconde est pour toi. Un simple Tonneau qu'il viendra projeter dans ta direction visant ton visage pour te couper la ligne de vue. Il est fragile, comme toutes les choses ici présentes et tu vois qu'il prépare déjà sa première attaque en attrapant une large benne à roulette.*\n\nDébut de la Course poursuite.\n\nRéussite : 1 | Échecs : 0",
-      "location_image": "https://i.pinimg.com/736x/03/58/8b/03588b12a11e6a71e360202393c32417.jpg"
+      "location_image": "channel_images/course-poursuite.jpg"
     },
     {
       "id": "scene_le_secret_1",
@@ -16682,11 +16733,11 @@ window.RP_DATA = {
       "channel_clean": "Le-Secret",
       "title": "Le-Secret — Scène 1",
       "actors": [
-        "Ren Urugaki",
         "LE CONSEILLER",
+        "Ren Urugaki",
         "Aryanna Erhendil"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-24T17:49:53Z",
@@ -16889,7 +16940,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*[Une respiration.](https://youtu.be/KtGOy5nK8w8?list=RDKtGOy5nK8w8)*\n\n*Une mort lente et indolore, mais cette fois c'est l'air qui leur avait manqué qui viendra les réveiller. **Aryana et Ren** se trouvent cette fois dans quelque chose de mou, mais qui semble être dans une caisse. C'est doré, avec une odeur de bétail, puis des mâchoires se font entendre. Si les deux mages sortent leur corps entier de cette botte de foin ils découvrent qu'ils se trouve dans un enclos et que juste à côté se trouve une créature. Le temps de l'action, le temps de redécouvrir la vie la brave bête tourne son visage en votre direction sans hénir, ses simples yeux sombres vous fixe alors que sa bouche mache le foin. Le cheval est d'une beauté rare, mais surtout d'une très bonne santé.*\n\n*Le temps de jeter un coup d'œil dans l'enclos, vous remarquez très vite que quelque chose cloche : l'air est pur et la terre semble molle. Vosu n'êtes plus dans la basse ville, plus dans la terreur de cet endroit qui vous a donné votre première mort.*\n\n**Vous êtes.. morts ?**\n\n*L'air glisse dans vos poumons, le son rentre dans vos tympans et la vue vous permet de comprendre que vous êtes encore quelque part mais où ? Le toucher vous rassure, votre équipement est toujours présent, comme avant votre départ de la vie. Vous refusez naturellement de tenter d'expérimenter avec le goût, surtout que vous n'êtes pas loin de crottin de cheval. En parlant de lui, il serait prêt à partager sa nourriture mais vous êtes surs que ça ne vous conviendrait pas.*\n\n*L'établis est propre, très bien entretenu et le soleil passe à travers les trous dans les planches de bois, témoignant du crépuscule qui se tient non loin. Si vous prenez le temps de fouiller, que ce soit avec les capacité de Pandoriens ou non, vous trouverez que cette endroit appartient à une famille de fermiers assez aisés, vivant aussi de course équestre.*\n\n**Des voix.**\n\n*Vous n'êtes pas ici légalement, quelque chose vous a transportés ici mais personne ne doit vous voir. Deux jeunes filles s'approchent, le sourire dictant la prononciation de leurs mots.*\n\nLe passé, dévoilant le secret.\n\nAvez vous le droit à la paix ?",
-      "location_image": "https://i.pinimg.com/736x/8d/e6/58/8de65898f58d7faa6bddca2dad1b8151.jpg"
+      "location_image": "channel_images/le-secret.jpg"
     },
     {
       "id": "scene_fontaine_marbr_e_4",
@@ -16898,10 +16949,10 @@ window.RP_DATA = {
       "channel_clean": "Fontaine-Marbrée",
       "title": "Fontaine-Marbrée — Scène 4",
       "actors": [
-        "Ragde Umbras",
-        "Cassian Ortie"
+        "Cassian Ortie",
+        "Ragde Umbras"
       ],
-      "main_actor": "Ragde Umbras",
+      "main_actor": "Cassian Ortie",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-06-28T10:01:29Z",
@@ -17192,7 +17243,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-03T12:13:35Z",
           "content": "```Fin de scène```"
         }
-      ]
+      ],
+      "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
       "id": "scene_sc_ne_lumia_ivara_1",
@@ -17405,7 +17457,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-18T15:41:15Z",
           "content": "```Scene terminée :3```"
         }
-      ]
+      ],
+      "location_image": "channel_images/bibliotheque-azure.jpg"
     },
     {
       "id": "scene_pont_des_deux_5",
@@ -17414,10 +17467,10 @@ window.RP_DATA = {
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 5",
       "actors": [
-        "Lumia Faendharts",
-        "Tarrion Tombetoile"
+        "Tarrion Tombetoile",
+        "Lumia Faendharts"
       ],
-      "main_actor": "Lumia Faendharts",
+      "main_actor": "Tarrion Tombetoile",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-01T11:02:52Z",
@@ -17517,7 +17570,8 @@ window.RP_DATA = {
           "content": "``` RP terminé avec l'accord du joueur. Salon Libre ```"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_cours_fleurie_2",
@@ -17526,10 +17580,10 @@ window.RP_DATA = {
       "channel_clean": "Cours-Fleurie",
       "title": "Cours-Fleurie — Scène 2",
       "actors": [
-        "Ivara Luella",
-        "Cassian Ortie"
+        "Cassian Ortie",
+        "Ivara Luella"
       ],
-      "main_actor": "Ivara Luella",
+      "main_actor": "Cassian Ortie",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-01T17:58:31Z",
@@ -17683,7 +17737,8 @@ window.RP_DATA = {
           "content": "```Scène abrégée par accord mutuel C:```"
         }
       ],
-      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**"
+      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**",
+      "location_image": "channel_images/cours-fleurie.jpg"
     },
     {
       "id": "scene_fuir___katelyn_hoffmann_isis_faerieth_1",
@@ -17692,11 +17747,11 @@ window.RP_DATA = {
       "channel_clean": "Fuir - Katelyn Hoffmann Isis Faerieth",
       "title": "Fuir - Katelyn Hoffmann Isis Faerieth — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
         "Isis Faerieth",
-        "Oeil"
+        "Oeil",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-03T19:28:00Z",
@@ -17875,7 +17930,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*Songes*\n\n*Des cernes protubérantes habitent le dessous de ses yeux, offrant un ton violacé à ses prunelles de jais. Sulyvan n'est pas quelqu'un de nécessairement malin, lorsqu'il s'agit de sa santé, de son propre bien-être. Il n'accorde que peu d'importance à son propre corps et encore moins à son esprit, qui se fragmente au rythme de l'horloge du temps. Il est difficile pour lui, héraut des cauchemars, de voir le sommeil comme une source de réconfort, d'apaisement. Les vagues s'écrasent avec violence contre les statues des sages, signe de protection, entité du bien, de la paix et de la prospérité. Mais ce concept lui semble si étranger, au même titre que son âme n'appartient pas aux murs dorées de cette cité qui se ronge elle-même, de l'intérieur.*\n\n— Oru'kin, tu sembles furieux. . .\n\n*Remous*\n\n*Le Sans-foyer s'adresse à la mer comme l'on s'adresse à un ami, un confident. Les Nephilims, créatures divines et créations de la Déesse-Mère, se montrent peu bavard lorsque c'est lui qui appel. Est-il exclu de tout les cercles, de tout les chants, par son manque de lumière ? Est-ce son opposition avec l'Ange qui contraint le ciel à le punir ? Difficile à dire, dans un quotidien nouveau, exempt des souffrances quotidiennes, qui l'ont accablé jusqu'à présent.*\n\n— J'aimerais vraiment qu'on accorde le droit de revoir cette bâtisse. Ou bien, est-ce là ma sanction, divinité des mers et des océans ?\n\n*Confession*\n\n*Sully est étrangement bavard. Le discours de sa Majesté lui a valu de remettre certaines de ses décisions, certains de ses choix, en question. Le doute s'insinue dans les moindres failles et même les prométhéens, n'échappent pas à cette règle, arrogantes créatures. La solitude qu'induit la suffisance est bien trop souvent sous-estimé, écarté car l'on ne voit que le narcissisme flagrant des \" génies \", ceux ayant la prestance du Dieu Solaire, père du premier péché.*\n\n— Il fait frais.\n\n*Absurdisme*\n\n*Voilà bien trop longtemps que l'enfant des Vosk se tient ici, à contempler un océan qu'il ne peut dompter, qu'il ne peut trancher. La question l'amuse néanmoins ; est-ce qu'un Homme, à un jour eu l'audace de vouloir trancher l'océan en deux ? Une idée aussi stupide que celle de trancher le ciel. Personne ne le peut.*",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646240669696043/1470396913105768552/SPOILER_43090b39f20b75512ce151df550e7ee2.png?ex=6a708a56&is=6a6f38d6&hm=d70d9a6c519af2efd257abee3fd44ca1ea7e9c7f3381dde5b6c0d1ec77fb4f60&"
+      "location_image": "channel_images/port-du-levant.jpg"
     },
     {
       "id": "scene_quartier_des_forges_2",
@@ -17951,7 +18006,8 @@ window.RP_DATA = {
           "content": "``` Suite à la Balafre | Salon Libre```"
         }
       ],
-      "location_description": "``` ``` \n\n**Après une longue marche, Hana finira par arriver dans le quartier des forges ce n'était pas forcément l'endroit où elle souhaitais se rendre au départ mais au final elle eu l'envie d'en découvrir un peu plus sur cet endroit et de le visiter étant donner que pour le moment elle a du temps libre. De ce fait avant que les missions de la Garde Pourpre vienne se succéder les unes après les autres, la jeune prométhéenne en profite afin d'en découvrir le plus possible. Portant son uniforme de la Garde Pourpre elle ne passait pas forcément inaperçu mais cela ne la dérangeais pas réellement depuis son enfance elle avait l'habitude de ressentir de nombreux regarder se poser sur elle alors désormais elle y était habituée, Hana commença sa visite de ce quartier n'hésitant pas à se rapprocher des différents commerce pour ainsi observer de plus près le travail de ces artisans sans pour autant avoir en tête d'achetée quelque chose.**\n\n**Au du fait qu'elle se battais le plus souvent à distance avec son manaclyste utilisant son bâton comme catalyseur elle ne se voyait pas demandée une épée ou un autre type d'arme à un forgeron mais cela n'empêchait pas la prométhéenne d'être curieuse au sujet de leur artisanat, travailler le métal n'est pas quelque chose de facile ce n'était pas son domaine et elle ne se sentait pas capable alors elle ressentait une légère admiration envers ceux qui ont décider d'y vouer leur vie entière afin d'être capable de forger les meilleures armes possible. Après une longue visite elle viendra se poser sur l'un des nombreux ponts son regard se déposant sur l'eau et le reflet que Hana pouvait apercevoir, une expression assez neutre était dessiner sur le visage de la jeune femme tandis qu'elle pouvait entendre de nombreuses personnes discutés entre elles.**\n\n**Elle viendra légèrement sourire ce lieu était bien différent du verger dans lequel elle se trouvais plutôt dans la journée mais en soit c'est ce qu'elle souhaitait découvrir un quartier bondés où elle pourrais faire de nouvelle rencontre surprenante ou en apprendre plus sur différent sujets dont elle n'a aucune informations ou très peu. La prométhéenne était au final bien contente d'être arrivé dans ce quartier satisfaisant ce qu'elle voulait découvrir après avoir quitté le Bastion Écarlate.**\n\n|| <@1450440060209074293> ||"
+      "location_description": "``` ``` \n\n**Après une longue marche, Hana finira par arriver dans le quartier des forges ce n'était pas forcément l'endroit où elle souhaitais se rendre au départ mais au final elle eu l'envie d'en découvrir un peu plus sur cet endroit et de le visiter étant donner que pour le moment elle a du temps libre. De ce fait avant que les missions de la Garde Pourpre vienne se succéder les unes après les autres, la jeune prométhéenne en profite afin d'en découvrir le plus possible. Portant son uniforme de la Garde Pourpre elle ne passait pas forcément inaperçu mais cela ne la dérangeais pas réellement depuis son enfance elle avait l'habitude de ressentir de nombreux regarder se poser sur elle alors désormais elle y était habituée, Hana commença sa visite de ce quartier n'hésitant pas à se rapprocher des différents commerce pour ainsi observer de plus près le travail de ces artisans sans pour autant avoir en tête d'achetée quelque chose.**\n\n**Au du fait qu'elle se battais le plus souvent à distance avec son manaclyste utilisant son bâton comme catalyseur elle ne se voyait pas demandée une épée ou un autre type d'arme à un forgeron mais cela n'empêchait pas la prométhéenne d'être curieuse au sujet de leur artisanat, travailler le métal n'est pas quelque chose de facile ce n'était pas son domaine et elle ne se sentait pas capable alors elle ressentait une légère admiration envers ceux qui ont décider d'y vouer leur vie entière afin d'être capable de forger les meilleures armes possible. Après une longue visite elle viendra se poser sur l'un des nombreux ponts son regard se déposant sur l'eau et le reflet que Hana pouvait apercevoir, une expression assez neutre était dessiner sur le visage de la jeune femme tandis qu'elle pouvait entendre de nombreuses personnes discutés entre elles.**\n\n**Elle viendra légèrement sourire ce lieu était bien différent du verger dans lequel elle se trouvais plutôt dans la journée mais en soit c'est ce qu'elle souhaitait découvrir un quartier bondés où elle pourrais faire de nouvelle rencontre surprenante ou en apprendre plus sur différent sujets dont elle n'a aucune informations ou très peu. La prométhéenne était au final bien contente d'être arrivé dans ce quartier satisfaisant ce qu'elle voulait découvrir après avoir quitté le Bastion Écarlate.**\n\n|| <@1450440060209074293> ||",
+      "location_image": "channel_images/quartier-des-forges.jpg"
     },
     {
       "id": "scene_avenue_des_armuriers_3",
@@ -18134,7 +18190,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-20T15:32:28Z",
           "content": "``` Fin de scène - Salon libre```"
         }
-      ]
+      ],
+      "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
       "id": "scene_ruelles_2",
@@ -18143,12 +18200,12 @@ window.RP_DATA = {
       "channel_clean": "Ruelles",
       "title": "Ruelles — Scène 2",
       "actors": [
-        "Jasp Nah",
-        "Ren Urugaki",
+        "Aryanna Erhendil",
         "Kenji Takahashi",
-        "Aryanna Erhendil"
+        "Ren Urugaki",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Aryanna Erhendil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-04T13:20:40Z",
@@ -18237,7 +18294,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Début de la patrouille !\n\n**Pour les membres du Voile d'Ivoire, la soirée s'était terminée de manière plus calme que l'après-midi et la soirée. Le buffet était bien évidement excellent, mais aussi les gens de la guilde avait laissé des petites attentions assez douces pour les nouveaux venus. De quoi se changer dans des tenues sympathiques pour la vie dans le forum, mais aussi une tenue pour se balader dans les rues et porter les fières couleurs de la guilde. Elle ne sont bien évidement pas obligatoire, ce qui l'est par contre c'est la médaille qui atteste la réussite du test d'entrée à la cour des mages mais aussi leur appartenance. **\n\n**Les recrues se sont alors levés de bonne heure, peut-être qu'individuellement ils sont matinaux, mais cette fois c'était la guilde entière qui l'était. Pour leur donner quelques minutes de plus Hector étaient venus les chercher après le meeting matinal, sa bonté le perdra surement, mais ensuite il s'était assuré de passer de bonne heure pour réveiller tout le monde et leur donner rendez-vous à l'entrée de la guilde. Une fois ceci fait, Hector prit les devants pour partir. Il avait annoncé que sur le chemin il annoncerait les tenants et aboutissants de la patrouille, et le voilà qu'il commence.**\n\n> Avant toute choses, ne prenez peur de rien, ce qu'on fait aujourd'hui peut-être angoissant mais il deviendra habituel avec la pratique et l'habitude. \n\n**Son dos droit et sa démarche très tranquille, Hector avant les bras ballants comme presque pas préoccupé par l'idée qu'il puisse être en danger. Sans voix était un peu plus grave étant donné que le matin avait cet effet sur les hommes, mais elle était toujours aussi douce.**\n\n> Chaque membre du Voile d'Ivoire est dans une escouade du matin ou de l'après-midi, sauf si vous êtes partit dans une mission. Les escouades sont souvent supervisées par un mage de rang 3, comme moi actuellement et dans ces dernières il peut se trouver des mages de rang 2 ou 1 si le but est de le faire venir dans notre guilde. Lors de ces patrouilles, l'escouade se balade dans la zone qui lui a été donnée, qui est très petite vu que nous sommes très nombreux, et on aide les habitants. Aider à mettre en place un marchant, aider une mère avec son linge ou un enfant à récupérer un chat. On assure la sécurité de cette zone et les habitants savent nous le rendre. \n\n**La marche du capitaine de l'escouade se fini en face du petit pont qui passe au dessus de la rivière. Dans son dos se trouvait leur destination. Pour les habitant d'Esperia qui connaisse la strate de la classe moyenne, il savent que derrière lui se trouve le marché du Quartier Sud-Ouest, très réputé pour son activité matinale, qu'elle soit bonne ou mauvaise. C'est une place qui saura tester les recrues à garder leur sang-froid mais aussi leur montrer ce qu'est le véritable point fort du Voile d'Ivoire. Hector se tient droit comme un piquet avec un regard fier en leur direction, imbibé d'espoir. C'est nouveau pour lui et l'ambition qui brule dans ses yeux est presque enivrante. Une personne tant motivé sait donner la patate à ses comparses d'un simple regard.**\n\n> Des questions ?\n\n**Pour les âmes plus curieuse, dans le fond de l'autre côté du pont légèrement sur la gauche, se dessine des visages. Un jeune garçon qui pointe alors Hector du doigt et ce qui semble être sa mère avec un panier en osier qui le tient pour éviter qu'il s'excite un peu trop et dérange l'homme aux cheveux gris.**",
-      "location_image": "https://i.pinimg.com/736x/2d/a5/95/2da595898c39d92a0f0ababc933d6dc7.jpg"
+      "location_image": "channel_images/ruelles.jpg"
     },
     {
       "id": "scene_ils_ne_souhaitent_qu_une_seule_chose_la_paix_1",
@@ -18372,7 +18429,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-14T17:22:15Z",
           "content": "```Scène terminée.```"
         }
-      ]
+      ],
+      "location_image": "channel_images/egregore.jpg"
     },
     {
       "id": "scene_r_sidences_des_lib_rateurs_2",
@@ -18381,12 +18439,12 @@ window.RP_DATA = {
       "channel_clean": "Résidences-des-Libérateurs",
       "title": "Résidences-des-Libérateurs — Scène 2",
       "actors": [
-        "Ren Urugaki",
+        "LE CONSEILLER",
         "Kenji Takahashi",
-        "Aryanna Erhendil",
-        "LE CONSEILLER"
+        "Ren Urugaki",
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-06T11:22:23Z",
@@ -18467,7 +18525,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-09T17:51:57Z",
           "content": "N'importe qui se laissant emporter par les émotions et par une telle situation prendrait le même choix que Kenji. Lui, qui auparavant, faisait des beaux discours envers Inzu, leur propre instructeur, et à ses autres camarades pour finalement dévoiler le véritable visage de cet homme. Au moins, on pouvait dire qu'il avait servi qu'à une chose dans leurs vies communes : nettoyer sa cellule.\n\n⸻ **\"C'est dans les moments opportuns que l'on aperçoit le vrai visage de son entourage. Soit en sûr Kenji, si ta mère sera sauve, ta vie n'est qu'une question de jour. N'oublie pas que chaque acte à des conséquences.\"**\n\nUn évènement précis dans la basse ville, elle fait référence à son crime, celle de cette prostituée qui n'a pas eu lieu de vivre au delà de quelques secondes broyé par les mains de ce même membre de la garde pourpre. Son jugement devrait bientôt arriver, du moins, elle espère que la Justice de l'Ivoire, ou des Pourpres, fera son travail. Même si elle a plus confiance en une justice que de l'autre. \n\nElle lève ses mains en l'air. \n\n⸻ **\"J'accepte de venir que si mon beau prince charmant me porte dans ses bras telle une princesse devant redescendre de son trône pour manger la poussière dans votre barraque.\"**\n\nConcrètement, elle se rend, mais elle ne bouge pas de ses pieds par elle-même. Elle demande à ce qu'on la porte ? Elle est extravagante, on ne peut pas le lui retirer. Au final, elle soupire, s'approchant des deux hommes.\n\n⸻ **\"Allez, pousse toi.\"**\n\nRetour à l'envoyeur. De son propre pied, elle vient botter le cul de Kenji, son coup amplifier par le vent. Si, d'origine, il est un Uzen et que ce coup d'une grande force ne devrait pas trop le faire bouger, d'un peu seulement ou deux, la puissance de son vent propulse ce même homme d'un mètre cinquante en avant, libérant Ren de l'étreinte de son pied. \n\n⸻ **\"Vu que c'est personnel, Ren et moi on va gentiment aller dedans, pendant que toi, tu vas croupir ici. Je suis certaine que tu vas avoir tout le mérite suite à ta décision.\"**\n\nFait-elle en aidant l'Ivoire à se relever, jetant un grand sourire à son camarade pourpre. Elle le provoque, d'une certaine manière, mais il vient de les jeter en pâture, elle le sait. Elle peut le comprendre, mais elle n'accepte pas sa décision. Aussi certaine d'elle qu'elle est actuellement, sa mère et sa sœur ne reviendront pas. Les libérateurs avoir une parole ? Elle en doute, vu les éléments produits à l'encontre d'Asior et Katelyn, elle en doute grandement. Alors, une fois cela effectuée, elle n'attendra pas vraiment avant de se placer derrière le prométhéen, lui servant de bouclier si Kenji souhaite rétorquer à son égard."
         }
-      ]
+      ],
+      "location_image": "channel_images/residences-des-liberateurs.jpg"
     },
     {
       "id": "scene_jardin_de_quartz_2",
@@ -18476,11 +18535,11 @@ window.RP_DATA = {
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 2",
       "actors": [
-        "Idelmée Cadree",
+        "Aegnor Othar",
         "Astreüs Mylonas",
-        "Aegnor Othar"
+        "Idelmée Cadree"
       ],
-      "main_actor": "Idelmée Cadree",
+      "main_actor": "Aegnor Othar",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-07T18:00:28Z",
@@ -18652,7 +18711,8 @@ window.RP_DATA = {
           "content": "``` Fin de scène ```"
         }
       ],
-      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*"
+      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*",
+      "location_image": "channel_images/jardin-de-quartz.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_5",
@@ -18806,7 +18866,8 @@ window.RP_DATA = {
           "content": "```scène de RP fini```"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_sous_sol_2",
@@ -18815,13 +18876,13 @@ window.RP_DATA = {
       "channel_clean": "Sous-Sol",
       "title": "Sous-Sol — Scène 2",
       "actors": [
-        "Isis Faerieth",
+        "LE CONSEILLER",
         "Jasp Nah",
-        "Aryanna Erhendil",
         "Ren Urugaki",
-        "LE CONSEILLER"
+        "Aryanna Erhendil",
+        "Isis Faerieth"
       ],
-      "main_actor": "Isis Faerieth",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-09T18:47:39Z",
@@ -19040,7 +19101,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-15T23:40:59Z",
           "content": "*Un Enfer après l'autre.*\n\n> *Son corps passe facilement au travers du trou qui a été formé par la Pourpre, et ce, grâce à l'aide du blondinet. Ses pas l'emmènent dans la rue adjacente, à quelques mètres. Doucement, ses mains viennent frotter la longue jupe blanche qui, à de nombreuses reprises, a traînée dans la boue. Son visage dessine une moue, voilà encore du travail lorsqu'elle rentrera à sa chambre, au Voile d'Ivoire. Une machine à laver, à étendre et à ranger. Ses yeux se lèvent, vers ceux de celui qui par la honte traduit son expression. Elle lui adresse un sourire.*\n\n> *Jamais elle ne comprendra ce qu'il vit. Elle ne peut pas : jamais l'Immaculée n'a eu à vivre ainsi. Une pensée la traverse, s'autoriserait-il, s'il en avait l'occasion, à être heureux ? Ou est-ce que la spirale qui chaque jour l'enfonce plus profondément dans son plan d'aversion envers la Couronne est-elle indélébile, au point d'à jamais le changer ? Un soupir, elle ne pourra rien à y faire. Un constat : de toute façon elle non plus n'arrive à rien.*\n\n> *Elle aimerai lui proposer, lui dire que la fenêtre de sa chambre est toujours ouverte, et qu'une corde y est suspendue. Un stratagème auquelle son esprit avait eu le temps de songer lors de ces longues heures passées à retourner les problèmes dans tous les sens. S'il le voulait, il pourraît emprunter l'endroit, lorsqu'elle n'y est pas. Mais un trait de caractère s'immisce entre lui et la vérité qu'elle aimerait imposer; une timidité impensable, face au seul être qui pourrait s'apparenter à un ami.*\n\n> *Sa bouche s'entrouvre, comme pour s'exprimer, le début du courage. Puis elle se ravise. Ses lèvres se clorent dans un silence tout aussi accablant. Puis, ses pas suivent, lentement. Isis n'a rien de plus à ajouter. Dans la boue, ses petits pas suivent le jeune garçon sans broncher. Comme un enfant, que l'on aurait grondé. Mais le seul à lui avoir reproché quoi que ce soit ce soir, c'est sa culpabilité.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/sous-sol.jpg"
     },
     {
       "id": "scene_salon_2",
@@ -19049,10 +19111,10 @@ window.RP_DATA = {
       "channel_clean": "Salon",
       "title": "Salon — Scène 2",
       "actors": [
-        "Kenji Takahashi",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Kenji Takahashi"
       ],
-      "main_actor": "Kenji Takahashi",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-09T18:47:42Z",
@@ -19111,7 +19173,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "**Magon lui entrera dans la salle du bras de fer pour voir se qu'il a dans le ventre en terme de force brutes, il était habillé en tenue toute noir avec c'est cheveux longs qui tombé sur ses épaules et le bas du dos.**\n\n{Voyant voir se que j'ai dans le ventres...}\n\n**Se dit-il resserrent la mains dans le creux de sa paume pour en faire un poing.**",
-      "location_image": "https://cdn.discordapp.com/attachments/1500068649174827058/1500130174589731019/133b20b67739d39d34c894231209e434-1-1.jpg?ex=6a709a98&is=6a6f4918&hm=52bdd6624117de6efeaec5c1a1aa5cf7393997bc74ee8660848a9e37065aeffd&"
+      "location_image": "channel_images/petit-salon.jpg"
     },
     {
       "id": "scene_auditorium_2",
@@ -19206,7 +19268,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Reprise de conscience et éveil forcé\n\n*Plusieurs longues minutes s'écoulèrent avant que les premiers mages ne daignent à se réveiller. L'esprit flouté, encore embourbé dans un ancrage qu'ils avaient abandonnés. Leurs esprits ne finirent par émerger qu'une fois la brume dissipée. Un instant peinible, un retour à la réalité brutale qui n'en fut que plus déconcertant lorsque que le groupe découvrit que l'espace dans lequel ils étaient arrivés n'avait rien de commun avec celui qu'ils avaient abandonnés.*\n\n*Le corps courbé par les bras de morphées, les plus rapides à se relever eurent tout le luxe d'admirer la chaleur de l'auditorium au sein duquel ils avaient atterri. Un lieu de connaissance plus où moins rangé, un espace d'apprentissage et de savoir rythmé par une absence pesante... Celle du moindre son... Tout s'était tut... Le silence était de marbre alors que la suite les attendait telle la pomme qui rougit là-haut dans l'arbre.*\n\n*Face à eux... Une phrase, une simple rédaction tissée sur le noir d'un tableau à craie. Un message énigmatique laissé comme indice sur ce en quoi les prémices de ce fameux examen allaient consister.*\n\n> **\"Toute chose mesurée possède un terme...Toute chose interrompue perd son sens.. Ce qui s'écoule ne doit ni être hâté, ni être entravé mais bel et bien respecté.\"**\n\n*Ces termes désormais lus et intégré, c'est dans un léger grincement que les portes s'ouvrir. Un vaste couloir à présent visible, l'assemblée eut tout le luxe de contempler le chemin vers le plus loin tandis qu'un bruit sourd se fit entendre, sur la table du pupitre habituellement réservé au conférencier, un sablier venait de se retourner...*\n\nLà-bas n'est peut être que là-bas qu'au propice instant ?",
-      "location_image": "https://i.pinimg.com/1200x/70/da/ec/70daec8ff6e9cce0756281113f1e3138.jpg"
+      "location_image": "channel_images/auditorium.jpg"
     },
     {
       "id": "scene_pont_des_deux_6",
@@ -19215,11 +19277,11 @@ window.RP_DATA = {
       "channel_clean": "Pont-des-Deux",
       "title": "Pont-des-Deux — Scène 6",
       "actors": [
-        "Iscarioth",
+        "Arun Acharya",
         "Lumia Faendharts",
-        "Arun Acharya"
+        "Iscarioth"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Arun Acharya",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-12T20:05:11Z",
@@ -19475,7 +19537,8 @@ window.RP_DATA = {
           "content": "```Scène terminer, salon libre```"
         }
       ],
-      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```"
+      "location_description": "```Pas.```\n\n*Marchant le long du pont, Vesper s'était accouder aux bord de celui ci, dos au vide. Ses bras, pressés contre la pierre dont ce pont est fait, ses yeux eux se projettent à l'horizon. Il semble être, autre part, le sons du vent qui siffle à ses oreilles, aujourd'hui le vent est présent, et il ne semble pas vouloir se faire discret.*\n\n*Il cherchera à écouter ceux qui l'entours, comme il en a l'habitude, ce ne sont que de brèves discussions. Ce qu'il entend, ce ne sont que des bouts de vie qui défile à travers ses oreilles, il écoute des moments qu'il n'a jamais vécu, sourit à l'ouïe de blague qu'il n'a jamais raconté, ce même sourire qui s'efface lorsqu'il n'y a plus de voix.*\n\n\"Je ne m'attendais pas à ce qu'il y ait tant de passage ici.\"\n\n*Laisse-t-il échapper à la vue du monde passer sur ce pont, la vue des deux statues lui fait face, il n'est pas sans émotions face à elle. Fasciné et presque effrayer par le talent des sculpteurs, Raien, plongera ses yeux sur ces statues, il ne pouvait juste pas s'en défaire. Elles qui racontent une histoire sans aucun mot, transmet la fierté sans aucune action, elles représentent le fondement même de la cité.*\n\n*Shogo observera par la suite la vue qui se cachait derrière ces mêmes statues. Un horizon magnifique, une vue à coupé le souffle. Le soleil scintille, le vent souffle et pourtant, toutes ces choses mènent à se souvenir d'une époque lointaine. Une époque ou l'enfant en bas âge qu'il était n'avait aucun soucis, une époque ou cette vue lui était quotidienne.*\n\n*Un simple sourire de mélancolie s'affichera sur son visage, un sourire non pas satisfait, mais qui apporte avec lui, la soif. Une soif de plus, une soif de redécouvrir ce que cela fait de ressentir à nouveau cette sensation d'apaisement.*\n\n__{La bonne époque..}__\n\n```Quand tout allait bien.```",
+      "location_image": "channel_images/pont-des-deux.jpg"
     },
     {
       "id": "scene_verger_des_p_ch_s_3",
@@ -19546,7 +19609,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "``` ``` \n\n**Durant sa visite du Bastion Écarlate, Hana finira par poser pied au sein de cet endroit elle viendra alors l'observer marchant calmement sur ces chemins blanc entouré de plantes d'une couleur écarlate. Elle commencera alors une simple balade dans ce verger déposant son regard sur ce paysage qu'elle ne pouvait s'empêcher d'admirer, durant cette dîte marche Hana s'accroupira à nombreuses reprises pour être au plus proche des plantes et ainsi pouvoir mieux observer les détails de ces dernières. La jeune femme ne connaissait pas l'histoire de ce verger ne pouvant réellement imaginer ce qui a bien pu se passer entres ces arbres blancs, cependant quel que soit l'évènement qui a pu se dérouler en ces lieux cela appartient à l'histoire de la Garde Pourpre qu'elle a décider de rejoindre et elle ne le regrette en aucun cas.**\n\n**Hana s'enfoncera de plus en plus au sein du verger admirant le paysage s'offrant à elle, un lieu pour le moment calme. La jeune femme souhaitait en profiter avant que le brouhaha d'un rassemblement en ces lieux viennent déranger le silence que lui offre la nature, elle n'était pas contre une rencontre avec d'autres individus mais il est vrai qu'elle n'était pas la plus grande amatrice de rassemblement de masse où les voix peuvent se superposer sans qu'on puisse comprendre au final un traitre mot de son interlocuteur, c'est bien pour cette raison qu'Hana avait décider de pour le moment faire bande appart et de ne pas forcément se mélanger à un groupe. Cela pouvait être une bonne comme une mauvaise chose pour elle ne pas se rapprocher de ses camarades dans l'immédiat pourrait lui fermer certaines portes dans le futur cependant la prométhéenne ne se fiais pas à cela.**\n\n **Durant sa longue marche du coin de l'oeil Hana pourra voir quelque chose d'intriguant, venant se rapprocher de ce petit détails entre les plantes un léger sourire s'affichera sur son visage tandis qu'elle était accroupi en observant ce sang se cachant entre les plantes. Comme elle pouvait le penser ce lieu possède une histoire qu'elle soit récente ou non, ses suppositions ont pu s'accentuer lorsqu'elle releva le regard et vu sur ces arbres blancs des éraflures, ce n'était pas naturel cela Hana en était convaincu mais elle n'était pas non plus trop surprise après tout  rien que l'arène hurlante annonçant l'ambiance de la Garde Pourpre. La jeune femme viendra alors se redresser après avoir pu observer ce sang et ces éraflures venant doucement s'étirer, elle reprendra alors sa marche s'enfonçant encore une fois dans ce verger.**\n\n**Après un certain moment elle finira par arriver dans un coin qui l'attirait, venant se rapprocher d'un arbre elle déposera sa main contre le tronc de celui-ci toujours ce petit sourire afficher sur son visage**\n\n*\"Quelque soit l'endroit, la nature reste magnifique dans la plus part des cas.\"*\n\n**Suite à ces quelques mots prononcés par la prométhéenne cette dernière viendra décrocher le bâton de son dos venant lentement s'assoir dos contre cet arbre, elle sortira un petit chiffon de l'une de ses poches récupérés au préalable dans sa chambre puis elle déposera son bâton sur ses genoux et débutera un simple nettoyage de ce dernier. Des gestes simple mais lent prenant soin de ce qui lui sert de catalyseur, un cadeau offert par son père lorsqu'elle fût capable de maîtriser son manaclyste comme il fallait un simplement souvenir parcourant l'esprit d'Hana fît son sourire s'agrandir sur son visage tandis qu'après avoir entretenue son bâton elle vient le déposer à côté d'elle puis profitera alors de ces fleurs l'entourant, de ces arbres dissimulant le paysage et de ce calme offert par ce lieu possédant une grande histoire pour Hana cet endroit était parfait, elle l'appréciait et était heureuse d'avoir pu découvrir un lieu comme celui-là au sein du Bastion Écarlate de la Garde Pourpre.**",
-      "location_image": "https://cdn.discordapp.com/attachments/1328715287704371210/1473277052995240090/8ddeb80719d2bf136c8488c287982fd7.png?ex=6a7078ad&is=6a6f272d&hm=1422dad60d5dbfb801d2e82f8ef0d6ebf689cd2e426ae13eb8e20588722ac813&"
+      "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
       "id": "scene_parc_des_cardinaux_6",
@@ -19555,10 +19618,10 @@ window.RP_DATA = {
       "channel_clean": "Parc-des-Cardinaux",
       "title": "Parc-des-Cardinaux — Scène 6",
       "actors": [
-        "Selena Moon",
-        "Nick Sol"
+        "Nick Sol",
+        "Selena Moon"
       ],
-      "main_actor": "Selena Moon",
+      "main_actor": "Nick Sol",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-13T13:58:36Z",
@@ -19718,7 +19781,8 @@ window.RP_DATA = {
           "content": "**[Suite à la Balafre.]**"
         }
       ],
-      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```"
+      "location_description": "```Pierres.```\n\n*Avec des petits sons de pas, Vesper entrera dans le parce des cardinaux. ce lieu ou repose la mémoire de tant de héros dont il entendait parlait lorsqu'il fut plus jeune. Des comptines, il fut bercer avec dans sa très jeune jeunesse lorsque sa défunte mère fut toujours des siens.*\n\n*Ses yeux, voyageront, sur chacune des statues qu'il observera, son cerveau lui, tentera de se remémorer les comptines qu'on lui chantait d'eux, leurs histoires. Si son cerveau lui, n'est pas capable de ce rappeler de toutes ces histoires de manière intactes, il n'hésitera pas à combler les trou en inventant lui même certains passages, d'autres seront juste interprété différemment qu'ils avaient été raconté.*\n\n\"Elles sont plus grandes que dans mes souvenirs..\"\n\n*Ses souvenirs, ceux d'un enfant porter par son père, lorsque tout aller encore bien. Vesper s'arrêtera devant une statue, celle d'un héro dont l'histoire lui est inconnue. Ni son nom, ni son visage, pas même l'emplacement de la statue à cet endroit semble remonter dans les souvenirs du jeune homme.*\n\n*Ses bras se croiseront alors face à la statue, réfléchissant à qui peut-il bien être, si ce n'est que son identité, rien ne semble le définir, son visage n'est pas celui d'un grand commandant, sa posture est droite mais sans plus. Comme si il n'était que le héro que l'histoire a préféré oublier.*\n\n\"Qu'avez vous accomplit de si grand pour terminer dans ce parc..\"\n\n*Ces mots, une requête adressé à un mort, des mots qui n'atteindront jamais le concerné même. Comme une bouteille jeté à la mère, ces quelques mots ne trouveront surement jamais d'oreilles pour les réceptionner.*\n\n*Vesper marquera un temps de pause, en signe de respect à la mémoire que représente cette statue, l'homme qu'il fut, mais qu'il n'est plus.*\n\n*Ses pas se dirigeront un peu plus loin à travers le parc, sur lui, un médaillon, à la couleur sombre. Les regards eux sont variés, certains admirent lorsque d'autres ignorent sa signification. Certaines personnes l'évite par peur, d'autre se décale pour lui frayer un chemin, des plus rares, et audacieux iront même jusqu'à venir lui serrer la mains. Bien entendu il sera toujours méfiant envers cela, peu importe leurs âge, sexe ou apparence, personne n'est trop inoffensif. Il refusera donc catégoriquement de serrer la main à quiconque, non pas qu'il ait peur, mais car il est humble, lui qui n'a encore rien accomplit, comment pourrait-il accepter de sourire sur l'honneur de ses compère.*\n\n*Un instant son regards se posera sur une vue qu'il n'eut pas la chance d'admirer étant petit, une statue oui, un homme non. Celle la est celle d'une femme. Si la majorité des statues représente des hommes, ici se trouvait une femme, son corps n'est pas sexualisé, il est juste, réel. Son visage stoïque, le regards lancé droit devant elle, comme pour regarder un horizon qu'elle ne peut plus voir. Son nom à elle aussi lui est inconnue, tout autant que son histoire.*\n\n*Cependant la présence de cette statue reflète bien plus que ses actes, elle démontre qu'à elle seule, tous peuvent marquer l'histoire. Une statue aussi inspirante lorsqu'on se penche dessus, comment est-ce possible qu'une simple pierre taillée renferme autant de sagesse.*\n\n\"Wow...\"\n\n*C'est ici que Vesper ce stoppera, il admirera à son tour l'horizon, tournant maintenant dos à la statue, ses yeux en quêtes d'un indice, d'une vue, d'un acte, d'un geste, d'un mouvement, mais rien. Ses oreilles, elles, écoutent, un nom, un autre, une histoire, une parole, un juron, une dispute, un soupir, le sien, tant d'informations, mais si peu en même temps.*\n\n*Vesper, se contentera alors de s'asseoir sur le bord de cette même statue qu'il était en train d'admirer juste avant, profitant du petit courant de vent qui caressera son visage et de la vue qu'il pouvait avoir.*\n\n```Repos.```",
+      "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
       "id": "scene_terrains_nacr_s_3",
@@ -19728,8 +19792,8 @@ window.RP_DATA = {
       "title": "Terrains-Nacrés — Scène 3",
       "actors": [
         "Jin Alurantes",
-        "Lucia Fiorella",
         "Aryanna Erhendil",
+        "Lucia Fiorella",
         "Nick Sol"
       ],
       "main_actor": "Jin Alurantes",
@@ -19898,7 +19962,8 @@ window.RP_DATA = {
           "content": "<@1132226742107516929> <@278093533192388608> <@692022969081528320> <:gak_pourpre:1514356487726698717>"
         }
       ],
-      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *"
+      "location_description": "*La fin de l'après-midi approche. Lewis a pu trouver un peu de pain afin de se remplir le ventre et comme sa sieste n'a que peu duré, il a eu le luxe d'explorer le bastion écarlate... du moins en partie. Mais voici qu'il se retrouve sur un sol bien plus familier: celui des terrains nacrés. Du haut de l'allée qui sépare les différentes sections, l'homme se remémore les entraînements suivis aux côtés de Brutus, le sang qui a parfois coulé, la sueur dont il a fallu se laver. Il y a là une source de fierté pour ceux qui voient aujourd'hui que leurs efforts ont payé et pour cause: c'est vêtu des couleurs de la garde pourpre qu'il se présente aujourd'hui.*\n\n- Les belles personnes que l'on côtoie. Si j'ai pu tirer mon épingle du jeu aujourd'hui, ça ne signifie nullement que la tendance est immuable.\n\n*Satisfait de ses performances du jour, Lewis n'y voit pourtant qu'un avant-goût de ce qui suivra. Et la suite, il faut la préparer. Aiguiser ses sens, renforcer son corps, faire fleurir de nouvelles stratégies dans son esprit. Tout ça ne vient pas seul et ceux qui arpentent en cet instant les terrains nacrés le savent: le travail est l'origine de tout. C'est cette idée en tête que l'homme descend les escaliers pour se rendre sur l'un des terrains. Il effectue au passage quelques mouvements trop modestes pour être qualifiés d'échauffement et dont la justification se trouve dans ses murmures.*\n\n- Si le logis n'y est pas, l'uniforme est de bonne facture. On s'y meut avec plus d'aisance qu'il n'y paraît et l'isolation thermique est remarquable...\n\n*Arrivé au bas des escaliers, l'homme se dirige vers un mannequin désigné au hasard. **Brutus** n'est pas encore là et même s'il préfère se dépenser avec son ami, rien n'empêche le prométhéen de commencer doucement. Adoptant une garde qui a tout de noble, l'homme jette quelques jabs dans le vide avant de commencer à les diriger *",
+      "location_image": "channel_images/terrains-nacres.jpg"
     },
     {
       "id": "scene__chevet_sacr__1",
@@ -19907,13 +19972,13 @@ window.RP_DATA = {
       "channel_clean": "-Chevet-Sacré",
       "title": "-Chevet-Sacré — Scène 1",
       "actors": [
-        "Iscarioth",
         "Oeil",
+        "Akane Tsukishiro",
+        "Iscarioth",
         "Septimus Kales",
-        "Ren Urugaki",
-        "Akane Tsukishiro"
+        "Ren Urugaki"
       ],
-      "main_actor": "Iscarioth",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-14T11:41:47Z",
@@ -20062,7 +20127,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Une salle débordante de vie\n\n*\" Tout voyage connaît un départ et une arrivée ; apprécions les deux, à leur juste valeur. \" — Take, Voyage au fil de la Lame.*\n\n*La salle est gorgé d'histoire. Des œuvres, des livres et autres parchemins, de l'encens qui embaume la pièce et cette odeur si particulière du papyrus, qui rescelle les histoires du deuxième plus vieux clan Sisyphe. Cet endroit est un lieu de rencontre, de sagesse, de partage, par ou pour la lame. Bien qu'un drap couvre le fond de la salle, une bougie laisse apparaître trois silhouttes ; un homme couché et deux autres debout, droit, fier. Les nouveaux venus sont invités à s'asseoir sur des coussins prévu à cet effet ; certains se mettent même à genoux*\n\n*Si pour l'instant le silence semble régner, celui-ci est interrompu par une toux grasse ; celle qui annonce la fin d'un parcours. Qu'est-ce qui attend, la nouvelle génération du clan, par le prisme des paroles du vieille homme ?*\n\nUn puit.",
-      "location_image": "https://i.pinimg.com/736x/f6/24/85/f624858130ba647384ab8cdadcfad226.jpg"
+      "location_image": "channel_images/chevet-sacre.jpg"
     },
     {
       "id": "scene_armurerie_ecarlate_1",
@@ -20071,12 +20136,12 @@ window.RP_DATA = {
       "channel_clean": "Armurerie-Ecarlate",
       "title": "Armurerie-Ecarlate — Scène 1",
       "actors": [
-        "Jin Alurantes",
         "Isis Faerieth",
-        "Kenji Takahashi",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Jin Alurantes",
+        "Kenji Takahashi"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-14T12:58:10Z",
@@ -20217,7 +20282,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-15T18:14:20Z",
           "content": "( <@448509375284379678> je pense qu'on conclut là-dessus ? Parce-que je nous vois mal faire une scène à la balafre alors qu'on en a déjà une)"
         }
-      ]
+      ],
+      "location_image": "channel_images/armurerie-ecarlate.jpg"
     },
     {
       "id": "scene_salle_de_r_veil_2",
@@ -20226,10 +20292,10 @@ window.RP_DATA = {
       "channel_clean": "Salle de Réveil",
       "title": "Salle de Réveil — Scène 2",
       "actors": [
-        "Myrea M",
-        "OWL LE MESSAGER"
+        "OWL LE MESSAGER",
+        "Myrea M"
       ],
-      "main_actor": "Myrea M",
+      "main_actor": "OWL LE MESSAGER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-15T07:46:32Z",
@@ -20280,7 +20346,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-26T22:36:11Z",
           "content": "> *Ses doigts commencèrent à se triturer nerveusement, tandis que son regard se détournait de l'homme à son chevet. Une gêne inhabituelle semblait s'être installée sur ses traits. Myrea n'avait aucune difficulté à reconnaître lorsqu'elle avait fait une erreur, et celle-ci lui paraissait soudainement… particulièrement mauvaise. Elle venait à peine d'échapper à la mort et, pourtant, elle se retrouvait maintenant à se demander si elle n'avait pas commis une sacrée bêtise en laissant cet ouvrage derrière elle. La culpabilité est un étrange sentiment qu’elle déteste ressentir. Et ce.. depuis un malheureux jour, où un combat à malheureusement très mal tourné. Le silence que laissait planer la demoiselle devient presque inhabituel, cependant, ce détail pouvait échapper à l'œil de celui qui ne la connaissait pas vraiment.*\n\n<:r_rose:1050436335137202286> / - “__**Le Tark’Asher.. Angéline.. Le Sacrée Coeur.. Des fleurs..? Et cette dame ailée..**__” *se murmure-t-elle avant de lancer un regard au jeune homme à côté d’elle.* “__**Pourrais-je vous poser une question..? Avant le début de notre mission, le monstre que nous allions affronter nous a vaguement été.. présenté. Pourriez vous me dire ce que.. vous savez sur lui..?**__”\n\n> *Ce conte était peu être une piste.. Une piste qu’elle a abandonné à son triste sort.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/cellules.jpg"
     },
     {
       "id": "scene_place_de_grandpalais_4",
@@ -20289,12 +20356,12 @@ window.RP_DATA = {
       "channel_clean": "Place-de-Grandpalais",
       "title": "Place-de-Grandpalais — Scène 4",
       "actors": [
-        "Eldren Gates",
-        "Tenebris",
         "Arun Acharya",
-        "Yunah Aoi Enjaku"
+        "Yunah Aoi Enjaku",
+        "Eldren Gates",
+        "Tenebris"
       ],
-      "main_actor": "Eldren Gates",
+      "main_actor": "Arun Acharya",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-16T17:07:41Z",
@@ -20429,7 +20496,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-19T20:59:20Z",
           "content": "L’union se répète, une troisième carte ressemble enfin à ce qu’elle devrait être.\n\n*Suivant les gestes de son compère, c’est en mimique que la dite Aoi interprète ce que, dans son grimoire, on a désiré glisser. Avide de solution rapide et non de réponses passant par les méandres détournés de son âme, elle s’exécute dans la sincérité du tiraillement de ses doigts. Le papier suit la rythmique dictée par le Uzen : ensemble, les deux morceaux s’animent, se rejoignent, s’épousent et, enfin, ne font plus qu’un. La fusion est parfaite, sa ligne directrice est fixe, alors que des termes se révèlent comme une évidence.*\n\n\n**“Le Guerrier.”**\n\n*Affamé par la haine et le sang, il est celui qui sera prêt à tout sacrifier pour engloutir son ennemi. Une passion qui ne vient pas de sa hargne ou de son appétit prononcé pour le sang, mais bel et bien de son amour pour le combat et de sa volonté de se définir comme puissant. Coincé entre héroïsme et désillusion, il avance sur le penchant d’une histoire qu’il a choisi d’écrire lui‑même, surpassant les aînés ayant peut‑être trop fortement marqué son avant.*\n\n*Une fois de plus, l’illusion fait alors son apparition. La vue d’un espace que la jeune femme reconnaît, un recoin subissant le lourd d’innombrables ouvrages que le premier benêt aurait certainement le culot d’appeler “bouquin”.*\n\n\n**La Bibliothèque azur l’attend.**\n\nL’union se répète, une troisième carte ressemble enfin à ce qu’elle devrait être.\n*Suivant les gestes de son compère, c’est en mimique que la dite Aoi interprète ce que, dans son grimoire, on a désiré glisser. Avide de solution rapide et non de réponses passant par les méandres détournés de son âme, elle s’exécute dans la sincérité du tiraillement de ses doigts. Le papier suit la rythmique dictée par le Uzen : ensemble, les deux morceaux s’animent, se rejoignent, s’épousent et, enfin, ne font plus qu’un. La fusion est parfaite, sa ligne directrice est fixe, alors que des termes se révèlent comme une évidence.*\n\n\n**“Le Guerrier.”**\n\n*Affamé par la haine et le sang, il est celui qui sera prêt à tout sacrifier pour engloutir son ennemi. Une passion qui ne vient pas de sa hargne ou de son appétit prononcé pour le sang, mais bel et bien de son amour pour le combat et de sa volonté de se définir comme puissant. Coincé entre héroïsme et désillusion, il avance sur le penchant d’une histoire qu’il a choisi d’écrire lui‑même, surpassant les aînés ayant peut‑être trop fortement marqué son avant.*\n\n*Une fois de plus, l’illusion fait alors son apparition. La vue d’un espace que la jeune femme reconnaît, un recoin subissant le lourd d’innombrables ouvrages que le premier benêt aurait certainement le culot d’appeler “bouquin”.*\n\n\n**La Bibliothèque azur l’attend.**\nUne volonté de se mesurer à demain ? La ferveur de devenir ce qu'elle n'est pas ? Sa lame décidera ce qu'être, elle doit.\n[Image: https://media.discordapp.net/attachments/1496126377135444079/1528143915180621894/image.png?ex=6a7100ec&is=6a6faf6c&hm=ce00c62675ec83c8accfb92cb10e82ece0833fb2455f41351ea0bd2c494e644a&format=webp&quality=lossless&]"
         }
-      ]
+      ],
+      "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
       "id": "scene_cours_fleurie_3",
@@ -20438,11 +20506,11 @@ window.RP_DATA = {
       "channel_clean": "Cours-Fleurie",
       "title": "Cours-Fleurie — Scène 3",
       "actors": [
+        "Eldren Gates",
         "Frey Guðfrøðr",
-        "Tenebris",
-        "Eldren Gates"
+        "Tenebris"
       ],
-      "main_actor": "Frey Guðfrøðr",
+      "main_actor": "Eldren Gates",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-17T00:24:23Z",
@@ -20488,7 +20556,8 @@ window.RP_DATA = {
           "content": "*Ses vêtements étaient élégants sans sortir du lot. Un épais corset de cuir marron, fermé par des lacets et surmonté d'une ceinture à son sommet, enserrait sa chemise. À sa base étaient cousus des pans de tissu fluides rappelant la coupe d'une robe, qui s'ouvraient sur le devant comme un rideau. Le bas de son corps était recouvert par un pantalon de cuir sombre, rentré dans des bottines marron s'arrêtant à mi-mollet.*\n\n*Tout ceci était recouvert d'un manteau noir ouvert, muni d'une capuche qui pendait derrière son cou. Les manches de celui-ci étaient très travaillées : l'étoffe sombre se resserrait juste au-dessus des coudes, maintenue par des anneaux en argent. Sous ces anneaux, la manche se prolongeait par une autre pièce de tissu, blanche cette fois-ci, encore plus évasée, dont la longueur dissimulait ses mains noires que l'on ne voyait plus, de plus elle ne portait aucune marque d’appartenance à aucune guilde de la citée.*\n\n*Bien que discrète par nature, elle n'avait pu s'empêcher d'agir ainsi pour captiver l'attention de Frey et l'obliger à l'écouter.*\n\n**Une bibliothèque, tu dis ? Ça m'intéresse beaucoup plus que ce que tu essaies de protéger en le broyant dans ta main. Tu devrais y faire attention... je peux donner une seconde vie à un mort, mais pas au papier. Donc, je peux venir ?**\n\n*Ténébris vit Frey entamer sa marche, sûrement vers ce fameux lieu. Elle le suivit d'un pas tout aussi rapide, mais bizarrement beaucoup plus silencieux, attendant une réponse à sa demande tout en se présentant : *\n\n**Je suis Ténébris. Et toi, c'est quoi ton petit nom ? Je pense que faire connaissance est un bon début, je peux même t'aider si tu en as besoin.**"
         }
       ],
-      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**"
+      "location_description": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La jouvencelle se trouvait donc à la droite de… la victime d’un accrochage. Tout comme lui, elle l’observait avec une innocence presque trop visible, bien qu’elle n’aperçoive son visage que de profil. Toutefois, grâce à sa perception, la Pandorienne pouvait déjà deviner, à une lecture rapide de l’arcane, qu’il était un Prométhéen.**\n\n**La lapine attendit sa réponse avec une impatience à peine dissimulée. Lorsqu’il se retourna enfin vers elle, elle hocha une fois vivement de la tête.**\n\n> — Oui !\n\n**Simple. Spontané. Son regard glissa aussitôt vers le badge accroché à sa hanche. Elle l’observa en silence, franchement curieuse, tout en continuant d’écouter ce qu’il disait.**\n\n> *{Qu’est-ce que c’est censé représenter… hm ?}*\n\n**Se penchant légèrement en avant, la mage éclairée le suivit des yeux tandis qu’il se tournait à droite, puis à gauche. Il bougeait beaucoup, presque nerveusement. Au fil de ses mouvements, elle distingua d’ailleurs la silhouette d’un homme solitaire, un peu en retrait, dont l’allure sombre jurait avec le reste de la foule.**\n\n> — Tu t’es donc fait surprendre par des racketteurs… et tu t’es défendu ?\n\n**Sa phrase resta en suspens. Son attention venait déjà d’être happée ailleurs. Le charisme de Rias Valdor l’avait saisie sans prévenir ; et, sans mentir, c’était une femme si élégante qu’elle la suivit du regard presque malgré elle, comme attirée par un aimant, jusqu’à ce que la porte de la grande salle de porcelaine l’engloutisse hors de sa vue.**\n\n**Pendant quelques secondes, la membre du Cercle Azur resta perdue dans ses pensées, légèrement déconcertée. Comment une personne pareille pouvait-elle exister ?**\n\n**Ce ne fut que lorsque le balafré tenta de se lever en lui adressant la parole qu’elle revint brusquement à la réalité. Son regard tomba sur la main qu’il lui tendait. Celle à la toison blanche comme la neige mit une petite seconde à comprendre, puis attrapa la sienne sans hésiter pour l’aider à se redresser.**\n\n> — Oh ! Oui, bien sûr. Ça ne doit pas être facile de bouger après un sale accrochage.\n\n**Ils avancèrent donc ensemble en direction de la Cour Fleurie, l’homme s’appuyant légèrement sur la petite fouineuse. Après quelques pas, tandis qu’elle l’aidait à marcher comme si cela relevait de la chose la plus naturelle du monde, une question lui vint.**\n\n> — D’ailleurs… tu viens de quelle guilde ?\n\n**Demanda-t-elle en l’aidant ensuite à s’asseoir sur un banc.**",
+      "location_image": "channel_images/cours-fleurie.jpg"
     },
     {
       "id": "scene_fontaine_marbr_e_5",
@@ -20538,7 +20607,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-29T11:57:38Z",
           "content": "```Nah Jasp - Un appel dans le Vide.```"
         }
-      ]
+      ],
+      "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
       "id": "scene_terrasse_couverte_1",
@@ -20547,10 +20617,10 @@ window.RP_DATA = {
       "channel_clean": "Terrasse-couverte",
       "title": "Terrasse-couverte — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Ivara Luella"
+        "Ivara Luella",
+        "Ren Urugaki"
       ],
-      "main_actor": "Ren Urugaki",
+      "main_actor": "Ivara Luella",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-17T12:01:06Z",
@@ -20645,7 +20715,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": ">    ***Assis à l'une des tables de la terrasse, l'homme reste patient. Le soleil de l'après midi vient lui taper à l'arrière de la tête, celui ci s'était positionné dos à la lumière, pourtant quand même contraint de plisser les yeux à cause de la luminosité qu'il ne supportait que légèrement. Sur la table est posée sa commande, un café et quelques petites viennoiseries, ainsi que son paquet de cigarette aux côtés de son briquet.***\n> \n>    ***Sa main gauche est posée sur la petite tasse en face de lui, jouant légèrement à la faire pivoter d'un côté puis de l'autre, la tête appuyée sur sa main droite, le coude reposant sur le rebord de la table. Son regard s'échappe de temps en temps pour fendre l'horizon tout autour de lui, comme s'il cherchait quelqu'un des yeux, avant de se reposer une nouvelle fois sur son café, il n'avait pas l'habitude d'être celui à l'heure.***\n\n**-** **Sans déconner..**\n\n>    ***Il poussa un petit soupir de lassitude, bien conscient qu'il ne pourrait rien dire à l'arrivée de celle qu'il attendait, puisqu'en temps normal, c'était lui le retardataire. Alors il se contentait d'attendre dans une sobriété la plus totale, le visage marqué d'une mince émotion d'aigreur, même si la finalité de l'entre vue saura probablement lui redonner le sourire.***\n>   ***Il avait pu se reposer depuis les derniers évennements, et même si sa mine affichait toujours une sorte de fatigue globale, il allait de mieux en mieux. Son médaillon de guilde rayonnait à la lumière du soleil, un membre du voile en permission, profitant d'un soleil d'après midi ?***",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646241202634945/1527283938991800370/image.png?ex=6a708302&is=6a6f3182&hm=9abba24a7880f7810af360bae78afb1f2528348e23708852eef0ef287b14c413&"
+      "location_image": "channel_images/terrasse-couverte.jpg"
     },
     {
       "id": "scene_portail_ivoire_1",
@@ -20654,10 +20724,10 @@ window.RP_DATA = {
       "channel_clean": "Portail-Ivoire",
       "title": "Portail-Ivoire — Scène 1",
       "actors": [
-        "Katelynn Hoffmann",
-        "Captain Hook"
+        "Captain Hook",
+        "Katelynn Hoffmann"
       ],
-      "main_actor": "Katelynn Hoffmann",
+      "main_actor": "Captain Hook",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-17T14:07:34Z",
@@ -20696,7 +20766,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-26T01:14:36Z",
           "content": "\" - Vous me prêtez beaucoup de pensées, dame Valdor. \"\n\n**Une simple remarque, dénuée de tout jugement ou reproche. Le sourire du Blanc Oiseau ne bougea pas, toujours aussi calme et lumineux, bien que suite aux paroles de l'Ivoire, cela se vit sur ses traits que quelque chose en elle s'était étrangement détendu. L'honnêteté peut-être, ou l'illusion que toutes ces paroles n'était pas une manipulation, mais quelque chose de plus subtil.**\n\n **Katelyn avait laissé son interlocutrice parler, sans chercher à l'interrompre une seule fois. Chaque mot semblait avoir été préparé depuis longtemps, sous entendant que tous ces fils invisibles qui reliaient les événements de sa vie n'était pas qu'une histoire de chance et de circonstances. Mais à mesure que les phrases s'enchaînaient, la Noble sentit une étrange lassitude l'envahir.**\n\n*Encore.*\n\n**Toujours cette idée, malgré tout, qu'une place l'attendait quelque part et qu'il suffisait de cesser de lutter pour l'accepter. Accepter son destin ou le provoquer, croire qu'en bougeant un seul pion, l'on était capable de défier le roi. Si seulement ...**\n\n\" - Je ne sais plus vraiment ce qui est censé être étrange et ce qui n'est plus censé l'être si vous voulez que je sois honnête. \"\n\n**Lorsque Anthea avança d'un pas, le Cygne cru sentir un seul instant son souffle se couper, bien que cela ne restait qu'une impression. Elle savait cette femme bien supérieure à elle et en tout points, mais il lui était impossible de céder du terrain à ceux qui impressionnaient pas leur simple présence, elle ne l'acceptait plus.**\n\n\" - Très beau discours ceci-dit, je dois vous l'accorder. \" **Reprit-elle directement alors que ses prunelles azur se déposèrent sur le parchemin tendu, attendant sa décision.** \" Vos ambitions et celles de votre guilde sont nobles et si vous avez pris la peine de venir jusqu'à moi, je veux croire que vos intentions sont sincères, dame Valdor. \"\n\n**D'un geste délicat, ses doigts vinrent entourer le présent de l'Ivoire. Elle ne la croyait pas, même si elle le voulait sincèrement. Une partie d'elle aspirait encore à croire les gens lorsqu'ils parlaient avec conviction, mais combien de fois lui avait-on assuré qu'elle serait en sécurité ? Combien de fois lui avait-on expliqué que tout cela était pour son bien ? Esperia avait ce pouvoir de donner le goût du fer aux promesses.**\n\n\" -  Je vous remercie de voir en moi quelque chose que j'ai parfois du mal à apercevoir moi-même. Mais permettez moi de vous dire que vous vous trompez sur une chose. \" **Ses yeux retrouvèrent son interlocutrice, le sourire toujours présent.** \" Ce n'est pas le Hasard que je crains, mais les personnes qui sont convaincues de savoir où je dois aller. \"\n\n**Sous cette façade lisse, la colère demeurait intacte tout comme la méfiance, mais Katelyn avait appris à garder la face et écouter sans se trahir. Les quatre derniers mots d'Anthea avaient cependant raviver une étincelle dans les yeux du Cygne, soudainement encore plus lumineuse. Gardant le parchemin en main, elle lui répondit avec toute la tendresse du monde.**\n\n\" - Nous sommes d'accord, pour un meilleur futur. \"\n\n**Quel qu'en soit les sacrifices.**"
         }
-      ]
+      ],
+      "location_image": "channel_images/couloir-blanc.jpg"
     },
     {
       "id": "scene_isis_et_astre_s_1",
@@ -20705,10 +20776,10 @@ window.RP_DATA = {
       "channel_clean": "Isis et Astreüs",
       "title": "Isis et Astreüs — Scène 1",
       "actors": [
-        "Astreüs Mylonas",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Astreüs Mylonas"
       ],
-      "main_actor": "Astreüs Mylonas",
+      "main_actor": "Isis Faerieth",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-18T12:00:20Z",
@@ -20801,7 +20872,8 @@ window.RP_DATA = {
           "timestamp": "2026-08-01T06:55:51Z",
           "content": "> *Au-delà de ces paroles sages se tenait une demoiselle qui savait déjà tout cela. Des risques, tels qu'Astreüs les décrit, mais tout cela est **moindre**. Et elle le sait. Ses yeux pleins d'admiration, pétillant d'une curiosité maladive, se sont attardés pendant de longs instants sur l'insecte irridescent. Mais à mesure qu'il parle, son regard ne traduit rien d'autre qu'un Vide probant. Une inquiétude dissimulée derrière une innocence mensongère. Sa voix s'élève doucement.*\n\n**-** \"Astreüs.\"\n\n> *Ses yeux verts se lèvent pour s'ancrer dans ceux du jeune homme.*\n\n> \"N'as-tu jamais douté de la Déesse-Mère ?\"\n\n> *Un instant de répit, court, et volontaire.*\n\n**-** \"Car moi jamais. C'est elle qui est à l'origine de tout. De Sisyphe, de Prométhée... et de Pandore. Et si mes pouvoirs sont ainsi parce qu'elles l'ont décidé, alors qu'il en soit ainsi. Je doute que... que notre grande déesse ai envie de mettre en péril ce qu'elle a créé, et surtout pas à cause d'un être aussi insignifiant que moi.\"\n\n> *Son regard dérive alors que ses jambes prennent du repos aux côtés du jeune homme. Assise dans l'herbe fraîche, elle fait réapparaître son bâton, espérant que l'inquiétude qu'elle a lu sur le visage du forcené se soit évaporé. Entre ses mains, le bâton brille d'une faible lueur.*\n\n**-** \"L'incident d'avant n'est pas une réponse négative. Les réponses négatives, comme tu les nommes, ne m'affectent que moi. Parfois mon équilibre vacille et je comprends que ce n'est pas le moment de déranger qui que ce soit. Ce que tu as eu là n'était que de l'incompétence de ma part. Je pensais invoquer un autre sort, le fait que la réponse soit différente de ce que j'attendais m'as surprise... et c'est pour que cette surprise ne coûte pas la vie à mes camarades de mission que j'essaye de m'entraîner.\"\n\n> *Elle marque un temps, puis le bâton disparaît. Ses bras entourent ses jambes pour que sa tête repose sur ses genoux. Son visage se tourne vers l'Azuréen. Une question traverse son esprit, et elle ne peut s'empêcher de la lui poser.*\n\n**-** \"Qu'est-ce que tu ferais à ma place, Astreüs ? Avec tout ce que tu sais, et sans faux espoirs vains et béliqueux, continuerais tu a utiliser une magie que tu sais être instable ?\"\n\n> *Elle ne demande pas à être réconforter. Ni à être servie encore de ces espoirs qui sonnent faux. Elle veut une vérité brute, désemparée. Ses yeux verts cherchent dans le regard du grand garçon une honnêteté à toute épreuve.*\n\n*Car le choix qui se destine juste après est cornélien.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/serre-de-lune.jpg"
     },
     {
       "id": "scene_triple_a_asior___akane___aryana_1",
@@ -20810,13 +20882,13 @@ window.RP_DATA = {
       "channel_clean": "TRIPLE A Asior - Akane - Aryana",
       "title": "TRIPLE A Asior - Akane - Aryana — Scène 1",
       "actors": [
-        "Jin Alurantes",
         "Asior Eveus",
-        "Aryanna Erhendil",
+        "Akane Tsukishiro",
+        "Jin Alurantes",
         "Ren Urugaki",
-        "Akane Tsukishiro"
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Jin Alurantes",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-18T12:57:48Z",
@@ -20993,7 +21065,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-28T20:51:23Z",
           "content": "Son oreille titille une discussion à proximité, avec la barmaid discutant à propos d’un possible concert improvisé. Ce projet naissant fait sourire la demi-portion, donnant de l’inspiration à sa folle créativité. Pour le moment, elle se contente de laisser le dessein prendre forme, pour se jeter dessus le temps venu.\n\nUne profonde inspiration se fait entendre de sa part, annonçant la fin de cette charmante entrevue entre les trois aventuriers.\n\n— « Sur ce, je pense me diriger vers une bonne défoulade pour arranger ce côté un peu morose. Je suis contente que vous soyez sains et saufs, et ça vaut pour toi aussi, Erhendil. »\n\nSon attention s’attarde sur la femme aux oreilles en pointe. Bien que les deux concernées soient en relation bancale, ça n’empêche pas que la géante appartient toujours à l’enseigne du royaume, et qu’un peu d’affection, ça ne fait jamais de mal. Comme on dit, qui aime bien, châtie bien.\n\n— « Si j’avais dû naviguer les abysses pour te sauver, je l’aurais fait avec plaisir. Après tout, qui d’autre pourrait supporter ton caractère de cochon ? Alors tâche de rester en vie, cervelle de pourpre. J’ai pas signé pour perdre ma rivale préférée. »"
         }
-      ]
+      ],
+      "location_image": "channel_images/le-bar-des-lions.jpg"
     },
     {
       "id": "scene_salle_d_alchimie_1",
@@ -21002,10 +21075,10 @@ window.RP_DATA = {
       "channel_clean": "Salle-d’Alchimie",
       "title": "Salle-d’Alchimie — Scène 1",
       "actors": [
-        "Aryanna Erhendil",
-        "OWL LE MESSAGER"
+        "OWL LE MESSAGER",
+        "Aryanna Erhendil"
       ],
-      "main_actor": "Aryanna Erhendil",
+      "main_actor": "OWL LE MESSAGER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-18T16:11:01Z",
@@ -21033,7 +21106,8 @@ window.RP_DATA = {
           "content": "Un silence de plomb l'accueil, comme elle n'a pas l'habitude d'en recevoir. Au contraire de cet observatoire, la Bastion Ecarlate est rempli d'une vitalité a toute épreuve, où aucune pièce de cette guilde n'est en proie à un silence absolu. Or, dans cette salle où elle a déposé les pieds, où des figures se tournent vers elle, aucune voix n'émane de leurs fasciés. Elle penche légèrement la tête sur le côté, regardant un à un les visages des alchimistes présents dans cette salle. Ils ne veulent pas fournir de réponse à son égard. \n\nEst-ce par la différence de couleur ? Elle qui s'affirme d'un rouge sanguin contre un bleu azurien ? Est-ce par les différentes valeurs qu'elle apporte ? Là où la violence domine sur l'intelligence et la raison ? Plusieurs théories fusent dans l'esprit de la noiraude tandis qu'elle parcourt chacun des visages présents en cette pièce. Le silence devient lourd, pesant sur ses grandes épaules tant elle ne sait pas ce qu'il se passe en ces lieux. Chacun occupé à ses occupations qui vont au delà de ce que la noiraude a pu voir de ses propres yeux, elle est certaine de ne pas s'être trompée d'endroit. Ses prunelles saphirs qui divaguent d'un visage à de la verrerie dont elle ne peut pas poser de noms dessus. De différents liquides aux couleurs innombrables et des livres à en perdre la tête. Sa curiosité finit par reprendre le dessus, semblant oublier la gêne occasionnelle d'auparavant. \n\nAlors, une voix résonne, enfin, à ses longues oreilles, devant tourner vivement la tête pour ne pas en perdre l'origine. Une silhouette, assise à quelques mètres d'elle, dont le regard est plongé dans des écrits qu'elle n'a même pas envie de lire, au risque de faire exploser le peu de neurone qu'elle possède. Un pas après l'autre, le son métallique de son uniforme ne passera pas inaperçu, brouillant le silence apaisant de ses congénères de la cour. Même si elle se voulait être discrète, son uniforme n'était pas avec elle sur ce coup là. Arrivant dans le dos de cette dernière, les mains jointes dans son dos, Aryana écoute de cette oreille attentive, buvant les paroles de celle qui daigne de lui répondre. \n\nSans tarder, elle prend un tabouret, s'installant en face de cette Pandorienne, qu'elle décrit comme telle par la présence de ses longues oreilles, comme les siennes.\n\n⸻ **\"Je vous remercie de m'accueillir en ce lieu. Je ne suis pas ici pour Dame Sohun personnellement. Votre maison m'a offert un bien que je me dois d'honorée de la meilleure manière qu'il se doit.\"**\n\nElle cherche dans ses poches, ne trouvant pas ce qu'elle désire. Une fois, deux fois, un soupçon de peur s'immisce en elle. Où est-ce qu'elle a mis son parchemin ? Un éclair, et son grimoire apparaît. Pour ne pas avoir à froisser le papier, celui-ci est présent entre deux pages, dont elle extrait le parchemin pour le tendre à cette enseignante. Elle le dépose sur la table, librement.\n\n⸻ **\"Le hasard fait que je suis ici, sous l'étendard des Pourpres, pour une requête alchimique. Le savoir me manque dans le domaine qu'est l'alchimie. Autrement que la pratique qui est une connaissance qui m'est nulle, je n'arrive pas à comprendre tous les termes de ce parchemin. A commencer par ses ingrédients qui me sont inconnus du visuel, mais aussi des mots particuliers comme \"Alambic\" ou \"Distillez-le\". Le vocabulaire me manque, mes connaissances en alchimie sont telles que je suis incapable d'y arriver de mes propres moyens, pourtant, votre maison m'a offert la découverte de ce savoir dans le but de protéger les miens. Accepteriez-vous de m'aider dans la concoction de ses potions ?\"**\n\nD'une voix calme, presque trop basse pour une pourpre, elle s'exprime d'un ton plus bas, peut-être de deux tons. Les règles, elle les applique, comme une élève présente dans une salle de classe."
         }
       ],
-      "location_description": "```Kalès Septimus\n```\n\n**Des fragrances enivrantes qui transperce les conduits de l'odorat. Des odeurs qui vous ouvrent grand les bras comme le Corcovado. Des bras qui s'enroulent autour des passants, les aspergeant de ces senteurs amicales, ou désagréables. Toute épice n'est pas bonne à humer, et toute senteur n'est pas si alambiquée que l'accoutumée. Les vents ne font que les transporter vers des sentiers inexplorés, et en temps de tempête, la Cour des Alchimistes n'a pas besoin de crier pour faire sentir son existence. Un lieu qui attire les différents métiers, pour différentes raisons, à différent moment de l'année. Mais un habitué, aujourd'hui, en ces temps calmes et ensoleillés sous les draps métamorphosant de l'ombre, se pavane les mains dans les poches.**\n\n**Un grand gaillard, aux cheveux hérissés et d'un blond épicé, et aux prunelles dorées pour l'argent qu'il doit à tous les crédits contractés envers ces nombreux marchands. Il les rembourse au compte goutte, et baisse les yeux face à certains qui le dévisageant en pensant reconnaître l'un de ses endettés. Kalès rembourse toujours ses dettes, il est simplement toujours en retard, alors peu de gens sont inquiets. Car pour lui, si tout est grave il s'en fout, car si tout est grave o s'en remettra. Pour les nuits noires et les nuits pâles, domptant les jours éphémères, Kalès n'est ni venu faire preuve de ses talents ou de sa précision d'orfèvre.**\n\n**Il est venu acheter de l'herbe.**\n\n**Ce n'était pas une blague. Il faut bien un peu de matière pour éteindre son cerveau à la suite d'une quête désordonnée dont l'habilitation fut mal orchestrée. Il ne sert à rien de courir après l'aube, il faut profiter de la nuit tant que les criquets ont encore la force de rythmer leur symphonie si caractéristique. Et en parlant d'acheter de l'herbe...**\n\n**Un petit amas de visiteurs, d'habitués, ou de familles venues acheter tout un tas de choses ici s'est assemblé autour d'un petit stand. Tel un amphitéâtre, formé en arc de cercle autour d'une personne, qui n'est autre que le Kalès susdit. Que vaut un tel spectacle ? Une négociation houleuse. Car quand le marchand refuse, c'est là que la négociation commence. Et après avoir bataillé durant plusieurs longues minutes avec le marchand, lorsque la négociation fut terminée, entendez donc les applaudissements pour cette vente si avantageuse pour une seule et même personne. Et cette fois, sans être endetté...**"
+      "location_description": "```Kalès Septimus\n```\n\n**Des fragrances enivrantes qui transperce les conduits de l'odorat. Des odeurs qui vous ouvrent grand les bras comme le Corcovado. Des bras qui s'enroulent autour des passants, les aspergeant de ces senteurs amicales, ou désagréables. Toute épice n'est pas bonne à humer, et toute senteur n'est pas si alambiquée que l'accoutumée. Les vents ne font que les transporter vers des sentiers inexplorés, et en temps de tempête, la Cour des Alchimistes n'a pas besoin de crier pour faire sentir son existence. Un lieu qui attire les différents métiers, pour différentes raisons, à différent moment de l'année. Mais un habitué, aujourd'hui, en ces temps calmes et ensoleillés sous les draps métamorphosant de l'ombre, se pavane les mains dans les poches.**\n\n**Un grand gaillard, aux cheveux hérissés et d'un blond épicé, et aux prunelles dorées pour l'argent qu'il doit à tous les crédits contractés envers ces nombreux marchands. Il les rembourse au compte goutte, et baisse les yeux face à certains qui le dévisageant en pensant reconnaître l'un de ses endettés. Kalès rembourse toujours ses dettes, il est simplement toujours en retard, alors peu de gens sont inquiets. Car pour lui, si tout est grave il s'en fout, car si tout est grave o s'en remettra. Pour les nuits noires et les nuits pâles, domptant les jours éphémères, Kalès n'est ni venu faire preuve de ses talents ou de sa précision d'orfèvre.**\n\n**Il est venu acheter de l'herbe.**\n\n**Ce n'était pas une blague. Il faut bien un peu de matière pour éteindre son cerveau à la suite d'une quête désordonnée dont l'habilitation fut mal orchestrée. Il ne sert à rien de courir après l'aube, il faut profiter de la nuit tant que les criquets ont encore la force de rythmer leur symphonie si caractéristique. Et en parlant d'acheter de l'herbe...**\n\n**Un petit amas de visiteurs, d'habitués, ou de familles venues acheter tout un tas de choses ici s'est assemblé autour d'un petit stand. Tel un amphitéâtre, formé en arc de cercle autour d'une personne, qui n'est autre que le Kalès susdit. Que vaut un tel spectacle ? Une négociation houleuse. Car quand le marchand refuse, c'est là que la négociation commence. Et après avoir bataillé durant plusieurs longues minutes avec le marchand, lorsque la négociation fut terminée, entendez donc les applaudissements pour cette vente si avantageuse pour une seule et même personne. Et cette fois, sans être endetté...**",
+      "location_image": "channel_images/salle-d-alchimie.jpg"
     },
     {
       "id": "scene_biblioth_que_azure_2",
@@ -21042,22 +21116,22 @@ window.RP_DATA = {
       "channel_clean": "Bibliothèque-Azure",
       "title": "Bibliothèque-Azure — Scène 2",
       "actors": [
+        "Asior Eveus",
         "Emil Camille Rebenok",
+        "Red Roadman",
         "Eldren Gates",
-        "Frey Guðfrøðr",
+        "Ragde Umbras",
         "Astreüs Mylonas",
         "Lucia Fiorella",
-        "OWL LE MESSAGER",
-        "Yunah Aoi Enjaku",
-        "Asior Eveus",
-        "Ragde Umbras",
         "Maëll Fol'Dun",
-        "Tenebris",
+        "Yunah Aoi Enjaku",
+        "OWL LE MESSAGER",
         "Arun Acharya",
-        "Red Roadman",
-        "Adelina Del Fuego"
+        "Frey Guðfrøðr",
+        "Adelina Del Fuego",
+        "Tenebris"
       ],
-      "main_actor": "Emil Camille Rebenok",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-19T10:14:31Z",
@@ -21410,7 +21484,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Parmi les livres, le Gardien trône.\n\n*Un crissement résonne, les alentours se floutent tandis que l’ailleurs aspire. Sagement, il appelle. Prudemment, il attend. De sa patience infinie et perpétuellement en avance, il a appris que jamais on ne le rattraperait, car il est le là-bas, ce point que l’on cible du doigt et qui n’est plus lorsqu’on l’atteint. Condamné à systématiquement fuir lorsqu’un momentum ou un espace le contraint à devenir le ici.*\n\n*C’est doucement qu’il s’extirpe, tandis que la vue des arrivants se refocalise. L’œil désormais en pleine possession de ses moyens. Les jeunes gens seront finalement capables de contempler les lieux dans lesquels ils venaient de reprendre connaissance. À présent disposés au sein d’un endroit aussi étrange que familier. C’est dans la tourmente qu’ils découvrent l’éblouissant d’une bibliothèque, au milieu de laquelle un silencieux conseiller les attendait.*\n\n*La canne longue, tissée de sentiments, nourrie de savoir. Le jeune homme fixait le groupe à la manière d’une introduction pendant la lecture d’un avant-propos. Tel un là-bas se métamorphosant en ici.*\n\n> — Bienvenue à la Bibliothèque Azure.\n\n*Finira-t-il par déclarer.*\n\nLa Bibliotèque Azure, bibliotèque du savoir, un des trois joyaux du cercle.",
-      "location_image": "https://media.discordapp.net/attachments/1463557725245149265/1470060497033367573/f4d947ca95e86c341c1b64339920200d.png?ex=6a70a286&is=6a6f5106&hm=470256c4c3b826b2a651d738c240897e19053dde6e1fce3b72202366c9cdf794&format=webp&quality=lossless&width=897&height=974&"
+      "location_image": "channel_images/bibliotheque-azure.jpg"
     },
     {
       "id": "scene_objectif_faire_exploser_la_balafre_1",
@@ -21419,12 +21493,12 @@ window.RP_DATA = {
       "channel_clean": "Objectif faire exploser la Balafre",
       "title": "Objectif faire exploser la Balafre — Scène 1",
       "actors": [
-        "Idelmée Cadree",
         "Asior Eveus",
         "Jin Alurantes",
-        "Ren Urugaki"
+        "Ren Urugaki",
+        "Idelmée Cadree"
       ],
-      "main_actor": "Idelmée Cadree",
+      "main_actor": "Asior Eveus",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-21T15:33:05Z",
@@ -21481,7 +21555,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-28T14:58:40Z",
           "content": "*C’est un filet de lait venant de derrière lui filant droit vers Aryana qui le sortit de sa transe, ses yeux écarquillés alors que la jeune femme s’élançait dans une véritable prouesse artistique avant de boire le lait qui était sans aucun doute censé lui atterrir sur le visage. Un sifflement impressionné lui échappe alors que ses yeux passent d’Aryana à Idelmée. Bouche-bée quelques instants, un sourire finit par lui échapper alors qu’il tape dans les mains bien haut au-dessus de sa tête avant de s’écrier.*\n\n**-** Belle performance mesdames, vraiment ! Bravo !\n\n*Les mots d’Idelmée lui parviennent, et sans se départir de son sourire, il exécute une révérence exagérée depuis son tabouret, dans un ton bon enfant.*\n\n**-** Tant de loyauté me touche sincèrement, et que de bon sens dans ces paroles ! Votre prochain verre est pour moi… Je suppose que ma bourse doit traîner quelque part, tout comme mon ardoise à rallonge… Rajoutez vous dessus."
         }
-      ]
+      ],
+      "location_image": "channel_images/la-balafre.jpg"
     },
     {
       "id": "scene_une_chouette_d_couvre_enfin_l_eau_1",
@@ -21490,10 +21565,10 @@ window.RP_DATA = {
       "channel_clean": "Une chouette découvre enfin l'eau",
       "title": "Une chouette découvre enfin l'eau — Scène 1",
       "actors": [
-        "Jasp Nah",
-        "Lumia Faendharts"
+        "Lumia Faendharts",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "Lumia Faendharts",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-22T18:02:39Z",
@@ -21558,7 +21633,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "*Songes*\n\n*Des cernes protubérantes habitent le dessous de ses yeux, offrant un ton violacé à ses prunelles de jais. Sulyvan n'est pas quelqu'un de nécessairement malin, lorsqu'il s'agit de sa santé, de son propre bien-être. Il n'accorde que peu d'importance à son propre corps et encore moins à son esprit, qui se fragmente au rythme de l'horloge du temps. Il est difficile pour lui, héraut des cauchemars, de voir le sommeil comme une source de réconfort, d'apaisement. Les vagues s'écrasent avec violence contre les statues des sages, signe de protection, entité du bien, de la paix et de la prospérité. Mais ce concept lui semble si étranger, au même titre que son âme n'appartient pas aux murs dorées de cette cité qui se ronge elle-même, de l'intérieur.*\n\n— Oru'kin, tu sembles furieux. . .\n\n*Remous*\n\n*Le Sans-foyer s'adresse à la mer comme l'on s'adresse à un ami, un confident. Les Nephilims, créatures divines et créations de la Déesse-Mère, se montrent peu bavard lorsque c'est lui qui appel. Est-il exclu de tout les cercles, de tout les chants, par son manque de lumière ? Est-ce son opposition avec l'Ange qui contraint le ciel à le punir ? Difficile à dire, dans un quotidien nouveau, exempt des souffrances quotidiennes, qui l'ont accablé jusqu'à présent.*\n\n— J'aimerais vraiment qu'on accorde le droit de revoir cette bâtisse. Ou bien, est-ce là ma sanction, divinité des mers et des océans ?\n\n*Confession*\n\n*Sully est étrangement bavard. Le discours de sa Majesté lui a valu de remettre certaines de ses décisions, certains de ses choix, en question. Le doute s'insinue dans les moindres failles et même les prométhéens, n'échappent pas à cette règle, arrogantes créatures. La solitude qu'induit la suffisance est bien trop souvent sous-estimé, écarté car l'on ne voit que le narcissisme flagrant des \" génies \", ceux ayant la prestance du Dieu Solaire, père du premier péché.*\n\n— Il fait frais.\n\n*Absurdisme*\n\n*Voilà bien trop longtemps que l'enfant des Vosk se tient ici, à contempler un océan qu'il ne peut dompter, qu'il ne peut trancher. La question l'amuse néanmoins ; est-ce qu'un Homme, à un jour eu l'audace de vouloir trancher l'océan en deux ? Une idée aussi stupide que celle de trancher le ciel. Personne ne le peut.*",
-      "location_image": "https://cdn.discordapp.com/attachments/1327646240669696043/1470396913105768552/SPOILER_43090b39f20b75512ce151df550e7ee2.png?ex=6a708a56&is=6a6f38d6&hm=d70d9a6c519af2efd257abee3fd44ca1ea7e9c7f3381dde5b6c0d1ec77fb4f60&"
+      "location_image": "channel_images/port-du-levant.jpg"
     },
     {
       "id": "scene_sc_ne_kal_s_kalem_1",
@@ -21567,10 +21642,10 @@ window.RP_DATA = {
       "channel_clean": "Scène Kalès Kalem",
       "title": "Scène Kalès Kalem — Scène 1",
       "actors": [
-        "Septimus Kales",
-        "OWL LE MESSAGER"
+        "OWL LE MESSAGER",
+        "Septimus Kales"
       ],
-      "main_actor": "Septimus Kales",
+      "main_actor": "OWL LE MESSAGER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-22T19:10:07Z",
@@ -21623,7 +21698,7 @@ window.RP_DATA = {
         }
       ],
       "location_description": "Le Rouge et le Noir.\n\n**__Règles du jeu :__**\nChaque joueur démarre le jeu avec une base de 100 points. A chaque fois que le joueur se trompe, il boit un shot. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n*Exemple :* Pierre et Jacques jouent au jeu. Pierre à 2 en résistance, Jacques n'a qu'1. Lorsque Pierre se trompera, il perdra 10 points sur les 100 qui lui sont octroyés. Lorsque Jacques se trompera, il perdra 15 points sur les 100 qui lui sont octroyés. \n\n**__Déroulé du jeu :__**\n\nCe jeu d’alcool se déroule en 4 tours. Les cartes sont posées alignées par 4, faces cachées. \n\n**Premier tour :** le joueur doit deviner si la carte est rouge ou noire. S’il a tort, il boit une gorgée, s’il a raison, il fait boire quelqu’un d’autre. Il garde la carte face à lui.\n\n**Deuxième tour :** le joueur doit dire « plus » ou « moins » que la première carte qu’il a reçue. S’il gagne, il fait boire 2 gorgées à qui il veut, s’il perd, c’est lui qui boit.\n\n**Troisième tour :** Il doit deviner si la prochaine carte se situera à l’intérieur des deux qu’il possède déjà ou à l’extérieur.\n\n**Dernier tour :** deviner si la carte à piocher sera un carreau, un cœur, un pique ou un trèfle.\n\nLe tour de chaque joueur s'arrête lorsqu'il se trompe et le tour passe à un autre joueur.\n\nUn jeu de chance, et de résistance.",
-      "location_image": "https://i.goopics.net/sr8x3r.jpg"
+      "location_image": "channel_images/terrain-d-entrainement.jpg"
     },
     {
       "id": "scene_terrain_d_entra_nement_2",
@@ -21632,10 +21707,10 @@ window.RP_DATA = {
       "channel_clean": "Terrain-d-entraînement",
       "title": "Terrain-d-entraînement — Scène 2",
       "actors": [
-        "Idelmée Cadree",
-        "Aegnor Othar"
+        "Aegnor Othar",
+        "Idelmée Cadree"
       ],
-      "main_actor": "Idelmée Cadree",
+      "main_actor": "Aegnor Othar",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-23T14:17:23Z",
@@ -21674,7 +21749,8 @@ window.RP_DATA = {
           "timestamp": "2026-07-29T18:40:44Z",
           "content": "*En constatant que son sort avait atteint sa cible, Idelmée poursuivit sa ruée. Dans sa naïveté de jeune combattante, elle ne s’attendait pas à ce qu’Aegnor ait le réflexe de riposter. Prise au dépourvu, elle encaissa de plein fouet le coup de talon pourtant prévisible en plein estomac.*\n\n*Le choc la coupa net dans sa ruée. Elle recula d’un pas, tentant de reprendre son souffle tout en se forçant à ne pas porter sa main à son ventre endolori. Dans un combat réel, contre un adversaire plus puissant qu’Aegnor, elle serait déjà au sol. Voire pire.*\n\n*Elle ne pouvait lutter contre ce genre de personne au corps à corps. Que faire alors ? Prendre de l'espace. Voilà l’idée qui lui vint. Alors, contrairement à sa précédente manœuvre, elle recula. Un pas, deux pas, trois. Elle fit de son mieux pour s’éloigner de lui, se rapprochant de l’estrade en bois.*\n\n*Une fois hors de portée immédiate, elle fit à nouveau germer du lait dans sa paume libre, qu'elle garda cette fois enserré au creux de son poing. Aegnor allait chercher à réduire l'écart. C'est à ce moment précis qu'elle pourrait le piéger avec son fromage.*\n\n*Mais pour le moment, c’était à lui de réagir, et Idelmée n’avait pas l’intention de le lâcher des yeux. Son regard était désormais plus sérieux qu’auparavant. Le coup porté l’avait ancrée dans la réalité de ce qu’était un véritable entraînement.*"
         }
-      ]
+      ],
+      "location_image": "channel_images/terrain-d-entrainement.jpg"
     },
     {
       "id": "scene_jardin_de_quartz_3",
@@ -21683,10 +21759,10 @@ window.RP_DATA = {
       "channel_clean": "Jardin-de-Quartz",
       "title": "Jardin-de-Quartz — Scène 3",
       "actors": [
-        "Æther",
-        "Oeil"
+        "Oeil",
+        "Æther"
       ],
-      "main_actor": "Æther",
+      "main_actor": "Oeil",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-07-23T20:18:44Z",
@@ -21780,7 +21856,8 @@ window.RP_DATA = {
           "content": "*Reliant le cuir, il ferme lourdement son carnet avant de le ranger dans sa sacoche. Pas par résignation ou frustration, mais simplement parce que certaines expériences exigent d'être mises en pratiques avant de tenter d'être expliquée. Même les hypothèses n'ont pas leurs places, ici.*\n\n*Il fait finalement volte face à celui qu'il devrait manifestement nommer « Père ». Après tout, Alistair et Eleanor ont le mérite d'avoir élevé un jeune homme talentueux qu'on appelait Locke, mais il ne désire plus être associée à cette image. Peut-être même qu'au fond, c'est le souhait le plus cher de ceux qui l'ont élevés... lui retirer définitivement le fardeau des siens.*\n\n**« En finalité, c'est toujours la Boussole de ton esprit qui finit par décider de la ligne de ton Âme. »**\n\n*L'écho de cette phrase lui arrachera un léger souffle nasal amusé. Presque imperceptible.*\n*Si le Temps lui-même reconnaît l'existence de cette boussole... c'est qu'il reconnaît en lui une part irréductible de sa personne. Son orientation profonde, peut-être, lui ôtera l'exigence que chaque pas soit précédé d'une certitude. Grâce à sa Boussole.*\n\n*Non parce qu'elle conduit nécessairement à la vérité. Depuis que Chronos lui révéla la nature mensongère de ce concept, il ne s'y accroche plus vraiment de toute façon. Simplement parce qu'elle est la seule direction qu'aucun autre ne puisse choisir à sa place. Celle qui lui est dictée au plus profond de son être, indépendamment de tout ce qu'on croit appeler L'Illusion du Choix.*\n\n*Puis un pas. Le premier après avoir fait dos au Papillon Bleu.*\n\n*Non de Locke.*\n\n*D'Æther.*\n\n*Sans plus regarder derrière lui, il s'engouffre dans les ombres d'Umbrael.*\n*Locke cherchait des réponses, presque désespérément.*\n*Æther cherche ce quelque part, où quelque chose d'e̷͝ẍ̸́t̶̾r̸͆ä̴́ȏ̵r̷͗d̶̿i̴̓n̸a̶i̴r̸e̷ attend d'être découvert.*\n\n> « Bien. »\n\n◈──────────────────◉──────────────────◈\n\n-# Somewhere, something i̷͝n̸̈́c̶̾r̸͆ë̴́d̵̑i̷͗b̶̿l̴̓e̸ is waiting to be known.\n_ _\n[Image: https://cdn.discordapp.com/attachments/1328033778505093180/1530678009244422224/703100ddf7328b430aec0fa69860a8af.png?ex=6a70fe7c&is=6a6facfc&hm=c28ebd8fa5358b0c5d0b4b1bae2dabb6a9ce6fb9604bbc9a6eca00905c78040f&]"
         }
       ],
-      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*"
+      "location_description": "```Nah Jasp - Le moins que rien.```\n\n*Ce n'est pas ce qu'il aurait voulu. Une vie devenue belle mais à ne rien faire. Personne ne veut de lui mais lui non plus veut de personne. C'était donc ça la vie d'une personne qui ne pouvait rejoindre aucun foyer de guilde ? Seul et perdu dans celui qui est sensé être pour tout ceux qui ont réussi le test de première année, Nah apprend. Il étudie les moindre comportement mais aussi la moindre information qui peut fuiter des bouches de gens un peu maladroit. Il n'a pas de réputation, encore heureux voilà à peine quelques semaines qu'il était au sein des autres grands de la cour. Il s'instruit de choses qu'il n'avait jamais vu encore. Sa meilleure trouvaille se trouvait dans sa main, du moins dans la sorte de sac en tissus rapiécé qu'il tenait avec lui. C'était pas quelque chose qu'il avait acquis de la meilleure des manières, le vol étant quelque chose de très commun dans sa vie au final, mais il en avait surement plus besoin que celui qu'i l'avait à l'origine.*\n\n*Ouvrant son petit sac de tissus, de couleur verte un peu laide, il en sortit un fruit. Il ne l'avait jamais vu ailleurs et il faut dire qu'il était quand même super bon. Des petites portions vertes qui pouvait se détacher de la tige principale et s'enfourner en un seul coup dans la bouche. Il n'y avait rien de mieux, il avait cependant encore un doute sur ce qui se trouvait dans sa bouche après avoir finit le fruit. Des pépins avait-il cru entendre une fois au loin. C'était ... quoi ? Il avait un léger doute, mais par précaution étant donné que ceux des pommes servaient ç faire pousser des arbres, il les crachera systématiquement dans l'herbe. La terre était plus belle avec des arbres qui des bâtiments. Puis au moins il aurait l'impression de donner une trace de son passage.*\n\n> L'homme seul marche sans vue, ancré dans ses lamentations passées, disait le vieux. Je me sens peut-être un peu trop libre aujourd'hui. Les gens de la strate supérieure sont un peu trop gentils maintenant que j'ai un médaillon qui brille.\n\n*Dans sa main gauche, elle qui trainait un peu avant dans sa poche, il la lèvera pour sortir son médaillon. Il se souvient de la phase de validation du test, ils étaient tous debout comme des pleutres face à une figure qui était le supposé Roi. Il aurait bien voulu le voir le Roi quand sa famille était morte. Il comprend bien que le Roi ne peut pas rendre plaisir à l'individu, mais les autres guildes avaient cette fonction non ? Le crachat de son prochain amalgame de pépins de raisins était un peu plus brusque au point de faire tourner quelques regards sur lui, dérangeant fondamentalement le calme paisible de l'endroit. Non le jeune blondinet était frustré. Donner sa vie contre des pauvres pièces sans assurance ne lui avait pas permis d'avoir assez de talent pour se démarquer des autres et ça le rendait fou de rage. Alors que le médaillon était entre ses doigts, exposé vers le soleil comme pour essayer de chercher un indice sous le soleil, il l'enfermera dans son poing. Il n'avait besoin de personne qui le tienne en pitié. Lui seul se dresserait au dessus des autres au point qu'ils doivent l'écouter lui et lui seul. Il se fichait des titres, c'était tout bonnement pas important.*",
+      "location_image": "channel_images/jardin-de-quartz.jpg"
     },
     {
       "id": "scene_le_berceau_1",
@@ -21812,7 +21889,8 @@ window.RP_DATA = {
           "timestamp": "2026-08-01T13:16:34Z",
           "content": "7387"
         }
-      ]
+      ],
+      "location_image": "channel_images/le-berceau.jpg"
     },
     {
       "id": "scene_kal_s___iscarioth___aether_1",
@@ -21822,10 +21900,10 @@ window.RP_DATA = {
       "title": "Kalès - Iscarioth - Aether — Scène 1",
       "actors": [
         "Iscarioth",
-        "JAVUS",
-        "Tenebris",
         "Septimus Kales",
-        "Æther"
+        "Æther",
+        "JAVUS",
+        "Tenebris"
       ],
       "main_actor": "Iscarioth",
       "is_solo": false,
@@ -22076,7 +22154,8 @@ window.RP_DATA = {
           "timestamp": "2026-08-03T22:06:02Z",
           "content": "Oker man faire bon soirée"
         }
-      ]
+      ],
+      "location_image": "channel_images/arene-hurlante.jpg"
     },
     {
       "id": "scene_avenue_des_armuriers_4",
@@ -22163,7 +22242,8 @@ window.RP_DATA = {
           "timestamp": "2026-08-03T13:05:18Z",
           "content": "(<@774320832998539345> <a:6289popfrog:1063640902435868672> *j'ai plus beaucoup d'emote grenouille...*)"
         }
-      ]
+      ],
+      "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
       "id": "scene_portail_ivoire_2",
@@ -22172,10 +22252,10 @@ window.RP_DATA = {
       "channel_clean": "Portail-Ivoire",
       "title": "Portail-Ivoire — Scène 2",
       "actors": [
-        "Jasp Nah",
-        "LE CONSEILLER"
+        "LE CONSEILLER",
+        "Jasp Nah"
       ],
-      "main_actor": "Jasp Nah",
+      "main_actor": "LE CONSEILLER",
       "is_solo": false,
       "scene_type": "Duo / Groupe",
       "start_time": "2026-08-02T15:19:02Z",
@@ -22196,7 +22276,81 @@ window.RP_DATA = {
           "timestamp": "2026-08-02T15:19:16Z",
           "content": "<@774320832998539345> Fin de scène, félicitation pour ta nouvelle guilde."
         }
-      ]
+      ],
+      "location_image": "channel_images/couloir-blanc.jpg"
     }
-  ]
+  ],
+  "channel_images": {
+    "🕋〕𝐆uet-apens": "channel_images/guet-apens.jpg",
+    "🏫〕𝗔uditorium": "channel_images/auditorium.jpg",
+    "🥗〕𝗞antine": "channel_images/kantine.jpg",
+    "🏯〕𝗔rène-𝗛urlante": "channel_images/arene-hurlante.jpg",
+    "🛡️〕𝗧errain-d-entraînement": "channel_images/terrain-d-entrainement.jpg",
+    "🍃〕𝗦erre-de-lune": "channel_images/serre-de-lune.jpg",
+    "🏙️〕𝐄gregore": "channel_images/egregore.jpg",
+    "🧭〕𝗣arc-des-𝗖ardinaux": "channel_images/parc-des-cardinaux.jpg",
+    "💰〕𝐁anque-du-sang": "channel_images/banque-du-sang.jpg",
+    "📚〕𝗕ibliothèque-𝗔zure": "channel_images/bibliotheque-azure.jpg",
+    "🚢〕𝗣ort-du-𝗟evant": "channel_images/port-du-levant.jpg",
+    "🗽〕𝗣ont-des-𝗗eux": "channel_images/pont-des-deux.jpg",
+    "👑〕𝗣lace-de-𝗚randpalais": "channel_images/place-de-grandpalais.jpg",
+    "🛏️  •  Salle de Réveil": "channel_images/cellules.jpg",
+    "⚗️〕𝗖our-des-alchimistes": "channel_images/cour-des-alchimistes.jpg",
+    "💮〕𝗝ardin-de-𝗤uartz": "channel_images/jardin-de-quartz.jpg",
+    "⚔️〕𝗧errains-𝗡acrés": "channel_images/terrains-nacres.jpg",
+    "🌳〕𝗩erger-des-𝗣êchés": "channel_images/verger-des-peches.jpg",
+    "⚜️〕𝗚rande-salle-porcelaine": "channel_images/grande-salle-porcelaine.jpg",
+    "⛲〕𝗙ontaine-𝗠arbrée": "channel_images/fontaine-marbree.jpg",
+    "🗡️〕𝗤uartier-des-𝗙orges": "channel_images/quartier-des-forges.jpg",
+    "✨〕𝗔gora-des-𝗥eines": "channel_images/agora-des-reines.jpg",
+    "⚒️〕𝗔venue-des-armuriers": "channel_images/avenue-des-armuriers.jpg",
+    "🍖〕𝗖antine-marbrée": "channel_images/cantine-marbree.jpg",
+    "🏮〕𝗖rypte-𝗥ouge": "channel_images/crypte-rouge.jpg",
+    "🍻〕𝗟a-𝗕alafre": "channel_images/la-balafre.jpg",
+    "⛩️〕𝗧errain-𝗚randblanc": "channel_images/terrain-grandblanc.jpg",
+    "🥘〕𝗭one-𝗕uffet": "channel_images/zone-buffet.jpg",
+    "🌸〕𝗖ours-𝗙leurie": "channel_images/cours-fleurie.jpg",
+    "🌟〕𝗖entre-radieux": "channel_images/centre-radieux.jpg",
+    "🦪〕𝗘scaliers-𝗡acrés": "channel_images/escaliers-nacres.jpg",
+    "⚪〕𝗖ouloir-𝗕lanc": "channel_images/couloir-blanc.jpg",
+    "🌇〕𝐑uelle-𝐁asse-ville": "channel_images/ruelle-basse-ville.jpg",
+    "♟️〕𝐐uartiers": "channel_images/quartiers.jpg",
+    "🌆〕𝐏lace": "channel_images/place-de-grandpalais.jpg",
+    "🛑〕𝐀rène": "channel_images/arene-hurlante.jpg",
+    "🚬〕𝐏etit-𝐒alon": "channel_images/petit-salon.jpg",
+    "🛋️〕𝐁ureau-de-𝐒haal": "channel_images/bureau-de-shaal.jpg",
+    "𝐈solement": "channel_images/cellules.jpg",
+    "🏛️〕𝗧ribut-des-sages": "channel_images/tribut-des-sages.jpg",
+    "🍻〕𝐋-𝐄picurien": "channel_images/l-epicurien.jpg",
+    "🌠〕𝐇all-𝐃es-𝐅êtes": "channel_images/hall-des-fetes.jpg",
+    "☀️〕𝗟a-𝐁allade": "channel_images/la-ballade.jpg",
+    "🦁〕𝗟e-𝗕ar-des-𝗟ions": "channel_images/le-bar-des-lions.jpg",
+    "🌃〕𝐒alon": "channel_images/petit-salon.jpg",
+    "🪑〕𝗟e-𝗖oin-d-𝗔ntan": "channel_images/le-coin-d-antan.jpg",
+    "🌃〕𝐒ous-𝐒ol": "channel_images/sous-sol.jpg",
+    "🏚️〕𝐑ésidences-des-𝐋ibérateurs": "channel_images/residences-des-liberateurs.jpg",
+    "🧱〕𝐑uelles": "channel_images/ruelles.jpg",
+    "📜〕𝐋e-centre-des-registres": "channel_images/le-centre-des-registres.jpg",
+    "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes": "channel_images/le-cafe-des-philosophes.jpg",
+    "Un début de soirée à la serre de lune": "channel_images/serre-de-lune.jpg",
+    "🛤️〕𝗣assage": "channel_images/passage.jpg",
+    "Scène Kalès / JAVUS": "channel_images/arene-hurlante.jpg",
+    "🏗️〕𝐂ourse-𝐏oursuite": "channel_images/course-poursuite.jpg",
+    "📓〕𝐋e-𝐒ecret": "channel_images/le-secret.jpg",
+    "Scène Lumia | Ivara": "channel_images/bibliotheque-azure.jpg",
+    "Fuir - Katelyn Hoffmann & Isis Faerieth": "channel_images/port-du-levant.jpg",
+    "Ils ne souhaitent qu'une seule chose : La paix.": "channel_images/egregore.jpg",
+    "📿-𝐂hevet-𝐒acré": "channel_images/chevet-sacre.jpg",
+    "🏹〕𝐀rmurerie-𝐄carlate": "channel_images/armurerie-ecarlate.jpg",
+    "🍹〕𝗧errasse-couverte": "channel_images/terrasse-couverte.jpg",
+    "☁️〕𝗣ortail-𝗜voire": "channel_images/couloir-blanc.jpg",
+    "Isis et Astreüs": "channel_images/serre-de-lune.jpg",
+    "TRIPLE A : Asior - Akane - Aryana": "channel_images/le-bar-des-lions.jpg",
+    "🧪〕𝐒alle-d’𝐀lchimie": "channel_images/salle-d-alchimie.jpg",
+    "Objectif : faire exploser la Balafre.": "channel_images/la-balafre.jpg",
+    "Une chouette découvre enfin l'eau": "channel_images/port-du-levant.jpg",
+    "Scène Kalès / Kalem": "channel_images/terrain-d-entrainement.jpg",
+    "⚫▹𝐋e-𝐁erceau": "channel_images/le-berceau.jpg",
+    "Kalès - Iscarioth - Aether": "channel_images/arene-hurlante.jpg"
+  }
 };
