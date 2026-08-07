@@ -105,8 +105,12 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         curr_ts = parse_timestamp_v2(curr_msg.get('timestamp'))
         diff_days = (curr_ts - prev_ts) / 86400.0 if (prev_ts and curr_ts) else 0.0
 
+        prev_actor = get_canonical_name_v2(prev_msg.get('author_name', prev_msg.get('author', '')))
+        other_player_scene_actors = player_scene_actors - {curr_actor}
+
         # Vérification des réponses ultérieures des joueurs dans la fenêtre active (max hard_cutoff_days)
         has_player_actor_replied = False
+        has_other_player_actor_replied = False
         for nm, _ in valid_msgs_sorted[i:]:
             nts = parse_timestamp_v2(nm.get('timestamp'))
             if nts and curr_ts and (nts - curr_ts) / 86400.0 > hard_cutoff_days:
@@ -114,7 +118,8 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
             act = get_canonical_name_v2(nm.get('author_name', nm.get('author', '')))
             if act in player_scene_actors:
                 has_player_actor_replied = True
-                break
+            if act in other_player_scene_actors:
+                has_other_player_actor_replied = True
 
         is_new_scene = False
 
@@ -129,6 +134,9 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
             is_new_scene = True
         # 4. Bannière d'ouverture majeure lancée après inactivité (> 5 jours)
         elif diff_days > max_inactivity_days and curr_is_start:
+            is_new_scene = True
+        # 4.5. Relance après inactivité (> 5 jours) par le même auteur sans retour des co-acteurs précédents
+        elif diff_days > max_inactivity_days and curr_actor == prev_actor and not has_other_player_actor_replied and not current_scene_actors.issubset(GM_BOT_ACTORS):
             is_new_scene = True
         # 5. Message d'un GM/Bot neutre (Le Conseiller, Oeil, Narrateur...) ou début de scène par GM -> continuation
         elif curr_actor in GM_BOT_ACTORS or current_scene_actors.issubset(GM_BOT_ACTORS):
