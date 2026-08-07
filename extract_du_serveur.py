@@ -101,18 +101,21 @@ def clean_character_name(name):
     name_str = re.sub(r'\s+BOT$', '', name_str, flags=re.IGNORECASE)
     name_lower = name_str.lower()
 
+    # Priorité 1: Recherche canonique stricte pour les vrais personnages de joueurs
+    ck = clean_key_lookup(name_str)
+    if ck in CANONICAL_LOOKUP:
+        return CANONICAL_LOOKUP[ck]
+
+    # Priorité 2: Détection PNJ/Webhooks système (sans faux positifs sur Crowley)
     if 'conseiller' in name_lower:
         return "LE CONSEILLER"
-    elif 'owl' in name_lower or 'messager' in name_lower:
+    elif name_lower in ["owl", "owl le messager", "messager"] or "owl le messager" in name_lower or re.search(r'\bowl\b', name_lower):
         return "OWL LE MESSAGER"
     elif name_lower in ["l'oeil", "l'œil", "oeil", "œil", "loeil", "lœil"]:
         return "L'Oeil"
     elif 'missive' in name_lower:
         return "LES MISSIVES"
 
-    ck = clean_key_lookup(name_str)
-    if ck in CANONICAL_LOOKUP:
-        return CANONICAL_LOOKUP[ck]
     for k, v in CANONICAL_LOOKUP.items():
         if len(k) >= 4 and (k in ck or ck in k):
             return v
@@ -194,7 +197,7 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
 
 
 LEGITIMATE_PNJ_KEYWORDS = [
-    'javus', 'conseiller', 'owl', 'messager', 'missive', 'les missives',
+    'javus', 'conseiller', 'owl le messager', 'messager', 'missive', 'les missives',
     'monarque', 'infranchissable', 'déesse-mère', 'deesse-mere', 'prince lunaire',
     'prince azur', 'prince du vide', 'roi des rampants', 'nephilim',
     'oeil', 'l\'oeil', 'l\'œil', 'par-delà le voile', 'que le seigneur ouvre', 'narrateur'
