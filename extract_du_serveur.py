@@ -718,7 +718,10 @@ class DiscordExporterClient(discord.Client):
                 'kalesiscariothaether': 'channel_images/arene-hurlante.jpg',
                 'unechouettedecouvreenfinleau': 'channel_images/port-du-levant.jpg',
                 'fuirkatelynhoffmannisisfaerieth': 'channel_images/port-du-levant.jpg',
-                'ilsnesouhaitentquuneseulechoselapaix': 'channel_images/egregore.jpg'
+                'ilsnesouhaitentquuneseulechoselapaix': 'channel_images/egregore.jpg',
+                'planétarium': 'channel_images/planetarium.png',
+                'planetarium': 'channel_images/planetarium.png',
+                'Planétarium': 'channel_images/planetarium.png'
             }
 
             for scene in all_scenes:

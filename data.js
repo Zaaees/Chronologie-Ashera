@@ -1,1234 +1,553 @@
-window.rpData = {
+window.RP_DATA = {
+  "metadata": {
+    "version": "2.0",
+    "generated_at": "2026-08-07T10:43:32.647399",
+    "total_scenes": 161,
+    "total_characters": 65
+  },
   "characters": {
-    "1spireMeuf": {
-      "role": "Sans rôle",
+    "Sw dark325": {
+      "name": "Sw dark325",
+      "role": "Indéfini",
       "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "ALLARIC GESUN": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Abrihicot": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Adelina Del Fuego": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "_marigld",
-      "displayName": "Adelina Del Fuego | Mari",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/1404429614968733726/avatars/7993ffe6c7d96e2e37467b2a8245a9cd.png?size=1024"
-    },
-    "Aegnor Othar": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "tcizab",
-      "displayName": "Tcizab—Aegnor Othar",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/356048520005943299/f01e035d0bf5095134a6c0c9ffa1b104.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 6,
+      "totalMessages": 21
     },
     "Akane Tsukishiro": {
+      "name": "Akane Tsukishiro",
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "doppelganger2830",
-      "displayName": "Tsukishiro Akane",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/198061752108187651/f65da39d53dbb7426135c0bf5117030e.png?size=1024"
-    },
-    "Alek Clark": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Arun Acharya": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "nys.on",
-      "displayName": "Arun Acharya | Freulonlezouin",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/945534869839163392/f8722ded2d37aaa34564e044e78c3103.png?size=1024"
-    },
-    "Aryanna Erhendil": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "tutaurielle",
-      "displayName": "Aryana Erhendil ⸻ Taurielle",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/345629407039193089/avatars/c8ac89780cba0ff6875fc69ec96871cf.png?size=1024"
-    },
-    "Asior Eveus": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "eopia",
-      "displayName": "Eopia | Asior Eveus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/374571976645148693/ca1c82facedf60c28b0d6a0730f2a50b.png?size=1024"
-    },
-    "Astreüs Mylonas": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "kuikuito",
-      "displayName": "Kuikui - Astreüs Mylonas",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/589495039118540802/7e56cf64b5c63b010fde3f1db9e36bbf.png?size=1024"
-    },
-    "Brutus Redwitch": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "kinoru.",
-      "displayName": "Brutus Redwitch",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/555795047409385476/avatars/ba63c856ede546170ba86255f1b37fc0.png?size=1024"
-    },
-    "Captain Hook": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Cassian Ortie": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "chulakita",
-      "displayName": "Cʜᴜʟᴀᴋ™ | Cassian Ortie",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/576453778874564619/4b8977bf21890936500cf9c7fbd9a44e.png?size=1024"
-    },
-    "Daisuky v": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Eita": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Eldren Gates": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Emil Camille Rebenok": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "indominushunter",
-      "displayName": "Emil | Camille Rebenok",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/619450110941724692/f68db583c62d6c6b9fed455f12480626.png?size=1024"
-    },
-    "Ethan Jaster": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Florianne Hoster": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Frantz Oley": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Frey Guðfrøðr": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "elessai",
-      "displayName": "Frey - Elear",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/350249452810010627/avatars/48f472f2a964710f8f30f278b7dfe44a.png?size=1024"
-    },
-    "Hector Swaft": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Hedwig Von Glanzestern": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "twisted_servant",
-      "displayName": "Hedwig Von Glanzestern [1/1]",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1170008194559520861/931f3c534956e81406c61315bad082d3.png?size=1024"
-    },
-    "Historia Fay Ruaidhri Grel": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "ISYLAE FILIXIAN": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Idelmée Cadree": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "momotarie",
-      "displayName": "Momo | Idelmée Cadere",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/580824056547508225/36aadd024c1bfcf4e5b30737c4e9d5c8.png?size=1024"
-    },
-    "Inzu Sravel": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Iscarioth": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil",
-      "username": "zaaes",
-      "displayName": "| Iscarioth |",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/249497144698863617/b6788baaa4e517a0e24c36b5b224405f.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 20,
+      "totalMessages": 183
     },
     "Isis Faerieth": {
+      "name": "Isis Faerieth",
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "letoiledeminuit",
-      "displayName": "Etoile | Isis Faerieth",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/407613483853676555/avatars/b9715f8ffa4a6a93d9de60b264681372.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 24,
+      "totalMessages": 198
     },
-    "Ivara Luella": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "elisabeeeeeh",
-      "displayName": "Elisabeeh | Ivara Luell",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/431002376216772608/dda8de9ba899d82bc3372c58b4e146ef.png?size=1024"
-    },
-    "JAVUS": {
+    "Hector Swaft": {
+      "name": "Hector Swaft",
       "role": "PNJ",
       "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+      "status": "PNJ",
+      "totalScenes": 4,
+      "totalMessages": 16
     },
-    "Jasp Nah": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
-    },
-    "Jin Alurantes": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "elouand",
-      "displayName": "Jin Alurantes 🍸",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/278093533192388608/911a507272dc37697312cf9664392974.png?size=1024"
-    },
-    "Joke": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Junko Anarchy": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "luden_chan",
-      "displayName": "Luden ( Junko Anarchy )",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/265908519423705089/avatars/3efd942a17fb0efd73e4b248bf1f56e2.png?size=1024"
-    },
-    "Kanta": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Katelynn Hoffmann": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "its_yuu",
-      "displayName": "Yûu | Katelyn Hoffmann",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/774320832998539345/avatars/0977d3489d328a9a6174fac1f6750076.png?size=1024"
-    },
-    "Kenji Takahashi": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "heavil4444",
-      "displayName": "Kenji Takahashi | Heavil",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/448509375284379678/avatars/a_61cc8944e3c089f29c87b4b0316b5c06.gif?size=1024"
-    },
-    "L'Oeil": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "L'Ost du Sang": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "LE CONSEILLER": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "LE MONARQUE DU SILENCE": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "LOUIS ARTHUR DELACROIX": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Lewis Bamer": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Lorna Is'Hor": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Loyis Delacroix": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "happy_is_happy",
-      "displayName": "Happy | Loyis Delacroix",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/178885862644252672/avatars/81e356f66697d61faae52fd278c0dde6.png?size=1024"
-    },
-    "Lucia Fiorella": {
+    "Asior Eveus": {
+      "name": "Asior Eveus",
       "role": "Cercle d'Azur",
       "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "juju_la_best",
-      "displayName": "> Ju | Lucia \"Bunny\" Fiorella",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/692022969081528320/8cffe2f7ba36061909f174c371a7b950.png?size=1024"
-    },
-    "Lumia Faendharts": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "lueur._.",
-      "displayName": "Lumia \"Lum\" Faendharts/Lumière",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/522177271021436942/3d1d5a9be81c6e1c9c311e2ae2a86e79.png?size=1024"
-    },
-    "Lydounne": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Markus Law": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "bourpiff",
-      "displayName": "Bourpiff | Markus Law",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/391303008467681281/b5cf322746f16f1ecbcc91d712e69677.png?size=1024"
-    },
-    "Maëll Fol'Dun": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "astyell",
-      "displayName": "Maël Fol'dun (Astyell)",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/228948435259228160/429b3e788564d2a24a4148b41ce0a2da.png?size=1024"
-    },
-    "Milli Enga": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Mono'": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Myrane Jaster": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Myrea M": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": ".khemm",
-      "displayName": "Khem ||| Myrea M.",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1399912503416455248/ce68b7446785ee3a268bb39bce7ea26c.png?size=1024"
-    },
-    "Nick Sol": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "harderbae",
-      "displayName": "Prince Nick Sol 🦈",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1132226742107516929/8aad08dbf1218a35a1933a3b9015fe70.png?size=1024"
-    },
-    "Nikko Aytaupe": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "OWL LE MESSAGER": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "orla_",
-      "displayName": "Orla | Kalem Crowley",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/260402360445173760/7b5487144938b088f98f70a1f1568990.png?size=1024"
-    },
-    "Okayama": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Ragde Umbras": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "personnes_10",
-      "displayName": "Ragde Umbras",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/375689750222209034/022082fb13e353b903d181f235dac362.png?size=1024"
-    },
-    "Red Roadman": {
-      "role": "Cercle d'Azur",
-      "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "jivwd",
-      "displayName": "RED",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/487993781208219661/a133296aa82650776abaf2315cfedf27.png?size=1024"
-    },
-    "Regisseur du Centre de l'Histoire": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Ren Urugaki": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "nociferoce",
-      "displayName": "Noci | Urugaki Ren",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/273501304226185217/ac269dd45d12b37ab575c32304833521.png?size=1024"
-    },
-    "Rias Valdor": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Romy": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+      "status": "MAIN_PC",
+      "totalScenes": 20,
+      "totalMessages": 129
     },
     "Saphizu Alizee Vidtz": {
-      "role": "Sans rôle",
+      "name": "Saphizu Alizee Vidtz",
+      "role": "Indéfini",
       "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 5
     },
-    "Selena Moon": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "gwenphasehikena",
-      "displayName": "Séléna Moon",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/249282169493651456/avatars/a1de2b4aeafb39977b0b50d0c0816a6b.png?size=1024"
+    "Emil Camille Rebenok": {
+      "name": "Emil Camille Rebenok",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 9,
+      "totalMessages": 51
     },
-    "Septimus Kales": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "icaryo",
-      "displayName": "Ryo 웃 | Kalès Septimus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/970817500600217680/9ca7c9cb8bdc4e874c75bb27069344b1.png?size=1024"
+    "Red Roadman": {
+      "name": "Red Roadman",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 14,
+      "totalMessages": 69
     },
-    "Sha'al Langster": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+    "Nick Sol": {
+      "name": "Nick Sol",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 23,
+      "totalMessages": 195
     },
-    "Shin": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+    "Brutus Redwitch": {
+      "name": "Brutus Redwitch",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 15,
+      "totalMessages": 80
     },
-    "Someone": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+    "Loyis Delacroix": {
+      "name": "Loyis Delacroix",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 10,
+      "totalMessages": 25
     },
-    "Sous son oeil": {
+    "Jin Alurantes": {
+      "name": "Jin Alurantes",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 29,
+      "totalMessages": 226
+    },
+    "LE CONSEILLER": {
+      "name": "LE CONSEILLER",
       "role": "PNJ",
       "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+      "status": "PNJ",
+      "totalScenes": 12,
+      "totalMessages": 179
     },
     "Star": {
-      "role": "Sans rôle",
+      "name": "Star",
+      "role": "Indéfini",
       "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 26
     },
-    "Sw dark325": {
-      "role": "Sans rôle",
-      "color": "#94a3b8",
-      "colorName": "char_sans_role",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Tarrion Tombetoile": {
+    "Aryanna Erhendil": {
+      "name": "Aryanna Erhendil",
       "role": "La Garde Pourpre",
       "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "biboon",
-      "displayName": "Tarrion Tombétoile | Biboon",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/391351956146487297/a8de1202acc98508aff1e90e3d9e1ab4.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 40,
+      "totalMessages": 194
     },
-    "Tenebris": {
-      "role": "L'œil",
-      "color": "#0e0d0d",
-      "colorName": "char_oeil",
-      "username": "___val___",
-      "displayName": "Tenebris",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/369949251121446912/0a2230430baaa0efce5f6b65712924d9.png?size=1024"
+    "Milli Enga": {
+      "name": "Milli Enga",
+      "role": "PNJ",
+      "color": "#c084fc",
+      "status": "PNJ",
+      "totalScenes": 1,
+      "totalMessages": 4
     },
-    "Tsutomu Yamamoto": {
+    "Nikko Aytaupe": {
+      "name": "Nikko Aytaupe",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 1
+    },
+    "Okayama": {
+      "name": "Okayama",
       "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "reverse.d",
-      "displayName": "Vieux DÉBILE | Tsutomu Yamamoto",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/532212946995118101/avatars/d96692cef1cf35c6504f9021b915f97e.png?size=1024"
+      "color": "#eab308",
+      "status": "MAIN_PC",
+      "totalScenes": 11,
+      "totalMessages": 90
     },
-    "Velka Valcyrion": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "norxas",
-      "displayName": "Velka Valcyrion",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/252112122983612417/avatars/b21020000c5cc62a78fbe3942c0f3916.png?size=1024"
+    "Historia Fay Ruaidhri Grel": {
+      "name": "Historia Fay Ruaidhri Grel",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 11
+    },
+    "Kanta": {
+      "name": "Kanta",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 17
+    },
+    "Lucia Fiorella": {
+      "name": "Lucia Fiorella",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 16,
+      "totalMessages": 96
     },
     "Vosk Sulyvan": {
+      "name": "Vosk Sulyvan",
       "role": "Sans guilde",
       "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": ".hussh",
-      "displayName": "Sulyvan Vosk | Hussh",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/826714521397231636/avatars/1e6c123c8e7ede157a12dfb0ed55fc2e.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 15,
+      "totalMessages": 103
     },
-    "Yunah Aoi Enjaku": {
+    "Shin": {
+      "name": "Shin",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 11
+    },
+    "Jasp Nah": {
+      "name": "Jasp Nah",
+      "role": "JAVUS",
+      "color": "#ffffff",
+      "status": "MAIN_PC",
+      "totalScenes": 14,
+      "totalMessages": 186
+    },
+    "Katelynn Hoffmann": {
+      "name": "Katelynn Hoffmann",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 20,
+      "totalMessages": 145
+    },
+    "Kenji Takahashi": {
+      "name": "Kenji Takahashi",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 20,
+      "totalMessages": 83
+    },
+    "Someone": {
+      "name": "Someone",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 2,
+      "totalMessages": 5
+    },
+    "Septimus Kales": {
+      "name": "Septimus Kales",
+      "role": "JAVUS",
+      "color": "#ffffff",
+      "status": "MAIN_PC",
+      "totalScenes": 18,
+      "totalMessages": 125
+    },
+    "Abrihicot": {
+      "name": "Abrihicot",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 8
+    },
+    "Romy": {
+      "name": "Romy",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 8,
+      "totalMessages": 35
+    },
+    "Selena Moon": {
+      "name": "Selena Moon",
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "status": "MAIN_PC",
+      "totalScenes": 8,
+      "totalMessages": 95
+    },
+    "Lewis Bamer": {
+      "name": "Lewis Bamer",
+      "role": "Cercle d'Azur",
+      "color": "#3b82f6",
+      "status": "MAIN_PC",
+      "totalScenes": 8,
+      "totalMessages": 59
+    },
+    "Adelina Del Fuego": {
+      "name": "Adelina Del Fuego",
       "role": "Cercle d'Azur",
       "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "jaaapaannnnnnnnnnn.",
-      "displayName": "Jap / Yunah Aoi Enjaku",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1034153441104252969/880a34d07192639236badd685ded6ef7.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 12,
+      "totalMessages": 72
     },
-    "Æther": {
+    "JAVUS": {
+      "name": "JAVUS",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 14
+    },
+    "Lorna Is'Hor": {
+      "name": "Lorna Is'Hor",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 3
+    },
+    "Florianne Hoster": {
+      "name": "Florianne Hoster",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 1
+    },
+    "Ethan Jaster": {
+      "name": "Ethan Jaster",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 4
+    },
+    "Myrane Jaster": {
+      "name": "Myrane Jaster",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 3
+    },
+    "Eita": {
+      "name": "Eita",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 14
+    },
+    "Sha'al Langster": {
+      "name": "Sha'al Langster",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 10
+    },
+    "Lydounne": {
+      "name": "Lydounne",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 6
+    },
+    "Inzu Sravel": {
+      "name": "Inzu Sravel",
+      "role": "PNJ",
+      "color": "#c084fc",
+      "status": "PNJ",
+      "totalScenes": 2,
+      "totalMessages": 16
+    },
+    "Myrea M": {
+      "name": "Myrea M",
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 37
+    },
+    "Maëll Fol'Dun": {
+      "name": "Maëll Fol'Dun",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 29
+    },
+    "Tsutomu Yamamoto": {
+      "name": "Tsutomu Yamamoto",
+      "role": "PNJ",
+      "color": "#c084fc",
+      "status": "PNJ",
+      "totalScenes": 2,
+      "totalMessages": 3
+    },
+    "Ren Urugaki": {
+      "name": "Ren Urugaki",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 21,
+      "totalMessages": 119
+    },
+    "Velka Valcyrion": {
+      "name": "Velka Valcyrion",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 6
+    },
+    "Iscarioth": {
+      "name": "Iscarioth",
       "role": "L'œil",
       "color": "#0e0d0d",
-      "colorName": "char_oeil",
-      "username": "miklelait",
-      "displayName": "Æ𝚝𝚑𝚎𝚛",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/806640081716773021/8f36b25b00a2f408178c5173b2959a6b.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 7,
+      "totalMessages": 60
     },
-    "Mao Hide": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "twisted_servant",
-      "displayName": "Hedwig Von Glanzestern [1/1]",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1170008194559520861/931f3c534956e81406c61315bad082d3.png?size=1024"
-    },
-    "JAAAAAAAAAAAPAAAAAAAAAAAAAAAAAN": {
+    "Frey Guðfrøðr": {
+      "name": "Frey Guðfrøðr",
       "role": "Cercle d'Azur",
       "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "jaaapaannnnnnnnnnn.",
-      "displayName": "Jap / Yunah Aoi Enjaku",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1034153441104252969/880a34d07192639236badd685ded6ef7.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 6,
+      "totalMessages": 53
     },
-    "icaryo": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "icaryo",
-      "displayName": "Ryo 웃 | Kalès Septimus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/970817500600217680/9ca7c9cb8bdc4e874c75bb27069344b1.png?size=1024"
+    "Tenebris": {
+      "name": "Tenebris",
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "status": "MAIN_PC",
+      "totalScenes": 5,
+      "totalMessages": 24
     },
-    "Léonore Edelweiss": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "ana_non",
-      "displayName": "Léonore Edelweiss | Ana",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/820740174014185532/00c747f5635c673c75aa76acc40b91d3.png?size=1024"
-    },
-    "CʜᴜʟᴀᴋTM": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "chulakita",
-      "displayName": "Cʜᴜʟᴀᴋ™ | Cassian Ortie",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/576453778874564619/4b8977bf21890936500cf9c7fbd9a44e.png?size=1024"
-    },
-    "Akana": {
+    "Hedwig Von Glanzestern": {
+      "name": "Hedwig Von Glanzestern",
       "role": "La Garde Pourpre",
       "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "heavil4444",
-      "displayName": "Kenji Takahashi | Heavil",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/448509375284379678/avatars/a_61cc8944e3c089f29c87b4b0316b5c06.gif?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 6,
+      "totalMessages": 34
     },
-    "elisabeeeeeh": {
+    "Idelmée Cadree": {
+      "name": "Idelmée Cadree",
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "elisabeeeeeh",
-      "displayName": "Elisabeeh | Ivara Luell",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/431002376216772608/dda8de9ba899d82bc3372c58b4e146ef.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 10,
+      "totalMessages": 75
     },
-    "alieny": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
+    "Lumia Faendharts": {
+      "name": "Lumia Faendharts",
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "status": "MAIN_PC",
+      "totalScenes": 5,
+      "totalMessages": 42
     },
-    "Alieny": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
+    "Cassian Ortie": {
+      "name": "Cassian Ortie",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 2,
+      "totalMessages": 31
     },
-    "Kalem Crowley": {
+    "Ragde Umbras": {
+      "name": "Ragde Umbras",
       "role": "Cercle d'Azur",
       "color": "#305ed3",
-      "colorName": "char_azur",
-      "username": "orla_",
-      "displayName": "Orla | Kalem Crowley",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/260402360445173760/7b5487144938b088f98f70a1f1568990.png?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 52
     },
-    "Akalegacy": {
+    "Ivara Luella": {
+      "name": "Ivara Luella",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 47
+    },
+    "OWL LE MESSAGER": {
+      "name": "OWL LE MESSAGER",
+      "role": "PNJ",
+      "color": "#c084fc",
+      "status": "PNJ",
+      "totalScenes": 3,
+      "totalMessages": 25
+    },
+    "Tarrion Tombetoile": {
+      "name": "Tarrion Tombetoile",
+      "role": "La Garde Pourpre",
+      "color": "#b40000",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 7
+    },
+    "Aegnor Othar": {
+      "name": "Aegnor Othar",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 15
+    },
+    "Astreüs Mylonas": {
+      "name": "Astreüs Mylonas",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 20
+    },
+    "Junko Anarchy": {
+      "name": "Junko Anarchy",
+      "role": "Voile d'Ivoire",
+      "color": "#ffffd4",
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 12
+    },
+    "Arun Acharya": {
+      "name": "Arun Acharya",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 4,
+      "totalMessages": 36
+    },
+    "Yunah Aoi Enjaku": {
+      "name": "Yunah Aoi Enjaku",
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "status": "MAIN_PC",
+      "totalScenes": 2,
+      "totalMessages": 10
+    },
+    "Æther": {
+      "name": "Æther",
+      "role": "L'œil",
+      "color": "#0e0d0d",
+      "status": "MAIN_PC",
+      "totalScenes": 3,
+      "totalMessages": 37
+    },
+    "Markus Law": {
+      "name": "Markus Law",
       "role": "Sans guilde",
       "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "gwenphasehikena",
-      "displayName": "Séléna Moon",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/249282169493651456/avatars/a1de2b4aeafb39977b0b50d0c0816a6b.png?size=1024"
-    },
-    "Bozdag Dermirhan": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "clipmyr",
-      "displayName": "Clip' | Demirhan BOZDAG",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/210008264954478592/a_e33affe42aac683eb65bbe8c929f9021.gif?size=1024"
+      "status": "MAIN_PC",
+      "totalScenes": 1,
+      "totalMessages": 2
     }
   },
   "scenes": [
     {
-      "id": "scene___𝗘scaliers_𝗡acrés_1",
-      "channel": "🦪〕𝗘scaliers-𝗡acrés",
-      "channel_id": "1333138229041303652",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 88,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-01-31T15:26:47Z",
-      "end_time": "2025-01-31T15:26:47Z",
-      "preview": "``🐚  •  ESCALIERS NACRÉS``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Seul et unique moyen de se rendre à l’étage, un sortilège empêche quiconque de l’escal...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1333138229041303652/1334907743450169526",
-      "messages": [
-        {
-          "id": "1334907743450169526",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-01-31T15:26:47Z",
-          "content": "``🐚  •  ESCALIERS NACRÉS``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Seul et unique moyen de se rendre à l’étage, un sortilège empêche quiconque de l’escalader, au risque de se retrouver désarçonné en bas de la pente avec un bon coup de pied aux fesses. C’est souvent à son sommet que la plupart des annonces sont faites ; il vaut donc mieux se tenir non loin de celui-ci si vous ne voulez rien manquer.*\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://cdn.discordapp.com/attachments/1327646237230632980/1334903050954997760/d22d6a6632dfca6124031a454e3a57ef.png?ex=6a769d98&is=6a754c18&hm=0d364dd53adf7b1149978c7e35b50e3b360acac6591de8657e5005082bcacdd9&]",
-          "embed_title": "``🐚  •  ESCALIERS NACRÉS``",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Seul et unique moyen de se rendre à l’étage, un sortilège empêche quiconque de l’escalader, au risque de se retrouver désarçonné en bas de la pente avec un bon coup de pied aux fesses. C’est souvent à son sommet que la plupart des annonces sont faites ; il vaut donc mieux se tenir non loin de celui-ci si vous ne voulez rien manquer.*\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/escaliers-nacres.jpg"
-    },
-    {
-      "id": "scene___𝗖ouloir_𝗕lanc_1",
-      "channel": "⚪〕𝗖ouloir-𝗕lanc",
-      "channel_id": "1333138163308302418",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 85,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-01-31T15:31:12Z",
-      "end_time": "2025-01-31T15:31:12Z",
-      "preview": "``◻️  •  COULOIR BLANC``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Coin idéal pour celles et ceux qui détestent rester au centre de l’attention, ce couloir...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1333138163308302418/1334908853883502643",
-      "messages": [
-        {
-          "id": "1334908853883502643",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-01-31T15:31:12Z",
-          "content": "``◻️  •  COULOIR BLANC``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Coin idéal pour celles et ceux qui détestent rester au centre de l’attention, ce couloir est l’endroit discret où s’installer pour une discussion plus sérieuse ou plus posée. Alliant intimité et proximité, c’est ici que vous pourrez admirer les lames de Kroksvard et le bouclier de Dwargolf, d’anciennes reliques ayant permis à leurs possesseurs de venir à bout du grizzli des forêts d’Altrim.*\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://cdn.discordapp.com/attachments/1327646237230632980/1334903060803358760/ddeb55052dfd4f10ab770e124cdf5590.png?ex=6a769d9a&is=6a754c1a&hm=301f33f9f89b0bb0b66f040332782aa6ff77e7901ffed9c02ab4831c6ec89fd7&]",
-          "embed_title": "``◻️  •  COULOIR BLANC``",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Coin idéal pour celles et ceux qui détestent rester au centre de l’attention, ce couloir est l’endroit discret où s’installer pour une discussion plus sérieuse ou plus posée. Alliant intimité et proximité, c’est ici que vous pourrez admirer les lames de Kroksvard et le bouclier de Dwargolf, d’anciennes reliques ayant permis à leurs possesseurs de venir à bout du grizzli des forêts d’Altrim.*\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/couloir-blanc.jpg"
-    },
-    {
-      "id": "scene____𝗣ortes_de_𝗠arbre_1",
-      "channel": "🏛️〕𝗣ortes-de-𝗠arbre",
-      "channel_id": "1333137946563313745",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 83,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-01-31T15:37:33Z",
-      "end_time": "2025-01-31T15:37:33Z",
-      "preview": "``🪽  •  PORTES DE MARBRE ``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Désormais closes, les portes feu-blanches se teintèrent d’un marbre d’obsidienne avec...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1333137946563313745/1334910455038214255",
-      "messages": [
-        {
-          "id": "1334910455038214255",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-01-31T15:37:33Z",
-          "content": "``🪽  •  PORTES DE MARBRE ``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Désormais closes, les portes feu-blanches se teintèrent d’un marbre d’obsidienne avec une rapidité surprenante. Trace du passage des aventuriers ? Funeste destin ou simple jeu de lumière ? Nul autre que le directeur lui-même ne saurait répondre à cette question. Une seule chose était sûre : le Heaume Blanc est un espace dont chaque millimètre carré est contrôlé.*\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://cdn.discordapp.com/attachments/1327646237230632980/1334910194379132938/e652ea9f1a7b8611587119849de496b8.png?ex=6a76a43f&is=6a7552bf&hm=0b26822198ae3dbd6585be012dd09b915792f562fa6894c08fa7580f9f01a75d&]",
-          "embed_title": "``🪽  •  PORTES DE MARBRE ``",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Désormais closes, les portes feu-blanches se teintèrent d’un marbre d’obsidienne avec une rapidité surprenante. Trace du passage des aventuriers ? Funeste destin ou simple jeu de lumière ? Nul autre que le directeur lui-même ne saurait répondre à cette question. Une seule chose était sûre : le Heaume Blanc est un espace dont chaque millimètre carré est contrôlé.*\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/porte.jpg"
-    },
-    {
-      "id": "scene______Crânes_Rouges_1",
-      "channel": "💀 •  Crânes Rouges",
-      "channel_id": "1336044151975706808",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 999,
-      "title": "Daisuky v, Vosk Sulyvan, Brutus Redwitch...",
-      "actors": [
-        "Daisuky v",
-        "Vosk Sulyvan",
-        "Brutus Redwitch",
-        "ALLARIC GESUN",
-        "Loyis Delacroix"
-      ],
-      "start_time": "2025-02-03T18:45:37Z",
-      "end_time": "2025-02-04T20:08:44Z",
-      "preview": "``` ``` \nsont invités à réagir ici :\n\n<@555795047409385476> \n<@693836815647375360> \n<@826714521397231636> \n\n``` ```",
-      "message_count": 5,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1336044151975706808/1336044946632741017",
-      "messages": [
-        {
-          "id": "1336044946632741017",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-03T18:45:37Z",
-          "content": "``` ``` \nsont invités à réagir ici :\n\n<@555795047409385476> \n<@693836815647375360> \n<@826714521397231636> \n\n``` ```",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336281127538917406",
-          "author": "Daisuky v",
-          "timestamp": "2025-02-04T10:24:07Z",
-          "content": "*Le temps passant laisse place à l'arrêt de l'instant présent. Un silence qui ce fait pesant, une main intangible et insipide qui entre ses griffes n'offre aucun répit à ses enfants. La pression se vêtit du détachement. Mains en poches, posture décontracté, iris brillantes d'un calme aux indélébiles mais indécelables fragments de faux semblants. La tempête déchaînée s'est déguisée en brouillard sur une mer d'huile. Un vent incertain y fait gonfler les voiles d'une pirogue où soigneusement, son esprit a été déposée, délaissé sur les clapotis d'un horizon et avenir bien trop taquin pour se montrer.*\n\n*Son nom va-t-il être énoncé ? Reyka se refuse d'en douter. Elle est assez tenace, assez empressé, assez talentueuse pour y arriver. Ses joues rougies prouve que ses équivoques ont tentés d'être oubliés, refoulés par ce fameux breuvage trop souvent le préféré de ceux dévoués. Son nom va-t-il les faire trembler ? Reyka sourie rien que d'y penser. Ils sont trop faibles, trop modestes, trop froussards pour y résister. Ses poings serrés sont invisibles au yeux paresseux du monde, mais lui rappelle que cette force fera un jour partie des plus redoutés.*\n\n*Alors voilà. Lorsque enfin, son prénom sans famille pour l'accompagner fut articulé, un seul mouvement et trait venu souligner cette grande fierté. Un sourire en coin , assurée et parfaitement esquisser, exprimant toute sa certitude mise un court instant sous tapis et clé.*\n\n> *{ Il va se mordre les doigts en apprenant ça.. }*\n\n*Quel plus doux parfum que celui-là. La récompense d'un potager ou champ enfin fructueux et fleuri, la satisfaction d'un bon repas où on y a tout mis, du dessin qui nous a si longtemps pris ou du premier pas vers une autre vie. Reyka ne cessera jamais se délecter d'un tel ressenti. Ses jambes avancent sur les escaliers qu'elle n'as cessé par court instant contempler en semblant l'arpenter par un automatisme inée. Ses mouvements sont fluides sans êtres calculés, ses regards une lame prête à tout trancher. Elle est la frêle silhouette que la foule n'ose pourtant pas fixer, dérivant alors sur son collègue au corps bandé.*\n\n*Enfin.. Malheureusement pour eux la vision n'est guère plus rassurante - ainsi, sûrement se penchent ils sur les autres maisons, aux teins aussi lumineux que leurs noms. La mort fait bien pâle figure face à ces pierres précieuses. Néanmoins, cet effet et atmosphère est apprécié, chérie par notre demoiselle. Elle n'est pas là pour insuffler la confiance mais bel et bien la peur car il ne tiens qu'à elle ses plus belles valeurs. Un regard fut tout de même lancé à Brutus positionner plus solennellement que notre demoiselle, qui mine de rien, fait déjà l'effort de rester immobile. Durant ce coup d'œil seulement ses perles écarlates prendront une intonation plus chaleureuse, un accord muet mais sincère envers ce choix, jusqu'à peut-être même du respect envers le jeune homme qui gravi à ses côtés cette voie.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336376690720505990",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2025-02-04T16:43:51Z",
-          "content": "*Plat fade*\n\n  *« Ô toi qui me porte, est-ce un plaisir de gravir sans ses souvenirs ? »*\n\n*Pâteuse, sa bouche semble bien lourde après cette rencontre plutôt... Pieuse. Arborant les traits du messager de la mort, Ayden a toujours souhaité vivre en retrait ; loin des obligations qui s'explique par la stagnation de ce pays en perdition. Mais dès lors que, de part la main du monarque il fut contraint en enjamber cette sombre barque, il comprit la trinité ne saurait faire dans la pitié. Sa guilde est un repaire, dont la simple vue le désespère et travaille ses viscère de par son atmosphère : Confiance, Orgueil et Méfiance, voilà ce qui constitut le lourd tribut d'être un membre de la guilde au but le plus mal-vu. Pourtant, il lui tarde d'incarner les valeurs de cette garde.*\n\n> Merci.\n\n*Un mot simple mais dont le sens questionne : S'adresse-t-il ainsi à Allaric par respect ou par choix ? Après tout, c'est un proche du Roi. Son intrinsèque moi se moque bien de ce qu'il lui doit ; Ayden lui, ne perd pas la tête et compte bien honoré sa dette. Ignorant les salutations, cette situation est comme une invitation à observer la perdition dont on fait mention : Esperia semble si petite lorsqu'on prend de la hauteur, au point d'en faire peur, faire un pas de travers est sans doute la plus grande source de malheur dans les couloirs farceurs du souverain de la blanche bâtisse. Alors qu'il se hisse au niveau de ses camarades, ses prunelles et ses iris vibrent au rythme de sa voix qui repart alors, de plus belle.*\n\n> Félicitations, Brutus, Reyka.\n\n*Une prompt discussion, dénué de passion et de considération. L'aîné Nephis se plie sous le poids des responsabilités ; impossible pour lui de nier qu'il aurait préféré ne jamais être impliqué. Pour couronner le tout, le destin joue son dernier coup, n'éveillant que dégoût chez l'homme à la mémoire flou. Le regard perçant de celui qui voit en lui un opposant, se veut de plus en plus collant. Il ne connaît pas son nom, Ayden compare bien trop souvent les Sisyphe à des marrons : Solide à l'extérieur mais fondant, ~~λρρέτιЅλπτ~~ à l'intérieur ; une fascination sordide pour ce peuple bien trop intrépide.*\n\n *« Ô toi qui me porte, ne souhaites-tu pas que je le dévore ? Cela te rend tellement plus fort, quand la faim ne te distord... »*\n\n*Le nouveau Crâne rouge ne se laisse plus embarquer par la fièvre poétique et lyrique de sa condition pathétique. Cette cérémonie ne porte, après tout, qu'un sous-texte politique. Cette fatalité rédhibitoire le tend ; cela se prouve par sa voix dont il semble si distant. Un muet qui parle, une aveugle qui voit et finalement une sourde qui entend ? Des espoirs, bien faux, se placent en des petites gens qui n'ont pas leur place, ici et maintenant.*\n\n> Tout ceci... c'est navrant.\n\n*Marmonne-t-il, bien que ce soit futile.*\n[Image: https://cdn.discordapp.com/attachments/1336044151975706808/1336376690443817032/4f24c81b67b3e2b0c54f6ccabaf029f0.png?ex=6a76b407&is=6a756287&hm=3fe258c62d6c44b3ac2c39733cdb02905681839fa4c5b95475389523832d2885&]",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336395683963605144",
-          "author": "Brutus Redwitch",
-          "timestamp": "2025-02-04T17:59:20Z",
-          "content": "***Son nom est prononcé, ses oreilles n'en reviennent pas, tandis qu'un épais sourire se dresse, invisible, sur son visage. Ses doigts se libèrent de toute nourriture et il quitte ses camarades dans la foule. La très grande joie traverse son crâne : il est nommé en tant que Crâne rouge. Sans faire aucunement attendre, l'homme se met à marcher dans un pas lent en direction d'Allaric. Il se plait à écouter le discours et à l'ordre de se ranger comme des soldats autour de leur lieutenant, mais malgré tout, l'homme n'est pas très représentatif de l'extérieur, difficile à lire sur son visage.***\n\n`💭` *Quelle victoire, quelle joie.*\n\n***Pense-t-il, caché dans son chapeau, ses mots ne sortent pas de ses lèvres, il les garde pour lui. L'homme momie, voici l'un des Crânes rouges qui vont connaitre les nouveaux mages et que vont revoir ceux qui sont déjà présents depuis une année. Armé d'un grand chapeau et couvert de la tête aux pieds par des bandages avec une méticulosité irréprochable, le manteau sur le dos jusqu'à ses bottes. Toute son apparence est énigmatique tant qu'on ne le connait pas. Il est quasiment impossible de lire en lui tant ses yeux sont eux-mêmes cachés. L'illisible.***\n\n`💭` *Aha, la belle vue.*\n\n***Restant silencieux, Brutus adresse un léger geste de la tête autant à Allaric qu'à ses deux autres camarades nommés pour le poste. Bien heureux de pouvoir toiser la foule du regard rouge des verres qui couvrent ses yeux. L'homme se garde de mot, il se tient droit jusqu'à se placer convenablement. Sa main droite se lève, attrapant le rebord de son chapeau. Cette fois-ci, le geste est adressé à la foule. Clignant d'un œil, mais ce détail n'est visible qu'à ceux avec une vision acérée.***\n\n`💬` *Enchantés, mes pauvres.*\n[Image: https://cdn.discordapp.com/attachments/1336044151975706808/1336395683757817936/01bbc8416ae73f3c7d4064083f2e13be.jpg?ex=6a76c5b8&is=6a757438&hm=380309b7096a465fec1611cee924cb06b17e2320372ca5e5614f18804873b3aa&]",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336428249152229387",
-          "author": "ALLARIC GESUN",
-          "timestamp": "2025-02-04T20:08:44Z",
-          "content": "🩸  •  Trois Crânes aux reflets sanglants\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n\"Il semble important de resserrer la vis.\"\n\n*Le Sisyphe aux yeux perçant s'avance pour faire face à cette triade nouvellement formé. Fixe, il scrute avec attention les yeux de chacun de ses membres, il jauge, estime, évalue. Puis, sa main droite se lèvre, révélant les chaînes attachés à chacun de ses doigts : Un artéfact puissant et ancien, les Griffes d'Argent. Son index se déplie, tandis qu'avec sa grâce habituelle, il laisse ses croissants de chairs vibrés au rythme de ses mots.*\n\n\"Votre promotion peut éternelle comme temporaire ; le mépris, l'orgueil, la suffisance ou le dégoût, ces couleurs que j'observe dans vos prunelles... Elle ne doivent en aucun cas disparaître.\"\n\n*L'Absolu parle avec une franchise tranchante, détail qu'il lui sied à ravir. Ses mots, incitent à ce surplus de confiance, à cette arrogance qui a sûrement gagné les trois mages de rang II ; il souhaite cultiver cette graine qui germe aussi bien dans leur cœur que dans leur esprit car plus que ses camarades témoin, il accorde une absolue confiance en ces ressources inépuisables que sont les vices des Hommes. Cette mentalité s'illustre d'ailleurs, par les mots qui suivent :*\n\n\"Vous êtes les meilleurs, les plus forts ou les plus malins. Mais ne cessez jamais de fouiller dans les viscères de la Malice Humaine, soyez toujours plus proche du bord de ce précipice, car il n'y a que de cette façon que l'on peut combattre et anéantir les engeances putrides des détracteurs de notre pays. Je ne veux pas de poulets sans tête, je veux des égoïstes assez fou pour estimer ma place comme une option mais assez disciplinés pour mesurer l'ampleur de cette tâche. Je veux des résultats et plus que tout...\"\n\n*Suffisance*\n\n\"Je ne tolère pas l'échec\"\n\n*C'est un vœu pieux que prononce le blond, qui se tourne désormais pour faire face à une architecture changeante, laissant les contours d'une porte se dessiner. Celle-ci semble mener à un lieu qu'ils connaissent bien, celui qui accueil leurs quartiers : Le Bastion écarlate.*\n\n\"Inculquer aux nouvelles recrues le goût du sang et la rigueur du chasseur et non de la proie. Je veux des loups dont les crocs s'aiguisent sur les os. Car la Garde Pourpre est la seule à pouvoir prémunir Esperia des menaces extérieurs...\"\n\n*Sa foi en sa nation semble sans faille, il est admirable.*\n\n\"Rentrons...Et Gloire à la Garde Pourpre !\"\n\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336407625117733007/7149f9413cb9615cb30369756215075d.png?ex=6a76d0d7&is=6a757f57&hm=c2f3384c910a9d5aa0abda25d437f43587d0278b1a83b6629b5fbd04d0efc3da&format=webp&quality=lossless&width=550&height=233&]",
-          "embed_title": "🩸  •  Trois Crânes aux reflets sanglants",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n\"Il semble important de resserrer la vis.\"\n\n*Le Sisyphe aux yeux perçant s'avance pour faire face à cette triade nouvellement formé. Fixe, il scrute avec attention les yeux de chacun de ses membres, il jauge, estime, évalue. Puis, sa main droite se lèvre, révélant les chaînes attachés à chacun de ses doigts : Un artéfact puissant et ancien, les Griffes d'Argent. Son index se déplie, tandis qu'avec sa grâce habituelle, il laisse ses croissants de chairs vibrés au rythme de ses mots.*\n\n\"Votre promotion peut éternelle comme temporaire ; le mépris, l'orgueil, la suffisance ou le dégoût, ces couleurs que j'observe dans vos prunelles... Elle ne doivent en aucun cas disparaître.\"\n\n*L'Absolu parle avec une franchise tranchante, détail qu'il lui sied à ravir. Ses mots, incitent à ce surplus de confiance, à cette arrogance qui a sûrement gagné les trois mages de rang II ; il souhaite cultiver cette graine qui germe aussi bien dans leur cœur que dans leur esprit car plus que ses camarades témoin, il accorde une absolue confiance en ces ressources inépuisables que sont les vices des Hommes. Cette mentalité s'illustre d'ailleurs, par les mots qui suivent :*\n\n\"Vous êtes les meilleurs, les plus forts ou les plus malins. Mais ne cessez jamais de fouiller dans les viscères de la Malice Humaine, soyez toujours plus proche du bord de ce précipice, car il n'y a que de cette façon que l'on peut combattre et anéantir les engeances putrides des détracteurs de notre pays. Je ne veux pas de poulets sans tête, je veux des égoïstes assez fou pour estimer ma place comme une option mais assez disciplinés pour mesurer l'ampleur de cette tâche. Je veux des résultats et plus que tout...\"\n\n*Suffisance*\n\n\"Je ne tolère pas l'échec\"\n\n*C'est un vœu pieux que prononce le blond, qui se tourne désormais pour faire face à une architecture changeante, laissant les contours d'une porte se dessiner. Celle-ci semble mener à un lieu qu'ils connaissent bien, celui qui accueil leurs quartiers : Le Bastion écarlate.*\n\n\"Inculquer aux nouvelles recrues le goût du sang et la rigueur du chasseur et non de la proie. Je veux des loups dont les crocs s'aiguisent sur les os. Car la Garde Pourpre est la seule à pouvoir prémunir Esperia des menaces extérieurs...\"\n\n*Sa foi en sa nation semble sans faille, il est admirable.*\n\n\"Rentrons...Et Gloire à la Garde Pourpre !\"\n\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/cranes-rouges.jpg"
-    },
-    {
-      "id": "scene______Saphirs_Bleus_1",
-      "channel": "💎 •  Saphirs Bleus",
-      "channel_id": "1336045037666173132",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 999,
-      "title": "ISYLAE FILIXIAN, Shin, Loyis Delacroix...",
-      "actors": [
-        "ISYLAE FILIXIAN",
-        "Shin",
-        "Loyis Delacroix",
-        "Asior Eveus"
-      ],
-      "start_time": "2025-02-03T18:47:23Z",
-      "end_time": "2025-02-04T23:40:13Z",
-      "preview": "``` ``` \nsont invités à réagir ici :\n\n<@374571976645148693> \n<@414372422997901312> \n<@178885862644252672> \n\n``` ```",
-      "message_count": 12,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1336045037666173132/1336045388452593846",
-      "messages": [
-        {
-          "id": "1336045388452593846",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-03T18:47:23Z",
-          "content": "``` ``` \nsont invités à réagir ici :\n\n<@374571976645148693> \n<@414372422997901312> \n<@178885862644252672> \n\n``` ```",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336059457813348392",
-          "author": "Shin",
-          "timestamp": "2025-02-03T19:43:17Z",
-          "content": "```💎```\n\n*Les applaudissements éclatèrent comme une onde, vibrant dans l’atmosphère feutrée du Heaume Blanc. À l’instant où son nom fut prononcé, Ellinor sentit une étrange chaleur s’insinuer dans sa poitrine, un mélange de fierté, d’appréhension et de gravité.*  \n\n*Saphir Bleu..*  \n*Un titre chargé de sens, d’attentes et de responsabilités.*  \n\n*Ses doigts se crispèrent légèrement sur les pans de sa tenue, mais son expression demeura inchangée. D’un pas mesuré, elle s’avança, son regard se portant instinctivement sur les marches nacrées qui s’étendaient devant elle.*  \n\n*La lumière de la salle se reflétait doucement sur la surface lisse des escaliers, donnant l’impression qu’ils menaient vers un horizon inconnu, vers un avenir encore voilé de mystères. Un instant, elle se surprit à retenir son souffle. Puis, avec une lente inspiration, elle gravit la première marche.*  \n\n*Chaque pas résonnait différemment. Était-ce le poids de l’instant qui donnait cette impression ou bien l’Arcane elle-même qui marquait ce moment ? Elle n’aurait su le dire. Autour d’elle, les murmures s’atténuaient, le silence se réinstallait progressivement, seulement troublé par les applaudissements qui finissaient par s’éteindre comme une marée qui se retire.*  \n\n*À sa droite, Asior Eveus montait également. À sa gauche, Élias Arthémis Lunarium..*\n\n*Un bref instant, leurs regards se croisèrent. Il n’y eut ni mots ni gestes superflus. L’instant parlait pour eux. * \n\n*Finalement, atteignant un palier où ils se tiendraient désormais en tant que Saphirs Bleus, Ellinor posa une main sur son médaillon, comme pour s’assurer que tout cela était bien réel. La fraîcheur du métal sous ses doigts confirmait l’évidence :*  \n\n*Elle était là, à sa place. * \n\n*Les battements de son cœur ralentirent progressivement, non par relâchement, mais par acceptation. Elle porta son regard vers les silhouettes en contrebas, vers ces visages levés vers eux, porteurs d’émotions variées. Derrière l’éclat du prestige se trouvaient les attentes, les jugements, mais aussi l’admiration sincère de certains.*  \n\n*Alors, doucement, avec la grâce naturelle qui lui était propre, elle inclina légèrement la tête. Un remerciement muet. Une promesse.*\n\n*Son regard se perdit un instant dans le vide, là où les échos du passé semblaient se mêler à la lumière tamisée du Heaume Blanc.*\n\n*Elle se souvenait des soirées passées auprès de son père, dans l’ombre rassurante du domaine familial. De sa voix calme et assurée, il lui racontait ses propres exploits, ces histoires où la noblesse et la grandeur se mêlaient aux défis surmontés. Elle l’écoutait, fascinée, rêvant du jour où elle aussi marquerait l’histoire à sa manière.*\n\n*Aujourd’hui, elle y était.*\n\n*Un mince sourire effleura ses lèvres tandis qu’une pensée douce-amère lui traversait l’esprit. Il serait fier d’elle. Fier du chemin parcouru, des épreuves endurées et des victoires arrachées au doute.*\n\n*L’enfant qui rêvait en silence était devenue la mage qui avançait, prête à écrire son propre chapitre.*  \n\n*Le Cercle Azur venait de désigner ceux qui, cette année, porteraient le flambeau de son excellence.*\n\n```💎```",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336117213412986890",
-          "author": "Asior Eveus",
-          "timestamp": "2025-02-03T23:32:47Z",
-          "content": "*Asior s’approcha de l’escalier où il avait été appelé, gravissant chaque marche avec la souplesse d’un félin et la grâce d’un jeune homme de son rang. Son port de tête était haut et digne, laissant sa longue chevelure bleuté flotter à sa suite, reflétant les reflets lunaires dans un mélange de couleurs hypnotisants. Les pièces de son ornement cliquetaient à peine avec la fluidité de ses mouvements, renvoyant elles aussi les rayons de lune qui faisaient scintiller ses prunelles dorées.*\n\n*Le poids de son nouveau rôle maintenait un équilibre plaisant avec les opportunités qu’il offrait, son visage revenu à son habituel sérieux, l’anxiété ne faisait pas trace sur le visage de l’Eveus, rien d’autre que le calme et l’attente s’y trouvait. Il fut néanmoins soulagé de retrouver, en haut de ces marches, un visage connu auquel il ne manqua pas de sourire discrètement une fois arrivé à sa place, et un autre mage familier, bien que côtoyé de moins près.*\n\n*Il se tourna ensuite, face à la foule qui applaudissait, à côté d’une camarade, d’un témoin.*\n\n*Une harmonie familière résonnait dans ses oreilles, bien qu’il ne fredonne rien.*\n\n*Cette nuit qui baignait sa carrure de ses reflets argents marquait un tournant, il le savait, bien qu’il n’en distingue pas encore la direction. Asior avait toujours été de nature curieuse, et sa position actuelle ne manquerait certainement pas de le satisfaire à l’avenir.*\n\n*Il attendait, patient, les prochaines consignes, impatient, les prochains défis. Le regard doré, seul indice au milieu d'un visage gravé d'un air solennel, d'une lueur ambitieuse.*\n\n*Jusqu’où cette étrange pièce la pousserait-il à chasser son épilogue ?*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336304779605049354",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:58:06Z",
-          "content": "```💎  •  Élias Arthémis Lunarium, joyau de la maison de la nuit``` \n\n> *C’est lorsque les conversations finalisent leur tissage que la pièce manquante d’une tapisserie finit par faire son apparition. Oubliée par le jour et travaillée de nuit, c’est dans le doigté minutieux de l’esquisse que cette absente trouve son essence. Ne semblant avoir de soucis que pour elle-même et se moquant bien d’être remarquée ou nom. C’est désintéressé de l’autre qu’elle apparaît. Elle, la pièce manquante... Le brin perdu… La pierre non sertie… Le dernier argument, celui qui ne semble pas inquiet de sa propre réussite et de son fameux titre de chef d’œuvre. Un travail nominatif pour lequel sa main, digne maîtresse, a eu le cran et la bonté d’investir de son temps, de son cœur et de son âme. *\n\n> *Rendu glorieux et dont la cote n’est plus à faire, c’est d’une démarche naturelle qu’il se pointe fière. Lui, là touche finale, le dernier saphir de la bague trois pierres. Lui, celui qui a coûté bon nombre de sacrifices, lui, celui dont la tonalité et la couleur se doivent d’advenir en parfait liant, car entêté qu’il est, il a laissé son infini loisir prendre le pas sur sa modestie. Ne désirant que le rôle de pièce maîtresse au cœur du design somptueux auquel il a été convoqué, c'est dans ses pensées les plus habiles qu’il se permet et s’autorise à demeurer le glorieux dernier heureux invité. Coup majeur afin d’affirmer le positionnement de la nuit dans un jeu couronné qui ne jure que par la célébrité, c’est fièrement qu’il ose témoigner que son titre de joyau ne lui a pas été offert à la légère. *\n\n> *Donné afin de féliciter son assiduité et sa dextérité parmi le monde infiniment complexe que présente les sciences, son appel en ce jour de remise de cérémonie n’est pour lui que la résultant d’un coup mûrement réfléchi. Un pari entamé il y a de cela bon nombre de lunes. Un pacte passé avec un génie qu’il a sacré binôme et Némésis. Une ombre qui ne peut exister sans sa lueur et dont la bordure noire définit habilement sa luminosité. Noyé parmi les vers de sa poésie philosophique en forme d’Ouroboros, c’est dans une continuité époustouflante que son œil bleuté embrasse les bordures de la pièce qui se présente désormais devant lui. Avide de détail, mais aussi de connaissance, son regard vole de face en face, priant pour que l’une de ses dernières finisse par trahir un six... Une expression fascinante à laquelle il pourrait avidement déclarer sa passion et son désir ardent de complexité… Une équation inconnue pour laquelle il serait prêt à se mettre à nu et à parjurer la profondeur de ses vocations. Un spécimen qui le métamorphoserait en oxymore... Un Graal pour lequel sa mesure battrait l’illogisme, l’incompris, mais surtout le correctement fou.*\n\n> *Laissant son esprit azur être consumé par la quête de ce trésor, c’est comme frappé par une douleur glaçante que sa pensée se reconnectera à la réalité. Heurté, pour ne pas dire blessé par la tonalité grincheuse des loquets de la porte de Canopus. C’est grimaçant qu’il s’efforcera d’abandonner le paysage du mystère qu’est l’autre pour fixer celles qui, de leur désir d’en finir, ont décidé de se clore. Choix logique et grandement acceptable ? Insulte ou hérésie serait de penser que le droit de ces deux blocs nacrés puisse être supérieur à la vivacité d’esprit du marcheur bleu.*\n\n> *Néanmoins, l’erreur était faite… La poésie sonnait faux, le met était calciné pour ne pas verbalement affirmer que la symphonie était gâchée par le trait d'une triste mauvaise note précipitée. Cruel était le sort, capricieux et maniaque le rédacteur, qui avait vu au creux de son appel divin... Une finalité rédemptrice porteuse de réponse, mais également de solutions. Un exutoire qui ne trouverait ce soir pas sa place au bout de l’équation.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336304818150707273",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:58:15Z",
-          "content": "> *Désenchanté par la présence de cette triste et répugnante finalité. C'est déçu que l’œil céruléen du fils de la lune abandonnera sa vue sur la foule. Était-ce là un désir de ne pas flirter plus longtemps avec le danger ou simplement d’injustement condamner deux écrous qui ne désiraient que paisiblement s’embrasser pour mieux se refermer ? Même Élias lui-même l’ignorait… Ou du moins c’est le doute qu’il avait choisi de laisser planer.*\n\n> *Contemplant avec amertume et colère les deux égides de marbre qui ne souhaitaient qu’un court laps de temps afin de réaliser leur ultime parade nuptiale rocailleuse. Le jeune homme laissera une larme perler le long de sa joue. Bien vite effacé, c’est peut-être en cette simple fermeture qu’il avait entrevue la quête de son âme. Un sourire rédempteur finira donc par éclore sur son visage, car bien que son chemin vers son obsession soit encore long, il était désormais sûr d’une chose. L’illogisme et la beauté de ce phénomène ne sont plus choses à prouver.*\n\n> *C’est pensif à ce sujet qu’il fixera une dernière fois les lourdes portes étoilées. Leur adressant un regard grisé en guise de remerciement. Car, bien que leurs actions aient été aussi délicatement amenées que possible, et suffisamment exemplaires pour confirmer ses hypothèses, elles restaient tout de même les fautives de son échec de la soirée. D’infâmes traîtresses utilisant des couleurs faussement innocentes dans le simplement but de ne pas laisser leur tonalité criminelle être affichée à la vue de tous. Car oui, c’est désormais le maître-mot que le garçon avait choisi de broder sur la couverture de ces deux êtres de marbre.*\n\n> *Capricieuse était la cerise, maudit était le sort, grande était la déception.*\n\n> *Tirant délicatement un petit ouvrage à la quatrième de couverture noirâtre, c’est avec une certaine mélancolie que le clou d’un spectacle trop long décidera de délaisser le reste du monde pour s’en remettre à l’élégante lecture, qu’il avait abandonné plus tôt dans l’espoir de trouver ce qui hante son esprit*. \n\n> *Au menu, céphalopodes, batraciens et études de la couleur des cellules reptiliennes de Noirsoroi. Un ouvrage directement tiré de la bibliothèque bleue, repère délicat qu’Élias avait choisi pour y faire son nid. Intrigué par cette lecture dont l’illustre auteur n’était autre que Noroi de Bloumaille, le jeune virtuose de la maison de la nuit semblait ne prêter attention qu’aux terminologies prononcées parmi les pages de son centre d’attention.*\n\n> *Marchant avec la fierté du paon, la grâce du cygne et l’engouement de la mésange, c’est pourtant sous la coupe du grand-duc que l’héritier du Ducher Lunarium avait choisi de border le teint de sa prestance. Hyperbole risquée, hautaine ou désabusée, telle était la rédaction du jeune saphir bleu.* \n\n> *Une écriture calligraphiée avec le cœur d’une plume destinée à découler de la chouette. Une police dont le seul sens était depuis toujours celui de la justesse et du savoir. Une quête aussi captivante que complexe parmi lequel le pas du jeune homme ne cessait depuis de valser entre défi, réussite, recherche et harmonie. Un échange complexe avec le savoir des figures qu’il admirait et détestait. Une compétition désemparée parmi laquelle il comptait bien régner.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336304866791788606",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:58:27Z",
-          "content": "> *Complètement aspiré par un chapitre tout à fait pertinent sur l’exacte tonalité du front d’une grenouille à tête jaune, c’est amusé qu’il esquissera un sourire lumineux sur son visage lorsque la terminologie jaune impérial sera lue. Il venait de trouver une réponse et de gagner un débat. Une joute verbale qu’il avait tenue, il y maintenant quelques jours avec un certain Leni Belcrampe, qui avait eu le culot d’affirmer que la couleur présentée sur le sommet du crâne d’une grenouille à tête jaune n’était ni plus ni moins qu’un jaune de cobalt. Une erreur grotesque qu’Élias avait pris soin de corriger, indiquant à l’abruti que le jaune n’était ni poussin, ni paille, mais bel et bien impérial. Particulièrement joyeux de cette victoire personnelle, il s’empressera de sortir une plume afin d’entourer sa réussite. *\n\n> *Heureux et fier, l’éclat espiègle de son joyeux regard ne restera cela dit pas gravé dans les écrits qu’il consultait… Au contraire, celui-ci, s'éclipsera dès que le jeune homme sera contraint de lever les yeux de son bouquin... Tombant nez à nez avec une figure lumineuse, c’est une dizaine de marches plus haut que son cœur se serrera. Fendu par la violence du glorieux théâtre joué devant lui, c’est d’un geste brusque qu’il laissera sa plume chuter de ses doigts. S’écrasant et se brisant sur le sol neige, c’est avec la violence du tragique que son encre s’écoulera sur le nacré… Redessinant de son tracé, une douleur aussi vive que violente. Une sensation détestable mêlant haine et douleur. Un ressenti brisant qu’il ne put se résoudre à affronter de son œil.*\n\n> *Arrêté net par le drame, c’est d’un geste de main salvateur qu’il baissera son bandeau. Il ne pouvait pas flancher, il ne pouvait pas s’exposer, pas ici, pas comme ça. Relevant son livre afin de masquer la seconde partie de son visage, c’est dans les textes scientifiques que ses lèvres humides trouvèrent un semblant de réconfort.* \n\n> *Poursuivant sa marche sous le poids douloureux d’une violente épine enfoncée à l’épicentre de sa nuque. C’est d’un pas plus hasardeux qu’il glissa le long de l’échafaud. Paroxysme divin ou plaisanterie diabolique ? Il semblerait que dans sa quête mythique, il ait oublié sa plus glorieuse expérimentation.* \n\n> *Une brise caresse sa joue tandis que la douleur, le méprit et l’amertume dégouline le long de sa langue. Ressentant douloureusement l’échec, c’est le regard rougi qu’il contemplera un podium chargé de personnalité aussi lumineuse qu’importante. Oubliant la foule pour sa symbolique et la douleur qu’elle lui causait, c’est d’un regard souffrant qu’il contemplera le faciès d’un prince souriant et fier, le fils de la lune laissera alors la cadence des dalles décalées engloutir son pas… Freinant une fois de plus la cadence, c’est avec respect qu’il attendra que les adieux princiers soient formulés.*\n\n> *Le visage figé dans un marbre dont le blanc entrait en compétition avec la tonalité irréprochable de la pièce. C’est l’œil absorbé par l’irréprochable conduite du fils de leur souverain qu’il terminera sa peine. Était-il hypnotisé par son serment fait à la cours ou cherchait-il simplement un moyen de ne plus dévisager la douleur grandissant un peu plus à chaque nouveau pas ? Jamais Élias ne se risquerait à affirmer le second choix, même si, au fond de son cœur, il savait que le regard du podium n’était là que le moyen de duper sa peine.* \n\n> *Séchant calmement le fruit de ses sanglots, c’est avec une prestance rare qu’il finira par sympathiser avec l’effroyable douleur. Un adversaire aussi rusé que vicieux… Un ennemi aussi violent que douloureux… Un combattant mesquin qu’il n’osait et n’oserait peut-être jamais regarder dans les yeux… Fixant la porte close par laquelle venait de fuir la couronne, c’est dans la mélancolie que le jeune homme cherchera son refuge. Repensant à son éternel engagement pour son souverain dont le lézard cracheur de feu l’avait fait rêver plus d’une fois.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336304904180072510",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:58:36Z",
-          "content": "> *C’est dans les songes de son enfance qu’il trouvera une échappatoire à l’inconfort. S'envolant dans une fascination enfantine pour une iconographie royale oscillant entre divin, terrifiant et captivant. C’est dans cette source d’énergie passionnante que le mage de rang II finit par ouvrir à nouveau le regard. Désormais comme aspiré par son attrait pour la magie de cette créature, la mythologie impromptue, c'est bercé par d’anciens rêves que le penseur délaissera mentalement les lieux.*\n\n> *Profondément amoureux du mythique enfermé au cœur du blason Leonhart, c’est avec une révérence parfaite que son esprit posera genou à terre, embrassant le génie d’une lignée adorée depuis toujours. Aux bords du littéral, lui, côtoyait enfin le sucré du divin.* \n\n> *Ses sens s'éveillaient enfin, laissant de nouvelles hypothèses courir le long d’une pensée qu’il comptait profondément étudier. Fanatique de la couronne, courroucée de l’hérésie et fidèle amant de la politique esperienne.*\n\n> *Il vivait en ce moment la transe philosophique qu’il avait jadis eue pour but de percer à jour. Il avait été dans le juste, mais n’avait pourtant pas décelé l’évidence scellée sous son regard. Ravivé par la bûche de son raisonnement, c’est assoiffé de questions que son cœur le reconnectera à la réalité.*\n\n> *Épousant le miraculeux d’un sourire et respect défiant les glorieux monts de la vallée de son âme. Son pas, emprunté d’une vertue nouvelle, accélérera tandis que son nom fut récité par un directeur pour lequel élégance et délicatesse allaient de pair.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336304970185838663",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:58:52Z",
-          "content": "> *Englouti par la réflexion qui avait guidé sa démarche sur les quelques derniers mètres, Élias ne réalisa même pas ce qui se tramait autour de lui. Momentanément totalement désintéressé, du titre qu’on s’apprêtait à lui remettre, il ne semblait disposé à rien d’autre que la préparation de la stratégie qu’il allait employer afin de résoudre les nouvelles inconnues qui lui étaient apparues. *\n\n> *Englouti par le sentimental de cet instant glorieux instant mental, son apogée psychique devra attendre quelques longues minutes avant que le puzzle ne soit assemblé.* \n\n*“La première manche est gagnée.”*\n\n> *Naturellement étouffé, par l’honneur et la gloire du titre qu’on venait de lui remettre, c’est sans la moindre surprise que son visage s’illumina de grâce et de joie laissant se tracer par la même occasion les premières ombres de son règne. Des silhouettes qui s'épousèrent et se promirent sur ce même escalier. Il était le cygne blanc. Celui qui brille et surprend… Celui qui illumine et exemplifie… Celui qui dicte les doctrines les plus basiques du bon... Mais surtout celui qui sert de contre-forme au cygne noir. Obnubilé par la poésie divine qui se dépeignait sous son regard de sublimé. C’est avec grâce que le dernier saphir bleuté finira par se disposer. La bague était finie, le joyau était serti… Tandis que non loin, se pavanait son rubis.*\n\n> *Oiseau délicat au plumage nuit ou Corneille à l’œil d'obsidienne, reflet d’une lueur ou symétrie rotative d'une seule et même entité. Impossible de discerner l’exact lien entre ces deux pierres à la fondamentalement opposée, mais à la structure atomique identique. Ils étaient là, glorieux, victorieux alors que la partie n’avait même pas encore commencé.*\n\n*“Ma reine est désormais sortie, alors destin, quelle fourbe réponse comptes-tu donner à mon ouverture ?”*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336305010283249757",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:59:01Z",
-          "content": "[Image: https://cdn.discordapp.com/attachments/1336045037666173132/1336305010082054174/e82b6bb7b231ab7319349ef96c4fc984.png?ex=6a767145&is=6a751fc5&hm=83d03595478356fbab624eaa04dc18c047bb0d12b8d1e71aa492db60ff24d789&]",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336305236641316904",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-04T11:59:55Z",
-          "content": "```💎  •  Premiers éclats d'un saphir fraîchement lapidé ```",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336428241900015700",
-          "author": "ISYLAE FILIXIAN",
-          "timestamp": "2025-02-04T20:08:42Z",
-          "content": "💎  •  Trois Saphirs à la lueur du ciel\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Les minutes s'envolaient tandis que les Saphirs bleus faisaient une à une leur arrivée aux côtés de celle qu'on surnommait l'élémentaliste. Une magicienne talentueuse qui guidait la maison des sciences avec une poigne aussi ferme qu'elle se prénommait Isylae Filixian.*\n\n*Le regard plongé au cœur de l'âme des dignes élus de la guilde bleuté. Silencieuse et minutieuse dans l'analyse de chacun des visages choisis, c'est avec une attention particulière qu'elle scrutera les membres de cette nouvelle triade. Était-elle en quête de potentielles faiblesses ou à la rencontre de l'esprit de chacun ? Impossible de décrire précisément les intentions de la belle. Une seule chose était sûre, c'est que face à son œil érudit, même les secrets les plus lourds étaient menacés.*\n\n\"Félicitations, à vous trois, c'est pour moi un honneur que de vous remettre en main propre les anneaux de la lune, clefs de la bibliothèque bleue et de ses trésors, symboles de votre appartenance à la triade du cercle.\"\n\n*À ces mots elle tirera délicatement trois anneaux d'or blanc des pans de sa tunique. Chacun sertis d'un rubis bleuté et rangés dans un délicat petit sac de soie céruléen, c'est dans la délicatesse du cérémonial qu'aux trois saphirs elle les remettra. Un air étrangement joyeux sur le bord de ses lèvres, c'est le timbre empli d'un profond respect que sa voix ajoutera :*\n\n\"Puissent ils vous ouvrir les voies menant à la connaissance et guider vos pensées jusqu'au savoir. Puissent-ils vous amener à conduire le cercle vers des jours prospères. Puissent-ils vous nourrir de la connaissance que vous méritez.\"\n\n*Suite à cela, la belle dame se tournera vers un mur blanc, qui, sous le poids de son œil attentif, se métamorphosera en une porte élégante. Portail vers demain, c'est gracieusement qu'elle tirera la poignée de celle-ci, invitant triades et mages azurs, à se rendre dans leurs quartiers.*\n\n\"Nous avons déjà perdu suffisamment de temps à la fête et au loisir. Il est grand temps que le sérieux redeviennent le maître-mot de votre discipline.\"\n\n\"J'en appelle à votre curiosité et à votre érudisme : ces qualités qui font de vous... des membres dignes du Cercle Azur.\"\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336402144148066386/f360a7cfb685751bdc2423cdd04755c3.png?ex=6a76cbbc&is=6a757a3c&hm=aa24678baf0a7ad7cfe957f68c3be9964671e279aa58f8a7e2df11f5ce79695e&format=webp&quality=lossless&width=1124&height=632&]",
-          "embed_title": "💎  •  Trois Saphirs à la lueur du ciel",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Les minutes s'envolaient tandis que les Saphirs bleus faisaient une à une leur arrivée aux côtés de celle qu'on surnommait l'élémentaliste. Une magicienne talentueuse qui guidait la maison des sciences avec une poigne aussi ferme qu'elle se prénommait Isylae Filixian.*\n\n*Le regard plongé au cœur de l'âme des dignes élus de la guilde bleuté. Silencieuse et minutieuse dans l'analyse de chacun des visages choisis, c'est avec une attention particulière qu'elle scrutera les membres de cette nouvelle triade. Était-elle en quête de potentielles faiblesses ou à la rencontre de l'esprit de chacun ? Impossible de décrire précisément les intentions de la belle. Une seule chose était sûre, c'est que face à son œil érudit, même les secrets les plus lourds étaient menacés.*\n\n\"Félicitations, à vous trois, c'est pour moi un honneur que de vous remettre en main propre les anneaux de la lune, clefs de la bibliothèque bleue et de ses trésors, symboles de votre appartenance à la triade du cercle.\"\n\n*À ces mots elle tirera délicatement trois anneaux d'or blanc des pans de sa tunique. Chacun sertis d'un rubis bleuté et rangés dans un délicat petit sac de soie céruléen, c'est dans la délicatesse du cérémonial qu'aux trois saphirs elle les remettra. Un air étrangement joyeux sur le bord de ses lèvres, c'est le timbre empli d'un profond respect que sa voix ajoutera :*\n\n\"Puissent ils vous ouvrir les voies menant à la connaissance et guider vos pensées jusqu'au savoir. Puissent-ils vous amener à conduire le cercle vers des jours prospères. Puissent-ils vous nourrir de la connaissance que vous méritez.\"\n\n*Suite à cela, la belle dame se tournera vers un mur blanc, qui, sous le poids de son œil attentif, se métamorphosera en une porte élégante. Portail vers demain, c'est gracieusement qu'elle tirera la poignée de celle-ci, invitant triades et mages azurs, à se rendre dans leurs quartiers.*\n\n\"Nous avons déjà perdu suffisamment de temps à la fête et au loisir. Il est grand temps que le sérieux redeviennent le maître-mot de votre discipline.\"\n\n\"J'en appelle à votre curiosité et à votre érudisme : ces qualités qui font de vous... des membres dignes du Cercle Azur.\"\n\n◦ ──────────────────────────────────────── ◦"
-        },
-        {
-          "id": "1336481472772837377",
-          "author": "Asior Eveus",
-          "timestamp": "2025-02-04T23:40:13Z",
-          "content": "*[Lui, dont le regard doré s’évadait souvent là où seuls certains posaient les yeux.](<https://www.youtube.com/watch?v=liPu1_aPH5k>)*\n\n*Lui, que les harmonies invisibles du monde attirait toujours plus que les voix de ses compères.*\n\n*En ces instants, ces minutes éternelles, Asior scrutait avec une intensité exceptionnelle chaque individu de cette foule, visage connus comme étrangers, figure d’importance comme nouveau sang. Chaque ombre, chaque reflet, tout était imprimé dans son esprit avec la force et la volonté de ***milliers de damnés.***\n\n*Une témoin, une mage d’excellence, l’élémentaliste. Nombreux sont les noms prêtés à sa légende, mais chacun de ses pas furent ressentis au même titre que tout autour de lui, un lent sablier qui décomptait le déroulé de sa destinée.*\n\n*Un.*\n\n*Il jeta un regard rapide aux deux autres Saphirs. Ellinor, figure accueillante, aussi chaleureuse qu’acérée, enveloppée de ses propres énigmes, dont le rôle pesait sur les épaules avec la même justesse qu’une plume sur une balance. Elias, visage moins connu, déjà croisé, enveloppé d’autant de mystères que suggérait le bandeau qui voilait son regard au monde, cachant son objectif de la vue de tous, mais clamant haut et fort sa quête de quelque chose, quelque chose de secret, entre lui et lui-même.*\n\n*Deux.*\n\n*Il prit le temps de graver le lieu, le moment, l’instant dans son esprit. L’odeur des fleurs parfuma son palais intérieur pendant que le clair de lune s’ancrait sur son âme. Ce moment marquait un tournant décisif dans son existence jusqu’ici dictée par des forces le dépassant. Aujourd’hui, il entamait le premier pas vers la possibilité d’une libération, il commençait enfin à chercher la clé de ses chaînes.*\n\n*Trois.*\n\n*Isylae Filixian était face à eux, son discours retentissant entre les esprits des trois élus. Sa main se refermait sur l’anneau qui semblait renfermer le poids de dizaines d’univers. Une révérence polie exécutée en retour, dans le silence, soucieux, malgré son égarement mental, d’appliquer une forme de politesse face aux puissants.*\n\n*Asior enfila l’anneau de la lune.*\n\n*Un cœur glacé sous un linceul de mort pulsa faiblement, le visage de marbre sculpté dans une expression mêlant des émotions aussi complexes qu’indéchiffrables. Ravivés étaient les souvenirs de couloirs glacés par le deuil, d’un enfant enterré à peine né, d’un manoir de moins en moins peuplé. D’un départ précipité. D’êtres aimés, froids dans une étreinte chaude. De promesse de grandeur contre l’études de secrets maudits.*\n\n*D’une lignée condamnée.*\n\n*Avant de tourner les talons en silence vers le futur, l’Eveus leva son poing, l’anneau se reflétant dans la lueur lunaire dans un geste que la foule interprètera comme un salut, mais que lui seul savait être la première déclaration dans son duel contre le destin.*\n\n*Asior Eveus n’était plus impuissant.*",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "location_image": "channel_images/saphirs-bleus.jpg"
-    },
-    {
-      "id": "scene_______Éclats_Ambrés_1",
-      "channel": "✨  •  Éclats Ambrés",
-      "channel_id": "1336045487223996476",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 999,
-      "title": "Mono', Lewis Bamer, LOUIS ARTHUR DELACROIX...",
-      "actors": [
-        "Mono'",
-        "Lewis Bamer",
-        "LOUIS ARTHUR DELACROIX",
-        "Joke",
-        "Loyis Delacroix"
-      ],
-      "start_time": "2025-02-03T18:49:04Z",
-      "end_time": "2025-02-04T20:08:47Z",
-      "preview": "``` ``` \nsont invités à réagir ici :\n\n<@451260674279079945> \n<@460018829896974341> \n<@418019406162034710> \n\n``` ```",
-      "message_count": 8,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1336045487223996476/1336045813687648339",
-      "messages": [
-        {
-          "id": "1336045813687648339",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-03T18:49:04Z",
-          "content": "``` ``` \nsont invités à réagir ici :\n\n<@451260674279079945> \n<@460018829896974341> \n<@418019406162034710> \n\n``` ```",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336047406189645898",
-          "author": "Loyis Delacroix",
-          "timestamp": "2025-02-03T18:55:24Z",
-          "content": "✨  •  Éclats Ambrés",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336054473516126291",
-          "author": "Joke",
-          "timestamp": "2025-02-03T19:23:29Z",
-          "content": "*La soirée avait continué tranquillement, l'altercation avec Octave n'avait pas atteint des sommets, Masaru avait pu faire la rencontre de quelques personnes sympathiques. Mais toute bonne chose à une fin, il était tant de conclure cette soirée par l'un des événements les plus importants : l'annonce des triades. Qui seraient ils ? Même les futurs concernés ne savaient pas encore qu'ils étaient membres des triades. Écoutant attentivement, Masaru se tenait droit et écouter sans prononcé un mot. Le discours se voulait bref et direct, bientôt les membres des Eclats d'Ambres allaient être annoncés. Prenant une inspiration, Masaru ferma tranquillement les yeux en levant la tête vers le plafond. Il attendait. Chaque son, chaque syllabe semblait prendre une éternité à être prononcé. Et pour autant tous se déroula très vite. Son nom fut prononcé, ses yeux s'ouvrirent vers sa nouvelle fois. Son visage ne pu trahir sa surprise. Lui qui retenait son souffle pris finalement une grande inspiration.*\n\n>  { Nous y somme... } \n\n*Intégré les triades n'avais jamais fais parti du plan de Masaru. C'était rêvé trop haut. Mais finalement son année précédente à travailler avec acharnement avait fini par payer ses fruits.  Marchant d'un pas décidé et ferme, il suivait la voie qu'il s'était tracé depuis son enfance. Intégré les triades était un énomre bond en avant, une opportunité à ne pas saisir. Curieux, les yeux de Masaru se baladaient rapidement vers les autres personnes. Il semblait être le premier à monter chez les Eclats d'Ambres.*\n\n> Je vous remercie. *Dit il à voix basses au chef d'Orchestre*\n\n*Regagnant vite la place qui lui était désigné, il prit une posture droite avec ces deux mains dans le dos. Sa figure était visible par tous, un homme venant d'un bas qui, par la force de ses poings, de sa volonté et de son coeur s'était dressé en hauteur. Mais pour son rêve, son idéal, il se priverait de ses ailes et retomberait en disgrâce. Mais chaque chose en son temps. Ses yeux scrutaient les autres membres des triades. Il y avait de tous, mais étrangement un individu captiva son attention. Un jeuen homme à la chevelure noire et aux yeux sombres sur lequel Masaru posait ses yeux sombres.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336074008231415920",
-          "author": "Lewis Bamer",
-          "timestamp": "2025-02-03T20:41:06Z",
-          "content": "*Monter ces escaliers nacrés était comme monter vers un sommet qu’avait longtemps admiré Roland, d’en bas. Il n’aurait jamais imaginé pouvoir grimper à cette échelle d’honneur. Les émeraudes qui constituaient ses yeux brillaient de mille feux ; son visage s’éclairait à chaque pas qu’il faisait et son sourire s’élargissait de plus en plus. Le jeune homme n’avait jamais osé, tout comme Masaru, espérer atteindre ce pied d’estale, car peut-être était-ce viser trop haut. Pourtant, il y était ; ce n’était pas un rêve. Le chevalier doré montait parmi cette triade d’élus. Une élite qui n’avait sûrement été choisie au hasard.*\n\n*La pensée d’avoir été choisi comme pour ses deux autres camarades pouvait rendre n’importe qui orgueilleux ; Roland en retenait une certaine fierté, mais il se disait surtout que c’était l’opportunité d’atteindre son objectif ultime et servir ses valeurs qu’on lui avait transmis lors de ses apprentissages. Doucement, il ferma le poing, convaincu que cette année allait être particulière.*\n\n*« Un pas vers le sommet, un pas vers l’aventure. C’est un pas vers l’honneur. Faisons en sorte de porter fièrement cette bannière qui nous est confiée. »*\n\n*Telle était la pensée dans l’âme du jeune homme. Il se prêtait serment à lui-même que désormais il n’avait plus droit à l’erreur. Son visage qui avait paru joyeux, dans une pointe de comédie, était devenu plus sérieux, malgré le sourire qu’il arborait toujours. Ses yeux étaient maintenant fixés sur ce projet, cette mission. Il était temps de prouver qu’il pouvait porter ce titre, qu’il en était à la hauteur et qu’il ne décevra pas ceux qui l’ont choisi parmi les siens.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336074086484414545",
-          "author": "Lewis Bamer",
-          "timestamp": "2025-02-03T20:41:25Z",
-          "content": "*Plus de faiblesse, plus de faillite, plus d’échec. Il se devait d’être fier, de porter ce fardeau qu’on lui confiait. Se distinguer parmi les autres, mais garder foi et humilité. Compter sur l’aide de ses camarades et pouvoir prendre confiance. La loyauté et l’honneur, deux valeurs reconnues dans le jeune homme noble dans son sang et dans son cœur. Car si les codes de la noblesse pouvaient montrer une once d’arrogance, ils apportaient néanmoins une force majeure concernant les vertus que désire inspirer Roland.*\n\n*Le jeune homme aperçut Masaru dans la montée. Il le rejoignit pour de nouveau le saluer et le féliciter par ailleurs.Ils étaient désormais trois, trois pour guider, pour servir et protéger.*\n\n> Je suis heureux de recevoir cet honneur avec vous, Masaru, ainsi qu’avec mademoiselle Selwyn.\n\n*Son ton était rayonnant d’espérance et de fierté. Le chevalier se montrait empli de bienveillance mais aussi ouvert vers le futur qui se réservait à eux trois.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336092776504365189",
-          "author": "Mono'",
-          "timestamp": "2025-02-03T21:55:41Z",
-          "content": "_ _ \n_ _ _ _ _ _ Les fragments de voix se brisaient. A tel point qu'aucun murmure ne devenait perceptif. Même pour l'ouïe la plus aiguisée qui soit. Le silence s'était imposé de force. Une force silencieuse que nulle ne saurait contestée. Après tout, face à eux se dressaient les figures les plus imposantes. — Allaric Gesun. Isylae Filixian. Louis Arthur Delacroix. Pour ne citer que les Témoins. Leur simple réunion ne pouvait que contribuer à l'édification d'une atmosphère solennelle. Qui oserait commettre le moindre travers ? Qui oserait se permettre la moindre faiblesse ? la moindre hésitation ? \n\n_ _ _ _ _ _ . . . Et si. Un scénario envisagé parmi tant d'autres. Il n'y avait là rien d'orienter bien entendu. — Mais si Selwyn faisait partie de ceux-là ? Et si elle n'appartenait tout simplement pas à cette élite nommée avec minutie ? Et si, par mégarde, une erreur avait été commise ? L'annonce n'était-elle pas erronée ? Qui pour le certifier ? Était-ce son nom véritable qui avait été prononcé ? — Selwyn Delaunay. Masaru Musei. Roland de la Rochejaquelein. — Souvenir de l'annonce des Triades effaçait la pérennité de toutes incertitudes. L'entrain de sa compagnie confirmait ses craintes. Si lui l'avait bel et bien entendu. Si elle-même l'avait entendu. Qui d'autres pour démentir ce fait ? — Il ne s'agissait pas d'un mirage. Interlude. Ce théâtre était plus sincère qu'il en avait l'air.\n\n_ _ _ _ _ _ Selwyn s'avançait dans l'ombre de ses prédécesseurs. Son pas d'abord hésitant. Il se fit plus mesuré et lourd. A mesure qu'elle s'élevait. Prise au piège. Elle ignorait tout de l'intrigue et du dénouement qu'attendait patiemment son sort. Comme une cape qui refusait de la laisser s'émanciper, elle en ressentait le poids sur les épaules. Rien avoir avec une victoire dorée et écrasante. Plutôt une responsabilité qui n'avait pas sa place dans sa misérable vie. Si ce moment était censé relever de l'aboutissement ou du triomphe pour d'autres, il n'était qu'un tourbillon de sentiments conflictuels pour elle. L'honneur d'être appelée à se tenir aux côtés des prétendus plus grands reconnu. L'honneur de porter une charge qui transcendait les promotions reconnu. \n\n_ _ _ _ _ _ Mais que faisait-elle sur la même scène que ces autres mages de rang II ? Était-elle digne de porter ce titre d'Éclat Ambré ? Titre honorifique, synonyme de grandeur. Bien trop vaste pour elle. — Selwyn n'avait jamais appris à jouer. D'ordinaire spectatrice inconnue de tous. Pourquoi son propre rôle attitré semblait si difficile à s'en imprégner ? — Masaru, le premier, s'avançait avec une aisance d'acier. Roland, derrière, dont sa simple prestance le précédait. Et puis . . . Elle. Selwyn n'était pas aussi capable et méritante qu'eux. Elle n'était pas la meilleure candidate. Elle n'était pas aussi étincelante que ce panthéon. Cette haute distinction reposait sur l'appui de quelles évaluations pour qu'elle soit parvenue à en corrompre la sélection ?",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336092829532819548",
-          "author": "Mono'",
-          "timestamp": "2025-02-03T21:55:53Z",
-          "content": "_ _ \n_ _ _ _ _ _ Tête haute. Selwyn adoptait une posture certaine et droite. Dès lors que son enveloppe charnelle s'extirpa de la foule indiscernable. Ses prunelles rivées sur la trajectoire à suivre et la silhouette à rejoindre. Il lui fallait montrer l'image que l'on attendait d'elle. — Oui. La rotation de l'esprit s'opéra vite. La situation la contraignait à agir avec rapidité et efficacité. Elle prit la décision de faire un effort et se forcer à esquisser un sourire convaincant. Suffisamment pour se conférer une contenance. Il ne lui fallait pas douter. Il ne lui fallait pas montrer ce qu'elle ressentait en cet instant précis. Cela ne durerait que quelques minutes tout au plus. Un mauvais moment à passer. La mécanique déjà élancée. Désormais trop tard pour faire marche arrière. Pour ne pas qualifier cela d'impossible. Elle avait été choisie. Elle n'avait rien à redire. Une vérité imposée par un univers dont elle ne se permettrait de remettre en question les fondamentaux. Elle retournerait à sa place bientôt. Elle pourrait mesurer l'étendue de cette reconnaissance bientôt. — Alors en attendant, elle était là. Coûte que coûte. En apparence principalement. Même si elle se sentait plus exposée, vulnérable et fragile que n'importe quel autre être.\n\n> – « **Vous m'honorez.** »\n> \n> _ _ _ _ _ _ _ _ _ _ _ _  ⋅    Elle prit la parole dans une douceur glacée. Légère inclinaison alors qu'elle se redressa une fois l'étiquette respectée. — Et maintenant ? Qu'est-ce qui venait après ? — Selwyn n'en avait pas la réponse. Elle n'était pas certaine de la trouver ici. Pas sous la lueur des projecteurs aveuglante. Bien assez vite, elle saurait trouver la paix avec ce rôle. Mais pour l'heure, elle se sentait étrangère à elle-même plus que jamais.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1336428262062297088",
-          "author": "LOUIS ARTHUR DELACROIX",
-          "timestamp": "2025-02-04T20:08:47Z",
-          "content": "⚖️  •  Trois Éclats à la teinte dorée\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*C'est dans le silence que se déroulera la réponse du dernier témoin. Fixant sa triade avec un regard perçant, son jugement semblait tarder à se prononcer. Était-il dans l'attente d'une quelconque félicitation aux élus ou en pleine réflexion sur la sentence qu'il allait administrer aux condamnés ? Le prédire aurait relevé du divin voir de l'impossible.*\n\n*Eh oui, Louis était de ces êtres silencieux qui préfèrent laisser mûrir leurs paroles jusqu'à leur période des récoltes, plutôt que de gaspiller en vain la moindre goutte d'une salive trop précieuse.*\n\n*Le temps passait, les minutes se défilaient sous le regard du témoin tandis que face à lui, les membres de la glorieuse triade semblaient avoir été pétrifiés.*\n\n\"Inutile de formuler quelconque remerciement, si vous avez été choisis, c'est pour ce que vous êtes et représentez les parfaits exemples de loyauté et de justice... Du moins, si le regard de la couronne et de la famille Valdor n'a pas commis l'erreur de confondre la gloire d'Elytriel à la malice de Hâ-Pie.\"\n\n*Sa parole se fige. Son regard albinos se raidit alors que ses lèvres se closent. Tranchants étaient ses mots, profond était le doute.*\n\n\"À l'Aube d'or, vous serez constamment juge, victime et coupable. Vous serez évalués en permanence et châtiés à la moindre erreur. En émissaire de justice et d'exemple, vous, éclats ambrés prendrez votre place en tant que membre de ma délégation. Une responsabilité aussi grande qu'importante.\"\n\n\"Un destin qui vous condamnera au bûcher si vous faites les choix indigne de vous tourner vers la corruption ou le jugement hâtif.\"\n\n*Un nouveau silence prends place. Plus froids que le précédent, c'est durant celui que trois médaillons anciens à la forme de balance font leur apparition. Correctement équilibrés, ceux-ci laissent un éclat jaune scintiller avant que la vue sur leur préciosité ne soit mise à part pour que Louis Arthur Delacroix termine ses explications.*\n\n\"Je vous présente les Elytres, médaillons antiques de l'Aube d'or, ils évalueront constamment le penchement de votre âme. Ainsi, si jamais votre mental se laisse séduire par le bien où le mal, je le saurai sans même vous regarder.\"\n\n\"Et croyez moi, la sanction que je réserve à ceux qui flanchent n'est peut-être pas aussi tordue que les méthodes de la garde pourpre, mais elle n'en est pas pour autant moins cruelle.\"\n\n*À ces mots, son regard se dirige vers une des multiples faces du Heaume Blanc. Un mur qui, sous la force de sa volonté, viendra se fendre, laissant entrevoir un délicat chemin vers leur lendemain.*\n\n\"La justice nous attends.\"\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336427708581810217/64db29bae1190cd42bd6992596f68308.jpg?ex=6a76e38b&is=6a75920b&hm=15c8c070a41632bf9591cd986618fe243e19c935c77b5de1af171ef2e437f21b&format=webp&width=842&height=632&]",
-          "embed_title": "⚖️  •  Trois Éclats à la teinte dorée",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*C'est dans le silence que se déroulera la réponse du dernier témoin. Fixant sa triade avec un regard perçant, son jugement semblait tarder à se prononcer. Était-il dans l'attente d'une quelconque félicitation aux élus ou en pleine réflexion sur la sentence qu'il allait administrer aux condamnés ? Le prédire aurait relevé du divin voir de l'impossible.*\n\n*Eh oui, Louis était de ces êtres silencieux qui préfèrent laisser mûrir leurs paroles jusqu'à leur période des récoltes, plutôt que de gaspiller en vain la moindre goutte d'une salive trop précieuse.*\n\n*Le temps passait, les minutes se défilaient sous le regard du témoin tandis que face à lui, les membres de la glorieuse triade semblaient avoir été pétrifiés.*\n\n\"Inutile de formuler quelconque remerciement, si vous avez été choisis, c'est pour ce que vous êtes et représentez les parfaits exemples de loyauté et de justice... Du moins, si le regard de la couronne et de la famille Valdor n'a pas commis l'erreur de confondre la gloire d'Elytriel à la malice de Hâ-Pie.\"\n\n*Sa parole se fige. Son regard albinos se raidit alors que ses lèvres se closent. Tranchants étaient ses mots, profond était le doute.*\n\n\"À l'Aube d'or, vous serez constamment juge, victime et coupable. Vous serez évalués en permanence et châtiés à la moindre erreur. En émissaire de justice et d'exemple, vous, éclats ambrés prendrez votre place en tant que membre de ma délégation. Une responsabilité aussi grande qu'importante.\"\n\n\"Un destin qui vous condamnera au bûcher si vous faites les choix indigne de vous tourner vers la corruption ou le jugement hâtif.\"\n\n*Un nouveau silence prends place. Plus froids que le précédent, c'est durant celui que trois médaillons anciens à la forme de balance font leur apparition. Correctement équilibrés, ceux-ci laissent un éclat jaune scintiller avant que la vue sur leur préciosité ne soit mise à part pour que Louis Arthur Delacroix termine ses explications.*\n\n\"Je vous présente les Elytres, médaillons antiques de l'Aube d'or, ils évalueront constamment le penchement de votre âme. Ainsi, si jamais votre mental se laisse séduire par le bien où le mal, je le saurai sans même vous regarder.\"\n\n\"Et croyez moi, la sanction que je réserve à ceux qui flanchent n'est peut-être pas aussi tordue que les méthodes de la garde pourpre, mais elle n'en est pas pour autant moins cruelle.\"\n\n*À ces mots, son regard se dirige vers une des multiples faces du Heaume Blanc. Un mur qui, sous la force de sa volonté, viendra se fendre, laissant entrevoir un délicat chemin vers leur lendemain.*\n\n\"La justice nous attends.\"\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/eclats-ambres.jpg"
-    },
-    {
-      "id": "scene____𝗟e_𝗖afé_des_𝗣hilosophes_1",
-      "channel": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
-      "channel_id": "1327646242661994552",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 121,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-02-04T18:34:35Z",
-      "end_time": "2025-02-04T18:34:35Z",
-      "preview": "☕  •  LE CAFÉ DES PHILOSOPHES\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Espace ou le silence règne, les bruits parasites y sont pourtant toujours légion ...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1327646242661994552/1336404555226812517",
-      "messages": [
-        {
-          "id": "1336404555226812517",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-02-04T18:34:35Z",
-          "content": "☕  •  LE CAFÉ DES PHILOSOPHES\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Espace ou le silence règne, les bruits parasites y sont pourtant toujours légion ; de fait, les tables sont équipées d'artefacts pouvant créer des \"bulles de silence\" idéal pour les discussions les plus discrètes et les débats les plus houleux. Faites cela dit attention de ne pas abuser de la bière à la myrtille… Plus d’un ont ridiculisé leur discours à cause de ce liquide indigo.*\n\n◦ ────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336403804236677200/1edc9ea3af2aaee25010bddd3a7f2b07.png?ex=6a76cd48&is=6a757bc8&hm=e3fab8e2f733bf4614eff88c48e937f3f478cdf34a421ae26450b76452a761e5&format=webp&quality=lossless&]",
-          "embed_title": "☕  •  LE CAFÉ DES PHILOSOPHES",
-          "embed_description": "◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Espace ou le silence règne, les bruits parasites y sont pourtant toujours légion ; de fait, les tables sont équipées d'artefacts pouvant créer des \"bulles de silence\" idéal pour les discussions les plus discrètes et les débats les plus houleux. Faites cela dit attention de ne pas abuser de la bière à la myrtille… Plus d’un ont ridiculisé leur discours à cause de ce liquide indigo.*\n\n◦ ────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/le-cafe-des-philosophes.jpg"
-    },
-    {
-      "id": "scene___𝗣lanetarium_1",
-      "channel": "🌕〕𝗣lanetarium",
-      "channel_id": "1327646243211444248",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 122,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-02-04T18:54:47Z",
-      "end_time": "2025-02-04T18:54:47Z",
-      "preview": "🪐  •  LE PLANÉTARIUM\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Le planétarium est un espace entièrement dédié au décryptage des étoiles et de leur influe...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1327646243211444248/1336409639990071428",
-      "messages": [
-        {
-          "id": "1336409639990071428",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-02-04T18:54:47Z",
-          "content": "🪐  •  LE PLANÉTARIUM\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Le planétarium est un espace entièrement dédié au décryptage des étoiles et de leur influence sur le monde d'Ashera. La science la plus complexe de la capitale, l'astrologie est source de bien des fantasmes, mais la vérité reste intacte : personne ne sait ce qui se cache vraiment derrière le voile noir recouvert de joyaux brillants. Une seule chose est sûre, c’est que c’est d’ici que parte les couloirs menant aux autres mystères du fameux observatoire céruléen.*\n\n◦ ────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336403992124723240/IMG_0242.png?ex=6a76cd74&is=6a757bf4&hm=d61a90f1ddb033184bc774f726f1b1d0298219e8ae3ec27da25257f701bbd2c7&format=webp&quality=lossless&]",
-          "embed_title": "🪐  •  LE PLANÉTARIUM",
-          "embed_description": "◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Le planétarium est un espace entièrement dédié au décryptage des étoiles et de leur influence sur le monde d'Ashera. La science la plus complexe de la capitale, l'astrologie est source de bien des fantasmes, mais la vérité reste intacte : personne ne sait ce qui se cache vraiment derrière le voile noir recouvert de joyaux brillants. Une seule chose est sûre, c’est que c’est d’ici que parte les couloirs menant aux autres mystères du fameux observatoire céruléen.*\n\n◦ ────────────────────────────────────── ◦"
-        }
-      ]
-    },
-    {
-      "id": "scene___𝗩erger_des_𝗣êchés_1",
-      "channel": "🌳〕𝗩erger-des-𝗣êchés",
-      "channel_id": "1328715287704371210",
-      "category": "| ✠ |   LE BASTION ÉCARLATE",
-      "discord_position": 111,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-02-04T19:00:34Z",
-      "end_time": "2025-02-04T19:00:34Z",
-      "preview": "🍂  •  LE VERGER DES PÊCHÉS\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. ...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328715287704371210/1336411095178547200",
-      "messages": [
-        {
-          "id": "1336411095178547200",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-02-04T19:00:34Z",
-          "content": "🍂  •  LE VERGER DES PÊCHÉS\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*\n\n◦ ────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/1325151963280838656/1336410121382658120/IMG_0259.png?ex=6a76d32a&is=6a7581aa&hm=8e2dc07f6987590af4d541462caa001e01c4e451ed4a48645839ba769ca0698d&format=webp&quality=lossless&]",
-          "embed_title": "🍂  •  LE VERGER DES PÊCHÉS",
-          "embed_description": "◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*\n\n◦ ────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/verger-des-peches.jpg"
-    },
-    {
-      "id": "scene___𝗙ontaine_𝗠arbrée_1",
-      "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2025-02-11T12:09:13Z",
-      "end_time": "2025-02-11T12:09:13Z",
-      "preview": "``⛲  •  FONTAINE MARBRÉE ``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions pai...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1338844290755067954",
-      "messages": [
-        {
-          "id": "1338844290755067954",
-          "author": "LE CONSEILLER",
-          "timestamp": "2025-02-11T12:09:13Z",
-          "content": "``⛲  •  FONTAINE MARBRÉE ``\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://media.discordapp.net/attachments/972906041614434434/1338843719725482035/IMG_0260.png?ex=6a767321&is=6a7521a1&hm=9cbe8d037a120a92eacf24e13fa61ad51f09f2bb0e0352b99b60ede610d504da&format=webp&quality=lossless&width=550&height=310&]",
-          "embed_title": "``⛲  •  FONTAINE MARBRÉE ``",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*\n\n◦ ──────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
-    },
-    {
-      "id": "scene___𝗞antine_1",
+      "id": "scene____antine_1",
       "channel": "🥗〕𝗞antine",
-      "channel_id": "1327646240669696047",
-      "category": "| ♖ |  LE FORUM ÉBURNÉEN",
-      "discord_position": 128,
-      "title": "LE CONSEILLER, Akane Tsukishiro, Sw dark325...",
+      "channel_raw": "🥗〕𝗞antine",
+      "channel_clean": "🥗〕𝗞antine",
+      "title": "🍖 • ​Kantine",
       "actors": [
-        "LE CONSEILLER",
-        "Akane Tsukishiro",
         "Sw dark325",
-        "Hector Swaft",
-        "Isis Faerieth"
+        "Akane Tsukishiro",
+        "Isis Faerieth",
+        "Hector Swaft"
       ],
+      "main_actor": "Sw dark325",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-01-31T09:32:33Z",
       "end_time": "2026-02-04T15:01:49Z",
+      "duration_minutes": 6089,
       "preview": "**🍖 • ​Kantine**\n\n◦ ──────────────── ¤ ──────────────── ◦\n*Espace scindé en deux, un endroit pour ses restaurer en intérieur et un autre en extérieur pour le...",
       "message_count": 27,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1327646240669696047/1467090168291790849",
       "messages": [
         {
           "id": "1467090168291790849",
@@ -1447,6 +766,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "**🍖 • ​Kantine**\n\n*Espace scindé en deux, un endroit pour ses restaurer en intérieur et un autre en extérieur pour les temps moins frais. Des installations agréables sont mises en place pour faire de cet endroit bien plus qu'une cantine populaire. Le choix des repas se fait sur une carte et en approuvant simplement votre lien avec le Voile d'Ivoire même les choses les plus chères sont gratuite. Tout le monde est invité, tout le monde est servit et tout le monde peut mettre la main à la patte s'il souhaite.*",
       "location_image": "channel_images/kantine.jpg"
     },
     {
@@ -1454,14 +774,12 @@ window.rpData = {
       "channel": "🏫〕𝗔uditorium",
       "channel_raw": "🏫〕𝗔uditorium",
       "channel_clean": "🏫〕𝗔uditorium",
-      "title": "Saphizu Alizee Vidtz, Asior Eveus, Red Roadman...",
+      "title": "🏫〕𝗔uditorium — Scène 1",
       "actors": [
-        "Saphizu Alizee Vidtz",
         "Asior Eveus",
-        "Red Roadman",
-        "OWL LE MESSAGER",
-        "Adelina Del Fuego",
-        "Emil Camille Rebenok"
+        "Saphizu Alizee Vidtz",
+        "Emil Camille Rebenok",
+        "Red Roadman"
       ],
       "main_actor": "Asior Eveus",
       "is_solo": false,
@@ -1617,17 +935,16 @@ window.rpData = {
       "channel": "🏯〕𝗔rène-𝗛urlante",
       "channel_raw": "🏯〕𝗔rène-𝗛urlante",
       "channel_clean": "🏯〕𝗔rène-𝗛urlante",
-      "title": "LE CONSEILLER, Isis Faerieth, Inzu Sravel...",
+      "title": "🏯〕𝗔rène-𝗛urlante — Scène 1",
       "actors": [
+        "Nick Sol",
+        "Brutus Redwitch",
+        "Loyis Delacroix",
+        "Jin Alurantes",
         "LE CONSEILLER",
         "Isis Faerieth",
-        "Inzu Sravel",
-        "Jin Alurantes",
-        "Brutus Redwitch",
-        "Aryanna Erhendil",
-        "Loyis Delacroix",
         "Star",
-        "Nick Sol"
+        "Aryanna Erhendil"
       ],
       "main_actor": "Nick Sol",
       "is_solo": false,
@@ -2270,10 +1587,10 @@ window.rpData = {
       "channel": "🛡️〕𝗧errain-d-entraînement",
       "channel_raw": "🛡️〕𝗧errain-d-entraînement",
       "channel_clean": "Terrain-d-entraînement",
-      "title": "Milli Enga, Sw dark325",
+      "title": "Terrain-d-entraînement — Scène 1",
       "actors": [
-        "Milli Enga",
-        "Sw dark325"
+        "Sw dark325",
+        "Milli Enga"
       ],
       "main_actor": "Sw dark325",
       "is_solo": false,
@@ -2346,11 +1663,10 @@ window.rpData = {
       "channel": "🍃〕𝗦erre-de-lune",
       "channel_raw": "🍃〕𝗦erre-de-lune",
       "channel_clean": "🍃〕𝗦erre-de-lune",
-      "title": "Saphizu Alizee Vidtz, Emil Camille Rebenok, OWL LE MESSAGER...",
+      "title": "🍃〕𝗦erre-de-lune — Scène 1",
       "actors": [
-        "Saphizu Alizee Vidtz",
         "Emil Camille Rebenok",
-        "OWL LE MESSAGER",
+        "Saphizu Alizee Vidtz",
         "Asior Eveus"
       ],
       "main_actor": "Emil Camille Rebenok",
@@ -2435,12 +1751,12 @@ window.rpData = {
       "channel": "🏙️〕𝐄gregore",
       "channel_raw": "🏙️〕𝐄gregore",
       "channel_clean": "Egregore",
-      "title": "Akane Tsukishiro, Hector Swaft, Sw dark325...",
+      "title": "Egregore — Scène 1",
       "actors": [
-        "Akane Tsukishiro",
         "Hector Swaft",
         "Sw dark325",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Akane Tsukishiro"
       ],
       "main_actor": "Hector Swaft",
       "is_solo": false,
@@ -2520,7 +1836,7 @@ window.rpData = {
       "channel": "📜〕𝐋e-centre-des-registres",
       "channel_raw": "📜〕𝐋e-centre-des-registres",
       "channel_clean": "📜〕𝐋e-centre-des-registres",
-      "title": "Nikko Aytaupe",
+      "title": "📜〕𝐋e-centre-des-registres — Scène 1",
       "actors": [
         "Nikko Aytaupe"
       ],
@@ -2550,10 +1866,10 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Historia Fay Ruaidhri Grel, Okayama",
+      "title": "Parc-des-Cardinaux — Scène 1",
       "actors": [
-        "Historia Fay Ruaidhri Grel",
-        "Okayama"
+        "Okayama",
+        "Historia Fay Ruaidhri Grel"
       ],
       "main_actor": "Okayama",
       "is_solo": false,
@@ -2657,17 +1973,16 @@ window.rpData = {
       "channel": "💰〕𝐁anque-du-sang",
       "channel_raw": "💰〕𝐁anque-du-sang",
       "channel_clean": "💰〕𝐁anque-du-sang",
-      "title": "LE CONSEILLER, Lucia Fiorella, Akane Tsukishiro...",
+      "title": "💰〕𝐁anque-du-sang — Scène 1",
       "actors": [
-        "LE CONSEILLER",
-        "Lucia Fiorella",
-        "Akane Tsukishiro",
-        "Nick Sol",
-        "Sw dark325",
-        "Kanta",
         "Hector Swaft",
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Akane Tsukishiro",
+        "Isis Faerieth",
+        "Sw dark325",
+        "LE CONSEILLER",
+        "Nick Sol",
+        "Kanta",
+        "Lucia Fiorella"
       ],
       "main_actor": "Hector Swaft",
       "is_solo": false,
@@ -3087,11 +2402,10 @@ window.rpData = {
       "channel": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_raw": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_clean": "📚〕𝗕ibliothèque-𝗔zure",
-      "title": "Saphizu Alizee Vidtz, Emil Camille Rebenok, OWL LE MESSAGER...",
+      "title": "📚〕𝗕ibliothèque-𝗔zure — Scène 1",
       "actors": [
-        "Saphizu Alizee Vidtz",
         "Emil Camille Rebenok",
-        "OWL LE MESSAGER",
+        "Saphizu Alizee Vidtz",
         "Asior Eveus"
       ],
       "main_actor": "Emil Camille Rebenok",
@@ -3232,12 +2546,12 @@ window.rpData = {
       "channel": "🚢〕𝗣ort-du-𝗟evant",
       "channel_raw": "🚢〕𝗣ort-du-𝗟evant",
       "channel_clean": "🚢〕𝗣ort-du-𝗟evant",
-      "title": "Shin, Okayama, Jasp Nah...",
+      "title": "🚢〕𝗣ort-du-𝗟evant — Scène 1",
       "actors": [
+        "Vosk Sulyvan",
         "Shin",
-        "Okayama",
         "Jasp Nah",
-        "Vosk Sulyvan"
+        "Okayama"
       ],
       "main_actor": "Vosk Sulyvan",
       "is_solo": false,
@@ -3753,15 +3067,14 @@ window.rpData = {
       "channel": "🕋〕𝐆uet-apens",
       "channel_raw": "🕋〕𝐆uet-apens",
       "channel_clean": "Guet-apens",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Akane Tsukishiro...",
+      "title": "Guet-apens — Scène 1",
       "actors": [
+        "Akane Tsukishiro",
+        "Isis Faerieth",
         "LE CONSEILLER",
         "Katelynn Hoffmann",
-        "Akane Tsukishiro",
         "Kenji Takahashi",
-        "Hector Swaft",
-        "Loyis Delacroix",
-        "Isis Faerieth"
+        "Loyis Delacroix"
       ],
       "main_actor": "Akane Tsukishiro",
       "is_solo": false,
@@ -3931,10 +3244,10 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Someone, Okayama, Jasp Nah",
+      "title": "Pont-des-Deux — Scène 1",
       "actors": [
-        "Someone",
         "Okayama",
+        "Someone",
         "Jasp Nah"
       ],
       "main_actor": "Okayama",
@@ -4015,7 +3328,7 @@ window.rpData = {
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_raw": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_clean": "Place-de-Grandpalais",
-      "title": "Someone, Septimus Kales",
+      "title": "Place-de-Grandpalais — Scène 1",
       "actors": [
         "Someone",
         "Septimus Kales"
@@ -4069,22 +3382,23 @@ window.rpData = {
       "location_image": "channel_images/place-de-grandpalais.jpg"
     },
     {
-      "id": "scene________Salle_de_Réveil_1",
+      "id": "scene________salle_de_r_veil_1",
       "channel": "🛏️  •  Salle de Réveil",
-      "channel_id": "1472523744722554982",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 999,
-      "title": "Emil Camille Rebenok, Loyis Delacroix, Asior Eveus",
+      "channel_raw": "🛏️  •  Salle de Réveil",
+      "channel_clean": "🛏️  •  Salle de Réveil",
+      "title": "🛏️  •  Salle de Réveil — Scène 1",
       "actors": [
         "Emil Camille Rebenok",
-        "Loyis Delacroix",
         "Asior Eveus"
       ],
+      "main_actor": "Emil Camille Rebenok",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-02-15T09:23:38Z",
       "end_time": "2026-02-28T13:45:08Z",
+      "duration_minutes": 18981,
       "preview": "◦ ───────────── ¤ ───────────── ◦\n*Espace silencieux, c'est ici que l'on extirpe les éveillés qui se sont durant trop longtemps endormis... Faisant office d'...",
       "message_count": 10,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1472523744722554982/1472523744722554982",
       "messages": [
         {
           "id": "1472523744722554982",
@@ -4167,6 +3481,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "*Espace silencieux, c'est ici que l'on extirpe les éveillés qui se sont durant trop longtemps endormis... Faisant office d'infirmerie, cet espace est dirigé par Citrine de Beaufort, une femme aussi rayonnante qu'occupée, que vos n'aurez hélas la chance de consulter, que si le montant de vos blessures tient votre vie sous le jou du danger.*",
       "location_image": "channel_images/cellules.jpg"
     },
     {
@@ -4174,7 +3489,7 @@ window.rpData = {
       "channel": "⚗️〕𝗖our-des-alchimistes",
       "channel_raw": "⚗️〕𝗖our-des-alchimistes",
       "channel_clean": "⚗️〕𝗖our-des-alchimistes",
-      "title": "Septimus Kales, Isis Faerieth",
+      "title": "⚗️〕𝗖our-des-alchimistes — Scène 1",
       "actors": [
         "Septimus Kales",
         "Isis Faerieth"
@@ -4269,7 +3584,7 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Jasp Nah, Isis Faerieth",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 1",
       "actors": [
         "Jasp Nah",
         "Isis Faerieth"
@@ -4452,13 +3767,12 @@ window.rpData = {
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_raw": "⚔️〕𝗧errains-𝗡acrés",
       "channel_clean": "⚔️〕𝗧errains-𝗡acrés",
-      "title": "Akane Tsukishiro, Jin Alurantes, Brutus Redwitch...",
+      "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Akane Tsukishiro",
         "Jin Alurantes",
-        "Brutus Redwitch",
+        "Akane Tsukishiro",
         "Aryanna Erhendil",
-        "Jasp Nah"
+        "Brutus Redwitch"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -5330,22 +4644,23 @@ window.rpData = {
       "location_image": "channel_images/terrains-nacres.jpg"
     },
     {
-      "id": "scene___𝗩erger_des_𝗣êchés_2",
+      "id": "scene____erger_des___ch_s_2",
       "channel": "🌳〕𝗩erger-des-𝗣êchés",
-      "channel_id": "1328715287704371210",
-      "category": "| ✠ |   LE BASTION ÉCARLATE",
-      "discord_position": 111,
-      "title": "L'Oeil, Star, Nick Sol",
+      "channel_raw": "🌳〕𝗩erger-des-𝗣êchés",
+      "channel_clean": "🌳〕𝗩erger-des-𝗣êchés",
+      "title": "🌳〕𝗩erger-des-𝗣êchés — Scène 2",
       "actors": [
-        "L'Oeil",
         "Star",
         "Nick Sol"
       ],
+      "main_actor": "Star",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-02-17T11:17:01Z",
       "end_time": "2026-02-22T22:42:12Z",
+      "duration_minutes": 7885,
       "preview": "``` ``` \n\n**Durant sa visite du Bastion Écarlate, Hana finira par poser pied au sein de cet endroit elle viendra alors l'observer marchant calmement sur ces ...",
       "message_count": 14,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328715287704371210/1473277052793651261",
       "messages": [
         {
           "id": "1473277052793651261",
@@ -5460,6 +4775,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "🍂  •  LE VERGER DES PÊCHÉS\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*",
       "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
@@ -5467,16 +4783,13 @@ window.rpData = {
       "channel": "⚜️〕𝗚rande-salle-porcelaine",
       "channel_raw": "⚜️〕𝗚rande-salle-porcelaine",
       "channel_clean": "⚜️〕𝗚rande-salle-porcelaine",
-      "title": "Asior Eveus, Red Roadman, Akane Tsukishiro...",
+      "title": "⚜️〕𝗚rande-salle-porcelaine — Scène 1",
       "actors": [
-        "Asior Eveus",
         "Red Roadman",
-        "Akane Tsukishiro",
-        "Jin Alurantes",
-        "L'Oeil",
-        "Rias Valdor",
+        "Asior Eveus",
         "Septimus Kales",
-        "Jasp Nah"
+        "Akane Tsukishiro",
+        "Jin Alurantes"
       ],
       "main_actor": "Red Roadman",
       "is_solo": false,
@@ -5779,26 +5092,26 @@ window.rpData = {
       "location_image": "channel_images/grande-salle-porcelaine.jpg"
     },
     {
-      "id": "scene___𝗙ontaine_𝗠arbrée_2",
+      "id": "scene____ontaine__arbr_e_2",
       "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "Okayama, Romy, Lucia Fiorella...",
+      "channel_raw": "⛲〕𝗙ontaine-𝗠arbrée",
+      "channel_clean": "⛲〕𝗙ontaine-𝗠arbrée",
+      "title": "⛲〕𝗙ontaine-𝗠arbrée — Scène 2",
       "actors": [
-        "Okayama",
-        "Romy",
-        "Lucia Fiorella",
         "Emil Camille Rebenok",
         "Abrihicot",
-        "Lewis Bamer",
-        "Jasp Nah"
+        "Romy",
+        "Okayama",
+        "Lucia Fiorella"
       ],
+      "main_actor": "Emil Camille Rebenok",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-02-17T21:41:14Z",
       "end_time": "2026-03-01T22:16:21Z",
+      "duration_minutes": 17315,
       "preview": "**Une silhouette brune est assise sur un des nombreux bancs entourant la fontaine de marbre. Ses courtes jambes pendent dans le vide, ses bras sont tendus de...",
       "message_count": 34,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1473434143382704314",
       "messages": [
         {
           "id": "1473434143382704314",
@@ -6073,6 +5386,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``⛲  •  FONTAINE MARBRÉE ``\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*",
       "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
@@ -6080,10 +5394,10 @@ window.rpData = {
       "channel": "🗡️〕𝗤uartier-des-𝗙orges",
       "channel_raw": "🗡️〕𝗤uartier-des-𝗙orges",
       "channel_clean": "Quartier-des-Forges",
-      "title": "Sw dark325, Star",
+      "title": "Quartier-des-Forges — Scène 1",
       "actors": [
-        "Sw dark325",
-        "Star"
+        "Star",
+        "Sw dark325"
       ],
       "main_actor": "Star",
       "is_solo": false,
@@ -6181,7 +5495,7 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Aryanna Erhendil, Vosk Sulyvan",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 1",
       "actors": [
         "Aryanna Erhendil",
         "Vosk Sulyvan"
@@ -6323,11 +5637,11 @@ window.rpData = {
       "channel": "✨〕𝗔gora-des-𝗥eines",
       "channel_raw": "✨〕𝗔gora-des-𝗥eines",
       "channel_clean": "Agora-des-Reines",
-      "title": "Aryanna Erhendil, Historia Fay Ruaidhri Grel, Asior Eveus",
+      "title": "Agora-des-Reines — Scène 1",
       "actors": [
-        "Aryanna Erhendil",
         "Historia Fay Ruaidhri Grel",
-        "Asior Eveus"
+        "Asior Eveus",
+        "Aryanna Erhendil"
       ],
       "main_actor": "Historia Fay Ruaidhri Grel",
       "is_solo": false,
@@ -6394,10 +5708,10 @@ window.rpData = {
       "channel": "🍖〕𝗖antine-marbrée",
       "channel_raw": "🍖〕𝗖antine-marbrée",
       "channel_clean": "Cantine-marbrée",
-      "title": "Okayama, Selena Moon",
+      "title": "Cantine-marbrée — Scène 1",
       "actors": [
-        "Okayama",
-        "Selena Moon"
+        "Selena Moon",
+        "Okayama"
       ],
       "main_actor": "Selena Moon",
       "is_solo": false,
@@ -6824,10 +6138,10 @@ window.rpData = {
       "channel": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_raw": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_clean": "📚〕𝗕ibliothèque-𝗔zure",
-      "title": "Romy, Lewis Bamer",
+      "title": "📚〕𝗕ibliothèque-𝗔zure — Scène 2",
       "actors": [
-        "Romy",
-        "Lewis Bamer"
+        "Lewis Bamer",
+        "Romy"
       ],
       "main_actor": "Lewis Bamer",
       "is_solo": false,
@@ -6975,9 +6289,8 @@ window.rpData = {
       "channel": "🏮〕𝗖rypte-𝗥ouge",
       "channel_raw": "🏮〕𝗖rypte-𝗥ouge",
       "channel_clean": "Crypte-Rouge",
-      "title": "LE CONSEILLER, Nick Sol",
+      "title": "Crypte-Rouge — Scène 1",
       "actors": [
-        "LE CONSEILLER",
         "Nick Sol"
       ],
       "main_actor": "Nick Sol",
@@ -7027,7 +6340,7 @@ window.rpData = {
       "channel": "🗝️〕𝗖ellules",
       "channel_raw": "🗝️〕𝗖ellules",
       "channel_clean": "🗝️〕𝗖ellules",
-      "title": "Loyis Delacroix",
+      "title": "🗝️〕𝗖ellules — Scène 1",
       "actors": [
         "Loyis Delacroix"
       ],
@@ -7057,11 +6370,11 @@ window.rpData = {
       "channel": "🍻〕𝗟a-𝗕alafre",
       "channel_raw": "🍻〕𝗟a-𝗕alafre",
       "channel_clean": "La-Balafre",
-      "title": "Red Roadman, Aryanna Erhendil, Selena Moon...",
+      "title": "La-Balafre — Scène 1",
       "actors": [
-        "Red Roadman",
-        "Aryanna Erhendil",
         "Selena Moon",
+        "Aryanna Erhendil",
+        "Red Roadman",
         "Star"
       ],
       "main_actor": "Selena Moon",
@@ -7279,7 +6592,7 @@ window.rpData = {
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_raw": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_clean": "Place-de-Grandpalais",
-      "title": "Lucia Fiorella, Adelina Del Fuego",
+      "title": "Place-de-Grandpalais — Scène 2",
       "actors": [
         "Lucia Fiorella",
         "Adelina Del Fuego"
@@ -7343,10 +6656,10 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Romy, Kanta",
+      "title": "Pont-des-Deux — Scène 2",
       "actors": [
-        "Romy",
-        "Kanta"
+        "Kanta",
+        "Romy"
       ],
       "main_actor": "Kanta",
       "is_solo": false,
@@ -7432,11 +6745,10 @@ window.rpData = {
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_raw": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_clean": "⛩️〕𝗧errain-𝗚randblanc",
-      "title": "Kenji Takahashi, Brutus Redwitch, Jasp Nah",
+      "title": "⛩️〕𝗧errain-𝗚randblanc — Scène 1",
       "actors": [
-        "Kenji Takahashi",
         "Brutus Redwitch",
-        "Jasp Nah"
+        "Kenji Takahashi"
       ],
       "main_actor": "Brutus Redwitch",
       "is_solo": false,
@@ -7496,11 +6808,10 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Selena Moon, Historia Fay Ruaidhri Grel, Jasp Nah",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 2",
       "actors": [
-        "Selena Moon",
         "Historia Fay Ruaidhri Grel",
-        "Jasp Nah"
+        "Selena Moon"
       ],
       "main_actor": "Historia Fay Ruaidhri Grel",
       "is_solo": false,
@@ -7552,13 +6863,13 @@ window.rpData = {
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_raw": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_clean": "⛩️〕𝗧errain-𝗚randblanc",
-      "title": "Katelynn Hoffmann, Jin Alurantes, Aryanna Erhendil...",
+      "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Katelynn Hoffmann",
         "Jin Alurantes",
         "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Nick Sol"
+        "Nick Sol",
+        "Katelynn Hoffmann"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -7770,10 +7081,9 @@ window.rpData = {
       "channel": "🍖〕𝗖antine-marbrée",
       "channel_raw": "🍖〕𝗖antine-marbrée",
       "channel_clean": "Cantine-marbrée",
-      "title": "Red Roadman, Jasp Nah",
+      "title": "Cantine-marbrée — Scène 2",
       "actors": [
-        "Red Roadman",
-        "Jasp Nah"
+        "Red Roadman"
       ],
       "main_actor": "Red Roadman",
       "is_solo": true,
@@ -7804,17 +7114,16 @@ window.rpData = {
       "channel": "🥘〕𝗭one-𝗕uffet",
       "channel_raw": "🥘〕𝗭one-𝗕uffet",
       "channel_clean": "Zone-Buffet",
-      "title": "Akane Tsukishiro, Jin Alurantes, Kenji Takahashi...",
+      "title": "La flaque rouge s'est déplacée",
       "actors": [
-        "Akane Tsukishiro",
-        "Jin Alurantes",
-        "Kenji Takahashi",
         "Brutus Redwitch",
+        "Kenji Takahashi",
         "Aryanna Erhendil",
-        "L'Oeil",
-        "Septimus Kales",
         "Loyis Delacroix",
-        "Nick Sol"
+        "Jin Alurantes",
+        "Nick Sol",
+        "Akane Tsukishiro",
+        "Septimus Kales"
       ],
       "main_actor": "Brutus Redwitch",
       "is_solo": false,
@@ -8403,14 +7712,14 @@ window.rpData = {
       "channel": "🌸〕𝗖ours-𝗙leurie",
       "channel_raw": "🌸〕𝗖ours-𝗙leurie",
       "channel_clean": "Cours-Fleurie",
-      "title": "Okayama, Romy, Lucia Fiorella...",
+      "title": "Cours-Fleurie — Scène 1",
       "actors": [
-        "Okayama",
-        "Romy",
         "Lucia Fiorella",
-        "Kenji Takahashi",
+        "Historia Fay Ruaidhri Grel",
+        "Romy",
         "Lewis Bamer",
-        "Historia Fay Ruaidhri Grel"
+        "Okayama",
+        "Kenji Takahashi"
       ],
       "main_actor": "Lucia Fiorella",
       "is_solo": false,
@@ -8492,21 +7801,23 @@ window.rpData = {
       "location_image": "channel_images/cours-fleurie.jpg"
     },
     {
-      "id": "scene___𝗙ontaine_𝗠arbrée_3",
+      "id": "scene____ontaine__arbr_e_3",
       "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "Vosk Sulyvan, Adelina Del Fuego",
+      "channel_raw": "⛲〕𝗙ontaine-𝗠arbrée",
+      "channel_clean": "⛲〕𝗙ontaine-𝗠arbrée",
+      "title": "ㅤㅤ      𝐴𝑑𝑒𝑙𝑖𝑛𝑎 𝐷𝑒𝑙 𝐹𝑢𝑒𝑔𝑜",
       "actors": [
-        "Vosk Sulyvan",
-        "Adelina Del Fuego"
+        "Adelina Del Fuego",
+        "Vosk Sulyvan"
       ],
+      "main_actor": "Adelina Del Fuego",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-03-03T23:30:01Z",
       "end_time": "2026-03-06T19:03:47Z",
+      "duration_minutes": 4053,
       "preview": "# ㅤㅤ      𝐴𝑑𝑒𝑙𝑖𝑛𝑎 𝐷𝑒𝑙 𝐹𝑢𝑒𝑔𝑜 \n_ _\n\n> ⋄ **L’air du Heaume blanc semblait plus léger ici. À l’écart de l’agitation de la cité, la fontaine marbrée trônait au ce...",
       "message_count": 9,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1478534946850082886",
       "messages": [
         {
           "id": "1478534946850082886",
@@ -8581,6 +7892,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``⛲  •  FONTAINE MARBRÉE ``\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*",
       "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
@@ -8588,17 +7900,15 @@ window.rpData = {
       "channel": "🌟〕𝗖entre-radieux",
       "channel_raw": "🌟〕𝗖entre-radieux",
       "channel_clean": "Centre-radieux",
-      "title": "JAVUS, Asior Eveus, Akane Tsukishiro...",
+      "title": "Centre-radieux — Scène 1",
       "actors": [
-        "JAVUS",
-        "Asior Eveus",
+        "Septimus Kales",
+        "Jasp Nah",
         "Akane Tsukishiro",
         "Jin Alurantes",
-        "L'Oeil",
-        "Septimus Kales",
+        "Isis Faerieth",
         "Loyis Delacroix",
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Asior Eveus"
       ],
       "main_actor": "Septimus Kales",
       "is_solo": false,
@@ -8722,24 +8032,24 @@ window.rpData = {
       "location_image": "channel_images/centre-radieux.jpg"
     },
     {
-      "id": "scene___𝗘scaliers_𝗡acrés_2",
+      "id": "scene____scaliers__acr_s_2",
       "channel": "🦪〕𝗘scaliers-𝗡acrés",
-      "channel_id": "1333138229041303652",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 88,
-      "title": "Asior Eveus, Akane Tsukishiro, Vosk Sulyvan...",
+      "channel_raw": "🦪〕𝗘scaliers-𝗡acrés",
+      "channel_clean": "🦪〕𝗘scaliers-𝗡acrés",
+      "title": "🦪〕𝗘scaliers-𝗡acrés — Scène 2",
       "actors": [
-        "Asior Eveus",
-        "Akane Tsukishiro",
-        "Vosk Sulyvan",
         "Brutus Redwitch",
-        "L'Oeil"
+        "Akane Tsukishiro",
+        "Asior Eveus"
       ],
+      "main_actor": "Brutus Redwitch",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-03-04T16:07:18Z",
       "end_time": "2026-03-08T20:05:53Z",
+      "duration_minutes": 5998,
       "preview": "***Brutus arrive aux côtés d'Akane au niveau des escaliers, du bas des escaliers, et s'arrête de marcher. Le prométhéen regarde l'escalier pendant un instant...",
       "message_count": 21,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1333138229041303652/1478785922005864458",
       "messages": [
         {
           "id": "1478785922005864458",
@@ -8910,24 +8220,27 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``🐚  •  ESCALIERS NACRÉS``\n\n*Seul et unique moyen de se rendre à l’étage, un sortilège empêche quiconque de l’escalader, au risque de se retrouver désarçonné en bas de la pente avec un bon coup de pied aux fesses. C’est souvent à son sommet que la plupart des annonces sont faites ; il vaut donc mieux se tenir non loin de celui-ci si vous ne voulez rien manquer.*",
       "location_image": "channel_images/escaliers-nacres.jpg"
     },
     {
-      "id": "scene___𝗖ouloir_𝗕lanc_2",
+      "id": "scene____ouloir__lanc_2",
       "channel": "⚪〕𝗖ouloir-𝗕lanc",
-      "channel_id": "1333138163308302418",
-      "category": "| ✵ |  GRANDE SALLE PORCELAINE",
-      "discord_position": 85,
-      "title": "Jasp Nah, Isis Faerieth",
+      "channel_raw": "⚪〕𝗖ouloir-𝗕lanc",
+      "channel_clean": "⚪〕𝗖ouloir-𝗕lanc",
+      "title": "⚪〕𝗖ouloir-𝗕lanc — Scène 2",
       "actors": [
         "Jasp Nah",
         "Isis Faerieth"
       ],
+      "main_actor": "Jasp Nah",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-03-05T11:18:12Z",
       "end_time": "2026-03-05T18:19:18Z",
+      "duration_minutes": 421,
       "preview": "```Nah Jasp - Complot.```\n\n*Le silence était venu avec lui mais aussi sortit avec lui. Poussant la porte d'une seule main alors que des perles de liqueur cou...",
       "message_count": 3,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1333138163308302418/1479075558062293054",
       "messages": [
         {
           "id": "1479075558062293054",
@@ -8954,6 +8267,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``◻️  •  COULOIR BLANC``\n\n*Coin idéal pour celles et ceux qui détestent rester au centre de l’attention, ce couloir est l’endroit discret où s’installer pour une discussion plus sérieuse ou plus posée. Alliant intimité et proximité, c’est ici que vous pourrez admirer les lames de Kroksvard et le bouclier de Dwargolf, d’anciennes reliques ayant permis à leurs possesseurs de venir à bout du grizzli des forêts d’Altrim.*",
       "location_image": "channel_images/couloir-blanc.jpg"
     },
     {
@@ -8961,7 +8275,7 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Septimus Kales, JAVUS",
+      "title": "Parc-des-Cardinaux — Scène 2",
       "actors": [
         "Septimus Kales",
         "JAVUS"
@@ -9038,10 +8352,9 @@ window.rpData = {
       "channel": "⚗️〕𝗖our-des-alchimistes",
       "channel_raw": "⚗️〕𝗖our-des-alchimistes",
       "channel_clean": "⚗️〕𝗖our-des-alchimistes",
-      "title": "Okayama, L'Oeil",
+      "title": "⚗️〕𝗖our-des-alchimistes — Scène 2",
       "actors": [
-        "Okayama",
-        "L'Oeil"
+        "Okayama"
       ],
       "main_actor": "Okayama",
       "is_solo": true,
@@ -9101,19 +8414,17 @@ window.rpData = {
       "channel": "🌆〕𝐏lace",
       "channel_raw": "🌆〕𝐏lace",
       "channel_clean": "🌆〕𝐏lace",
-      "title": "LE CONSEILLER, Romy, Red Roadman...",
+      "title": "🌆〕𝐏lace — Scène 1",
       "actors": [
-        "LE CONSEILLER",
+        "Adelina Del Fuego",
+        "Jin Alurantes",
         "Romy",
         "Red Roadman",
-        "Ethan Jaster",
-        "Jin Alurantes",
-        "Florianne Hoster",
-        "Adelina Del Fuego",
-        "Lorna Is'Hor",
-        "Emil Camille Rebenok",
         "Lewis Bamer",
-        "Isis Faerieth"
+        "Emil Camille Rebenok",
+        "Lorna Is'Hor",
+        "Florianne Hoster",
+        "Ethan Jaster"
       ],
       "main_actor": "Adelina Del Fuego",
       "is_solo": false,
@@ -9533,17 +8844,16 @@ window.rpData = {
       "channel": "🏙️〕𝐄gregore",
       "channel_raw": "🏙️〕𝐄gregore",
       "channel_clean": "Egregore",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Lucia Fiorella...",
+      "title": "Egregore — Scène 2",
       "actors": [
         "LE CONSEILLER",
-        "Katelynn Hoffmann",
-        "Lucia Fiorella",
-        "Kenji Takahashi",
         "Kanta",
-        "Hector Swaft",
+        "Nick Sol",
+        "Kenji Takahashi",
+        "Lucia Fiorella",
+        "Katelynn Hoffmann",
         "Loyis Delacroix",
-        "Jasp Nah",
-        "Nick Sol"
+        "Hector Swaft"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -9821,15 +9131,14 @@ window.rpData = {
       "channel": "🌇〕𝐑uelle-𝐁asse-ville",
       "channel_raw": "🌇〕𝐑uelle-𝐁asse-ville",
       "channel_clean": "Ruelle-Basse-ville",
-      "title": "Romy, Red Roadman, Jin Alurantes...",
+      "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Romy",
-        "Red Roadman",
         "Jin Alurantes",
-        "Adelina Del Fuego",
         "Lewis Bamer",
-        "Myrane Jaster",
-        "Isis Faerieth"
+        "Red Roadman",
+        "Romy",
+        "Adelina Del Fuego",
+        "Myrane Jaster"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -9987,12 +9296,12 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Eita, Katelynn Hoffmann, Lucia Fiorella...",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 2",
       "actors": [
-        "Eita",
         "Katelynn Hoffmann",
-        "Lucia Fiorella",
-        "Vosk Sulyvan"
+        "Vosk Sulyvan",
+        "Eita",
+        "Lucia Fiorella"
       ],
       "main_actor": "Katelynn Hoffmann",
       "is_solo": false,
@@ -10259,12 +9568,12 @@ window.rpData = {
       "channel": "♟️〕𝐐uartiers",
       "channel_raw": "♟️〕𝐐uartiers",
       "channel_clean": "Quartiers",
-      "title": "Romy, Jin Alurantes, Adelina Del Fuego...",
+      "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Romy",
         "Jin Alurantes",
-        "Adelina Del Fuego",
+        "Romy",
         "Emil Camille Rebenok",
+        "Adelina Del Fuego",
         "Lewis Bamer"
       ],
       "main_actor": "Jin Alurantes",
@@ -10345,17 +9654,15 @@ window.rpData = {
       "channel": "🛑〕𝐀rène",
       "channel_raw": "🛑〕𝐀rène",
       "channel_clean": "🛑〕𝐀rène",
-      "title": "LE CONSEILLER, Red Roadman, Romy...",
+      "title": "🛑〕𝐀rène — Scène 1",
       "actors": [
-        "LE CONSEILLER",
-        "Red Roadman",
         "Romy",
+        "Red Roadman",
         "Jin Alurantes",
         "Adelina Del Fuego",
-        "Emil Camille Rebenok",
         "Septimus Kales",
-        "Sha'al Langster",
-        "Isis Faerieth"
+        "LE CONSEILLER",
+        "Emil Camille Rebenok"
       ],
       "main_actor": "Romy",
       "is_solo": false,
@@ -10718,12 +10025,11 @@ window.rpData = {
       "channel": "🚬〕𝐏etit-𝐒alon",
       "channel_raw": "🚬〕𝐏etit-𝐒alon",
       "channel_clean": "🚬〕𝐏etit-𝐒alon",
-      "title": "Jin Alurantes, Sha'al Langster, Red Roadman...",
+      "title": "🚬〕𝐏etit-𝐒alon — Scène 1",
       "actors": [
-        "Jin Alurantes",
         "Sha'al Langster",
         "Red Roadman",
-        "Vosk Sulyvan"
+        "Jin Alurantes"
       ],
       "main_actor": "Sha'al Langster",
       "is_solo": false,
@@ -10935,11 +10241,11 @@ window.rpData = {
       "channel": "🛋️〕𝐁ureau-de-𝐒haal",
       "channel_raw": "🛋️〕𝐁ureau-de-𝐒haal",
       "channel_clean": "🛋️〕𝐁ureau-de-𝐒haal",
-      "title": "LE CONSEILLER, Jin Alurantes, Adelina Del Fuego",
+      "title": "🛋️〕𝐁ureau-de-𝐒haal — Scène 1",
       "actors": [
-        "LE CONSEILLER",
+        "Adelina Del Fuego",
         "Jin Alurantes",
-        "Adelina Del Fuego"
+        "LE CONSEILLER"
       ],
       "main_actor": "Adelina Del Fuego",
       "is_solo": false,
@@ -11094,7 +10400,7 @@ window.rpData = {
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_raw": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_clean": "Place-de-Grandpalais",
-      "title": "Aryanna Erhendil, Lydounne",
+      "title": "Place-de-Grandpalais — Scène 3",
       "actors": [
         "Aryanna Erhendil",
         "Lydounne"
@@ -11212,9 +10518,8 @@ window.rpData = {
       "channel": "🏛️〕𝗧ribut-des-sages",
       "channel_raw": "🏛️〕𝗧ribut-des-sages",
       "channel_clean": "🏛️〕𝗧ribut-des-sages",
-      "title": "LE CONSEILLER, Kanta",
+      "title": "🏛️〕𝗧ribut-des-sages — Scène 1",
       "actors": [
-        "LE CONSEILLER",
         "Kanta"
       ],
       "main_actor": "Kanta",
@@ -11283,7 +10588,7 @@ window.rpData = {
       "channel": "𝐈solement",
       "channel_raw": "𝐈solement",
       "channel_clean": "Isolement",
-      "title": "Jasp Nah, Inzu Sravel, Nick Sol",
+      "title": "Isolement — Scène 1",
       "actors": [
         "Jasp Nah",
         "Inzu Sravel",
@@ -11415,7 +10720,7 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Lucia Fiorella, Myrea M",
+      "title": "Pont-des-Deux — Scène 3",
       "actors": [
         "Lucia Fiorella",
         "Myrea M"
@@ -11480,7 +10785,7 @@ window.rpData = {
       "channel": "⚗️〕𝗖our-des-alchimistes",
       "channel_raw": "⚗️〕𝗖our-des-alchimistes",
       "channel_clean": "⚗️〕𝗖our-des-alchimistes",
-      "title": "Aryanna Erhendil, Isis Faerieth",
+      "title": "⚗️〕𝗖our-des-alchimistes — Scène 3",
       "actors": [
         "Aryanna Erhendil",
         "Isis Faerieth"
@@ -11583,7 +10888,7 @@ window.rpData = {
       "channel": "✨〕𝗔gora-des-𝗥eines",
       "channel_raw": "✨〕𝗔gora-des-𝗥eines",
       "channel_clean": "Agora-des-Reines",
-      "title": "Katelynn Hoffmann, Vosk Sulyvan",
+      "title": "Agora-des-Reines — Scène 2",
       "actors": [
         "Katelynn Hoffmann",
         "Vosk Sulyvan"
@@ -11707,11 +11012,11 @@ window.rpData = {
       "channel": "🚢〕𝗣ort-du-𝗟evant",
       "channel_raw": "🚢〕𝗣ort-du-𝗟evant",
       "channel_clean": "🚢〕𝗣ort-du-𝗟evant",
-      "title": "Katelynn Hoffmann, Lucia Fiorella, Lewis Bamer",
+      "title": "🚢〕𝗣ort-du-𝗟evant — Scène 2",
       "actors": [
+        "Lewis Bamer",
         "Katelynn Hoffmann",
-        "Lucia Fiorella",
-        "Lewis Bamer"
+        "Lucia Fiorella"
       ],
       "main_actor": "Lewis Bamer",
       "is_solo": false,
@@ -12091,11 +11396,11 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Aryanna Erhendil, Vosk Sulyvan, Isis Faerieth",
+      "title": "Parc-des-Cardinaux — Scène 3",
       "actors": [
-        "Aryanna Erhendil",
+        "Isis Faerieth",
         "Vosk Sulyvan",
-        "Isis Faerieth"
+        "Aryanna Erhendil"
       ],
       "main_actor": "Isis Faerieth",
       "is_solo": false,
@@ -12223,16 +11528,14 @@ window.rpData = {
       "channel": "🏯〕𝗔rène-𝗛urlante",
       "channel_raw": "🏯〕𝗔rène-𝗛urlante",
       "channel_clean": "🏯〕𝗔rène-𝗛urlante",
-      "title": "LE CONSEILLER, Inzu Sravel, Jin Alurantes...",
+      "title": "🏯〕𝗔rène-𝗛urlante — Scène 2",
       "actors": [
-        "LE CONSEILLER",
-        "Inzu Sravel",
         "Jin Alurantes",
-        "Kenji Takahashi",
-        "Brutus Redwitch",
+        "Nick Sol",
         "Aryanna Erhendil",
         "Loyis Delacroix",
-        "Nick Sol"
+        "Brutus Redwitch",
+        "Kenji Takahashi"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -12395,14 +11698,12 @@ window.rpData = {
       "channel": "🏯〕𝗔rène-𝗛urlante",
       "channel_raw": "🏯〕𝗔rène-𝗛urlante",
       "channel_clean": "🏯〕𝗔rène-𝗛urlante",
-      "title": "Inzu Sravel, Jin Alurantes, Aryanna Erhendil...",
+      "title": "🏯〕𝗔rène-𝗛urlante — Scène 3",
       "actors": [
-        "Inzu Sravel",
-        "Jin Alurantes",
-        "Aryanna Erhendil",
-        "Hector Swaft",
         "Loyis Delacroix",
-        "Nick Sol"
+        "Nick Sol",
+        "Jin Alurantes",
+        "Aryanna Erhendil"
       ],
       "main_actor": "Loyis Delacroix",
       "is_solo": false,
@@ -12589,7 +11890,7 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Okayama",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 3",
       "actors": [
         "Okayama"
       ],
@@ -12618,10 +11919,9 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Okayama, 1spireMeuf",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 4",
       "actors": [
-        "Okayama",
-        "1spireMeuf"
+        "Okayama"
       ],
       "main_actor": "Okayama",
       "is_solo": true,
@@ -12700,20 +12000,22 @@ window.rpData = {
       "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
-      "id": "scene___𝗩erger_des_𝗣êchés_3",
+      "id": "scene____erger_des___ch_s_3",
       "channel": "🌳〕𝗩erger-des-𝗣êchés",
-      "channel_id": "1328715287704371210",
-      "category": "| ✠ |   LE BASTION ÉCARLATE",
-      "discord_position": 111,
-      "title": "Aryanna Erhendil",
+      "channel_raw": "🌳〕𝗩erger-des-𝗣êchés",
+      "channel_clean": "🌳〕𝗩erger-des-𝗣êchés",
+      "title": "🌳〕𝗩erger-des-𝗣êchés — Scène 3",
       "actors": [
         "Aryanna Erhendil"
       ],
+      "main_actor": "Aryanna Erhendil",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-04-16T11:00:43Z",
       "end_time": "2026-04-16T11:11:31Z",
+      "duration_minutes": 10,
       "preview": "``` ```",
       "message_count": 2,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328715287704371210/1494291446801633300",
       "messages": [
         {
           "id": "1494291446801633300",
@@ -12732,6 +12034,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "🍂  •  LE VERGER DES PÊCHÉS\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*",
       "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
@@ -12739,7 +12042,7 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Katelynn Hoffmann, Isis Faerieth",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 3",
       "actors": [
         "Katelynn Hoffmann",
         "Isis Faerieth"
@@ -12978,12 +12281,10 @@ window.rpData = {
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_raw": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_clean": "⛩️〕𝗧errain-𝗚randblanc",
-      "title": "L'Ost du Sang, L'Oeil, Jasp Nah...",
+      "title": "⛩️〕𝗧errain-𝗚randblanc — Scène 3",
       "actors": [
-        "L'Ost du Sang",
-        "L'Oeil",
-        "Jasp Nah",
-        "Lewis Bamer"
+        "Lewis Bamer",
+        "Jasp Nah"
       ],
       "main_actor": "Lewis Bamer",
       "is_solo": false,
@@ -13199,48 +12500,22 @@ window.rpData = {
       "location_image": "channel_images/terrain-grandblanc.jpg"
     },
     {
-      "id": "scene____𝗟e_𝗖afé_des_𝗣hilosophes_2",
-      "channel": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
-      "channel_id": "1327646242661994552",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 121,
-      "title": "LE CONSEILLER",
-      "actors": [
-        "LE CONSEILLER"
-      ],
-      "start_time": "2026-04-27T22:31:29Z",
-      "end_time": "2026-04-27T22:31:29Z",
-      "preview": "La sonnette retentit.\n◦ ────────────────── ¤ ────────────────── ◦\n\n*Une cloche dorée resplendit alors qu’une silhouette se décide enfin à franchir l’encadrem...",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1327646242661994552/1498451549569941608",
-      "messages": [
-        {
-          "id": "1498451549569941608",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-04-27T22:31:29Z",
-          "content": "La sonnette retentit.\n◦ ────────────────── ¤ ────────────────── ◦\n\n*Une cloche dorée resplendit alors qu’une silhouette se décide enfin à franchir l’encadrement de la porte de son établissement.*\n\n*Un œil bienveillant, une bouteille à demi vide au creux de sa main, le maître des lieux s’avance avec le cafard d’une carrure qui s’est absentée trop longtemps. D'un semblant de visage joyeux, il se présente d'un pas dépité jusqu’au bar dont il est depuis toujours le pilier.*\n\n*La mélancolie le porte, les mots lui échappent alors qu’au creux de sa paume, un mirage bleuté chasse l’opacité de son noir cuisant… Une arcane rêveuse, à la douceur d’un cauchemar, laisse un deck transparaître. Un tas de cartes convenablement mélangé... la reliure de secrets hargneusement gardés.*\n\nLes secondes défilent ; un papillon de nuit finit par se poser sur son index, alors que, dans la délicatesse d’une respiration prompte ; ses lèvres laissent s’égarer la douceur d’un sifflement… Un appel qui ne demeure pas sans répondant, une mélodie qui, dans sa délicatesse, trouve le reflet de son tranchant…*\n\n*Les grimoires apparaissent alors qu’une énième fois ses mains mélangent, brassent, tirent puis distribuent la couleur des instructions qu’on lui a chuchotées.*\n\n``Silence.``\n\n\n◦ ────────────────────────────────────── ◦\nSon appel est irrévocable, son invitation est désormais prononcée.\n[Image: https://i.pinimg.com/736x/d9/d5/99/d9d599d8b6457a60aeae8d2f156c5568.jpg]\nJamais l'un sans l'autre.\n◦ ────────────────── ¤ ────────────────── ◦\n\n> (Eux) : — Ils ne sont pas encore prêts pour cela. Aurais-tu oublié ce qui s’est produit la dernière fois ?\n\n\n``L’Unisson.``\n\n\n*Deux voix s’accordent et retentissent tel l’écho de ceux qui savent et décrètent avec passion. Ils sont arrivés, les arbitres d’une noble compétition… Les héritiers d’un ailleurs soigneusement caché, ceux qui ont renoncé à la vue pour sceller le radieux d’un paysage désormais souillé.*\n\n\n> (Will) :  — Le chronomètre est lancé. Avons-nous seulement le choix ?\n\n\n*Répond le barman qui, désormais, entre les bouteilles, est à nouveau roi… Monarque de la boisson, un sourire épineux germe sur son visage alors que les jumeaux le rejoignent.*\n\n\n> (Elle) : — Ce n’est pas parce qu’elle l’a localisé que le temps nous est compté.\n\n\n*Déclare l’une, avant que la main de son aîné ne caresse la surface de son épaule.*\n\n\n> (Lui) : — William et Monsieur ont tous deux raison, petite sœur… Ces derniers jours n’ont cessé de multiplier les manifestations… Une envoyée du Nord, une silhouette héritière de l’ailleurs… Une Valkyrie qui enfile à nouveau son armure… Ce que nous cachons a commencé à se manifester… Pire que cela, il semble déjà avoir été soigneusement activé… \n\n\n> (Lui) : — …. Sans compter que l'Equinox approche...\n\n\n*Les mots de son frère soulèvent la rugosité d’une vérité qui ne peut, en effet, plus être ignorée… Le glas d’une réflexion qui n’a plus le temps d’être menée… Un court silence s’essouffle avant qu’elle ne réponde.*\n\n\n> (Elle) : — Soit… La volonté de la maison sera toujours ma priorité... Quelles sont les indications ? Quels sont leurs noms ? Qu’avons-nous à faire pour préparer le terrain qui sera exploité sans une once de scrupule, d’éthique ou d’impartialité ?\n\n\n``Mutisme.``\n\n\n> (Will) : — Pour le moment, les ordres sont clairs : distribuer un accès à ceux qui apparaissent sur cette liste, puis récupérer le dû qu’à l’hypothèse il a jadis été confié... De votre côtés, votre présences et vos pouvoirs sont mandatés par la descendance... Je ne sais rien de plus.\n\n\n*Reprends le teneur de bar d'une parole sérieuse alors que son regard se tourner vers l'immobile d'une hulotte marbrée.*\n\n*Servant de guide à ses interlocuteurs, les yeux voilés suivent alors la trajectoire donnée, se tournant vers la statuette de hibou qu'il observe... Un souffle, balaie la dextérité de leur cheveux avant que la corpulence des jumeaux ne fasse volte-face, laissant l’ombre d’un pilier les dévorer.*\n\n**Le barman, lui, se sert un nouveau verre.**\n\n\n◦ ────────────────────────────────────── ◦\nIls sont attendus.\n[Image: https://i.pinimg.com/1200x/46/3e/92/463e92ecef3b3d9f9878c5528035136a.jpg]\nQuelques secondes d'envolent.\n◦ ────────────────── ¤ ────────────────── ◦\n\n> (Will) : — Tu peux sortir de l'ombre tu sais, bien qu'elle soit indétectable pour certains, tu te doutes bien que ni moi ni eux n'avons un niveau suffisamment médiocre pour ignorer ta présence Léon.\n\n\n*Un sourire se dresse sur le visage de celui qui se fait appeler Will, amusé d'avoir persé à jour le cammouflage d'un allié qu'il ne sait plus ignorer.*\n\n\n> (Léon) : — Je n'en doute pas un seul instant, cependant je me voyais mal couper un protocole en action par le biais d'inutiles salutations...\n\n\n*Le bibliothécaire sort de l'ombre et regarde les cartes qui demeurent sur le bord du bar.*\n\n\n> (Léon) : — Alors ce que celui du milieu nous a révélé est vrai... Monsieur compte bel et bien remettre le couvert... Voilà qui est aussi risqué que fâcheux... C'est de la folie... Ils ne font pas le poids pour s'aventurer là-bas... Nous le savons tous les deux.\n\n\n*Achèvera le protecteur des écrits avant d'embarquer ce qui reste le decks désormais incomplet. Ses amples vêtements embrassent le sol alors que le trois mats de son être vogue vers la sortie qui lui a servie d'entrée un peu plus tôt.*\n\n\n> (Will) : — En voilà un point de vue bien pessimiste... Je te savais critique, mais pas au points de crier peine perdue avant la défaite...\n\n> (Will) : — Eh puis, rappelle toi, moi j'étais à peine porte I lorsque je m'y suis rendu pour la première fois...\n\n\n*Le Monarque bleu retourne son visage, il regarde le barman d'un air dubitatif mais ne renie pas les paroles qu'on lui soumet... Un court instant s'échappe avant qu'il ne réponde puis s'évade.*\n\n\n> (Léon) : — Ton raisonnement tient la route... Cependant je doute que tous aient profités de ton éducation arcanique...\n\n> (Léon) : — Cher William James... Enfant déchu de l'illustre maison Delacroix.\n\n\n◦ ────────────────────────────────────── ◦\nLe café des philosophes est à nouveau ouvert.\n[Image: https://media.discordapp.net/attachments/1496126377135444079/1498451390828118139/72daf8640fe8c492279e36b7c155e2af.png?ex=6a765c9b&is=6a750b1b&hm=c32b9dd33dfa96b8e87adc568f8f8a864cfd34dabaa513627c53bda78de1ba8a&format=webp&quality=lossless&]",
-          "embed_title": "La sonnette retentit. | Jamais l'un sans l'autre. | Quelques secondes d'envolent.",
-          "embed_description": "◦ ────────────────── ¤ ────────────────── ◦\n\n*Une cloche dorée resplendit alors qu’une silhouette se décide enfin à franchir l’encadrement de la porte de son établissement.*\n\n*Un œil bienveillant, une bouteille à demi vide au creux de sa main, le maître des lieux s’avance avec le cafard d’une carrure qui s’est absentée trop longtemps. D'un semblant de visage joyeux, il se présente d'un pas dépité jusqu’au bar dont il est depuis toujours le pilier.*\n\n*La mélancolie le porte, les mots lui échappent alors qu’au creux de sa paume, un mirage bleuté chasse l’opacité de son noir cuisant… Une arcane rêveuse, à la douceur d’un cauchemar, laisse un deck transparaître. Un tas de cartes convenablement mélangé... la reliure de secrets hargneusement gardés.*\n\nLes secondes défilent ; un papillon de nuit finit par se poser sur son index, alors que, dans la délicatesse d’une respiration prompte ; ses lèvres laissent s’égarer la douceur d’un sifflement… Un appel qui ne demeure pas sans répondant, une mélodie qui, dans sa délicatesse, trouve le reflet de son tranchant…*\n\n*Les grimoires apparaissent alors qu’une énième fois ses mains mélangent, brassent, tirent puis distribuent la couleur des instructions qu’on lui a chuchotées.*\n\n``Silence.``\n\n\n◦ ────────────────────────────────────── ◦ | ◦ ────────────────── ¤ ────────────────── ◦\n\n> (Eux) : — Ils ne sont pas encore prêts pour cela. Aurais-tu oublié ce qui s’est produit la dernière fois ?\n\n\n``L’Unisson.``\n\n\n*Deux voix s’accordent et retentissent tel l’écho de ceux qui savent et décrètent avec passion. Ils sont arrivés, les arbitres d’une noble compétition… Les héritiers d’un ailleurs soigneusement caché, ceux qui ont renoncé à la vue pour sceller le radieux d’un paysage désormais souillé.*\n\n\n> (Will) :  — Le chronomètre est lancé. Avons-nous seulement le choix ?\n\n\n*Répond le barman qui, désormais, entre les bouteilles, est à nouveau roi… Monarque de la boisson, un sourire épineux germe sur son visage alors que les jumeaux le rejoignent.*\n\n\n> (Elle) : — Ce n’est pas parce qu’elle l’a localisé que le temps nous est compté.\n\n\n*Déclare l’une, avant que la main de son aîné ne caresse la surface de son épaule.*\n\n\n> (Lui) : — William et Monsieur ont tous deux raison, petite sœur… Ces derniers jours n’ont cessé de multiplier les manifestations… Une envoyée du Nord, une silhouette héritière de l’ailleurs… Une Valkyrie qui enfile à nouveau son armure… Ce que nous cachons a commencé à se manifester… Pire que cela, il semble déjà avoir été soigneusement activé… \n\n\n> (Lui) : — …. Sans compter que l'Equinox approche...\n\n\n*Les mots de son frère soulèvent la rugosité d’une vérité qui ne peut, en effet, plus être ignorée… Le glas d’une réflexion qui n’a plus le temps d’être menée… Un court silence s’essouffle avant qu’elle ne réponde.*\n\n\n> (Elle) : — Soit… La volonté de la maison sera toujours ma priorité... Quelles sont les indications ? Quels sont leurs noms ? Qu’avons-nous à faire pour préparer le terrain qui sera exploité sans une once de scrupule, d’éthique ou d’impartialité ?\n\n\n``Mutisme.``\n\n\n> (Will) : — Pour le moment, les ordres sont clairs : distribuer un accès à ceux qui apparaissent sur cette liste, puis récupérer le dû qu’à l’hypothèse il a jadis été confié... De votre côtés, votre présences et vos pouvoirs sont mandatés par la descendance... Je ne sais rien de plus.\n\n\n*Reprends le teneur de bar d'une parole sérieuse alors que son regard se tourner vers l'immobile d'une hulotte marbrée.*\n\n*Servant de guide à ses interlocuteurs, les yeux voilés suivent alors la trajectoire donnée, se tournant vers la statuette de hibou qu'il observe... Un souffle, balaie la dextérité de leur cheveux avant que la corpulence des jumeaux ne fasse volte-face, laissant l’ombre d’un pilier les dévorer.*\n\n**Le barman, lui, se sert un nouveau verre.**\n\n\n◦ ────────────────────────────────────── ◦ | ◦ ────────────────── ¤ ────────────────── ◦\n\n> (Will) : — Tu peux sortir de l'ombre tu sais, bien qu'elle soit indétectable pour certains, tu te doutes bien que ni moi ni eux n'avons un niveau suffisamment médiocre pour ignorer ta présence Léon.\n\n\n*Un sourire se dresse sur le visage de celui qui se fait appeler Will, amusé d'avoir persé à jour le cammouflage d'un allié qu'il ne sait plus ignorer.*\n\n\n> (Léon) : — Je n'en doute pas un seul instant, cependant je me voyais mal couper un protocole en action par le biais d'inutiles salutations...\n\n\n*Le bibliothécaire sort de l'ombre et regarde les cartes qui demeurent sur le bord du bar.*\n\n\n> (Léon) : — Alors ce que celui du milieu nous a révélé est vrai... Monsieur compte bel et bien remettre le couvert... Voilà qui est aussi risqué que fâcheux... C'est de la folie... Ils ne font pas le poids pour s'aventurer là-bas... Nous le savons tous les deux.\n\n\n*Achèvera le protecteur des écrits avant d'embarquer ce qui reste le decks désormais incomplet. Ses amples vêtements embrassent le sol alors que le trois mats de son être vogue vers la sortie qui lui a servie d'entrée un peu plus tôt.*\n\n\n> (Will) : — En voilà un point de vue bien pessimiste... Je te savais critique, mais pas au points de crier peine perdue avant la défaite...\n\n> (Will) : — Eh puis, rappelle toi, moi j'étais à peine porte I lorsque je m'y suis rendu pour la première fois...\n\n\n*Le Monarque bleu retourne son visage, il regarde le barman d'un air dubitatif mais ne renie pas les paroles qu'on lui soumet... Un court instant s'échappe avant qu'il ne réponde puis s'évade.*\n\n\n> (Léon) : — Ton raisonnement tient la route... Cependant je doute que tous aient profités de ton éducation arcanique...\n\n> (Léon) : — Cher William James... Enfant déchu de l'illustre maison Delacroix.\n\n\n◦ ────────────────────────────────────── ◦"
-        }
-      ],
-      "location_image": "channel_images/le-cafe-des-philosophes.jpg"
-    },
-    {
-      "id": "scene___𝗩erger_des_𝗣êchés_4",
+      "id": "scene____erger_des___ch_s_4",
       "channel": "🌳〕𝗩erger-des-𝗣êchés",
-      "channel_id": "1328715287704371210",
-      "category": "| ✠ |   LE BASTION ÉCARLATE",
-      "discord_position": 111,
-      "title": "Aryanna Erhendil, Alek Clark",
+      "channel_raw": "🌳〕𝗩erger-des-𝗣êchés",
+      "channel_clean": "🌳〕𝗩erger-des-𝗣êchés",
+      "title": "🌳〕𝗩erger-des-𝗣êchés — Scène 4",
       "actors": [
-        "Aryanna Erhendil",
-        "Alek Clark"
+        "Aryanna Erhendil"
       ],
+      "main_actor": "Aryanna Erhendil",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-04-30T08:53:48Z",
       "end_time": "2026-06-15T08:28:39Z",
+      "duration_minutes": 66214,
       "preview": "Une carrure familière.\n```◦ ────────── ¤ ────────── ◦```\n\n> — Pour quelqu’un qui possède un parchemin azur, t’as l’air quand même pas mal paumée.\n\n\n*Ses mots...",
       "message_count": 5,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328715287704371210/1499332938825732206",
       "messages": [
         {
           "id": "1499332938825732206",
@@ -13283,6 +12558,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "🍂  •  LE VERGER DES PÊCHÉS\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*",
       "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
@@ -13290,12 +12566,12 @@ window.rpData = {
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_raw": "⚔️〕𝗧errains-𝗡acrés",
       "channel_clean": "⚔️〕𝗧errains-𝗡acrés",
-      "title": "Aryanna Erhendil, Septimus Kales, Lucia Fiorella...",
+      "title": "⚔️〕𝗧errains-𝗡acrés — Scène 2",
       "actors": [
-        "Aryanna Erhendil",
-        "Septimus Kales",
         "Lucia Fiorella",
-        "Adelina Del Fuego"
+        "Septimus Kales",
+        "Adelina Del Fuego",
+        "Aryanna Erhendil"
       ],
       "main_actor": "Lucia Fiorella",
       "is_solo": false,
@@ -13531,19 +12807,19 @@ window.rpData = {
       "channel": "🍻〕𝐋-𝐄picurien",
       "channel_raw": "🍻〕𝐋-𝐄picurien",
       "channel_clean": "🍻〕𝐋-𝐄picurien",
-      "title": "Ren Urugaki, LE CONSEILLER, Isis Faerieth...",
+      "title": "🍻〕𝐋-𝐄picurien — Scène 1",
       "actors": [
-        "Ren Urugaki",
         "LE CONSEILLER",
-        "Isis Faerieth",
-        "Tsutomu Yamamoto",
         "Kenji Takahashi",
-        "Adelina Del Fuego",
+        "Myrea M",
         "Maëll Fol'Dun",
+        "Septimus Kales",
+        "Adelina Del Fuego",
+        "Tsutomu Yamamoto",
         "Nick Sol",
         "Vosk Sulyvan",
-        "Septimus Kales",
-        "Myrea M"
+        "Isis Faerieth",
+        "Ren Urugaki"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -14311,20 +13587,22 @@ window.rpData = {
       "location_image": "channel_images/l-epicurien.jpg"
     },
     {
-      "id": "scene___𝐑uelles_1",
+      "id": "scene____uelles_1",
       "channel": "🧱〕𝐑uelles",
-      "channel_id": "1499802361588351066",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 142,
-      "title": "LE CONSEILLER",
+      "channel_raw": "🧱〕𝐑uelles",
+      "channel_clean": "🧱〕𝐑uelles",
+      "title": "🧱〕𝐑uelles — Scène 1",
       "actors": [
         "LE CONSEILLER"
       ],
+      "main_actor": "LE CONSEILLER",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-05-01T16:00:04Z",
       "end_time": "2026-05-01T16:00:04Z",
+      "duration_minutes": 1,
       "preview": "Ruelle Adjacente.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d...",
       "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1499802361588351066/1499802600608890922",
       "messages": [
         {
           "id": "1499802600608890922",
@@ -14335,200 +13613,24 @@ window.rpData = {
           "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs. \n\n◦ ──────────────────────────────────────── ◦"
         }
       ],
+      "location_description": "Ruelle Adjacente.\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs.",
       "location_image": "channel_images/ruelles.jpg"
-    },
-    {
-      "id": "scene___𝐋e_𝐑ouge_et_𝐋e_𝐍oir_1",
-      "channel": "🍻〕𝐋-𝐄picurien",
-      "channel_id": "1500068425609908275",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 140,
-      "title": "LE CONSEILLER, Kenji Takahashi",
-      "actors": [
-        "LE CONSEILLER",
-        "Kenji Takahashi"
-      ],
-      "start_time": "2026-05-02T09:46:19Z",
-      "end_time": "2026-06-04T01:41:07Z",
-      "preview": "Au devant du Comptoir.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nLe comptoir du bar, là où le premier jeu sera dispensé : Le Rouge et le Noir. Une référence...",
-      "message_count": 19,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1500068425609908275/1500070928934113350",
-      "messages": [
-        {
-          "id": "1500070928934113350",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-02T09:46:19Z",
-          "content": "Au devant du Comptoir.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nLe comptoir du bar, là où le premier jeu sera dispensé : Le Rouge et le Noir. Une référence littéraire qui n'a pourtant aucune place ici. Un paquet de carte, posé devant le barman qui continue de servir le nombre exorbitant de clients qui ont répondus présents pour la réouverture de l'Épicurien.\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://i.goopics.net/7mr225.jpg]",
-          "embed_title": "Au devant du Comptoir.",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nLe comptoir du bar, là où le premier jeu sera dispensé : Le Rouge et le Noir. Une référence littéraire qui n'a pourtant aucune place ici. Un paquet de carte, posé devant le barman qui continue de servir le nombre exorbitant de clients qui ont répondus présents pour la réouverture de l'Épicurien.\n\n◦ ──────────────────────────────────────── ◦"
-        },
-        {
-          "id": "1500071431202144327",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-02T09:48:19Z",
-          "content": "Le Rouge et le Noir.\n**__Règles du jeu :__**\nChaque joueur démarre le jeu avec une base de 100 points. A chaque fois que le joueur se trompe, il boit un shot. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n*Exemple :* Pierre et Jacques jouent au jeu. Pierre à 2 en résistance, Jacques n'a qu'1. Lorsque Pierre se trompera, il perdra 10 points sur les 100 qui lui sont octroyés. Lorsque Jacques se trompera, il perdra 15 points sur les 100 qui lui sont octroyés. \n\n\n**__Déroulé du jeu :__**\n\nCe jeu d’alcool se déroule en 4 tours. Les cartes sont posées alignées par 4, faces cachées. \n\n**Premier tour :** le joueur doit deviner si la carte est rouge ou noire. S’il a tort, il boit une gorgée, s’il a raison, il fait boire quelqu’un d’autre. Il garde la carte face à lui.\n\n**Deuxième tour :** le joueur doit dire « plus » ou « moins » que la première carte qu’il a reçue. S’il gagne, il fait boire 2 gorgées à qui il veut, s’il perd, c’est lui qui boit.\n\n**Troisième tour :** Il doit deviner si la prochaine carte se situera à l’intérieur des deux qu’il possède déjà ou à l’extérieur.\n\n**Dernier tour :** deviner si la carte à piocher sera un carreau, un cœur, un pique ou un trèfle.\n\nLe tour de chaque joueur s'arrête lorsqu'il se trompe et le tour passe à un autre joueur.\nUn jeu de chance, et de résistance.\n[Image: https://i.goopics.net/sr8x3r.jpg]",
-          "embed_title": "Le Rouge et le Noir.",
-          "embed_description": "**__Règles du jeu :__**\nChaque joueur démarre le jeu avec une base de 100 points. A chaque fois que le joueur se trompe, il boit un shot. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n*Exemple :* Pierre et Jacques jouent au jeu. Pierre à 2 en résistance, Jacques n'a qu'1. Lorsque Pierre se trompera, il perdra 10 points sur les 100 qui lui sont octroyés. Lorsque Jacques se trompera, il perdra 15 points sur les 100 qui lui sont octroyés. \n\n\n**__Déroulé du jeu :__**\n\nCe jeu d’alcool se déroule en 4 tours. Les cartes sont posées alignées par 4, faces cachées. \n\n**Premier tour :** le joueur doit deviner si la carte est rouge ou noire. S’il a tort, il boit une gorgée, s’il a raison, il fait boire quelqu’un d’autre. Il garde la carte face à lui.\n\n**Deuxième tour :** le joueur doit dire « plus » ou « moins » que la première carte qu’il a reçue. S’il gagne, il fait boire 2 gorgées à qui il veut, s’il perd, c’est lui qui boit.\n\n**Troisième tour :** Il doit deviner si la prochaine carte se situera à l’intérieur des deux qu’il possède déjà ou à l’extérieur.\n\n**Dernier tour :** deviner si la carte à piocher sera un carreau, un cœur, un pique ou un trèfle.\n\nLe tour de chaque joueur s'arrête lorsqu'il se trompe et le tour passe à un autre joueur."
-        },
-        {
-          "id": "1500122982050435105",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-02T13:13:09Z",
-          "content": "**Enfin un peu de détente n’est-ce pas ? D’un côté le bar, lieu où certains vont se désaltérer, finir bourrer, allonger sur le sol voir même inconscient. Tandis que de l’autre côté se tenait le bal, qui à l’inverse était un lieu assez calme, réservé aux gens issus de la haute sphère de ce monde malheureusement cruel et injuste (NOOOOOOOOOON ANNE JE TE RENCONTRERAI JAMAIS). Enfin bref, tout ça pour dire que bah Kenji va évidemment aller avec ses semblables, le lieu de fête le plus primaire qui soit proposé : le bar. Après tout, avec la mission qui venait de se faire et l’incertitude permanente du sort de sa famille, il fallait bien un peu de détente. \n\nLe choix étant fait (comme si y’avait vraiment le choix), l’Uzen rejoignit le lieu de fête et aperçu quelques têtes qu’il connaissait, notamment ceux de sa propre guilde. Il en fut ravi de savoir qu’ils étaient eux aussi venus en ces lieux. Mais il préféra malgré tout rester dans son coin, lui et ses pensées étaient suffisantes pour lui. \n\nHeureusement (pour moi), il aperçut un jeu assez attrayant et qui, malgré ce qu’il pensait au début, allait accepter de jouer. Ça lui fera pas de mal de s’adonner à une telle distraction durant cette soirée, peut-être même qu’il allait trouver un vrai don. C’est donc ce nouvel objectif donné qu’il alla s’assoir au devant du comptoir. \n\nLégèrement curieux de ce qui pouvait se dérouler ici et surtout de savoir si il allait gagner (il va gagner.), l’homme dit simplement en croisant les doigts de ses deux mains.**\n\n- Bien, commençons.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500431467124363386",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T09:38:58Z",
-          "content": "**-** \"Permettez ?\"\n> *C'est certain. Il ne jouera pas seul. Le barman est croupier, mais ne peut être désigné comme un adversaire. Accoudée au bar, une demoiselle se rapproche de celui qui inconsciemment demande une partie. Sa voix transperce l'air, passe au-delà de la musique simplement pour demander, d'un ton simple et détaché : \"Permettez ?\"*\n\n> *C'est une cigarette entre ses phalanges qu'elle annonce sa venue dans un calme qui contraste avec la fête. Un sourire se détache cependant. Comme tous ici, elle possède un certain plaisir pour les jeux et paris. Aussi, le barman lui fait signe de s'installer. Lentement, ses iris se tournent vers Kenji.*\n\n**-** \"Taiyang, et tu es ?\"\n\n> *La partie va commencer, un nouveau challenger est arrivé.*\nBarre du joueur :  - - - - - - - - - -\nBarre du Barman : - - - - - - - - - -\n[Image: https://i.goopics.net/qj8pt4.jpg]",
-          "embed_title": "**-** \"Permettez ?\"",
-          "embed_description": "> *C'est certain. Il ne jouera pas seul. Le barman est croupier, mais ne peut être désigné comme un adversaire. Accoudée au bar, une demoiselle se rapproche de celui qui inconsciemment demande une partie. Sa voix transperce l'air, passe au-delà de la musique simplement pour demander, d'un ton simple et détaché : \"Permettez ?\"*\n\n> *C'est une cigarette entre ses phalanges qu'elle annonce sa venue dans un calme qui contraste avec la fête. Un sourire se détache cependant. Comme tous ici, elle possède un certain plaisir pour les jeux et paris. Aussi, le barman lui fait signe de s'installer. Lentement, ses iris se tournent vers Kenji.*\n\n**-** \"Taiyang, et tu es ?\"\n\n> *La partie va commencer, un nouveau challenger est arrivé.*"
-        },
-        {
-          "id": "1500519277420089364",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-03T15:27:54Z",
-          "content": "*HERE COMES A NEW CHALLENGER*\n\n**Kenji, alors en train de se demander ce qu'allait lui réserver cette soirée, ce que ce jeu allait donner et surtout si la chance allait être de son côté, vit l'apparition d'un individu inconnu à ses yeux, totalement à l'opposé de ce que le commun des mortels pouvait ressentir en ce lieu.**\n\n{En pensée : Taiyang ? Ça me dit rien, j'la connais pas. Elle a l'air détendu, trop détendu. Elle s'amuse pas ? Bon, on va voir ce qu'elle vaut.}\n\n- Takahashi Kenji, membre de la Garde Pourpre. Ravi de te connaître, j'espère que tu sauras me divertir. \n\n**Son regard examina la silhouette de son interlocutrice, sans avoir un avis concret sur elle. Il allait attendre les jeux pour voir qui elle est réellement, mais surtout si Kenji va finir par s'amuser ou s'ennuyer en sa compagnie.**",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501604653996183693",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-06T15:20:47Z",
-          "content": "Première manche.\n> *La jeune femme s'amuse de sa réaction. Ses doigts légers portent une cigarette à ses lèvres, un interdit visiblement bravé par celle qui porte le nom de Taiyang et que le barman ne semble pas avoir réprimandé. Un nuage de fumée s'échappe de ses lèvres en même temps que ces paroles.*\n\n**-** Ravie, Kenji Takahashi. J'imagine que tu connais les règles de ce jeu.\"\n\n> *La demoiselle s'empare du paquet de carte et le mélange habillement.*\n\n**-** \"Pour la première carte tirée tu dois dire s'il s'agit de la couleur rouge ou noire. Si tu as juste, tu continues. Si tu as faux, c'est à mon tour. Deuxième tour, si la valeur est inférieure ou supérieure à la première carte. La troisième carte si la valeur se trouve à l'intérieur ou l'extérieur des deux autres. Et enfin, Pique, Coeur, Carreau ou Trèfle.\"\n\n> *Sans attendre sa réponse, la demoiselle tire la première carte et la regarde un instant, alors que son regard se déporte sur le visage de Kenji.*\n\n**-** \"Alors, Rouge ou Noir ?\"",
-          "embed_title": "Première manche.",
-          "embed_description": "> *La jeune femme s'amuse de sa réaction. Ses doigts légers portent une cigarette à ses lèvres, un interdit visiblement bravé par celle qui porte le nom de Taiyang et que le barman ne semble pas avoir réprimandé. Un nuage de fumée s'échappe de ses lèvres en même temps que ces paroles.*\n\n**-** Ravie, Kenji Takahashi. J'imagine que tu connais les règles de ce jeu.\"\n\n> *La demoiselle s'empare du paquet de carte et le mélange habillement.*\n\n**-** \"Pour la première carte tirée tu dois dire s'il s'agit de la couleur rouge ou noire. Si tu as juste, tu continues. Si tu as faux, c'est à mon tour. Deuxième tour, si la valeur est inférieure ou supérieure à la première carte. La troisième carte si la valeur se trouve à l'intérieur ou l'extérieur des deux autres. Et enfin, Pique, Coeur, Carreau ou Trèfle.\"\n\n> *Sans attendre sa réponse, la demoiselle tire la première carte et la regarde un instant, alors que son regard se déporte sur le visage de Kenji.*\n\n**-** \"Alors, Rouge ou Noir ?\""
-        },
-        {
-          "id": "1501618417344712945",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-06T16:15:29Z",
-          "content": "*Ready ? LET’S GO*\n\n**Les présentations sont faites, place au duel. Sauf qu’il y a un détail que l’homme avait clairement oublié, un détail officiel pour le commun des mortels, mais pour une tête en l’air qui fonce tête baissée en permanence, ça lui a totalement échappé.**\n\n{En pensée : Merde.. les règles.. j’avais complètement oublié. Bon heureusement que cette femme me les a dites. En revanche, pourquoi le barman lui a rien dit ? Elle fume devant tout le monde, et personne ne la reprend ? Bizarre, elle est peut-être importante.}\n\n**Bon, place aux jeux. Premièrement, choisir la couleur. Un choix binaire, une chance sur deux, 50/50. La chance sera-t-elle du côté de l’Uzen ?\n\nVisage ferme, confiant, l’homme annonça de sa voix grave.**\n\n- Le noir.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501627863714103376",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-06T16:53:01Z",
-          "content": "Perdre.\n> *La carte tirée est le 7 de cœur (Rouge).*\n\n**-** \"Perdu.\"\n\n> *Un sourire narquois sur le visage de la joueuse. Elle s'avance légèrement sur le comptoir, le regard posé sur les orbites de Kenji. Un regard rempli de ruse.*\n\n**-** \"Plutôt que de boire, je te propose une alternative. Tu as le choix : répondre à une question, ou boire un shot. Qu'est-ce que tu en dit ?\"\n\n> *La jeune femme penche légèrement la tête sur le côté, dans un soupir d'intrigue. Les cartes se remélangent, de nouveau de ses mains habiles. Puis, elle tire une nouvelle carte.*\n\n**-** \"Mais fait vite sur ta décision, j'ai déjà tiré une nouvelle carte.\"\n[Image: https://i.goopics.net/antp3v.jpg]",
-          "embed_title": "Perdre.",
-          "embed_description": "> *La carte tirée est le 7 de cœur (Rouge).*\n\n**-** \"Perdu.\"\n\n> *Un sourire narquois sur le visage de la joueuse. Elle s'avance légèrement sur le comptoir, le regard posé sur les orbites de Kenji. Un regard rempli de ruse.*\n\n**-** \"Plutôt que de boire, je te propose une alternative. Tu as le choix : répondre à une question, ou boire un shot. Qu'est-ce que tu en dit ?\"\n\n> *La jeune femme penche légèrement la tête sur le côté, dans un soupir d'intrigue. Les cartes se remélangent, de nouveau de ses mains habiles. Puis, elle tire une nouvelle carte.*\n\n**-** \"Mais fait vite sur ta décision, j'ai déjà tiré une nouvelle carte.\""
-        },
-        {
-          "id": "1501630070479913040",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-06T17:01:47Z",
-          "content": "{En pensée : FAIS CHIER. Merde, j’ai pas de chance ça fait chier. Je perdrai pas deux fois crois-moi.}\n\n**1-0 pour Taiyang. Bien joué à elle, mais qu’elle profite de sa victoire car bientôt, la tendance va s’inverser. Pour le moment elle est en position de force, et visiblement elle a l’air  d’en profiter un peu puisqu’à peine la première manche terminée, voilà qu’elle se permet de modifier une règle. \n\nMais plutôt que de faire paniquer l’homme, celui-ci va rire en décrochant ses yeux de ceux de la demoiselle, avant de reprendre son sérieux, son regard plongeant désormais dans celui de son interlocutrice.**\n\n- Je n’ai rien à cacher tu sais. Et puis si je bois dès maintenant ça ne sera pas drôle. Alors vas-y, pose ta question.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501631751221411963",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-06T17:08:28Z",
-          "content": "Révélation(s).\n**-** \"Depuis combien de temps t'es la nounou des Delacroix ?\"\n\n> *Une question tranchante, qui semble sortir d'une armoire qui n'étais destinée qu'à accueillir le passé de Kenji et de Loyis, semble s'entrouvir pour laisser passer le museau d'un loup aux crocs (peut-être) acérés. Son sourire ne quitte pas ses lèvres, un rictus satisfait qui sait ce qu'il fait.*\n\n> *En attendant la réponse à sa question, Taiyang joue avec la carte qui se trouve dans sa main. Elle virevolte encore, entre ses doigts, sans jamais laisser entrevoir au jeune homme la couleur de la carte. Ainsi, elle attends aussi qu'il annonce la couleur de sa carte.*\n\n> *Si la tendance doit s'inverser, c'est uniquement car la chance et les statistiques seront du côté du Garde Pourpre. Mais sa voix repasse de nouveau par dessus le brouhaha général.*\n\n**-** \"Je suis bonne joueuse, alors, à chaque fois que tu réussiras, tu pourras aussi me poser une question. Ou me laisser boire.\"\n\n> *Il pointe le bout de son museau, le Loup.*",
-          "embed_title": "Révélation(s).",
-          "embed_description": "**-** \"Depuis combien de temps t'es la nounou des Delacroix ?\"\n\n> *Une question tranchante, qui semble sortir d'une armoire qui n'étais destinée qu'à accueillir le passé de Kenji et de Loyis, semble s'entrouvir pour laisser passer le museau d'un loup aux crocs (peut-être) acérés. Son sourire ne quitte pas ses lèvres, un rictus satisfait qui sait ce qu'il fait.*\n\n> *En attendant la réponse à sa question, Taiyang joue avec la carte qui se trouve dans sa main. Elle virevolte encore, entre ses doigts, sans jamais laisser entrevoir au jeune homme la couleur de la carte. Ainsi, elle attends aussi qu'il annonce la couleur de sa carte.*\n\n> *Si la tendance doit s'inverser, c'est uniquement car la chance et les statistiques seront du côté du Garde Pourpre. Mais sa voix repasse de nouveau par dessus le brouhaha général.*\n\n**-** \"Je suis bonne joueuse, alors, à chaque fois que tu réussiras, tu pourras aussi me poser une question. Ou me laisser boire.\"\n\n> *Il pointe le bout de son museau, le Loup.*"
-        },
-        {
-          "id": "1501854882049687678",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-07T07:55:06Z",
-          "content": "**Une question, tel était le choix de l’homme qui, sur le moment, s’attendait à une vulgaire interrogation qui allait avoir pour unique but de donner une information futile. Il était prêt à y répondre avec confiance. \n\nMalheureusement, tel un prédateur, le « loup » surpris celui qui était considéré comme « l’agneau » dans cette scène, la proie, recevant de plein fouet une question qui le déstabilisa sur le coup.**\n\n{En pensée : Comment..? Qui est-elle ? Comment elle connaît les Delacroix ? J’en ai jamais entendu parler de cette femme, et pourtant elle a l’air de savoir des choses sur moi.}\n\n**Reprenant doucement son calme, l’Uzen soupira avant de faire miner d’être enjoué de la situation, puis il répondit.**\n\n- La nounou ? C’est un mot assez vache pour le rôle que j’ai, mais disons que ça fait un petit bout de temps que je fais ça. \n\n**Puis vint à nouveau un changement de règle, mais cette fois-ci c’était plutôt un équilibrage, une sorte de contrebalance à ce que la femme avait fait. Les deux joueurs étaient désormais sur un pied d’égalité.\n\nSon sourire de nouveau présent, Kenji était prêt à ne plus être l’agneau (100% il va encore perdre). L’homme plein de confiance annonça.**\n\n- Des questions ou à boire alors, très bien ça me va. On y retourne, mademoiselle Taiyang.\n\n**Il ferma sa main droite pour former un poing, avant de le heurter contre la paume de sa main gauche, prêt à se battre. Il déclara.**\n\n- Rouge.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1502300074636742858",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-08T13:24:09Z",
-          "content": "Victoire.\n> *La carte se retourne, entre les doigts délicats de la femme qui se tient à ses côtés. Un rictus apparaît sur ses lèvres.*\n\n**-** \" 7 de carreau. Bien joué Kenji. Je vais prendre un shot, alors.\"\n\n> *S'il pensait que le jeu serait une solution pour obtenir des réponses, il s'est trompé. La femme qui lui fait face est rusée, réfléchie, patiente mais fourbe. Ses iris trahissent cela sans même essayer de les dissimuler. Sa main pose le paquet de carte sur le comptoir en bois. Sa dextre droite prends un shot, et sa gorge l'avale sans broncher. Une habitude, certaine, s'est dessinée au creux de sa gorge.*\n\n**-** \"Bien, poursuivons. Inférieur ou supérieur à 7 ?\"\n\n> *La carte est tirée à la suite de sa question. La tension s'installe de nouveau, mais avait-elle seulement quitté son adversaire ?*",
-          "embed_title": "Victoire.",
-          "embed_description": "> *La carte se retourne, entre les doigts délicats de la femme qui se tient à ses côtés. Un rictus apparaît sur ses lèvres.*\n\n**-** \" 7 de carreau. Bien joué Kenji. Je vais prendre un shot, alors.\"\n\n> *S'il pensait que le jeu serait une solution pour obtenir des réponses, il s'est trompé. La femme qui lui fait face est rusée, réfléchie, patiente mais fourbe. Ses iris trahissent cela sans même essayer de les dissimuler. Sa main pose le paquet de carte sur le comptoir en bois. Sa dextre droite prends un shot, et sa gorge l'avale sans broncher. Une habitude, certaine, s'est dessinée au creux de sa gorge.*\n\n**-** \"Bien, poursuivons. Inférieur ou supérieur à 7 ?\"\n\n> *La carte est tirée à la suite de sa question. La tension s'installe de nouveau, mais avait-elle seulement quitté son adversaire ?*"
-        },
-        {
-          "id": "1502606849201930290",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-09T09:43:09Z",
-          "content": "**La tension ? Bien sûr, pendant un instant elle quitta le corps de l’homme qui, prie dans l’euphorie de sa première victoire, s’empressa de dire.**\n\n- YES, J’AI GAGNÉ. VOILÀ. Maintenant, comment tu co-\n\n{En pensée : Elle.. elle a bu ? Elle vient de boire, sans même me laisser poser une question ? J’AI PAS RÊVÉ LÀ. ELLE A ATTRAPÉ SON VERRE SOUS MES YEUX ET A BU.}\n\n**Son euphorie se transforma rapidement en rage, une colère qu’il ne put contenir, mais plutôt que d’utiliser des mots, les actes seront plus parlants. \n\nPendant que Taiyang lui indiquait la suite du jeu, Kenji, regard froid, ferme, ses yeux ne quittant pas ceux de son adversaire, attrapa le verre de celle-ci de sa main droite, puis le serra fort, y mettant une importante force, si bien que l’objet fini par être détruit dans la paume de la main de l’Uzen, avant de dire.**\n\n- Supérieur. \n\n**Rien de plus, rien de moins. Aucune remarque sur l’acte de la femme, ni sur ce qu’il venait de faire. Rien de plus que le jeu, la victoire, et rien d’autre.**",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1507017192749793322",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-21T13:48:17Z",
-          "content": "Victoire.\n> *Le valet de Pique est posé sur la table. Il se plante au milieu du décor comme une fatalité : celle de la défaite de Taiyang sur ce tour-ci. Un soupir échappe des lèvres de la demoiselle. Son regard se porte sur son adversaire, elle n'avait pas laissé le temps à celui-ci de s'exprimer, mais elle est une dame d'honneur. Sa parole se délie.*\n\n**-** \"Bien joué. Allez vas-y, pose ta question, Kenji Takahashi.\"\n\n> *Un air de défi se loge dans le regard qu'elle lui offre, à mi-chemin entre la provocation et la malice, c'est certain qu'elle est prête à répondre et anticiper la question qui brûle les lèvres de la Nounou des Delacroix.*\n\n**-** \"Mais soit précis et sûr de toi, je n'aime pas beaucoup les questions détournées. Et puis, de toi à moi, ça ne te sied guère.\"\n[Image: https://image.noelshack.com/fichiers/2026/21/4/1779371268-tao-saotome-2.jpg]",
-          "embed_title": "Victoire.",
-          "embed_description": "> *Le valet de Pique est posé sur la table. Il se plante au milieu du décor comme une fatalité : celle de la défaite de Taiyang sur ce tour-ci. Un soupir échappe des lèvres de la demoiselle. Son regard se porte sur son adversaire, elle n'avait pas laissé le temps à celui-ci de s'exprimer, mais elle est une dame d'honneur. Sa parole se délie.*\n\n**-** \"Bien joué. Allez vas-y, pose ta question, Kenji Takahashi.\"\n\n> *Un air de défi se loge dans le regard qu'elle lui offre, à mi-chemin entre la provocation et la malice, c'est certain qu'elle est prête à répondre et anticiper la question qui brûle les lèvres de la Nounou des Delacroix.*\n\n**-** \"Mais soit précis et sûr de toi, je n'aime pas beaucoup les questions détournées. Et puis, de toi à moi, ça ne te sied guère.\""
-        },
-        {
-          "id": "1507359319639724164",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-05-22T12:27:47Z",
-          "content": "**Deux de suite. Les victoires s’enchaînent, la tension redescend, le sourire grandissant sur les lèvres de l’homme qui venait d’enchaîner deux victoires d’affilée. Incroyable retournement de situation, lui qui avait si mal commencé.\n\nLe poing levé au ciel, symbole de sa victoire (tah All Might tu connais), Kenji posa son regard sur son adversaire et put enfin profiter de ce moment de gloire pour poser sa question.**\n\n- Qui es-tu ? \n\n**Il marqua une courte pause, cherchant un moyen d’exprimer au mieux ses pensées afin d’obtenir la réponse la plus claire possible, puis il reprit.**\n\n- Je veux dire, tu fumes dans un bar. Soit le barman, soit un croupier, enfin peu importe, n’importe qui ici t’aurait déjà viré. Toi tu fumes normal comme si on était à l’extérieur. Puis t’as pas l’air ordinaire, entre ta question de toute à l’heure sur les Delacroix, et le fait que tu sois extrêmement à l’aise en ce lieu, comme si il t’appartenait ou que tu étais quelqu’un de haut placé. \n\n{En pensée : Est-ce que j’ai été clair ? Je sais pas si elle va comprendre ce que je cherche à savoir d’elle. Bon, j’espère qu’elle va me répondre.}\n\n- En résumé : qui est réellement Taiyang, si tel est ton véritable nom ? Qu’est-ce qui se cache sous cette magnifique carapace ?",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1510978600684490752",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-06-01T12:09:31Z",
-          "content": "**-** \"Mon identité as-t-elle réellement une importance ? Ce qui t'inquiète, ce n'est pas de savoir si je suis vraiment Taiyang ou si je suis la propriétaire de cet endroit. Non, tu veux savoir si je représente un danger ou non pour ta personne.\"\n\n> *Un sourire en coin, une attitude qui laisse transparaître une confiance en soi largement supérieure à la moyenne. Ses doigts saisissent le verre qui se trouve face à elle, portant à ses lèvres le breuvage amer.*\n\n**-** \"Mais je suis fair play, je vais répondre à tes questions. Taiyang est mon véritable prénom. Il ne se cache sous cette carapace qu'une curiosité active et insatiable, que toi et Loyis continuez d'attiser sans le savoir. Je ne suis pas la propriétaire des lieux, celui qui gère cet endroit est l'arnaqueur au Bonneteau que tu vois sur cette table là.\"\n\n> *Son index pointe l'homme à la chevelure de jais qui continue de jouer au Bonneteau avec des hommes ivres. Il semble s'en mettre plein les poches, d'ailleurs...*\n\n**-** \"J'ai soif, d'alcool et de réponses, Kenji. \n\n> *Ses doigs tirent la prochaine carte dans un mouvement similaire aux précédents. Ses iris profondes regardent la carte, avant de demander, s'ancrant de nouveau dans les iris du grand gaillard avec un air de désir.*\n\n**-** \"Intérieur ou Extérieur ?\"",
-          "embed_title": "",
-          "embed_description": "**-** \"Mon identité as-t-elle réellement une importance ? Ce qui t'inquiète, ce n'est pas de savoir si je suis vraiment Taiyang ou si je suis la propriétaire de cet endroit. Non, tu veux savoir si je représente un danger ou non pour ta personne.\"\n\n> *Un sourire en coin, une attitude qui laisse transparaître une confiance en soi largement supérieure à la moyenne. Ses doigts saisissent le verre qui se trouve face à elle, portant à ses lèvres le breuvage amer.*\n\n**-** \"Mais je suis fair play, je vais répondre à tes questions. Taiyang est mon véritable prénom. Il ne se cache sous cette carapace qu'une curiosité active et insatiable, que toi et Loyis continuez d'attiser sans le savoir. Je ne suis pas la propriétaire des lieux, celui qui gère cet endroit est l'arnaqueur au Bonneteau que tu vois sur cette table là.\"\n\n> *Son index pointe l'homme à la chevelure de jais qui continue de jouer au Bonneteau avec des hommes ivres. Il semble s'en mettre plein les poches, d'ailleurs...*\n\n**-** \"J'ai soif, d'alcool et de réponses, Kenji. \n\n> *Ses doigs tirent la prochaine carte dans un mouvement similaire aux précédents. Ses iris profondes regardent la carte, avant de demander, s'ancrant de nouveau dans les iris du grand gaillard avec un air de désir.*\n\n**-** \"Intérieur ou Extérieur ?\""
-        },
-        {
-          "id": "1510978935083499691",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-01T12:10:50Z",
-          "content": "<@448509375284379678>",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1511907603263914015",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-06-04T01:41:02Z",
-          "content": "{En pensée : Alors comme ça elle ne possède pas cet endroit, mais c’est l’autre charlatan là-bas ? Eh bah, visiblement y’en a qui sont déjà en train de jouer avec lui. Enfin jouer, ils sont plutôt en train de se faire dépouiller. Les pauvres, ils vont rentrer chez eux à poil j’le sens. En revanche, elle a l’air d’être sacrement libre de ses mouvements, donc elle doit surement le connaître ce mec. M’enfin, j’en apprendrai plus en gagnant encore une fois.}\n\n- Toi ? Un danger ? Disons qu’en fonction des réponses que j’aurai et du déroulement de la partie, je me ferai mon propre avis sur toi. Pour le moment tu m’as pas l’air d’être une ennemie. \n\n**L’Uzen, désireux d’en savoir davantage sur celle qui se trouvait face à lui, s’empressa de réfléchir à sa prochaine réponse.**\n\n{En pensée : Tout d’abord un 7, puis un valet. Y’a peu de chances que la carte qui soit sortie se situe entre ces deux-là. Le choix le plus logique est..}\n\n- Extérieur. \n\n**Son regard se plongea dans celui qui tenait entre ses doigts son destin. Rien ne transparaissait, aucune émotion, aucun stress. Un regard froid, presque détaché de la situation dans laquelle il était. Mais ce n’était qu’une façade, car en réalité son cœur lui battait si fort qu’il avait l’impression qu’il allait se faire la malle. \n\nKenji Takahashi, l’homme le plus impressionnant, fort, charismatique, L’OBJECTIF DE BEAUTÉ DE RYAN GOSLING, va-t-il gagner ? Aura-t-il la possibilité de lui poser une nouvelle question ? Ou alors va-t-il se viander tel un étron ?**",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1511907624290091169",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-06-04T01:41:07Z",
-          "content": "<@407613483853676555>",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "thread_name": "↳🃏𝐋e-𝐑ouge-et-𝐋e-𝐍oir",
-      "location_image": "channel_images/le-rouge-et-le-noir.jpg"
     },
     {
       "id": "scene____all__es___tes_1",
       "channel": "🌠〕𝐇all-𝐃es-𝐅êtes",
       "channel_raw": "🌠〕𝐇all-𝐃es-𝐅êtes",
       "channel_clean": "🌠〕𝐇all-𝐃es-𝐅êtes",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Okayama...",
+      "title": "🌠〕𝐇all-𝐃es-𝐅êtes — Scène 1",
       "actors": [
-        "LE CONSEILLER",
+        "Aryanna Erhendil",
         "Katelynn Hoffmann",
+        "Selena Moon",
+        "Jin Alurantes",
         "Okayama",
         "Asior Eveus",
         "Lucia Fiorella",
-        "Velka Valcyrion",
-        "Jin Alurantes",
-        "Brutus Redwitch",
-        "Aryanna Erhendil",
-        "Lewis Bamer",
-        "Selena Moon",
-        "Jasp Nah"
+        "Velka Valcyrion"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -15040,280 +14142,12 @@ window.rpData = {
       "location_image": "channel_images/hall-des-fetes.jpg"
     },
     {
-      "id": "scene___𝐋e_17_1",
-      "channel": "🍻〕𝐋-𝐄picurien",
-      "channel_id": "1500068135133253672",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 147,
-      "title": "LE CONSEILLER, Nick Sol",
-      "actors": [
-        "LE CONSEILLER",
-        "Nick Sol"
-      ],
-      "start_time": "2026-05-02T10:00:00Z",
-      "end_time": "2026-05-09T09:58:14Z",
-      "preview": "Coin de Bar.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUn peu plus au calme, l'endroit où une cible est posée contre un mur qui s'effrite semble pourtant pe...",
-      "message_count": 10,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1500068135133253672/1500074371027439716",
-      "messages": [
-        {
-          "id": "1500074371027439716",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-02T10:00:00Z",
-          "content": "Coin de Bar.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUn peu plus au calme, l'endroit où une cible est posée contre un mur qui s'effrite semble pourtant percevoir la musique ambiante. Moins bruyant, il se trouve tout de même quelques personnes qui seront prêtes à jouer avec vous si vous n'êtes pas venus accompagé.\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://i.goopics.net/yvrwx7.jpg]\nLe 17.\n**__Règles du jeu :__**\nUne cible se trouve à votre disposition : elle est numérotée de 1 à 17. Votre but : marquer le plus de point. Celui ayant obtenu le plus grand nombre distribue la moitié de son score en shooter aux reste de ses adversaires.\n\n> Le lancé de fléchette est provoqué par un roll avec le bot **Koya** ||(commande : koya roll 17)||. Selon la statistique de dextérité, le joueur peut décider de relancer si le nombre obtenu ne lui convient pas,  d'après le tableau suivant :\n\nDextérité 1 : pas de relance\nDextérité 2 : 1 relance\nDextérité 3 : 2 relances\n\n> Chaque joueur démarre le jeu avec une base de 100 points. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n\n*Exemple :* Pierre (Resistance 1), Paul (Resistance 3) et Jacques (Resistance 2) jouent au jeu. Pierre gagne, il marque un score de 32. Il peut donc faire boire 12 à ses adversaires. Il décide de donner 8 shooters à Paul et 4 à Jacques. Paul perds 40 points. Jacques perds 40 points aussi. \n\n\n**__Déroulé du jeu :__**\n\nA tour de rôle, chaque joueur doit lancer 3 fléchettes sur la cible à une distance réglementaire de 3 mètres. Il additionne le résultat de ses trois lancés afin d'obtenir un score final. Le jeu se termine lorsque tous les joueurs ont lancés et obtenu leur score final. Celui ayant obtenu le plus grand nombre gagne, les autres boivent.\nHabileté et dextérité se joignent dans une danse fluette.\n[Image: https://i.goopics.net/kz8msq.png]",
-          "embed_title": "Coin de Bar. | Le 17.",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUn peu plus au calme, l'endroit où une cible est posée contre un mur qui s'effrite semble pourtant percevoir la musique ambiante. Moins bruyant, il se trouve tout de même quelques personnes qui seront prêtes à jouer avec vous si vous n'êtes pas venus accompagé.\n\n◦ ──────────────────────────────────────── ◦ | **__Règles du jeu :__**\nUne cible se trouve à votre disposition : elle est numérotée de 1 à 17. Votre but : marquer le plus de point. Celui ayant obtenu le plus grand nombre distribue la moitié de son score en shooter aux reste de ses adversaires.\n\n> Le lancé de fléchette est provoqué par un roll avec le bot **Koya** ||(commande : koya roll 17)||. Selon la statistique de dextérité, le joueur peut décider de relancer si le nombre obtenu ne lui convient pas,  d'après le tableau suivant :\n\nDextérité 1 : pas de relance\nDextérité 2 : 1 relance\nDextérité 3 : 2 relances\n\n> Chaque joueur démarre le jeu avec une base de 100 points. Sa résistance à l'alcool est déterminée en fonction de sa statistique de résistance. Si le joueur tombe à 0 points, il a perdu.\n\nResistance 1 : -15 points\nResistance 2 : -10 points\nResistance 3 : -5 points\n\n\n*Exemple :* Pierre (Resistance 1), Paul (Resistance 3) et Jacques (Resistance 2) jouent au jeu. Pierre gagne, il marque un score de 32. Il peut donc faire boire 12 à ses adversaires. Il décide de donner 8 shooters à Paul et 4 à Jacques. Paul perds 40 points. Jacques perds 40 points aussi. \n\n\n**__Déroulé du jeu :__**\n\nA tour de rôle, chaque joueur doit lancer 3 fléchettes sur la cible à une distance réglementaire de 3 mètres. Il additionne le résultat de ses trois lancés afin d'obtenir un score final. Le jeu se termine lorsque tous les joueurs ont lancés et obtenu leur score final. Celui ayant obtenu le plus grand nombre gagne, les autres boivent."
-        },
-        {
-          "id": "1500432973147934911",
-          "author": "Nick Sol",
-          "timestamp": "2026-05-03T09:44:57Z",
-          "content": "**Passant à travers les filets de la foule, une silhouette grande s'approche d'un des multiples jeux présents. Il avait son uniforme de la Garde Pourpre qu'il portait fièrement, honnêtement il ne pouvait que s'habiller de cette manière après avoir vécu  toutes ces sottises ces derniers jours, il avait mérité de brandir ses couleurs qu'importe où il va. Nick était cependant seul en cette soirée, pas vraiment à l'aise non plus avec l'odeur de l'alcool....**\n\n> Mmh, des fléchettes, c'est drôle les fléchettes \n\n**Le garçon s'approche du jeu sans même se douter que les règles vont l'obliger à boire de l'alcool, il réfléchit un instant avant de regarder dans ses alentours, il attrape quelques fléchettes et cherche à vu d'œil les potentiels intéressés au jeu, mais honnêtement il ne sait pas vraiment si sa réputation a fait écho jusqu'à  ce nouveau bar et lui fera défaut. Il espère au moins trouver des personnes assez gentilles pour passer un bon moment avec lui, malgré ses précédentes erreurs. Mais surtout des personnes qu'il  ne connait pas encore**.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500437344329793607",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T10:02:19Z",
-          "content": "\"Première manche\"\n**-** \"Ehhh gamin ! Tu veux jouer ?\"\n\n> *Un homme l'interpelle, lui qui porte le Pourpre si fièrement. De son haleine déjà alcoolisée, Nick peut percevoir que cet homme n'a pas commencé à boire à l'ouverture du bar mais plutôt aux aurores ce matin. Un soupir s'échappe de ses lèvres, alors qu'il ne laisse pas vraiment le choix au jeune homme de lui répondre par la positive ou la négative.*\n\n> *Dans sa main se trouve déjà des fléchettes, 3 précisément. En position pour tirer, celui-ci lance une première (11). Puis une seconde (11). Et enfin, titubant légèrement, il lance la troisième (3).*\n\n**-** \"VOILAAAAA ! A toi !\"\nScore total : 25.\n[Image: https://i.goopics.net/tmcbt9.jpg]",
-          "embed_title": "\"Première manche\"",
-          "embed_description": "**-** \"Ehhh gamin ! Tu veux jouer ?\"\n\n> *Un homme l'interpelle, lui qui porte le Pourpre si fièrement. De son haleine déjà alcoolisée, Nick peut percevoir que cet homme n'a pas commencé à boire à l'ouverture du bar mais plutôt aux aurores ce matin. Un soupir s'échappe de ses lèvres, alors qu'il ne laisse pas vraiment le choix au jeune homme de lui répondre par la positive ou la négative.*\n\n> *Dans sa main se trouve déjà des fléchettes, 3 précisément. En position pour tirer, celui-ci lance une première (11). Puis une seconde (11). Et enfin, titubant légèrement, il lance la troisième (3).*\n\n**-** \"VOILAAAAA ! A toi !\""
-        },
-        {
-          "id": "1500441350397628487",
-          "author": "Nick Sol",
-          "timestamp": "2026-05-03T10:18:14Z",
-          "content": "**Nick se fait donc prendre dans l'étreinte du jeu sans même qu'il eut le temps d'inviter la personne, l'homme s'est imposé dans le jeu, Nick ne fait que de le regarder et s'exclame avec un grand sourire**\n\n> Oui je veux bien ! Hehe\n\n**Déjà armé, l'homme s'est placé à 3 mètres de la cible, il ne perd pas de temps et lance les fléchettes vers la cible, elles touchent trois fois. La première semble pas mal, la deuxième semble émettre le soupçon que l'homme sait s'y prendre aux fléchettes, Nick pense donc déjà perdre cette manche. Mais heureusement le dernier lancer semble le sauver d'une atroce défaite dès son premier round. Il applaudit légèrement le monsieur**\n\n> P-pas mal du tout ! 11...22.. 25 points, c'est un superbe score wow\n\n**C'était son tour,il se place donc au même endroit et se positionne correctement, il lance donc la première fléchette qui vole de travers frappant le 5 au lieu d'un haut score, le visage de Nick se crispe sous la peur de son inefficacité à ce jeu. Finalement il se concentre, vise le centre et tir, il touche le 16, la fléchette se plante proche du 17 !**\n\n> OHHOHO ! T'AS VU ÇA !\n\n**Il tire enfin la dernière qui frappe le 6, l'ego de Nick se brise en voyant son ridicule talent de faire des scores à  la fois bons et mauvais. On le voit compter sur ses doigts**\n\n> 16..5...6.. 27 ? 27 !? AHAH J'AI GAGNÉ DE DEUX POINTS !",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500468006986322012",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T12:04:10Z",
-          "content": "Une autre partie !\n**-** \"Naaaaaaaan j'y crois pas tu m'a eu !! Orffff si je finis mon verre ça te suffira ?\"\n\n> *Un homme qui pose des questions, mais n'attends jamais les réponses avant d'agir. Il serait juste de se demander, alors, pourquoi poser la question ? Une réponse qu'il ne peut être trouvée car elle s'est perdue dans les méandres d'un alcoolisme sévère et déjà bien entamé.*\n\n> *D'une traite, l'homme descends son verre a une rapidité déconcertante (-70 points de résistance). Puis, il passe son bras autour de l'épaule de Nick déjà prêt à passer sa soirée à ses côtés s'il le fallait.*\n\n**-** \"Une autre ! Et cette fois-ci tu commences !\"",
-          "embed_title": "Une autre partie !",
-          "embed_description": "**-** \"Naaaaaaaan j'y crois pas tu m'a eu !! Orffff si je finis mon verre ça te suffira ?\"\n\n> *Un homme qui pose des questions, mais n'attends jamais les réponses avant d'agir. Il serait juste de se demander, alors, pourquoi poser la question ? Une réponse qu'il ne peut être trouvée car elle s'est perdue dans les méandres d'un alcoolisme sévère et déjà bien entamé.*\n\n> *D'une traite, l'homme descends son verre a une rapidité déconcertante (-70 points de résistance). Puis, il passe son bras autour de l'épaule de Nick déjà prêt à passer sa soirée à ses côtés s'il le fallait.*\n\n**-** \"Une autre ! Et cette fois-ci tu commences !\""
-        },
-        {
-          "id": "1500472448628555888",
-          "author": "Nick Sol",
-          "timestamp": "2026-05-03T12:21:49Z",
-          "content": "**Nick était forcément enjoué par sa victoire précoce, ceci dit la stupéfaction du grand blanc va être bien visible sur son visage quand il verra l'homme boire sur le prétexte d'avoir perdu... C'était donc ça l'enjeu ? En tout cas, il l'avait imposé, Nick ne voulait pas boire ce soir alors il va doucement reculer en espérant pouvoir fuir l'enjeu, il se fait trop rapidement attraper l'épaule et le jeune homme finit par être invité à faire un nouveau round, il side eye l'homme**.\n\n> Oh.\n\n**Il stress légèrement, ne sachant pas dire non, il ne pouvait pas reculer à présent, il devait juste gagner.**\n\n> Je-Je vois\n\n**Il se place de nouveau, même place, beaucoup plus stressé que le premier round, cela va lui coûter  un score encore plus bas que le dernier, 9 et encore 9, ensuite un misérable 5 qui vient anéantir ses espoirs de réussite, Nick transpire sous le simple fait de s'imaginer à boire un alcool fort.**\n\n> Merde-\n[Image: https://cdn.discordapp.com/attachments/1500068135133253672/1500472448313724938/98a4d23db4ed34682a9afcf37dd5b367.jpg?ex=6a76769d&is=6a75251d&hm=9721c22a3a54cdbea161268e69d858c6513cae3988758fe07ff35f4540d0ad26&]",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501607510342373428",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-06T15:32:08Z",
-          "content": "Seconde manche.\n> *Sur de lui pour cette seconde manche, l'homme beaucoup trop alcoolisé descend un second verre dans la foulée. Il observe le lancé du jeune homme et s'extasie.*\n\n**-** \"Quoiiiiii ? Tout ça ? Okayyy boyyyyy !\"\n\n> *A son tour, il s'élance, priant Ifrit pour que son lancé soit meilleur que le précédent. A la distance réglementaire, il s'installe. Titubant, il envoie une première fléchette, et sans prévenir, envoie la deuxième puis la troisième. Un score total de 21. L'homme semble pourtant sauter de joie.*\n\n**-** \"Ouaiiiiis j'ai fais 25 !! Yéaeaeh \"\n\n> *Nick aura-t-il le courage de lui dire qu'il s'est trompé ? Mettre en colère un homme alcoolisé est-il vraiment une bonne idée ?*",
-          "embed_title": "Seconde manche.",
-          "embed_description": "> *Sur de lui pour cette seconde manche, l'homme beaucoup trop alcoolisé descend un second verre dans la foulée. Il observe le lancé du jeune homme et s'extasie.*\n\n**-** \"Quoiiiiii ? Tout ça ? Okayyy boyyyyy !\"\n\n> *A son tour, il s'élance, priant Ifrit pour que son lancé soit meilleur que le précédent. A la distance réglementaire, il s'installe. Titubant, il envoie une première fléchette, et sans prévenir, envoie la deuxième puis la troisième. Un score total de 21. L'homme semble pourtant sauter de joie.*\n\n**-** \"Ouaiiiiis j'ai fais 25 !! Yéaeaeh \"\n\n> *Nick aura-t-il le courage de lui dire qu'il s'est trompé ? Mettre en colère un homme alcoolisé est-il vraiment une bonne idée ?*"
-        },
-        {
-          "id": "1501680006038818910",
-          "author": "Nick Sol",
-          "timestamp": "2026-05-06T20:20:13Z",
-          "content": "**Nick fixera l'homme jouer à  son tour, il est littéralement entrain de prier Ifrit  pour lui accorder une victoire parfaite, il voit le premier lancer, le deuxième et le troisième avec la même pression constante à chaque fois que l'homme lance ces fléchettes.\n\nLe total terrifie Nick mais il se rappelle qu'il a fait plus de 21, ses mains lèvent ses mains vers le plafond tout en s'exclamant.**\n\n> J'AI G- HEINNN ?\n\n**Nick se tourne totalement vers l'homme tout en gardant ses bras en l'air un instant, ses bras vont doucement se poser sur le long de son corps. Nick fixe la cible  et s'approche de celle-ci, il recompte et voit forcément l'erreur, le grand blanc fixe l'homme, sur un ton calme, il lui explique l'erreur.**\n\n> Bah non, pas 25, t'as fait 21, regarde, j'ai encore gagné \n\n**Il repointe les fléchettes une par une. Une mauvaise idée rime avec bonne idée, ignorant du danger de l'endroit forcément à l'allure si amicale, Nick, contredira l'homme sans imaginer le pire scénario pour autant**.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1502301736075788392",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-08T13:30:45Z",
-          "content": "Victoire.\n> *La dernière fléchette vibra encore dans le bois usé de la cible lorsque le silence se fendit d’un rire étouffé. Le verre entre les doigts tremblants, il demeura figé une seconde, les épaules raides, le regard noyé dans une colère lourde et poisseuse. Puis tout éclata. Sa chaise racla brutalement le parquet, renversant dans son élan une chope qui vint mourir en éclats ambrés contre le sol du bar. Le rouge lui monta aux joues tandis qu’il pointait un doigt vacillant vers son adversaire, incapable d’avaler l’humiliation.*\n\n**-** \"T'es un menteur, j'ai gagné ! Burhb... Je vais t'défoncer ! \"\n\n> *Dans un grognement rauque, il se jeta en avant pour lui asséner un coup maladroit ; mais l’alcool qui engourdissait ses membres transforma son attaque en une misérable embardée. Son poing fendit le vide. Son équilibre céda aussitôt après. Il trébucha contre le pied d’une table, s’effondra de tout son poids sur les lattes poussiéreuses et resta là, immobile. Un souffle épais franchit ses lèvres entrouvertes, suivi d’un ronflement grave et ridicule. Vaincu une seconde fois, il s’était endormi avant même d’avoir touché sa cible.*\n\n> *Le Barman soupire et quitte son comptoir pour le ramasser, dans un mouvement qui désigne l'habitude : ce n'est pas la première ni la dernière fois qu'il le ramassera dans cet état...*\n\n**-** \"Désolé mon vieux, je crois qu'il est cuit...\"",
-          "embed_title": "Victoire.",
-          "embed_description": "> *La dernière fléchette vibra encore dans le bois usé de la cible lorsque le silence se fendit d’un rire étouffé. Le verre entre les doigts tremblants, il demeura figé une seconde, les épaules raides, le regard noyé dans une colère lourde et poisseuse. Puis tout éclata. Sa chaise racla brutalement le parquet, renversant dans son élan une chope qui vint mourir en éclats ambrés contre le sol du bar. Le rouge lui monta aux joues tandis qu’il pointait un doigt vacillant vers son adversaire, incapable d’avaler l’humiliation.*\n\n**-** \"T'es un menteur, j'ai gagné ! Burhb... Je vais t'défoncer ! \"\n\n> *Dans un grognement rauque, il se jeta en avant pour lui asséner un coup maladroit ; mais l’alcool qui engourdissait ses membres transforma son attaque en une misérable embardée. Son poing fendit le vide. Son équilibre céda aussitôt après. Il trébucha contre le pied d’une table, s’effondra de tout son poids sur les lattes poussiéreuses et resta là, immobile. Un souffle épais franchit ses lèvres entrouvertes, suivi d’un ronflement grave et ridicule. Vaincu une seconde fois, il s’était endormi avant même d’avoir touché sa cible.*\n\n> *Le Barman soupire et quitte son comptoir pour le ramasser, dans un mouvement qui désigne l'habitude : ce n'est pas la première ni la dernière fois qu'il le ramassera dans cet état...*\n\n**-** \"Désolé mon vieux, je crois qu'il est cuit...\""
-        },
-        {
-          "id": "1502610642652368957",
-          "author": "Nick Sol",
-          "timestamp": "2026-05-09T09:58:14Z",
-          "content": "**Ses sourcils s'élèvent devant la réaction de l'homme bourré. Il n'y avait pas réfléchi sur le coup, l'homme avait l'alcool mauvais. Nick recule d'un pas en le voyant s'avancer vers lui, sa colère le poussant dans la stupidité.**\n\n> Wowowo-\n\n**Ses mains sont devant lui, préférant ne pas se battre avec un homme ivre. Il n'était pas lui-même, et engager le combat serait juste stupide dans ce contexte, un homme sobre se doit d'être logique. Cependant, il n'a pas le temps de commencer à esquiver les coups ,l'homme trébuche en avant dans sa tentative d'attaque. Nick, dans un réflexe tardif, essaye de rattraper l'homme dans sa chute, mais il avait déjà trop reculé pour l'attraper avant qu'il ne frappe le sol. Aussitôt, en le voyant allongé, presque inerte sur le sol, Nick fonce se mettre à ses côtés pour voir s'il va bien.**\n\n> Hey le vieux-... Oh. Il dort, je vois.. Il a bu comme un animal juste avant t'facon ça se voyait \n\n**Il cligne des yeux quelques fois avant de se tourner vers le barman. Il le regarde faire, avec une aisance digne de l'expérience d'un homme travaillant dans un bar depuis longtemps.**\n\n> Oh non non, pas grave. J'avais juste peur qu'il se fasse mal, mais ça ira, c'est pas grave. Mon père aussi a l'alcool mauvais, donc j'ai l'habitude\n\n**Il regarde la cible sur le mur tout en se levant du sol, puis s'approche pour ranger les fléchettes.**",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "thread_name": "↳🎯𝐋e-17",
-      "location_image": "channel_images/le-17.jpg"
-    },
-    {
-      "id": "scene___𝐋e_𝐁onneteau_1",
-      "channel": "🍻〕𝐋-𝐄picurien",
-      "channel_id": "1500068555222286487",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 146,
-      "title": "Maëll Fol'Dun, LE CONSEILLER, Vosk Sulyvan",
-      "actors": [
-        "Maëll Fol'Dun",
-        "LE CONSEILLER",
-        "Vosk Sulyvan"
-      ],
-      "start_time": "2026-05-02T10:05:10Z",
-      "end_time": "2026-05-08T19:23:25Z",
-      "preview": "Une table de Jeu.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUne simple table qui semble déjà occupée. Un homme s'y tient, assis comme si le bar lui apparten...",
-      "message_count": 18,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1500068555222286487/1500075673467883563",
-      "messages": [
-        {
-          "id": "1500075673467883563",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-02T10:05:10Z",
-          "content": "Une table de Jeu.\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUne simple table qui semble déjà occupée. Un homme s'y tient, assis comme si le bar lui appartenait, ses pieds chaussés d'une paire en piteux état se reposent sur la table. A ses côtés une balle et cinq gobelets. Dans le silence, il reste, attendant à son tour un partenaire de jeu.\n\n◦ ──────────────────────────────────────── ◦\n[Image: https://i.goopics.net/h9sykd.jpg]\nJeu du Bonneteau.\n**__Règles du jeu :__**\n\nSe tient face au joueur un maître du jeu. Celui-ci dispose de 5 gobelets et d'une balle. La balle est placée sous l'un des gobelets, puis, ils sont mélangés de la main habile du Charlatan. A la suite de ce savant mélange, le joueur doit désigner le gobelet sous lequel la balle se trouve. \n\nCe jeu est influencé par la statistique de Perception. Aussi, les joueurs obtiendront les avantages suivants en fonction de leurs statistiques :\n\nPerception 1 : Pas de relance.\nPerception 2 : 1 relance.\nPerception 3 : 2 relances.\n\n**__Déroulé du jeu :__**\n\nLe maître du jeu lance un roll 5 avec le bot **Koya** ||commande : koya roll 5||, le chiffre obtenu est celui où se trouve la balle. Le joueur, à son tour, roll 5. S'il obtient le même chiffre que le maître du jeu, il trouve la balle. Autrement il a perdu. \n\nLes mises sont décidées par le maître du jeu et le joueur au début du tour.\nDéfaire l'honnête tricheur.\n[Image: https://i.goopics.net/n1ryhm.jpg]",
-          "embed_title": "Une table de Jeu. | Jeu du Bonneteau.",
-          "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUne simple table qui semble déjà occupée. Un homme s'y tient, assis comme si le bar lui appartenait, ses pieds chaussés d'une paire en piteux état se reposent sur la table. A ses côtés une balle et cinq gobelets. Dans le silence, il reste, attendant à son tour un partenaire de jeu.\n\n◦ ──────────────────────────────────────── ◦ | **__Règles du jeu :__**\n\nSe tient face au joueur un maître du jeu. Celui-ci dispose de 5 gobelets et d'une balle. La balle est placée sous l'un des gobelets, puis, ils sont mélangés de la main habile du Charlatan. A la suite de ce savant mélange, le joueur doit désigner le gobelet sous lequel la balle se trouve. \n\nCe jeu est influencé par la statistique de Perception. Aussi, les joueurs obtiendront les avantages suivants en fonction de leurs statistiques :\n\nPerception 1 : Pas de relance.\nPerception 2 : 1 relance.\nPerception 3 : 2 relances.\n\n**__Déroulé du jeu :__**\n\nLe maître du jeu lance un roll 5 avec le bot **Koya** ||commande : koya roll 5||, le chiffre obtenu est celui où se trouve la balle. Le joueur, à son tour, roll 5. S'il obtient le même chiffre que le maître du jeu, il trouve la balle. Autrement il a perdu. \n\nLes mises sont décidées par le maître du jeu et le joueur au début du tour."
-        },
-        {
-          "id": "1500166385907666995",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-02T16:05:38Z",
-          "content": "*Bien loin des soirées mondaines dans les quartiers de la basse-ville qui avaient pendant un temps perdu leur éclat, la jeune fille à la chevelure immaculée déambulait entre les différentes tables de jeu disponibles. Sans surprise, beaucoup d'entre elles étaient orientées autour de la boisson. Malheureusement, c'était un breuvage que seuls les plus robustes et les plus résistants pouvaient consommer à foison : elle n'était ni l'un ni l'autre et n'avait aucune envie de finir à rouler sous un plateau après avoir bu deux ou trois verres tout au plus.\n\nAussi, la jeune mage fut attirée par les tables un peu plus éloignées, mais pas pour autant discrètes. En observant les parties précédentes, elle saisit rapidement les règles d'un jeu simple où le but était de trouver la baballe sous un gobelet. En ce jour de réjouissance, sa famille lui avait donné un peu d'argent à dépenser comme elle l'entendait ; alors, autant s'amuser et profiter de l'ambiance festive dans laquelle elle se sentait curieusement à sa place.*\n\n> - J'aimerais faire la prochaine partie s'il vous plaît !\n\n*D'un ton enjoué, elle proclama sa participation, prise dans l'atmosphère de liesse de la taverne lumineuse.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500426429953740860",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T09:18:57Z",
-          "content": "\"Une partie s'il vous plaît !\"\n> *Les iris de l'honnête tricheur se tournent vers la voix féminine qui se hisse au-delà de la musique. Une fièvre parieuse s'était emparée du dernier joueur, celui-ci se levant d'ailleurs de l'assise pour laisser place à la gracieuse nouvelle arrivée.*\n\n**-** \"Il me plaît de t'avoir comme adversaire, installe toi je t'en prie !\"\n\n> *Un ton enjoué, digne d'un animateur ayant fait cela toute sa vie. Le visage charmant de celui qui se dresse en maître du jeu n'en reste pas moins carnacier. Derrière lui, les diverses prises qu'il a gagné ce soir au détriment de ceux à qui la perception fait défaut. Il observe, de près, celle qui s'est proposée.*\n\n**-** \"Quelle mise veut-tu parier ? Moiiiii... Je te propose...\"\n\n> *Il observe derrière lui, et saisit un petit porte clé semble-t-il, en forme d'une étoile à 8 branches. Il semble lumineux, presque vivant.*\n\n**-** \"Cet adorable artefact, je ne sais pas ce qu'il fait... Mais il sera à toi si tu gagnes !\"\n[Image: https://i.goopics.net/tmfnrp.jpg]",
-          "embed_title": "\"Une partie s'il vous plaît !\"",
-          "embed_description": "> *Les iris de l'honnête tricheur se tournent vers la voix féminine qui se hisse au-delà de la musique. Une fièvre parieuse s'était emparée du dernier joueur, celui-ci se levant d'ailleurs de l'assise pour laisser place à la gracieuse nouvelle arrivée.*\n\n**-** \"Il me plaît de t'avoir comme adversaire, installe toi je t'en prie !\"\n\n> *Un ton enjoué, digne d'un animateur ayant fait cela toute sa vie. Le visage charmant de celui qui se dresse en maître du jeu n'en reste pas moins carnacier. Derrière lui, les diverses prises qu'il a gagné ce soir au détriment de ceux à qui la perception fait défaut. Il observe, de près, celle qui s'est proposée.*\n\n**-** \"Quelle mise veut-tu parier ? Moiiiii... Je te propose...\"\n\n> *Il observe derrière lui, et saisit un petit porte clé semble-t-il, en forme d'une étoile à 8 branches. Il semble lumineux, presque vivant.*\n\n**-** \"Cet adorable artefact, je ne sais pas ce qu'il fait... Mais il sera à toi si tu gagnes !\""
-        },
-        {
-          "id": "1500435991478014083",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-03T09:56:57Z",
-          "content": "*La jeune femme se fraya donc un chemin jusqu'à la place de jeu qui lui avait gentiment été cédée par le précédent joueur. Tout enjouée et visiblement ici plus pour profiter de l'ambiance qu'autre chose. Gagner n'était pas la motivation principale de la mage de la cour, mais la breloque lumineuse suffit à attiser un minimum sa curiosité pour qu'elle tente alors au moins une partie.*\n\n> - Va pour le porte-clé lumineux, hmm, moi de mon côté, je pense mettre..\n\n*Voilà la partie difficile, ordinairement, Alyséa connaît la valeur des choses et sait leur attribuer un prix, mais le bidule clignotant, elle ne savait pas ce qu'il faisait et elle ne se faisait pas d'illusions. La plupart des objets proposés dans ce genre d'événement étaient surtout très tape à l'œil et se révélaient peu utiles après coup.*\n\n> - Je propose une mise de 50 pour commencer dans ce cas !\n\n*Bien qu'elle était récemment devenue mage de la cour, la jeune fille provenait d'une famille qui avait du lutter pour obtenir une vie modeste au fil des générations. C'était déjà selon elle, une grosse somme à mettre... Il faut dire qu'elle n'avait pas encore reçu de salaire.. Ni même vu les trois zéro qui composait le montant.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500439369398354001",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T10:10:22Z",
-          "content": "\"Première manche\"\n**-** \"Ouhh je vois ! 50 sous alors ! C'est parti !\"\n\n> *L'homme pose sur la table l'étoile en porte clé qui continue de luire d'une faible lueur. Ses mains habiles posent la balle sous l'un des 5 gobelets. Il montre de façon ostentatoire à la demoiselle là où se trouve la balle, puis, à une vitesse assez exceptionnelle, commence à mélanger les gobelets. Le premier passe derrière, prends la place du second, se retrouve en troisième position et puis... Attendez quoi ? Les gobelets se confondent, et même avec la plus grande attention du monde, il n'est pas aisé de suivre les mouvements dessinés par ses mains. Rapide, le bruit de la balle qui continue de rouler sur la table continue de résonner, et assure à la parieuse que la balle est toujours là, quelque part. Enfin, il s'arrête. Les 5 gobelets sont faces à la demoiselle.*\n\n**-** \"Alors, où se trouve la balle, jolie damoiselle ?\"",
-          "embed_title": "\"Première manche\"",
-          "embed_description": "**-** \"Ouhh je vois ! 50 sous alors ! C'est parti !\"\n\n> *L'homme pose sur la table l'étoile en porte clé qui continue de luire d'une faible lueur. Ses mains habiles posent la balle sous l'un des 5 gobelets. Il montre de façon ostentatoire à la demoiselle là où se trouve la balle, puis, à une vitesse assez exceptionnelle, commence à mélanger les gobelets. Le premier passe derrière, prends la place du second, se retrouve en troisième position et puis... Attendez quoi ? Les gobelets se confondent, et même avec la plus grande attention du monde, il n'est pas aisé de suivre les mouvements dessinés par ses mains. Rapide, le bruit de la balle qui continue de rouler sur la table continue de résonner, et assure à la parieuse que la balle est toujours là, quelque part. Enfin, il s'arrête. Les 5 gobelets sont faces à la demoiselle.*\n\n**-** \"Alors, où se trouve la balle, jolie damoiselle ?\""
-        },
-        {
-          "id": "1500445213636694036",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-03T10:33:35Z",
-          "content": "*La jeune pandorienne viendra observer avec attention les différents mouvements, mais l'honnête tricheur était vraiment très doué, nul doute qu'il avait dû faire ça de nombreuses fois dans sa vie. Finalement, quand celui-ci finit par arrêter de changer les gobelets de place, Alyséa choisie le gobelet le plus à droite.*\n\n> - Je pense qu'elle est ici !",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500464111450980432",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2026-05-03T11:48:41Z",
-          "content": "*Nouveau visage.*\n\n*Le pas lourd et assuré, la table de jeu voit une nouvelle figure sortir du tas. Un homme au sombre apparat, aux traits rigides et aux lèvres neutres, vient se placer à moins de deux pas de la Pandorienne et du Charlatan. Il observe dans un silence de plomb, le déroulé du jeu sans produire de son, étant attentif au moindre détail. La mise est basse, indice pour deviner que le jeu vient de commencer. Ses croissants de chairs se courbent légèrement, montrant une forme d'impatience, de passion, quant à la découverte ou non de la balle sous l'un des gobelets. Bien que n'étant pas fan de jeu, voir autrui perdre ou gagner semble être une raison suffisante pour justifier sa présence.*\n\n*L'appât du gain ou l'exalte du jeu, chance ou [Destin] ?*\n\n*Le garçon à la peau claire se met alors à jouer à son tour, avec une broche aux dorures évidentes et brillantes, n'allant clairement pas avec sa tenue. Ce ne doit pas être la sienne, certainement. Cette présence peut aussi bien être remarqué, qu'ignorer : ce qui l'intéresse lui, c'est le jeu en cours.*\n\n*Ou tout du moins sa finalité.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500469213498708128",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-03T12:08:57Z",
-          "content": "Perdu !\n**-** \"Alors, voyons voir...\"\n\n> *Son visage dépourvu de surprise se pose devant le nouvel arrivant. Il lui adresse un sourire, alors que sa main se pose sur le gobelet désigné par la jeune demoiselle. Le bout de ses doigts attrapent le cul du gobelet et le soulève lentement. Malheureusement, c'est perdu pour la demoiselle. Pourtant, l'un ici est ravi de ce résultats. A l'image d'un enfant qui s'esclaffe, il la pointe d'un doigt malicieux.*\n\n**-** \"Perdu ! Vous voulez retenter mademoiselle ? OU PEUT ETRE que le ténébreux jeune homme qui a pointé le bout de son nom souhaite tenter sa chance également ? Uhuh comme c'est excitant !\"\n\n> *Il rigole, mais il ne perds pas le nord. Ses doigts passent sur les sous qui lui sont dus, alors qu'il les range avec le reste de ses acquisitions de la soirée. Un bonheur simple, pour un homme simple.*\n[Image: https://i.goopics.net/3fn7z7.jpg]",
-          "embed_title": "Perdu !",
-          "embed_description": "**-** \"Alors, voyons voir...\"\n\n> *Son visage dépourvu de surprise se pose devant le nouvel arrivant. Il lui adresse un sourire, alors que sa main se pose sur le gobelet désigné par la jeune demoiselle. Le bout de ses doigts attrapent le cul du gobelet et le soulève lentement. Malheureusement, c'est perdu pour la demoiselle. Pourtant, l'un ici est ravi de ce résultats. A l'image d'un enfant qui s'esclaffe, il la pointe d'un doigt malicieux.*\n\n**-** \"Perdu ! Vous voulez retenter mademoiselle ? OU PEUT ETRE que le ténébreux jeune homme qui a pointé le bout de son nom souhaite tenter sa chance également ? Uhuh comme c'est excitant !\"\n\n> *Il rigole, mais il ne perds pas le nord. Ses doigts passent sur les sous qui lui sont dus, alors qu'il les range avec le reste de ses acquisitions de la soirée. Un bonheur simple, pour un homme simple.*"
-        },
-        {
-          "id": "1500494320166506557",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-03T13:48:43Z",
-          "content": "*Loin d'être énervée, la jeune fille se grattera la tête alors. Bon, elle avait perdu son argent, mais eh, c'était ça de jouer, il fallait s'attendre à perdre, surtout quand les chances étaient assez minces. Elle se tourna alors vers l'inconnu mentionné par le maître de jeu, le saluant d'un air joyeux avant de lui demander :*\n\n> - Vous voulez prendre ma place ? Je crois bien que je ne suis pas très douée pour ce genre de jeu ! Et puis, je n'ai pas vraiment beaucoup d'argent à mettre non plus.\n\n*La pandorienne se releva de la chaise comme pour laisser sa place à un potentiel autre participants. Pour elle, la mise initiale était déjà très grande et elle n'avait pas envie de renchérir encore plus pour une babiole qui ne lui servirait probablement pas. Pour elle, aucune chance que le dit \"artefact\" soit autre chose que de la camelote.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500532522411364363",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2026-05-03T16:20:31Z",
-          "content": "*Pécule.*\n\n*La joueuse et le voyou cherchent tout deux le regard et l'intérêt du Rêveur qui, lui, se contre plus sur le résultat de la première partie que sur les mots qui lui sont adressés. Bien que sauvage, l'Ombre fait preuve de politesse en offrant une réponse claire, concise à la perdante. Dans le même temps, il sort une bourses de Sous pour la tendre à cette illustre inconnue et l'invitant d'un geste du doigt, à se rasseoir.*\n\n— Je ne suis que spectateur. Voilà de quoi retenter votre chance.\n\n*Son regard de jais se concentre par la suite sur l'homme simple.*\n\n*Il le fixe, longuement sans prononcer le moindre mot comme pour analyser, comprendre l'homme qui lui fait face. Bien que peu locquace, il se voit contraint de lui offrir une réponse à la hauteur de ses taquineries. Alors, en pointant la balle du doigt, il enfonce un clou de plus dans une plaie toujours ouverte pour la pandorienne.*\n\n— Vous criez victoire trop vite, elle va vous battre à plat de couture sur ce coup.\n\n*L'Homme est une créature étrange, complexe.*\n\n*Difficile de se dire qu'il y a quelques jours à peine, cet aimable jeune homme traquait une consœurs de sa nouvelle interlocutrice, comme une bête assoifé de sang ou ici, d'arcane. Vraisemblablement, il ne reste à la jeune femme, plus qu'à jouer, pour appuyer la prise de parole du Sombre Rêveur. Si elle le souhaite tout du moins....*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500532605819293959",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2026-05-03T16:20:51Z",
-          "content": "||<@228948435259228160> pas de pression !||",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1500534374439850277",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-03T16:27:53Z",
-          "content": "*Bon et bien, si la prochaine partie était offerte aucune raison de refuser. Elle espérait cependant que l'inconnu ne plaçait pas trop d'espoir dans sa victoire, cela restait un jeu quelque peu ardu. Enfin, la jeune fille reprit place sur la chaise, s'étirant joyeusement avant de répondre finalement :*\n\n> - Soit ! Si on me donne gracieusement une seconde chance, je vais rejouer et tenter de me concentrer un peu plus cette fois-ci ! Relancez vos jeux m'sieur !\n\n*La jeune fille ne semblait même pas avoir pris mal les moqueries du meneur de jeu. Elle avait des défauts, mais le manque de sang-froid n'en faisait clairement pas parti.*\n\n> - En tout cas, merci beaucoup pour votre générosité, j'espère que vous m'en voudrez pas si jamais je perds à nouveau. Au fait, moi c'est Alyséa ! Enchantée !",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501613338562396221",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-06T15:55:18Z",
-          "content": "Seconde manche.\n> *L'homme observe, avec discrétion, observe le langage qui se délie sous ses yeux entre les deux individus. Il se tait, dans un premier temps, puis réponds gentillement. Il pose sur la table un échange équivalent au pari : le porte clé étoile reste sur la table et s'adjoint à la bourse déposée par l'homme ténébreux. Son regard perçant se perds dans celui de l'homme qui s'est aventuré aux côtés d'Alyséa.*\n\n**-** \"Bien, les jeux sont faits...\"\n\n> *De nouveau, il recommence. Ses mains habiles posent la balle sous l'un des 5 gobelets. Il montre de façon ostentatoire à la demoiselle et au jeune homme là où se trouve la balle, puis, à une vitesse folle, commence à mélanger les gobelets. Le premier passe derrière, prends la place du second, se retrouve en troisième position et puis... Hein ? Les gobelets se confondent, et même avec la plus grande attention du monde, il n'est pas aisé de suivre les mouvements dessinés par ses mains. Rapide, le bruit de la balle qui continue de rouler sur la table continue de résonner, et assure à la parieuse et son garant que la balle est toujours là, quelque part. Enfin, il s'arrête. Les 5 gobelets sont faces au public qui commence à s'aglutiner.*\n\n**-** \"Mademoiselle Alyséa, je vous écoute.\"\n\n> *Sa main se lève au dessus des gobelets et attends la réponse pour soulever celui qu'elle désignera.*",
-          "embed_title": "Seconde manche.",
-          "embed_description": "> *L'homme observe, avec discrétion, observe le langage qui se délie sous ses yeux entre les deux individus. Il se tait, dans un premier temps, puis réponds gentillement. Il pose sur la table un échange équivalent au pari : le porte clé étoile reste sur la table et s'adjoint à la bourse déposée par l'homme ténébreux. Son regard perçant se perds dans celui de l'homme qui s'est aventuré aux côtés d'Alyséa.*\n\n**-** \"Bien, les jeux sont faits...\"\n\n> *De nouveau, il recommence. Ses mains habiles posent la balle sous l'un des 5 gobelets. Il montre de façon ostentatoire à la demoiselle et au jeune homme là où se trouve la balle, puis, à une vitesse folle, commence à mélanger les gobelets. Le premier passe derrière, prends la place du second, se retrouve en troisième position et puis... Hein ? Les gobelets se confondent, et même avec la plus grande attention du monde, il n'est pas aisé de suivre les mouvements dessinés par ses mains. Rapide, le bruit de la balle qui continue de rouler sur la table continue de résonner, et assure à la parieuse et son garant que la balle est toujours là, quelque part. Enfin, il s'arrête. Les 5 gobelets sont faces au public qui commence à s'aglutiner.*\n\n**-** \"Mademoiselle Alyséa, je vous écoute.\"\n\n> *Sa main se lève au dessus des gobelets et attends la réponse pour soulever celui qu'elle désignera.*"
-        },
-        {
-          "id": "1501614195702108170",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-06T15:58:42Z",
-          "content": "*La jeune femme se grattera la tête un moment, elle avait beau avoir été vraiment très attentive, le charlatan était vraiment très habile de ses mains. Mais bon, il fallait quand même faire un choix, lequel prendre ? Son regard s'arrêta entre le premier et le quatrième gobelet. Finalement, elle prit sa décision après un temps d'attente.*\n\n> - Cette fois-ci.. Ça doit être le premier gobelet, je pense !",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1501854483284627577",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2026-05-07T07:53:31Z",
-          "content": "*Arnaque*\n\n*En guise de seule réponse, l'homme acquiesce face à la Pandorienne. Lorsque le charlatan met en place son mélange, il observe, analyse et décrypte les mouvements des mains et des gobelets cherchant une réponse sans grand intérêt et qui pourtant, l'attire sans ménagement. Elle formule son choix et de l'air s'chappe des cavités nasal du Prométhéens qui  s'approche de deux pas de la sortie de cette salle et observe celle face à qui, il a fait preuve d'une étrange générosité. Avant même de dévoilé le résultat du jeu, l'Ombre s'exprime avec calme et dévoile à demi-mots la finalité.*\n\n— Alyséa c'est ça ? Les vents ne te sont pas favorables mais j'apprécie ta témérité.\n\n*Il se retourne et pose un pied en dehors de la salle.*\n\n*Bien qu'il ne soit pas encore parti, il ne va pas tarder à le faire et visiblement, il ne va pas attendre la jeune femme. Est-ce que ce jeu en vaut la chandelle ou vaut-il mieux échanger avec cet étrange et prétentieux personnage ? C'est un choix qui n'appartient qu'à elle. Une grande liberté, en ces ténèbres réfractaires de la Basse-ville.*\n\n*Peut-elle le saisir ?*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1502298486383575141",
-          "author": "LE CONSEILLER",
-          "timestamp": "2026-05-08T13:17:50Z",
-          "content": "Une deuxième défaite.\n> *Les doigts fins de celui qui fait comme chez lui soulèvent le gobelet désigné par la demoiselle. Seul le vide s'offre à elle, alors qu'une balle est manquante là où elle espérait la voir. Un gain de plus pour le charlatan et une perte qui n'en est pas réellement une pour Alyséa.*\n\n**-** \"Zut, il semblerait que vous vous soyez encore trompée...\"\n\n> *Alors que la silhouette s'efface au loin, il reprends.*\n\n**-** \"Il n'a pas tout à fait tord, la chance ne vous souris pas... Vous souhaitez faire une autre partie ? Je vous propose le tout pour le tout : vous récupérez les deux bourses et gagnez le porte clé en forme d'étoile si vous gagnez. Mais votre mise doit être autre que le reste de votre bourse. Il va falloir y mettre un petit peu du sien...\"\n\n> *Un accord tacite, avec un homme au regard rusé qui ne saurait se détacher de celui de la jeune femme.*",
-          "embed_title": "Une deuxième défaite.",
-          "embed_description": "> *Les doigts fins de celui qui fait comme chez lui soulèvent le gobelet désigné par la demoiselle. Seul le vide s'offre à elle, alors qu'une balle est manquante là où elle espérait la voir. Un gain de plus pour le charlatan et une perte qui n'en est pas réellement une pour Alyséa.*\n\n**-** \"Zut, il semblerait que vous vous soyez encore trompée...\"\n\n> *Alors que la silhouette s'efface au loin, il reprends.*\n\n**-** \"Il n'a pas tout à fait tord, la chance ne vous souris pas... Vous souhaitez faire une autre partie ? Je vous propose le tout pour le tout : vous récupérez les deux bourses et gagnez le porte clé en forme d'étoile si vous gagnez. Mais votre mise doit être autre que le reste de votre bourse. Il va falloir y mettre un petit peu du sien...\"\n\n> *Un accord tacite, avec un homme au regard rusé qui ne saurait se détacher de celui de la jeune femme.*"
-        },
-        {
-          "id": "1502307379121754203",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-05-08T13:53:10Z",
-          "content": "*Alyséa tourna alors la tête vers l'homme qui s'éloignait de la sortie, visiblement, il avait compris où était la balle lui.. Dommage, il aurait dû jouer à sa place, plutôt que de lui laisser sa bourse. Enfin, elle tourna à nouveau son regard vers le maître de jeu et sa dernière proposition qui avait simplement pour objectif de lui faire perdre un peu plus d'argent encore. Elle réfléchit un moment avant de répondre :*\n\n> - C'est gentil de votre part, mais j'ai pas plus d'argent à vous donner m'sieur ! Enfin, bien joué, moi, j'y ai vu que du feu ! Puis bon, ce n'est pas que de la chance, faut croire que c'est pas mon truc ce genre de jeu, mais j'suis sûre que plein d'autres personne n'attendent que de prendre ma place alors je vous laisse à vos affaires ! \n\n*Et sur ces mots, elle se releva vivement de la chaise pour s'étirer, de toute façon, la jeune fille n'aimait pas rester assise trop longtemps, c'était barbant. Elle regarda vers où son précédent interlocuteur était parti pour aller le rejoindre, curieuse d'en savoir un peu plus à son sujet tout de même, lui qui avait sympathiquement payé une de ses parties. Elle pressa le pas pour le rejoindre alors, mais peut-être qu'il avait envie de partir ? Ou peut-être qu'il avait d'autres choses à faire ? Dans tous les cas, il lui fera savoir au besoin, non ?*\n\n> - Vous saviez déjà où était la balle ? Comment vous avez réussi à suivre ses mouvements ? Au bout d'un moment, ils étaient si rapides que.. pouf, la balle n'était plus là où je pensais !",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1502390489062576178",
-          "author": "Vosk Sulyvan",
-          "timestamp": "2026-05-08T19:23:25Z",
-          "content": "*Placide*\n\n*L'Inconnu marque une pause lorsque la jeune femme accélère pour le rejoindre. Il observe du coin de l'oeil, n'amorçant pas un quelconque mouvement pour lui faire face ; il se montre attentif puis après un bref silence, il s'exprime.*\n\n— Ce que je sais ou non, n'a pas d'importance. Ce que je veux savoir en revanche. . .\n\n*Lucide*\n\n*L'Ombre se retourne enfin pour lui faire face et tend la main en même temps qu'il s'exprime, une sorte de toc, qu'il ne peut s'empêcher de faire lorsqu'il se lance dans des envolés lyriques ou qu'il s'apprête à faire une proposition osé ; ici c'est le seconde option de toute évidence. Mais sans l'expression  sincère de ses pensées, la Pandorienne ne peut franchement le deviner.*\n\n— Je vais sortir d'ici faire un tour sur la place vendôme, m'accompagnerez-vous, dame Alyséa ?\n\n*Un respect étrange formuler avec maladresse, sous couvert du charme naturel du ténébreux. Quelque chose sonne faux ; cette façon de faire ne va pas avec son apparence, ses mimiques. Quoi qu'il en soit, sans même attendre de réponse, il tourne les talons et se dirige vers la sortie pour rejoindre rapidement la <#1499818405820236017> juste devant cet établissement. Une invitation singulière, digne de ce personnage mais qui peut, avec un peu de chance, piqué la curiosité de cette candide jeune femme.*",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "thread_name": "↳🎲𝐋e-𝐁onneteau",
-      "location_image": "channel_images/le-bonneteau.jpg"
-    },
-    {
       "id": "scene_la_ballade_1",
       "channel": "☀️〕𝗟a-𝐁allade",
       "channel_raw": "☀️〕𝗟a-𝐁allade",
       "channel_clean": "La-Ballade",
-      "title": "LE CONSEILLER, Aryanna Erhendil, Katelynn Hoffmann",
+      "title": "La-Ballade — Scène 1",
       "actors": [
-        "LE CONSEILLER",
         "Aryanna Erhendil",
         "Katelynn Hoffmann"
       ],
@@ -15437,15 +14271,14 @@ window.rpData = {
       "channel": "🦁〕𝗟e-𝗕ar-des-𝗟ions",
       "channel_raw": "🦁〕𝗟e-𝗕ar-des-𝗟ions",
       "channel_clean": "Le-Bar-des-Lions",
-      "title": "LE CONSEILLER, Velka Valcyrion, Jin Alurantes...",
+      "title": "Le-Bar-des-Lions — Scène 1",
       "actors": [
-        "LE CONSEILLER",
-        "Velka Valcyrion",
-        "Jin Alurantes",
-        "Brutus Redwitch",
-        "Aryanna Erhendil",
         "Lewis Bamer",
-        "Selena Moon"
+        "Selena Moon",
+        "Aryanna Erhendil",
+        "Velka Valcyrion",
+        "Brutus Redwitch",
+        "Jin Alurantes"
       ],
       "main_actor": "Lewis Bamer",
       "is_solo": false,
@@ -15717,9 +14550,8 @@ window.rpData = {
       "channel": "🌃〕𝐒alon",
       "channel_raw": "🌃〕𝐒alon",
       "channel_clean": "Salon",
-      "title": "LE CONSEILLER, Sw dark325",
+      "title": "Salon — Scène 1",
       "actors": [
-        "LE CONSEILLER",
         "Sw dark325"
       ],
       "main_actor": "Sw dark325",
@@ -15758,11 +14590,10 @@ window.rpData = {
       "channel": "🪑〕𝗟e-𝗖oin-d-𝗔ntan",
       "channel_raw": "🪑〕𝗟e-𝗖oin-d-𝗔ntan",
       "channel_clean": "Le-Coin-d-Antan",
-      "title": "Brutus Redwitch, Jin Alurantes, LE CONSEILLER",
+      "title": "Lewis-Phoebe d'Ashbourne",
       "actors": [
-        "Brutus Redwitch",
         "Jin Alurantes",
-        "LE CONSEILLER"
+        "Brutus Redwitch"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -15866,10 +14697,9 @@ window.rpData = {
       "channel": "🍖〕𝗖antine-marbrée",
       "channel_raw": "🍖〕𝗖antine-marbrée",
       "channel_clean": "Cantine-marbrée",
-      "title": "Tsutomu Yamamoto, Myrea M",
+      "title": "Cantine-marbrée — Scène 3",
       "actors": [
-        "Tsutomu Yamamoto",
-        "Myrea M"
+        "Tsutomu Yamamoto"
       ],
       "main_actor": "Tsutomu Yamamoto",
       "is_solo": true,
@@ -15908,21 +14738,23 @@ window.rpData = {
       "location_image": "channel_images/cantine-marbree.jpg"
     },
     {
-      "id": "scene___𝗙ontaine_𝗠arbrée_4",
+      "id": "scene____ontaine__arbr_e_4",
       "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "Isis Faerieth, Nick Sol",
+      "channel_raw": "⛲〕𝗙ontaine-𝗠arbrée",
+      "channel_clean": "⛲〕𝗙ontaine-𝗠arbrée",
+      "title": "⛲〕𝗙ontaine-𝗠arbrée — Scène 4",
       "actors": [
-        "Isis Faerieth",
-        "Nick Sol"
+        "Nick Sol",
+        "Isis Faerieth"
       ],
+      "main_actor": "Nick Sol",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-05-08T13:18:27Z",
       "end_time": "2026-06-10T21:43:40Z",
+      "duration_minutes": 48025,
       "preview": "**Plus tard, peu de temps après la fin d'un cauchemar…\n\nLe petit pourpre s'était très rapidement absenté, laissant sa chambre vide, et les autres personnes q...",
       "message_count": 40,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1502298640146763859",
       "messages": [
         {
           "id": "1502298640146763859",
@@ -16245,6 +15077,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``⛲  •  FONTAINE MARBRÉE ``\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*",
       "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
@@ -16252,11 +15085,11 @@ window.rpData = {
       "channel": "🌃〕𝐒ous-𝐒ol",
       "channel_raw": "🌃〕𝐒ous-𝐒ol",
       "channel_clean": "🌃〕𝐒ous-𝐒ol",
-      "title": "Maëll Fol'Dun, Akane Tsukishiro, Vosk Sulyvan",
+      "title": "🌃〕𝐒ous-𝐒ol — Scène 1",
       "actors": [
+        "Vosk Sulyvan",
         "Maëll Fol'Dun",
-        "Akane Tsukishiro",
-        "Vosk Sulyvan"
+        "Akane Tsukishiro"
       ],
       "main_actor": "Vosk Sulyvan",
       "is_solo": false,
@@ -16452,7 +15285,7 @@ window.rpData = {
       "channel": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
       "channel_raw": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
       "channel_clean": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
-      "title": "Iscarioth",
+      "title": "🏚️〕𝐑ésidences-des-𝐋ibérateurs — Scène 1",
       "actors": [
         "Iscarioth"
       ],
@@ -16493,21 +15326,23 @@ window.rpData = {
       "location_image": "channel_images/residences-des-liberateurs.jpg"
     },
     {
-      "id": "scene___𝐑uelles_2",
+      "id": "scene____uelles_2",
       "channel": "🧱〕𝐑uelles",
-      "channel_id": "1499802361588351066",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 142,
-      "title": "Iscarioth, Asior Eveus",
+      "channel_raw": "🧱〕𝐑uelles",
+      "channel_clean": "🧱〕𝐑uelles",
+      "title": "🧱〕𝐑uelles — Scène 2",
       "actors": [
         "Iscarioth",
         "Asior Eveus"
       ],
+      "main_actor": "Iscarioth",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-05-10T00:03:55Z",
       "end_time": "2026-05-27T21:16:24Z",
+      "duration_minutes": 25752,
       "preview": "> ## <:oeil:1467532116408533133>﻿ Ley Vaelric-Farlier <:oeil:1467532116408533133>﻿ \n> -# ***« La boue cache. Elle ne lave pas. »***\n> \n> -# *Suite de https:/...",
       "message_count": 24,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1499802361588351066/1502823464317227151",
       "messages": [
         {
           "id": "1502823464317227151",
@@ -16702,6 +15537,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "Ruelle Adjacente.\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs.",
       "location_image": "channel_images/ruelles.jpg"
     },
     {
@@ -16709,7 +15545,7 @@ window.rpData = {
       "channel": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_raw": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_clean": "📚〕𝗕ibliothèque-𝗔zure",
-      "title": "Asior Eveus, Lucia Fiorella",
+      "title": "📚〕𝗕ibliothèque-𝗔zure — Scène 3",
       "actors": [
         "Asior Eveus",
         "Lucia Fiorella"
@@ -16780,11 +15616,11 @@ window.rpData = {
       "channel": "☀️〕𝗟a-𝐁allade",
       "channel_raw": "☀️〕𝗟a-𝐁allade",
       "channel_clean": "La-Ballade",
-      "title": "Velka Valcyrion, Katelynn Hoffmann, Vosk Sulyvan",
+      "title": "La-Ballade — Scène 2",
       "actors": [
-        "Velka Valcyrion",
+        "Vosk Sulyvan",
         "Katelynn Hoffmann",
-        "Vosk Sulyvan"
+        "Velka Valcyrion"
       ],
       "main_actor": "Vosk Sulyvan",
       "is_solo": false,
@@ -16882,7 +15718,7 @@ window.rpData = {
       "channel": "🚢〕𝗣ort-du-𝗟evant",
       "channel_raw": "🚢〕𝗣ort-du-𝗟evant",
       "channel_clean": "🚢〕𝗣ort-du-𝗟evant",
-      "title": "Katelynn Hoffmann, Vosk Sulyvan",
+      "title": "🚢〕𝗣ort-du-𝗟evant — Scène 3",
       "actors": [
         "Katelynn Hoffmann",
         "Vosk Sulyvan"
@@ -17009,7 +15845,7 @@ window.rpData = {
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_raw": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_clean": "Place-de-Grandpalais",
-      "title": "Frey Guðfrøðr, Aryanna Erhendil",
+      "title": "Place-de-Grandpalais — Scène 4",
       "actors": [
         "Frey Guðfrøðr",
         "Aryanna Erhendil"
@@ -17163,12 +15999,10 @@ window.rpData = {
       "channel": "📜〕𝐋e-centre-des-registres",
       "channel_raw": "📜〕𝐋e-centre-des-registres",
       "channel_clean": "📜〕𝐋e-centre-des-registres",
-      "title": "Ren Urugaki, Akane Tsukishiro, Regisseur du Centre de l'Histoire...",
+      "title": "📜〕𝐋e-centre-des-registres — Scène 2",
       "actors": [
         "Ren Urugaki",
         "Akane Tsukishiro",
-        "Regisseur du Centre de l'Histoire",
-        "Jasp Nah",
         "Isis Faerieth"
       ],
       "main_actor": "Ren Urugaki",
@@ -17613,13 +16447,11 @@ window.rpData = {
       "channel": "⚜️〕𝗚rande-salle-porcelaine",
       "channel_raw": "⚜️〕𝗚rande-salle-porcelaine",
       "channel_clean": "⚜️〕𝗚rande-salle-porcelaine",
-      "title": "Iscarioth, Okayama, Vosk Sulyvan...",
+      "title": "⚜️〕𝗚rande-salle-porcelaine — Scène 2",
       "actors": [
-        "Iscarioth",
+        "Tenebris",
         "Okayama",
-        "Vosk Sulyvan",
-        "L'Oeil",
-        "Tenebris"
+        "Iscarioth"
       ],
       "main_actor": "Tenebris",
       "is_solo": false,
@@ -17950,7 +16782,7 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Ren Urugaki, Selena Moon",
+      "title": "Parc-des-Cardinaux — Scène 4",
       "actors": [
         "Ren Urugaki",
         "Selena Moon"
@@ -18149,23 +16981,23 @@ window.rpData = {
       "location_image": "channel_images/parc-des-cardinaux.jpg"
     },
     {
-      "id": "scene____𝗟e_𝗖afé_des_𝗣hilosophes_3",
+      "id": "scene_____e__af__des__hilosophes_2",
       "channel": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
-      "channel_id": "1327646242661994552",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 121,
-      "title": "Iscarioth, Asior Eveus, L'Oeil...",
+      "channel_raw": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
+      "channel_clean": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes",
+      "title": "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes — Scène 2",
       "actors": [
-        "Iscarioth",
         "Asior Eveus",
-        "L'Oeil",
-        "Vosk Sulyvan"
+        "Iscarioth"
       ],
+      "main_actor": "Asior Eveus",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-05-31T20:47:37Z",
       "end_time": "2026-08-06T12:15:15Z",
+      "duration_minutes": 95967,
       "preview": "``` ```",
       "message_count": 34,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1327646242661994552/1510746597640769688",
       "messages": [
         {
           "id": "1510746597640769688",
@@ -18440,6 +17272,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "☕  •  LE CAFÉ DES PHILOSOPHES\n\n*Espace ou le silence règne, les bruits parasites y sont pourtant toujours légion ; de fait, les tables sont équipées d'artefacts pouvant créer des \"bulles de silence\" idéal pour les discussions les plus discrètes et les débats les plus houleux. Faites cela dit attention de ne pas abuser de la bière à la myrtille… Plus d’un ont ridiculisé leur discours à cause de ce liquide indigo.*",
       "location_image": "channel_images/le-cafe-des-philosophes.jpg"
     },
     {
@@ -18447,7 +17280,7 @@ window.rpData = {
       "channel": "⚗️〕𝗖our-des-alchimistes",
       "channel_raw": "⚗️〕𝗖our-des-alchimistes",
       "channel_clean": "⚗️〕𝗖our-des-alchimistes",
-      "title": "Septimus Kales",
+      "title": "⚗️〕𝗖our-des-alchimistes — Scène 4",
       "actors": [
         "Septimus Kales"
       ],
@@ -18477,7 +17310,7 @@ window.rpData = {
       "channel": "🍃〕𝗦erre-de-lune",
       "channel_raw": "🍃〕𝗦erre-de-lune",
       "channel_clean": "🍃〕𝗦erre-de-lune",
-      "title": "Maëll Fol'Dun",
+      "title": "🍃〕𝗦erre-de-lune — Scène 2",
       "actors": [
         "Maëll Fol'Dun"
       ],
@@ -18503,21 +17336,23 @@ window.rpData = {
       "location_image": "channel_images/serre-de-lune.jpg"
     },
     {
-      "id": "scene_Un_début_de_soirée_à_la_serre_de_lune_1",
+      "id": "scene_un_d_but_de_soir_e___la_serre_de_lune_1",
       "channel": "Un début de soirée à la serre de lune",
-      "channel_id": "1511450494701408468",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 999,
-      "title": "Maëll Fol'Dun, Frey Guðfrøðr",
+      "channel_raw": "Un début de soirée à la serre de lune",
+      "channel_clean": "Un début de soirée à la serre de lune",
+      "title": "Un début de soirée à la serre de lune — Scène 1",
       "actors": [
         "Maëll Fol'Dun",
         "Frey Guðfrøðr"
       ],
+      "main_actor": "Maëll Fol'Dun",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-06-02T19:24:40Z",
       "end_time": "2026-07-15T12:56:26Z",
+      "duration_minutes": 61531,
       "preview": "*C'était en fin d'après-midi, le jeune Maël Fol'dun avait fait son entrée dans la serre de lune. Ici, des myriades de plantes des plus classiques au plus sur...",
       "message_count": 22,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1511450494701408468/1511450498685993071",
       "messages": [
         {
           "id": "1511450498685993071",
@@ -18703,9 +17538,8 @@ window.rpData = {
       "channel": "🪑〕𝗟e-𝗖oin-d-𝗔ntan",
       "channel_raw": "🪑〕𝗟e-𝗖oin-d-𝗔ntan",
       "channel_clean": "Le-Coin-d-Antan",
-      "title": "LE CONSEILLER, Aryanna Erhendil",
+      "title": "Le-Coin-d-Antan — Scène 2",
       "actors": [
-        "LE CONSEILLER",
         "Aryanna Erhendil"
       ],
       "main_actor": "Aryanna Erhendil",
@@ -18792,11 +17626,11 @@ window.rpData = {
       "channel": "⚗️〕𝗖our-des-alchimistes",
       "channel_raw": "⚗️〕𝗖our-des-alchimistes",
       "channel_clean": "⚗️〕𝗖our-des-alchimistes",
-      "title": "Septimus Kales, Lucia Fiorella, Adelina Del Fuego",
+      "title": "⚗️〕𝗖our-des-alchimistes — Scène 5",
       "actors": [
-        "Septimus Kales",
         "Lucia Fiorella",
-        "Adelina Del Fuego"
+        "Adelina Del Fuego",
+        "Septimus Kales"
       ],
       "main_actor": "Lucia Fiorella",
       "is_solo": false,
@@ -19000,10 +17834,9 @@ window.rpData = {
       "channel": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_raw": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_clean": "📚〕𝗕ibliothèque-𝗔zure",
-      "title": "Lucia Fiorella, LE MONARQUE DU SILENCE",
+      "title": "📚〕𝗕ibliothèque-𝗔zure — Scène 4",
       "actors": [
-        "Lucia Fiorella",
-        "LE MONARQUE DU SILENCE"
+        "Lucia Fiorella"
       ],
       "main_actor": "Lucia Fiorella",
       "is_solo": true,
@@ -19047,10 +17880,10 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Jasp Nah, Isis Faerieth",
+      "title": "Pont-des-Deux — Scène 4",
       "actors": [
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Jasp Nah"
       ],
       "main_actor": "Isis Faerieth",
       "is_solo": false,
@@ -19154,7 +17987,7 @@ window.rpData = {
       "channel": "💰〕𝐁anque-du-sang",
       "channel_raw": "💰〕𝐁anque-du-sang",
       "channel_clean": "💰〕𝐁anque-du-sang",
-      "title": "Jasp Nah",
+      "title": "💰〕𝐁anque-du-sang — Scène 2",
       "actors": [
         "Jasp Nah"
       ],
@@ -19184,7 +18017,7 @@ window.rpData = {
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_raw": "⚔️〕𝗧errains-𝗡acrés",
       "channel_clean": "⚔️〕𝗧errains-𝗡acrés",
-      "title": "Hedwig Von Glanzestern, Vosk Sulyvan",
+      "title": "⚔️〕𝗧errains-𝗡acrés — Scène 3",
       "actors": [
         "Hedwig Von Glanzestern",
         "Vosk Sulyvan"
@@ -19247,21 +18080,20 @@ window.rpData = {
       "channel": "🌆〕𝐏lace",
       "channel_raw": "🌆〕𝐏lace",
       "channel_clean": "🌆〕𝐏lace",
-      "title": "Ren Urugaki, LE CONSEILLER, Katelynn Hoffmann...",
+      "title": "🌆〕𝐏lace — Scène 2",
       "actors": [
-        "Ren Urugaki",
         "LE CONSEILLER",
+        "Vosk Sulyvan",
+        "Hedwig Von Glanzestern",
+        "Red Roadman",
+        "Idelmée Cadree",
         "Katelynn Hoffmann",
         "Asior Eveus",
-        "Red Roadman",
-        "Akane Tsukishiro",
-        "Jin Alurantes",
-        "Hedwig Von Glanzestern",
-        "Vosk Sulyvan",
-        "Idelmée Cadree",
-        "Nick Sol",
         "Aryanna Erhendil",
-        "Isis Faerieth"
+        "Nick Sol",
+        "Ren Urugaki",
+        "Jin Alurantes",
+        "Akane Tsukishiro"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -19833,26 +18665,22 @@ window.rpData = {
       "channel": "🛑〕𝐀rène",
       "channel_raw": "🛑〕𝐀rène",
       "channel_clean": "🛑〕𝐀rène",
-      "title": "Ren Urugaki, LE CONSEILLER, Katelynn Hoffmann...",
+      "title": "🛑〕𝐀rène — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
-        "Katelynn Hoffmann",
-        "Asior Eveus",
-        "Red Roadman",
-        "Akane Tsukishiro",
+        "Isis Faerieth",
         "Jin Alurantes",
-        "Sous son oeil",
         "Kenji Takahashi",
-        "Idelmée Cadree",
-        "Hedwig Von Glanzestern",
-        "Nick Sol",
-        "Brutus Redwitch",
+        "Katelynn Hoffmann",
         "Aryanna Erhendil",
+        "Ren Urugaki",
+        "Brutus Redwitch",
+        "Asior Eveus",
+        "Akane Tsukishiro",
+        "Idelmée Cadree",
+        "Nick Sol",
+        "Hedwig Von Glanzestern",
         "Vosk Sulyvan",
-        "L'Oeil",
-        "Jasp Nah",
-        "Isis Faerieth"
+        "Red Roadman"
       ],
       "main_actor": "Isis Faerieth",
       "is_solo": false,
@@ -21031,7 +19859,7 @@ window.rpData = {
       "channel": "🚬〕𝐏etit-𝐒alon",
       "channel_raw": "🚬〕𝐏etit-𝐒alon",
       "channel_clean": "🚬〕𝐏etit-𝐒alon",
-      "title": "Isis Faerieth",
+      "title": "🚬〕𝐏etit-𝐒alon — Scène 2",
       "actors": [
         "Isis Faerieth"
       ],
@@ -21061,7 +19889,7 @@ window.rpData = {
       "channel": "🛋️〕𝐁ureau-de-𝐒haal",
       "channel_raw": "🛋️〕𝐁ureau-de-𝐒haal",
       "channel_clean": "🛋️〕𝐁ureau-de-𝐒haal",
-      "title": "Isis Faerieth",
+      "title": "🛋️〕𝐁ureau-de-𝐒haal — Scène 2",
       "actors": [
         "Isis Faerieth"
       ],
@@ -21090,12 +19918,11 @@ window.rpData = {
       "channel": "🚢〕𝗣ort-du-𝗟evant",
       "channel_raw": "🚢〕𝗣ort-du-𝗟evant",
       "channel_clean": "🚢〕𝗣ort-du-𝗟evant",
-      "title": "Lumia Faendharts, Aryanna Erhendil, Isis Faerieth...",
+      "title": "🚢〕𝗣ort-du-𝗟evant — Scène 4",
       "actors": [
-        "Lumia Faendharts",
+        "Nick Sol",
         "Aryanna Erhendil",
-        "Isis Faerieth",
-        "Nick Sol"
+        "Lumia Faendharts"
       ],
       "main_actor": "Nick Sol",
       "is_solo": false,
@@ -21403,15 +20230,15 @@ window.rpData = {
       "channel": "🌇〕𝐑uelle-𝐁asse-ville",
       "channel_raw": "🌇〕𝐑uelle-𝐁asse-ville",
       "channel_clean": "Ruelle-Basse-ville",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Asior Eveus...",
+      "title": "Ruelle-Basse-ville — Scène 2",
       "actors": [
         "LE CONSEILLER",
         "Katelynn Hoffmann",
-        "Asior Eveus",
-        "Red Roadman",
-        "Idelmée Cadree",
         "Vosk Sulyvan",
-        "Hedwig Von Glanzestern"
+        "Idelmée Cadree",
+        "Red Roadman",
+        "Hedwig Von Glanzestern",
+        "Asior Eveus"
       ],
       "main_actor": "LE CONSEILLER",
       "is_solo": false,
@@ -21671,14 +20498,13 @@ window.rpData = {
       "channel": "♟️〕𝐐uartiers",
       "channel_raw": "♟️〕𝐐uartiers",
       "channel_clean": "Quartiers",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Asior Eveus...",
+      "title": "Quartiers — Scène 2",
       "actors": [
-        "LE CONSEILLER",
         "Katelynn Hoffmann",
-        "Asior Eveus",
-        "Red Roadman",
+        "Isis Faerieth",
         "Idelmée Cadree",
-        "Isis Faerieth"
+        "Asior Eveus",
+        "Red Roadman"
       ],
       "main_actor": "Katelynn Hoffmann",
       "is_solo": false,
@@ -21764,16 +20590,15 @@ window.rpData = {
       "channel": "🛤️〕𝗣assage",
       "channel_raw": "🛤️〕𝗣assage",
       "channel_clean": "Passage",
-      "title": "Ren Urugaki, LE CONSEILLER, Akane Tsukishiro...",
+      "title": "__Deuxième Mission : Couper le Mal à la Racine.__",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
         "Akane Tsukishiro",
-        "Jin Alurantes",
+        "Ren Urugaki",
         "Kenji Takahashi",
-        "Brutus Redwitch",
         "Aryanna Erhendil",
-        "Nick Sol"
+        "Jin Alurantes",
+        "Nick Sol",
+        "Brutus Redwitch"
       ],
       "main_actor": "Akane Tsukishiro",
       "is_solo": false,
@@ -21993,69 +20818,12 @@ window.rpData = {
       "location_image": "channel_images/passage.jpg"
     },
     {
-      "id": "scene___𝐋e_17_2",
-      "channel": "🍻〕𝐋-𝐄picurien",
-      "channel_id": "1500068135133253672",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 147,
-      "title": "Isis Faerieth",
-      "actors": [
-        "Isis Faerieth"
-      ],
-      "start_time": "2026-06-15T08:42:31Z",
-      "end_time": "2026-06-15T08:42:31Z",
-      "preview": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1500068135133253672/1515999940969496607",
-      "messages": [
-        {
-          "id": "1515999940969496607",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-15T08:42:31Z",
-          "content": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "thread_name": "↳🎯𝐋e-17",
-      "location_image": "channel_images/le-17.jpg"
-    },
-    {
-      "id": "scene___𝐋e_𝐁onneteau_2",
-      "channel": "🍻〕𝐋-𝐄picurien",
-      "channel_id": "1500068555222286487",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 146,
-      "title": "Isis Faerieth",
-      "actors": [
-        "Isis Faerieth"
-      ],
-      "start_time": "2026-06-15T08:42:34Z",
-      "end_time": "2026-06-15T08:42:34Z",
-      "preview": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
-      "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1500068555222286487/1515999953095233547",
-      "messages": [
-        {
-          "id": "1515999953095233547",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-15T08:42:34Z",
-          "content": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "thread_name": "↳🎲𝐋e-𝐁onneteau",
-      "location_image": "channel_images/le-bonneteau.jpg"
-    },
-    {
       "id": "scene_sc_ne_kal_s___javus_1",
       "channel": "Scène Kalès / JAVUS",
       "channel_raw": "Scène Kalès / JAVUS",
       "channel_clean": "Scène Kalès / JAVUS",
-      "title": "JAVUS, Septimus Kales",
+      "title": "Scène Kalès / JAVUS — Scène 1",
       "actors": [
-        "JAVUS",
         "Septimus Kales"
       ],
       "main_actor": "Septimus Kales",
@@ -22220,16 +20988,15 @@ window.rpData = {
       "channel": "🏙️〕𝐄gregore",
       "channel_raw": "🏙️〕𝐄gregore",
       "channel_clean": "Egregore",
-      "title": "Ren Urugaki, LE CONSEILLER, Akane Tsukishiro...",
+      "title": "Egregore — Scène 3",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
         "Akane Tsukishiro",
-        "Jin Alurantes",
-        "Kenji Takahashi",
-        "Brutus Redwitch",
         "Aryanna Erhendil",
-        "Nick Sol"
+        "Kenji Takahashi",
+        "Ren Urugaki",
+        "Nick Sol",
+        "Jin Alurantes",
+        "Brutus Redwitch"
       ],
       "main_actor": "Akane Tsukishiro",
       "is_solo": false,
@@ -22563,26 +21330,28 @@ window.rpData = {
       "location_image": "channel_images/egregore.jpg"
     },
     {
-      "id": "scene____𝐂ourse_𝐏oursuite_1",
+      "id": "scene_____ourse__oursuite_1",
       "channel": "🏗️〕𝐂ourse-𝐏oursuite",
-      "channel_id": "1517050008212471920",
-      "category": "Évent - Couper le Mal à la Racine",
-      "discord_position": 161,
-      "title": "Ren Urugaki, LE CONSEILLER, Akane Tsukishiro...",
+      "channel_raw": "🏗️〕𝐂ourse-𝐏oursuite",
+      "channel_clean": "🏗️〕𝐂ourse-𝐏oursuite",
+      "title": "🏗️〕𝐂ourse-𝐏oursuite — Scène 1",
       "actors": [
-        "Ren Urugaki",
         "LE CONSEILLER",
         "Akane Tsukishiro",
+        "Ren Urugaki",
+        "Aryanna Erhendil",
         "Jin Alurantes",
-        "Kenji Takahashi",
         "Brutus Redwitch",
-        "Aryanna Erhendil"
+        "Kenji Takahashi"
       ],
+      "main_actor": "LE CONSEILLER",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-06-18T14:50:59Z",
       "end_time": "2026-06-22T13:43:46Z",
+      "duration_minutes": 5692,
       "preview": "◦ ─────────── ¤ ──────────── ◦\nDébut de la Course poursuite.\n[*Un sentiment lourd, mais des responsabilités plus grandes*](https://youtu.be/mZxwGnOz7ZQ?list=...",
       "message_count": 21,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1517050008212471920/1517179832776261762",
       "messages": [
         {
           "id": "1517179832776261762",
@@ -22753,6 +21522,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "Début de la Course poursuite.\n[*Un sentiment lourd, mais des responsabilités plus grandes*](https://youtu.be/mZxwGnOz7ZQ?list=RDmZxwGnOz7ZQ)\n\n```Mini-jeu : course poursuite.\n\nPour les mages qui suivront Theodore dans sa course poursuite, chaque action à du sens, à partir de la prochaine narration vous allez avoir des choix à faire comme des QTE, chaque bon choix vous donnera des points de réussite. A 10 points de réussite, vous rattrapez votre cible. Mais à 10 points d'échecs, vous perdez sa trace. Il les choix seront justes sans avoir de \"gamble\". Vos personnages vont devoir réfléchir et agir vite.```\n\n*__Theodore__, le premier partit et des Mages qui avancent pour finalement suivre le seul objectif de la mission, pose un pied plus lourd sur le sol. Il ne peut pas laisser les Mages seuls face à la mort, il avait déjà du les protéger mais il ne pouvait pas tourner le dos pour regarder ceux qui le suivraient. Alors il fera des sacrifices qui lui coûteront surement chers. Il poursuit sa course de plus belle son allure est équivalente à celle de la cible, il faut dire que le plus fort des mages de la mission n'est pourtant pas le plus rapide. Mais il ralentira tout de même, son bâton en main pour modeler le sol à son envie. Pour ceux qui le suivent, il fera deux accès, le premier pour aller sur la partie supérieure de l'image et courir au niveau des balcons. Le second chemin qu'il modèle est un qui se creuse un petit peu dans le sol, la personne qui court dedans perdra juste 1m de auteur mais ne sera pas embêté par des projectiles.*\n\n*__Akane__, tu arrives à la suite de Theodore aux côtés de Ren. Avec ton allure, tu sais que tu pourras rattraper la personne en face de toi. Enfin... Au vu du son de ses pas tu te dis dans quelques mouvements tu seras capable de le rattraper. Tu arrives assez aux côtés de Theodore qui, manipulant l'Arcane vous assure des chemins. Tu entends quelque chose qui siffle devant toi, un projectile. Tu ne sais pas ce que c'est mais tu supposes que c'est assez grand pour te ralentir de quelques secondes, surement pour te dépatouiller des poissons... poissons ? L'objets en ta direction à une forte odeur de poisson.*\n\n**/!\\ A LIRIE SI TU ACTIVES TON ARCANE /!\\ : || C'est une caisse de 50cm de haut et de large remplie de poisson qui semble assez fragile. ||**\n\n*__Ren__, pour toi c'est la même chose. En arrivant aux côté de la petite blanche, tu te rends compte qu'en quelques vingtaines de secondes si tu n'es pas dérangé tu seras capables de poser ta main sur son épaule. Le fait est que pour le moment comme tu le vois avec ta camarade, il vous lance des objets dessus. Il lance une première casse vers elle, mais la seconde est pour toi. Un simple Tonneau qu'il viendra projeter dans ta direction visant ton visage pour te couper la ligne de vue. Il est fragile, comme toutes les choses ici présentes et tu vois qu'il prépare déjà sa première attaque en attrapant une large benne à roulette.*\n\nRéussite : 1 | Échecs : 0",
       "location_image": "channel_images/course-poursuite.jpg"
     },
     {
@@ -22760,17 +21530,15 @@ window.rpData = {
       "channel": "🕋〕𝐆uet-apens",
       "channel_raw": "🕋〕𝐆uet-apens",
       "channel_clean": "Guet-apens",
-      "title": "Ren Urugaki, LE CONSEILLER, Akane Tsukishiro...",
+      "title": "Guet-apens — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
         "Akane Tsukishiro",
-        "Jin Alurantes",
-        "Kenji Takahashi",
-        "Brutus Redwitch",
         "Aryanna Erhendil",
-        "Jasp Nah",
-        "Nick Sol"
+        "Ren Urugaki",
+        "Jin Alurantes",
+        "Nick Sol",
+        "Brutus Redwitch",
+        "Kenji Takahashi"
       ],
       "main_actor": "Akane Tsukishiro",
       "is_solo": false,
@@ -23048,11 +21816,10 @@ window.rpData = {
       "channel": "📓〕𝐋e-𝐒ecret",
       "channel_raw": "📓〕𝐋e-𝐒ecret",
       "channel_clean": "📓〕𝐋e-𝐒ecret",
-      "title": "Ren Urugaki, LE CONSEILLER, Aryanna Erhendil",
+      "title": "📓〕𝐋e-𝐒ecret — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -23364,21 +22131,23 @@ window.rpData = {
       "location_image": "channel_images/le-secret.jpg"
     },
     {
-      "id": "scene___𝗙ontaine_𝗠arbrée_5",
+      "id": "scene____ontaine__arbr_e_5",
       "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "Cassian Ortie, Ragde Umbras",
+      "channel_raw": "⛲〕𝗙ontaine-𝗠arbrée",
+      "channel_clean": "⛲〕𝗙ontaine-𝗠arbrée",
+      "title": "⛲〕𝗙ontaine-𝗠arbrée — Scène 5",
       "actors": [
         "Cassian Ortie",
         "Ragde Umbras"
       ],
+      "main_actor": "Cassian Ortie",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-06-27T10:01:29Z",
       "end_time": "2026-07-02T12:13:35Z",
+      "duration_minutes": 7332,
       "preview": "## *Le Heaume Blanc était trop propre.*\n\n*Cassian s'en était rendue compte dès les premiers pas, alors qu'elle traversait le grand hall aux colonnes de marbr...",
       "message_count": 50,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1520368466857689129",
       "messages": [
         {
           "id": "1520368466857689129",
@@ -23781,6 +22550,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``⛲  •  FONTAINE MARBRÉE ``\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*",
       "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
@@ -23788,7 +22558,7 @@ window.rpData = {
       "channel": "🍻〕𝐋-𝐄picurien",
       "channel_raw": "🍻〕𝐋-𝐄picurien",
       "channel_clean": "🍻〕𝐋-𝐄picurien",
-      "title": "Ivara Luella, OWL LE MESSAGER",
+      "title": "🍻〕𝐋-𝐄picurien — Scène 2",
       "actors": [
         "Ivara Luella",
         "OWL LE MESSAGER"
@@ -23827,7 +22597,7 @@ window.rpData = {
       "channel": "Scène Lumia | Ivara",
       "channel_raw": "Scène Lumia | Ivara",
       "channel_clean": "Scène Lumia Ivara",
-      "title": "Ivara Luella, Lumia Faendharts",
+      "title": "Scène Lumia Ivara — Scène 1",
       "actors": [
         "Ivara Luella",
         "Lumia Faendharts"
@@ -24041,7 +22811,7 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Tarrion Tombetoile, Lumia Faendharts",
+      "title": "Pont-des-Deux — Scène 5",
       "actors": [
         "Tarrion Tombetoile",
         "Lumia Faendharts"
@@ -24154,7 +22924,7 @@ window.rpData = {
       "channel": "🌸〕𝗖ours-𝗙leurie",
       "channel_raw": "🌸〕𝗖ours-𝗙leurie",
       "channel_clean": "Cours-Fleurie",
-      "title": "Cassian Ortie, Ivara Luella",
+      "title": "Cours-Fleurie — Scène 2",
       "actors": [
         "Cassian Ortie",
         "Ivara Luella"
@@ -24321,12 +23091,10 @@ window.rpData = {
       "channel": "Fuir - Katelyn Hoffmann & Isis Faerieth",
       "channel_raw": "Fuir - Katelyn Hoffmann & Isis Faerieth",
       "channel_clean": "Fuir - Katelyn Hoffmann & Isis Faerieth",
-      "title": "Vosk Sulyvan, Katelynn Hoffmann, L'Oeil...",
+      "title": "Fuir - Katelyn Hoffmann & Isis Faerieth — Scène 1",
       "actors": [
-        "Vosk Sulyvan",
-        "Katelynn Hoffmann",
-        "L'Oeil",
-        "Isis Faerieth"
+        "Isis Faerieth",
+        "Katelynn Hoffmann"
       ],
       "main_actor": "Isis Faerieth",
       "is_solo": false,
@@ -24697,7 +23465,7 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Septimus Kales, Idelmée Cadree",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 5",
       "actors": [
         "Septimus Kales",
         "Idelmée Cadree"
@@ -25051,23 +23819,25 @@ window.rpData = {
       "location_image": "channel_images/avenue-des-armuriers.jpg"
     },
     {
-      "id": "scene___𝐑uelles_3",
+      "id": "scene____uelles_3",
       "channel": "🧱〕𝐑uelles",
-      "channel_id": "1499802361588351066",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 142,
-      "title": "Ren Urugaki, Kenji Takahashi, Aryanna Erhendil...",
+      "channel_raw": "🧱〕𝐑uelles",
+      "channel_clean": "🧱〕𝐑uelles",
+      "title": "🧱〕𝐑uelles — Scène 3",
       "actors": [
-        "Ren Urugaki",
+        "Jasp Nah",
         "Kenji Takahashi",
         "Aryanna Erhendil",
-        "Jasp Nah"
+        "Ren Urugaki"
       ],
+      "main_actor": "Jasp Nah",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-07-03T13:10:58Z",
       "end_time": "2026-07-04T13:46:34Z",
+      "duration_minutes": 1475,
       "preview": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
       "message_count": 18,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1499802361588351066/1522590480368406558",
       "messages": [
         {
           "id": "1522590480368406558",
@@ -25214,6 +23984,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "Ruelle Adjacente.\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs.",
       "location_image": "channel_images/ruelles.jpg"
     },
     {
@@ -25221,10 +23992,10 @@ window.rpData = {
       "channel": "🗡️〕𝗤uartier-des-𝗙orges",
       "channel_raw": "🗡️〕𝗤uartier-des-𝗙orges",
       "channel_clean": "Quartier-des-Forges",
-      "title": "Ren Urugaki, Aryanna Erhendil",
+      "title": "Quartier-des-Forges — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -25298,21 +24069,20 @@ window.rpData = {
       "channel": "🍻〕𝗟a-𝗕alafre",
       "channel_raw": "🍻〕𝗟a-𝗕alafre",
       "channel_clean": "La-Balafre",
-      "title": "Ren Urugaki, LE CONSEILLER, Asior Eveus...",
+      "title": "La-Balafre — Scène 2",
       "actors": [
-        "Ren Urugaki",
+        "Aryanna Erhendil",
         "LE CONSEILLER",
+        "Kenji Takahashi",
+        "Jin Alurantes",
+        "Ren Urugaki",
+        "Idelmée Cadree",
         "Asior Eveus",
         "Akane Tsukishiro",
-        "Jin Alurantes",
-        "Kenji Takahashi",
-        "Idelmée Cadree",
         "Hedwig Von Glanzestern",
         "Brutus Redwitch",
-        "Aryanna Erhendil",
-        "Loyis Delacroix",
-        "Selena Moon",
-        "Nick Sol"
+        "Nick Sol",
+        "Selena Moon"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -25643,10 +24413,10 @@ window.rpData = {
       "channel": "Ils ne souhaitent qu'une seule chose : La paix.",
       "channel_raw": "Ils ne souhaitent qu'une seule chose : La paix.",
       "channel_clean": "Ils ne souhaitent qu'une seule chose La paix",
-      "title": "Ren Urugaki, Aryanna Erhendil",
+      "title": "Ils ne souhaitent qu'une seule chose La paix — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Ren Urugaki"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -25779,13 +24549,12 @@ window.rpData = {
       "channel": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
       "channel_raw": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
       "channel_clean": "🏚️〕𝐑ésidences-des-𝐋ibérateurs",
-      "title": "Ren Urugaki, LE CONSEILLER, Kenji Takahashi...",
+      "title": "🏚️〕𝐑ésidences-des-𝐋ibérateurs — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
-        "Kenji Takahashi",
+        "Jasp Nah",
         "Aryanna Erhendil",
-        "Jasp Nah"
+        "Ren Urugaki",
+        "Kenji Takahashi"
       ],
       "main_actor": "Jasp Nah",
       "is_solo": false,
@@ -25964,12 +24733,10 @@ window.rpData = {
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_raw": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_clean": "⛩️〕𝗧errain-𝗚randblanc",
-      "title": "Jin Alurantes, Red Roadman, Inzu Sravel...",
+      "title": "⛩️〕𝗧errain-𝗚randblanc — Scène 4",
       "actors": [
-        "Jin Alurantes",
-        "Red Roadman",
         "Inzu Sravel",
-        "Isis Faerieth"
+        "Red Roadman"
       ],
       "main_actor": "Inzu Sravel",
       "is_solo": false,
@@ -26205,10 +24972,10 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Aegnor Othar, Idelmée Cadree, Astreüs Mylonas",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 4",
       "actors": [
-        "Aegnor Othar",
         "Idelmée Cadree",
+        "Aegnor Othar",
         "Astreüs Mylonas"
       ],
       "main_actor": "Idelmée Cadree",
@@ -26453,12 +25220,11 @@ window.rpData = {
       "channel": "🌃〕𝐒ous-𝐒ol",
       "channel_raw": "🌃〕𝐒ous-𝐒ol",
       "channel_clean": "🌃〕𝐒ous-𝐒ol",
-      "title": "Ren Urugaki, LE CONSEILLER, Aryanna Erhendil...",
+      "title": "🌃〕𝐒ous-𝐒ol — Scène 2",
       "actors": [
-        "Ren Urugaki",
-        "LE CONSEILLER",
-        "Aryanna Erhendil",
         "Jasp Nah",
+        "Aryanna Erhendil",
+        "Ren Urugaki",
         "Isis Faerieth"
       ],
       "main_actor": "Jasp Nah",
@@ -26863,10 +25629,10 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Ragde Umbras, Junko Anarchy",
+      "title": "Parc-des-Cardinaux — Scène 5",
       "actors": [
-        "Ragde Umbras",
-        "Junko Anarchy"
+        "Junko Anarchy",
+        "Ragde Umbras"
       ],
       "main_actor": "Junko Anarchy",
       "is_solo": false,
@@ -27018,9 +25784,8 @@ window.rpData = {
       "channel": "🌃〕𝐒alon",
       "channel_raw": "🌃〕𝐒alon",
       "channel_clean": "Salon",
-      "title": "LE CONSEILLER, Kenji Takahashi",
+      "title": "Salon — Scène 2",
       "actors": [
-        "LE CONSEILLER",
         "Kenji Takahashi"
       ],
       "main_actor": "Kenji Takahashi",
@@ -27089,10 +25854,10 @@ window.rpData = {
       "channel": "🏫〕𝗔uditorium",
       "channel_raw": "🏫〕𝗔uditorium",
       "channel_clean": "🏫〕𝗔uditorium",
-      "title": "Ragde Umbras, Adelina Del Fuego",
+      "title": "🏫〕𝗔uditorium — Scène 2",
       "actors": [
-        "Ragde Umbras",
-        "Adelina Del Fuego"
+        "Adelina Del Fuego",
+        "Ragde Umbras"
       ],
       "main_actor": "Adelina Del Fuego",
       "is_solo": false,
@@ -27268,21 +26033,23 @@ window.rpData = {
       "location_image": "channel_images/auditorium.jpg"
     },
     {
-      "id": "scene___𝗩erger_des_𝗣êchés_5",
+      "id": "scene____erger_des___ch_s_5",
       "channel": "🌳〕𝗩erger-des-𝗣êchés",
-      "channel_id": "1328715287704371210",
-      "category": "| ✠ |   LE BASTION ÉCARLATE",
-      "discord_position": 111,
-      "title": "Jin Alurantes, Kenji Takahashi",
+      "channel_raw": "🌳〕𝗩erger-des-𝗣êchés",
+      "channel_clean": "🌳〕𝗩erger-des-𝗣êchés",
+      "title": "🌳〕𝗩erger-des-𝗣êchés — Scène 5",
       "actors": [
         "Jin Alurantes",
         "Kenji Takahashi"
       ],
+      "main_actor": "Jin Alurantes",
+      "is_solo": false,
+      "scene_type": "Duo / Groupe",
       "start_time": "2026-07-12T13:38:08Z",
       "end_time": "2026-07-13T12:30:18Z",
+      "duration_minutes": 1372,
       "preview": "## L'oiseau arrive dans le nid.\n\n\n*Un homme se tient au milieu du verger. Un nouveau visage, inconnu, plus sombre que la plupart et bordé d'une longue criniè...",
       "message_count": 12,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328715287704371210/1525858805349355520",
       "messages": [
         {
           "id": "1525858805349355520",
@@ -27381,6 +26148,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "🍂  •  LE VERGER DES PÊCHÉS\n\n*Ancien terrain de chasse à l'hérétique, ce lieu renferme bon nombre d'âmes damnées. Le Rouge reste le thème principal ici aussi puisqu'on retrouve la plupart des plantes de cette couleur, jonchant le sol ; un camouflage idéal permettant de ne pas avoir à nettoyer les taches de sang. Il est occasionnellement utilisé pour des entraînements spécifiques de la guilde, des exercices que nulle ne connaît, car les membres y ayant participé sont systématiquement placés sous serment inviolable.*",
       "location_image": "channel_images/verger-des-peches.jpg"
     },
     {
@@ -27388,11 +26156,11 @@ window.rpData = {
       "channel": "🗽〕𝗣ont-des-𝗗eux",
       "channel_raw": "🗽〕𝗣ont-des-𝗗eux",
       "channel_clean": "Pont-des-Deux",
-      "title": "Iscarioth, Arun Acharya, Lumia Faendharts",
+      "title": "Pont-des-Deux — Scène 6",
       "actors": [
-        "Iscarioth",
+        "Lumia Faendharts",
         "Arun Acharya",
-        "Lumia Faendharts"
+        "Iscarioth"
       ],
       "main_actor": "Lumia Faendharts",
       "is_solo": false,
@@ -27658,12 +26426,12 @@ window.rpData = {
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_raw": "⚔️〕𝗧errains-𝗡acrés",
       "channel_clean": "⚔️〕𝗧errains-𝗡acrés",
-      "title": "Aryanna Erhendil, Jin Alurantes, Lucia Fiorella...",
+      "title": "⚔️〕𝗧errains-𝗡acrés — Scène 4",
       "actors": [
-        "Aryanna Erhendil",
+        "Nick Sol",
         "Jin Alurantes",
-        "Lucia Fiorella",
-        "Nick Sol"
+        "Aryanna Erhendil",
+        "Lucia Fiorella"
       ],
       "main_actor": "Nick Sol",
       "is_solo": false,
@@ -27915,13 +26683,12 @@ window.rpData = {
       "channel": "📿-𝐂hevet-𝐒acré",
       "channel_raw": "📿-𝐂hevet-𝐒acré",
       "channel_clean": "📿-𝐂hevet-𝐒acré",
-      "title": "Ren Urugaki, Iscarioth, Akane Tsukishiro...",
+      "title": "📿-𝐂hevet-𝐒acré — Scène 1",
       "actors": [
         "Ren Urugaki",
+        "Septimus Kales",
         "Iscarioth",
-        "Akane Tsukishiro",
-        "L'Oeil",
-        "Septimus Kales"
+        "Akane Tsukishiro"
       ],
       "main_actor": "Ren Urugaki",
       "is_solo": false,
@@ -28173,7 +26940,7 @@ window.rpData = {
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_raw": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_clean": "Parc-des-Cardinaux",
-      "title": "Selena Moon, Nick Sol",
+      "title": "Parc-des-Cardinaux — Scène 6",
       "actors": [
         "Selena Moon",
         "Nick Sol"
@@ -28346,15 +27113,14 @@ window.rpData = {
       "channel": "🏮〕𝗖rypte-𝗥ouge",
       "channel_raw": "🏮〕𝗖rypte-𝗥ouge",
       "channel_clean": "Crypte-Rouge",
-      "title": "Frantz Oley, Kenji Takahashi, Hedwig Von Glanzestern...",
+      "title": "Crypte-Rouge — Scène 2",
       "actors": [
-        "Frantz Oley",
-        "Kenji Takahashi",
-        "Hedwig Von Glanzestern",
         "Brutus Redwitch",
         "Aryanna Erhendil",
-        "Loyis Delacroix",
-        "Nick Sol"
+        "Kenji Takahashi",
+        "Nick Sol",
+        "Hedwig Von Glanzestern",
+        "Loyis Delacroix"
       ],
       "main_actor": "Brutus Redwitch",
       "is_solo": false,
@@ -28441,21 +27207,22 @@ window.rpData = {
       "location_image": "channel_images/crypte-rouge.jpg"
     },
     {
-      "id": "scene________Salle_de_Réveil_2",
+      "id": "scene________salle_de_r_veil_2",
       "channel": "🛏️  •  Salle de Réveil",
-      "channel_id": "1472523744722554982",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 999,
-      "title": "OWL LE MESSAGER, Myrea M",
+      "channel_raw": "🛏️  •  Salle de Réveil",
+      "channel_clean": "🛏️  •  Salle de Réveil",
+      "title": "🛏️  •  Salle de Réveil — Scène 2",
       "actors": [
-        "OWL LE MESSAGER",
         "Myrea M"
       ],
+      "main_actor": "Myrea M",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-07-14T07:46:32Z",
       "end_time": "2026-07-30T08:50:29Z",
+      "duration_minutes": 23103,
       "preview": "Éveil.\n*Plusieurs longues heures s’étaient écoulées depuis la finalité de la mission… Emportée par l’ombre d’un homme de main trop bien habitué à remplir la ...",
       "message_count": 8,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1472523744722554982/1526495100031471689",
       "messages": [
         {
           "id": "1526495100031471689",
@@ -28522,6 +27289,7 @@ window.rpData = {
           "embed_description": "> — C’est un plaisir de partager ce verre à vos côtés.\n\n\n*La phrase, simple et posée, glissa hors des lèvres de l’homme comme un souffle maîtrisé. Il demeurait là, stoïque, presque rêveur, observant la jeune femme s’enfoncer dans des réflexions naïves avec une curiosité méthodique. Son regard, calme mais calculateur, suivait la logique de Myrea comme on suit la danse d’une flamme : attentive, prête à saisir la moindre variation.*\n\n*Il percevait son énervement, une colère dirigée vers l’inconnue qu’il traquait lui-même si nettement qu’il répondit à sa question par une autre.*\n\n\n> — On m’a dit que vous avez rencontré une dame ailée. Pourriez-vous m’en dire davantage ?\n\n\n*Interrogera-il tout en faisant miroiter une plume entre ses doigts, avec la délicatesse qu’on réserve à un trésor chaudement gardé. Myrea la reconnut aussitôt : un présent offert par celle dont les paroles lui revenaient encore. Une femme aux capacités improbables, un oiseau devenu humaine le temps d’un souffle.*\n\n*Un sourire espiègle naquit au coin de ses lèvres tandis qu’il savourait une gorgée de thé. La boisson était rare, précieuse, et le confort qui l’accompagnait l’était davantage encore.*\n\n*Myrea sentit la chaleur du breuvage se répandre en elle comme une floraison lente : une énergie douce, végétale, qui s’insinuait dans sa chair et apaisait ses nerfs.\nLa douleur se dissipa.*\n\n*Les parfums floraux enveloppèrent ses sens, embaumant ses blessures dans un cocon invisible ; un duvet intangible que sa peau effleurait sans le saisir.*¨\n\n*Elle n’était ni droguée ni hypnotisée : simplement enveloppée dans le repos mérité après l’épreuve de son courage. Une couverture de chaleur et de sourire.*\n\n*La pluie de ses émotions glissa au revers de ses os, lavant la fièvre d’un mal en voie de guérison.*\n\n\n> ***Le thé avait-il des vertus médicinales ?***\n> ***La question se posa, puis s’effaça.***\n\n*Son regard dériva vers un coffret posé non loin : une carapace élégante, promesse d’un nouveau tribut. Peut-être s’en saisirait-elle… une fois son contenu révélé.*\n\n\n> — Vos questions sont un bonheur à écouter, mais mes réponses ne peuvent être précises envers un aventurier que ma maison ne reconnaît.\n\n\n**Sa voix valsait, douce mais tranchante.**\n\n*Une ligne invisible fendait les briques de sa psyché : une ouverture sans concession, une idéologie qui s’étendait sans jamais se justifier.*\n\n*Sa main se posa sur le loquet du coffret.*\n\n*Un cliquetis répondit... discret, régulier, comme le chant des criquets dans une nuit chaude.*\n\n**L’inconnu se dévoila sans résistance.**\n\n*Le ministre souleva le couvercle, et la lumière révéla un joyau azur : un médaillon modeste, à l’effigie de sa maison.*\n\n\n> ***Un trésor brut, léger dans la paume mais lourd de sens.***\n> ***Une invitation.***\n> ***Un choix.***\n> ***Un positionnement.***\n> ***Celui d’une âme qui doit décider entre errer ou comprendre.***\n\n\n> — Désirez-vous aller plus loin ?\n\n\n*Les mots étaient simples, limpides, posés avec une précision chirurgicale. Ils ne blessaient pas : ils perçaient. Ils administraient un remède sans promettre la guérison.*\n\n\n**Deux chemins s’offraient à Myrea :**\n\n*Prendre le médaillon et poursuivre la conversation. Ou refuser, et retourner à l’incertitude promise à ceux qui vivent sans écusson.*\n\n*Si elle voulait des réponses, elle devrait se couvrir de bleu. Si elle préférait le silence, elle pourrait décliner ; et laisser la connaissance sur le bas-côté de sa liberté.*"
         }
       ],
+      "location_description": "*Espace silencieux, c'est ici que l'on extirpe les éveillés qui se sont durant trop longtemps endormis... Faisant office d'infirmerie, cet espace est dirigé par Citrine de Beaufort, une femme aussi rayonnante qu'occupée, que vos n'aurez hélas la chance de consulter, que si le montant de vos blessures tient votre vie sous le jou du danger.*",
       "location_image": "channel_images/cellules.jpg"
     },
     {
@@ -28529,12 +27297,10 @@ window.rpData = {
       "channel": "🏹〕𝐀rmurerie-𝐄carlate",
       "channel_raw": "🏹〕𝐀rmurerie-𝐄carlate",
       "channel_clean": "Armurerie-Ecarlate",
-      "title": "LE CONSEILLER, Jin Alurantes, Kenji Takahashi...",
+      "title": "Armurerie-Ecarlate — Scène 1",
       "actors": [
-        "LE CONSEILLER",
         "Jin Alurantes",
-        "Kenji Takahashi",
-        "Isis Faerieth"
+        "Kenji Takahashi"
       ],
       "main_actor": "Jin Alurantes",
       "is_solo": false,
@@ -28681,20 +27447,22 @@ window.rpData = {
       "location_image": "channel_images/armurerie-ecarlate.jpg"
     },
     {
-      "id": "scene___𝗙ontaine_𝗠arbrée_6",
+      "id": "scene____ontaine__arbr_e_6",
       "channel": "⛲〕𝗙ontaine-𝗠arbrée",
-      "channel_id": "1328033864190398485",
-      "category": "| ✵ |  LE HEAUME BLANC",
-      "discord_position": 110,
-      "title": "Jasp Nah",
+      "channel_raw": "⛲〕𝗙ontaine-𝗠arbrée",
+      "channel_clean": "⛲〕𝗙ontaine-𝗠arbrée",
+      "title": "⛲〕𝗙ontaine-𝗠arbrée — Scène 6",
       "actors": [
         "Jasp Nah"
       ],
+      "main_actor": "Jasp Nah",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-07-16T07:16:39Z",
       "end_time": "2026-07-28T11:57:38Z",
+      "duration_minutes": 17560,
       "preview": "```Nah Jasp - Il n'y aura pas de place pour l'amour, à ses yeux le rouge n'est plus la colère qu'il s'efforce de consumer pour se lever mais devient le sang....",
       "message_count": 6,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1328033864190398485/1527212352997560340",
       "messages": [
         {
           "id": "1527212352997560340",
@@ -28745,6 +27513,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "``⛲  •  FONTAINE MARBRÉE ``\n\n*Espace le plus calme du Heaume blanc, la fontaine marbrée accueil les discussions paisibles et posées avec joie. Cet espace dispose de peu d'Arcane environnant ce qui fait que c'est un lieu apprécié par les Prométhéen. Les échanges cruciaux, révélations et autres déclarations se font ici, à l'abris des regards indiscrets et des oreilles baladeuses. On note également que c’est cet espace qui voit passer le plus de déclaration amoureuse par année… Sans doute une répercutions de la tranquillité environnante.*",
       "location_image": "channel_images/fontaine-marbree.jpg"
     },
     {
@@ -28752,12 +27521,11 @@ window.rpData = {
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_raw": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_clean": "Place-de-Grandpalais",
-      "title": "Yunah Aoi Enjaku, Eldren Gates, Tenebris...",
+      "title": "Place-de-Grandpalais — Scène 5",
       "actors": [
-        "Yunah Aoi Enjaku",
-        "Eldren Gates",
+        "Arun Acharya",
         "Tenebris",
-        "Arun Acharya"
+        "Yunah Aoi Enjaku"
       ],
       "main_actor": "Arun Acharya",
       "is_solo": false,
@@ -28902,10 +27670,10 @@ window.rpData = {
       "channel": "✨〕𝗔gora-des-𝗥eines",
       "channel_raw": "✨〕𝗔gora-des-𝗥eines",
       "channel_clean": "Agora-des-Reines",
-      "title": "Ren Urugaki, Katelynn Hoffmann, Vosk Sulyvan",
+      "title": "Agora-des-Reines — Scène 3",
       "actors": [
-        "Ren Urugaki",
         "Katelynn Hoffmann",
+        "Ren Urugaki",
         "Vosk Sulyvan"
       ],
       "main_actor": "Katelynn Hoffmann",
@@ -29021,9 +27789,8 @@ window.rpData = {
       "channel": "🌸〕𝗖ours-𝗙leurie",
       "channel_raw": "🌸〕𝗖ours-𝗙leurie",
       "channel_clean": "Cours-Fleurie",
-      "title": "Eldren Gates, Frey Guðfrøðr, Tenebris",
+      "title": "Cours-Fleurie — Scène 3",
       "actors": [
-        "Eldren Gates",
         "Frey Guðfrøðr",
         "Tenebris"
       ],
@@ -29077,22 +27844,22 @@ window.rpData = {
       "location_image": "channel_images/cours-fleurie.jpg"
     },
     {
-      "id": "scene___𝐒alle_d_𝐀lchimie_1",
+      "id": "scene____alle_d__lchimie_1",
       "channel": "🧪〕𝐒alle-d’𝐀lchimie",
-      "channel_id": "1526533403468365865",
-      "category": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
-      "discord_position": 125,
-      "title": "LE CONSEILLER, Aryanna Erhendil, OWL LE MESSAGER",
+      "channel_raw": "🧪〕𝐒alle-d’𝐀lchimie",
+      "channel_clean": "🧪〕𝐒alle-d’𝐀lchimie",
+      "title": "🧪〕𝐒alle-d’𝐀lchimie — Scène 1",
       "actors": [
-        "LE CONSEILLER",
-        "Aryanna Erhendil",
-        "OWL LE MESSAGER"
+        "Aryanna Erhendil"
       ],
+      "main_actor": "Aryanna Erhendil",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-07-17T08:14:25Z",
       "end_time": "2026-07-24T12:22:35Z",
+      "duration_minutes": 10328,
       "preview": "🧪  •  LA SALLE D'ALCHIMIE\n◦ ───────────────── ¤♅¤ ───────────────── ◦\n\n*Si, d’ordinaire, la majorité de son occupation prend place au sein de la serre, May S...",
       "message_count": 4,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1526533403468365865/1527589280443138161",
       "messages": [
         {
           "id": "1527589280443138161",
@@ -29127,6 +27894,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "🧪  •  LA SALLE D'ALCHIMIE\n\n*Si, d’ordinaire, la majorité de son occupation prend place au sein de la serre, May Sohun possède également tout l’équipement nécessaire à son second passe‑temps : l’alchimie. Situé en dessous de l’espace dans lequel elle plante et cultive, cet endroit n’est véritablement connu que de ceux qui désirent se lancer dans la vaste aventure qu’est la concoction de potions. Accessible par le discret d’un escalier, c’est ici qu’elle vend à prix d’or le fruit de son travail ainsi que les ingrédients nécessaires à la préparation de ses précieuses recettes.*",
       "location_image": "channel_images/salle-d-alchimie.jpg"
     },
     {
@@ -29134,7 +27902,7 @@ window.rpData = {
       "channel": "Isis et Astreüs",
       "channel_raw": "Isis et Astreüs",
       "channel_clean": "Isis et Astreüs",
-      "title": "Astreüs Mylonas, Isis Faerieth",
+      "title": "Isis et Astreüs — Scène 1",
       "actors": [
         "Astreüs Mylonas",
         "Isis Faerieth"
@@ -29356,7 +28124,7 @@ window.rpData = {
       "channel": "🍹〕𝗧errasse-couverte",
       "channel_raw": "🍹〕𝗧errasse-couverte",
       "channel_clean": "Terrasse-couverte",
-      "title": "Ren Urugaki, Ivara Luella",
+      "title": "Terrasse-couverte — Scène 1",
       "actors": [
         "Ren Urugaki",
         "Ivara Luella"
@@ -29463,14 +28231,14 @@ window.rpData = {
       "channel": "TRIPLE A : Asior - Akane - Aryana",
       "channel_raw": "TRIPLE A : Asior - Akane - Aryana",
       "channel_clean": "TRIPLE A : Asior - Akane - Aryana",
-      "title": "Ren Urugaki, Asior Eveus, Akane Tsukishiro...",
+      "title": "TRIPLE A : Asior - Akane - Aryana — Scène 1",
       "actors": [
-        "Ren Urugaki",
-        "Asior Eveus",
+        "Aryanna Erhendil",
         "Akane Tsukishiro",
+        "Asior Eveus",
         "Jin Alurantes",
-        "Idelmée Cadree",
-        "Aryanna Erhendil"
+        "Ren Urugaki",
+        "Idelmée Cadree"
       ],
       "main_actor": "Aryanna Erhendil",
       "is_solo": false,
@@ -29809,12 +28577,9 @@ window.rpData = {
       "channel": "☁️〕𝗣ortail-𝗜voire",
       "channel_raw": "☁️〕𝗣ortail-𝗜voire",
       "channel_clean": "Portail-Ivoire",
-      "title": "LE CONSEILLER, Katelynn Hoffmann, Jasp Nah...",
+      "title": "Portail-Ivoire — Scène 1",
       "actors": [
-        "LE CONSEILLER",
-        "Katelynn Hoffmann",
-        "Jasp Nah",
-        "Captain Hook"
+        "Katelynn Hoffmann"
       ],
       "main_actor": "Katelynn Hoffmann",
       "is_solo": true,
@@ -29875,9 +28640,8 @@ window.rpData = {
       "channel": "🍖〕𝗖antine-marbrée",
       "channel_raw": "🍖〕𝗖antine-marbrée",
       "channel_clean": "Cantine-marbrée",
-      "title": "JAVUS, Jasp Nah",
+      "title": "Cantine-marbrée — Scène 4",
       "actors": [
-        "JAVUS",
         "Jasp Nah"
       ],
       "main_actor": "Jasp Nah",
@@ -29963,22 +28727,20 @@ window.rpData = {
       "channel": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_raw": "📚〕𝗕ibliothèque-𝗔zure",
       "channel_clean": "📚〕𝗕ibliothèque-𝗔zure",
-      "title": "Frey Guðfrøðr, Asior Eveus, Lucia Fiorella...",
+      "title": "📚〕𝗕ibliothèque-𝗔zure — Scène 5",
       "actors": [
-        "Frey Guðfrøðr",
-        "Asior Eveus",
-        "Lucia Fiorella",
-        "Arun Acharya",
-        "Red Roadman",
-        "Eldren Gates",
-        "OWL LE MESSAGER",
-        "Adelina Del Fuego",
-        "Yunah Aoi Enjaku",
         "Ragde Umbras",
+        "Frey Guðfrøðr",
         "Emil Camille Rebenok",
-        "Maëll Fol'Dun",
-        "Tenebris",
-        "Astreüs Mylonas"
+        "Astreüs Mylonas",
+        "OWL LE MESSAGER",
+        "Asior Eveus",
+        "Arun Acharya",
+        "Lucia Fiorella",
+        "Yunah Aoi Enjaku",
+        "Adelina Del Fuego",
+        "Red Roadman",
+        "Tenebris"
       ],
       "main_actor": "Ragde Umbras",
       "is_solo": false,
@@ -30494,11 +29256,11 @@ window.rpData = {
       "channel": "Objectif : faire exploser la Balafre.",
       "channel_raw": "Objectif : faire exploser la Balafre.",
       "channel_clean": "Objectif : faire exploser la Balafre.",
-      "title": "Ren Urugaki, Jin Alurantes, Asior Eveus...",
+      "title": "Objectif : faire exploser la Balafre. — Scène 1",
       "actors": [
         "Ren Urugaki",
-        "Jin Alurantes",
         "Asior Eveus",
+        "Jin Alurantes",
         "Idelmée Cadree"
       ],
       "main_actor": "Ren Urugaki",
@@ -30622,9 +29384,8 @@ window.rpData = {
       "channel": "Une chouette découvre enfin l'eau",
       "channel_raw": "Une chouette découvre enfin l'eau",
       "channel_clean": "Une chouette découvre enfin l'eau",
-      "title": "Jasp Nah, Lumia Faendharts",
+      "title": "Une chouette découvre enfin l'eau — Scène 1",
       "actors": [
-        "Jasp Nah",
         "Lumia Faendharts"
       ],
       "main_actor": "Lumia Faendharts",
@@ -30796,10 +29557,10 @@ window.rpData = {
       "channel": "Scène Kalès / Kalem",
       "channel_raw": "Scène Kalès / Kalem",
       "channel_clean": "Scène Kalès / Kalem",
-      "title": "Septimus Kales, OWL LE MESSAGER",
+      "title": "Scène Kalès / Kalem — Scène 1",
       "actors": [
-        "Septimus Kales",
-        "OWL LE MESSAGER"
+        "OWL LE MESSAGER",
+        "Septimus Kales"
       ],
       "main_actor": "OWL LE MESSAGER",
       "is_solo": false,
@@ -30930,12 +29691,11 @@ window.rpData = {
       "channel": "🏯〕𝗔rène-𝗛urlante",
       "channel_raw": "🏯〕𝗔rène-𝗛urlante",
       "channel_clean": "🏯〕𝗔rène-𝗛urlante",
-      "title": "Arun Acharya, Aegnor Othar, Kenji Takahashi...",
+      "title": "🏯〕𝗔rène-𝗛urlante — Scène 4",
       "actors": [
-        "Arun Acharya",
         "Aegnor Othar",
         "Kenji Takahashi",
-        "L'Oeil",
+        "Arun Acharya",
         "Nick Sol"
       ],
       "main_actor": "Aegnor Othar",
@@ -31091,10 +29851,9 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Æther, L'Oeil",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 5",
       "actors": [
-        "Æther",
-        "L'Oeil"
+        "Æther"
       ],
       "main_actor": "Æther",
       "is_solo": true,
@@ -31258,10 +30017,10 @@ window.rpData = {
       "channel": "🛡️〕𝗧errain-d-entraînement",
       "channel_raw": "🛡️〕𝗧errain-d-entraînement",
       "channel_clean": "Terrain-d-entraînement",
-      "title": "Aegnor Othar, Idelmée Cadree",
+      "title": "Terrain-d-entraînement — Scène 2",
       "actors": [
-        "Aegnor Othar",
-        "Idelmée Cadree"
+        "Idelmée Cadree",
+        "Aegnor Othar"
       ],
       "main_actor": "Idelmée Cadree",
       "is_solo": false,
@@ -31310,7 +30069,7 @@ window.rpData = {
       "channel": "⚫▹𝐋e-𝐁erceau",
       "channel_raw": "⚫▹𝐋e-𝐁erceau",
       "channel_clean": "Le-Berceau",
-      "title": "Iscarioth",
+      "title": "Le-Berceau — Scène 1",
       "actors": [
         "Iscarioth"
       ],
@@ -31339,20 +30098,22 @@ window.rpData = {
       "location_image": "channel_images/le-berceau.jpg"
     },
     {
-      "id": "scene___𝐑uelles_4",
+      "id": "scene____uelles_4",
       "channel": "🧱〕𝐑uelles",
-      "channel_id": "1499802361588351066",
-      "category": "| ✦ |  BASSE-VILLE",
-      "discord_position": 142,
-      "title": "Septimus Kales",
+      "channel_raw": "🧱〕𝐑uelles",
+      "channel_clean": "🧱〕𝐑uelles",
+      "title": "🧱〕𝐑uelles — Scène 4",
       "actors": [
         "Septimus Kales"
       ],
+      "main_actor": "Septimus Kales",
+      "is_solo": true,
+      "scene_type": "Solo / Monologue",
       "start_time": "2026-07-29T12:48:41Z",
       "end_time": "2026-07-29T12:48:41Z",
+      "duration_minutes": 1,
       "preview": "Kalès - Iscarioth - Aether",
       "message_count": 1,
-      "discord_url": "discord://discord.com/channels/1327646236534112318/1499802361588351066/1532006955231740125",
       "messages": [
         {
           "id": "1532006955231740125",
@@ -31363,6 +30124,7 @@ window.rpData = {
           "embed_description": ""
         }
       ],
+      "location_description": "Ruelle Adjacente.\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs.",
       "location_image": "channel_images/ruelles.jpg"
     },
     {
@@ -31370,13 +30132,11 @@ window.rpData = {
       "channel": "Kalès - Iscarioth - Aether",
       "channel_raw": "Kalès - Iscarioth - Aether",
       "channel_clean": "Kalès - Iscarioth - Aether",
-      "title": "Æther, JAVUS, Iscarioth...",
+      "title": "Kalès - Iscarioth - Aether — Scène 1",
       "actors": [
-        "Æther",
-        "JAVUS",
-        "Iscarioth",
-        "Tenebris",
         "Septimus Kales",
+        "Æther",
+        "Tenebris",
         "Isis Faerieth"
       ],
       "main_actor": "Septimus Kales",
@@ -31908,12 +30668,12 @@ window.rpData = {
       "channel": "⚒️〕𝗔venue-des-armuriers",
       "channel_raw": "⚒️〕𝗔venue-des-armuriers",
       "channel_clean": "⚒️〕𝗔venue-des-armuriers",
-      "title": "Frey Guðfrøðr, Septimus Kales, Katelynn Hoffmann...",
+      "title": "⚒️〕𝗔venue-des-armuriers — Scène 6",
       "actors": [
         "Frey Guðfrøðr",
-        "Septimus Kales",
         "Katelynn Hoffmann",
-        "Markus Law"
+        "Markus Law",
+        "Septimus Kales"
       ],
       "main_actor": "Frey Guðfrøðr",
       "is_solo": false,
@@ -32164,7 +30924,7 @@ window.rpData = {
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_raw": "⚔️〕𝗧errains-𝗡acrés",
       "channel_clean": "⚔️〕𝗧errains-𝗡acrés",
-      "title": "Lucia Fiorella",
+      "title": "⚔️〕𝗧errains-𝗡acrés — Scène 5",
       "actors": [
         "Lucia Fiorella"
       ],
@@ -32210,7 +30970,7 @@ window.rpData = {
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_raw": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_clean": "💮〕𝗝ardin-de-𝗤uartz",
-      "title": "Frey Guðfrøðr, Æther",
+      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 6",
       "actors": [
         "Frey Guðfrøðr",
         "Æther"
@@ -32409,7 +31169,7 @@ window.rpData = {
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_raw": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_clean": "⛩️〕𝗧errain-𝗚randblanc",
-      "title": "Aryanna Erhendil",
+      "title": "⛩️〕𝗧errain-𝗚randblanc — Scène 5",
       "actors": [
         "Aryanna Erhendil"
       ],
@@ -32439,7 +31199,7 @@ window.rpData = {
       "channel": "Là où tout a commencé",
       "channel_raw": "Là où tout a commencé",
       "channel_clean": "Là où tout a commencé",
-      "title": "Aryanna Erhendil, Katelynn Hoffmann",
+      "title": "Là où tout a commencé — Scène 1",
       "actors": [
         "Aryanna Erhendil",
         "Katelynn Hoffmann"
@@ -32481,15 +31241,6 @@ window.rpData = {
     }
   ],
   "channel_images": {
-    "🦪〕𝗘scaliers-𝗡acrés": "channel_images/escaliers-nacres.jpg",
-    "⚪〕𝗖ouloir-𝗕lanc": "channel_images/couloir-blanc.jpg",
-    "🏛️〕𝗣ortes-de-𝗠arbre": "channel_images/porte.jpg",
-    "💀 •  Crânes Rouges": "channel_images/cranes-rouges.jpg",
-    "💎 •  Saphirs Bleus": "channel_images/saphirs-bleus.jpg",
-    "✨  •  Éclats Ambrés": "channel_images/eclats-ambres.jpg",
-    "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes": "channel_images/le-cafe-des-philosophes.jpg",
-    "🌳〕𝗩erger-des-𝗣êchés": "channel_images/verger-des-peches.jpg",
-    "⛲〕𝗙ontaine-𝗠arbrée": "channel_images/fontaine-marbree.jpg",
     "🥗〕𝗞antine": "channel_images/kantine.jpg",
     "🏫〕𝗔uditorium": "channel_images/auditorium.jpg",
     "🏯〕𝗔rène-𝗛urlante": "channel_images/arene-hurlante.jpg",
@@ -32508,7 +31259,9 @@ window.rpData = {
     "⚗️〕𝗖our-des-alchimistes": "channel_images/cour-des-alchimistes.jpg",
     "💮〕𝗝ardin-de-𝗤uartz": "channel_images/jardin-de-quartz.jpg",
     "⚔️〕𝗧errains-𝗡acrés": "channel_images/terrains-nacres.jpg",
+    "🌳〕𝗩erger-des-𝗣êchés": "channel_images/verger-des-peches.jpg",
     "⚜️〕𝗚rande-salle-porcelaine": "channel_images/grande-salle-porcelaine.jpg",
+    "⛲〕𝗙ontaine-𝗠arbrée": "channel_images/fontaine-marbree.jpg",
     "🗡️〕𝗤uartier-des-𝗙orges": "channel_images/quartier-des-forges.jpg",
     "⚒️〕𝗔venue-des-armuriers": "channel_images/avenue-des-armuriers.jpg",
     "✨〕𝗔gora-des-𝗥eines": "channel_images/agora-des-reines.jpg",
@@ -32520,6 +31273,8 @@ window.rpData = {
     "🥘〕𝗭one-𝗕uffet": "channel_images/zone-buffet.jpg",
     "🌸〕𝗖ours-𝗙leurie": "channel_images/cours-fleurie.jpg",
     "🌟〕𝗖entre-radieux": "channel_images/centre-radieux.jpg",
+    "🦪〕𝗘scaliers-𝗡acrés": "channel_images/escaliers-nacres.jpg",
+    "⚪〕𝗖ouloir-𝗕lanc": "channel_images/couloir-blanc.jpg",
     "🌆〕𝐏lace": "channel_images/place-de-grandpalais.jpg",
     "🌇〕𝐑uelle-𝐁asse-ville": "channel_images/ruelle-basse-ville.jpg",
     "♟️〕𝐐uartiers": "channel_images/quartiers.jpg",
@@ -32530,16 +31285,14 @@ window.rpData = {
     "𝐈solement": "channel_images/cellules.jpg",
     "🍻〕𝐋-𝐄picurien": "channel_images/l-epicurien.jpg",
     "🧱〕𝐑uelles": "channel_images/ruelles.jpg",
-    "↳🃏𝐋e-𝐑ouge-et-𝐋e-𝐍oir": "channel_images/le-rouge-et-le-noir.jpg",
     "🌠〕𝐇all-𝐃es-𝐅êtes": "channel_images/hall-des-fetes.jpg",
-    "↳🎯𝐋e-17": "channel_images/le-17.jpg",
-    "↳🎲𝐋e-𝐁onneteau": "channel_images/le-bonneteau.jpg",
     "☀️〕𝗟a-𝐁allade": "channel_images/la-ballade.jpg",
     "🦁〕𝗟e-𝗕ar-des-𝗟ions": "channel_images/le-bar-des-lions.jpg",
     "🌃〕𝐒alon": "channel_images/petit-salon.jpg",
     "🪑〕𝗟e-𝗖oin-d-𝗔ntan": "channel_images/le-coin-d-antan.jpg",
     "🌃〕𝐒ous-𝐒ol": "channel_images/sous-sol.jpg",
     "🏚️〕𝐑ésidences-des-𝐋ibérateurs": "channel_images/residences-des-liberateurs.jpg",
+    "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes": "channel_images/le-cafe-des-philosophes.jpg",
     "Un début de soirée à la serre de lune": "channel_images/serre-de-lune.jpg",
     "🛤️〕𝗣assage": "channel_images/passage.jpg",
     "Scène Kalès / JAVUS": "channel_images/arene-hurlante.jpg",
