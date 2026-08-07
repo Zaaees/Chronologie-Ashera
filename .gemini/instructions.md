@@ -16,8 +16,7 @@ Antigravity doit exécuter **automatiquement la séquence complète à 100% via 
   `python extract_du_serveur.py`
 - L'attribution des guildes et personnages se fait **directement à partir des rôles Discord réels des membres** (`member.roles`) lors de l'extraction API.
 - **Salons et catégories strictement exclus de l'extraction :**
-  - Toutes les fiches de personnages (fiches, candidatures, effectifs, profils).
-  - Toutes les chambres et dortoirs (`#Chambre de...`, `#🛏️ • Chambre...`, `#🛏️〕Dortoirs...`).
+  - Toutes les fiches de personnages (fiches, candidatures, effectifs, profils). *(Note: Les chambres et dortoirs RP `#Chambre...`, `#Dortoirs...` et leurs posts Forum sont inclus dans l'extraction)*.
   - Salons spécifiques exclus : `Le-Trésor`, `La-Folie`, `Le-Marais`, `Le-Sigile`, `Le-Bête`, `Statue-d-Icare`, `Le-Mensonge`, `Le-Ciel`, `La-Force`, `Le-Voyageur`, `Le-Secret`, `L’Orgueil`, `Le-Guerrier`, `Le-Temps`.
 
 ### Étape 2 : Filtrage Incrémental des Nouveaux Messages

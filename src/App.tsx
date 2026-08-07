@@ -58,8 +58,106 @@ export const DISCORD_CATEGORIES_RULES: DiscordCategoryRule[] = [
   { name: "🎭 Scènes Privées & Duos", icon: "🎭", hexColor: "#10b981", text: "#a7f3d0" }
 ];
 
+const CHANNEL_CATEGORY_FALLBACK_MAP: Record<string, string> = {
+  // Grande Salle Porcelaine
+  "⚜️〕𝗚rande-salle-porcelaine": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "🌸〕𝗖ours-𝗙leurie": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "🍃〕𝗦erre-de-lune": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "🍖〕𝗖antine-marbrée": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "🍹〕𝗧errasse-couverte": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "🦪〕𝗘scaliers-𝗡acrés": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "Un début de soirée à la serre de lune": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "Scène Lumia | Ivara": "| ✵ |  GRANDE SALLE PORCELAINE",
+  "Isis et Astreüs": "| ✵ |  GRANDE SALLE PORCELAINE",
+
+  // Atrium Canopus
+  "🏛️〕𝗧ribut-des-sages": "| ✵ |  ATRIUM CANOPUS",
+  "🏫〕𝗔uditorium": "| ✵ |  ATRIUM CANOPUS",
+  "🌳〕𝗩erger-des-𝗣êchés": "| ✵ |  ATRIUM CANOPUS",
+  "Scène Kalès / Kalem": "| ✵ |  ATRIUM CANOPUS",
+
+  // Esperia Cours
+  "✨〕𝗔gora-des-𝗥eines": "| ❖ |   ESPERIA COURS",
+  "👑〕𝗣lace-de-𝗚randpalais": "| ❖ |   ESPERIA COURS",
+  "💮〕𝗝ardin-de-𝗤uartz": "| ❖ |   ESPERIA COURS",
+  "🗽〕𝗣ont-des-𝗗eux": "| ❖ |   ESPERIA COURS",
+  "🚢〕𝗣ort-du-𝗟evant": "| ❖ |   ESPERIA COURS",
+
+  // Le Heaume Blanc
+  "⚪〕𝗖ouloir-Ｂlanc": "| ✵ |  LE HEAUME BLANC",
+  "⛩️〕𝗧errain-𝗚randblanc": "| ✵ |  LE HEAUME BLANC",
+  "⛲〕𝗙ontaine-𝗠arbrée": "| ✵ |  LE HEAUME BLANC",
+  "⚔️〕𝗧errains-𝗡acrés": "| ✵ |  LE HEAUME BLANC",
+  "🛡️〕𝗧errain-d-entraînement": "| ✵ |  LE HEAUME BLANC",
+  "🛤️〕𝗣assage": "| ✵ |  LE HEAUME BLANC",
+  "🥗〕𝗞antine": "| ✵ |  LE HEAUME BLANC",
+  "🥘〕𝗭one-𝗕uffet": "| ✵ |  LE HEAUME BLANC",
+  "Une chouette découvre enfin l'eau": "| ✵ |  LE HEAUME BLANC",
+  "Ils ne souhaitent qu'une seule chose : La paix.": "| ✵ |  LE HEAUME BLANC",
+
+  // Le Bastion Écarlate
+  "🏮〕𝗖rypte-𝗥ouge": "| ✠ |   LE BASTION ÉCARLATE",
+  "🏯〕𝗔rène-𝗛urlante": "| ✠ |   LE BASTION ÉCARLATE",
+  "🏹〕𝐀rmurerie-𝐄carlate": "| ✠ |   LE BASTION ÉCARLATE",
+  "💰〕𝐁anque-du-sang": "| ✠ |   LE BASTION ÉCARLATE",
+  "🛑〕𝐀rène": "| ✠ |   LE BASTION ÉCARLATE",
+
+  // L'Observatoire Céruléen
+  "📚〕𝗕ibliothèque-𝗔zure": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
+  "📜〕𝐋e-centre-des-registres": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
+  "🧪〕𝐒alle-d’𝐀lchimie": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
+  "⚗️〕𝗖our-des-alchimistes": "| ۩ |   L'OBSERVATOIRE CÉRULÉEN",
+
+  // Le Forum Éburnéen
+  "☀️〕𝗟a-𝐁allade": "| ♖ |  LE FORUM ÉBURNÉEN",
+  "☁️〕𝗣ortail-𝗜voire": "| ♖ |  LE FORUM ÉBURNÉEN",
+  "♟️〕𝐐uartiers": "| ♖ |  LE FORUM ÉBURNÉEN",
+  "♟️〕𝗟e-𝗖afé-des-𝗣hilosophes": "| ♖ |  LE FORUM ÉBURNÉEN",
+  "⚒️〕𝗔venue-des-armuriers": "| ♖ |  LE FORUM ÉBURNÉEN",
+
+  // Umbrael
+  "⚫▹𝐋e-𝐁erceau": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "🏙️〕𝐄gregore": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "📓〕𝐋e-𝐒ecret": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "📿-𝐂hevet-𝐒acré": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "🗝️〕𝗖ellules": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "𝐈solement": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+  "Kalès - Iscarioth - Aether": "𝑼𝒎𝒃𝒓𝒂𝒆𝒍",
+
+  // Demeure du Sabre
+  "🗡️〕𝗤uartier-des-𝗙orges": "Demeure du Sabre",
+  "🛋️〕𝐁ureau-de-𝐒haal": "Demeure du Sabre",
+  "🚬〕𝐏etit-𝐒alon": "Demeure du Sabre",
+  "🛏️  •  Salle de Réveil": "Demeure du Sabre",
+
+  // Basse-Ville
+  "🌆〕𝐏lace": "| ✦ |  BASSE-VILLE",
+  "🌇〕𝐑uelle-𝐁asse-ville": "| ✦ |  BASSE-VILLE",
+  "🌃〕𝐒alon": "| ✦ |  BASSE-VILLE",
+  "🌃〕𝐒ous-𝐒ol": "| ✦ |  BASSE-VILLE",
+  "🍻〕𝐋-𝐄picurien": "| ✦ |  BASSE-VILLE",
+  "🍻〕𝗟a-𝗕alafre": "| ✦ |  BASSE-VILLE",
+  "🏚️〕𝐑ésidences-des-𝐋ibérateurs": "| ✦ |  BASSE-VILLE",
+  "🌟〕𝗖entre-radieux": "| ✦ |  BASSE-VILLE",
+  "🌠〕𝐇all-𝐃es-𝐅êtes": "| ✦ |  BASSE-VILLE",
+  "🦁〕𝗟e-𝗕ar-des-🇱ions": "| ✦ |  BASSE-VILLE",
+  "🧭〕𝗣arc-des-𝗖ardinaux": "| ✦ |  BASSE-VILLE",
+  "🧱〕𝐑uelles": "| ✦ |  BASSE-VILLE",
+  "🪑〕𝗟e-𝗖oin-d-𝗔ntan": "| ✦ |  BASSE-VILLE",
+  "Fuir - Katelyn Hoffmann & Isis Faerieth": "| ✦ |  BASSE-VILLE",
+  "Là où tout a commencé": "| ✦ |  BASSE-VILLE",
+  "Scène Kalès / JAVUS": "| ✦ |  BASSE-VILLE",
+  "🏗️〕𝐂ourse-𝐏oursuite": "| ✦ |  BASSE-VILLE",
+  "🕋〕𝐆uet-apens": "| ✦ |  BASSE-VILLE",
+  "TRIPLE A : Asior - Akane - Aryana": "| ✦ |  BASSE-VILLE",
+  "Objectif : faire exploser la Balafre.": "| ✦ |  BASSE-VILLE"
+};
+
 export function getChannelDiscordCategory(chName: string, sceneCat?: string): string {
-  if (sceneCat && sceneCat.trim()) return sceneCat;
+  if (sceneCat && sceneCat.trim() && sceneCat !== 'Sans catégorie') return sceneCat;
+  if (CHANNEL_CATEGORY_FALLBACK_MAP[chName]) return CHANNEL_CATEGORY_FALLBACK_MAP[chName];
+  const chLower = (chName || '').toLowerCase();
+  if (chLower.includes('chambre') || chLower.includes('dortoir')) return '| ✵ |  LE HEAUME BLANC';
   return 'Sans catégorie';
 }
 

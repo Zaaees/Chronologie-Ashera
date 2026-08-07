@@ -260,8 +260,8 @@ def is_excluded_channel(ch_name, cat_name=""):
     if norm_ch.startswith(tuple(p.lower() for p in EXCLUDED_PREFIXES)):
         return True
 
-    # 4. Fiches de personnages
-    fiche_keywords = ['fiche', 'chambre', 'dortoir', 'effectif', 'profil', 'candidature', 'presentation', 'perso', 'valide']
+    # 4. Fiches de personnages (seules les fiches/candidatures sont exclues, les chambres et dortoirs RP sont désormais pris en compte)
+    fiche_keywords = ['fiche', 'effectif', 'profil', 'candidature', 'presentation', 'perso', 'valide']
     if any(k in norm_ch for k in fiche_keywords) or any(k in norm_cat for k in fiche_keywords):
         return True
 
@@ -501,39 +501,38 @@ class DiscordExporterClient(discord.Client):
         except Exception as e:
             print(f"⚠️ Impossible de récupérer les threads actifs : {e}")
 
-        # 4. Recherche ciblée des fils archivés uniquement pour les salons RP modifiés
+        # 4. Recherche complète des fils/posts archivés (actifs et inactifs/archivés) pour TOUS les salons et forums RP
         my_permissions = target_guild.me.guild_permissions if target_guild.me else None
         
         for ch in rp_channels:
-            ch_id = str(ch.id)
-            ch_name = ch.name
-            last_id = last_msg_id_by_channel.get(ch_id) or last_msg_id_by_channel.get(ch_name)
-            ch_last_msg_id = getattr(ch, 'last_message_id', None)
-
-            # Si le salon n'a aucun nouveau message depuis le dernier export, sauter la recherche de threads archivés !
-            if last_id and ch_last_msg_id and ch_last_msg_id <= int(last_id):
-                continue
-
             if hasattr(ch, 'archived_threads'):
                 if my_permissions and not ch.permissions_for(target_guild.me).read_message_history:
                     continue
                 try:
                     async def fetch_archived_for_channel(channel_obj):
                         threads_found = []
+                        # Threads/posts archivés publics
                         try:
-                            async for arch_thread in channel_obj.archived_threads(limit=100):
+                            async for arch_thread in channel_obj.archived_threads(limit=None, private=False):
                                 if not is_character_or_fiche_channel(arch_thread):
                                     threads_found.append(arch_thread)
-                        except Exception:
+                        except Exception as e_pub:
+                            pass
+                        # Threads/posts archivés privés (si accessibles)
+                        try:
+                            async for arch_thread in channel_obj.archived_threads(limit=None, private=True):
+                                if not is_character_or_fiche_channel(arch_thread):
+                                    threads_found.append(arch_thread)
+                        except Exception as e_priv:
                             pass
                         return threads_found
 
-                    arch_threads = await asyncio.wait_for(fetch_archived_for_channel(ch), timeout=2.0)
+                    arch_threads = await asyncio.wait_for(fetch_archived_for_channel(ch), timeout=15.0)
                     for arch_thread in arch_threads:
                         if arch_thread not in channels_to_process:
                             channels_to_process.append(arch_thread)
-                except Exception:
-                    pass
+                except Exception as e_arch:
+                    print(f"⚠️ Note recherche archivés sur #{ch.name} : {e_arch}")
 
         all_scenes = []
         all_actors = set()
