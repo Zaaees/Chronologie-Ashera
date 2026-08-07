@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, Scene, Character, Message } from './data';
+import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, getSceneLocationImage, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
@@ -990,24 +990,16 @@ function GanttMonthView({
   });
 
   const getLocationImage = (ch: string, chScenes?: Scene[]) => {
+    const scene = chScenes?.[0];
+    if (scene) {
+      const img = getSceneLocationImage(scene);
+      if (img) return formatImageUrl(img);
+    }
     if (CHANNEL_IMAGES[ch]) return formatImageUrl(CHANNEL_IMAGES[ch]);
     const fromScene = chScenes?.find(s => s.location_image)?.location_image;
     if (fromScene) return formatImageUrl(fromScene);
 
-    const parentCh = chScenes?.[0]?.channel;
-    if (parentCh && CHANNEL_IMAGES[parentCh]) return formatImageUrl(CHANNEL_IMAGES[parentCh]);
-
-    const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
-    const cleanParent = parentCh ? parentCh.replace(/[^\w]/g, '').toLowerCase() : '';
-
-    const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
-      const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
-      if (!cleanK || !v) return false;
-      return (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK))) ||
-             (cleanParent && (cleanK.includes(cleanParent) || cleanParent.includes(cleanK)));
-    });
-    const rawResult = entry ? entry[1] : undefined;
-    return formatImageUrl(rawResult);
+    return undefined;
   };
 
   const tracks: GanttChannelTrack[] = Object.keys(channelMap).map(ch => {
@@ -1576,26 +1568,8 @@ export default function App() {
 
   const activeSceneLocationImage = useMemo(() => {
     if (!activeScene) return null;
-
-    if (activeScene.thread_name && CHANNEL_IMAGES[activeScene.thread_name]) {
-      return formatImageUrl(CHANNEL_IMAGES[activeScene.thread_name]);
-    }
-
-    const ch = activeScene.channel;
-    if (CHANNEL_IMAGES[ch]) return formatImageUrl(CHANNEL_IMAGES[ch]);
-    if (activeScene.location_image) return formatImageUrl(activeScene.location_image);
-
-    const cleanTh = activeScene.thread_name ? activeScene.thread_name.replace(/[^\w]/g, '').toLowerCase() : '';
-    const cleanCh = ch.replace(/[^\w]/g, '').toLowerCase();
-
-    const entry = Object.entries(CHANNEL_IMAGES).find(([k, v]) => {
-      const cleanK = k.replace(/[^\w]/g, '').toLowerCase();
-      if (!cleanK || !v) return false;
-      return (cleanTh && (cleanK.includes(cleanTh) || cleanTh.includes(cleanK))) ||
-             (cleanCh && (cleanK.includes(cleanCh) || cleanCh.includes(cleanK)));
-    });
-    const rawResult = entry ? entry[1] : null;
-    return formatImageUrl(rawResult);
+    const imgUrl = getSceneLocationImage(activeScene);
+    return formatImageUrl(imgUrl) || null;
   }, [activeScene]);
 
   return (
