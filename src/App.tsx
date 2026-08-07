@@ -154,6 +154,39 @@ function formatDateDiscord(isoString: string): string {
   }
 }
 
+// Formater l'heure uniquement (HH:mm) pour les messages regroupés
+function formatTimeOnlyDiscord(isoString: string): string {
+  if (!isoString) return '';
+  try {
+    const d = new Date(isoString);
+    if (isNaN(d.getTime())) return '';
+    return d.toLocaleTimeString('fr-FR', {
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+  } catch (e) {
+    return '';
+  }
+}
+
+// Vérifier si un message est consécutif au précédent (même auteur, <= 5 min)
+function isConsecutiveMessage(currentMsg: Message, prevMsg: Message | undefined, maxIntervalMinutes: number = 5): boolean {
+  if (!prevMsg) return false;
+  if (!currentMsg.author || !prevMsg.author) return false;
+  if (currentMsg.author !== prevMsg.author) return false;
+  if (!currentMsg.timestamp || !prevMsg.timestamp) return false;
+
+  const currentT = new Date(currentMsg.timestamp).getTime();
+  const prevT = new Date(prevMsg.timestamp).getTime();
+
+  if (isNaN(currentT) || isNaN(prevT)) return false;
+
+  const diffMs = currentT - prevT;
+  const maxIntervalMs = maxIntervalMinutes * 60 * 1000;
+
+  return diffMs >= 0 && diffMs <= maxIntervalMs;
+}
+
 const DISCORD_GUILD_ID = '1327646236534112318';
 
 function getSceneDiscordUrl(scene: Scene, useAppScheme: boolean = true): string {
@@ -227,15 +260,49 @@ function highlightSearchQuery(text: string, query: string, baseKey: string | num
   });
 }
 
-// Analyseur Inline Markdown Discord (*, **, ***, __, ~~, ||, `, surbrillance)
+// Analyseur Inline Markdown Discord (*, **, ***, __, ~~, ||, `, surbrillance, emojis personnalisés)
 function parseInlineDiscord(text: string, searchQuery: string): React.ReactNode {
   if (!text) return null;
 
-  const regex = /(\|\|.+?\|\||`.+?`|\*\*\*.+?\*\*\*|\*\*.+?\*\*|__.+?__|~~.+?~~|\*.+?\*|_.+?_)/g;
+  const regex = /(<a?:[a-zA-Z0-9_]+:[0-9]+>|\|\|.+?\|\||`.+?`|\*\*\*.+?\*\*\*|\*\*.+?\*\*|__.+?__|~~.+?~~|\*.+?\*|_.+?_)/g;
   const parts = text.split(regex);
 
   return parts.map((part, index) => {
     if (!part) return null;
+
+    if (part.startsWith('<a:') && part.endsWith('>')) {
+      const match = part.match(/^<a:([a-zA-Z0-9_]+):([0-9]+)>$/);
+      if (match) {
+        const [, emojiName, emojiId] = match;
+        return (
+          <img
+            key={index}
+            src={`https://cdn.discordapp.com/emojis/${emojiId}.gif`}
+            alt={`:${emojiName}:`}
+            title={`:${emojiName}:`}
+            className="inline-block h-[1.35em] w-auto align-middle my-0 mx-0.5 object-contain select-none shrink-0"
+            loading="lazy"
+          />
+        );
+      }
+    }
+
+    if (part.startsWith('<:') && part.endsWith('>')) {
+      const match = part.match(/^<:([a-zA-Z0-9_]+):([0-9]+)>$/);
+      if (match) {
+        const [, emojiName, emojiId] = match;
+        return (
+          <img
+            key={index}
+            src={`https://cdn.discordapp.com/emojis/${emojiId}.png`}
+            alt={`:${emojiName}:`}
+            title={`:${emojiName}:`}
+            className="inline-block h-[1.35em] w-auto align-middle my-0 mx-0.5 object-contain select-none shrink-0"
+            loading="lazy"
+          />
+        );
+      }
+    }
 
     if (part.startsWith('||') && part.endsWith('||')) {
       const inner = part.slice(2, -2);
@@ -1911,8 +1978,11 @@ export default function App() {
               </div>
 
               {/* FLUX DES MESSAGES : FORMAT DISCORD */}
-              <div className="p-6 overflow-y-auto space-y-4 flex-1 custom-scrollbar bg-[#313338]">
+              <div className="p-6 overflow-y-auto flex-1 custom-scrollbar bg-[#313338]">
                 {activeScene.messages.map((msg, index) => {
+                  const prevMsg = index > 0 ? activeScene.messages[index - 1] : undefined;
+                  const isConsecutive = isConsecutiveMessage(msg, prevMsg, 5);
+
                   const info = CHARACTERS_DATA[msg.author];
                   const style = getFactionStyle(info?.role);
                   const serverNick = info?.displayName || msg.author;
@@ -1921,10 +1991,67 @@ export default function App() {
                   const msgDiscordAppUrl = msg.id 
                     ? `discord://discord.com/channels/${DISCORD_GUILD_ID}/${activeScene.channel_id || (activeScene.messages[0] ? activeScene.messages[0].id : DISCORD_GUILD_ID)}/${msg.id}`
                     : null;
+                  const shortTime = formatTimeOnlyDiscord(msg.timestamp);
+
+                  if (isConsecutive) {
+                    return (
+                      <div 
+                        key={msg.id || index} 
+                        className="flex items-start gap-4 hover:bg-[#2e3035] px-2 py-0.5 rounded transition-colors group mt-0.5 relative"
+                      >
+                        {/* HORAIRE EN PETIT ET TRANSPARENT À GAUCHE (REMPLACE L'AVATAR SUR HOVER) */}
+                        <div className="w-10 shrink-0 text-center text-[10px] text-[#949ba4] font-mono opacity-0 group-hover:opacity-100 transition-opacity select-none pt-0.5">
+                          {shortTime}
+                        </div>
+
+                        {/* BLOC MESSAGE COMPACT */}
+                        <div className="flex-1 min-w-0 relative">
+                          {/* BOUTON LIEN APP DISCORD SUR HOVER */}
+                          {msgDiscordAppUrl && (
+                            <div className="absolute right-0 -top-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                              <a
+                                href={msgDiscordAppUrl}
+                                className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#2b2d31] border border-[#1e1f22]"
+                                title="Ouvrir ce message dans l'application Discord"
+                              >
+                                <ExternalLink className="w-3 h-3" />
+                                <span className="text-[10px]">App Discord</span>
+                              </a>
+                            </div>
+                          )}
+
+                          {/* EMBED DISCORD */}
+                          {(msg.embed_title || msg.embed_description) && (
+                            <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1 mb-2 max-w-2xl shadow-md">
+                              {msg.embed_title && (
+                                <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
+                                  {renderDiscordMarkdown(msg.embed_title, searchQuery)}
+                                </h4>
+                              )}
+                              {msg.embed_description && (
+                                <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
+                                  {renderDiscordMarkdown(msg.embed_description, searchQuery)}
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          {/* CONTENU TEXTE DISCORD LISIBLE */}
+                          {msg.content && (
+                            <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
+                              {renderDiscordMarkdown(msg.content, searchQuery)}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  }
 
                   return (
-                    <div key={msg.id || index} className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group">
-                      
+                    <div 
+                      key={msg.id || index} 
+                      className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group mt-4 first:mt-0"
+                    >
                       {/* AVATAR ROND DISCORD */}
                       {avatarImg ? (
                         <img
