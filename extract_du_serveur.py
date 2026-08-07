@@ -320,7 +320,10 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         preview = preview[:157] + "..."
 
     first_msg_id = messages[0]['id']
-    discord_url = f"discord://discord.com/channels/{guild_id_str}/{channel_id}/{first_msg_id}"
+    guild_str = str(guild_id_str or GUILD_ID or "1327646236534112318").strip()
+    if not guild_str:
+        guild_str = "1327646236534112318"
+    discord_url = f"discord://discord.com/channels/{guild_str}/{channel_id}/{first_msg_id}"
 
     formatted_messages = []
     for m in messages:
@@ -756,9 +759,15 @@ class DiscordExporterClient(discord.Client):
                     if thread: channel_images_map[thread] = img_url
                     scene['location_image'] = img_url
 
+        # Filtrer pour ne pas inclure les scènes de 2025 sur le site (conservées pour l'extraction de métadonnées)
+        site_scenes = [
+            s for s in all_scenes 
+            if not (s.get('start_time') and str(s.get('start_time')).startswith('2025'))
+        ]
+
         output_data = {
             "characters": character_map,
-            "scenes": all_scenes,
+            "scenes": site_scenes,
             "channel_images": channel_images_map
         }
 

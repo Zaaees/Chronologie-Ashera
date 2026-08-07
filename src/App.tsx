@@ -287,29 +287,79 @@ function isConsecutiveMessage(currentMsg: Message, prevMsg: Message | undefined,
 
 const DISCORD_GUILD_ID = '1327646236534112318';
 
+function cleanDiscordLinkUrl(url: string): string {
+  if (!url) return url;
+  return url.replace(/discord\.com\/channels\/\/+/g, `discord.com/channels/${DISCORD_GUILD_ID}/`);
+}
+
 function getSceneDiscordUrl(scene: Scene, useAppScheme: boolean = true): string {
-  const firstMsgId = scene.messages && scene.messages.length > 0 ? scene.messages[0].id : null;
-  const channelId = scene.channel_id || firstMsgId || DISCORD_GUILD_ID;
   const scheme = useAppScheme ? 'discord://' : 'https://';
-  
+  const firstMsgId = scene.messages && scene.messages.length > 0 ? scene.messages[0]?.id : null;
+
+  let guildId = DISCORD_GUILD_ID;
+  let channelId = scene.channel_id || '';
+  let msgId = firstMsgId || '';
+
   if (scene.discord_url) {
-    let cleanUrl = scene.discord_url.replace(/^(discord:\/\/|https:\/\/)/, '');
-    if (firstMsgId && !cleanUrl.includes(firstMsgId)) {
-      const parts = cleanUrl.split('/').filter(Boolean);
-      if (parts.length >= 2) {
-        const lastPart = parts[parts.length - 1];
-        if (lastPart !== firstMsgId) {
-          cleanUrl = `${cleanUrl}/${firstMsgId}`;
-        }
-      }
+    const cleaned = scene.discord_url
+      .replace(/^(discord:\/\/|https:\/\/)/, '')
+      .replace(/^discord\.com\/channels\//, '');
+    const parts = cleaned.split('/').filter(Boolean);
+
+    if (parts.length >= 3) {
+      guildId = parts[0] || DISCORD_GUILD_ID;
+      channelId = parts[1] || channelId;
+      msgId = parts[2] || msgId;
+    } else if (parts.length === 2) {
+      guildId = DISCORD_GUILD_ID;
+      channelId = parts[0] || channelId;
+      msgId = parts[1] || msgId;
+    } else if (parts.length === 1) {
+      guildId = DISCORD_GUILD_ID;
+      channelId = parts[0] || channelId;
     }
-    return `${scheme}${cleanUrl}`;
   }
 
-  if (firstMsgId) {
-    return `${scheme}discord.com/channels/${DISCORD_GUILD_ID}/${channelId}/${firstMsgId}`;
+  if (!channelId) {
+    channelId = DISCORD_GUILD_ID;
   }
-  return `${scheme}discord.com/channels/${DISCORD_GUILD_ID}/${channelId}`;
+
+  if (msgId) {
+    return `${scheme}discord.com/channels/${guildId}/${channelId}/${msgId}`;
+  }
+  return `${scheme}discord.com/channels/${guildId}/${channelId}`;
+}
+
+function getMessageDiscordUrl(scene: Scene, msgId: string, useAppScheme: boolean = true): string {
+  const scheme = useAppScheme ? 'discord://' : 'https://';
+  let guildId = DISCORD_GUILD_ID;
+  let channelId = scene.channel_id || '';
+
+  if (scene.discord_url) {
+    const cleaned = scene.discord_url
+      .replace(/^(discord:\/\/|https:\/\/)/, '')
+      .replace(/^discord\.com\/channels\//, '');
+    const parts = cleaned.split('/').filter(Boolean);
+
+    if (parts.length >= 2) {
+      if (parts.length >= 3) {
+        guildId = parts[0] || DISCORD_GUILD_ID;
+        channelId = parts[1] || channelId;
+      } else {
+        guildId = DISCORD_GUILD_ID;
+        channelId = parts[0] || channelId;
+      }
+    } else if (parts.length === 1) {
+      guildId = DISCORD_GUILD_ID;
+      channelId = parts[0] || channelId;
+    }
+  }
+
+  if (!channelId) {
+    channelId = DISCORD_GUILD_ID;
+  }
+
+  return `${scheme}discord.com/channels/${guildId}/${channelId}/${msgId}`;
 }
 
 // Obtenir le mois et l'année pour le groupement
@@ -358,11 +408,11 @@ function highlightSearchQuery(text: string, query: string, baseKey: string | num
   });
 }
 
-// Analyseur Inline Markdown Discord (*, **, ***, __, ~~, ||, `, surbrillance, emojis personnalisés)
+// Analyseur Inline Markdown Discord (*, **, ***, __, ~~, ||, `, surbrillance, emojis personnalisés, liens)
 function parseInlineDiscord(text: string, searchQuery: string): React.ReactNode {
   if (!text) return null;
 
-  const regex = /(<a?:[a-zA-Z0-9_]+:[0-9]+>|\|\|.+?\|\||`.+?`|\*\*\*.+?\*\*\*|\*\*.+?\*\*|__.+?__|~~.+?~~|\*.+?\*|_.+?_)/g;
+  const regex = /(<a?:[a-zA-Z0-9_]+:[0-9]+>|\|\|.+?\|\||`.+?`|\*\*\*.+?\*\*\*|\*\*.+?\*\*|__.+?__|~~.+?~~|\*.+?\*|_.+?_|\[[^\]]+\]\((?:https?|discord):\/\/[^\s)]+\)|(?:https?|discord):\/\/[^\s<)]+)/g;
   const parts = text.split(regex);
 
   return parts.map((part, index) => {
@@ -443,6 +493,42 @@ function parseInlineDiscord(text: string, searchQuery: string): React.ReactNode 
     if ((part.startsWith('*') && part.endsWith('*')) || (part.startsWith('_') && part.endsWith('_'))) {
       const inner = part.slice(1, -1);
       return <em key={index} className="italic">{parseInlineDiscord(inner, searchQuery)}</em>;
+    }
+
+    // Markdown link: [Label](url)
+    if (part.startsWith('[') && part.includes('](') && part.endsWith(')')) {
+      const match = part.match(/^\[([^\]]+)\]\(((?:https?|discord):\/\/[^\s)]+)\)$/);
+      if (match) {
+        const [, label, rawUrl] = match;
+        const cleanUrl = cleanDiscordLinkUrl(rawUrl);
+        return (
+          <a
+            key={index}
+            href={cleanUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#5865f2] hover:underline font-medium break-all"
+          >
+            {parseInlineDiscord(label, searchQuery)}
+          </a>
+        );
+      }
+    }
+
+    // Raw HTTP/HTTPS/Discord URL
+    if (part.startsWith('http://') || part.startsWith('https://') || part.startsWith('discord://')) {
+      const cleanUrl = cleanDiscordLinkUrl(part);
+      return (
+        <a
+          key={index}
+          href={cleanUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#5865f2] hover:underline font-medium break-all"
+        >
+          {cleanUrl}
+        </a>
+      );
     }
 
     if (searchQuery && searchQuery.trim().length > 0) {
@@ -1980,11 +2066,23 @@ export default function App() {
                   )}
                   <a
                     href={getSceneDiscordUrl(activeScene, true)}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded text-xs font-semibold transition-colors shadow cursor-pointer"
-                    title="Ouvrir directement dans l'application Discord"
+                    title="Ouvrir dans l'application Discord (App)"
                   >
                     <ExternalLink className="w-3.5 h-3.5" />
-                    <span className="hidden sm:inline">Ouvrir dans l'application</span>
+                    <span className="hidden sm:inline">App Discord</span>
+                  </a>
+                  <a
+                    href={getSceneDiscordUrl(activeScene, false)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-[#1e1f22] hover:bg-[#35373c] border border-slate-700/80 text-slate-300 hover:text-white rounded text-xs font-semibold transition-colors shadow cursor-pointer"
+                    title="Ouvrir dans le navigateur Discord Web"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span className="hidden sm:inline">Discord Web</span>
                   </a>
                   <button
                     onClick={() => setActiveScene(null)}
@@ -2061,7 +2159,10 @@ export default function App() {
                   const initials = getInitials(serverNick);
                   const avatarImg = msg.avatar_url || info?.avatarUrl || getCharacterCardImage(msg.author);
                   const msgDiscordAppUrl = msg.id 
-                    ? `discord://discord.com/channels/${DISCORD_GUILD_ID}/${activeScene.channel_id || (activeScene.messages[0] ? activeScene.messages[0].id : DISCORD_GUILD_ID)}/${msg.id}`
+                    ? getMessageDiscordUrl(activeScene, msg.id, true)
+                    : null;
+                  const msgDiscordWebUrl = msg.id 
+                    ? getMessageDiscordUrl(activeScene, msg.id, false)
                     : null;
                   const shortTime = formatTimeOnlyDiscord(msg.timestamp);
 
@@ -2078,17 +2179,33 @@ export default function App() {
 
                         {/* BLOC MESSAGE COMPACT */}
                         <div className="flex-1 min-w-0 relative">
-                          {/* BOUTON LIEN APP DISCORD SUR HOVER */}
-                          {msgDiscordAppUrl && (
-                            <div className="absolute right-0 -top-1 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                              <a
-                                href={msgDiscordAppUrl}
-                                className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#2b2d31] border border-[#1e1f22]"
-                                title="Ouvrir ce message dans l'application Discord"
-                              >
-                                <ExternalLink className="w-3 h-3" />
-                                <span className="text-[10px]">App Discord</span>
-                              </a>
+                          {/* BOUTON LIEN DISCORD SUR HOVER */}
+                          {(msgDiscordAppUrl || msgDiscordWebUrl) && (
+                            <div className="absolute right-0 -top-1 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center gap-1">
+                              {msgDiscordAppUrl && (
+                                <a
+                                  href={msgDiscordAppUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#2b2d31] border border-[#1e1f22]"
+                                  title="Ouvrir ce message dans l'application Discord"
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  <span className="text-[10px]">App</span>
+                                </a>
+                              )}
+                              {msgDiscordWebUrl && (
+                                <a
+                                  href={msgDiscordWebUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#2b2d31] border border-[#1e1f22]"
+                                  title="Ouvrir ce message sur Discord Web"
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  <span className="text-[10px]">Web</span>
+                                </a>
+                              )}
                             </div>
                           )}
 
@@ -2158,15 +2275,33 @@ export default function App() {
                               {formatDateDiscord(msg.timestamp)}
                             </span>
                           </div>
-                          {msgDiscordAppUrl && (
-                            <a
-                              href={msgDiscordAppUrl}
-                              className="opacity-0 group-hover:opacity-100 text-[11px] text-[#949ba4] hover:text-[#5865f2] transition-all flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-[#1e1f22]"
-                              title="Ouvrir ce message dans l'application Discord"
-                            >
-                              <ExternalLink className="w-3 h-3" />
-                              <span className="text-[10px]">App Discord</span>
-                            </a>
+                          {(msgDiscordAppUrl || msgDiscordWebUrl) && (
+                            <div className="opacity-0 group-hover:opacity-100 transition-all flex items-center gap-1">
+                              {msgDiscordAppUrl && (
+                                <a
+                                  href={msgDiscordAppUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-[#1e1f22]"
+                                  title="Ouvrir ce message dans l'application Discord"
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  <span className="text-[10px]">App</span>
+                                </a>
+                              )}
+                              {msgDiscordWebUrl && (
+                                <a
+                                  href={msgDiscordWebUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[11px] text-[#949ba4] hover:text-[#5865f2] flex items-center gap-1 px-1.5 py-0.5 rounded hover:bg-[#1e1f22]"
+                                  title="Ouvrir ce message sur Discord Web"
+                                >
+                                  <ExternalLink className="w-3 h-3" />
+                                  <span className="text-[10px]">Web</span>
+                                </a>
+                              )}
+                            </div>
                           )}
                         </div>
 
