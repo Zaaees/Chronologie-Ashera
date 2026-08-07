@@ -9,6 +9,8 @@ from unify_characters_v2 import get_canonical_name_v2, build_unified_characters_
 
 DESCRIPTION_JSON_PATH = 'description_scene.json'
 IMAGE_REGEX = re.compile(r'\[Image:\s*(https?://[^\s\]]+)\]|https?://[^\s]+\.(?:jpg|png|jpeg)', re.IGNORECASE)
+GM_ROLE_ID = "1327646236798353535"
+GM_MEMBERS_FILE = "discord_gm_members.json"
 
 PARENT_CHANNEL_MAP = {
     "Ruelle-Basse-ville": "Egregore",
@@ -29,10 +31,100 @@ PARENT_CHANNEL_MAP = {
     "Fuir - Katelyn Hoffmann Isis Faerieth": "Port-du-Levant"
 }
 
+def load_gm_members():
+    gms = {"Vosk Sulyvan", "Isis Faerieth", "Jasp Nah"}
+    if os.path.exists(GM_MEMBERS_FILE):
+        try:
+            with open(GM_MEMBERS_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                if isinstance(data, list):
+                    gms.update(data)
+                elif isinstance(data, dict):
+                    gms.update(data.keys())
+        except Exception:
+            pass
+    return gms
+
+KNOWN_GM_MEMBERS = load_gm_members()
+
+def is_meaningful_character_rp(content):
+    """
+    Détermine si un message contient de la vraie narration écrite de personnage RP.
+    Les messages purement HRP (spoilers, pings bruts, parenthèses HRP) et les balises
+    neutres de clôture ('Scène terminée', 'Fin de scène') ne sont pas comptabilisés comme du RP de personnage.
+    """
+    if not content:
+        return False
+    text = str(content).strip()
+    if not text:
+        return False
+
+    # 1. Séparateurs Discord _ _ _ _
+    if re.match(r'^(_\s*)+$', text):
+        return False
+
+    # 2. Nettoyage des blocs de code
+    clean_no_code = re.sub(r'```.*?```', '', text, flags=re.DOTALL).strip()
+    
+    # Si le message est composé uniquement d'un bloc de code (ex: bannières, clôtures)
+    if not clean_no_code:
+        code_match = re.search(r'```(.*?)```', text, flags=re.DOTALL)
+        if code_match:
+            code_text = code_match.group(1).lower().strip()
+            # Balises neutres de fin de scène / d'acte
+            if any(term in code_text for term in ['scène terminée', 'fin de scène', 'scène finie', 'salon libre', 'mission terminée']):
+                return False
+            # Si le bloc de code contient de la vraie narration écrite de personnage
+            if len(code_text) > 35 and any(punct in code_text for punct in ['.', '*', '—', '“', '"']):
+                return True
+        return False
+
+    # 3. Spoilers purs ||...|| ou pings bruts <@...>
+    sans_spoilers = re.sub(r'\|\|.*?\|\|', '', text, flags=re.DOTALL)
+    sans_pings_spoilers = re.sub(r'<@&?\d+>|<#\d+>', '', sans_spoilers).strip()
+    if not sans_pings_spoilers:
+        return False
+
+    # 4. Messages entre parenthèses ou crochets HRP
+    is_markdown_link = bool(re.match(r'^\[.*?\]\(https?://[^\s\)]+\)$', text))
+    if not is_markdown_link:
+        if (text.startswith('(') and text.endswith(')')) or (text.startswith('((') and text.endswith('))')):
+            return False
+        if (text.startswith('[') and text.endswith(']')) and not text.startswith('[Image:'):
+            return False
+        if (text.startswith('[[') and text.endswith(']]')):
+            return False
+
+    lower_text = text.lower()
+    
+    # 5. Patterns d'animation/organisation MJ explicites
+    gm_admin_patterns = [
+        'hrp:', 'hrp :', '(hrp', '[hrp', '//', 
+        'prochaine narration', 'veuillez poursuivre', 'voici la fin', 'plan de l\'affrontement',
+        'votre lieu d\'affrontement', 'félicitation pour ta nouvelle guilde', 'l\'évent commence',
+        'pour ceux qui vont au bal'
+    ]
+    if any(p in lower_text for p in gm_admin_patterns):
+        return False
+
+    # 6. Messages de chat courts non-RP
+    short_chat_patterns = [
+        'jte rep mtn', 'je rentre et je te fais ça', 'putaing de réseau', 'vous pouvez, d\'autant si tu veux'
+    ]
+    if any(p in lower_text for p in short_chat_patterns):
+        return False
+
+    sans_images_and_links = re.sub(r'\[Image:\s*https?://[^\s\]]+\]|https?://[^\s]+\.(?:jpg|png|jpeg)', '', text, flags=re.IGNORECASE).strip()
+    sans_pings_only = re.sub(r'<@&?\d+>|<#\d+>', '', sans_images_and_links).strip()
+    if not sans_pings_only:
+        return False
+
+    if text in ["Lewis Phoebe Ashbourne", "Fuir - Katelyn Hoffmann & Isis Faerieth", "🟧 Le son de l'Innocence"]:
+        return False
+
+    return True
+
 def clean_deduplicate_text(text):
-    """
-    Supprime les paragraphes/sections identiques répétées dans les messages Discord du narrateur.
-    """
     if not text:
         return ""
     lines = text.split('\n')
@@ -40,7 +132,6 @@ def clean_deduplicate_text(text):
     seen = set()
     for l in lines:
         stripped = l.strip()
-        # Si la ligne est vide ou un séparateur décoratif
         if not stripped or '────' in stripped or '¤♅¤' in stripped:
             if cleaned_lines and cleaned_lines[-1] != '':
                 cleaned_lines.append('')
@@ -209,7 +300,6 @@ def main():
                 channel_images_cache[ch_clean] = img_url
                 channel_images_cache[ch_raw] = img_url
 
-        # Prise en charge exacte du message ID 1336404555226812517 pour Le-Café-des-Philosophes
         if target_msg_id == "1336404555226812517" or "Philosophes" in ch_clean:
             cafe_desc = "Espace ou le silence règne, les bruits parasites y sont pourtant toujours légion ; de fait, les tables sont équipées d'artefacts pouvant créer des \"bulles de silence\" idéal pour les discussions les plus discrètes et les débats les plus houleux. Faites cela dit attention de ne pas abuser de la bière à la myrtille... Plus d'un ont ridiculisé leur discours à cause de ce liquide indigo."
             channel_descriptions_cache[ch_clean] = cafe_desc
@@ -258,7 +348,25 @@ def main():
         def scene_builder(c_clean, c_raw, scene_idx, msg_tups, title_suggested):
             msgs = [t[0] for t in msg_tups]
             texts = [t[1] for t in msg_tups]
-            actors = list({get_canonical_name_v2(m.get('author_name', m.get('author', ''))) for m in msgs})
+            
+            all_canonical_authors = [get_canonical_name_v2(m.get('author_name', m.get('author', ''))) for m in msgs]
+            
+            rp_authors = [
+                get_canonical_name_v2(m.get('author_name', m.get('author', '')))
+                for m in msgs 
+                if is_meaningful_character_rp(m.get('content', ''))
+            ]
+            
+            actors = []
+            for act in all_canonical_authors:
+                if act in rp_authors and act not in actors:
+                    actors.append(act)
+
+            if not actors:
+                for act in all_canonical_authors:
+                    if act not in actors:
+                        actors.append(act)
+
             main_actor = actors[0] if actors else "Narrateur"
             is_solo = (len(actors) == 1)
 
@@ -329,7 +437,7 @@ def main():
     with open('data.js', 'w', encoding='utf-8') as f:
         f.write('window.RP_DATA = ' + json.dumps(output_data, ensure_ascii=False, indent=2) + ';')
 
-    print(f"✅ Resegmentation avec nettoyage des paragraphes doublons et {len(channel_images_map)} images de salons rattachées terminée !")
+    print(f"✅ Resegmentation avec filtrage HRP/MJ et {len(channel_images_map)} images de salons rattachées terminée !")
 
 if __name__ == '__main__':
     main()

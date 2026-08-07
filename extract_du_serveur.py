@@ -384,8 +384,26 @@ class DiscordExporterClient(discord.Client):
         # Analyse des rôles des membres du serveur Discord
         try:
             print("👥 Analyse intelligente des membres du serveur et attribution des factions par priorité...")
+            gm_role_id = 1327646236798353535
+            detected_gm_names = set()
+            if os.path.exists("discord_gm_members.json"):
+                try:
+                    with open("discord_gm_members.json", "r", encoding="utf-8") as f:
+                        old_gms = json.load(f)
+                        if isinstance(old_gms, list): detected_gm_names.update(old_gms)
+                except Exception:
+                    pass
+
             async for member in target_guild.fetch_members(limit=None):
                 member_role_ids = [r.id for r in member.roles]
+
+                if gm_role_id in member_role_ids:
+                    for n_candidate in [member.display_name, member.name, getattr(member, 'global_name', None)]:
+                        if n_candidate:
+                            c_name = clean_character_name(n_candidate)
+                            if c_name:
+                                detected_gm_names.add(c_name)
+
                 best_role = None
                 for pid in FACTION_ROLE_PRIORITY:
                     if pid in member_role_ids:
@@ -401,7 +419,11 @@ class DiscordExporterClient(discord.Client):
                     global_name = getattr(member, 'global_name', None)
                     if global_name:
                         register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
-            print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction identifiées.")
+            
+            with open("discord_gm_members.json", "w", encoding="utf-8") as f:
+                json.dump(sorted(list(detected_gm_names)), f, ensure_ascii=False, indent=2)
+
+            print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction et {len(detected_gm_names)} membres avec le rôle MJ enregistrés.")
             with open("discord_member_factions.json", "w", encoding="utf-8") as f:
                 json.dump(detected_member_factions, f, ensure_ascii=False, indent=2)
         except Exception as e:
