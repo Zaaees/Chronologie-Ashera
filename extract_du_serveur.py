@@ -763,19 +763,10 @@ class DiscordExporterClient(discord.Client):
             "channel_images": channel_images_map
         }
 
-        # Sauvegarder dans scenes.json et scenes_v2.json
-        for p in ['scenes.json', 'src/scenes.json', 'scenes_v2.json', 'src/scenes_v2.json']:
-            if os.path.dirname(p) and not os.path.exists(os.path.dirname(p)):
-                continue
-            with open(p, 'w', encoding='utf-8') as f:
-                json.dump(output_data, f, indent=2, ensure_ascii=False)
-
-        # Sauvegarder dans data.js
-        js_filename = "data.js"
-        with open(js_filename, 'w', encoding='utf-8') as f:
-            f.write("window.rpData = ")
+        # Sauvegarder dans src/scenes.json
+        output_file = os.path.join('src', 'scenes.json')
+        with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(output_data, f, indent=2, ensure_ascii=False)
-            f.write(";\n")
 
         print(f"\n✨ Extraction et mise à jour terminées avec succès !")
         print(f"📁 Salons/Fils traités : {len(channels_to_process)}")
