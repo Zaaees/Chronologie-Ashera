@@ -1185,6 +1185,7 @@ export default function App() {
 
   // Scène sélectionnée pour la modale
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
+  const [showMobileLocationPreview, setShowMobileLocationPreview] = useState<boolean>(true);
 
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -1828,6 +1829,16 @@ export default function App() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
+                  {activeSceneLocationImage && (
+                    <button
+                      onClick={() => setShowMobileLocationPreview(prev => !prev)}
+                      className="xl:hidden inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-[#1e1f22] hover:bg-[#35373c] border border-slate-700/80 text-amber-300 rounded text-xs font-semibold transition-colors shadow cursor-pointer"
+                      title={showMobileLocationPreview ? "Masquer l'aperçu du salon" : "Afficher l'aperçu du salon"}
+                    >
+                      <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                      <span className="text-[11px]">{showMobileLocationPreview ? "Masquer salon" : "Aperçu salon"}</span>
+                    </button>
+                  )}
                   <a
                     href={getSceneDiscordUrl(activeScene, true)}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#5865f2] hover:bg-[#4752c4] text-white rounded text-xs font-semibold transition-colors shadow cursor-pointer"
@@ -1844,6 +1855,29 @@ export default function App() {
                   </button>
                 </div>
               </div>
+
+              {/* 📱 BANNIÈRE APERÇU DU SALON SUR MOBILE (< xl) */}
+              {activeSceneLocationImage && showMobileLocationPreview && (
+                <div className="xl:hidden relative w-full h-36 sm:h-44 shrink-0 overflow-hidden border-b border-slate-700/80 bg-black/60 group/mobile-preview">
+                  <img 
+                    src={activeSceneLocationImage} 
+                    alt={activeScene.channel} 
+                    className="w-full h-full object-cover object-center brightness-90 transition-transform duration-500 group-hover/mobile-preview:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2b2d31] via-black/30 to-transparent" />
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <div className="flex items-center gap-1.5 px-2.5 py-1 bg-black/80 backdrop-blur-md rounded border border-slate-700/80 shadow-md">
+                      <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                      <span className="text-xs font-bold font-serif-gothic tracking-wider text-slate-100 uppercase truncate">
+                        #{activeScene.channel}
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-mono text-slate-300 bg-black/70 px-2 py-0.5 rounded border border-slate-800">
+                      Aperçu du lieu
+                    </span>
+                  </div>
+                </div>
+              )}
 
               {/* En-tête de la Scène */}
               <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
@@ -1974,8 +2008,8 @@ export default function App() {
               </div>
             </div>
 
-            {/* 3. CASE D'APERÇU DU LIEU (IMAGE DU SALON À DROITE) */}
-            <div className="w-full max-w-[22rem] 2xl:max-w-[26rem] flex justify-start">
+            {/* 3. CASE D'APERÇU DU LIEU (IMAGE DU SALON À DROITE SUR DESKTOP ONLY) */}
+            <div className="hidden xl:flex w-full max-w-[22rem] 2xl:max-w-[26rem] justify-start">
               {activeSceneLocationImage && (
                 <aside className="gothic-corner-box bg-[#1e1f22] border border-slate-700/90 w-full shrink-0 shadow-2xl p-5 flex flex-col gap-4 text-slate-200 max-h-[90vh] overflow-y-auto custom-scrollbar relative">
                   <div className="gothic-corner gothic-corner-tl" />
