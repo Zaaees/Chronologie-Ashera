@@ -232,3 +232,49 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+/* ⏳ EFFETS TEMPORELS ET BRISURES DE CHRONOS (EASTER EGG) */
+@keyframes temporalCrack1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-1px, 1px) rotate(-0.5deg); }
+  50% { transform: translate(1px, -1px) rotate(0.5deg); }
+  75% { transform: translate(-0.5px, -0.5px) rotate(0deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes temporalCrack2 {
+  0% { transform: translate(0, 0) scale(1); filter: drop-shadow(0 0 2px rgba(245, 158, 11, 0.4)); }
+  20% { transform: translate(-2px, 1.5px) rotate(-1deg) scale(1.01); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.7)); }
+  40% { transform: translate(2px, -1px) rotate(1deg) scale(0.99); filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.8)); }
+  60% { transform: translate(-1.5px, -1.5px) rotate(-0.5deg); }
+  80% { transform: translate(1.5px, 1px) rotate(0.5deg); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes temporalCrack3 {
+  0% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg) drop-shadow(0 0 10px rgba(245, 158, 11, 0.9)); }
+  15% { transform: translate(-3px, 2px) rotate(-1.5deg) scale(1.02); filter: hue-rotate(30deg) drop-shadow(0 0 15px rgba(245, 158, 11, 1)); }
+  30% { transform: translate(3px, -2px) rotate(1.5deg) scale(0.98); filter: hue-rotate(-40deg) drop-shadow(0 0 20px rgba(168, 85, 247, 1)); }
+  45% { transform: translate(-2px, -3px) rotate(-1deg); }
+  60% { transform: translate(3.5px, 2px) rotate(1deg); }
+  75% { transform: translate(-1px, 2px) rotate(-0.5deg); }
+  100% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg); }
+}
+
+.crack-level-1 {
+  animation: temporalCrack1 0.4s ease-in-out infinite;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.4);
+  border-color: rgba(245, 158, 11, 0.5) !important;
+}
+
+.crack-level-2 {
+  animation: temporalCrack2 0.3s ease-in-out infinite;
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.7), inset 0 0 15px rgba(168, 85, 247, 0.4);
+  border-color: rgba(245, 158, 11, 0.8) !important;
+}
+
+.crack-level-3 {
+  animation: temporalCrack3 0.2s ease-in-out infinite;
+  box-shadow: 0 0 35px rgba(245, 158, 11, 0.95), inset 0 0 25px rgba(168, 85, 247, 0.8);
+  border-color: rgba(239, 68, 68, 0.9) !important;
+}

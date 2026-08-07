@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { CHARACTERS_DATA, SCENES_DATA, CHANNEL_IMAGES, getSceneLocationImage, Scene, Character, Message } from './data';
+import { CHARACTERS_DATA, SCENES_DATA, SCENES_DATA_V1, CHANNEL_IMAGES, getSceneLocationImage, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
   ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
@@ -1393,6 +1393,52 @@ export default function App() {
   const [selectedFaction, setSelectedFaction] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
+
+  // 🥚 EASTER EGG V1 (2025)
+  const [isV1Mode, setIsV1Mode] = useState<boolean>(false);
+  const [jumpClickCount, setJumpClickCount] = useState<number>(0);
+  const [showChronosModal, setShowChronosModal] = useState<boolean>(false);
+  const jumpClickTimerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleJumpTitleClick = () => {
+    if (isV1Mode) {
+      setJumpClickCount(prev => {
+        const next = prev + 1;
+        if (next >= 5) {
+          setIsV1Mode(false);
+          return 0;
+        }
+        return next;
+      });
+    } else {
+      setJumpClickCount(prev => {
+        const next = prev + 1;
+        if (next >= 5) {
+          setShowChronosModal(true);
+          return 0;
+        }
+        return next;
+      });
+    }
+
+    if (jumpClickTimerRef.current) {
+      clearTimeout(jumpClickTimerRef.current);
+    }
+    jumpClickTimerRef.current = setTimeout(() => {
+      setJumpClickCount(0);
+    }, 2500);
+  };
+
+  const getCrackClass = () => {
+    if (jumpClickCount === 2) return 'crack-level-1';
+    if (jumpClickCount === 3) return 'crack-level-2';
+    if (jumpClickCount >= 4) return 'crack-level-3';
+    return '';
+  };
+
+  const currentScenesDataset = useMemo(() => {
+    return isV1Mode ? SCENES_DATA_V1 : SCENES_DATA;
+  }, [isV1Mode]);
   
   const headerRef = useRef<HTMLElement>(null);
   const [sidebarTopOffset, setSidebarTopOffset] = useState<number>(220);
@@ -1443,9 +1489,9 @@ export default function App() {
 
   const activeActorsSet = useMemo(() => {
     const set = new Set<string>();
-    SCENES_DATA.forEach(s => s.actors.forEach(a => set.add(a)));
+    currentScenesDataset.forEach(s => s.actors.forEach(a => set.add(a)));
     return set;
-  }, []);
+  }, [currentScenesDataset]);
 
   const groupedActorsByFaction = useMemo(() => {
     const groups: Record<string, { name: string; displayLabel: string }[]> = {
@@ -1503,13 +1549,13 @@ export default function App() {
     const groups: Record<string, { channel: string; count: number }[]> = {};
     const channelCounts: Record<string, number> = {};
 
-    SCENES_DATA.forEach(scene => {
+    currentScenesDataset.forEach(scene => {
       const ch = scene.channel;
       channelCounts[ch] = (channelCounts[ch] || 0) + 1;
     });
 
     const channelsSeen = new Set<string>();
-    SCENES_DATA.forEach(scene => {
+    currentScenesDataset.forEach(scene => {
       const ch = scene.channel;
       if (!channelsSeen.has(ch)) {
         channelsSeen.add(ch);
@@ -1520,7 +1566,7 @@ export default function App() {
     });
 
     const channelPositionMap: Record<string, number> = {};
-    SCENES_DATA.forEach(scene => {
+    currentScenesDataset.forEach(scene => {
       const ch = scene.channel;
       const pos = (scene as any).discord_position;
       if (pos !== undefined && pos !== null) {
@@ -1554,7 +1600,7 @@ export default function App() {
       });
 
     return sortedGroups;
-  }, []);
+  }, [currentScenesDataset]);
 
   const activeCategoryRules = useMemo(() => {
     const knownMap = new Map(DISCORD_CATEGORIES_RULES.map(r => [r.name, r]));
@@ -1574,7 +1620,7 @@ export default function App() {
 
   // Filtrage des scènes selon Faction, Catégorie Discord, Personnage, Salon et Recherche
   const filteredScenes = useMemo(() => {
-    return SCENES_DATA.filter(scene => {
+    return currentScenesDataset.filter(scene => {
       if (searchQuery.trim()) {
         const q = searchQuery.toLowerCase();
         const inTitle = scene.title.toLowerCase().includes(q);
@@ -1610,7 +1656,7 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [searchQuery, selectedCategory, selectedActor, selectedChannel, groupedChannelsByCategory]);
+  }, [currentScenesDataset, searchQuery, selectedCategory, selectedActor, selectedChannel, groupedChannelsByCategory]);
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -1892,15 +1938,28 @@ export default function App() {
           </div>
 
           {/* MENU SAUT TEMPOREL CLAIR & PROPRE */}
-          <div className="gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-4 shadow-2xl backdrop-blur-md">
+          <div className={`gothic-corner-box bg-[#0c0e15]/90 border border-slate-800 p-4 shadow-2xl backdrop-blur-md transition-all duration-300 ${getCrackClass()}`}>
             <div className="gothic-corner gothic-corner-tl" />
             <div className="gothic-corner gothic-corner-tr" />
             <div className="gothic-corner gothic-corner-bl" />
             <div className="gothic-corner gothic-corner-br" />
 
-            <div className="flex items-center gap-2 mb-3 pb-2.5 border-b border-slate-800">
-              <Calendar className="w-4 h-4 text-slate-400" />
-              <h2 className="text-xs font-bold font-serif-gothic tracking-wider uppercase text-slate-300">Saut Temporel</h2>
+            <div 
+              onClick={handleJumpTitleClick}
+              className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-slate-800 cursor-pointer select-none group transition-colors hover:border-amber-500/50"
+              title="Saut Temporel"
+            >
+              <div className="flex items-center gap-2">
+                <Calendar className={`w-4 h-4 transition-colors ${isV1Mode ? 'text-amber-400' : 'text-slate-400 group-hover:text-amber-400'}`} />
+                <h2 className={`text-xs font-bold font-serif-gothic tracking-wider uppercase transition-colors ${isV1Mode ? 'text-amber-300' : 'text-slate-300 group-hover:text-amber-200'}`}>
+                  Saut Temporel
+                </h2>
+              </div>
+              {isV1Mode && (
+                <span className="px-1.5 py-0.5 bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[9px] font-mono font-bold rounded uppercase animate-pulse">
+                  V1 (2025)
+                </span>
+              )}
             </div>
             
             <nav className="space-y-1 text-xs">
@@ -2373,6 +2432,85 @@ export default function App() {
             </div>
 
           </div>
+        </div>
+      )}
+
+      {/* 🔮 MODAL CENTRALE SOLENNELLE DE CHRONOS (5 CLICS) */}
+      {showChronosModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-xl animate-fade-in">
+          <div className="relative max-w-lg w-full gothic-corner-box bg-gradient-to-b from-[#140f09] via-[#0d0a06] to-[#080604] border-2 border-amber-500/70 p-6 sm:p-8 rounded-2xl shadow-[0_0_60px_rgba(245,158,11,0.4)] text-center overflow-hidden">
+            <div className="gothic-corner gothic-corner-tl" />
+            <div className="gothic-corner gothic-corner-tr" />
+            <div className="gothic-corner gothic-corner-bl" />
+            <div className="gothic-corner gothic-corner-br" />
+
+            {/* Arrière-plan magique */}
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-amber-500/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-purple-500/20 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Icône de Chronos */}
+            <div className="mx-auto w-16 h-16 rounded-full bg-amber-500/20 border-2 border-amber-400/70 flex items-center justify-center mb-5 shadow-[0_0_30px_rgba(245,158,11,0.6)] animate-pulse">
+              <Zap className="w-8 h-8 text-amber-300" />
+            </div>
+
+            {/* Titre solennel */}
+            <h2 className="text-xl sm:text-2xl font-bold font-serif-gothic tracking-widest text-amber-200 uppercase mb-3 drop-shadow-md">
+              Vous sentez la présence de Chronos peser sur vous...
+            </h2>
+
+            <div className="gothic-dagger-divider justify-center my-4">
+              <div className="gothic-dagger-line" />
+              <div className="gothic-dagger-diamond bg-amber-400" />
+              <div className="gothic-dagger-line" />
+            </div>
+
+            {/* Message narratif */}
+            <p className="text-sm text-slate-300 font-light leading-relaxed mb-6 italic">
+              Les rouages du temps grincent et la réalité vacille. Les souvenirs masqués de la <strong className="text-amber-300 font-semibold">Saison V1 (Année 2025)</strong> refont surface depuis les abysses de la chronologie...
+            </p>
+
+            {/* Boutons d'action */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={() => {
+                  setIsV1Mode(true);
+                  setShowChronosModal(false);
+                }}
+                className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold font-serif-gothic tracking-wider uppercase text-xs rounded-xl shadow-lg shadow-amber-900/50 transition-all hover:scale-105"
+              >
+                Accéder aux Archives V1 (2025)
+              </button>
+              <button
+                onClick={() => setShowChronosModal(false)}
+                className="w-full sm:w-auto px-5 py-3 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-400 hover:text-slate-200 text-xs font-semibold rounded-xl transition-colors"
+              >
+                Rester dans le Présent
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ⏳ BOUTON FLOTTANT DE RETOUR AU PRÉSENT (V1 ACTIVE) */}
+      {isV1Mode && (
+        <div className="fixed top-20 left-1/2 -translate-x-1/2 z-50 animate-bounce">
+          <button
+            onClick={() => setIsV1Mode(false)}
+            className="group relative flex items-center gap-3 px-5 py-2.5 bg-gradient-to-r from-amber-950/95 via-[#1a140b]/95 to-amber-950/95 border-2 border-amber-500/80 rounded-full shadow-[0_0_25px_rgba(245,158,11,0.5)] backdrop-blur-md text-amber-100 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(245,158,11,0.8)]"
+          >
+            <div className="w-7 h-7 rounded-full bg-amber-500/20 border border-amber-400/60 flex items-center justify-center shrink-0 group-hover:rotate-180 transition-transform duration-700">
+              <Clock className="w-4 h-4 text-amber-300" />
+            </div>
+            <div className="text-left">
+              <div className="text-[10px] uppercase font-bold font-mono tracking-widest text-amber-400/90 leading-none">
+                Archives V1 (2025)
+              </div>
+              <div className="text-xs font-bold font-serif-gothic tracking-wider uppercase text-amber-100 group-hover:text-amber-200">
+                ← Retour au Présent (V2)
+              </div>
+            </div>
+            <span className="absolute -inset-0.5 rounded-full bg-amber-500/20 blur opacity-40 group-hover:opacity-100 transition-opacity" />
+          </button>
         </div>
       )}
 

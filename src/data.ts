@@ -46,8 +46,12 @@ interface RawDataType {
 const typedRawData = rawData as unknown as RawDataType;
 
 export const CHARACTERS_DATA: Record<string, Character> = typedRawData.characters;
-export const SCENES_DATA: Scene[] = (typedRawData.scenes || []).filter(
+export const ALL_RAW_SCENES: Scene[] = typedRawData.scenes || [];
+export const SCENES_DATA: Scene[] = ALL_RAW_SCENES.filter(
   scene => !scene.start_time?.startsWith('2025')
+);
+export const SCENES_DATA_V1: Scene[] = ALL_RAW_SCENES.filter(
+  scene => scene.start_time?.startsWith('2025')
 );
 export const CHANNEL_IMAGES: Record<string, string> = typedRawData.channel_images || {};
 
