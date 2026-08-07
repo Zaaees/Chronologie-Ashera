@@ -1448,7 +1448,7 @@
     },
     {
       "id": "scene_🌸〕𝗖ours-𝗙leurie_2",
-      "title": "🌸〕𝗖ours-𝗙leurie — Scène 2",
+      "title": "Romy, Lewis Bamer, Okayama...",
       "channel": "🌸〕𝗖ours-𝗙leurie",
       "channel_id": "1334878212110549033",
       "category": "| ✵ |  GRANDE SALLE PORCELAINE",
@@ -1459,20 +1459,18 @@
       "startDate": "2026-03-02T19:33:41Z",
       "endDate": "2026-03-17T22:43:38Z",
       "actors": [
-        "Lewis Bamer",
         "Romy",
-        "Historia Fay Ruaidhri Grel",
-        "Lucia Fiorella",
+        "Lewis Bamer",
         "Okayama",
-        "Kenji Takahashi"
+        "Historia Fay Ruaidhri Grel",
+        "Lucia Fiorella"
       ],
       "participants": [
-        "Lewis Bamer",
         "Romy",
-        "Historia Fay Ruaidhri Grel",
-        "Lucia Fiorella",
+        "Lewis Bamer",
         "Okayama",
-        "Kenji Takahashi"
+        "Historia Fay Ruaidhri Grel",
+        "Lucia Fiorella"
       ],
       "messages": [
         {
@@ -1556,14 +1554,6 @@
           "embed_description": ""
         },
         {
-          "id": "1478836653790330990",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-03-04T19:28:53Z",
-          "content": "Kenji et Aryana (la suite)",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1483596691679608974",
           "author": "Lucia Fiorella",
           "timestamp": "2026-03-17T22:43:35Z",
@@ -1580,7 +1570,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 13,
+      "message_count": 12,
       "preview": "```ansi\n\u001b[2;35m🃏 Passants et Survivants 🃏\u001b[0m```\n\nSuite de : https://discord.com/channels/1327646236534112318/1328033864190398485/1477769055850070017\n\n🐰 **La...",
       "discord_url": "discord://discord.com/channels//1334878212110549033/1478113085053993150"
     },
@@ -5472,7 +5462,7 @@
     },
     {
       "id": "scene_🍃〕𝗦erre-de-lune_3",
-      "title": "🍃〕𝗦erre-de-lune — Scène 3",
+      "title": "🍃〕𝗦erre-de-lune",
       "channel": "🍃〕𝗦erre-de-lune",
       "channel_id": "1327646243211444246",
       "category": "| ✵ |  GRANDE SALLE PORCELAINE",
@@ -5482,23 +5472,10 @@
       "end_time": "2026-06-02T19:24:39Z",
       "startDate": "2026-06-02T19:24:39Z",
       "endDate": "2026-06-02T19:24:39Z",
-      "actors": [
-        "Maëll Fol'Dun"
-      ],
-      "participants": [
-        "Maëll Fol'Dun"
-      ],
-      "messages": [
-        {
-          "id": "1511450494701408468",
-          "author": "Maëll Fol'Dun",
-          "timestamp": "2026-06-02T19:24:39Z",
-          "content": "Un début de soirée à la serre de lune",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 1,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Un début de soirée à la serre de lune",
       "discord_url": "discord://discord.com/channels//1327646243211444246/1511450494701408468"
     },
@@ -5568,7 +5545,7 @@
     },
     {
       "id": "scene_🍻〕𝗟a-𝗕alafre_2",
-      "title": "🍻〕𝗟a-𝗕alafre — Scène 2",
+      "title": "Star, Selena Moon, Red Roadman",
       "channel": "🍻〕𝗟a-𝗕alafre",
       "channel_id": "1328714824431046708",
       "category": "| ✦ |  BASSE-VILLE",
@@ -5579,16 +5556,14 @@
       "startDate": "2026-02-23T18:29:21Z",
       "endDate": "2026-03-31T14:05:55Z",
       "actors": [
-        "Red Roadman",
-        "Selena Moon",
         "Star",
-        "Aryanna Erhendil"
+        "Selena Moon",
+        "Red Roadman"
       ],
       "participants": [
-        "Red Roadman",
-        "Selena Moon",
         "Star",
-        "Aryanna Erhendil"
+        "Selena Moon",
+        "Red Roadman"
       ],
       "messages": [
         {
@@ -5604,14 +5579,6 @@
           "author": "Selena Moon",
           "timestamp": "2026-02-23T18:29:38Z",
           "content": "( <@487993781208219661> Voilà, sorry du temps. Mais on peut. Et... Rp ouvert à tous ceux qui veulent, on est dans une taverne après tout. <:hh:1458217495155446093>)",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1475608560309112924",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-02-23T21:41:36Z",
-          "content": "Si c'est toi qui paye, ça roule pour moi ! - Aryana & Kenji",
           "embed_title": "",
           "embed_description": ""
         },
@@ -5888,13 +5855,13 @@
           "embed_description": ""
         }
       ],
-      "message_count": 37,
+      "message_count": 36,
       "preview": "*Bon, pour le moment, il faut dire qu'on ne la voit pas souvent ailleurs que dans des secteurs de ce genre. Un coup dans une cantine, un autre dans un bar......",
       "discord_url": "discord://discord.com/channels//1328714824431046708/1475560181059555359"
     },
     {
       "id": "scene_🍻〕𝗟a-𝗕alafre_3",
-      "title": "🍻〕𝗟a-𝗕alafre — Scène 3",
+      "title": "🍻〕𝗟a-𝗕alafre",
       "channel": "🍻〕𝗟a-𝗕alafre",
       "channel_id": "1328714824431046708",
       "category": "| ✦ |  BASSE-VILLE",
@@ -5904,23 +5871,10 @@
       "end_time": "2026-07-03T14:34:24Z",
       "startDate": "2026-07-03T14:34:24Z",
       "endDate": "2026-07-03T14:34:24Z",
-      "actors": [
-        "Aryanna Erhendil"
-      ],
-      "participants": [
-        "Aryanna Erhendil"
-      ],
-      "messages": [
-        {
-          "id": "1522611475510988931",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-07-03T14:34:24Z",
-          "content": "Ils ne souhaitent qu'une seule chose : La paix.",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 1,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Ils ne souhaitent qu'une seule chose : La paix.",
       "discord_url": "discord://discord.com/channels//1328714824431046708/1522611475510988931"
     },
@@ -6894,7 +6848,7 @@
     },
     {
       "id": "scene_🏯〕𝗔rène-𝗛urlante_2",
-      "title": "🏯〕𝗔rène-𝗛urlante — Scène 2",
+      "title": "Star, Nick Sol, Loyis Delacroix...",
       "channel": "🏯〕𝗔rène-𝗛urlante",
       "channel_id": "1328715069806084136",
       "category": "| ✠ |   LE BASTION ÉCARLATE",
@@ -6905,26 +6859,26 @@
       "startDate": "2026-02-01T18:01:52Z",
       "endDate": "2026-02-17T22:50:06Z",
       "actors": [
+        "Star",
         "Nick Sol",
+        "Loyis Delacroix",
+        "Jin Alurantes",
         "Aryanna Erhendil",
         "Isis Faerieth",
-        "Loyis Delacroix",
-        "Inzu Sravel",
-        "LE CONSEILLER",
         "Brutus Redwitch",
-        "Star",
-        "Jin Alurantes"
+        "LE CONSEILLER",
+        "Inzu Sravel"
       ],
       "participants": [
+        "Star",
         "Nick Sol",
+        "Loyis Delacroix",
+        "Jin Alurantes",
         "Aryanna Erhendil",
         "Isis Faerieth",
-        "Loyis Delacroix",
-        "Inzu Sravel",
-        "LE CONSEILLER",
         "Brutus Redwitch",
-        "Star",
-        "Jin Alurantes"
+        "LE CONSEILLER",
+        "Inzu Sravel"
       ],
       "messages": [
         {
@@ -6974,54 +6928,6 @@
           "content": "🏮 |  La Première épreuve : prouver son Honneur\n> *Quittez les grandes instances du Palais pour finir plus loin, au Bastion Ecarlate, c'est ce qui attendait les jeunes âmes qu'Inzu eut récupéré il y a de cela une dizaine de minutes. Les portes du Bastion franchies, il n'y avait plus de retour en arrière possible. Et c'est au sein de l'Arène Hurlante qu'ils devront prouver leur Honneur. Cette grande salle semblant avoir été creusée dans la roche n'est pas accueillante du tout, surplombant l'endroit, l'immense visage hurlant dont les rumeurs se donnent à cœur joie de lui donner une histoire en est partie responsable. Plein de terre et de sable, ce lieu a vu passer nombres de têtes, d'espoirs et de volonté. Aujourd'hui, il se charge encore d'histoire avec ce que la troupe qui vient d'y pénétrer y trouvera.*\n\n- \"L'Arène Hurlante, mes petits ! Un lieu emblématique ici, car tout ceux qui jurent fidélité à la Garde Pourpre sont passés par ici, et par les deux épreuves que je vais vous soumettre aujourd'hui.\"\n\n> *Au centre de l'Arène, 6 Esperiens sont attachés à des chaises en bois ayant tout l'air d'être inconfortables. Ligotés, bâillonnés et un bandeau sur les yeux, la scène ressemble trait pour trait à un kidnapping de grande envergure. Pourtant, ceux dont la mobilité a été entravée ne semblent pas se débattre, ou chercher à s'enfuir. Dans le calme et le silence, chacun escorté par un garde, ils attendent.*\n\n- \"En tant que membres de la Garde Pourpre, vous devez être capables d’être **justes**. Vous devriez le savoir, mais au cas où certains d'entre vous ignorent nos missions, je vais vous les rappeler au cours de cette journée. La Garde Pourpre est toute désignée pour prononcer les sanctions à l’encontre de ceux qui défient l’autorité, là où nos chers collègues du Voile d'Ivoire prononcent le jugement.\"\n\n> *Passant au devant des nouveaux membres, Inzu continue son discours alors que son éventail passe au dessus de la tête de chacun des coupables-ci présent. L'éventail, déployé à son plein potentiel, émet une lueur or pâle.*\n\n- \"Vous serez soumis, chacun, à une situation ayant déjà eu lieu ici, à Esperia. Vous rendrez votre sanction, avec justesse, au regard des situations qui vous sont exposées. Vous avez une heure || (2 tours)||, et disposez de deux questions à poser au condamné. A l'issue de cette heure, je veux que vous rendiez la sentence avec le plus de précision possible. Mes petits, les condamnés sont à vous, mais laissez moi vous les présenter...\"\n------------------------------------------------------------------- Actes. Conséquences. Sentence.",
           "embed_title": "🏮 |  La Première épreuve : prouver son Honneur",
           "embed_description": "> *Quittez les grandes instances du Palais pour finir plus loin, au Bastion Ecarlate, c'est ce qui attendait les jeunes âmes qu'Inzu eut récupéré il y a de cela une dizaine de minutes. Les portes du Bastion franchies, il n'y avait plus de retour en arrière possible. Et c'est au sein de l'Arène Hurlante qu'ils devront prouver leur Honneur. Cette grande salle semblant avoir été creusée dans la roche n'est pas accueillante du tout, surplombant l'endroit, l'immense visage hurlant dont les rumeurs se donnent à cœur joie de lui donner une histoire en est partie responsable. Plein de terre et de sable, ce lieu a vu passer nombres de têtes, d'espoirs et de volonté. Aujourd'hui, il se charge encore d'histoire avec ce que la troupe qui vient d'y pénétrer y trouvera.*\n\n- \"L'Arène Hurlante, mes petits ! Un lieu emblématique ici, car tout ceux qui jurent fidélité à la Garde Pourpre sont passés par ici, et par les deux épreuves que je vais vous soumettre aujourd'hui.\"\n\n> *Au centre de l'Arène, 6 Esperiens sont attachés à des chaises en bois ayant tout l'air d'être inconfortables. Ligotés, bâillonnés et un bandeau sur les yeux, la scène ressemble trait pour trait à un kidnapping de grande envergure. Pourtant, ceux dont la mobilité a été entravée ne semblent pas se débattre, ou chercher à s'enfuir. Dans le calme et le silence, chacun escorté par un garde, ils attendent.*\n\n- \"En tant que membres de la Garde Pourpre, vous devez être capables d’être **justes**. Vous devriez le savoir, mais au cas où certains d'entre vous ignorent nos missions, je vais vous les rappeler au cours de cette journée. La Garde Pourpre est toute désignée pour prononcer les sanctions à l’encontre de ceux qui défient l’autorité, là où nos chers collègues du Voile d'Ivoire prononcent le jugement.\"\n\n> *Passant au devant des nouveaux membres, Inzu continue son discours alors que son éventail passe au dessus de la tête de chacun des coupables-ci présent. L'éventail, déployé à son plein potentiel, émet une lueur or pâle.*\n\n- \"Vous serez soumis, chacun, à une situation ayant déjà eu lieu ici, à Esperia. Vous rendrez votre sanction, avec justesse, au regard des situations qui vous sont exposées. Vous avez une heure || (2 tours)||, et disposez de deux questions à poser au condamné. A l'issue de cette heure, je veux que vous rendiez la sentence avec le plus de précision possible. Mes petits, les condamnés sont à vous, mais laissez moi vous les présenter...\""
-        },
-        {
-          "id": "1467596447456432210",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:04:19Z",
-          "content": "Lewis Phoebe Ashbourne",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1467596604700889348",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:04:57Z",
-          "content": "Brutus Redwitch",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1467596740604596369",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:05:29Z",
-          "content": "Hana Chapellet",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1467596840584089813",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:05:53Z",
-          "content": "Eldritch Kineya",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1467596927506841855",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:06:14Z",
-          "content": "Sol Nick",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1467597018938736845",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-01T19:06:35Z",
-          "content": "Loyis Delacroix",
-          "embed_title": "",
-          "embed_description": ""
         },
         {
           "id": "1468202820191912138",
@@ -7172,30 +7078,6 @@
           "author": "Brutus Redwitch",
           "timestamp": "2026-02-08T12:45:07Z",
           "content": "***Son interrogation est rapidement terminée. Inzu leur annonce la suite : une nouvelle épreuve. Difficile de se mettre en équipe, comme ça. Brutus fait un signe à Lewis, l'intitulé de l'exercice désapprouve entièrement le fait qu'ils se mettent en équipe. Un mince sourire approbateur à Nick.***\n\n- \"Allez-y.\"\n\n***Ensuite, c'est Hana qui s'avance vers lui et l'interpelle. Aussitôt, il se tourne vers Hana et hoche rapidement de la tête.***\n\n- \"C'est d'accord. J'ai déjà une bonne idée de comment faire. **L'homme se penche vers Hana, pour éviter qu'Inzu entende cette brève stratégie.** Si on peut restreindre les mouvements d'une manière ou d'une autre des clones. Avec les miens, je pourrais probablement essayer de récupérer l'éventail. \n\n***Malgré son plan rapide, l'épreuve reste bien étrange. En effet, il n'a jamais prévu ou imaginé une situation pareille et n'a jamais prévu d'utiliser ses sorts pour essayer d'attraper un éventail. C'est franchement nouveau. Néanmoins, Brutus a envie d'essayer. Il commence à se déplacer pour s'approcher du clone dont ils vont s'occuper.***",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1470350007583637596",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-09T09:25:59Z",
-          "content": "Brutus & Hana",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1470350095613694007",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-09T09:26:20Z",
-          "content": "Lewis & Nick",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1470350183756992543",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-02-09T09:26:41Z",
-          "content": "Eldritch & Loyis",
           "embed_title": "",
           "embed_description": ""
         },
@@ -7552,7 +7434,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 78,
+      "message_count": 69,
       "preview": "**Une main est tendue vers lui, Nick va l'accepter directement sans broncher, il la secoue légèrement tout en gardant ce même sourire affiché sur son visage....",
       "discord_url": "discord://discord.com/channels//1328715069806084136/1467580732481474815"
     },
@@ -11308,7 +11190,7 @@
     },
     {
       "id": "scene_💮〕𝗝ardin-de-𝗤uartz_5",
-      "title": "💮〕𝗝ardin-de-𝗤uartz — Scène 5",
+      "title": "Aegnor Othar, Idelmee Cadree",
       "channel": "💮〕𝗝ardin-de-𝗤uartz",
       "channel_id": "1328033778505093180",
       "category": "| ❖ |   ESPERIA COURS",
@@ -11320,13 +11202,11 @@
       "endDate": "2026-07-22T14:51:12Z",
       "actors": [
         "Aegnor Othar",
-        "Astreüs Mylonas",
-        "Idelmée Cadree"
+        "Idelmee Cadree"
       ],
       "participants": [
         "Aegnor Othar",
-        "Astreüs Mylonas",
-        "Idelmée Cadree"
+        "Idelmee Cadree"
       ],
       "messages": [
         {
@@ -11506,14 +11386,6 @@
           "embed_description": ""
         },
         {
-          "id": "1527646126088388628",
-          "author": "Astreüs Mylonas",
-          "timestamp": "2026-07-17T12:00:18Z",
-          "content": "Isis et Astreüs",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1529012622316408842",
           "author": "Aegnor Othar",
           "timestamp": "2026-07-21T06:30:16Z",
@@ -11554,7 +11426,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 28,
+      "message_count": 27,
       "preview": "*C’est sous le ciel bleu de la fin d’après-midi qu’Idelmée flânait dans le jardin du quartier du Voile d’Ivoire. Elle n’avait pas encore eu le temps de profi...",
       "discord_url": "discord://discord.com/channels//1328033778505093180/1523750498635878482"
     },
@@ -12732,7 +12604,7 @@
     },
     {
       "id": "scene_⛩️〕𝗧errain-𝗚randblanc_6",
-      "title": "⛩️〕𝗧errain-𝗚randblanc — Scène 6",
+      "title": "⛩️〕𝗧errain-𝗚randblanc",
       "channel": "⛩️〕𝗧errain-𝗚randblanc",
       "channel_id": "1327646240132829226",
       "category": "| ✵ |  LE HEAUME BLANC",
@@ -12742,23 +12614,10 @@
       "end_time": "2026-08-06T18:26:31Z",
       "startDate": "2026-08-06T18:26:31Z",
       "endDate": "2026-08-06T18:26:31Z",
-      "actors": [
-        "Aryanna Erhendil"
-      ],
-      "participants": [
-        "Aryanna Erhendil"
-      ],
-      "messages": [
-        {
-          "id": "1534991078791315558",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-08-06T18:26:31Z",
-          "content": "Là où tout a commencé",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 1,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Là où tout a commencé",
       "discord_url": "discord://discord.com/channels//1327646240132829226/1534991078791315558"
     },
@@ -14604,7 +14463,7 @@
     },
     {
       "id": "scene_⚔️〕𝗧errains-𝗡acrés_3",
-      "title": "⚔️〕𝗧errains-𝗡acrés — Scène 3",
+      "title": "Septimus Kales, Lucia Fiorella, Adelina Del Fuego",
       "channel": "⚔️〕𝗧errains-𝗡acrés",
       "channel_id": "1327646239663325280",
       "category": "| ✵ |  LE HEAUME BLANC",
@@ -14616,15 +14475,13 @@
       "endDate": "2026-06-09T10:28:28Z",
       "actors": [
         "Septimus Kales",
-        "Adelina Del Fuego",
         "Lucia Fiorella",
-        "Aryanna Erhendil"
+        "Adelina Del Fuego"
       ],
       "participants": [
         "Septimus Kales",
-        "Adelina Del Fuego",
         "Lucia Fiorella",
-        "Aryanna Erhendil"
+        "Adelina Del Fuego"
       ],
       "messages": [
         {
@@ -14788,14 +14645,6 @@
           "embed_description": ""
         },
         {
-          "id": "1509550432236867654",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-05-28T13:34:29Z",
-          "content": "Il était une fois une Princesse et sa Chevaleresse sur un terrain d'entraînement",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1510759475794149519",
           "author": "Lucia Fiorella",
           "timestamp": "2026-05-31T21:38:47Z",
@@ -14844,7 +14693,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 27,
+      "message_count": 26,
       "preview": "```ansi\n\u001b[2;35m🃏 L'échec comme point de départ 🃏\u001b[0m```\n\n🐰 **Il n’y a pas si longtemps, “Elle” s’était rendue au Port du Levant pour passer la soirée dans un...",
       "discord_url": "discord://discord.com/channels//1327646239663325280/1499668595771183246"
     },
@@ -17890,7 +17739,7 @@
     },
     {
       "id": "scene_👑〕𝗣lace-de-𝗚randpalais_5",
-      "title": "👑〕𝗣lace-de-𝗚randpalais — Scène 5",
+      "title": "Aryanna Erhendil",
       "channel": "👑〕𝗣lace-de-𝗚randpalais",
       "channel_id": "1327646240132829228",
       "category": "| ❖ |   ESPERIA COURS",
@@ -17908,14 +17757,6 @@
       ],
       "messages": [
         {
-          "id": "1492429180166606909",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-04-11T07:40:44Z",
-          "content": "Adelina & Magon",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1492837927946817536",
           "author": "Aryanna Erhendil",
           "timestamp": "2026-04-12T10:44:57Z",
@@ -17924,7 +17765,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 2,
+      "message_count": 1,
       "preview": "Adelina & Magon",
       "discord_url": "discord://discord.com/channels//1327646240132829228/1492429180166606909"
     },
@@ -19278,7 +19119,7 @@
     },
     {
       "id": "scene_🧭〕𝗣arc-des-𝗖ardinaux_4",
-      "title": "🧭〕𝗣arc-des-𝗖ardinaux — Scène 4",
+      "title": "Vosk Sulyvan, Isis Faerieth",
       "channel": "🧭〕𝗣arc-des-𝗖ardinaux",
       "channel_id": "1327646240132829229",
       "category": "| ✦ |  BASSE-VILLE",
@@ -19289,12 +19130,10 @@
       "startDate": "2026-04-08T16:25:43Z",
       "endDate": "2026-05-07T21:57:35Z",
       "actors": [
-        "Aryanna Erhendil",
         "Vosk Sulyvan",
         "Isis Faerieth"
       ],
       "participants": [
-        "Aryanna Erhendil",
         "Vosk Sulyvan",
         "Isis Faerieth"
       ],
@@ -19336,14 +19175,6 @@
           "author": "Vosk Sulyvan",
           "timestamp": "2026-04-12T09:53:48Z",
           "content": "*Échange lapidaire.*\n\n*Faire preuve d'incivilité ne mène qu'à un rejet, évident, de son interlocutrice. Conjurant les ténèbres, qu'elle pense être alliés, elle crée un vide que l'Ombre remplit aussitôt par un geste brutal ; une coupe horizontale de l'espace qu'elle a occupé auparavant. Une seconde de plus sonne la fin. En s'échappant des griffes du prédateur, la proie laisse derrière elle des traces, les ténèbres aveuglant se distordant sur sa route, donnant une voie à suivre.*\n\n*Le Rêveur s'y enfonce sans attendre, observant l'agilité féline de la Pandorienne avec intérêt.*\n\n*Rejoignant le rebord, sa vivacité annonce une longue traque, une chasse qui ne peut connaître de fin pour l'instant. Comme indication terrifiante qu'il ne la lâche pas d'une semelle, le bruit sourd de la roue se fait entendre, claquant une nouvelle fois, laissant l'Arcane du Prométhéen gonfler au rythme de cet instrument du Requiem. Grondant, sa voix laisse présager une fade réalité à celle qui fait appelle aux faussaires.*\n\n— Affronte moi, conjuratrice.\n\n*Luciférien.*\n\n*Alors qu'il progresse sur ce rebord avec aisance, sa prise sur son arme change de forme et cette lame d'obscurités devient alors une arme de jet. Marquant une pause et adoptant la forme adéquat pour un lancer le plus puissant possible, n'ayant comme limite que sa maigre force, il lance ce projectile mortel en direction de la fuyarde, cherchant à la toucher à n'importe quel prix, ou, tout du moins, à la ralentir le plus possible. S'il y parvient, il ne va pas s'approcher plus, conservant une distance de sécurité optimale en cas de nouvelle attaque de... \" Nyx \" ?*\n\n— Fais face à ce que tu es.\n\n*Une provocation, presque enfantine et pourtant, qui marque de sa faim dévorante. Celui dont elle ne connaît le nom ne cherche pas à converser ou à créer un climat de confiance quelconque ; il instaure une pression, la plus pure, celle de la peur, de la volonté de survivre. C'est ici, qu'il va pouvoir se sustenter d'un mets qu'il se refuse pour l'instant avec le Cygne ou le Balafré. L'adrénaline du combat, la soif de sang, écraser les convictions par la force, prouver qu'on est en vie. Tout cela, dans le froid morbide de l'indifférence, qui lui colle si bien à la peau.*",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1493535841614561300",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-04-14T08:58:13Z",
-          "content": "Nouveau jour, Nouvelle aventure !",
           "embed_title": "",
           "embed_description": ""
         },
@@ -19476,7 +19307,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 22,
+      "message_count": 21,
       "preview": "```          ```",
       "discord_url": "discord://discord.com/channels//1327646240132829229/1491474133131989105"
     },
@@ -21722,7 +21553,7 @@
     },
     {
       "id": "scene_🗡️〕𝗤uartier-des-𝗙orges_2",
-      "title": "🗡️〕𝗤uartier-des-𝗙orges — Scène 2",
+      "title": "Star, Sw dark325",
       "channel": "🗡️〕𝗤uartier-des-𝗙orges",
       "channel_id": "1328038255060451328",
       "category": "Demeure du Sabre",
@@ -21733,14 +21564,12 @@
       "startDate": "2026-02-17T23:24:08Z",
       "endDate": "2026-02-25T17:51:52Z",
       "actors": [
-        "Kenji Takahashi",
-        "Sw dark325",
-        "Star"
+        "Star",
+        "Sw dark325"
       ],
       "participants": [
-        "Kenji Takahashi",
-        "Sw dark325",
-        "Star"
+        "Star",
+        "Sw dark325"
       ],
       "messages": [
         {
@@ -21854,17 +21683,9 @@
           "content": "``` ``` \n\n**Hana gardera ce léger sourire afficher sur son visage tandis qu'elle écoutes les propos de Magon, il est vrai que demander le passé de quelqu'un qu'elle vient d'à peine rencontrée était quelque chose d'assez impoli la jeune femme le savait mais elle remarqua qu'elle n'avais pas vraiment pris le temps d'être un peu plus clair dans sa question. Elle viendra alors reprendre la parole venant réajuster sa question pour qu'elle paraisse moins indiscrète**\n\n*\"Et bien maintenant, peut être faites-vous partis de l'une des grandes guildes ? De mon côté je fais partie de la Garde Pourpre.\"*\n\n``` ```",
           "embed_title": "",
           "embed_description": ""
-        },
-        {
-          "id": "1476275522152431800",
-          "author": "Kenji Takahashi",
-          "timestamp": "2026-02-25T17:51:52Z",
-          "content": "La quête de la dague de Lewis",
-          "embed_title": "",
-          "embed_description": ""
         }
       ],
-      "message_count": 15,
+      "message_count": 14,
       "preview": "``` ``` \n\n**Après une longue marche, Hana finira par arriver dans le quartier des forges ce n'était pas forcément l'endroit où elle souhaitais se rendre au d...",
       "discord_url": "discord://discord.com/channels//1328038255060451328/1473460038914806032"
     },
@@ -22008,7 +21829,7 @@
     },
     {
       "id": "scene_✨〕𝗔gora-des-𝗥eines_2",
-      "title": "✨〕𝗔gora-des-𝗥eines — Scène 2",
+      "title": "Historia Fay Ruaidhri Grel, Asior Eveus",
       "channel": "✨〕𝗔gora-des-𝗥eines",
       "channel_id": "1328038646019919872",
       "category": "| ❖ |   ESPERIA COURS",
@@ -22019,14 +21840,12 @@
       "startDate": "2026-02-18T11:47:38Z",
       "endDate": "2026-03-04T15:21:25Z",
       "actors": [
-        "Asior Eveus",
         "Historia Fay Ruaidhri Grel",
-        "Aryanna Erhendil"
+        "Asior Eveus"
       ],
       "participants": [
-        "Asior Eveus",
         "Historia Fay Ruaidhri Grel",
-        "Aryanna Erhendil"
+        "Asior Eveus"
       ],
       "messages": [
         {
@@ -22066,14 +21885,6 @@
           "author": "Historia Fay Ruaidhri Grel",
           "timestamp": "2026-02-22T16:20:13Z",
           "content": "|| <@374571976645148693> ||",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1476926341210439851",
-          "author": "Aryanna Erhendil",
-          "timestamp": "2026-02-27T12:57:59Z",
-          "content": "L'équilibre est le contraire du chaos",
           "embed_title": "",
           "embed_description": ""
         },
@@ -22126,13 +21937,13 @@
           "embed_description": ""
         }
       ],
-      "message_count": 12,
+      "message_count": 11,
       "preview": "> *La nuit se couche délicatement sur le rebord de ce bassin sacré. Ses doigts glissent au-dessus de l'eau, sans troubler en aucune façon l'onde. Ses yeux he...",
       "discord_url": "discord://discord.com/channels//1328038646019919872/1473647144727744618"
     },
     {
       "id": "scene_✨〕𝗔gora-des-𝗥eines_3",
-      "title": "✨〕𝗔gora-des-𝗥eines — Scène 3",
+      "title": "✨〕𝗔gora-des-𝗥eines",
       "channel": "✨〕𝗔gora-des-𝗥eines",
       "channel_id": "1328038646019919872",
       "category": "| ❖ |   ESPERIA COURS",
@@ -22142,23 +21953,10 @@
       "end_time": "2026-03-15T11:37:13Z",
       "startDate": "2026-03-15T11:37:13Z",
       "endDate": "2026-03-15T11:37:13Z",
-      "actors": [
-        "Septimus Kales"
-      ],
-      "participants": [
-        "Septimus Kales"
-      ],
-      "messages": [
-        {
-          "id": "1482704219306725567",
-          "author": "Septimus Kales",
-          "timestamp": "2026-03-15T11:37:13Z",
-          "content": "Agora des Reines 2",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 1,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Agora des Reines 2",
       "discord_url": "discord://discord.com/channels//1328038646019919872/1482704219306725567"
     },
@@ -25320,7 +25118,7 @@
     },
     {
       "id": "scene_🚢〕𝗣ort-du-𝗟evant_5",
-      "title": "🚢〕𝗣ort-du-𝗟evant — Scène 5",
+      "title": "Aryanna Erhendil, Nick Sol",
       "channel": "🚢〕𝗣ort-du-𝗟evant",
       "channel_id": "1327646240669696043",
       "category": "| ❖ |   ESPERIA COURS",
@@ -25331,16 +25129,12 @@
       "startDate": "2026-06-13T13:15:32Z",
       "endDate": "2026-08-06T18:24:45Z",
       "actors": [
-        "Isis Faerieth",
-        "Nick Sol",
-        "Lumia Faendharts",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Nick Sol"
       ],
       "participants": [
-        "Isis Faerieth",
-        "Nick Sol",
-        "Lumia Faendharts",
-        "Aryanna Erhendil"
+        "Aryanna Erhendil",
+        "Nick Sol"
       ],
       "messages": [
         {
@@ -25464,14 +25258,6 @@
           "embed_description": ""
         },
         {
-          "id": "1522318799779663872",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-07-02T19:11:25Z",
-          "content": "Fuir - Katelyn Hoffmann & Isis Faerieth",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1526177361349836831",
           "author": "Aryanna Erhendil",
           "timestamp": "2026-07-13T10:43:57Z",
@@ -25576,14 +25362,6 @@
           "embed_description": ""
         },
         {
-          "id": "1529186859295707276",
-          "author": "Lumia Faendharts",
-          "timestamp": "2026-07-21T18:02:38Z",
-          "content": "Une chouette découvre enfin l'eau",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1530184188412825720",
           "author": "Aryanna Erhendil",
           "timestamp": "2026-07-24T12:05:39Z",
@@ -25632,7 +25410,7 @@
           "embed_description": ""
         }
       ],
-      "message_count": 36,
+      "message_count": 34,
       "preview": "**Le vent souffle fort sur le port. Tôt le matin, il faisait frais et le soleil vient d'étendre son premier rayon de lumière dans les cieux encore sombres.**...",
       "discord_url": "discord://discord.com/channels//1327646240669696043/1515343869078802592"
     },
@@ -32258,7 +32036,7 @@
     },
     {
       "id": "scene_♟️〕𝐐uartiers_2",
-      "title": "♟️〕𝐐uartiers — Scène 2",
+      "title": "Red Roadman, Idelmee Cadree, Katelynn Hoffmann...",
       "channel": "♟️〕𝐐uartiers",
       "channel_id": "1480168077416071301",
       "category": "| ♖ |  LE FORUM ÉBURNÉEN",
@@ -32269,21 +32047,21 @@
       "startDate": "2026-06-13T09:15:34Z",
       "endDate": "2026-06-21T15:28:17Z",
       "actors": [
+        "Red Roadman",
+        "Idelmee Cadree",
+        "Katelynn Hoffmann",
         "Vosk Sulyvan",
         "Asior Eveus",
-        "Red Roadman",
         "Isis Faerieth",
-        "Idelmée Cadree",
-        "Katelynn Hoffmann",
         "LE CONSEILLER"
       ],
       "participants": [
+        "Red Roadman",
+        "Idelmee Cadree",
+        "Katelynn Hoffmann",
         "Vosk Sulyvan",
         "Asior Eveus",
-        "Red Roadman",
         "Isis Faerieth",
-        "Idelmée Cadree",
-        "Katelynn Hoffmann",
         "LE CONSEILLER"
       ],
       "messages": [
@@ -32328,14 +32106,6 @@
           "embed_description": ""
         },
         {
-          "id": "1516736998201753610",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-17T09:31:19Z",
-          "content": "🟧 Le son de l'Innocence",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1516845683921915925",
           "author": "Idelmée Cadree",
           "timestamp": "2026-06-17T16:43:12Z",
@@ -32366,33 +32136,9 @@
           "content": "**À peine Red eut-il l’occasion de rejoindre avec un peu de retard le groupe qu’il se fera surprendre par son confrère du cercle alors qu’il cherchait activement une parcelle propre de son corps contre laquelle essuyer ses joues et son front noircis par la crasse dont il s’était recouvert depuis sa sortie.\n\nCessant soudainement d’ausculter son corps pour répondre à l’inquisition d’Asior, le grand gaillard lui adressera un fin sourire accompagné d’un hochement de la tête, détournant ses yeux dans la direction indiquée par son acolyte du soir.**\n\n* Pas le moindre soucis j’espère pouvoir me rendre utile, on cherche toujours dame Sha’al c’est bien ça ?\n\n**Confirmera le dadet en emboîtant le pas de son locuteur, attendant silencieusement sa confirmation.**",
           "embed_title": "",
           "embed_description": ""
-        },
-        {
-          "id": "1516869084757622875",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-17T18:16:11Z",
-          "content": "🟩 Tracer la suite",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1516869702687785150",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-17T18:18:39Z",
-          "content": "🟪 Brume de Soie.",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1518276380155056238",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-21T15:28:17Z",
-          "content": "🟨 La Valeur d'une Vie.",
-          "embed_title": "",
-          "embed_description": ""
         }
       ],
-      "message_count": 13,
+      "message_count": 9,
       "preview": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
       "discord_url": "discord://discord.com/channels//1480168077416071301/1515283479078899805"
     },
@@ -33858,7 +33604,7 @@
     },
     {
       "id": "scene_🛑〕𝐀rène_3",
-      "title": "🛑〕𝐀rène — Scène 3",
+      "title": "Ren Urugaki, L'Oeil, Red Roadman...",
       "channel": "🛑〕𝐀rène",
       "channel_id": "1480168703403495516",
       "category": "| ✠ |   LE BASTION ÉCARLATE",
@@ -33869,44 +33615,44 @@
       "startDate": "2026-06-13T09:15:39Z",
       "endDate": "2026-07-02T17:27:12Z",
       "actors": [
-        "Akane Tsukishiro",
-        "Nick Sol",
-        "Vosk Sulyvan",
-        "Aryanna Erhendil",
-        "L'Oeil",
-        "Asior Eveus",
-        "Red Roadman",
-        "Sous son oeil",
-        "Isis Faerieth",
-        "Idelmée Cadree",
-        "Katelynn Hoffmann",
-        "LE CONSEILLER",
         "Ren Urugaki",
+        "L'Oeil",
+        "Red Roadman",
+        "Idelmee Cadree",
+        "Katelynn Hoffmann",
         "Kenji Takahashi",
         "Jasp Nah",
-        "Brutus Redwitch",
+        "Nick Sol",
+        "Hedwig Von Glanzestern",
+        "Vosk Sulyvan",
+        "Akane Tsukishiro",
+        "Sous son oeil",
+        "Asior Eveus",
         "Jin Alurantes",
-        "Hedwig Von Glanzestern"
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Brutus Redwitch",
+        "LE CONSEILLER"
       ],
       "participants": [
-        "Akane Tsukishiro",
-        "Nick Sol",
-        "Vosk Sulyvan",
-        "Aryanna Erhendil",
-        "L'Oeil",
-        "Asior Eveus",
-        "Red Roadman",
-        "Sous son oeil",
-        "Isis Faerieth",
-        "Idelmée Cadree",
-        "Katelynn Hoffmann",
-        "LE CONSEILLER",
         "Ren Urugaki",
+        "L'Oeil",
+        "Red Roadman",
+        "Idelmee Cadree",
+        "Katelynn Hoffmann",
         "Kenji Takahashi",
         "Jasp Nah",
-        "Brutus Redwitch",
+        "Nick Sol",
+        "Hedwig Von Glanzestern",
+        "Vosk Sulyvan",
+        "Akane Tsukishiro",
+        "Sous son oeil",
+        "Asior Eveus",
         "Jin Alurantes",
-        "Hedwig Von Glanzestern"
+        "Aryanna Erhendil",
+        "Isis Faerieth",
+        "Brutus Redwitch",
+        "LE CONSEILLER"
       ],
       "messages": [
         {
@@ -34284,14 +34030,6 @@
           "content": "La Régente.\n**-** \"Son visage est d'une douceur appétissante. \"\n\n> *Elle observe, de sa tour d'Ivoire perchée, le déroulé des prises de décisions de ces jeunes Mages inexpérimentés. Elle soupire, voyant que trop peu d'entre eux se sont décidés à suivre la voie de la Vie. Ses longs cheveux rouges descendent sur ses épaules, tombent sur la pierre froide alors que sa moue décrit une courbe inférieure.*\n\n**-** \"Lucas ! Epargne au moins le visage des filles, j'aimerai en récupérer une ou deux une fois que tu aura fini.\"\n\n> *Son corps se tourne alors vers les pas de la Distra qui empoignent __Katelyn__ et __Asior__, leurs mains enchaînées entre une paire de menottes bloquant toute forme d'usage de l'arcane. Elle se saisit, les mains dans celles de Katelyn, et son regard s'ancre dans celui de la Noble. C'est que de près, elle est encore plus belle.*\n\n**-** \"Quel sont vos noms, mes enfants ? Votre choix est le bon, au milieu de ceux qui ne saisissent pas la profondeur de nos propos, ceux qui ne voyant pas au delà de demain, vous avez pris la bonne décision. Asseyez-vous, ce serai dommage d'être mal installé pour voir vos camarades se faire massacrer.*\n\n> *Deux gardes de la Distra forcent les conviés à s'assoir, alors qu'ils restent à leurs côtés, surveillants leurs faits et gestes. Concernant Sha'al, celle-ci se penche au dessus du balcon, laissant échapper de ses lèvres une fumée rosée, presque pourpre qui s'étends au sol de l'Arène comme un brouillard pourtant dense.*\n\n```A moins de flotter au dessus du sol ou de posséder un sort permettant d'annuler les effets d'un sort de porte 3, les joueurs sont affectés d'un malus de-1 en perception.```\nLa voix réconfortante d'une Mère.\n[Image: https://i.goopics.net/9znyag.jpg]\nCrrrick. Clack.\n> *Dans les arrondis de l'Arène, elle se terre comme une chouette dans la pénombre. Sa proie en visuel, un rire lointain parvient au groupe comme un murmure étrange et malaisant. Une ombre se mouvoit, puis disparaît. Si les regards cherchent à suivre l'ombre qui se dissipe, il est pour l'heure impossible d'en discerner ses contours.*\n\n**-** 'Y a quoi en dessous ?'\n[Image: https://i.goopics.net/uok03o.png]\nClack Clack.\n> *Son corps fends l'air, n'observe rien d'autres que la proie qui sur sa rétine est imprimée. Dans son dos, une paire d'aile déployée lui permets de foncer à toute vitesse sur __Brutus Redwitch__, ne lui laissant aucune chance de riposte.*\n\n*Il est __sa__ proie.*\n\n> *Dans son dos, le Mage peut sentir un courant d'air avant qu'une paire de griffes acérées se s'accrochent sur ses épaules, s'ancrent dans sa peau, dans sa chair jusqu'à passer en dessous des bandages qui font de la surface de son corps une zone atteignable. En l'espace d'une seconde, il est dans les airs, à la merci de celle qui, depuis qu'ils sont tous arrivés, se terre dans l'ombre de l'arène, dans ses recoins les plus obscurs. Dans un mouvement habile, elle balance le corps du bandé vers le haut afin de le récupérer entre ses bras. Ses mains semblent elles aussi en proie à une transformation partielle : ses griffes et ses doigts sont allongés de plusieurs centimètres, comme les serres d'un oiseau.*\n\n> *Dans les airs, il entends sa voix craquelée lui adresser de simples mots alors qu'à la place de sa bouche, un bec articulé prends place. Il peut, cependant, discerner derrière ce masque, une bouche humaine. La voix est désagréable a entendre : comme rouillée, craquelée, rauque même.*\n\n**-** \"Tu a-aaa-a quel goût ? Plutôt sucré ou sa-a-a-lé ?\"\n\n> *A plusieurs mètres au dessus du sol, l'Arène semble lointaine pour lui.*\n\n> *Au sol, une ombre gigantesque surplombe la clique de Mages, alors qu'il semblerait qu'un nuage passe entre la lune et eux. A moins que ?*\n\n> *Les ailes d'Yahaja sont immenses, et l'entiereté de son corps est distandu, comme désarticulé : comment est-ce humainement possible ? Il n'y aucun doute sur son Origine : il s'agit d'une Yeshou. Et les Pandoriens présents le ressentent : son Arcane est d'une puissance qui les dépassent **largement**. Yahaja est à minima aussi puissante que l'homme qui se tient pour une seule armée devant eux. Si ce n'est plus encore. Son cou se désarticule dans un bruit d'os ragoûtant pour effectuer un 90° sur la droite. Son regard perçant s'échappe vers l'assemblée en contrebas. Elle force le jeune Mage a observer, lui aussi, ses collègues, tournant de force sa tête.*\n\n**-** \"Ils sont mignons, a-aaa-après toi, lequel je devra-aa-aai maa-aa-nger ?\"\n\n> *Ses serres s'ancrent plus profondément dans sa chair encore.*\n[Image: https://i.goopics.net/7ccs8u.jpg]",
           "embed_title": "La Régente. | Crrrick. Clack. | Clack Clack.",
           "embed_description": "**-** \"Son visage est d'une douceur appétissante. \"\n\n> *Elle observe, de sa tour d'Ivoire perchée, le déroulé des prises de décisions de ces jeunes Mages inexpérimentés. Elle soupire, voyant que trop peu d'entre eux se sont décidés à suivre la voie de la Vie. Ses longs cheveux rouges descendent sur ses épaules, tombent sur la pierre froide alors que sa moue décrit une courbe inférieure.*\n\n**-** \"Lucas ! Epargne au moins le visage des filles, j'aimerai en récupérer une ou deux une fois que tu aura fini.\"\n\n> *Son corps se tourne alors vers les pas de la Distra qui empoignent __Katelyn__ et __Asior__, leurs mains enchaînées entre une paire de menottes bloquant toute forme d'usage de l'arcane. Elle se saisit, les mains dans celles de Katelyn, et son regard s'ancre dans celui de la Noble. C'est que de près, elle est encore plus belle.*\n\n**-** \"Quel sont vos noms, mes enfants ? Votre choix est le bon, au milieu de ceux qui ne saisissent pas la profondeur de nos propos, ceux qui ne voyant pas au delà de demain, vous avez pris la bonne décision. Asseyez-vous, ce serai dommage d'être mal installé pour voir vos camarades se faire massacrer.*\n\n> *Deux gardes de la Distra forcent les conviés à s'assoir, alors qu'ils restent à leurs côtés, surveillants leurs faits et gestes. Concernant Sha'al, celle-ci se penche au dessus du balcon, laissant échapper de ses lèvres une fumée rosée, presque pourpre qui s'étends au sol de l'Arène comme un brouillard pourtant dense.*\n\n```A moins de flotter au dessus du sol ou de posséder un sort permettant d'annuler les effets d'un sort de porte 3, les joueurs sont affectés d'un malus de-1 en perception.``` | > *Dans les arrondis de l'Arène, elle se terre comme une chouette dans la pénombre. Sa proie en visuel, un rire lointain parvient au groupe comme un murmure étrange et malaisant. Une ombre se mouvoit, puis disparaît. Si les regards cherchent à suivre l'ombre qui se dissipe, il est pour l'heure impossible d'en discerner ses contours.*\n\n**-** 'Y a quoi en dessous ?' | > *Son corps fends l'air, n'observe rien d'autres que la proie qui sur sa rétine est imprimée. Dans son dos, une paire d'aile déployée lui permets de foncer à toute vitesse sur __Brutus Redwitch__, ne lui laissant aucune chance de riposte.*\n\n*Il est __sa__ proie.*\n\n> *Dans son dos, le Mage peut sentir un courant d'air avant qu'une paire de griffes acérées se s'accrochent sur ses épaules, s'ancrent dans sa peau, dans sa chair jusqu'à passer en dessous des bandages qui font de la surface de son corps une zone atteignable. En l'espace d'une seconde, il est dans les airs, à la merci de celle qui, depuis qu'ils sont tous arrivés, se terre dans l'ombre de l'arène, dans ses recoins les plus obscurs. Dans un mouvement habile, elle balance le corps du bandé vers le haut afin de le récupérer entre ses bras. Ses mains semblent elles aussi en proie à une transformation partielle : ses griffes et ses doigts sont allongés de plusieurs centimètres, comme les serres d'un oiseau.*\n\n> *Dans les airs, il entends sa voix craquelée lui adresser de simples mots alors qu'à la place de sa bouche, un bec articulé prends place. Il peut, cependant, discerner derrière ce masque, une bouche humaine. La voix est désagréable a entendre : comme rouillée, craquelée, rauque même.*\n\n**-** \"Tu a-aaa-a quel goût ? Plutôt sucré ou sa-a-a-lé ?\"\n\n> *A plusieurs mètres au dessus du sol, l'Arène semble lointaine pour lui.*\n\n> *Au sol, une ombre gigantesque surplombe la clique de Mages, alors qu'il semblerait qu'un nuage passe entre la lune et eux. A moins que ?*\n\n> *Les ailes d'Yahaja sont immenses, et l'entiereté de son corps est distandu, comme désarticulé : comment est-ce humainement possible ? Il n'y aucun doute sur son Origine : il s'agit d'une Yeshou. Et les Pandoriens présents le ressentent : son Arcane est d'une puissance qui les dépassent **largement**. Yahaja est à minima aussi puissante que l'homme qui se tient pour une seule armée devant eux. Si ce n'est plus encore. Son cou se désarticule dans un bruit d'os ragoûtant pour effectuer un 90° sur la droite. Son regard perçant s'échappe vers l'assemblée en contrebas. Elle force le jeune Mage a observer, lui aussi, ses collègues, tournant de force sa tête.*\n\n**-** \"Ils sont mignons, a-aaa-après toi, lequel je devra-aa-aai maa-aa-nger ?\"\n\n> *Ses serres s'ancrent plus profondément dans sa chair encore.*"
-        },
-        {
-          "id": "1520856417026965514",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-28T18:20:25Z",
-          "content": "Balcon - Asior & Katelyn",
-          "embed_title": "",
-          "embed_description": ""
         },
         {
           "id": "1520863442628775956",
@@ -35070,7 +34808,7 @@
           "embed_description": "> *Seule, au milieu d'une arène en proie aux flammes impressionnantes de ses subalternes, la Mère s'avance, traîne les pieds dans le sable corrompu par le sang et s'arrête au niveau du corps de son enfant.*\n\n**-** \"...\"\n\n> *Un silence assourdissant, la peine est immense et son manque de parole est une preuve évidente que sous ses yeux il ne peut y avoir de réalité ici bas. Ce n'est pas vrai, cela n'existe pas. Le vacarme du monde s'est dissous dans un silence si profond qu'il lui déchire les tympans. Les cris, les armes, les ordres... tout s'est éloigné. Il ne reste que ce petit corps entre ses bras.*\n\n> *Ses doigts tremblants viennent repousser une mèche collée contre le front inerte de l'enfant. Un geste dérisoire, maternel jusqu'au bout des ongles, comme si remettre ses cheveux en place pouvait encore lui épargner l'inconfort d'une Mort aussi brutale. Sa tête décapitée entre ses mains, son front se pose contre le sien dans une tristesse, un vide si profond qu'elle peine à trouver les mots entre les sanglots.*\n\n> *L'arène est vide, seule avec elle au milieu des décombres, elle pleure la fin de celle en qui elle avait déposé tant d'espoirs; elle qui ne peut porter la vie avait tout de même joué le rôle de mère. Son corps est incapable de suivre, ses muscles se relâchent alors qu'à nouveau, un cri de désespoir s'élève dans l'Arène.*\n\n> *Dans son dos, la carrure du Yeshou se tient droite, attendant que celle qui s'est battue corps et âme pour revenir récupérer la dépouille de son enfant ai terminé ce rituel dont elle avait besoin.*\n\n**-** \"Ma... si petite fille... Comment ont-ils pu... ?\"\n\n> *Ses paupières se lèvent, laissant son regard noyé se poser sur celle qui possède des yeux clots à jamais. Les larmes roulent sur ses joues, elles tombent sur les joues immobiles de l'enfant, comme une pluie arrivée beaucoup trop tard.*\n\n**-** \"Tu sais ce qu'il y a de pire ? C'est que demain... le soleil va se lever quand même. Les oiseaux vont chanter. Les gens vont rire. Ils vont continuer à vivre comme si le monde ne venait pas de perdre sa plus belle lumière... Ma...Lumière...\"\n\n> *Sa main caresse avec une douceur infinie son visage juvénile.*\n\n**-** \"Tu étais ma fille... Pas parce que ton sang était le mien. Parce que mon cœur t'avait choisie bien avant que tu ne m'appelles \"maman\".\"\n\n> *Sa voix se brise.*\n\n**-** \"Pardonne-moi... Pardonne-moi de ne pas avoir été assez rapide... Pas assez forte... Pas assez tout...S'ils existent vraiment... les dieux... alors je les hais. Parce qu'ils avaient l'univers entier à reprendre... et c'est toi ce qu'ils ont choisis.\"\n\n> *Dans son regard humide, le reflet des flammes se dessinent.*\n\n**-** \"Repose-toi, mon enfant... Tu n'auras plus jamais peur. Tu n'auras plus jamais faim. Et moi... Je continuerai à vivre avec ce néant que tu laisses derrière toi. Je vivrai pour toi... Je les tuerai, tous. __Lui__ le premier.\"\n\n> *Dans un geste que seul elle peut comprendre, sa main saisit son poignard, se lève et découpe au carré la si longue chevelure rouge qu'elle mit tant de temps à faire pousser. Son corps se relève, accompagné dans ses mains de la tête de Yahaja. Elle se tourne vers celui qui lui a juré fidélité, les yeux larmoyants.*\n\n**-** \"M'aideras-tu à tout réduire en cendre ?\"\n\n> *Il n'a pas besoin de répondre, un simple hochement de tête suffit pour que l'accord soit scellé. Leurs silhouettes quittent l'endroit, dans un silence plus que solennel.*\n\n*Elle sèmera la Mort, partout où son cœur meurtrit le lui dira.*"
         }
       ],
-      "message_count": 145,
+      "message_count": 144,
       "preview": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
       "discord_url": "discord://discord.com/channels//1480168703403495516/1515283501811761295"
     },
@@ -36320,7 +36058,7 @@
     },
     {
       "id": "scene_🍻〕𝐋-𝐄picurien_1",
-      "title": "🍻〕𝐋-𝐄picurien — Scène 1",
+      "title": "Myrea M, Tsutomu Yamamoto, Kenji Takahashi...",
       "channel": "🍻〕𝐋-𝐄picurien",
       "channel_id": "1499756423142183046",
       "category": "| ✦ |  BASSE-VILLE",
@@ -36331,30 +36069,28 @@
       "startDate": "2026-05-01T13:06:47Z",
       "endDate": "2026-06-15T08:45:21Z",
       "actors": [
+        "Myrea M",
+        "Tsutomu Yamamoto",
+        "Kenji Takahashi",
+        "Adelina Del Fuego",
         "Nick Sol",
         "Vosk Sulyvan",
-        "Isis Faerieth",
         "Septimus Kales",
-        "Tsutomu Yamamoto",
-        "Adelina Del Fuego",
-        "Maëll Fol'Dun",
-        "LE CONSEILLER",
-        "Ren Urugaki",
-        "Kenji Takahashi",
-        "Myrea M"
+        "Isis Faerieth",
+        "Maell Fol'Dun",
+        "LE CONSEILLER"
       ],
       "participants": [
+        "Myrea M",
+        "Tsutomu Yamamoto",
+        "Kenji Takahashi",
+        "Adelina Del Fuego",
         "Nick Sol",
         "Vosk Sulyvan",
-        "Isis Faerieth",
         "Septimus Kales",
-        "Tsutomu Yamamoto",
-        "Adelina Del Fuego",
-        "Maëll Fol'Dun",
-        "LE CONSEILLER",
-        "Ren Urugaki",
-        "Kenji Takahashi",
-        "Myrea M"
+        "Isis Faerieth",
+        "Maell Fol'Dun",
+        "LE CONSEILLER"
       ],
       "messages": [
         {
@@ -37014,14 +36750,6 @@
           "embed_description": ""
         },
         {
-          "id": "1511832301628297416",
-          "author": "Ren Urugaki",
-          "timestamp": "2026-06-03T20:41:49Z",
-          "content": "scène Ren/Yuu",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
           "id": "1511907603263914015",
           "author": "Kenji Takahashi",
           "timestamp": "2026-06-04T01:41:02Z",
@@ -37100,23 +36828,15 @@
           "content": "_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_\n_",
           "embed_title": "",
           "embed_description": ""
-        },
-        {
-          "id": "1516000652772376606",
-          "author": "Isis Faerieth",
-          "timestamp": "2026-06-15T08:45:21Z",
-          "content": "Scène Kalès / JAVUS",
-          "embed_title": "",
-          "embed_description": ""
         }
       ],
-      "message_count": 94,
+      "message_count": 92,
       "preview": "L'Épicurien\n◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nUn rayon de couleur dans les rues de la Basse-Ville; l'Épicurien se dresse aux abords des grandes artè...",
       "discord_url": "discord://discord.com/channels//1499756423142183046/1499758989980733570"
     },
     {
       "id": "scene_🍻〕𝐋-𝐄picurien_2",
-      "title": "🍻〕𝐋-𝐄picurien — Scène 2",
+      "title": "🍻〕𝐋-𝐄picurien",
       "channel": "🍻〕𝐋-𝐄picurien",
       "channel_id": "1499756423142183046",
       "category": "| ✦ |  BASSE-VILLE",
@@ -37126,33 +36846,10 @@
       "end_time": "2026-07-21T19:10:06Z",
       "startDate": "2026-06-28T21:10:32Z",
       "endDate": "2026-07-21T19:10:06Z",
-      "actors": [
-        "Ivara Luella",
-        "OWL LE MESSAGER"
-      ],
-      "participants": [
-        "Ivara Luella",
-        "OWL LE MESSAGER"
-      ],
-      "messages": [
-        {
-          "id": "1520899225343229972",
-          "author": "Ivara Luella",
-          "timestamp": "2026-06-28T21:10:32Z",
-          "content": "Scène Lumia | Ivara",
-          "embed_title": "",
-          "embed_description": ""
-        },
-        {
-          "id": "1529203837276127363",
-          "author": "OWL LE MESSAGER",
-          "timestamp": "2026-07-21T19:10:06Z",
-          "content": "Scène Kalès / Kalem",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 2,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Scène Lumia | Ivara",
       "discord_url": "discord://discord.com/channels//1499756423142183046/1520899225343229972"
     },
@@ -37582,7 +37279,7 @@
     },
     {
       "id": "scene_🧱〕𝐑uelles_4",
-      "title": "🧱〕𝐑uelles — Scène 4",
+      "title": "🧱〕𝐑uelles",
       "channel": "🧱〕𝐑uelles",
       "channel_id": "1499802361588351066",
       "category": "| ✦ |  BASSE-VILLE",
@@ -37592,23 +37289,10 @@
       "end_time": "2026-07-29T12:48:41Z",
       "startDate": "2026-07-29T12:48:41Z",
       "endDate": "2026-07-29T12:48:41Z",
-      "actors": [
-        "Septimus Kales"
-      ],
-      "participants": [
-        "Septimus Kales"
-      ],
-      "messages": [
-        {
-          "id": "1532006955231740125",
-          "author": "Septimus Kales",
-          "timestamp": "2026-07-29T12:48:41Z",
-          "content": "Kalès - Iscarioth - Aether",
-          "embed_title": "",
-          "embed_description": ""
-        }
-      ],
-      "message_count": 1,
+      "actors": [],
+      "participants": [],
+      "messages": [],
+      "message_count": 0,
       "preview": "Kalès - Iscarioth - Aether",
       "discord_url": "discord://discord.com/channels//1499802361588351066/1532006955231740125"
     },

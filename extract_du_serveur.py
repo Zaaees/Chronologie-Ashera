@@ -436,18 +436,29 @@ class DiscordExporterClient(discord.Client):
         existing_scenes_data = {}
         existing_scenes_by_channel = {}
         last_msg_id_by_channel = {}
-        if os.path.exists("scenes.json"):
+        scenes_file = os.path.join("src", "scenes.json") if os.path.exists(os.path.join("src", "scenes.json")) else ("scenes.json" if os.path.exists("scenes.json") else None)
+        if scenes_file:
             try:
-                with open("scenes.json", "r", encoding="utf-8") as f:
+                with open(scenes_file, "r", encoding="utf-8") as f:
                     existing_data = json.load(f)
                     scenes_list = existing_data.get("scenes", [])
+                    all_channel_names = set(s.get("channel", "") for s in scenes_list)
                     for s in scenes_list:
                         ch_name = s.get("channel", "")
                         cat_name = s.get("category", "")
                         if is_excluded_channel(ch_name, cat_name):
                             continue
 
+                        is_thread = 'thread_name' in s or ch_name.startswith('↳') or s.get('is_thread')
+
                         if 'messages' in s:
+                            if not is_thread:
+                                s['messages'] = [
+                                    m for m in s['messages']
+                                    if m.get('content', '').strip() not in all_channel_names or m.get('content', '').strip() == ch_name
+                                ]
+                                s['message_count'] = len(s['messages'])
+
                             msg_authors = set()
                             for m in s['messages']:
                                 if 'author' in m:
@@ -457,6 +468,7 @@ class DiscordExporterClient(discord.Client):
                                         if is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
                                             msg_authors.add(cleaned_a)
                             s['actors'] = list(msg_authors)
+                            s['participants'] = list(msg_authors)
                             if not s['actors']:
                                 continue
                             parent_ch = s.get("channel", "")
@@ -481,7 +493,7 @@ class DiscordExporterClient(discord.Client):
                                     last_msg_id_by_channel[ch_key] = last_id
                 print("📦 Base de scènes existantes nettoyée et chargée pour l'extraction incrémentale.")
             except Exception as e:
-                print(f"⚠️ Erreur chargement scenes.json existant : {e}")
+                print(f"⚠️ Erreur chargement {scenes_file} existant : {e}")
 
         # 2. Récupérer la liste complète des salons via l'API REST
         try:
@@ -577,6 +589,16 @@ class DiscordExporterClient(discord.Client):
             try:
                 # Extraire tous les messages sans filtre after_obj pour capturer les messages de description
                 async for msg in channel.history(limit=history_limit, oldest_first=True):
+                    # Ignorer les messages de création de fil (thread_created) apparus dans un salon principal
+                    is_thread_channel = hasattr(channel, 'parent') and channel.parent is not None
+                    is_thread_creation_msg = (
+                        getattr(msg.type, 'value', None) in (18, 21) or
+                        str(getattr(msg, 'type', '')).lower().endswith('thread_created') or
+                        getattr(msg.type, 'name', '') in ('thread_created', 'thread_starter_message')
+                    )
+                    if is_thread_creation_msg and not is_thread_channel:
+                        continue
+
                     # Déterminer le nom de l'auteur (affichage/surnom si disponible)
                     author_name = msg.author.display_name if hasattr(msg.author, 'display_name') else msg.author.name
                     author_avatar_url = str(msg.author.display_avatar.url) if hasattr(msg.author, 'display_avatar') and msg.author.display_avatar else ""
