@@ -4,7 +4,11 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # Change en 'master' si votre branche principale s'appelle master
+  workflow_run:
+    workflows: ["Daily Server Extraction"]
+    types:
+      - completed
+  workflow_dispatch:
 
 permissions:
   contents: read

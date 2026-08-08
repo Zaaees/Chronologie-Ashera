@@ -1,0 +1,40 @@
+name: Daily Server Extraction
+
+on:
+  schedule:
+    # Exécution tous les jours à 06:00 UTC (8h00 du matin heure française en été, 7h00 en hiver)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Permet le déclenchement manuel depuis l'interface GitHub Actions (pour tester)
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install discord.py python-dotenv
+
+      - name: Run extraction script
+        env:
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_GUILD_ID: ${{ secrets.DISCORD_GUILD_ID }}
+        run: |
+          python extract_du_serveur.py
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(data): extraction quotidienne automatique du serveur Discord"
+          file_pattern: 'scenes.json scenes_v2.json data.js src/scenes.json src/scenes_v2.json'
