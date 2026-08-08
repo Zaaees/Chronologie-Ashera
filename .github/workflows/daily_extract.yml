@@ -34,7 +34,13 @@ jobs:
           python extract_du_serveur.py
 
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "chore(data): extraction quotidienne automatique du serveur Discord"
-          file_pattern: 'scenes.json scenes_v2.json data.js src/scenes.json src/scenes_v2.json'
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add scenes.json scenes_v2.json data.js src/scenes.json src/scenes_v2.json 2>/dev/null || git add -u
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(data): extraction quotidienne automatique du serveur Discord"
+            git push origin main
+          else
+            echo "Aucun changement détecté dans l'extraction."
+          fi
