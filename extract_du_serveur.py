@@ -144,6 +144,15 @@ detected_member_factions = {}
 detected_member_details = {}
 detected_webhooks = set()
 
+if os.path.exists("discord_member_factions.json"):
+    try:
+        with open("discord_member_factions.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, dict):
+                detected_member_factions.update(data)
+    except Exception:
+        pass
+
 def apply_manual_overrides_to_globals():
     manual_overrides = load_manual_overrides()
     for key, entry in manual_overrides.items():

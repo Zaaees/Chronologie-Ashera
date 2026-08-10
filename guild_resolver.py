@@ -111,8 +111,7 @@ def get_manual_override(identifier, manual_overrides=None):
             continue
         if isinstance(v, dict) and v.get("character_name"):
             c_name = v.get("character_name")
-            ck_cname = clean_key_simple(c_name)
-            if ck_cname and (ck_cname == ck_ident or (len(ck_cname) >= 4 and (ck_cname in ck_ident or ck_ident in ck_cname))):
+            if clean_key_simple(c_name) == ck_ident:
                 return v
 
     return None
