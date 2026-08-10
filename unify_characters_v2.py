@@ -67,6 +67,8 @@ CANONICAL_MAP = {
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
+    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
+
 
     # Webhook entities & System Narrators
     "par-dela le voile": "Oeil", "par dela le voile": "Oeil", "par-delà le voile": "Oeil", "par delà le voile": "Oeil",
@@ -99,7 +101,9 @@ CHARACTER_METADATA_V2 = {
     "Ivara Luella": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
     "Jasp Nah": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Jin Alurantes": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
+    "Kalem Crowley": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Katelynn Hoffmann": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
+
     "Lewis Bamer": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Lumia Faendharts": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Maëll Fol'Dun": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
@@ -153,6 +157,8 @@ def clean_key_v2(s):
 
 LOOKUP_V2 = {clean_key_v2(k): v for k, v in CANONICAL_MAP.items()}
 
+from guild_resolver import resolve_role_from_member_roles, is_pnj_character, load_manual_overrides, get_manual_override, get_guild_info
+
 def get_canonical_name_v2(raw_name):
     if not raw_name:
         return "Narrateur"
@@ -162,6 +168,11 @@ def get_canonical_name_v2(raw_name):
 
     if any(m_bot in raw_lower for m_bot in SYSTEM_MODERATION_BOTS):
         return "Narrateur"
+
+    # Vérification Prioritaire des surcharges manuelles (ID Discord, pseudo ou nom RP brut)
+    override = get_manual_override(raw_str)
+    if override and override.get("character_name"):
+        return override["character_name"]
     
     match = re.search(r'\((.*?)\)', raw_str)
     if match and len(match.group(1).strip()) >= 3:
@@ -181,8 +192,6 @@ def get_canonical_name_v2(raw_name):
             return v
 
     return name_clean if name_clean else "Narrateur"
-
-from guild_resolver import resolve_role_from_member_roles, is_pnj_character
 
 def build_unified_characters_dict_v2(all_scenes):
     scene_actors_counts = {}
@@ -206,10 +215,17 @@ def build_unified_characters_dict_v2(all_scenes):
         except Exception:
             pass
 
+    manual_overrides = load_manual_overrides()
     chars_dict = {}
 
     for act, s_count in scene_actors_counts.items():
-        if is_pnj_character(act):
+        manual_entry = get_manual_override(act, manual_overrides)
+
+        if manual_entry and manual_entry.get("guild"):
+            role = manual_entry["guild"]
+            _, color, _ = get_guild_info(role)
+            status = "MAIN_PC"
+        elif is_pnj_character(act):
             role = "PNJ"
             color = "#c084fc"
             status = "PNJ"
@@ -242,3 +258,4 @@ def build_unified_characters_dict_v2(all_scenes):
         }
 
     return chars_dict
+

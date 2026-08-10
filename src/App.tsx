@@ -222,8 +222,8 @@ const FACTION_COLORS: Record<string, { bg: string; text: string; border: string;
     crest: "./ashera_banner.png"
   },
   "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
-  "Indéfini": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "❓", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Indéfini" },
-  "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" }
+  "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" },
+  "Indéfini": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "❓", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Indéfini" }
 };
 
 function getFactionStyle(role: string | undefined) {
@@ -1501,8 +1501,8 @@ export default function App() {
       "L'œil": [],
       "JAVUS": [],
       "Sans guilde": [],
-      "Indéfini": [],
-      "PNJ": []
+      "PNJ": [],
+      "Indéfini": []
     };
 
     Object.keys(CHARACTERS_DATA).forEach(actorName => {

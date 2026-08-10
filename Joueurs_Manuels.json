@@ -1,0 +1,13 @@
+{
+  "__comment__": "Fichier de surcharges manuelles des joueurs. Guildes valides : 'La Garde Pourpre', 'Cercle d'Azur', 'Voile d'Ivoire', 'L'œil', 'JAVUS', 'Sans guilde'.",
+  "overrides": {
+    "1450440060209074293": {
+      "character_name": "Magon Baldor",
+      "guild": "Voile d'Ivoire"
+    },
+    "376015238337921025": {
+      "character_name": "Euros",
+      "guild": "Voile d'Ivoire"
+    }
+  }
+}

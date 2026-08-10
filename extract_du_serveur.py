@@ -88,6 +88,8 @@ def clean_key_lookup(s):
     s = re.sub(r'[\u0300-\u036f]', '', s)
     return re.sub(r'[^a-z0-9]', '', s)
 
+from guild_resolver import get_manual_override, load_manual_overrides, get_guild_info
+
 CANONICAL_LOOKUP = {clean_key_lookup(k): v for k, v in CANONICAL_MAP.items()}
 
 # Helper pour nettoyer le nom du personnage
@@ -95,7 +97,13 @@ def clean_character_name(name):
     if not name:
         return "Narrateur"
 
-    name_str = unicodedata.normalize('NFKD', str(name))
+    raw_str = str(name).strip()
+    # Priorité 0: Surcharges manuelles (ID, pseudo ou nom RP brut)
+    override = get_manual_override(raw_str)
+    if override and override.get("character_name"):
+        return override["character_name"]
+
+    name_str = unicodedata.normalize('NFKD', raw_str)
     name_str = re.sub(r'[^\w\s\-\']', '', name_str)
     name_str = re.sub(r'\s+', ' ', name_str).strip()
     name_str = re.sub(r'\s+BOT$', '', name_str, flags=re.IGNORECASE)
@@ -105,16 +113,6 @@ def clean_character_name(name):
     ck = clean_key_lookup(name_str)
     if ck in CANONICAL_LOOKUP:
         return CANONICAL_LOOKUP[ck]
-
-    # Priorité 2: Détection PNJ/Webhooks système (sans faux positifs sur Crowley)
-    if 'conseiller' in name_lower:
-        return "LE CONSEILLER"
-    elif name_lower in ["owl", "owl le messager", "messager"] or "owl le messager" in name_lower or re.search(r'\bowl\b', name_lower):
-        return "OWL LE MESSAGER"
-    elif name_lower in ["l'oeil", "l'œil", "oeil", "œil", "loeil", "lœil"]:
-        return "L'Oeil"
-    elif 'missive' in name_lower:
-        return "LES MISSIVES"
 
     for k, v in CANONICAL_LOOKUP.items():
         if len(k) >= 4 and (k in ck or ck in k):
@@ -143,6 +141,7 @@ FACTION_INFO = {
 
 detected_member_factions = {}
 detected_member_details = {}
+detected_webhooks = set()
 
 def register_member_faction(name_str, faction_info, username="", display_name="", avatar_url=""):
     if not name_str:
@@ -156,6 +155,7 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
                 "displayName": display_name,
                 "avatarUrl": avatar_url
             }
+
 
 SYSTEM_BOTS = [
     'carl-bot', 'dyno', 'mee6', 'ticket tool', 'ticket-tool',
@@ -196,30 +196,25 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
     return True
 
 
-LEGITIMATE_PNJ_KEYWORDS = [
-    'javus', 'conseiller', 'owl le messager', 'messager', 'missive', 'les missives',
-    'monarque', 'infranchissable', 'déesse-mère', 'deesse-mere', 'prince lunaire',
-    'prince azur', 'prince du vide', 'roi des rampants', 'nephilim',
-    'oeil', 'l\'oeil', 'l\'œil', 'par-delà le voile', 'que le seigneur ouvre', 'narrateur'
-]
-
 def get_character_guild_and_color(actor_name):
     clean_name = clean_character_name(actor_name)
     name_lower = clean_name.lower()
 
-    # 1. Ignorer complètement les bots système et utilitaires
+    # 1. Ignorer complètement les bots système (carl-bot, dyno, etc.)
     if any(bot_name in name_lower for bot_name in SYSTEM_BOTS):
         return None, None, None
 
-    # 2. PNJ RP officiels
-    if any(pnj_kw in name_lower for pnj_kw in LEGITIMATE_PNJ_KEYWORDS) or clean_name in ['JAVUS', 'LE CONSEILLER', 'OWL LE MESSAGER', 'LES MISSIVES', 'LE MONARQUE DU SILENCE', 'L\'Infranchissable', 'La Déesse-Mère', 'Oeil', 'L\'Oeil']:
+    # 2. Seuls les Webhooks sont des PNJ
+    if clean_name in detected_webhooks or actor_name in detected_webhooks:
         return "PNJ", "#c084fc", "char_pnj"
 
-    # 3. Vérifier si une faction a été détectée via les rôles Discord du membre
+    # 3. Joueurs réels avec faction Discord
     if clean_name in detected_member_factions:
         return detected_member_factions[clean_name]
 
-    return "Sans rôle", "#94a3b8", "char_sans_role"
+    # 4. Si pas de faction Discord ni Webhook -> Indéfini
+    return "Indéfini", "#94a3b8", "char_indefini"
+
 
 def is_character_or_fiche_channel(channel):
     ch_name = getattr(channel, 'name', '') if hasattr(channel, 'name') else str(channel)
@@ -426,14 +421,24 @@ class DiscordExporterClient(discord.Client):
                     if global_name:
                         register_member_faction(global_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
             
-            with open("discord_gm_members.json", "w", encoding="utf-8") as f:
-                json.dump(sorted(list(detected_gm_names)), f, ensure_ascii=False, indent=2)
+            # Injecter les surcharges manuelles dans detected_member_factions
+            manual_overrides = load_manual_overrides()
+            for key, entry in manual_overrides.items():
+                if key == "__comment__":
+                    continue
+                c_name = entry.get("character_name", key)
+                guild = entry.get("guild")
+                if guild:
+                    g_info = get_guild_info(guild)
+                    detected_member_factions[c_name] = g_info
+                    detected_member_factions[key] = g_info
 
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction et {len(detected_gm_names)} membres avec le rôle MJ enregistrés.")
             with open("discord_member_factions.json", "w", encoding="utf-8") as f:
                 json.dump(detected_member_factions, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
+
 
         # 1. Charger d'abord les scènes existantes pour l'extraction incrémentale instantanée
         existing_scenes_data = {}
@@ -465,8 +470,12 @@ class DiscordExporterClient(discord.Client):
                             msg_authors = set()
                             for m in s['messages']:
                                 if 'author' in m:
+                                    if m.get('is_webhook'):
+                                        detected_webhooks.add(m['author'])
                                     cleaned_a = clean_character_name(m['author'])
                                     m['author'] = cleaned_a
+                                    if m.get('is_webhook'):
+                                        detected_webhooks.add(cleaned_a)
                                     if cleaned_a and not any(b in cleaned_a.lower() for b in SYSTEM_BOTS):
                                         if is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
                                             msg_authors.add(cleaned_a)
@@ -650,6 +659,9 @@ class DiscordExporterClient(discord.Client):
                     # Format du timestamp ISO
                     ts_iso = msg.created_at.strftime("%Y-%m-%dT%H:%M:%SZ")
                     is_wh = getattr(msg, 'webhook_id', None) is not None or (hasattr(msg.author, 'bot') and msg.author.bot)
+                    if is_wh:
+                        detected_webhooks.add(author_name)
+                        detected_webhooks.add(clean_character_name(author_name))
 
                     raw_messages.append({
                         "id": str(msg.id),
