@@ -80,7 +80,8 @@ CANONICAL_MAP = {
     "rias valdor - cheffe de la famille valdor": "Rias Valdor", "rias valdor": "Rias Valdor",
     "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne", "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
     "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law", "markus law": "Markus Law",
-    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates"
+    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
+    "magon baldor": "Magon Baldor", "magon": "Magon Baldor", "euros": "Euros"
 }
 
 def clean_key_lookup(s):
@@ -142,6 +143,21 @@ FACTION_INFO = {
 detected_member_factions = {}
 detected_member_details = {}
 detected_webhooks = set()
+
+def apply_manual_overrides_to_globals():
+    manual_overrides = load_manual_overrides()
+    for key, entry in manual_overrides.items():
+        if key == "__comment__":
+            continue
+        c_name = entry.get("character_name", key)
+        guild = entry.get("guild")
+        if guild:
+            g_info = get_guild_info(guild)
+            detected_member_factions[c_name] = g_info
+            if key and not key.isdigit():
+                detected_member_factions[key] = g_info
+
+apply_manual_overrides_to_globals()
 
 def register_member_faction(name_str, faction_info, username="", display_name="", avatar_url=""):
     if not name_str:
@@ -405,13 +421,18 @@ class DiscordExporterClient(discord.Client):
                             if c_name:
                                 detected_gm_names.add(c_name)
 
-                best_role = None
-                for pid in FACTION_ROLE_PRIORITY:
-                    if pid in member_role_ids:
-                        best_role = pid
-                        break
-                
-                if best_role:
+                m_override = get_manual_override(str(member.id)) or get_manual_override(member.display_name) or get_manual_override(member.name)
+                if m_override and m_override.get("guild"):
+                    g_name = m_override["guild"]
+                    c_name = m_override.get("character_name", member.display_name)
+                    faction_info = get_guild_info(g_name)
+                    av_url = str(member.display_avatar.url) if hasattr(member, 'display_avatar') and member.display_avatar else ""
+                    register_member_faction(c_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
+                    register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
+                    if member.name:
+                        register_member_faction(member.name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
+                    register_member_faction(str(member.id), faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
+                elif best_role:
                     faction_info = FACTION_INFO[best_role]
                     av_url = str(member.display_avatar.url) if hasattr(member, 'display_avatar') and member.display_avatar else ""
                     register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)

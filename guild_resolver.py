@@ -91,18 +91,30 @@ def get_manual_override(identifier, manual_overrides=None):
         return None
 
     ident_str = str(identifier).strip()
-    # 1. Correspondance exacte
+    ck_ident = clean_key_simple(ident_str)
+    if not ck_ident:
+        return None
+
+    # 1. Correspondance exacte ou par clé nettoyée (ID Discord, pseudo ou nom)
     if ident_str in manual_overrides:
         return manual_overrides[ident_str]
-    
-    # 2. Correspondance nettoyée
-    ck_ident = clean_key_simple(ident_str)
+
     for k, v in manual_overrides.items():
         if k == "__comment__":
             continue
         if clean_key_simple(k) == ck_ident:
             return v
-            
+
+    # 2. Correspondance sur le character_name contenu dans la surcharge
+    for k, v in manual_overrides.items():
+        if k == "__comment__":
+            continue
+        if isinstance(v, dict) and v.get("character_name"):
+            c_name = v.get("character_name")
+            ck_cname = clean_key_simple(c_name)
+            if ck_cname and (ck_cname == ck_ident or (len(ck_cname) >= 4 and (ck_cname in ck_ident or ck_ident in ck_cname))):
+                return v
+
     return None
 
 def resolve_role_from_member_roles(member_role_ids):
