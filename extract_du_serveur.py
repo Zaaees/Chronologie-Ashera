@@ -80,8 +80,7 @@ CANONICAL_MAP = {
     "rias valdor - cheffe de la famille valdor": "Rias Valdor", "rias valdor": "Rias Valdor",
     "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne", "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
     "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law", "markus law": "Markus Law",
-    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
-    "magon baldor": "Magon Baldor", "magon": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "euros": "Euros"
+    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates"
 }
 
 def clean_key_lookup(s):
@@ -93,6 +92,17 @@ from guild_resolver import get_manual_override, load_manual_overrides, get_guild
 
 CANONICAL_LOOKUP = {clean_key_lookup(k): v for k, v in CANONICAL_MAP.items()}
 
+DYNAMIC_MANUAL_ALIASES = {}
+
+if os.path.exists("discord_member_aliases.json"):
+    try:
+        with open("discord_member_aliases.json", "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if isinstance(data, dict):
+                DYNAMIC_MANUAL_ALIASES.update(data)
+    except Exception:
+        pass
+
 # Helper pour nettoyer le nom du personnage
 def clean_character_name(name):
     if not name:
@@ -103,6 +113,10 @@ def clean_character_name(name):
     override = get_manual_override(raw_str)
     if override and override.get("character_name"):
         return override["character_name"]
+
+    ck_raw = clean_key_lookup(raw_str)
+    if ck_raw in DYNAMIC_MANUAL_ALIASES:
+        return DYNAMIC_MANUAL_ALIASES[ck_raw]
 
     name_str = unicodedata.normalize('NFKD', raw_str)
     name_str = re.sub(r'[^\w\s\-\']', '', name_str)
@@ -436,6 +450,13 @@ class DiscordExporterClient(discord.Client):
                     c_name = m_override.get("character_name", member.display_name)
                     faction_info = get_guild_info(g_name)
                     av_url = str(member.display_avatar.url) if hasattr(member, 'display_avatar') and member.display_avatar else ""
+
+                    for cand in [member.display_name, member.name, getattr(member, 'global_name', None)]:
+                        if cand:
+                            ck_cand = clean_key_lookup(cand)
+                            if ck_cand:
+                                DYNAMIC_MANUAL_ALIASES[ck_cand] = c_name
+
                     register_member_faction(c_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                     register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                     if member.name:
@@ -461,11 +482,12 @@ class DiscordExporterClient(discord.Client):
                 if guild:
                     g_info = get_guild_info(guild)
                     detected_member_factions[c_name] = g_info
-                    detected_member_factions[key] = g_info
 
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction et {len(detected_gm_names)} membres avec le rôle MJ enregistrés.")
             with open("discord_member_factions.json", "w", encoding="utf-8") as f:
                 json.dump(detected_member_factions, f, ensure_ascii=False, indent=2)
+            with open("discord_member_aliases.json", "w", encoding="utf-8") as f:
+                json.dump(DYNAMIC_MANUAL_ALIASES, f, ensure_ascii=False, indent=2)
         except Exception as e:
             print(f"⚠️ Analyse des membres restreinte : {e}")
 

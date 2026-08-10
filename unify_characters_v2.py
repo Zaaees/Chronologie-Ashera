@@ -68,7 +68,6 @@ CANONICAL_MAP = {
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
     "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
-    "magon baldor": "Magon Baldor", "magon": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "euros": "Euros",
 
 
     # Webhook entities & System Narrators
