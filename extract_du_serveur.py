@@ -81,7 +81,7 @@ CANONICAL_MAP = {
     "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne", "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
     "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law", "markus law": "Markus Law",
     "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
-    "magon baldor": "Magon Baldor", "magon": "Magon Baldor", "euros": "Euros"
+    "magon baldor": "Magon Baldor", "magon": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "euros": "Euros"
 }
 
 def clean_key_lookup(s):
