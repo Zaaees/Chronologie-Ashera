@@ -68,6 +68,7 @@ CANONICAL_MAP = {
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
     "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
+    "yunah aoi enjaku": "Yunah Aoi Enjaku", "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
 
 
     # Webhook entities & System Narrators
@@ -186,6 +187,9 @@ def get_canonical_name_v2(raw_name):
 
     if ck in LOOKUP_V2:
         return LOOKUP_V2[ck]
+
+    if re.match(r'^j+a+p+a+n+.*$|^j+a+p+$', ck):
+        return "Yunah Aoi Enjaku"
 
     for k, v in LOOKUP_V2.items():
         if len(k) >= 4 and (k in ck or ck in k):

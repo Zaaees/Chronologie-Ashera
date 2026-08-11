@@ -69,7 +69,7 @@ CANONICAL_MAP = {
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
-    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku",
+    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
     "kuikui - astreus mylonas": "Astreüs Mylonas", "astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
     "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
     "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel", "inzu sravel - garde pourpre": "Inzu Sravel", "inzu sravel": "Inzu Sravel",
@@ -128,6 +128,9 @@ def clean_character_name(name):
     ck = clean_key_lookup(name_str)
     if ck in CANONICAL_LOOKUP:
         return CANONICAL_LOOKUP[ck]
+
+    if re.match(r'^j+a+p+a+n+.*$|^j+a+p+$', ck):
+        return "Yunah Aoi Enjaku"
 
     for k, v in CANONICAL_LOOKUP.items():
         if len(k) >= 4 and (k in ck or ck in k):
