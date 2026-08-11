@@ -1,13 +1,5 @@
 {
   "characters": {
-    "ALLARIC GESUN": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
     "Abrihicot": {
       "role": "Indéfini",
       "color": "#94a3b8",
@@ -17,46 +9,30 @@
       "avatarUrl": ""
     },
     "Adelina Del Fuego": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "_marigld",
-      "displayName": "Adelina Del Fuego | Mari",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/1404429614968733726/avatars/7993ffe6c7d96e2e37467b2a8245a9cd.png?size=1024"
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur",
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Aegnor Othar": {
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "tcizab",
-      "displayName": "Tcizab—Aegnor Othar",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/356048520005943299/f01e035d0bf5095134a6c0c9ffa1b104.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Akane Tsukishiro": {
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "doppelganger2830",
-      "displayName": "Tsukishiro Akane",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/198061752108187651/f65da39d53dbb7426135c0bf5117030e.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Alek Clark": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Anastasia Ajonhil": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "Artexan": {
       "role": "Indéfini",
       "color": "#94a3b8",
       "colorName": "char_indefini",
@@ -68,41 +44,41 @@
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "nys.on",
-      "displayName": "Arun Acharya | Freulonlezouin",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/945534869839163392/33f4d81d4a4c73b7b2ea17ae6ac193bd.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Aryanna Erhendil": {
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "tutaurielle",
-      "displayName": "Aryana Erhendil ⸻ Taurielle",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/345629407039193089/avatars/9a927ca7df02f78920b43a96882747e1.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Asior Eveus": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "eopia",
-      "displayName": "Eopia | Asior Eveus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/374571976645148693/ca1c82facedf60c28b0d6a0730f2a50b.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Astreüs Mylonas": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "kuikuito",
-      "displayName": "Kuikui - Astreüs Mylonas",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/589495039118540802/7e56cf64b5c63b010fde3f1db9e36bbf.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Brutus Redwitch": {
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "kinoru.",
-      "displayName": "Brutus Redwitch",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/555795047409385476/avatars/ba63c856ede546170ba86255f1b37fc0.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Captain Hook": {
       "role": "Indéfini",
@@ -116,19 +92,11 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "chulakita",
-      "displayName": "Cʜᴜʟᴀᴋ™ | Cassian Ortie",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/576453778874564619/4b8977bf21890936500cf9c7fbd9a44e.png?size=1024"
-    },
-    "Condamne": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
     },
-    "Daisuky v": {
+    "Condamne": {
       "role": "Indéfini",
       "color": "#94a3b8",
       "colorName": "char_indefini",
@@ -153,12 +121,12 @@
       "avatarUrl": ""
     },
     "Emil Camille Rebenok": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "indominushunter",
-      "displayName": "Emil | Camille Rebenok",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/619450110941724692/f68db583c62d6c6b9fed455f12480626.png?size=1024"
+      "role": "Cercle d'Azur",
+      "color": "#305ed3",
+      "colorName": "char_azur",
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Ethan Jaster": {
       "role": "Indéfini",
@@ -166,6 +134,14 @@
       "colorName": "char_indefini",
       "username": "",
       "displayName": "",
+      "avatarUrl": ""
+    },
+    "Euros": {
+      "role": "Voile d'Ivoire",
+      "color": "#fef08a",
+      "colorName": "char_ivoire",
+      "username": "kanta",
+      "displayName": "Kanta",
       "avatarUrl": ""
     },
     "Florianne Hoster": {
@@ -188,14 +164,14 @@
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "elessai",
-      "displayName": "Frey - Elear",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/350249452810010627/avatars/0b7993e208895c60b1480900b81afe75.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Hector Swaft": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -204,22 +180,14 @@
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "twisted_servant",
-      "displayName": "Hedwig Von Glanzestern",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1170008194559520861/bb350e20b81089cd9d59d349ae3a25d6.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Historia Fay Ruaidhri Grel": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": ".grel",
-      "displayName": "Historia \" Fay \" Ruaidhrí | Grel",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/261838399915163648/avatars/ac7f7d403f5434ba03a0533c01917fba.png?size=1024"
-    },
-    "ISYLAE FILIXIAN": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -228,14 +196,14 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "momotarie",
-      "displayName": "Momo | Idelmée Cadere",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/580824056547508225/994a7764ed73176edf67ad16f410c586.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Inzu Sravel": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -244,25 +212,25 @@
       "role": "L'œil",
       "color": "#0e0d0d",
       "colorName": "char_oeil",
-      "username": "zaaes",
-      "displayName": "| Iscarioth |",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/249497144698863617/b6788baaa4e517a0e24c36b5b224405f.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Isis Faerieth": {
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "letoiledeminuit",
-      "displayName": "Etoile | Isis Faerieth",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/407613483853676555/avatars/b9715f8ffa4a6a93d9de60b264681372.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Ivara Luella": {
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "elisabeeeeeh",
-      "displayName": "Elisabeeh | Ivara Luell",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/431002376216772608/dda8de9ba899d82bc3372c58b4e146ef.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "JAVUS": {
       "role": "Indéfini",
@@ -276,9 +244,9 @@
       "role": "JAVUS",
       "color": "#ffffff",
       "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Jean Hazagi": {
       "role": "Indéfini",
@@ -292,14 +260,6 @@
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "elouand",
-      "displayName": "Jin Alurantes 🍸",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/278093533192388608/911a507272dc37697312cf9664392974.png?size=1024"
-    },
-    "Joke": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -308,22 +268,14 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "luden_chan",
-      "displayName": "Luden ( Junko Anarchy )",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/265908519423705089/avatars/3efd942a17fb0efd73e4b248bf1f56e2.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Kalem Crowley": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "orla_",
-      "displayName": "Orla | Kalem Crowley",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/260402360445173760/7b5487144938b088f98f70a1f1568990.png?size=1024"
-    },
-    "Euros": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -332,46 +284,46 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "its_yuu",
-      "displayName": "Yûu | Katelyn Hoffmann",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/774320832998539345/avatars/0977d3489d328a9a6174fac1f6750076.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Kenji Takahashi": {
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "heavil4444",
-      "displayName": "Kenji Takahashi | Heavil",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/448509375284379678/avatars/a_61cc8944e3c089f29c87b4b0316b5c06.gif?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "L'Academie": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
     },
     "L'Oeil": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
     },
     "L'Ost du Sang": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
     },
     "LE CONSEILLER": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -388,14 +340,6 @@
       "role": "Indéfini",
       "color": "#94a3b8",
       "colorName": "char_indefini",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
-    "LOUIS ARTHUR DELACROIX": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -425,9 +369,9 @@
       "avatarUrl": ""
     },
     "Le Conseiller": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -468,25 +412,25 @@
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "happy_is_happy",
-      "displayName": "Happy | Loyis Delacroix",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/178885862644252672/avatars/81e356f66697d61faae52fd278c0dde6.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Lucia Fiorella": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "juju_la_best",
-      "displayName": "> Ju | Lucia \"Bunny\" Fiorella",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/692022969081528320/8cffe2f7ba36061909f174c371a7b950.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Lumia Faendharts": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": "lueur._.",
-      "displayName": "Lumia \"Lum\" Faendharts",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/522177271021436942/avatars/2bd79c15511ef0772d41a61ceb66fd23.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Lydounne": {
       "role": "Indéfini",
@@ -500,38 +444,30 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "ana_non",
-      "displayName": "Léonore Edelweiss | Ana",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/820740174014185532/00c747f5635c673c75aa76acc40b91d3.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Magon Baldor": {
       "role": "Voile d'Ivoire",
       "color": "#fef08a",
       "colorName": "char_ivoire",
-      "username": "Sw Darker",
-      "displayName": "Sw Darker",
+      "username": "",
+      "displayName": "",
       "avatarUrl": ""
     },
     "Markus Law": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": "bourpiff",
-      "displayName": "Bourpiff | Markus Law",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/391303008467681281/b5cf322746f16f1ecbcc91d712e69677.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Maëll Fol'Dun": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "astyell",
-      "displayName": "Maël Fol'dun (Astyell)",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/228948435259228160/429b3e788564d2a24a4148b41ce0a2da.png?size=1024"
-    },
-    "Mikkiw": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -552,14 +488,6 @@
       "displayName": "",
       "avatarUrl": ""
     },
-    "Mono'": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
-    },
     "Myrane Jaster": {
       "role": "Indéfini",
       "color": "#94a3b8",
@@ -572,17 +500,17 @@
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": ".khemm",
-      "displayName": "Khem ||| Myrea M.",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1399912503416455248/146b5aedfaaa0aca83097375aabe7d81.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Nick Sol": {
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "harderbae",
-      "displayName": "Prince Nick Sol 🦈",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1132226742107516929/8aad08dbf1218a35a1933a3b9015fe70.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Nikko Aytaupe": {
       "role": "Indéfini",
@@ -601,9 +529,9 @@
       "avatarUrl": ""
     },
     "OWL LE MESSAGER": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -620,17 +548,17 @@
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "personnes_10",
-      "displayName": "Ragde Umbras",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/375689750222209034/022082fb13e353b903d181f235dac362.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Red Roadman": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "jivwd",
-      "displayName": "RED",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/487993781208219661/a133296aa82650776abaf2315cfedf27.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Regisseur du Centre de l'Histoire": {
       "role": "Indéfini",
@@ -644,9 +572,9 @@
       "role": "Voile d'Ivoire",
       "color": "#ffffd4",
       "colorName": "char_ivoire",
-      "username": "nociferoce",
-      "displayName": "Noci | Urugaki Ren",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/273501304226185217/ac269dd45d12b37ab575c32304833521.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Rias Valdor": {
       "role": "Indéfini",
@@ -665,9 +593,9 @@
       "avatarUrl": ""
     },
     "SUR L'OMBRE UN REGARD EST DESORMAIS PORTE": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
+      "role": "Indéfini",
+      "color": "#94a3b8",
+      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -681,20 +609,20 @@
       "avatarUrl": ""
     },
     "Selena Moon": {
-      "role": "PNJ",
-      "color": "#c084fc",
-      "colorName": "char_pnj",
-      "username": "gwenphasehikena",
-      "displayName": "Séléna Moon",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/249282169493651456/avatars/a1de2b4aeafb39977b0b50d0c0816a6b.png?size=1024"
+      "role": "Sans guilde",
+      "color": "#e2ce7d",
+      "colorName": "char_sans_guilde",
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Septimus Kales": {
       "role": "JAVUS",
       "color": "#ffffff",
       "colorName": "char_javus",
-      "username": "icaryo",
-      "displayName": "Ryo 웃 | Kalès Septimus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/970817500600217680/9ca7c9cb8bdc4e874c75bb27069344b1.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Sha'al Langster": {
       "role": "Indéfini",
@@ -740,54 +668,46 @@
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "biboon",
-      "displayName": "Tarrion Tombétoile | Biboon",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/391351956146487297/a8de1202acc98508aff1e90e3d9e1ab4.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Tenebris": {
       "role": "L'œil",
       "color": "#0e0d0d",
       "colorName": "char_oeil",
-      "username": "___val___",
-      "displayName": "Tenebris",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/369949251121446912/0a2230430baaa0efce5f6b65712924d9.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Tsutomu Yamamoto": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": "reverse.d",
-      "displayName": "Vieux DÉBILE | Tsutomu Yamamoto",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/532212946995118101/avatars/d96692cef1cf35c6504f9021b915f97e.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Velka Valcyrion": {
       "role": "La Garde Pourpre",
       "color": "#b40000",
       "colorName": "char_pourpre",
-      "username": "norxas",
-      "displayName": "Velka Valcyrion",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/252112122983612417/avatars/b21020000c5cc62a78fbe3942c0f3916.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Vosk Sulyvan": {
       "role": "Sans guilde",
       "color": "#e2ce7d",
       "colorName": "char_sans_guilde",
-      "username": ".hussh",
-      "displayName": "Sulyvan Vosk | Hussh",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/826714521397231636/avatars/1e6c123c8e7ede157a12dfb0ed55fc2e.png?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     },
     "Yunah Aoi Enjaku": {
       "role": "Cercle d'Azur",
       "color": "#305ed3",
       "colorName": "char_azur",
-      "username": "jaaapaannnnnnnnnnn.",
-      "displayName": "Jap / Yunah Aoi Enjaku",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1034153441104252969/c2d801764c62b51e0965b1c93e6432ee.png?size=1024"
-    },
-    "asu": {
-      "role": "Indéfini",
-      "color": "#94a3b8",
-      "colorName": "char_indefini",
       "username": "",
       "displayName": "",
       "avatarUrl": ""
@@ -796,97 +716,9 @@
       "role": "L'œil",
       "color": "#0e0d0d",
       "colorName": "char_oeil",
-      "username": "miklelait",
-      "displayName": "Æ𝚝𝚑𝚎𝚛",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/806640081716773021/8f36b25b00a2f408178c5173b2959a6b.png?size=1024"
-    },
-    "Mao Hide": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "twisted_servant",
-      "displayName": "Hedwig Von Glanzestern",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/1170008194559520861/bb350e20b81089cd9d59d349ae3a25d6.png?size=1024"
-    },
-    "icaryo": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "icaryo",
-      "displayName": "Ryo 웃 | Kalès Septimus",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/970817500600217680/9ca7c9cb8bdc4e874c75bb27069344b1.png?size=1024"
-    },
-    "CʜᴜʟᴀᴋTM": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "chulakita",
-      "displayName": "Cʜᴜʟᴀᴋ™ | Cassian Ortie",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/576453778874564619/4b8977bf21890936500cf9c7fbd9a44e.png?size=1024"
-    },
-    "Akana": {
-      "role": "La Garde Pourpre",
-      "color": "#b40000",
-      "colorName": "char_pourpre",
-      "username": "heavil4444",
-      "displayName": "Kenji Takahashi | Heavil",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/448509375284379678/avatars/a_61cc8944e3c089f29c87b4b0316b5c06.gif?size=1024"
-    },
-    "elisabeeeeeh": {
-      "role": "Voile d'Ivoire",
-      "color": "#ffffd4",
-      "colorName": "char_ivoire",
-      "username": "elisabeeeeeh",
-      "displayName": "Elisabeeh | Ivara Luell",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/431002376216772608/dda8de9ba899d82bc3372c58b4e146ef.png?size=1024"
-    },
-    "alieny": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
-    },
-    "Alieny": {
-      "role": "JAVUS",
-      "color": "#ffffff",
-      "colorName": "char_javus",
-      "username": "alieny",
-      "displayName": "Nah Jasp",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/388748948766195734/avatars/d4e62b84c4716b4d0155dfd370e164bc.png?size=1024"
-    },
-    "grel": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": ".grel",
-      "displayName": "Historia \" Fay \" Ruaidhrí | Grel",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/261838399915163648/avatars/ac7f7d403f5434ba03a0533c01917fba.png?size=1024"
-    },
-    "Grel": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": ".grel",
-      "displayName": "Historia \" Fay \" Ruaidhrí | Grel",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/261838399915163648/avatars/ac7f7d403f5434ba03a0533c01917fba.png?size=1024"
-    },
-    "Akalegacy": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "gwenphasehikena",
-      "displayName": "Séléna Moon",
-      "avatarUrl": "https://cdn.discordapp.com/guilds/1327646236534112318/users/249282169493651456/avatars/a1de2b4aeafb39977b0b50d0c0816a6b.png?size=1024"
-    },
-    "Bozdag Dermirhan": {
-      "role": "Sans guilde",
-      "color": "#e2ce7d",
-      "colorName": "char_sans_guilde",
-      "username": "clipmyr",
-      "displayName": "Clip' | Demirhan BOZDAG",
-      "avatarUrl": "https://cdn.discordapp.com/avatars/210008264954478592/a_e33affe42aac683eb65bbe8c929f9021.gif?size=1024"
+      "username": "",
+      "displayName": "",
+      "avatarUrl": ""
     }
   },
   "scenes": [
