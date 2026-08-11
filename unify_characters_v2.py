@@ -97,9 +97,9 @@ CHARACTER_METADATA_V2 = {
     "Emil Camille Rebenok": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Euros": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
     "Frey Guðfrøðr": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Hector Swaft": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "PNJ"},
+    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Hedwig Von Glanzestern": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Inzu Sravel": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "PNJ"},
+    "Inzu Sravel": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Iscarioth": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
     "Isis Faerieth": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Ivara Luella": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
@@ -111,7 +111,7 @@ CHARACTER_METADATA_V2 = {
     "Lewis Bamer": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Lumia Faendharts": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
     "Maëll Fol'Dun": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Milli Enga": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "PNJ"},
+    "Milli Enga": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Myrea M": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
     "Nick Sol": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Ren Urugaki": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
@@ -119,7 +119,7 @@ CHARACTER_METADATA_V2 = {
     "Septimus Kales": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Tarrion Tombetoile": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Tenebris": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
-    "Tsutomu Yamamoto": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "PNJ"},
+    "Tsutomu Yamamoto": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Velka Valcyrion": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
     "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
 
@@ -138,6 +138,7 @@ CHARACTER_METADATA_V2 = {
     "Eldren Gates": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
 
     # Webhooks (System & PNJ entities)
+    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "Captain Hook": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
     "L'Ost du Sang": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
@@ -146,6 +147,7 @@ CHARACTER_METADATA_V2 = {
     "Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "L'Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
+    "Le Conseiller": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "OWL LE MESSAGER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "LES MISSIVES": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
     "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"}

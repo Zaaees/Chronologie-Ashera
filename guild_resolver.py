@@ -25,8 +25,8 @@ FACTION_INFO = {
 LEGITIMATE_PNJ_NAMES = {
     'RIAS VALDOR', 'CAPTAIN HOOK', "L'OST DU SANG", 'LE MONARQUE DU SILENCE',
     "REGISSEUR DU CENTRE DE L'HISTOIRE", 'OEIL', "L'OEIL", "L'ŒIL",
-    'LE CONSEILLER', 'OWL LE MESSAGER', 'LES MISSIVES', 'NARRATEUR', 'HECTOR SWAFT',
-    'INZU SRAVEL', 'MILLI ENGA', 'TSUTOMU YAMAMOTO'
+    'LE CONSEILLER', 'LE CONSEILLER', 'OWL LE MESSAGER', 'LES MISSIVES', 'NARRATEUR', 'HECTOR SWAFT',
+    'HECTOR', 'INZU SRAVEL', 'MILLI ENGA', 'TSUTOMU YAMAMOTO'
 }
 
 MANUAL_OVERRIDES_FILES = ["Joueurs_Manuels.json", "joueurs_manuels.json", "manual_player_overrides.json"]
@@ -139,7 +139,7 @@ def is_pnj_character(character_name):
     if up in LEGITIMATE_PNJ_NAMES:
         return True
     lower = character_name.lower()
-    return any(kw in lower for kw in ['pnj', 'narrat', 'bot'])
+    return any(kw in lower for kw in ['pnj', 'narrat', 'bot', 'webhook', 'conseiller', 'swaft', 'monarque', 'regisseur'])
 
 
 

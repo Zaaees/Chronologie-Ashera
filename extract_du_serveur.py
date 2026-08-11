@@ -238,6 +238,9 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
 
 
 def get_character_guild_and_color(actor_name):
+    from guild_resolver import is_pnj_character, get_manual_override, get_guild_info
+    from unify_characters_v2 import CHARACTER_METADATA_V2
+
     clean_name = clean_character_name(actor_name)
     name_lower = clean_name.lower()
 
@@ -245,16 +248,36 @@ def get_character_guild_and_color(actor_name):
     if any(bot_name in name_lower for bot_name in SYSTEM_BOTS):
         return None, None, None
 
-    # 2. Seuls les Webhooks sont des PNJ
-    if clean_name in detected_webhooks or actor_name in detected_webhooks:
+    # 2. Surcharges manuelles (Joueurs_Manuels.json)
+    manual_entry = get_manual_override(clean_name) or get_manual_override(actor_name)
+    if manual_entry and manual_entry.get("guild"):
+        role = manual_entry["guild"]
+        _, color, color_name = get_guild_info(role)
+        return role, color, color_name
+
+    # 3. Métadonnées canoniques (CHARACTER_METADATA_V2)
+    for name_candidate in [clean_name, actor_name]:
+        if name_candidate in CHARACTER_METADATA_V2:
+            meta = CHARACTER_METADATA_V2[name_candidate]
+            role = meta["role"]
+            color = meta["color"]
+            color_name = "char_pnj" if role == "PNJ" else ("char_indefini" if role == "Indéfini" else "char_faction")
+            return role, color, color_name
+
+    # 4. PNJ légitimes / Webhooks explicites
+    if (clean_name in detected_webhooks or actor_name in detected_webhooks or 
+        is_pnj_character(clean_name) or is_pnj_character(actor_name)):
         return "PNJ", "#c084fc", "char_pnj"
 
-    # 3. Joueurs réels avec faction Discord
+    # 5. Joueurs réels avec faction Discord
     if clean_name in detected_member_factions:
         return detected_member_factions[clean_name]
 
-    # 4. Si pas de faction Discord ni Webhook -> Indéfini
-    return "Indéfini", "#94a3b8", "char_indefini"
+    if actor_name in detected_member_factions:
+        return detected_member_factions[actor_name]
+
+    # 6. Règle Absolue : Tout Webhook / Entité RP sans faction de joueur est un PNJ
+    return "PNJ", "#c084fc", "char_pnj"
 
 
 def is_character_or_fiche_channel(channel):
@@ -534,11 +557,11 @@ class DiscordExporterClient(discord.Client):
                             msg_authors = set()
                             for m in s['messages']:
                                 if 'author' in m:
-                                    if m.get('is_webhook'):
+                                    if m.get('is_webhook') or is_pnj_character(m['author']):
                                         detected_webhooks.add(m['author'])
                                     cleaned_a = clean_character_name(m['author'])
                                     m['author'] = cleaned_a
-                                    if m.get('is_webhook'):
+                                    if m.get('is_webhook') or is_pnj_character(cleaned_a):
                                         detected_webhooks.add(cleaned_a)
                                     if cleaned_a and not any(b in cleaned_a.lower() for b in SYSTEM_BOTS):
                                         if is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
