@@ -320,7 +320,7 @@
       "displayName": "Orla | Kalem Crowley",
       "avatarUrl": "https://cdn.discordapp.com/avatars/260402360445173760/7b5487144938b088f98f70a1f1568990.png?size=1024"
     },
-    "Kanta": {
+    "Euros": {
       "role": "Indéfini",
       "color": "#94a3b8",
       "colorName": "char_indefini",
@@ -887,14 +887,6 @@
       "username": "clipmyr",
       "displayName": "Clip' | Demirhan BOZDAG",
       "avatarUrl": "https://cdn.discordapp.com/avatars/210008264954478592/a_e33affe42aac683eb65bbe8c929f9021.gif?size=1024"
-    },
-    "Euros": {
-      "role": "Voile d'Ivoire",
-      "color": "#fef08a",
-      "colorName": "char_ivoire",
-      "username": "",
-      "displayName": "",
-      "avatarUrl": ""
     }
   },
   "scenes": [
@@ -1135,7 +1127,14 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/kantine.jpg"
+      "location_image": "channel_images/kantine.jpg",
+      "participants": [
+        "Akane Tsukishiro",
+        "Isis Faerieth",
+        "LE CONSEILLER",
+        "Hector Swaft",
+        "Magon Baldor"
+      ]
     },
     {
       "id": "scene_🏙️〕𝐄gregore_1",
@@ -2465,7 +2464,13 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/serre-de-lune.jpg"
+      "location_image": "channel_images/serre-de-lune.jpg",
+      "participants": [
+        "Emil Camille Rebenok",
+        "OWL LE MESSAGER",
+        "Saphizu Alizee Vidtz",
+        "Asior Eveus"
+      ]
     },
     {
       "id": "scene_📜〕𝐋e-centre-des-registres_2",
@@ -2751,7 +2756,7 @@
         "Isis Faerieth",
         "LE CONSEILLER",
         "Nick Sol",
-        "Kanta",
+        "Euros",
         "Hector Swaft",
         "Magon Baldor"
       ],
@@ -2762,7 +2767,7 @@
         "Isis Faerieth",
         "LE CONSEILLER",
         "Nick Sol",
-        "Kanta",
+        "Euros",
         "Hector Swaft",
         "Magon Baldor"
       ],
@@ -2904,7 +2909,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1481315130070405254",
           "timestamp": "2026-03-11T15:37:28Z",
           "content": "**Euros s'était arrêté, au milieu de la foule, les bras croisés. Il regardait les alentours, avec autant de circonspection que d'attention. Un tel lieu n'avait normalement rien à faire dans la ruine dévorée aux délinquants qu'était censé être le quartier Ouest. Il avait eu l'image de ce qu'il espérait sur les quelques minutes pendant lesquelles ils avaient traversé des rues insalubres, mais ça...**\n\n\"C'est inattendu, comme endroit. Mais oui, les libérateurs doivent surement le surveiller. Soit ça, soit un de leurs ennemis le protège d'eux.\"\n\n**Croisant les bras, le blond sembla se plonger dans ses réflexions, tête baissée et sourcils froncés. Euros formait dans sa tête des centaines de suggestions, les regroupant pour former des hypothèses. Bien sur, il avait déjà formulé la plus évidente, mais d'autres, moins vraisemblables, ou plutôt moins facilement imaginables, restaient à vérifier. Ses frères et sa sœur, bien plus brillants que lui dans leur maniement de l'Arcane, lui avaient très vite fait comprendre une chose : tout est possible.**\n\n\"Ou alors on pourrait aussi être au beau milieu d'une illusion...\"\n\n**C'était une question bête, mais il préférait éliminer de suite l'idée la plus effrayante. Un illusionniste capable de déguiser tout un quartier devait avoir une puissance pharaonique. Il ne doutait pas que le chef de ces libérateurs était puissant, mais si ce n'était là qu'un de ses subalternes, alors lui devait être d'un niveau inimaginable. Rien qu'essayer de se représenter ça lui donnait le vertige.**\n\n**Puis il releva finalement la tête. Il observa d'abord Nick, et un instant lui suffit à comprendre. Il devait être à peine plus âgé que lui, mais pourtant, tout comme lui, son corps était sculpté avec précision. La demoiselle quant à elle, travaillait peut-être son corps, mais purement pour l'esthétisme. Les déductions étaient simples : tout comme lui, Nick était un Sisyphe, et la demoiselle était soit Pandorienne, soit Prométhéenne. Aussi lui demanda t-il :**\n\n\"Mais ça, tu serais capable de le voir, non ?\"",
@@ -2936,7 +2941,7 @@
           "embed_description": "*L'animosité des habitants à votre égard était foncièrement grandissante. Ils ne veulent pas de vous ici. Est-ce la simple venue d'étrangers qui dérange ou est-ce parce que vous avez un médaillon d'une des trois grande guilde avec vous ? Vous ne pouvez pas vraiment le dire, puis cette foule qui se déplace fait que la place dans laquelle vous vous trouvez est en constant mouvement avec pourtant un vide autour de vous d'au moins 20m de rayon. Vous avancez, la foule se déplace pour mieux vous éviter. Il n'y a pas l'ombre d'un seul enfant ou d'un seul adulte qui semble vouloir vous approcher.*\n\n*Pour ce qui est de la théorie de l'Arcane, d'une illusion, elle est très vite écartée. Il n'y a pas d'Arcane dans les alentours. C'est d'ailleurs... pas normal. Normalement il y a toujours un peu d'arcane dans le coin. Du moins suffisamment un peu pour que la vie semble normale. Dans ce quartier il n'y a rien.*\n\n*Pour les gens, la place se vide de monde petit à petit, mais les gens qui restent semblent tous porter la même tenue avec des armes dans la main. Postés sur des terrasses, dans des coins de rue sans chercher à se cacher, ils fixent le moindre de vos mouvements. Prendre un combat contre la masse de monde ici présent signe simplement votre arrêt de mort, c'est une évidence. Mais dans les mouvements de vos visages, scrutant les environs, vous remarquez alors trois choses qui attirent votre attention.*\n\n*Euros, tu remarque au loin une sorte de jeune femme, habillé très joliment sortir d'une maison sans sac. Elle passe devant une foule d'autres femmes, comme un groupe qui se rend sur le même lieu de travail.*\n\n*Nick, sur ta droite tu remarques des sons, ce n'est pas une bagarre mais c'est évident que des gens sont entrain d'avoir des différents. Quel est le sujet tu ne le sait pas vraiment, mais tu comprend assez vite que ça risque facilement de dégénérer.*\n\n*Julia, pour toi quand tu avances vers cet enfant, tes pas ne font plus de son. Ils sont remplacés par une voix distordue et dissonante qui produit les exact même sons. Un frisson parcours alors ta colonne vertébrale, de quoi te faire fuir l'envie de te rapprocher de cet enfant.*\n\n> **[ TAC. TAC. TAC. SHLING. TAC].**"
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1481757239373992118",
           "timestamp": "2026-03-12T20:54:15Z",
           "content": "**Continuant d'observer les alentours, il observait ces derniers. Définitivement, quelque chose clochait, et un piège se refermait sur eux, ça il en était sur. Tournant sa tête en tous sens, il notait l'apparition des gardes et cette foule toujours plus étrange qui semblait les emmener quelque part, inconsciemment. Et le plus étrange, c'est ce qu'il remarque. Pourquoi, alors qu'ils sont visiblement sur le point de subir une embuscade, est-ce qu'il remarquerait que des gens partent au travail.**\n\n**Son cerveau turbinait à toute vitesse : Etaient-ils déjà dans un piège, ou se refermait il lentement sur eux ? Etait-ce un ennemi, ou un phénomène inexpliqué ? Etait-il encore en capacité de croire ses sens ? Il ne connaissait pas les réponses à ces questions. Il respira profondément, essayant de calmer cette passable angoisse que lui collait ce lieu.**\n\n**Son épée s'envola, et lui avec, créant cette impression qu'il lévitait. Il prit de la hauteur, autant qu'il put avant de sentir sa magie devenir trop instable pour lui permettre d'aller plus loin. Gardant un œil sur ses compagnons en volant crânement au dessus d'eux, comme s'il fut debout sur une plaque d'air solide et invisible, il tentait de voir où les femmes s'en allaient, sans bouger. En même temps, il ordonna à ses deux compagnons.**\n\n\"Arrêtez de bouger, ne marchez plus un pas, et restez proches.\"\n\n**Il releva la tête. Tout ceci n'était peut-être pas une illusion, mais quelqu'un ou quelque chose contrôlait ce qui était en train d'arriver autour d'eux. Les mouvements de la foule n'étaient pas naturels, pas plus que ces étranges gardes semblant sortir de nulle part. Si tout ce qu'il voyait était bel et bien vrai, il n'était ni en mesure de s'en sortir en vie, ni en mesure de s'enfuir avec ses compagnons. Quelle dégaine aurait un chef laissant ses camarades pour mort ?**\n\n\"On est pas là pour se battre**, affirma t-il à la foule,** on veut simplement discuter !\"\n\n**C'était ce qu'il avait de mieux. Garder ses compagnons proches de lui, et tenter de pousser le plus important des alentours à se montrer. Qu'allait-il demander ? Qu'allait-il faire ? Aucune idée ne lui vint. Pour le moment, son seul choix était d'attendre, qu'on lui réponde ou qu'un camarade lui trouve une meilleure idée, mais que quelque chose arrive.**",
@@ -3000,7 +3005,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1482348594978619627",
           "timestamp": "2026-03-14T12:04:05Z",
           "content": "**Une seconde après qu'il eut demandé à Euros de descendre, il entendit un bruit sourd devant lui. Euros venait d'atterrir devant eux, genoux pliés. Mais même lorsqu'il se redressa, sa silhouette parut plus petite que précédemment. Il avait perdu de l'envergure, et peut-être un peu de hauteur, lui qui n'était déjà pas bien grand. Malgré ça, la menace se fit sentir dans le regard froid qu'il lança à Nick. S'il pensait sérieusement qu'il allait abandonner un camarade à une mort certaine sans sourciller, tout ça pour qu'il puisse jouer au chevalier sauvant la princesse, il se trompait lourdement.**\n\n**BAM !**\n\n**Une seconde plus tard, l'explication de cette perte soudaine de volume se fit entendre. Progressivement, alors qu'il tombait, il avait ajusté la distance entre lui et son épée ainsi que son inclinaison. Peu après qu'il fut au sol, son épée s'était écrasée à son tour devant eux, créant un levier qui envoya valser en l'air tout ce dans quoi elle avait pu s'enfoncer et soulevant un épais nuage de poussière et de gravats.**\n\n\"Imbécile.\"\n\n**Son épée revint dans sa main, émanant du nuage de poussière qui les masquait un instant au regard de l'inconnu. Le *momentum* donné par l'épée le fit glisser, volontairement ou non, vers ses compagnons, tandis qu'il s'agenouillait légèrement comme s'il préparait un sprint. D'aussi près, ça se voyait encore mieux : derrière sa petite coquille de sérieux, ses yeux brillaient d'une lueur combattive.**\n\n**Tout son esprit aurait voulu tenter de se battre contre leur ennemi. Chaque cellule de son corps lui hurlait qu'il était hors de sa portée. Un duel aurait été au pire une tentative de suicide, au mieux une preuve de profonde stupidité. Discrètement, il se mit à fouiller dans sa poche, et en même temps il évoqua son plan en quelques mots simples :**\n\n\"On se replie et on attend les renforts. Ouvrez moi le chemin, je ferai l'arrière garde en vous suivant de près.\"\n\n**Le nuage de poussière devant lui se dissipait déjà lentement. Profitant du peu de temps qui leur restait, il sortit son poing de sa poche, le gardant fermé et cachant encore son contenu pour le moment. Subtilement, il commença à léviter, à quelques centimètres du sol, aidé par son épée. Il était prêt à partir, juste à la suite de ses compagnons.**",
@@ -3056,7 +3061,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1482841882055671948",
           "timestamp": "2026-03-15T20:44:14Z",
           "content": "**Derrière le groupe, Euros les avait suivi de près, une indicible terreur dansant au fond de ses yeux. L'ennemi avait traversé 100 mètres, alors même que son épée n'avait du en parcourir que 2 ou 3 tout au plus. Il en était sur ou presque, il avait vu l'homme immobile après que son épée soit partie, et sa main serrée autour du cou de son camarade bien longtemps avant l'impact.**\n\n**Il s'en tenait à son plan, se tenant derrière son équipe pour parer toute attaque, regardant l'homme en noir rapetisser, non sans la terreur qu'il puisse soudain apparaître et écraser sa gorge en plus de celle de son camarade. Lorsqu'il vit la porte de l'église se refermer, jusqu'à ce qu'il ne vit plus le mystérieux individu, cette terreur le hanta.**\n\n**Il toucha à nouveau le sol de ses pieds. Son épée quitta alors sa main, et tandis qu'il se relevait, elle s'envola au dessus de lui, avec l'intention d'être rengainée. Alors, avec le relâchement de sa tension, il ressentit soudain toute la fatigue de son corps. il haletait, comme un coureur de marathon venant de passer la ligne d'arrivée. Se retournant lentement, il observa Nick. Soudain, il s'estima heureux.**\n\n**Son épée vola vers lui, se glissant son son bras pour lui offrir un support. Il était mal en point, et il l'avait bien vu boiter pendant leur course. Lui était peut-être trop petit pour faire office de support, mais un des avantages d'une épée volante était justement de pouvoir ajuster sa hauteur librement. Il se retourna, s'avançant en reprenant lentement son souffle. Il ne sut jamais si la sueur qui coulait le long de son front était froide ou due à son effort.**\n\n\"On a été retardés.\"\n\n**Il serra un peu les poings, s'avançant pour s'aligner avec leur blessé. Il ne savait pas qui il avait le plus envie de cogner entre la pimbêche qui était restée le cul vissé dans une église pendant qu'ils passaient à deux doigts de se faire massacrer et le crétin fini qui avait cru bon de jouer les héros sans se rendre compte de l'écart de puissance. Un nouveau coup d'œil vers ce dernier le décida pour la première option. Il avait déjà reçu sa leçon.**\n\n\"Appuie toi sur Esthésia, le temps que la douleur s'estompe... Et merci d'avoir pris les coups.\"**, murmura t-il, suffisamment bas pour qu'il estima que seul Nick l'entendait.**\n\n**Quel piètre chef aurait-il fait, de rabaisser davantage un compagnon qui avait agit stupidement, mais avec de bonnes intentions ? Développer une rancune pour cela n'aurait eu aucun sens. Tournant alors la tête vers Alicia, il l'ausculta d'un rapide coup d'œil. Au moins elle ne semblait pas avoir pris de coups. Finalement n'était il peut-être pas si mauvais. Au moins, elle lui permettait de se rassurer un peu.**\n\n**Le sourire amical qu'il avait adressé à Nick disparut, tandis qu'il tournait la tête vers leur contact. Ses yeux, en un instant, s'étaient glacés, et malgré son sérieux, sauf tout le respect qu'il se devait d'avoir pour sa supérieure, son ressentiment se voyait, là, tout au fond de son regard. Alors, pour prendre la parole, il s'avança d'un pas sur ses compagnons.**\n\n\"Il n'est pas très accueillant. Mais je suis sur qu'après une bonne dératisation, il sera vivable. Mon compagnon s'appelle Nick et ma compagnonne, Alicia. Quant à moi je me nomme Euros, monsieur Swaft m'a donné un de ses sifflets et la responsabilité du groupe.\"",
@@ -3104,7 +3109,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1483479937347485797",
           "timestamp": "2026-03-17T14:59:38Z",
           "content": "**Il ne savait pas ce qui le faisait le plus rire. D'un côté, la pimbêche qui semblait vraiment penser qu'ils étaient ceux qui avaient initié le combat pour le plaisir. De l'autre, la remarque absurde de son compagnon blessé. Il était là, devant Viktoria, à se pincer l'arête du nez, fermant les yeux et tentant de se retenir de rire autant qu'il le pouvait. Finalement, après plusieurs secondes, il finit par reprendre son calme, et releva les yeux vers elle.**\n\n\"On va commencer par prendre quelques minutes de repos.\"\n\n**Sans attendre de réponse, il tourna la tête vers ses deux compagnons, et à l'adresse de Nick, il haussa les épaules. Il ne connaissait pas la réponse à cette question, mais en tous cas, il était sur d'une chose : Hector avait perdu son respect. Bien qu'il trouvait digne d'admiration le fait qu'il arrive à supporter cette horrible femme au quotidien, sortir avec une créature détestable simplement parce qu'elle est belle - il ne voyait aucune autre raison pouvant pousser son mari vers elle - était... Discutable. Cela dit, il ne connaissait peut-être simplement pas encore les bons côtés de cette femme, aussi n'était-ce pas définitif.**\n\n\"Autrement, je pense que mon équipe sera d'accord avec moi si je dis que nous n'avons aucune envie de nous attarder ici, alors va pour le message.\"",
@@ -3144,7 +3149,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1483572545600094349",
           "timestamp": "2026-03-17T21:07:38Z",
           "content": "**Forcé de se taire, d'obéir, Euros s'était tenu immobile, sachant pertinemment qu'à cet instant, si quelqu'un avait mal agi, c'était elle. Risquer de tuer une recrue et en blesser grièvement une autre n'était pas acceptable, qu'importe l'armée. Quand elle avait retiré son pied de son torse, Euros s'était donc contenté de se relever en silence, regardant partir la pimbêche pourpre.**\n\n**Bien qu'il s'était retenu de toutes ses forces de la moindre expression de douleur, ne fut-ce qu'une grimace ou un cri, il sentait le sang couler sous son mollet, et la chaleur cuisante de sa blessure. Ses côtés enfoncées, à la limite de se casser, lui donnaient l'impression que ses poumons étaient en feu. Que pensait elle gagner, à agir comme une enfant ? Du respect ? De la sympathie ? Plus que de la colère, Euros était dans l'incompréhension. En un sens, cette femme lui rappelait son frère ainé. Un être belliqueux, ivre de son pouvoir et qui en profite pour asseoir sa domination sur les plus faibles que soi. Définitivement, le courage d'Hector de supporter une femme aussi horrible au point de la marier était un exploit.**\n\n**Ramenant son épée à lui, celle-ci étant restée immobile au moment ou Nick avait été envoyé valdinguer, il s'en servit comme d'une chaise, afin de lentement se remettre debout. Le pied levé, il attendit un instant dans un équilibre précaire que celle-ci ne se glisse dans son dos. Ce ne fut qu'après ça qu'il tenta d'utiliser sa jambe blessée pour marcher : c'était peine perdue. Commençant à trébucher vers l'avant, il ne fut rattrapée que par Esthésia, qui lentement, le leva de terre, faisant léviter ses pieds à quelques centimètres du sol.**\n\n\"Bien.\"\n\n**Sa voix était définitivement plus rauque qu'elle n'aurait du l'être. Plus faible aussi. Ses côtes le faisaient souffrir à chaque inspiration, et son mollet, bien que la douleur s'estompait lentement, le brûlait toujours. Il avait définitivement besoin de s'entraîner davantage, car qu'une simple remontrance suffisait à le laisser dans un état pareil, c'était frustrant. Lentement, alors, il lévita vers la porte, suivant Niel vers l'extérieur.**",
@@ -5099,7 +5104,12 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/cellules.jpg"
+      "location_image": "channel_images/cellules.jpg",
+      "participants": [
+        "Loyis Delacroix",
+        "Emil Camille Rebenok",
+        "Asior Eveus"
+      ]
     },
     {
       "id": "scene_⚗️〕𝗖our-des-alchimistes_2",
@@ -6577,7 +6587,12 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/verger-des-peches.jpg"
+      "location_image": "channel_images/verger-des-peches.jpg",
+      "participants": [
+        "Nick Sol",
+        "Star",
+        "L'Oeil"
+      ]
     },
     {
       "id": "scene_⚜️〕𝗚rande-salle-porcelaine_2",
@@ -7201,7 +7216,16 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Romy",
+        "Jasp Nah",
+        "Lucia Fiorella",
+        "Okayama",
+        "Emil Camille Rebenok",
+        "Lewis Bamer",
+        "Abrihicot"
+      ]
     },
     {
       "id": "scene_🗡️〕𝗤uartier-des-𝗙orges_2",
@@ -9303,16 +9327,16 @@
       "startDate": "2026-02-24T20:52:59Z",
       "endDate": "2026-03-03T16:28:16Z",
       "actors": [
-        "Kanta",
+        "Euros",
         "Romy"
       ],
       "participants": [
-        "Kanta",
+        "Euros",
         "Romy"
       ],
       "messages": [
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1475958713398464745",
           "timestamp": "2026-02-24T20:52:59Z",
           "content": "**Sur le pont, plus précisément à l'un des balcons qui encadraient les piliers de celui-ci, se tenait un jeune homme, admirant l'horizon et laissant le vent frais rosir ses joues, dos au vide. Ses cheveux partant dans tous les sens, ne s'harmonisant que pour aller vers l'arrière, laissaient présager qu'il était resté contre le vent pendant aux moins six mois. En réalité, il était là depuis une heure, deux peut-être.**\n\n**Cet endroit, pour lui, était le lieu d'entraînement idéal. Des hauteurs, des surfaces verticales, et même s'il y avait parfois foule, il n'avait qu'à occuper les dessous du pont et passer suffisamment haut au dessus d'eux pour ne pas leur faire peur. C'était sur cette réflexion qu'il s'était retrouvé assis là. Arrivé ici, il avait eu peur qu'on l'interdise, tout simplement.**\n\n**Régulièrement, depuis, il se retournait, laissait battre ses pieds dans le vide et son épée léviter quelques instants à une longueur de bras de ceux-ci, avant de la faire remonter, et de se retourner à nouveau vers la foule, l'air penaud et stressé à l'idée qu'on le remarque. Il hésitait, commençait, puis se ravisait, ridiculement. Il était bien conscient de l'être, mais étrangement, il n'arrivait pas non plus à s'en empêcher.**\n\n**Vexé de lui-même, finalement, il s'était une dernière fois retourné. Ebouriffant davantage, si c'était possible, ses cheveux il saisit sa tête à deux mains, regardant ses genoux.** *\"Arrête de faire l'idiot !\"*, **se réprimandait il intérieurement. Pourtant, rien n'y faisait. Bientôt, sans doute, serait-il à nouveau les pieds dans le vide et le regard vers l'horizon à se demander pourquoi il ne saute pas sur son épée comme il en a l'envie.**",
@@ -9336,7 +9360,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1476649550973501501",
           "timestamp": "2026-02-26T18:38:07Z",
           "content": "**Euros n'entendit rien, la foule était trop dense. Il ne vit rien non plus, puisqu'il avait le dos tourné. Ce fut au moment de sentir, que ce soit les mains dans son dos ou ses fesses glissant de la bordure, qu'il put réagir. Ainsi, après une immense chute d'au moins cinquante centimètres, il se retrouva les pieds sur son épée juste assez tard pour s'en rendre compte.**\n\n**A cette distance de l'eau, Euros aurait eu besoin d'élan pour retourner sur le pont, mais il ne le comprit pas tout de suite, et ne pouvant indéfiniment rester à ce genre d'altitude, il tombait en tournoyant sur lui même comme une samare d'érable. Il ne reprit pleinement le contrôle qu'à un petit mètre de la surface, et tout comme l'eau en mouvement faisait des vagues, il s'habituait à nouveau au contact instable et à l'équilibre étrange que cela produisait.**\n\n**Se redressant sur son épée comme sur une planche à roulettes, il leva les yeux vers le pont en fronçant les sourcils, cherchant des yeux sa place et la personne qui l'avait poussé. Cependant, ses yeux ne voyaient pas grand chose, et son sens de l'observation n'était pas suffisamment développé pour y changer quoi que ce soit. A sa place, cependant, il voyait une silhouette, celle d'une femme aux cheveux noirs. Sans autre piste, il plaça ses mains en porte voix, et hurla à son adresse :**\n\n\"CA VA PAS BIEN DE POUSSER LES GENS DANS LE VIDE ?!\"",
@@ -9360,7 +9384,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1477506968536092833",
           "timestamp": "2026-03-01T03:25:12Z",
           "content": "**Les yeux plissés et une expression ahurie aux lèvres, Euros essayait d'entendre une voix qui ne venait pas. Elle était sans doute trop loin. Ses signes incompréhensibles ne l'aidèrent pas plus. En réponse, il se contenta de tendre la main, paume vers elle, puis de replier tous ses doigts sauf l'index. S'il ne l'entendait pas d'ici, il n'avait qu'à remonter.**\n\n**Ainsi, il fit volte face, prenant lentement de la vitesse tout en s'éloignant du pont, avant de se pencher sur la droite, utilisant toute la largeur du cours d'eau pour un long demi-tour conservant un maximum de sa vitesse. Pliant davantage les genoux, se penchant vers l'avant pour maximiser son aérodynamisme, il gagna encore de la vitesse jusqu'au pont, augmentant également petit à petit sa hauteur, pile assez pour que les arcs de cercles des piliers du pont puissent lui servir de rampe de lancement.**\n\n**Et c'est ce qui se passa. Au dernier moment, l'épée prit un angle brutal et monta avec l'élan le long du pilier. Ralentissant vite, cependant, elle ne permit pas seule à Euros de remonter toute la hauteur du pont. A moins d'un mètre du rebord dont il était tombé, l'épée s'arrêta un instant, se suspendant dans les airs avant d'inévitablement retomber. Son propriétaire, alors, sauta, et du bout des doigts, il put s'accrocher au rebord, laissant son pouvoir récupérer sa lame tombant derrière lui.**\n\n**Cette dernière lévita par dessus la barrière, puis se planta dans le sol, dans un écart entre deux pavés. Se penchant, elle coinça également son pommeau sous la rambarde, la bloquant là. Le jeune homme, à son tour, passa la barrière, atterrissant devant la demoiselle aux cheveux noirs de jais. Il ne paraissait pas spécialement en colère, simplement confus, et surtout :**\n\n\"Tu veux répéter ? J'ai rien entendu d'en bas.\"",
@@ -9376,7 +9400,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1477836669427257435",
           "timestamp": "2026-03-02T01:15:18Z",
           "content": "**Son épée, derrière lui, s'était suspendue dans les airs en plein milieu d'un mouvement qui semblait à la base destiné à la rengainer dans son dos. Elle retombait mollement, tant l'entièreté de la matière grise du jeune homme semblait tenter déchiffrer la demoiselle. Etait-elle muette ? Etait-ce simplement un test ou une moquerie de sa part ? Il n'en savait rien, et il avait donc fini par opter pour la première option, quitte à passer pour le dindon la farce. En tant que cadet, il en avait l'habitude, de toute façon.**\n\n**Sa bouche à moitié ouverte, un peu pendante, ses yeux plissés dans une expression penaude, on aurait presque pu voir la vapeur de son cerveau en ébullition s'échapper de ses oreilles. Lorsqu'elle commença à chercher alentour quelqu'un du regard, le jeune homme ressassa ce qu'il avait vu : un dé, un seau, du lait.**\n\n\"Oh- Tu es 'dé-seau-lait', d'accord.\"\n\n**Reculant d'un pas, il chercha un instant la garde de son épée dans le vide, qui était bien 10 ou 20 centimètres plus bas, puis finit par jeter un oeil et la faire remonter jusque là. Il soupira. Décidément, c'était tordu, comme manière de faire, de parler par rébus. Elle ne pouvait pas faire des gestes ? S'incliner pour s'excuser, mettre son doigt sur sa bouche pour faire comprendre qu'elle ne peut pas parler. Enfin, il n'avait pas à essayer de comprendre. Alors en soupirant, il reprit :**\n\n\"Ca va, y'a pas de mal. Mais quand même, si je n'avais pas eu mon épée, j'aurai fini à l'eau, c'est pas la manière la plus diplomatique d'engager une conversation que j'ai vu de ma vie.\"",
@@ -9392,7 +9416,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1478428810914562048",
           "timestamp": "2026-03-03T16:28:16Z",
           "content": "**Euros, déjà, avait commencé à tapoter ses poches, à la recherche de quelque chose. Un instant, il détourna le regard, se tortillant sur place comme un ver pour tenter de trouver son calepin. Normalement, ce petit carnet était destiné à la prise de notes sur son pouvoir. Il traquait ses limites de portée, de durée et de tant d'autre chose, afin de mieux se représenter la puissance de son pouvoir : le rêve de tout power-scaler, en résumé.**\n\n\"Ah ! Tiens, t'as qu'à uti-\"\n\n**Après avoir fini par l'extraire d'une poche à fermeture, Euros s'était retourné sur du vide. Avec un temps de retard, il avait réalisé qu'il tendait son carnet à l'homme invisible, et un regard alentour des plus circonspects lui apprit qu'il avait loupé le départ de la demoiselle. Il s'éclaircit donc la gorge, tentant d'effacer cette gêne, et rangea son calepin dans la poche de son pantalon.**\n\n*\"Dommage... Le silence a son charme...\"*\n\n**Il croisa les bras et baissa la tête, un instant. L'avait-il vexé ? Il faut dire, essayer de se faire comprendre par des énigmes muettes auprès d'un idiot dont le seul talent est de savoir travailler sans relache, c'était audacieux. Non, ce n'était pas ça, selon lui. Quelqu'un de réellement intelligent ne cherche pas à s'éloigner de l'idiotie, mais à s'en faire comprendre... En tous cas, c'est le genre de phrase toute faite qui soulageait son esprit.**\n\n**Se retournant, il se décida enfin à abandonner. De toutes les choses, Euros appréciait la simplicité : comprendre le complexe était donc complètement impossible pour lui. Il la recroiserait surement un jour, il pourrait lui demander à ce moment là pourquoi elle était partie. Et tandis qu'il passait à nouveau la rambarde du pont, lévitant au dessus d'elle, il nota pour lui-même : la prochaine fois, il irait la voir avec son calepin dans les mains.**",
@@ -9956,7 +9980,12 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/terrain-grandblanc.jpg"
+      "location_image": "channel_images/terrain-grandblanc.jpg",
+      "participants": [
+        "Brutus Redwitch",
+        "Kenji Takahashi",
+        "Jasp Nah"
+      ]
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_3",
@@ -10269,7 +10298,14 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/terrain-grandblanc.jpg"
+      "location_image": "channel_images/terrain-grandblanc.jpg",
+      "participants": [
+        "Katelynn Hoffmann",
+        "Jin Alurantes",
+        "Aryanna Erhendil",
+        "Loyis Delacroix",
+        "Nick Sol"
+      ]
     },
     {
       "id": "scene_🥘〕𝗭one-𝗕uffet_2",
@@ -11654,7 +11690,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Vosk Sulyvan",
+        "Adelina Del Fuego"
+      ]
     },
     {
       "id": "scene___𝗘scaliers_𝗡acrés_2",
@@ -11845,7 +11885,14 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/escaliers-nacres.jpg"
+      "location_image": "channel_images/escaliers-nacres.jpg",
+      "participants": [
+        "Vosk Sulyvan",
+        "Akane Tsukishiro",
+        "Asior Eveus",
+        "Brutus Redwitch",
+        "L'Oeil"
+      ]
     },
     {
       "id": "scene_Kenji_et_Aryana_(la_suite)_1",
@@ -12099,7 +12146,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/couloir-blanc.jpg"
+      "location_image": "channel_images/couloir-blanc.jpg",
+      "participants": [
+        "Jasp Nah",
+        "Isis Faerieth"
+      ]
     },
     {
       "id": "scene___𝗣arc_des_𝗖ardinaux_3",
@@ -12622,7 +12673,7 @@
         "LE CONSEILLER",
         "Loyis Delacroix",
         "Nick Sol",
-        "Kanta",
+        "Euros",
         "Hector Swaft"
       ],
       "participants": [
@@ -12633,7 +12684,7 @@
         "LE CONSEILLER",
         "Loyis Delacroix",
         "Nick Sol",
-        "Kanta",
+        "Euros",
         "Hector Swaft"
       ],
       "messages": [
@@ -12654,7 +12705,7 @@
           "embed_description": "*Alors que les Mages venaient de recevoir leur affiliation pour leur mission, celle du premier contact tombera très vite le matin. Ces derniers n'avaient eu le temps que de se laver le visage et d'émerger d'une bonne nuit de sommeil qu'ils avaient déjà une nouvelle page dans leur grimoire d'Uriel qui venait d'apparaître. Elle s'était glissée dans le livre comme pour se raccrocher et elle était maintenant simplement inflexible. Il y avait dessus des mots, demandant alors aux personnes réquisitionnées de se rendre au Quartier Ouest, du moins son entrée et d'attendre l'arrivée du commanditaire.*\n\n*Pour les Mages, et les habitants d'Esperia, le Quartier Ouest est un endroit de la strate du milieu qui est le plus proche de la basse-ville. Il n'est pas aussi insalubre, les habitations et les diverses bâtiments sont là pour essayer de donne run semblant d'appartenance à la classe moyenne, mais les habitants sont tous pourris et moisis jusqu'à la moelle. Il n'y a pas de bienveillance ni d'acceptance, de l'égoïsme pur sous la belle parole \"Qu'on est tous dans la même mouise\". Même si les apparats laissent croire à une peut-être belle vie, c'est ici que les gens dans l'oublis des autres se trouvent. Alors il n'est pas étonnant que ce sont ces gens là qui ont succombés à l'adverse de la Loi.*\n\n*En arrivant, passant un pont surplombant une eau magnifique, une rivière créée dans le seul but d'être potable, c'est un changement d'ambiance assez étrange qui se déroulera devant eux. Naturellement, Esperia est une belle ville, elle n'est dégradée qu'à certains endroits pour raison des travaux étant donné que le Roi cherche à garder une ville belle et propre, mais le Quartier Ouest ne rentre plus du tout dans ces obligations. Il est comme un très gros grain de beauté qui est mal placé venant briser l'harmonie d'un visage. Il n'y a personne qui est venu pour nettoyer depuis au moins deux semaines, les routes sont sales de poussière et de terre. Il ne vit plus, le quartier est vide de monde laissant un simple son de brise devenir lugubre. On entend parfois des voix mais aussi des bruits d'outils et de destruction.*\n\n*Devant tout ça, la mission des Mages leur revient alors, ils doivent à la fois sauver ce quartier mais aussi essayer de rétablir l'ordre. Ces habitants qui ont choisit de s'allier avec des ennemis de la Cité doivent être ramenés sur le droit chemin. Devant ce qui semble être l'accès principal se tient deux bannières, celle du Voile d'Ivoire mais aussi celui de la Garde Pourpre.*"
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1480180331507224586",
           "timestamp": "2026-03-08T12:28:11Z",
           "content": "**Le bas quartier… Euros ne s'était jamais aventuré aussi loin. Pour échapper à ses frères, il s'était maintes fois caché dans les coins les moins riches du reste de la cité, mais l'Ouest avait toujours suscité une certaine crainte pour lui. De quoi exactement, il ne savait pas, mais il avait peur ou plus exactement, il appréhendait sa mission, à cause de sa localisation.**\n\n**Son pouvoir, sa famille, ses relations, tout dans sa vie était répétitif, et pour un homme aussi discipliné et sérieux qu'Euros, c'était l'environnement idéal. Bien sur, il ne connaissait rien du quartier, mais il imaginait un chaos se cachant derrière le calme, provoqué par cette cruelle absence de cadre et de règles qui le caractérisait.**\n\n**Ainsi le jeune homme s'avançait sur le pont, les yeux en l'air et l'esprit occupé. Et alors qu'il approchait, lentement, l'appréhension laissait place à la hâte. Il allait enfin effectuer une mission pour le Voile, il allait enfin pouvoir prouver qu'il était fort, plus fort que ses frères. Un sourire assuré, une inspiration profonde, et il s'arrêta d'un coup à l'entrée du quartier.**\n\n*\"Je suis le premier ?\"*\n\n**Une légère inquiétude s'empara de lui. Était-il arrivé en avance ? Ou pire, était-il en retard ? Et s'ils étaient partis sans lui ? Fut-ce le cas et il aurait l'air fin. Louper le début de la mission pour son premier jour, c'était certain de laisser une mauvaise impression à ses supérieurs. L'air pincé, les mains jointes et ses doigts s'emmêlant de stress, il cherchait alentour l'espoir qu'il se trompait.**\n\n**Il se décida finalement. Se rangeant sur un côté du chemin, il tourna son regard vers l'endroit d'où il venait. Reprenant sa constance et respirant un grand coup, il replaça les bras le long du corps, il redressa son dos, et reprit sa posture rigide habituelle.**\n\n*\"Ils vont arriver… Pas de panique…\"*",
@@ -12710,7 +12761,7 @@
           "embed_description": "*Cet endroit ne donnait pas envie à une personne normale. Pourtant pour les plus férus d'histoire, il était tant chargé en histoire. Des batailles et des débats pour la libération se sont passés ici, mais peut-être ce sont des thèmes qu'ils trouveront dans des ouvrages lors de leurs recherche. Quand les Mages seront tous arrivés, une figure alors descendra du ciel, volant sa artifice, une simple arme blanche et longue à la main. Pour les personnes qui ne sont pas du Voile d'Ivoire, impossible de reconnaître d'un simple regard qui est cet individu, sauf peut-être pour ceux qui ont été plus assidu sur leur découverte du Grimoire et de ses nouveautés. En face d'eux se trouvent une nouvelle figure important du Voile d'Ivoire, c'est Hector Swaft qui est un chef d'Escouade, il regardera d'abord Kanta, membre de sa guilde avant de pose un pied au sol, puis regardera les autres avec un air un peu plus sévère.*\n\n*Les deux guildes chargées de la sécurité sur différents pans d'Esperia ont la fâcheuse manie de travailler ensemble, en général il y a un bon sens de camaraderie qui est instauré, mais jamais ils ne travaillent en mélangeant leurs effectifs, la garde pourpre fonctionne d'une manière trop différente.*\n\n> Les individualités bruyante vont devoir s'apaiser si elles souhaitent toujours faire partit de l'opération. On est pas là pour rigoler on a affaire à un groupe extrêmement dangereux. Il n'y aura pas de deuxième fois.\n\n*Son regard quitte alors Nick, il était évident que c'était pour lui mais le ton de sa voix imposait aussi le rythme. Si une personne aussi forte qu'Hector était tendue, ça annonçait que de mauvaises nouvelles. Il rangera alors son arme dans son fourreau avant de poser pied au sol. Il sortit alors un petit calepin sur lequel était inscrit des choses que les Mages ne pourront pas voir.*\n\n> Dans tous les cas, bonjour à tous et merci d'avoir répondu présent. J'espère que vous avez bien mangé parce que vous avez peut-être avoir les tripes attaquées par ce que vous allez voir. \n\n*Hector regarde ensuite sur son côté à la recherche de quelque chose si ce n'est quelqu'un, mais finit par se racler la gorge.*\n\n> Je vais faire simple, des gens sont encore entrain de vivre dans ce calvaire et ne peuvent plus en sortir. Avoir tourné le dos aux règles leur a apporté la misère et il est de notre devoir de les sortir des griffes des terroristes. Le groupe se fait appelé les libérateurs, et ils souhaitent s'imposer et envahir Esperia. On sait de source sûre qu'ils essayent de faire les choses avec des règles mais on ne sait pas lesquelles. \n\n*Il marque une pause, le temps de tourner la page. Sa voix n'est pas celle d'un homme qui lit mais plutôt celui de quelqu'un d'agacé de devoir résumé un texte qui n'est pas le sien.*\n\n> Avec ma collègue de la garde pourpre qui est déjà dedans, vous allez devoir visiter et parler avec les habitants pour essayer de comprendre comment ils s'y sont prit mais aussi les aider à s'en sortir. Vous devez trouver un nom qui nous permettra de localiser une des têtes de ce groupe et de le trainer en justice pour couper le mal à la racine. \n\n*Hector range ensuite son calepin, un peu las de devoir faire ce genre de discours alors que ce qu'il se passe dans ce quartier le préocupe.*\n\n> Vous êtes six, mais vous allez devoir vous séparer. Vous choisissez  : deux groupes de trois ou trois groupes de deux ? Faites vos équipes et dites moi quand c'est bon, je vais vous donner votre périmètre de recherche."
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1480515496242581535",
           "timestamp": "2026-03-09T10:40:00Z",
           "content": "**Euros observa petit à petit l'arrivée de ses compagnons. Il n'était donc pas en retard, tant mieux.**\n\n**Au gueulard arrivé juste après lui, il répondit à son signe de tête par la pareille.**\n**Au grand timide le suivant, il n'adressa qu'un regard interrogé, attendant même un semblant de bonjour qui jamais ne vint.**\n**A la seconde femme arrivée, il opina légèrement du chef en réponse à son salut.**\n**Au poète, il dut rassembler tout son courage pour ne pas se moquer.**\n**A la première demoiselle arrivée enfin, il s'inclina légèrement, se présentant à son tour.**\n\n\"Euros, du Voile d'ivoire. J'ai hâte de travailler avec vous.\"\n\n**C'était faux - en partie du moins. La mission se présentait comme étant une \"infiltration et enquête\", aussi un gueulard et un poète semblaient être des désavantages. Le grand silencieux lui semblait doué au combat : un bon partenaire, sans aucun doute, mais pour un autre type de mission peut-être. En tous cas, tout comme les deux femmes, ses capacités de déduction et de discrétion restaient à déterminer.**\n\n**S'il devait choisir son partenaire, ce serait surement sur la femme brune que son choix se porterait, cela dit. Elle était du Cercle d'Azur, c'était celle qui avait le plus de chances d'avoir développé sa logique et son intelligence.**\n\n**Tout occupé à ses analyses, il ne remarqua que tardivement l'arrivée d'un septième. Ainsi, il ne sut jamais qu'on l'avait observé discrètement. Entendant un pied se poser au sol, cependant, il se tourna, et le vit enfin. Si c'était possible, il se serait redressé d'avantage, mais sa position était déjà rigide au possible, aussi sa tension n'eut pour effet que de rapprocher ses bras de son corps.**\n\n**Il resta immobile, pendant presque tout le discours, puis ayant déjà réfléchi à la question, à la fin, il tourna son regard, cherchant sa cible des yeux. La trouvant rapidement, il s'avança, et d'un tapotement du doigt sur son épaule, il l'interpella, pour lui demander sur ce même ton poli que plus tôt :**\n\n\"Deux ou trois, je ne sais pas, mais si ça ne te gêne pas, je pense que j'aimerai faire partie de ton équipe.\"",
@@ -12782,7 +12833,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1480849925460987985",
           "timestamp": "2026-03-10T08:48:55Z",
           "content": "\"Wow !\"\n\n**Euros n'avait eu le temps de se reculer que d'un demi pas, évitant de justesse de se faire bousculer par l'hurluberlu hurleur. Et alors qu'il parlait, lentement, le regard d'Euros se ferma. Sa main vint pincer l'arrête de son nez, son autre poing se posa au creux de sa taille, et la tête baissée, il pouffait silencieusement de rire en évitant de regarder la femme ou l'énergumène pourpre.**\n\n*\"A défaut d'avoir un partenaire viable, je devrai au moins m'amuser.\"*\n\n**C'était un mec pénible, un harceleur de rue en puissance, mais la cible de ce harcèlement ne semblait pas donner d'alerte, aussi se retint il d'intervenir. Peut-être se connaissaient ils et lui faisaient ils une simple blague après tout. Ou peut-être que le gueulard lui plai-**\n\n**Il reprit brusquement son sérieux, interrompu dans ses réflexions par son supérieur qui lui tendait quelque chose qu'il récupéra intrigué. Un sifflet d'alerte ? Il le fit jouer entre ses doigts un instant, l'observant sous toutes ses coutures tout en écoutant les explications, avant de le glisser dans la poche de sa veste et d'en remonter la fermeture.**\n\n\"Merci pour cet honneur.\"\n\n**Et alors qu'il repartait vers l'autre groupe, il pivota légèrement la tête, observant la fin de la scène entre ces deux garnements avec les dents serrées. Il aurait préféré tout autant qu'elle faire équipe avec la fille, elle avait l'air plus calme et réfléchie que le gueulard à genoux. Il s'éclaircit la gorge en fermant les yeux, essayant de se faire à ce qu'il estimait un cadeau empoisonné plus qu'un véritable honneur.**\n\n\"Le 1 pour nous.\"\n\n**Autant commencer par le début. Dans sa tête, ils allaient tous les faire de toute façon. La chose la plus ordonnée était donc de faire le 1, puis le 2, et ainsi de suite jusqu'au 6.**",
@@ -13403,7 +13454,16 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/quartiers.jpg"
+      "location_image": "channel_images/quartiers.jpg",
+      "participants": [
+        "Romy",
+        "Adelina Del Fuego",
+        "Jin Alurantes",
+        "Isis Faerieth",
+        "LE CONSEILLER",
+        "Emil Camille Rebenok",
+        "Lewis Bamer"
+      ]
     },
     {
       "id": "scene_🌆〕𝐏lace_1",
@@ -15542,11 +15602,11 @@
       "endDate": "2026-03-24T16:18:30Z",
       "actors": [
         "LE CONSEILLER",
-        "Kanta"
+        "Euros"
       ],
       "participants": [
         "LE CONSEILLER",
-        "Kanta"
+        "Euros"
       ],
       "messages": [
         {
@@ -15558,7 +15618,7 @@
           "embed_description": "◦ ───────────────── ¤♅¤ ───────────────── ◦\n\nLieu emblématique ou se tienne les personnes au dessus de tous dans la Guilde du Voile d'Ivoire. Les têtes sont toutes illustrées sur des tableaux fait à la main par des artistes très renommés dans Esperia. Une table construite avec la ville d'Esperia se trouve en son centre, le relief de cette dernière donne l'impression de faire face à une maquette, beaucoup de monde aimerait avoir accès aux informations que la carte offre, très peu ont la chance d'accéder à cet endroit. Une convocation ici indique plusieurs choses, soit que quelque chose de très grave s'est passé, soit qu'une succession est en marche. Les occupants de ce bureau sont au nombre de trois : Rias Valdor, quand elle le souhaite car elle reste libre comme l'air. Reya Arcadia, quand ses missions ne lui demande pas de traverser le monde. Pour finir, Marcus Valdor, l'homme derrière l'organisation des Escouades et qui s'occupe du recrutement.\n\n◦ ────────────────────────────────────── ◦"
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1483641373616767047",
           "timestamp": "2026-03-18T01:41:08Z",
           "content": "**Un jeune homme regardait la porte du bureau, les dents serrées. Non seulement cette femme l'avait humilié, mais en plus, elle avait trouvé le moyen de présenter la mission comme un échec d'Euros et non comme le sien, le mettant à risque de se faire exclure. Selon lui, il était là pour une ou plusieurs de ces raisons : on lui reprochait de ne pas avoir réussi sa mission, on souhaitait récolter son témoignage pour le cas de Nick et on veut discuter ou l'inculper d'insubordination. Dans les trois cas, n'ayant rien à se reprocher sinon de s'être laissé tabasser sans rien dire, il ne craignait pas grand chose.**\n\n**Aussi, même s'il était toujours en colère contre Viktoria, il n'en affichait plus rien, sinon les pulsations régulières des muscles de ses mâchoires, attribuables plus aisément au stress. Il attendait simplement son tour, à un bon pas ou deux de la porte, se tenant droit, les bras le long du corps comme si on l'eut demandé de se mettre au garde à vous. Son épée, dans son dos, l'aidait à tenir debout de temps à autres. En effet, sa blessure avait cessé de saigner il y a bien longtemps, et sa nature de Sysiphe l'aidait à guérir autant qu'à encaisser la douleur. Malgré cela, il avait encore mal, et il sentait que son muscle ne s'était pas encore suffisamment reconstitué pour lui permettre de le contrôler comme il l'aurait voulu.**\n\n**Ses yeux volaient un peu partout dans la pièce, revenant régulièrement vers la porte chaque fois qu'il lui semblait y voir un mouvement. En vérité, il ne savait même pas s'il devait toquer, s'il devait entrer, s'il devait attendre. Ayant peur de l'irrespect, il était donc resté planté là, lui et son excessif sérieux. Il faisait et refaisait la future discussion dans sa tête, imaginant ce qu'il pourrait bien devoir et vouloir dire ou faire. Il comptait être aussi factuel que possible, finalement, et ne répondre qu'aux questions posées, rien de plus. Il était préférable de faire comme s'il venait présenter un rapport des plus normaux, plutôt que de faire part de quoi que ce soit de ce qui se passait dans sa tête.**",
@@ -15574,7 +15634,7 @@
           "embed_description": "*Dans le bureau, celui qui porte tant de noms mais aussi tant de passage de personnes importantes, deux voix sont entrain d'échanger. La première, d'une colère sans précédent et d'une fureur palpable tandis que la seconde elle est plus posé. Son rythme de parole est sain mais sa puissance et sa tonalité est basse. Un grand son puis une silence s'en suit, une fenêtre s'ouvre et le vide complet dans le bureau s'installe. Ce qu'il s'est passé était une importante discussion entre deux hommes avec des différents, mais aucun d'entre eux n'avait réussit à mettre en place un terrain d'entente.*\n\n*La porte grince et s'ouvre, dévoilant alors son intérieur. Au fond du bureau sur le fauteuil se tient une éminence de la guilde, Markus Valdor. il est passablement énervé et c'est lisible sur son visage.*\n\n> Anemoi. Entre, assied toi et parle immédiatement en faisant ton rapport. Je veux savoir les moindre respirations que tu as eu.\n\n*Sa voix, suffisamment lourde pour qu'elle résonne presque dans la salle remplie de chose, peut facilement être entendue. D'ailleurs une autre personne se trouve ici, une jeune garçon aux cheveux châtains, c'est ce dernier qui a ouvert la porte, ayant une place dans le bureau comme personne.*\n\n*La pièce est grande, il lui faudra plus d'une vingtaine de pas pour rejoindre le fauteuil indiqué, mais l'ambiance était bien trop stricte pour que le jeune homme soit en confiance. Il ne rencontrait pas n'importe qui après tout. Il attends, son regard fixe avec une fureur palpable.*"
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1484591069239705600",
           "timestamp": "2026-03-20T16:34:53Z",
           "content": "\"Bonjour, monsieur.\"\n\n**Euros entra, une expression neutre tout bonnement indéchiffrable sur le visage. Délibérément, il marcha lentement, à un rythme militaire mécanique. Seule ombre au tableau : il boitait légèrement, et son pantalon était déchiré sur une plaie ouverte au niveau de son mollet.**\n\n\"Veuillez m'excuser pour ma lenteur, je suis blessé.\"\n\n**Sa manière de s'asseoir fut étrange, forcé à se contorsionner en s'aidant de son épée pour ne pas s'effondrer dans le fauteuil. Une fois assis, il souffla du nez d'exaspération contre lui-même, avant de se redresser tout en étendant sa jambe, ce qui sembla légèrement crisper ses mâchoires.**\n\n\"A vos ordres.\"\n\n**Une fois que lui fut bien assis, son épée se remit droite, puis se déplaça à nouveau, allant se poser dans le dos du fauteuil. Une fois son pouvoir enfin désactivé, il commença son rapport.** \n_ _",
@@ -15582,7 +15642,7 @@
           "embed_description": ""
         },
         {
-          "author": "Kanta",
+          "author": "Euros",
           "id": "1484591071295176704",
           "timestamp": "2026-03-20T16:34:53Z",
           "content": "\"J'ai été désigné responsable de l'équipe comportant Alicia du cercle d'azur - elle ne m'a pas donné son nom de famille - et de Nick Sol, de la garde pourpre. Nous avions pour ordres d'explorer le quartier et de joindre madame Swaft, de la garde pourpre. Nous nous sommes dirigés selon le plan fourni par monsieur Swaft.\n\nAu fur et à mesure que nous avancions, nous sommes tombés dans une embuscade, nous nous en sommes rendu compte trop tard et Alicia et moi avons tenté de désamorcer la situation. Un homme chapeauté et masqué par un motif de cible, nous a alors attaqué.\n\nJ'ai lancé mon épée vers lui, ou plus exactement entre lui et nous, pour tenter de créer une couverture et pouvoir nous enfuir. C'était en tous cas ce que je projetais de faire. Au moment ou j'ai lancé mon épée, il était à une centaine de mètres de nous. Au moment où elle a atterri, mon épée le séparait de Nick, qui s'était mis devant Alicia pour la protéger et était en train de se faire étrangler.\n\nNous nous sommes enfui vers l'église occupée par madame Swaft - sans vraiment le savoir, je dois vous l'avouer. Madame Swaft s'est présentée à nous, et nous à elle. Elle nous a également donné de nouveaux ordres : ceux de porter un message pour elle. Je vais d'ailleurs m'acquitter de cette tâche dès à présent.\n\n'Les libérateurs ont une hiérarchie évidente' d'après elle. Ils lui ont donné un nom : Jack, qui serait un homme de main de leur chef, un certain Lukas Monthe. Cependant, elle n'a pas encore eu d'informations concernant le meurtrier de feu Albrecht, si ce n'est que ç'a été le déclencheur de leur invasion.\n\nJe lui ai dit que nous porterions ce message, mais qu'il nous fallait quelques minutes de repos. En effet, Nick Sol, lorsqu'il s'est fait attaqué, a pris beaucoup de dégâts à la gorge. Quand il s'est enfui, il s'est également tordu la cheville. Cela dit, ce ne sont pas les pires blessures qu'il ait reçu de cette mission.\n\nMadame Swaft semblait s'amuser à torturer - non, \"soumettre\" serait plus exact. Elle s'amusait, donc, à soumettre un homme, vraisemblablement un membre des libérateurs. Elle semblait avoir plusieurs hommes brisés à sa solde, certains physiquement, d'autres psychologiquement.\n\nMadame Swaft nous a reproché notre manque de discernement et notre retard. Nick Sol nous a demandé pendant ce sermon, en désignant les hommes soumis que je vous ai évoqué, si nous pensions que monsieur Swaft aimait lui aussi ce genre de pratiques.\n\nL'incongruité de la question m'a fait… C'était à mi-chemin entre l'exaspération et un rire. Toujours est-il que je n'ai pas su garder mon sérieux. Je me tournais vers Nick pour lui répondre que je ne savais pas, et lui demander de se taire et d'éviter les blagues de mauvais goût.\n\nAvant que je ne puisse faire quoi que ce soit, madame Swaft lui a asséné un coup. Au vu de la violence de l'impact, il aurait pu être mortel. Je ne crois pas qu'il l'ait été, cela dit, Nick respirait encore quand je l'ai quitté. Elle m'a également blessé au mollet, ce qui m'a fait tomber au sol. Elle nous a ensuite fait davantage de reproches, tout en m'écrasant la cage thoracique.\n\nJe n'ai pas bougé, j'ai simplement écouté en silence. Au delà du fait que lutter contre ma supérieure ne servirait à rien, je pense que si j'avais essayé, elle aurait tenté de me tuer à mon tour.\n\nAprès avoir mis hors de combat notre camarade, elle a décrété l'échec de notre mission, y a mis fin, et nous a ordonné de retourner à l'entrée du quartier Ouest, tandis qu'une femme nommée Niel - elle fait partie du Voile, mais je ne la connaissais pas - nous a accompagné en s'occupant du corps de Nick.\n\nFin du rapport, monsieur Swaft m'ayant ordonné de venir ici au plus vite.\"",
@@ -15728,7 +15788,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/quartiers.jpg"
+      "location_image": "channel_images/quartiers.jpg",
+      "participants": [
+        "Emil Camille Rebenok",
+        "Lewis Bamer"
+      ]
     },
     {
       "id": "scene____𝐐uartiers_3",
@@ -15755,7 +15819,10 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/quartiers.jpg"
+      "location_image": "channel_images/quartiers.jpg",
+      "participants": [
+        "Jin Alurantes"
+      ]
     },
     {
       "id": "scene___𝗣arc_des_𝗖ardinaux_4",
@@ -17842,6 +17909,11 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Jin Alurantes",
+        "Red Roadman",
+        "Aryanna Erhendil"
       ]
     },
     {
@@ -17877,7 +17949,10 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/verger-des-peches.jpg"
+      "location_image": "channel_images/verger-des-peches.jpg",
+      "participants": [
+        "Aryanna Erhendil"
+      ]
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_4",
@@ -18339,7 +18414,13 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/terrain-grandblanc.jpg"
+      "location_image": "channel_images/terrain-grandblanc.jpg",
+      "participants": [
+        "L'Ost du Sang",
+        "L'Oeil",
+        "Jasp Nah",
+        "Lewis Bamer"
+      ]
     },
     {
       "id": "scene_🗽〕𝗣ont-des-𝗗eux_5",
@@ -18432,7 +18513,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/verger-des-peches.jpg"
+      "location_image": "channel_images/verger-des-peches.jpg",
+      "participants": [
+        "Aryanna Erhendil",
+        "Alek Clark"
+      ]
     },
     {
       "id": "scene_⚖️〕𝗖hambre-𝗠artiale_2",
@@ -19310,7 +19395,15 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/l-epicurien.jpg"
+      "location_image": "channel_images/l-epicurien.jpg",
+      "participants": [
+        "Adelina Del Fuego",
+        "Septimus Kales",
+        "Myrea M",
+        "Le Conseiller",
+        "Tsutomu Yamamoto",
+        "LE CONSEILLER"
+      ]
     },
     {
       "id": "scene___𝐑uelles_1",
@@ -19337,7 +19430,10 @@
           "embed_description": "◦ ──────────────── ¤♅¤ ──────────────── ◦\n\nA l'image de la Basse-Ville, cette ruelle est adjacente au bar de la même rue. Son sillage est d'une longueur étendue et ne semble servir que comme d'un lieu de passage. Il n'est pas impossible de se faire prendre dans une embuscade aux heures les plus avancées de la nuit. Ici traînent cartons et déchets, mais il semblerait que cela soit un lieu privilégié des fumeurs prenant une pinte dans les environs. \n\n◦ ──────────────────────────────────────── ◦"
         }
       ],
-      "location_image": "channel_images/ruelles.jpg"
+      "location_image": "channel_images/ruelles.jpg",
+      "participants": [
+        "LE CONSEILLER"
+      ]
     },
     {
       "id": "scene_☁️〕𝗣ortail-𝗜voire_4",
@@ -22062,7 +22158,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Nick Sol",
+        "Isis Faerieth"
+      ]
     },
     {
       "id": "scene_🌃〕𝐒ous-𝐒ol_2",
@@ -22528,7 +22628,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/ruelles.jpg"
+      "location_image": "channel_images/ruelles.jpg",
+      "participants": [
+        "Asior Eveus",
+        "Iscarioth"
+      ]
     },
     {
       "id": "scene_📚〕𝗕ibliothèque-𝗔zure_4",
@@ -25101,7 +25205,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/serre-de-lune.jpg"
+      "location_image": "channel_images/serre-de-lune.jpg",
+      "participants": [
+        "Maëll Fol'Dun",
+        "Frey Guðfrøðr"
+      ]
     },
     {
       "id": "scene_scène_Ren_Yuu_1",
@@ -27452,7 +27560,16 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/quartiers.jpg"
+      "location_image": "channel_images/quartiers.jpg",
+      "participants": [
+        "Katelynn Hoffmann",
+        "Vosk Sulyvan",
+        "Idelmée Cadree",
+        "Le Conseiller",
+        "Asior Eveus",
+        "Red Roadman",
+        "Isis Faerieth"
+      ]
     },
     {
       "id": "scene_🌆〕𝐏lace_2",
@@ -31729,7 +31846,16 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/course-poursuite.jpg"
+      "location_image": "channel_images/course-poursuite.jpg",
+      "participants": [
+        "Akane Tsukishiro",
+        "Ren Urugaki",
+        "Jin Alurantes",
+        "Kenji Takahashi",
+        "Aryanna Erhendil",
+        "LE CONSEILLER",
+        "Brutus Redwitch"
+      ]
     },
     {
       "id": "scene_🟨_La_Valeur_d_une_Vie._1",
@@ -33281,7 +33407,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Ragde Umbras",
+        "Cassian Ortie"
+      ]
     },
     {
       "id": "scene___𝐋_𝐀cadémie_1",
@@ -33623,6 +33753,13 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Myrea M",
+        "Frey Guðfrøðr",
+        "Lucia Fiorella",
+        "SUR L'OMBRE UN REGARD EST DESORMAIS PORTE",
+        "Selena Moon"
       ]
     },
     {
@@ -35696,7 +35833,13 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/ruelles.jpg"
+      "location_image": "channel_images/ruelles.jpg",
+      "participants": [
+        "Kenji Takahashi",
+        "Jasp Nah",
+        "Aryanna Erhendil",
+        "Ren Urugaki"
+      ]
     },
     {
       "id": "scene_Ils_ne_souhaitent_qu_une_seule_chose_:_La_paix._1",
@@ -36322,7 +36465,13 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/terrain-grandblanc.jpg"
+      "location_image": "channel_images/terrain-grandblanc.jpg",
+      "participants": [
+        "Jin Alurantes",
+        "Inzu Sravel",
+        "Red Roadman",
+        "Isis Faerieth"
+      ]
     },
     {
       "id": "scene___𝗝ardin_de_𝗤uartz_5",
@@ -38584,6 +38733,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38610,6 +38762,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38636,6 +38791,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38662,6 +38820,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38688,6 +38849,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38714,6 +38878,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38740,6 +38907,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -38865,7 +39035,10 @@
           "embed_description": "*Ô toi qui me portes, vois demain\n\nCar si ma __violence__ t'emporte\n\nSi mon __hypocrisie__ brille\n\nQue tu t'allonges sur ma __perfidie__\n\nTout ça par __l'excès__ promis\n\nSous le poids de Sa Sainteté qui me nourrit*\n\n---\n\n*Le Berceau est le carrefour de* ***__l'Umbrael__*** *ou toutes les outils de la Couronne peuvent se rassembler, au nom de Sa Sainteté le Conseiller, pour assurer sa pérennité. Les voies sont multiplient et offrent à tous, une vue sur le monde.*"
         }
       ],
-      "location_image": "channel_images/le-berceau.jpg"
+      "location_image": "channel_images/le-berceau.jpg",
+      "participants": [
+        "L'Oeil"
+      ]
     },
     {
       "id": "scene___𝗩erger_des_𝗣êchés_5",
@@ -38981,7 +39154,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/verger-des-peches.jpg"
+      "location_image": "channel_images/verger-des-peches.jpg",
+      "participants": [
+        "Jin Alurantes",
+        "Kenji Takahashi"
+      ]
     },
     {
       "id": "scene_Chambre_de_Jin_Alurantes_3",
@@ -40878,7 +41055,11 @@
           "embed_description": "> — C’est un plaisir de partager ce verre à vos côtés.\n\n\n*La phrase, simple et posée, glissa hors des lèvres de l’homme comme un souffle maîtrisé. Il demeurait là, stoïque, presque rêveur, observant la jeune femme s’enfoncer dans des réflexions naïves avec une curiosité méthodique. Son regard, calme mais calculateur, suivait la logique de Myrea comme on suit la danse d’une flamme : attentive, prête à saisir la moindre variation.*\n\n*Il percevait son énervement, une colère dirigée vers l’inconnue qu’il traquait lui-même si nettement qu’il répondit à sa question par une autre.*\n\n\n> — On m’a dit que vous avez rencontré une dame ailée. Pourriez-vous m’en dire davantage ?\n\n\n*Interrogera-il tout en faisant miroiter une plume entre ses doigts, avec la délicatesse qu’on réserve à un trésor chaudement gardé. Myrea la reconnut aussitôt : un présent offert par celle dont les paroles lui revenaient encore. Une femme aux capacités improbables, un oiseau devenu humaine le temps d’un souffle.*\n\n*Un sourire espiègle naquit au coin de ses lèvres tandis qu’il savourait une gorgée de thé. La boisson était rare, précieuse, et le confort qui l’accompagnait l’était davantage encore.*\n\n*Myrea sentit la chaleur du breuvage se répandre en elle comme une floraison lente : une énergie douce, végétale, qui s’insinuait dans sa chair et apaisait ses nerfs.\nLa douleur se dissipa.*\n\n*Les parfums floraux enveloppèrent ses sens, embaumant ses blessures dans un cocon invisible ; un duvet intangible que sa peau effleurait sans le saisir.*¨\n\n*Elle n’était ni droguée ni hypnotisée : simplement enveloppée dans le repos mérité après l’épreuve de son courage. Une couverture de chaleur et de sourire.*\n\n*La pluie de ses émotions glissa au revers de ses os, lavant la fièvre d’un mal en voie de guérison.*\n\n\n> ***Le thé avait-il des vertus médicinales ?***\n> ***La question se posa, puis s’effaça.***\n\n*Son regard dériva vers un coffret posé non loin : une carapace élégante, promesse d’un nouveau tribut. Peut-être s’en saisirait-elle… une fois son contenu révélé.*\n\n\n> — Vos questions sont un bonheur à écouter, mais mes réponses ne peuvent être précises envers un aventurier que ma maison ne reconnaît.\n\n\n**Sa voix valsait, douce mais tranchante.**\n\n*Une ligne invisible fendait les briques de sa psyché : une ouverture sans concession, une idéologie qui s’étendait sans jamais se justifier.*\n\n*Sa main se posa sur le loquet du coffret.*\n\n*Un cliquetis répondit... discret, régulier, comme le chant des criquets dans une nuit chaude.*\n\n**L’inconnu se dévoila sans résistance.**\n\n*Le ministre souleva le couvercle, et la lumière révéla un joyau azur : un médaillon modeste, à l’effigie de sa maison.*\n\n\n> ***Un trésor brut, léger dans la paume mais lourd de sens.***\n> ***Une invitation.***\n> ***Un choix.***\n> ***Un positionnement.***\n> ***Celui d’une âme qui doit décider entre errer ou comprendre.***\n\n\n> — Désirez-vous aller plus loin ?\n\n\n*Les mots étaient simples, limpides, posés avec une précision chirurgicale. Ils ne blessaient pas : ils perçaient. Ils administraient un remède sans promettre la guérison.*\n\n\n**Deux chemins s’offraient à Myrea :**\n\n*Prendre le médaillon et poursuivre la conversation. Ou refuser, et retourner à l’incertitude promise à ceux qui vivent sans écusson.*\n\n*Si elle voulait des réponses, elle devrait se couvrir de bleu. Si elle préférait le silence, elle pourrait décliner ; et laisser la connaissance sur le bas-côté de sa liberté.*"
         }
       ],
-      "location_image": "channel_images/cellules.jpg"
+      "location_image": "channel_images/cellules.jpg",
+      "participants": [
+        "OWL LE MESSAGER",
+        "Myrea M"
+      ]
     },
     {
       "id": "scene_Chambre_Velka_Valcyrion_2",
@@ -40933,6 +41114,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -41537,7 +41721,10 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Jasp Nah"
+      ]
     },
     {
       "id": "scene_🍹〕𝗧errasse-couverte_2",
@@ -41995,7 +42182,12 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/salle-d-alchimie.jpg"
+      "location_image": "channel_images/salle-d-alchimie.jpg",
+      "participants": [
+        "LE CONSEILLER",
+        "OWL LE MESSAGER",
+        "Aryanna Erhendil"
+      ]
     },
     {
       "id": "scene_Isis_et_Astreüs_1",
@@ -43727,7 +43919,11 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/port-du-levant.jpg"
+      "location_image": "channel_images/port-du-levant.jpg",
+      "participants": [
+        "Lumia Faendharts",
+        "Jasp Nah"
+      ]
     },
     {
       "id": "scene_Scène_Kalès___Kalem_1",
@@ -44384,7 +44580,10 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/le-berceau.jpg"
+      "location_image": "channel_images/le-berceau.jpg",
+      "participants": [
+        "Iscarioth"
+      ]
     },
     {
       "id": "scene___𝗙ontaine_𝗠arbrée_7",
@@ -44419,7 +44618,10 @@
           "embed_description": ""
         }
       ],
-      "location_image": "channel_images/fontaine-marbree.jpg"
+      "location_image": "channel_images/fontaine-marbree.jpg",
+      "participants": [
+        "Jasp Nah"
+      ]
     },
     {
       "id": "scene____𝐋e_𝐒igile_1",
@@ -45321,6 +45523,9 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Loyis Delacroix"
       ]
     },
     {
@@ -45989,6 +46194,10 @@
           "embed_title": "",
           "embed_description": ""
         }
+      ],
+      "participants": [
+        "Ragde Umbras",
+        "L'Academie"
       ]
     },
     {

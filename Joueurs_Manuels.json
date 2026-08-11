@@ -19,7 +19,9 @@
     },
     "Kanta": {
       "character_name": "Euros",
-      "guild": "Voile d'Ivoire"
+      "guild": "Voile d'Ivoire",
+      "displayName": "Kanta",
+      "username": "kanta"
     },
     "kanta": {
       "character_name": "Euros",
