@@ -686,7 +686,10 @@ function SearchableCharacterSelect({
   const currentDisplayLabel = useMemo(() => {
     if (selectedActor === 'all') return 'Tous les personnages';
     const charInfo = CHARACTERS_DATA[selectedActor];
-    return charInfo?.displayName || charInfo?.username || selectedActor;
+    const nick = charInfo?.displayName || charInfo?.username;
+    return nick && nick !== selectedActor 
+      ? `${selectedActor} (${nick})` 
+      : selectedActor;
   }, [selectedActor]);
 
   const filteredGroupedActors = useMemo(() => {
@@ -1237,7 +1240,7 @@ function GanttMonthView({
                       const info = CHARACTERS_DATA[mainActor];
                       const style = getFactionStyle(info?.role);
                       const isShort = widthPercent < 10;
-                      const mainActorDisplayName = info?.displayName || mainActor;
+                      const mainActorDisplayName = mainActor;
 
                       return (
                         <div
@@ -1339,8 +1342,7 @@ function GanttMonthView({
             </div>
             <div className="flex flex-wrap gap-1 pt-1 border-t border-slate-800">
               {hScene.actors.map(a => {
-                const aInfo = CHARACTERS_DATA[a];
-                const nameDisp = aInfo?.displayName || a;
+                const nameDisp = a;
                 return (
                   <span key={a} className="px-1.5 py-0.5 bg-slate-900 text-[10px] text-slate-300 rounded border border-slate-700">
                     {nameDisp}
@@ -2185,10 +2187,6 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
                   {activeScene.actors.map(actor => {
-                    const info = CHARACTERS_DATA[actor];
-                    const style = getFactionStyle(info?.role);
-                    const serverNick = info?.displayName || actor;
-
                     return (
                       <button
                         key={actor}
@@ -2198,10 +2196,10 @@ export default function App() {
                         }}
                         style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
                         className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded cursor-pointer hover:opacity-85 hover:scale-105 transition-all shadow-sm"
-                        title={`Voir la fiche visuelle de ${actor}`}
+                        title={info?.displayName ? `Voir la fiche visuelle de ${actor} (${info.displayName})` : `Voir la fiche visuelle de ${actor}`}
                       >
                         <span>{style.icon}</span>
-                        <span>{highlightSearchQuery(serverNick, searchQuery, `act-${actor}`)}</span>
+                        <span>{highlightSearchQuery(actor, searchQuery, `act-${actor}`)}</span>
                       </button>
                     );
                   })}
@@ -2216,8 +2214,8 @@ export default function App() {
 
                   const info = CHARACTERS_DATA[msg.author];
                   const style = getFactionStyle(info?.role);
-                  const serverNick = info?.displayName || msg.author;
-                  const initials = getInitials(serverNick);
+                  const authorName = msg.author;
+                  const initials = getInitials(authorName);
                   const avatarImg = msg.avatar_url || info?.avatarUrl || getCharacterCardImage(msg.author);
                   const msgDiscordAppUrl = msg.id 
                     ? getMessageDiscordUrl(activeScene, msg.id, true)
@@ -2306,11 +2304,11 @@ export default function App() {
                       {avatarImg ? (
                         <img
                           src={avatarImg}
-                          alt={serverNick}
+                          alt={authorName}
                           style={{ borderColor: style.hexColor }}
                           className="w-10 h-10 rounded-full object-cover shrink-0 shadow-sm mt-0.5 border border-slate-700 select-none cursor-pointer hover:opacity-90 transition-opacity"
                           onClick={() => setSelectedActor(msg.author)}
-                          title={`Voir le profil de ${serverNick}`}
+                          title={info?.displayName ? `Voir le profil de ${authorName} (${info.displayName})` : `Voir le profil de ${authorName}`}
                         />
                       ) : (
                         <div 
@@ -2330,7 +2328,7 @@ export default function App() {
                               style={{ color: style.text }} 
                               className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
                             >
-                              {highlightSearchQuery(serverNick, searchQuery, `msg-author-${index}`)}
+                              {highlightSearchQuery(authorName, searchQuery, `msg-author-${index}`)}
                             </span>
                             <span className="text-[12px] text-[#949ba4] font-normal select-none">
                               {formatDateDiscord(msg.timestamp)}
