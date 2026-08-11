@@ -487,6 +487,15 @@ class DiscordExporterClient(discord.Client):
                 if guild:
                     g_info = get_guild_info(guild)
                     detected_member_factions[c_name] = g_info
+                    disp_name = entry.get("displayName") or entry.get("display_name")
+                    u_name = entry.get("username")
+                    av_url = entry.get("avatarUrl") or entry.get("avatar_url", "")
+                    if disp_name or u_name:
+                        detected_member_details[c_name] = {
+                            "username": u_name or "",
+                            "displayName": disp_name or "",
+                            "avatarUrl": av_url
+                        }
 
             print(f"✅ {len(detected_member_factions)} correspondances nom/pseudo -> faction et {len(detected_gm_names)} membres avec le rôle MJ enregistrés.")
             with open("discord_member_factions.json", "w", encoding="utf-8") as f:
