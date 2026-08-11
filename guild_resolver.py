@@ -82,7 +82,7 @@ def clean_key_simple(s):
 
 def get_manual_override(identifier, manual_overrides=None):
     """
-    Recherche si l'identifiant (ID, pseudo, nom) existe dans les surcharges manuelles.
+    Recherche si l'identifiant (pseudo, nom) existe dans les surcharges manuelles.
     Retourne le dictionnaire de surcharge ou None.
     """
     if manual_overrides is None:
@@ -95,7 +95,7 @@ def get_manual_override(identifier, manual_overrides=None):
     if not ck_ident:
         return None
 
-    # 1. Correspondance exacte ou par clé nettoyée (ID Discord, pseudo ou nom)
+    # 1. Correspondance exacte ou par clé nettoyée (pseudo ou nom)
     if ident_str in manual_overrides:
         return manual_overrides[ident_str]
 

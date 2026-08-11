@@ -447,7 +447,7 @@ class DiscordExporterClient(discord.Client):
                             if c_name:
                                 detected_gm_names.add(c_name)
 
-                m_override = get_manual_override(str(member.id)) or get_manual_override(member.display_name) or get_manual_override(member.name)
+                m_override = get_manual_override(member.display_name) or get_manual_override(member.name)
                 if m_override and m_override.get("guild"):
                     g_name = m_override["guild"]
                     c_name = m_override.get("character_name", member.display_name)
@@ -464,7 +464,6 @@ class DiscordExporterClient(discord.Client):
                     register_member_faction(member.display_name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                     if member.name:
                         register_member_faction(member.name, faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
-                    register_member_faction(str(member.id), faction_info, username=member.name, display_name=member.display_name, avatar_url=av_url)
                 elif best_role:
                     faction_info = FACTION_INFO[best_role]
                     av_url = str(member.display_avatar.url) if hasattr(member, 'display_avatar') and member.display_avatar else ""
@@ -485,6 +484,7 @@ class DiscordExporterClient(discord.Client):
                 if guild:
                     g_info = get_guild_info(guild)
                     detected_member_factions[c_name] = g_info
+                    detected_member_factions[key] = g_info
                     disp_name = entry.get("displayName") or entry.get("display_name")
                     u_name = entry.get("username")
                     av_url = entry.get("avatarUrl") or entry.get("avatar_url", "")
