@@ -2187,6 +2187,8 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
                   {activeScene.actors.map(actor => {
+                    const info = CHARACTERS_DATA[actor];
+                    const style = getFactionStyle(info?.role);
                     return (
                       <button
                         key={actor}
