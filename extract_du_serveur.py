@@ -736,12 +736,7 @@ class DiscordExporterClient(discord.Client):
                             if hasattr(e, 'image') and e.image and hasattr(e.image, 'url') and e.image.url:
                                 embed_texts.append(f"[Image: {e.image.url}]")
 
-                        if embed_texts:
-                            embed_full = "\n".join(embed_texts)
-                            if content:
-                                content = content + "\n\n" + embed_full
-                            else:
-                                content = embed_full
+
 
                     # Format du timestamp ISO
                     ts_iso = msg.created_at.strftime("%Y-%m-%dT%H:%M:%SZ")
