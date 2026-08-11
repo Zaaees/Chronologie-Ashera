@@ -439,6 +439,7 @@ class DiscordExporterClient(discord.Client):
 
             async for member in target_guild.fetch_members(limit=None):
                 member_role_ids = [r.id for r in member.roles]
+                best_role = next((r_id for r_id in FACTION_ROLE_PRIORITY if r_id in member_role_ids), None)
 
                 if gm_role_id in member_role_ids:
                     for n_candidate in [member.display_name, member.name, getattr(member, 'global_name', None)]:
