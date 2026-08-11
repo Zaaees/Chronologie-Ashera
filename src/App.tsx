@@ -1506,6 +1506,7 @@ export default function App() {
     };
 
     Object.keys(CHARACTERS_DATA).forEach(actorName => {
+      if (/^\d+$/.test(actorName)) return;
       const charInfo = CHARACTERS_DATA[actorName];
       let role = charInfo?.role || "Indéfini";
       if (role === "Sans rôle" || role === "Inconnu") {
@@ -1524,6 +1525,7 @@ export default function App() {
     });
 
     activeActorsSet.forEach(actorName => {
+      if (/^\d+$/.test(actorName)) return;
       if (!CHARACTERS_DATA[actorName]) {
         if (!groups["Indéfini"]) groups["Indéfini"] = [];
         if (!groups["Indéfini"].some(x => x.name === actorName)) {

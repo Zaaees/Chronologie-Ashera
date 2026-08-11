@@ -67,7 +67,7 @@ CANONICAL_MAP = {
     "tarrion tombetoile": "Tarrion Tombetoile", "tarrion tombetoile biboon": "Tarrion Tombetoile", "biboon": "Tarrion Tombetoile",
     "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris",
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
-    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor",
+    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "sw darker": "Magon Baldor", "swdarker": "Magon Baldor",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
     "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
@@ -181,8 +181,6 @@ def apply_manual_overrides_to_globals():
         if guild:
             g_info = get_guild_info(guild)
             detected_member_factions[c_name] = g_info
-            if key and not key.isdigit():
-                detected_member_factions[key] = g_info
 
 apply_manual_overrides_to_globals()
 
@@ -768,12 +766,15 @@ class DiscordExporterClient(discord.Client):
 
         # 1. Ajouter d'abord les acteurs des scènes RP en évaluant get_character_guild_and_color
         for actor in sorted(all_actors):
-            if not actor or len(actor) >= 50 or any(b in actor.lower() for b in SYSTEM_BOTS):
+            if not actor or actor.isdigit() or len(actor) >= 50 or any(b in actor.lower() for b in SYSTEM_BOTS):
                 continue
-            role, color, color_name = get_character_guild_and_color(actor)
+            c_name = clean_character_name(actor)
+            if not c_name or c_name.isdigit():
+                continue
+            role, color, color_name = get_character_guild_and_color(c_name)
             if role is not None:
-                details = detected_member_details.get(actor, {})
-                character_map[actor] = {
+                details = detected_member_details.get(c_name, {}) or detected_member_details.get(actor, {})
+                character_map[c_name] = {
                     "role": role,
                     "color": color,
                     "colorName": color_name,
@@ -781,16 +782,19 @@ class DiscordExporterClient(discord.Client):
                     "displayName": details.get('displayName', ''),
                     "avatarUrl": details.get('avatarUrl', '')
                 }
-                valid_actors.add(actor)
+                valid_actors.add(c_name)
 
         # 2. Compléter avec les membres Discord identifiés qui ne sont pas déjà dans character_map
         for char_name, faction_info in detected_member_factions.items():
-            if char_name and len(char_name) < 50 and char_name not in character_map:
-                if any(b in char_name.lower() for b in SYSTEM_BOTS):
+            if not char_name or char_name.isdigit():
+                continue
+            c_name = clean_character_name(char_name)
+            if c_name and not c_name.isdigit() and len(c_name) < 50 and c_name not in character_map:
+                if any(b in c_name.lower() for b in SYSTEM_BOTS):
                     continue
                 role, color, color_name = faction_info
-                details = detected_member_details.get(char_name, {})
-                character_map[char_name] = {
+                details = detected_member_details.get(c_name, {}) or detected_member_details.get(char_name, {})
+                character_map[c_name] = {
                     "role": role,
                     "color": color,
                     "colorName": color_name,
@@ -798,7 +802,7 @@ class DiscordExporterClient(discord.Client):
                     "displayName": details.get('displayName', ''),
                     "avatarUrl": details.get('avatarUrl', '')
                 }
-                valid_actors.add(char_name)
+                valid_actors.add(c_name)
 
         img_dir = "public/channel_images"
         channel_images_map = {}

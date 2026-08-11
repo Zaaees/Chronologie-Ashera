@@ -65,7 +65,7 @@ CANONICAL_MAP = {
     "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris", "lys dandelion": "Tenebris", "lys": "Tenebris", "lys dandelion / tenebris": "Tenebris",
     "okayama": "Okayama", "raien shogo enjaku blacksheep": "Okayama", "raien shogo enjaku": "Okayama", "shogo enjaku": "Okayama", "raien": "Okayama", "vesper": "Okayama", "okayama [ash]": "Okayama", "𝓞𝓴𝓪𝔂𝓪𝓶𝓪 [ASH]": "Okayama",
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
-    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor",
+    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "sw darker": "Magon Baldor", "swdarker": "Magon Baldor",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
     "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
