@@ -89,7 +89,7 @@ def clean_key_lookup(s):
     s = re.sub(r'[\u0300-\u036f]', '', s)
     return re.sub(r'[^a-z0-9]', '', s)
 
-from guild_resolver import get_manual_override, load_manual_overrides, get_guild_info
+from guild_resolver import get_manual_override, load_manual_overrides, get_guild_info, is_pnj_character
 
 CANONICAL_LOOKUP = {clean_key_lookup(k): v for k, v in CANONICAL_MAP.items()}
 
@@ -239,7 +239,6 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
 
 def get_character_guild_and_color(actor_name):
     from guild_resolver import is_pnj_character, get_manual_override, get_guild_info
-    from unify_characters_v2 import CHARACTER_METADATA_V2
 
     clean_name = clean_character_name(actor_name)
     name_lower = clean_name.lower()
@@ -255,28 +254,19 @@ def get_character_guild_and_color(actor_name):
         _, color, color_name = get_guild_info(role)
         return role, color, color_name
 
-    # 3. Métadonnées canoniques (CHARACTER_METADATA_V2)
-    for name_candidate in [clean_name, actor_name]:
-        if name_candidate in CHARACTER_METADATA_V2:
-            meta = CHARACTER_METADATA_V2[name_candidate]
-            role = meta["role"]
-            color = meta["color"]
-            color_name = "char_pnj" if role == "PNJ" else ("char_indefini" if role == "Indéfini" else "char_faction")
-            return role, color, color_name
-
-    # 4. PNJ légitimes / Webhooks explicites
+    # 3. PNJ légitimes / Webhooks explicites
     if (clean_name in detected_webhooks or actor_name in detected_webhooks or 
         is_pnj_character(clean_name) or is_pnj_character(actor_name)):
         return "PNJ", "#c084fc", "char_pnj"
 
-    # 5. Joueurs réels avec faction Discord
+    # 4. Joueurs réels avec faction Discord (discord_member_factions.json)
     if clean_name in detected_member_factions:
         return detected_member_factions[clean_name]
 
     if actor_name in detected_member_factions:
         return detected_member_factions[actor_name]
 
-    # 6. Règle Absolue : Tout Webhook / Entité RP sans faction de joueur est un PNJ
+    # 5. Règle Absolue : Tout Webhook / Entité RP sans faction de joueur est un PNJ
     return "PNJ", "#c084fc", "char_pnj"
 
 

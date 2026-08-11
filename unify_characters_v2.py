@@ -82,76 +82,11 @@ CANONICAL_MAP = {
     "les missives": "LES MISSIVES", "missive": "LES MISSIVES"
 }
 
-# Roles strictly assigned based on Discord Role IDs (Webhooks are classified dynamically as PNJ)
-CHARACTER_METADATA_V2 = {
-    # Main Guilds
-    "Adelina Del Fuego": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Aegnor Othar": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Akane Tsukishiro": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Arun Acharya": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Aryanna Erhendil": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Astreüs Mylonas": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Bozdag Dermirhan": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Brutus Redwitch": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Cassian Ortie": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Emil Camille Rebenok": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Euros": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Frey Guðfrøðr": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Hedwig Von Glanzestern": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Inzu Sravel": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Iscarioth": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
-    "Isis Faerieth": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Ivara Luella": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Jasp Nah": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Jin Alurantes": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Kalem Crowley": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Katelynn Hoffmann": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-
-    "Lewis Bamer": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Lumia Faendharts": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Maëll Fol'Dun": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Milli Enga": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Myrea M": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Nick Sol": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Ren Urugaki": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Selena Moon": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Septimus Kales": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Tarrion Tombetoile": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Tenebris": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
-    "Tsutomu Yamamoto": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Velka Valcyrion": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Æther": {"role": "L'œil", "color": "#cbd5e1", "status": "MAIN_PC"},
-
-    # Faction Roles (Real Player Discord Roles)
-    "Asior Eveus": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Idelmée Cadree": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Junko Anarchy": {"role": "Voile d'Ivoire", "color": "#fef08a", "status": "MAIN_PC"},
-    "Kenji Takahashi": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Loyis Delacroix": {"role": "La Garde Pourpre", "color": "#ef4444", "status": "MAIN_PC"},
-    "Lucia Fiorella": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Okayama": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Red Roadman": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Vosk Sulyvan": {"role": "Sans guilde", "color": "#eab308", "status": "MAIN_PC"},
-    "Ragde Umbras": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Yunah Aoi Enjaku": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-    "Eldren Gates": {"role": "Cercle d'Azur", "color": "#3b82f6", "status": "MAIN_PC"},
-
-    # Webhooks (System & PNJ entities)
-    "Hector Swaft": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Rias Valdor": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Captain Hook": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "L'Ost du Sang": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "LE MONARQUE DU SILENCE": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Regisseur du Centre de l'Histoire": {"role": "PNJ", "color": "#c084fc", "status": "PNJ"},
-    "Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "L'Oeil": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "Le Conseiller": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "OWL LE MESSAGER": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "LES MISSIVES": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"},
-    "Narrateur": {"role": "PNJ", "color": "#c084fc", "status": "SYSTEM"}
-}
+# CHARACTER_METADATA_V2 supprimé : les factions sont désormais lues exclusivement
+# depuis discord_member_factions.json (mis à jour dynamiquement par les rôles Discord)
+# et Joueurs_Manuels.json (surcharges manuelles). Cela évite les désynchronisations
+# entre les rôles Discord réels et un dictionnaire hardcodé figé.
+CHARACTER_METADATA_V2 = {}
 
 VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'Ivoire", "JAVUS", "Sans guilde", "PNJ", "Indéfini"}
 
