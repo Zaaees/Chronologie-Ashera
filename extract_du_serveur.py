@@ -391,6 +391,18 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
     clean_ch_name = re.sub(r'[^\w]', '_', channel_name)
     scene_id = f"scene_{clean_ch_name}_{scene_index}"
 
+    SYSTEM_AUTHORS_LOWER = {
+        'le conseiller', 'oeil', "l'oeil", 'owl le messager', 'les missives',
+        'narrateur', 'isis faerieth', 'carl-bot', 'dyno', 'mee6', 'ticket tool', 'ticket-tool', 'disboard'
+    }
+
+    first_player_msg = next((
+        m for m in formatted_messages 
+        if m.get('author') and m.get('author').lower().strip() not in SYSTEM_AUTHORS_LOWER
+    ), formatted_messages[0] if formatted_messages else {"timestamp": "0000-00-00"})
+
+    start_time = first_player_msg.get('timestamp') or (messages[0]['timestamp'] if messages else "0000-00-00")
+
     sc_dict = {
         "id": scene_id,
         "channel": parent_channel,
@@ -399,7 +411,7 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         "discord_position": discord_position,
         "title": f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else parent_channel,
         "actors": actors,
-        "start_time": messages[0]['timestamp'],
+        "start_time": start_time,
         "end_time": messages[-1]['timestamp'],
         "preview": preview,
         "message_count": len(messages),
