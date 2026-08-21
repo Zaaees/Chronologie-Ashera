@@ -368,5 +368,10 @@
     "Sans guilde",
     "#e2ce7d",
     "char_sans_guilde"
+  ],
+  "Mao Hedwig": [
+    "La Garde Pourpre",
+    "#b40000",
+    "char_pourpre"
   ]
 }
