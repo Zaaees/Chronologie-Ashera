@@ -373,5 +373,20 @@
     "La Garde Pourpre",
     "#b40000",
     "char_pourpre"
+  ],
+  "Lys Ploug-Amar Ruinnard": [
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
+  ],
+  "ruinnard": [
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
+  ],
+  "Ruinnard": [
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
   ]
 }
