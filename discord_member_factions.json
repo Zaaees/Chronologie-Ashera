@@ -388,5 +388,20 @@
     "Sans guilde",
     "#e2ce7d",
     "char_sans_guilde"
+  ],
+  "Diamas Morningstar Yøru": [
+    "Cercle d'Azur",
+    "#305ed3",
+    "char_azur"
+  ],
+  "kneel_peasants": [
+    "Cercle d'Azur",
+    "#305ed3",
+    "char_azur"
+  ],
+  "Yøru": [
+    "Cercle d'Azur",
+    "#305ed3",
+    "char_azur"
   ]
 }
