@@ -60,9 +60,9 @@
     "char_pourpre"
   ],
   "Æther": [
-    "L'œil",
-    "#0e0d0d",
-    "char_oeil"
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
   ],
   "Katelynn Hoffmann": [
     "Voile d'Ivoire",
@@ -403,5 +403,20 @@
     "Cercle d'Azur",
     "#305ed3",
     "char_azur"
+  ],
+  "tulak_crow": [
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
+  ],
+  "Tulak_Crow": [
+    "Sans guilde",
+    "#e2ce7d",
+    "char_sans_guilde"
+  ],
+  "Brutas Greenwitch de la GP": [
+    "La Garde Pourpre",
+    "#b40000",
+    "char_pourpre"
   ]
 }
