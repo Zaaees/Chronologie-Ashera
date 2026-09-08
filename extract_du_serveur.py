@@ -32,66 +32,11 @@ if not TOKEN:
     print("❌ Erreur : DISCORD_BOT_TOKEN non trouvé dans le fichier .env")
     sys.exit(1)
 
-CANONICAL_MAP = {
-    "adelina del fuego": "Adelina Del Fuego", "adelina del fuego mari": "Adelina Del Fuego", "marigold": "Adelina Del Fuego", "_marigld": "Adelina Del Fuego",
-    "aegnor othar": "Aegnor Othar", "tcizab": "Aegnor Othar", "tcizabaegnor othar": "Aegnor Othar",
-    "akane tsukishiro": "Akane Tsukishiro", "tsukishiro akane": "Akane Tsukishiro", "doppelganger2830": "Akane Tsukishiro",
-    "arun acharya": "Arun Acharya", "arun acharya freulonlezouin": "Arun Acharya", "freulonlezouinzouin": "Arun Acharya", "nyson": "Arun Acharya",
-    "aryanna erhendil": "Aryanna Erhendil", "aryana erhendil": "Aryanna Erhendil", "aryana erhendil taurielle": "Aryanna Erhendil", "taurielle": "Aryanna Erhendil", "tutaurielle": "Aryanna Erhendil",
-    "asior eveus": "Asior Eveus", "eopia asior eveus": "Asior Eveus", "eopia": "Asior Eveus",
-    "bozdag dermirhan": "Bozdag Dermirhan", "clipmyr": "Bozdag Dermirhan", "clip demirhan bozdag": "Bozdag Dermirhan",
-    "brutus redwitch": "Brutus Redwitch", "kinoru": "Brutus Redwitch",
-    "cassian ortie": "Cassian Ortie", "chulakita": "Cassian Ortie", "chulaktm": "Cassian Ortie",
-    "frey gudfrodur": "Frey Guðfrøðr", "frey guðfrøðr": "Frey Guðfrøðr", "frey elear": "Frey Guðfrøðr", "frey - elear": "Frey Guðfrøðr", "elessai": "Frey Guðfrøðr",
-    "hedwig von glanzestern": "Hedwig Von Glanzestern", "twisted_servant": "Hedwig Von Glanzestern",
-    "idelmee cadree": "Idelmée Cadree", "idelmee cadere": "Idelmée Cadree", "momo idelmee cadere": "Idelmée Cadree", "momotarie": "Idelmée Cadree", "momo": "Idelmée Cadree",
-    "iscarioth": "Iscarioth", "zaes ley vaelric": "Iscarioth", "ley vaelric": "Iscarioth", "zaes": "Iscarioth", "zaaes": "Iscarioth",
-    "isis faerieth": "Isis Faerieth", "etoile isis faerieth": "Isis Faerieth", "etoile": "Isis Faerieth", "letoiledeminuit": "Isis Faerieth",
-    "ivara luella": "Ivara Luella", "ivara luell": "Ivara Luella", "elisabeeh ivara luell": "Ivara Luella", "elisabeeeeh": "Ivara Luella",
-    "jasp nah": "Jasp Nah", "nah jasp": "Jasp Nah",
-    "junko anarchy": "Junko Anarchy", "luden junko anarchy": "Junko Anarchy", "luden": "Junko Anarchy", "luden_chan": "Junko Anarchy",
-    "katelynn hoffmann": "Katelynn Hoffmann", "katelyn hoffmann": "Katelynn Hoffmann", "yuu katelyn hoffmann": "Katelynn Hoffmann", "its_yuu": "Katelynn Hoffmann", "yuu": "Katelynn Hoffmann",
-    "kenji takahashi": "Kenji Takahashi", "kenji takahashi heavil": "Kenji Takahashi", "heavil4444": "Kenji Takahashi", "heavil": "Kenji Takahashi",
-    "lewis bamer": "Lewis Bamer", "lewis bamer historious": "Lewis Bamer",
-    "loyis delacroix": "Loyis Delacroix", "happy loyis delacroix": "Loyis Delacroix", "happy_is_happy": "Loyis Delacroix", "happy": "Loyis Delacroix",
-    "lucia fiorella": "Lucia Fiorella", "ju lucia bunny fiorella": "Lucia Fiorella", "juju_la_best": "Lucia Fiorella",
-    "lumia faendharts": "Lumia Faendharts", "lumia lum faendhartslumiere": "Lumia Faendharts", "lueur_": "Lumia Faendharts",
-    "maell fol'dun": "Maëll Fol'Dun", "mael fol'dun": "Maëll Fol'Dun", "mael fol'dun astyell": "Maëll Fol'Dun", "astyell": "Maëll Fol'Dun",
-    "myrea m": "Myrea M", "khem myrea m": "Myrea M", "khemm": "Myrea M", "khem": "Myrea M",
-    "nick sol": "Nick Sol", "prince nick sol": "Nick Sol", "harderbae": "Nick Sol", "_aura_": "Nick Sol",
-    "ragde umbras": "Ragde Umbras", "personnes_10": "Ragde Umbras", "personne": "Ragde Umbras",
-    "red roadman": "Red Roadman", "red": "Red Roadman", "jivwd": "Red Roadman",
-    "ren urugaki": "Ren Urugaki", "noci urugaki ren": "Ren Urugaki", "urugaki ren": "Ren Urugaki", "nociferoce": "Ren Urugaki", "noci": "Ren Urugaki",
-    "selena moon": "Selena Moon", "seléna moon": "Selena Moon", "gwenphasehikena": "Selena Moon",
-    "septimus kales": "Septimus Kales", "ryo kales septimus": "Septimus Kales",
-    "tarrion tombetoile": "Tarrion Tombetoile", "tarrion tombetoile biboon": "Tarrion Tombetoile", "biboon": "Tarrion Tombetoile",
-    "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris",
-    "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
-    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "sw darker": "Magon Baldor", "swdarker": "Magon Baldor",
-    "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
-    "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
-    "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
-    "kuikui - astreus mylonas": "Astreüs Mylonas", "astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
-    "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
-    "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel", "inzu sravel - garde pourpre": "Inzu Sravel", "inzu sravel": "Inzu Sravel",
-    "hector swaft - mage de rang 3": "Hector Swaft", "hector swaft": "Hector Swaft",
-    "milli enga - mange de rang 2": "Milli Enga", "milli enga": "Milli Enga",
-    "vieux debile tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "tsutomu yamamoto": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto", "reverse": "Tsutomu Yamamoto",
-    "emil camille rebenok": "Emil Camille Rebenok", "emil": "Emil Camille Rebenok", "indominushunter": "Emil Camille Rebenok",
-    "rias valdor - cheffe de la famille valdor": "Rias Valdor", "rias valdor": "Rias Valdor",
-    "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne", "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
-    "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law", "markus law": "Markus Law",
-    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates"
-}
-
-def clean_key_lookup(s):
-    s = unicodedata.normalize('NFD', str(s).lower())
-    s = re.sub(r'[\u0300-\u036f]', '', s)
-    return re.sub(r'[^a-z0-9]', '', s)
-
 from guild_resolver import get_manual_override, load_manual_overrides, get_guild_info, is_pnj_character
+from unify_characters_v2 import CANONICAL_MAP, get_canonical_name_v2, clean_key_v2
 
-CANONICAL_LOOKUP = {clean_key_lookup(k): v for k, v in CANONICAL_MAP.items()}
+clean_key_lookup = clean_key_v2
+clean_character_name = get_canonical_name_v2
 
 DYNAMIC_MANUAL_ALIASES = {}
 
@@ -104,40 +49,6 @@ if os.path.exists("discord_member_aliases.json"):
     except Exception:
         pass
 
-# Helper pour nettoyer le nom du personnage
-def clean_character_name(name):
-    if not name:
-        return "Narrateur"
-
-    raw_str = str(name).strip()
-    # Priorité 0: Surcharges manuelles (ID, pseudo ou nom RP brut)
-    override = get_manual_override(raw_str)
-    if override and override.get("character_name"):
-        return override["character_name"]
-
-    ck_raw = clean_key_lookup(raw_str)
-    if ck_raw in DYNAMIC_MANUAL_ALIASES:
-        return DYNAMIC_MANUAL_ALIASES[ck_raw]
-
-    name_str = unicodedata.normalize('NFKD', raw_str)
-    name_str = re.sub(r'[^\w\s\-\']', '', name_str)
-    name_str = re.sub(r'\s+', ' ', name_str).strip()
-    name_str = re.sub(r'\s+BOT$', '', name_str, flags=re.IGNORECASE)
-    name_lower = name_str.lower()
-
-    # Priorité 1: Recherche canonique stricte pour les vrais personnages de joueurs
-    ck = clean_key_lookup(name_str)
-    if ck in CANONICAL_LOOKUP:
-        return CANONICAL_LOOKUP[ck]
-
-    if re.match(r'^j+a+p+a+n+.*$|^j+a+p+$', ck):
-        return "Yunah Aoi Enjaku"
-
-    for k, v in CANONICAL_LOOKUP.items():
-        if len(k) >= 4 and (k in ck or ck in k):
-            return v
-
-    return name_str if name_str else "Narrateur"
 
 # Ordre de priorité des Rôles Faction Discord
 FACTION_ROLE_PRIORITY = [
@@ -254,20 +165,26 @@ def get_character_guild_and_color(actor_name):
         _, color, color_name = get_guild_info(role)
         return role, color, color_name
 
-    # 3. PNJ légitimes / Webhooks explicites
-    if (clean_name in detected_webhooks or actor_name in detected_webhooks or 
-        is_pnj_character(clean_name) or is_pnj_character(actor_name)):
-        return "PNJ", "#c084fc", "char_pnj"
-
-    # 4. Joueurs réels avec faction Discord (discord_member_factions.json)
+    # 3. Joueurs réels avec faction Discord (discord_member_factions.json)
     if clean_name in detected_member_factions:
         return detected_member_factions[clean_name]
 
     if actor_name in detected_member_factions:
         return detected_member_factions[actor_name]
 
-    # 5. Règle Absolue : Tout Webhook / Entité RP sans faction de joueur est un PNJ
+    # 4. Personnages canoniques de joueurs (ne doivent JAMAIS être reclassés en PNJ par webhook)
+    canonical_player_chars = set(CANONICAL_MAP.values())
+    if clean_name in canonical_player_chars and clean_name not in {"Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}:
+        return "Sans guilde", "#e2ce7d", "char_sans_guilde"
+
+    # 5. PNJ légitimes / Webhooks explicites
+    if (clean_name in detected_webhooks or actor_name in detected_webhooks or 
+        is_pnj_character(clean_name) or is_pnj_character(actor_name)):
+        return "PNJ", "#c084fc", "char_pnj"
+
+    # 6. Règle Absolue : Tout Webhook / Entité RP sans faction de joueur est un PNJ
     return "PNJ", "#c084fc", "char_pnj"
+
 
 
 def is_character_or_fiche_channel(channel):
@@ -331,7 +248,9 @@ EXPLICIT_END_REGEX = re.compile(
     re.IGNORECASE
 )
 
-from segmenteur_narratif import segment_messages_into_scenes_v2
+from segmenteur_narratif import segment_messages_into_scenes_v2, SEPARATOR_LINE_REGEX
+
+SYSTEM_NARRATOR_CANONICAL = {"Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}
 
 # Segmentation des messages en scènes (Logique Narrative V2)
 def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str, category_name="", discord_position=999):
@@ -340,7 +259,18 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
 
     valid_msgs = []
     for m in messages:
-        full_text = " ".join([m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')]).strip()
+        # 1. Ignorer les bots administratifs
+        if any(b in m.get('author', '').lower() for b in SYSTEM_BOTS):
+            continue
+        content = m.get('content', '') or ''
+        # 2. Ignorer les pures lignes séparatrices décoratives
+        if SEPARATOR_LINE_REGEX.match(content.strip()):
+            continue
+        # 3. Filtrer le bruit non-RP (pings isolés, relances HRP, etc.)
+        if not is_meaningful_rp_content(content, m.get('embed_title', ''), m.get('embed_description', '')):
+            continue
+
+        full_text = " ".join([content, m.get('embed_title', '') or '', m.get('embed_description', '') or '']).strip()
         if full_text:
             valid_msgs.append((m, full_text))
 
@@ -352,19 +282,39 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
 
     scenes = segment_messages_into_scenes_v2(channel_name, channel_id, valid_msgs, scene_builder)
 
-    return [s for s in scenes if s.get("actors")]
+    return [s for s in scenes if s and s.get("actors")]
 
 def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name="", discord_position=999):
+    if not messages_tuples:
+        return None
+
     messages = [t[0] for t in messages_tuples]
     texts = [t[1] for t in messages_tuples]
 
-    actors = list({
-        clean_character_name(m['author']) 
-        for m in messages 
-        if m.get('author') 
-        and not any(b in m['author'].lower() for b in SYSTEM_BOTS)
-        and is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', ''))
-    })
+    raw_actors = set()
+    narrators = set()
+    for m in messages:
+        if not m.get('author'):
+            continue
+        if any(b in m['author'].lower() for b in SYSTEM_BOTS):
+            continue
+        if not is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
+            continue
+        c_name = clean_character_name(m['author'])
+        if not c_name:
+            continue
+        if c_name in SYSTEM_NARRATOR_CANONICAL or c_name.lower() in {x.lower() for x in SYSTEM_NARRATOR_CANONICAL}:
+            narrators.add(c_name)
+        else:
+            raw_actors.add(c_name)
+
+    actors = sorted(list(raw_actors))
+    narrators_list = sorted(list(narrators))
+
+    # Omettre les scènes orphelines sans aucun joueur réel
+    if not actors:
+        return None
+
     parent_channel = THREAD_TO_PARENT.get(channel_name, channel_name)
 
     preview = texts[0]
@@ -391,17 +341,8 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
     clean_ch_name = re.sub(r'[^\w]', '_', channel_name)
     scene_id = f"scene_{clean_ch_name}_{scene_index}"
 
-    SYSTEM_AUTHORS_LOWER = {
-        'le conseiller', 'oeil', "l'oeil", 'owl le messager', 'les missives',
-        'narrateur', 'isis faerieth', 'carl-bot', 'dyno', 'mee6', 'ticket tool', 'ticket-tool', 'disboard'
-    }
-
-    first_player_msg = next((
-        m for m in formatted_messages 
-        if m.get('author') and m.get('author').lower().strip() not in SYSTEM_AUTHORS_LOWER
-    ), formatted_messages[0] if formatted_messages else {"timestamp": "0000-00-00"})
-
-    start_time = first_player_msg.get('timestamp') or (messages[0]['timestamp'] if messages else "0000-00-00")
+    start_time = messages[0]['timestamp']
+    end_time = messages[-1]['timestamp']
 
     sc_dict = {
         "id": scene_id,
@@ -411,8 +352,9 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
         "discord_position": discord_position,
         "title": f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else parent_channel,
         "actors": actors,
+        "narrators": narrators_list,
         "start_time": start_time,
-        "end_time": messages[-1]['timestamp'],
+        "end_time": end_time,
         "preview": preview,
         "message_count": len(messages),
         "discord_url": discord_url,
@@ -533,8 +475,10 @@ class DiscordExporterClient(discord.Client):
         existing_scenes_data = {}
         existing_scenes_by_channel = {}
         last_msg_id_by_channel = {}
-        scenes_file = os.path.join("src", "scenes.json") if os.path.exists(os.path.join("src", "scenes.json")) else ("scenes.json" if os.path.exists("scenes.json") else None)
-        if scenes_file:
+        force_full = os.getenv("FORCE_FULL_EXTRACT", "0") == "1" or "--force" in sys.argv
+        if force_full:
+            print("🔄 Mode extraction complète forcé (--force). Réinitialisation du cache incrémental.")
+        elif scenes_file:
             try:
                 with open(scenes_file, "r", encoding="utf-8") as f:
                     existing_data = json.load(f)
@@ -658,6 +602,9 @@ class DiscordExporterClient(discord.Client):
             ch_id = str(channel.id)
 
             print(f"[{idx+1}/{len(channels_to_process)}] Extraction : #{ch_name} (ID: {ch_id})...")
+
+            if hasattr(channel, 'parent') and channel.parent is not None:
+                THREAD_TO_PARENT[ch_name] = channel.parent.name
 
             # Ignorer les salons de fiches personnages et chambres
             if is_character_or_fiche_channel(channel):

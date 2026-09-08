@@ -29,49 +29,59 @@ SYSTEM_MODERATION_BOTS = {"carl-bot", "dyno", "mee6", "ticket tool", "ticket-too
 
 # Main canonical mapping rules for names
 CANONICAL_MAP = {
-    # 35 Main Characters
+    # Main Characters & Aliases
     "adelina del fuego": "Adelina Del Fuego", "adelina del fuego mari": "Adelina Del Fuego", "marigold": "Adelina Del Fuego", "_marigld": "Adelina Del Fuego",
     "aegnor othar": "Aegnor Othar", "tcizab": "Aegnor Othar", "tcizabaegnor othar": "Aegnor Othar", "tcizab aegnor othar": "Aegnor Othar",
     "akane tsukishiro": "Akane Tsukishiro", "tsukishiro akane": "Akane Tsukishiro", "doppelganger2830": "Akane Tsukishiro",
     "arun acharya": "Arun Acharya", "arun acharya freulonlezouin": "Arun Acharya", "freulonlezouinzouin": "Arun Acharya", "nyson": "Arun Acharya",
     "aryanna erhendil": "Aryanna Erhendil", "aryana erhendil": "Aryanna Erhendil", "aryana erhendil taurielle": "Aryanna Erhendil", "taurielle": "Aryanna Erhendil", "tutaurielle": "Aryanna Erhendil",
     "asior eveus": "Asior Eveus", "eopia asior eveus": "Asior Eveus", "eopia": "Asior Eveus",
+    "astreus mylonas": "Astreüs Mylonas", "astreüs mylonas": "Astreüs Mylonas", "kuikui - astreus mylonas": "Astreüs Mylonas", "kuikuito": "Astreüs Mylonas",
     "bozdag dermirhan": "Bozdag Dermirhan", "clipmyr": "Bozdag Dermirhan", "clip demirhan bozdag": "Bozdag Dermirhan",
-    "brutus redwitch": "Brutus Redwitch", "kinoru": "Brutus Redwitch",
-    "cassian ortie": "Cassian Ortie", "chulakita": "Cassian Ortie", "chulak cassian ortie": "Cassian Ortie", "chulaktm": "Cassian Ortie",
+    "brutus redwitch": "Brutus Redwitch", "kinoru": "Brutus Redwitch", "brutas greenwitch de la gp": "Brutus Redwitch", "brutas greenwitch": "Brutus Redwitch",
+    "cassian ortie": "Cassian Ortie", "chulakita": "Cassian Ortie", "chulak cassian ortie": "Cassian Ortie", "chulaktm": "Cassian Ortie", "cʜᴜʟᴀᴋtm": "Cassian Ortie",
+    "emil camille rebenok": "Emil Camille Rebenok", "emil": "Emil Camille Rebenok", "indominushunter": "Emil Camille Rebenok",
+    "euros": "Euros", "kanta": "Euros",
     "frey gudfrodur": "Frey Guðfrøðr", "frey guðfrøðr": "Frey Guðfrøðr", "frey elear": "Frey Guðfrøðr", "frey - elear": "Frey Guðfrøðr", "elessai": "Frey Guðfrøðr",
-    "hedwig von glanzestern": "Hedwig Von Glanzestern", "twisted_servant": "Hedwig Von Glanzestern",
+    "hector swaft": "Hector Swaft", "hector swaft - mage de rang 3": "Hector Swaft",
+    "hedwig von glanzestern": "Hedwig Von Glanzestern", "twisted_servant": "Hedwig Von Glanzestern", "thumb hedwig von g 12": "Hedwig Von Glanzestern", "thumb hedwig": "Hedwig Von Glanzestern",
     "idelmee cadree": "Idelmée Cadree", "idelmee cadere": "Idelmée Cadree", "momo idelmee cadere": "Idelmée Cadree", "momotarie": "Idelmée Cadree", "momo": "Idelmée Cadree",
+    "inzu sravel": "Inzu Sravel", "inzu sravel - instructeur de la garde pourpre": "Inzu Sravel", "inzu sravel - garde pourpre": "Inzu Sravel",
     "iscarioth": "Iscarioth", "zaes ley vaelric": "Iscarioth", "ley vaelric": "Iscarioth", "zaes": "Iscarioth", "zaaes": "Iscarioth",
     "isis faerieth": "Isis Faerieth", "etoile isis faerieth": "Isis Faerieth", "etoile": "Isis Faerieth", "letoiledeminuit": "Isis Faerieth",
     "ivara luella": "Ivara Luella", "ivara luell": "Ivara Luella", "elisabeeh ivara luell": "Ivara Luella", "elisabeeeeh": "Ivara Luella",
     "jasp nah": "Jasp Nah", "nah jasp": "Jasp Nah",
+    "jin alurantes": "Jin Alurantes", "elouand": "Jin Alurantes",
     "junko anarchy": "Junko Anarchy", "luden junko anarchy": "Junko Anarchy", "luden": "Junko Anarchy", "luden_chan": "Junko Anarchy",
+    "kalem crowley": "Kalem Crowley", "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
     "katelynn hoffmann": "Katelynn Hoffmann", "katelyn hoffmann": "Katelynn Hoffmann", "yuu katelyn hoffmann": "Katelynn Hoffmann", "its_yuu": "Katelynn Hoffmann", "yuu": "Katelynn Hoffmann",
     "kenji takahashi": "Kenji Takahashi", "kenji takahashi heavil": "Kenji Takahashi", "heavil4444": "Kenji Takahashi", "heavil": "Kenji Takahashi",
-    "lewis bamer": "Lewis Bamer", "lewis bamer historious": "Lewis Bamer",
+    "leonore edelweiss": "Léonore Edelweiss", "ana_non": "Léonore Edelweiss",
+    "lewis bamer": "Lewis Bamer", "lewis bamer historious": "Lewis Bamer", "historious": "Lewis Bamer",
+    "lewis-phoebe d'ashbourne": "Lewis-Phoebe d'Ashbourne",
     "loyis delacroix": "Loyis Delacroix", "happy loyis delacroix": "Loyis Delacroix", "happy_is_happy": "Loyis Delacroix", "happy": "Loyis Delacroix",
     "lucia fiorella": "Lucia Fiorella", "ju lucia bunny fiorella": "Lucia Fiorella", "juju_la_best": "Lucia Fiorella",
     "lumia faendharts": "Lumia Faendharts", "lumia lum faendhartslumiere": "Lumia Faendharts", "lueur_": "Lumia Faendharts",
     "maell fol'dun": "Maëll Fol'Dun", "mael fol'dun": "Maëll Fol'Dun", "mael fol'dun astyell": "Maëll Fol'Dun", "astyell": "Maëll Fol'Dun",
+    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "sw darker": "Magon Baldor", "swdarker": "Magon Baldor",
+    "markus law": "Markus Law", "bourpiff markus law": "Markus Law", "bourpiff": "Markus Law",
+    "milli enga": "Milli Enga", "milli enga - mange de rang 2": "Milli Enga",
     "myrea m": "Myrea M", "khem myrea m": "Myrea M", "khemm": "Myrea M", "khem": "Myrea M",
     "nick sol": "Nick Sol", "prince nick sol": "Nick Sol", "harderbae": "Nick Sol", "_aura_": "Nick Sol",
+    "okayama": "Okayama", "raien shogo enjaku blacksheep": "Okayama", "raien shogo enjaku": "Okayama", "shogo enjaku": "Okayama", "raien": "Okayama", "vesper": "Okayama", "okayama [ash]": "Okayama", "𝓞𝓴𝓪𝔂𝓪𝓶𝓪 [ASH]": "Okayama",
     "ragde umbras": "Ragde Umbras", "personnes_10": "Ragde Umbras", "personne": "Ragde Umbras",
     "red roadman": "Red Roadman", "red": "Red Roadman", "jivwd": "Red Roadman",
     "ren urugaki": "Ren Urugaki", "noci urugaki ren": "Ren Urugaki", "urugaki ren": "Ren Urugaki", "nociferoce": "Ren Urugaki", "noci": "Ren Urugaki",
+    "rias valdor": "Rias Valdor", "rias valdor - cheffe de la famille valdor": "Rias Valdor",
     "selena moon": "Selena Moon", "seléna moon": "Selena Moon", "gwenphasehikena": "Selena Moon",
     "septimus kales": "Septimus Kales", "ryo kales septimus": "Septimus Kales",
     "tarrion tombetoile": "Tarrion Tombetoile", "tarrion tombetoile biboon": "Tarrion Tombetoile", "biboon": "Tarrion Tombetoile",
     "tenebris": "Tenebris", "___val___": "Tenebris", "_val_": "Tenebris", "lys dandelion": "Tenebris", "lys": "Tenebris", "lys dandelion / tenebris": "Tenebris",
-    "okayama": "Okayama", "raien shogo enjaku blacksheep": "Okayama", "raien shogo enjaku": "Okayama", "shogo enjaku": "Okayama", "raien": "Okayama", "vesper": "Okayama", "okayama [ash]": "Okayama", "𝓞𝓴𝓪𝔂𝓪𝓶𝓪 [ASH]": "Okayama",
+    "tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto", "reverse": "Tsutomu Yamamoto",
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
-    "euros": "Euros", "kanta": "Euros",
-    "magon baldor": "Magon Baldor", "sw dark325": "Magon Baldor", "swdark325": "Magon Baldor", "sw darker": "Magon Baldor", "swdarker": "Magon Baldor",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
     "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
-    "orla kalem crowley": "Kalem Crowley", "orla": "Kalem Crowley", "orla_": "Kalem Crowley", "eldren gates": "Eldren Gates",
     "yunah aoi enjaku": "Yunah Aoi Enjaku", "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
-
 
     # Webhook entities & System Narrators
     "par-dela le voile": "Oeil", "par dela le voile": "Oeil", "par-delà le voile": "Oeil", "par delà le voile": "Oeil",
@@ -79,7 +89,10 @@ CANONICAL_MAP = {
     "le conseiller": "LE CONSEILLER", "conseiller": "LE CONSEILLER",
     "owl le messager": "OWL LE MESSAGER", "owl": "OWL LE MESSAGER",
     "l'oeil": "Oeil", "l'œil": "Oeil", "loeil": "Oeil", "lœil": "Oeil", "oeil": "Oeil",
-    "les missives": "LES MISSIVES", "missive": "LES MISSIVES"
+    "sous son oeil": "Oeil", "sous son œil": "Oeil", "sous son oeil ": "Oeil",
+    "les missives": "LES MISSIVES", "missive": "LES MISSIVES",
+    "missive de la rage et du sang": "LES MISSIVES",
+    "sur l'ombre un regard est desormais porte": "Oeil"
 }
 
 # CHARACTER_METADATA_V2 supprimé : les factions sont désormais lues exclusivement
@@ -137,7 +150,7 @@ def get_canonical_name_v2(raw_name):
 
     return name_clean if name_clean else "Narrateur"
 
-def build_unified_characters_dict_v2(all_scenes):
+def build_unified_characters_dict_v2(all_scenes, existing_characters_details=None):
     scene_actors_counts = {}
     scene_messages_counts = {}
 
@@ -165,41 +178,59 @@ def build_unified_characters_dict_v2(all_scenes):
     for act, s_count in scene_actors_counts.items():
         manual_entry = get_manual_override(act, manual_overrides)
 
+        color_name = "char_sans_guilde"
         if manual_entry and manual_entry.get("guild"):
             role = manual_entry["guild"]
-            _, color, _ = get_guild_info(role)
+            _, color, color_name = get_guild_info(role)
             status = "MAIN_PC"
-        elif is_pnj_character(act):
-            role = "PNJ"
-            color = "#c084fc"
-            status = "PNJ"
         elif act in dynamic_factions:
             dyn_info = dynamic_factions[act]
             if isinstance(dyn_info, (list, tuple)):
                 role, color = dyn_info[0], dyn_info[1]
+                color_name = dyn_info[2] if len(dyn_info) > 2 else "char_sans_guilde"
             elif isinstance(dyn_info, dict):
                 role, color = dyn_info.get("role", "Indéfini"), dyn_info.get("color", "#94a3b8")
+                color_name = dyn_info.get("colorName", "char_sans_guilde")
             else:
                 role, color = "Indéfini", "#94a3b8"
             status = "MAIN_PC"
+        elif act in CANONICAL_MAP.values():
+            role = "Indéfini"
+            color = "#94a3b8"
+            color_name = "char_sans_guilde"
+            status = "MAIN_PC"
+        elif is_pnj_character(act):
+            role = "PNJ"
+            color = "#c084fc"
+            color_name = "char_pnj"
+            status = "PNJ"
         elif act in CHARACTER_METADATA_V2:
             meta = CHARACTER_METADATA_V2[act]
             role = meta["role"]
             color = meta["color"]
             status = meta["status"]
+            color_name = meta.get("colorName", "char_sans_guilde")
         else:
             role = "Indéfini"
             color = "#94a3b8"
+            color_name = "char_sans_guilde"
             status = "MAIN_PC"
+
+        old_details = (existing_characters_details or {}).get(act, {})
 
         chars_dict[act] = {
             "name": act,
             "role": role,
             "color": color,
+            "colorName": color_name,
             "status": status,
+            "username": old_details.get("username", ""),
+            "displayName": old_details.get("displayName", ""),
+            "avatarUrl": old_details.get("avatarUrl", ""),
             "totalScenes": s_count,
             "totalMessages": scene_messages_counts.get(act, 0)
         }
 
     return chars_dict
+
 

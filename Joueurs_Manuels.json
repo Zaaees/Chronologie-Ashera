@@ -26,6 +26,20 @@
     "kanta": {
       "character_name": "Euros",
       "guild": "Voile d'Ivoire"
+    },
+    "Lewis Bamer": {
+      "character_name": "Lewis Bamer",
+      "guild": "Cercle d'Azur",
+      "displayName": "Lewis Bamer",
+      "username": "historious"
+    },
+    "lewis bamer": {
+      "character_name": "Lewis Bamer",
+      "guild": "Cercle d'Azur"
+    },
+    "historious": {
+      "character_name": "Lewis Bamer",
+      "guild": "Cercle d'Azur"
     }
   }
 }
