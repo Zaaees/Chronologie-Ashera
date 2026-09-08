@@ -36,7 +36,12 @@ from guild_resolver import get_manual_override, load_manual_overrides, get_guild
 from unify_characters_v2 import CANONICAL_MAP, get_canonical_name_v2, clean_key_v2
 
 clean_key_lookup = clean_key_v2
-clean_character_name = get_canonical_name_v2
+
+def clean_character_name(raw_name):
+    if not raw_name:
+        return "Narrateur"
+    name_str = str(raw_name).replace('⚜ | ', '').replace('⚜|', '').strip()
+    return get_canonical_name_v2(name_str)
 
 DYNAMIC_MANUAL_ALIASES = {}
 
@@ -50,23 +55,31 @@ if os.path.exists("discord_member_aliases.json"):
         pass
 
 
-# Ordre de priorité des Rôles Faction Discord
-FACTION_ROLE_PRIORITY = [
+# Rôles de Guilde Discord stricts (prioritaires)
+GUILD_ROLE_IDS = [
     1327646236760608803, # La Garde Pourpre
     1327646236760608802, # Cercle d'Azur
     1327646236760608801, # Voile d'Ivoire
     1467532532261322813, # L'œil
-    1525469197935841371, # JAVUS
-    1475090340557095003  # Sans guilde
+    1525469197935841371  # JAVUS
 ]
 
+# Rôles Sans Fiche / Sans Guilde (secondaires)
+SANS_FICHE_ROLE_IDS = [
+    1475090340557095003, # Sans guilde
+    1327646236534112320  # ❌𝗦ans 𝗙iche
+]
+
+# Ordre global de priorité
+FACTION_ROLE_PRIORITY = GUILD_ROLE_IDS + [1475090340557095003]
+
 FACTION_INFO = {
-    1327646236760608803: ("La Garde Pourpre", "#b40000", "char_pourpre"),
-    1327646236760608802: ("Cercle d'Azur", "#305ed3", "char_azur"),
-    1327646236760608801: ("Voile d'Ivoire", "#ffffd4", "char_ivoire"),
-    1467532532261322813: ("L'œil", "#0e0d0d", "char_oeil"),
+    1327646236760608803: ("La Garde Pourpre", "#ef4444", "char_pourpre"),
+    1327646236760608802: ("Cercle d'Azur", "#3b82f6", "char_azur"),
+    1327646236760608801: ("Voile d'Ivoire", "#fef08a", "char_ivoire"),
+    1467532532261322813: ("L'œil", "#cbd5e1", "char_oeil"),
     1525469197935841371: ("JAVUS", "#ffffff", "char_javus"),
-    1475090340557095003: ("Sans guilde", "#e2ce7d", "char_sans_guilde")
+    1475090340557095003: ("Sans guilde", "#eab308", "char_sans_guilde")
 }
 
 detected_member_factions = {}
@@ -100,6 +113,13 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
         return
     cleaned = clean_character_name(name_str)
     if cleaned and len(cleaned) < 50:
+        # Règle formelle : les rôles de guilde prévalent sur 'Sans guilde' / 'Sans fiche'
+        # Ne jamais rétrograder une guilde déjà acquise vers 'Sans guilde'
+        current_existing = detected_member_factions.get(cleaned)
+        guild_names = {"La Garde Pourpre", "Cercle d'Azur", "Voile d'Ivoire", "L'œil", "JAVUS"}
+        if current_existing and current_existing[0] in guild_names and faction_info[0] == "Sans guilde":
+            return
+
         detected_member_factions[cleaned] = faction_info
         if username or display_name or avatar_url:
             detected_member_details[cleaned] = {
@@ -122,7 +142,9 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
     has_mentions = ('<' in full_text and '@' in full_text) or ('@' in full_text)
     has_image = '[Image:' in full_text or 'http://' in full_text or 'https://' in full_text
     
-    text = re.sub(r'<@[!&]?\d+>', '', full_text)
+    # Chantier 1 : Nettoyage des emojis Discord personnalisés (<:name:id> ou <a:name:id>)
+    text = re.sub(r'<a?:[a-zA-Z0-9_]+:\d+>', '', full_text)
+    text = re.sub(r'<@[!&]?\d+>', '', text)
     text = re.sub(r'<#\d+>', '', text)
     text = re.sub(r'\[Image:\s*https?://\S+\]', '', text)
     text = re.sub(r'https?://\S+', '', text)
@@ -143,6 +165,10 @@ def is_meaningful_rp_content(content, embed_title='', embed_description=''):
         return True
 
     if len(cleaned) < 3 and not has_image:
+        return False
+
+    lower_raw = text.lower().strip()
+    if re.match(r'^chambre\s+d[e\']\s*\(?vide\)?$', lower_raw):
         return False
         
     return True
@@ -175,7 +201,7 @@ def get_character_guild_and_color(actor_name):
     # 4. Personnages canoniques de joueurs (ne doivent JAMAIS être reclassés en PNJ par webhook)
     canonical_player_chars = set(CANONICAL_MAP.values())
     if clean_name in canonical_player_chars and clean_name not in {"Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}:
-        return "Sans guilde", "#e2ce7d", "char_sans_guilde"
+        return "Sans guilde", "#eab308", "char_sans_guilde"
 
     # 5. PNJ légitimes / Webhooks explicites
     if (clean_name in detected_webhooks or actor_name in detected_webhooks or 
@@ -187,12 +213,22 @@ def get_character_guild_and_color(actor_name):
 
 
 
+DECORATIVE_SEPARATORS = ('◦', '━', '─', '·', '—', '―')
+
 def is_character_or_fiche_channel(channel):
     ch_name = getattr(channel, 'name', '') if hasattr(channel, 'name') else str(channel)
     cat_name = ""
     if hasattr(channel, 'category') and channel.category:
         cat_name = channel.category.name
-    return is_excluded_channel(ch_name, cat_name)
+
+    # Vérification systématique du salon parent pour les threads/fils
+    parent_name = ""
+    if hasattr(channel, 'parent') and channel.parent is not None:
+        parent_name = getattr(channel.parent, 'name', '') if hasattr(channel.parent, 'name') else str(channel.parent)
+        if hasattr(channel.parent, 'category') and channel.parent.category and not cat_name:
+            cat_name = channel.parent.category.name
+
+    return is_excluded_channel(ch_name, cat_name, parent_name=parent_name)
 
 EXCLUDED_CATEGORIES = [
     'CHANNELS STAFF', 'TICKETS', 'INFORMATIONS HRP', 'INFORMATIONS RP',
@@ -209,11 +245,25 @@ EXCLUDED_EXPLICIT_CHANNELS = [
 EXCLUDED_PREFIXES = [
     'hrp', 'ticket', 'logs', 'annonce', 'annonces', 'demande', 'statistiques',
     'réclamations', 'reclamations', 'règlement', 'reglement', 'arrivée', 'arrivee', 'arrivé',
-    'to-do', 'moderator', 'formulaire', 'invitation', 'boutique', 'channels-rp', '◦',
+    'to-do', 'moderator', 'formulaire', 'invitation', 'boutique', 'channels-rp', '◦', '━', '─', '·', '—', '―',
     '💬▹', '📸▹', '🎮▹', '💻▹', '🗞️▹', '🔏▹', '♻️▹', '🍂▹', '🗡️▹', '💴▹', '🌕▹', '🎨▹', '🤺▹'
 ]
 
-def is_excluded_channel(ch_name, cat_name=""):
+def is_excluded_channel(ch_name, cat_name="", parent_name=""):
+    # 0. Vérification du salon parent (séparateur décoratif ou exclusion formelle)
+    if parent_name:
+        p_strip = parent_name.strip()
+        if any(p_strip.startswith(sep) for sep in DECORATIVE_SEPARATORS):
+            return True
+        norm_parent = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', parent_name)).lower()
+        if any(ex.lower() in norm_parent for ex in EXCLUDED_CATEGORIES) or any(ex in norm_parent for ex in EXCLUDED_EXPLICIT_CHANNELS):
+            return True
+
+    # Si le salon lui-même commence par un séparateur décoratif
+    ch_strip = ch_name.strip()
+    if any(ch_strip.startswith(sep) for sep in DECORATIVE_SEPARATORS):
+        return True
+
     norm_ch = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', ch_name)).lower()
     norm_cat = re.sub(r'[\u0300-\u036f]', '', unicodedata.normalize('NFKD', cat_name)).lower()
 
@@ -229,7 +279,7 @@ def is_excluded_channel(ch_name, cat_name=""):
     if norm_ch.startswith(tuple(p.lower() for p in EXCLUDED_PREFIXES)):
         return True
 
-    # 4. Fiches de personnages (seules les fiches/candidatures sont exclues, les chambres et dortoirs RP sont désormais pris en compte)
+    # 4. Fiches de personnages
     fiche_keywords = ['fiche', 'effectif', 'profil', 'candidature', 'presentation', 'perso', 'valide']
     if any(k in norm_ch for k in fiche_keywords) or any(k in norm_cat for k in fiche_keywords):
         return True
@@ -250,7 +300,31 @@ EXPLICIT_END_REGEX = re.compile(
 
 from segmenteur_narratif import segment_messages_into_scenes_v2, SEPARATOR_LINE_REGEX
 
-SYSTEM_NARRATOR_CANONICAL = {"Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}
+# Webhooks de décor et d'ambiance + Narrateurs système
+SYSTEM_NARRATOR_CANONICAL = {
+    "Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur",
+    "VICTAE IUSTICIA", "LE MONARQUE DU SILENCE", "🌑〕Le Monarque.",
+    '🌳〕La Forêt', '🦉〕Les Oiseaux', "🎓〕L'Académie", '🗨〕Le Sigile',
+    '🪙〕Le Trésor', '🪙〕𝐋e-𝐓résor', '🐺〕La Bête', '💬〕Le Mot', '💬〕𝐋e-𝐌ot',
+    '⚔〕Le Guerrier', '🌾〕Le Marais', '🧿〕La Folie'
+}
+
+def is_system_narrator_name(name):
+    if not name:
+        return True
+    n_str = str(name).strip()
+    if n_str.startswith('⚜ | ') or n_str.startswith('⚜|'):
+        sub = n_str.replace('⚜ | ', '').replace('⚜|', '').strip()
+        c_sub = clean_character_name(sub)
+        if c_sub in SYSTEM_NARRATOR_CANONICAL or any(c_sub.lower() == s.lower() for s in SYSTEM_NARRATOR_CANONICAL):
+            return True
+        return False
+    if n_str in SYSTEM_NARRATOR_CANONICAL or any(n_str.lower() == s.lower() for s in SYSTEM_NARRATOR_CANONICAL):
+        return True
+    c_name = clean_character_name(n_str)
+    if c_name in SYSTEM_NARRATOR_CANONICAL or any(c_name.lower() == s.lower() for s in SYSTEM_NARRATOR_CANONICAL):
+        return True
+    return False
 
 # Segmentation des messages en scènes (Logique Narrative V2)
 def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_str, category_name="", discord_position=999):
@@ -278,13 +352,13 @@ def segment_messages_into_scenes(channel_name, channel_id, messages, guild_id_st
         return []
 
     def scene_builder(ch_name, ch_id, idx, sub_tuples, title):
-        return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str, category_name=category_name, discord_position=discord_position)
+        return create_scene_dict(ch_name, ch_id, idx, sub_tuples, guild_id_str, category_name=category_name, discord_position=discord_position, title=title)
 
     scenes = segment_messages_into_scenes_v2(channel_name, channel_id, valid_msgs, scene_builder)
 
     return [s for s in scenes if s and s.get("actors")]
 
-def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name="", discord_position=999):
+def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, guild_id_str, category_name="", discord_position=999, title=None):
     if not messages_tuples:
         return None
 
@@ -300,10 +374,11 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
             continue
         if not is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
             continue
-        c_name = clean_character_name(m['author'])
+        raw_author = m['author']
+        c_name = clean_character_name(raw_author)
         if not c_name:
             continue
-        if c_name in SYSTEM_NARRATOR_CANONICAL or c_name.lower() in {x.lower() for x in SYSTEM_NARRATOR_CANONICAL}:
+        if is_system_narrator_name(raw_author) or is_system_narrator_name(c_name):
             narrators.add(c_name)
         else:
             raw_actors.add(c_name)
@@ -344,13 +419,19 @@ def create_scene_dict(channel_name, channel_id, scene_index, messages_tuples, gu
     start_time = messages[0]['timestamp']
     end_time = messages[-1]['timestamp']
 
+    # Chantier 6 : Utiliser le titre narratif extrait s'il est pertinent
+    if title and not title.endswith(f"— Scène {scene_index}"):
+        final_title = title
+    else:
+        final_title = f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else parent_channel
+
     sc_dict = {
         "id": scene_id,
         "channel": parent_channel,
         "channel_id": str(channel_id),
         "category": category_name,
         "discord_position": discord_position,
-        "title": f"{', '.join(actors[:3])}{'...' if len(actors) > 3 else ''}" if actors else parent_channel,
+        "title": final_title,
         "actors": actors,
         "narrators": narrators_list,
         "start_time": start_time,
@@ -405,7 +486,34 @@ class DiscordExporterClient(discord.Client):
 
             async for member in target_guild.fetch_members(limit=None):
                 member_role_ids = [r.id for r in member.roles]
-                best_role = next((r_id for r_id in FACTION_ROLE_PRIORITY if r_id in member_role_ids), None)
+                # Règle formelle : Les rôles de guildes prennent strictement le dessus sur sans fiche
+                # si le joueur possède les deux rôles. Sans guilde n'est attribué que si aucune guilde n'est présente.
+                guild_role = next((r_id for r_id in GUILD_ROLE_IDS if r_id in member_role_ids), None)
+                if not guild_role:
+                    for r in member.roles:
+                        r_norm = unicodedata.normalize('NFKD', r.name).lower()
+                        if 'oeil' in r_norm or 'œil' in r_norm:
+                            guild_role = 1467532532261322813
+                            break
+                        elif 'pourpre' in r_norm:
+                            guild_role = 1327646236760608803
+                            break
+                        elif 'azur' in r_norm:
+                            guild_role = 1327646236760608802
+                            break
+                        elif 'ivoire' in r_norm:
+                            guild_role = 1327646236760608801
+                            break
+                        elif 'javus' in r_norm:
+                            guild_role = 1525469197935841371
+                            break
+
+                if guild_role:
+                    best_role = guild_role
+                elif any(r_id in member_role_ids for r_id in SANS_FICHE_ROLE_IDS):
+                    best_role = 1475090340557095003
+                else:
+                    best_role = None
 
                 if gm_role_id in member_role_ids:
                     for n_candidate in [member.display_name, member.name, getattr(member, 'global_name', None)]:
@@ -472,6 +580,7 @@ class DiscordExporterClient(discord.Client):
 
 
         # 1. Charger d'abord les scènes existantes pour l'extraction incrémentale instantanée
+        scenes_file = os.path.join('src', 'scenes.json')
         existing_scenes_data = {}
         existing_scenes_by_channel = {}
         last_msg_id_by_channel = {}
@@ -501,6 +610,7 @@ class DiscordExporterClient(discord.Client):
                                 s['message_count'] = len(s['messages'])
 
                             msg_authors = set()
+                            scene_narrators = set(s.get('narrators', []))
                             for m in s['messages']:
                                 if 'author' in m:
                                     if m.get('is_webhook') or is_pnj_character(m['author']):
@@ -511,13 +621,22 @@ class DiscordExporterClient(discord.Client):
                                         detected_webhooks.add(cleaned_a)
                                     if cleaned_a and not any(b in cleaned_a.lower() for b in SYSTEM_BOTS):
                                         if is_meaningful_rp_content(m.get('content', ''), m.get('embed_title', ''), m.get('embed_description', '')):
-                                            msg_authors.add(cleaned_a)
-                            s['actors'] = list(msg_authors)
-                            s['participants'] = list(msg_authors)
+                                            if is_system_narrator_name(cleaned_a):
+                                                scene_narrators.add(cleaned_a)
+                                            else:
+                                                msg_authors.add(cleaned_a)
+                            s['actors'] = sorted(list(msg_authors))
+                            s['narrators'] = sorted(list(scene_narrators))
+                            s['participants'] = sorted(list(msg_authors))
                             if not s['actors']:
                                 continue
+                            if len(s.get('messages', [])) == 1:
+                                m0 = s['messages'][0]
+                                if not is_meaningful_rp_content(m0.get('content', ''), m0.get('embed_title', ''), m0.get('embed_description', '')):
+                                    continue
                             parent_ch = s.get("channel", "")
-                            s['title'] = f"{', '.join(s['actors'][:3])}{'...' if len(s['actors']) > 3 else ''}" if s['actors'] else parent_ch
+                            if not s.get('title') or (len(s['actors']) > 0 and s.get('title') == parent_ch):
+                                s['title'] = f"{', '.join(s['actors'][:3])}{'...' if len(s['actors']) > 3 else ''}" if s['actors'] else parent_ch
 
                         ch_key = s.get("channel_id") or s.get("channel")
                         if ch_key not in existing_scenes_by_channel:
@@ -718,25 +837,29 @@ class DiscordExporterClient(discord.Client):
         def get_start_time(scene):
             return scene.get('start_time', '0000-00-00')
 
-        all_scenes.sort(key=get_start_time)
+        # Filtrer pour ne pas inclure les scènes de 2025 sur le site (conservées pour l'extraction de métadonnées)
+        site_scenes = [
+            s for s in all_scenes 
+            if not (s.get('start_time') and str(s.get('start_time')).startswith('2025'))
+        ]
 
-        # Collecter tous les acteurs de l'ENSEMBLE des scènes (y compris conservées)
+        # Collecter tous les acteurs de l'ENSEMBLE des scènes réelles du dataset (Chantier 4)
         all_actors = set()
-        for scene in all_scenes:
+        for scene in site_scenes:
             for actor in scene.get('actors', []):
                 if actor:
                     all_actors.add(actor)
 
-        # Générer la carte des personnages (à partir des scènes ET des membres identifiés sur Discord)
+        # Générer la carte des personnages (à partir des scènes réelles du dataset)
         character_map = {}
         valid_actors = set()
 
-        # 1. Ajouter d'abord les acteurs des scènes RP en évaluant get_character_guild_and_color
+        # 1. Ajouter STRICTEMENT les acteurs réels des scènes RP (Chantier 4)
         for actor in sorted(all_actors):
             if not actor or actor.isdigit() or len(actor) >= 50 or any(b in actor.lower() for b in SYSTEM_BOTS):
                 continue
             c_name = clean_character_name(actor)
-            if not c_name or c_name.isdigit():
+            if not c_name or c_name.isdigit() or is_system_narrator_name(c_name):
                 continue
             role, color, color_name = get_character_guild_and_color(c_name)
             if role is not None:
@@ -751,25 +874,23 @@ class DiscordExporterClient(discord.Client):
                 }
                 valid_actors.add(c_name)
 
-        # 2. Compléter avec les membres Discord identifiés qui ne sont pas déjà dans character_map
-        for char_name, faction_info in detected_member_factions.items():
-            if not char_name or char_name.isdigit():
-                continue
-            c_name = clean_character_name(char_name)
-            if c_name and not c_name.isdigit() and len(c_name) < 50 and c_name not in character_map:
-                if any(b in c_name.lower() for b in SYSTEM_BOTS):
-                    continue
-                role, color, color_name = faction_info
-                details = detected_member_details.get(c_name, {}) or detected_member_details.get(char_name, {})
-                character_map[c_name] = {
-                    "role": role,
-                    "color": color,
-                    "colorName": color_name,
-                    "username": details.get('username', ''),
-                    "displayName": details.get('displayName', ''),
-                    "avatarUrl": details.get('avatarUrl', '')
-                }
-                valid_actors.add(c_name)
+        # 2. Intégration explicite des narrateurs système (Chantier 5.2) pour éviter le fallback "Sans rôle"
+        system_narrators_meta = {
+            "Oeil": {"role": "L'œil", "color": "#cbd5e1", "colorName": "char_oeil"},
+            "LE CONSEILLER": {"role": "PNJ", "color": "#c084fc", "colorName": "char_pnj"},
+            "OWL LE MESSAGER": {"role": "PNJ", "color": "#c084fc", "colorName": "char_pnj"},
+            "LES MISSIVES": {"role": "PNJ", "color": "#c084fc", "colorName": "char_pnj"}
+        }
+        for n_name, n_meta in system_narrators_meta.items():
+            character_map[n_name] = {
+                "role": n_meta["role"],
+                "color": n_meta["color"],
+                "colorName": n_meta["colorName"],
+                "username": "",
+                "displayName": n_name,
+                "avatarUrl": ""
+            }
+            valid_actors.add(n_name)
 
         img_dir = "public/channel_images"
         channel_images_map = {}
@@ -833,11 +954,6 @@ class DiscordExporterClient(discord.Client):
                     if thread: channel_images_map[thread] = img_url
                     scene['location_image'] = img_url
 
-        # Filtrer pour ne pas inclure les scènes de 2025 sur le site (conservées pour l'extraction de métadonnées)
-        site_scenes = [
-            s for s in all_scenes 
-            if not (s.get('start_time') and str(s.get('start_time')).startswith('2025'))
-        ]
 
         output_data = {
             "characters": character_map,

@@ -23,7 +23,22 @@ EXPLICIT_START_REGEX = re.compile(
 SEPARATOR_LINE_REGEX = re.compile(r'^[\s\-_=*~•◦¤♅\.\/]+$')
 
 SYSTEM_BOTS = {"carl-bot", "dyno", "mee6", "ticket-tool", "disboard", "raidprotect"}
-GM_BOT_ACTORS = {"LE CONSEILLER", "Oeil", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"}
+GM_BOT_ACTORS = {
+    "LE CONSEILLER", "Oeil", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur",
+    "VICTAE IUSTICIA", "LE MONARQUE DU SILENCE", "🌑〕Le Monarque.",
+    "🌳〕La Forêt", "🦉〕Les Oiseaux", "🎓〕L'Académie", "🗨〕Le Sigile",
+    "🪙〕Le Trésor", "🪙〕𝐋e-𝐓résor", "🐺〕La Bête", "💬〕Le Mot", "💬〕𝐋e-𝐌ot",
+    "⚔〕Le Guerrier", "🌾〕Le Marais", "🧿〕La Folie"
+}
+
+def is_gm_bot_actor(actor_name):
+    if not actor_name:
+        return True
+    a_str = str(actor_name).strip()
+    if a_str.startswith('⚜ | ') or a_str.startswith('⚜|'):
+        return True
+    return a_str in GM_BOT_ACTORS or any(a_str.lower() == g.lower() for g in GM_BOT_ACTORS)
+
 
 def parse_timestamp_v2(ts_str):
     if not ts_str:
@@ -89,22 +104,26 @@ def is_thread_or_duo_channel(channel_name):
         return True
     return False
 
-def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_msgs, create_scene_func, max_inactivity_days=5.0, hard_cutoff_days=7.0, lookahead_days=3.0):
+def segment_messages_into_scenes_v2(channel_name_clean, channel_id, valid_msgs, create_scene_func, max_inactivity_days=5.0, hard_cutoff_days=7.0, lookahead_days=3.0):
     """
     Segmentation Narrative Fiabilisée des messages RP.
     - Seuil dur contextuel : 14 jours pour les duos/fils privés, 10 jours pour dialogue actif entre pairs, 4 jours pour nouveaux arrivants, 7 jours par défaut.
     - Absorption prioritaire des marqueurs de fin avec traitement propre des scellements administratifs tardifs (> 14j).
     - Lookahead borné à 3 jours désactivé pour les nouveaux arrivants.
-    - Élimination des séparateurs décoratifs purs.
+    - Élimination des séparateurs décoratifs purs et sécurisation des timestamps nuls/invalides.
     """
     if not valid_msgs:
         return []
 
-    # 1. Éliminer les séparateurs décoratifs purs avant tout traitement
+    # 1. Éliminer les séparateurs décoratifs purs et timestamps invalides avant tout traitement
     filtered_msgs = []
     for m_tuple in valid_msgs:
         m, text = m_tuple
         if SEPARATOR_LINE_REGEX.match(text.strip()):
+            continue
+        ts_val = parse_timestamp_v2(m.get('timestamp', ''))
+        # Sécurisation des timestamps : ignorer les messages sans timestamp ou timestamp <= 0 (1970)
+        if not ts_val or ts_val <= 0:
             continue
         filtered_msgs.append(m_tuple)
 
@@ -117,7 +136,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
     current_scene_msgs = [valid_msgs_sorted[0]]
     scene_counter = 1
 
-    is_thread_duo = is_thread_or_duo_channel(channel_name_clean) or is_thread_or_duo_channel(channel_name_raw)
+    is_thread_duo = is_thread_or_duo_channel(channel_name_clean)
 
     for i in range(1, len(valid_msgs_sorted)):
         if not current_scene_msgs:
@@ -140,7 +159,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
                 # Sceller la scène précédente à sa date réelle de fin
                 scene_obj = create_scene_func(
                     channel_name_clean,
-                    channel_name_raw,
+                    channel_id,
                     scene_counter,
                     current_scene_msgs,
                     extract_title_from_text(current_scene_msgs[0][1], channel_name_clean, scene_counter)
@@ -155,7 +174,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
                 current_scene_msgs.append(valid_msgs_sorted[i])
                 scene_obj = create_scene_func(
                     channel_name_clean,
-                    channel_name_raw,
+                    channel_id,
                     scene_counter,
                     current_scene_msgs,
                     extract_title_from_text(current_scene_msgs[0][1], channel_name_clean, scene_counter)
@@ -176,20 +195,24 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         prev_is_sealed = bool(EXPLICIT_END_REGEX.search(prev_text))
         curr_is_start = bool(EXPLICIT_START_REGEX.search(curr_text))
 
-        player_scene_actors = current_scene_actors - GM_BOT_ACTORS
+        player_scene_actors = {a for a in current_scene_actors if not is_gm_bot_actor(a)}
         other_player_scene_actors = player_scene_actors - {curr_actor}
-        is_newcomer = curr_actor not in current_scene_actors and curr_actor not in GM_BOT_ACTORS
+        is_newcomer = curr_actor not in current_scene_actors and not is_gm_bot_actor(curr_actor)
+        # Un tiers intrusif est un nouveau venu qui débarque dans un salon public où un groupe (>= 2 joueurs) est déjà actif
+        is_third_party_newcomer = is_newcomer and not is_thread_duo and len(player_scene_actors) >= 2
 
         # Seuil d'inactivité adaptatif :
-        # - Nouveau venu : 4.0 jours
-        # - Thread / Duo privé ou paire établie (<= 2 joueurs) : 14.0 jours
-        # - Dialogue actif entre joueurs établis dans un salon public : 10.0 jours
+        # - Thread / Duo privé ou formation de paire (<= 2 joueurs) : 14.0 jours
+        # - Arrivée d'un nouveau venu tiers dans un salon multi-joueurs (>= 2 joueurs) : 4.0 jours
+        # - Dialogue actif entre joueurs déjà établis dans un salon public : 10.0 jours
         # - Défaut : 7.0 jours
-        if is_newcomer:
-            effective_hard_cutoff = 4.0
-        elif is_thread_duo or len(player_scene_actors) <= 2:
+        if is_thread_duo or len(player_scene_actors) <= 1:
             effective_hard_cutoff = 14.0
-        elif curr_actor in other_player_scene_actors:
+        elif is_third_party_newcomer:
+            effective_hard_cutoff = 4.0
+        elif len(player_scene_actors) <= 2:
+            effective_hard_cutoff = 14.0
+        elif curr_actor in player_scene_actors:
             effective_hard_cutoff = 10.0
         else:
             effective_hard_cutoff = hard_cutoff_days
@@ -198,7 +221,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         has_player_actor_replied = False
         has_other_player_actor_replied = False
         if not is_newcomer:
-            for nm, _ in valid_msgs_sorted[i:]:
+            for nm, _ in valid_msgs_sorted[i+1:]:
                 nts = parse_timestamp_v2(nm.get('timestamp'))
                 if nts and curr_ts and (nts - curr_ts) / 86400.0 > lookahead_days:
                     break
@@ -216,17 +239,17 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         # 2. Coupure ferme après inactivité prolongée adaptée au contexte
         elif diff_days > effective_hard_cutoff:
             is_new_scene = True
-        # 3. Arrivée d'un nouveau personnage après inactivité (> 4 jours)
-        elif diff_days > 4.0 and is_newcomer:
+        # 3. Arrivée d'un tiers nouveau venu après inactivité (> 4 jours)
+        elif diff_days > 4.0 and is_third_party_newcomer:
             is_new_scene = True
         # 4. Bannière majeure après inactivité (> 5 jours)
         elif diff_days > 5.0 and curr_is_start:
             is_new_scene = True
         # 5. Relance après inactivité (> 5 jours) sans retour des co-acteurs
-        elif diff_days > 5.0 and curr_actor == prev_actor and not has_other_player_actor_replied and not current_scene_actors.issubset(GM_BOT_ACTORS):
+        elif diff_days > 5.0 and curr_actor == prev_actor and not has_other_player_actor_replied and not all(is_gm_bot_actor(a) for a in current_scene_actors):
             is_new_scene = True
         # 6. Message GM neutre -> continuation si dans la fenêtre active
-        elif (curr_actor in GM_BOT_ACTORS or current_scene_actors.issubset(GM_BOT_ACTORS)) and diff_days <= effective_hard_cutoff:
+        elif (is_gm_bot_actor(curr_actor) or all(is_gm_bot_actor(a) for a in current_scene_actors)) and diff_days <= effective_hard_cutoff:
             is_new_scene = False
         # 7. Continuité RP entre joueurs établis
         elif (curr_actor in player_scene_actors or has_player_actor_replied) and not is_newcomer:
@@ -241,7 +264,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
         if is_new_scene:
             scene_obj = create_scene_func(
                 channel_name_clean,
-                channel_name_raw,
+                channel_id,
                 scene_counter,
                 current_scene_msgs,
                 extract_title_from_text(current_scene_msgs[0][1], channel_name_clean, scene_counter)
@@ -257,7 +280,7 @@ def segment_messages_into_scenes_v2(channel_name_clean, channel_name_raw, valid_
     if current_scene_msgs:
         scene_obj = create_scene_func(
             channel_name_clean,
-            channel_name_raw,
+            channel_id,
             scene_counter,
             current_scene_msgs,
             extract_title_from_text(current_scene_msgs[0][1], channel_name_clean, scene_counter)

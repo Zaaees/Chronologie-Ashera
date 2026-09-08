@@ -40,6 +40,34 @@
     "historious": {
       "character_name": "Lewis Bamer",
       "guild": "Cercle d'Azur"
+    },
+    "Æther": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "Aether": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "aether": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "miklelait": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "tulak_crow": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "Tulak_Crow": {
+      "character_name": "Æther",
+      "guild": "L'œil"
+    },
+    "MYTHER": {
+      "character_name": "Æther",
+      "guild": "L'œil"
     }
   }
 }

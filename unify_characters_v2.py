@@ -80,7 +80,7 @@ CANONICAL_MAP = {
     "tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile tsutomu yamamoto": "Tsutomu Yamamoto", "vieux debile": "Tsutomu Yamamoto", "reverse.d": "Tsutomu Yamamoto", "reverse": "Tsutomu Yamamoto",
     "velka valcyrion": "Velka Valcyrion", "norxas": "Velka Valcyrion",
     "vosk sulyvan": "Vosk Sulyvan", "sulyvan vosk": "Vosk Sulyvan", "sulyvan vosk hussh": "Vosk Sulyvan", "hussh": "Vosk Sulyvan", "hush": "Vosk Sulyvan",
-    "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther",
+    "aether": "Æther", "æther": "Æther", "miklelait": "Æther", "mikle": "Æther", "myther": "Æther", "tulak_crow": "Æther", "tulak crow": "Æther",
     "yunah aoi enjaku": "Yunah Aoi Enjaku", "jap yunah aoi enjaku": "Yunah Aoi Enjaku", "jaaapaannnnnnnnnnn": "Yunah Aoi Enjaku", "japaaaan": "Yunah Aoi Enjaku", "japan": "Yunah Aoi Enjaku", "jap": "Yunah Aoi Enjaku",
 
     # Webhook entities & System Narrators
@@ -105,8 +105,9 @@ VALID_FACTION_ROLES = {"L'œil", "Cercle d'Azur", "La Garde Pourpre", "Voile d'I
 
 def clean_key_v2(s):
     if not s: return ""
-    s = unicodedata.normalize('NFD', str(s).lower())
-    s = re.sub(r'[\u0300-\u036f]', '', s)
+    s = unicodedata.normalize('NFKD', str(s))
+    s = s.replace('Æ', 'ae').replace('æ', 'ae').replace('Œ', 'oe').replace('œ', 'oe')
+    s = re.sub(r'[\u0300-\u036f]', '', s.lower())
     return re.sub(r'[^a-z0-9]', '', s)
 
 LOOKUP_V2 = {clean_key_v2(k): v for k, v in CANONICAL_MAP.items()}
@@ -144,9 +145,10 @@ def get_canonical_name_v2(raw_name):
     if re.match(r'^j+a+p+a+n+.*$|^j+a+p+$', ck):
         return "Yunah Aoi Enjaku"
 
-    for k, v in LOOKUP_V2.items():
-        if len(k) >= 4 and (k in ck or ck in k):
-            return v
+    if len(ck) >= 3:
+        for k, v in LOOKUP_V2.items():
+            if len(k) >= 5 and k in ck:
+                return v
 
     return name_clean if name_clean else "Narrateur"
 

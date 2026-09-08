@@ -3,15 +3,23 @@ import re
 import unicodedata
 import os
 
-# Ordre déterministe de priorité des Rôles Faction Discord
-FACTION_ROLE_PRIORITY = [
+# Rôles de Guilde stricts (prioritaires)
+GUILD_ROLE_IDS = [
     1327646236760608803, # La Garde Pourpre
     1327646236760608802, # Cercle d'Azur
     1327646236760608801, # Voile d'Ivoire
     1467532532261322813, # L'œil
-    1525469197935841371, # JAVUS
-    1475090340557095003  # Sans guilde
+    1525469197935841371  # JAVUS
 ]
+
+# Rôles Sans Fiche / Sans Guilde (secondaires)
+SANS_FICHE_ROLE_IDS = [
+    1475090340557095003, # Sans guilde
+    1327646236534112320  # ❌𝗦ans 𝗙iche
+]
+
+# Ordre déterministe global de priorité des Rôles Faction Discord
+FACTION_ROLE_PRIORITY = GUILD_ROLE_IDS + [1475090340557095003]
 
 FACTION_INFO = {
     1327646236760608803: ("La Garde Pourpre", "#ef4444", "char_pourpre"),
@@ -119,16 +127,23 @@ def get_manual_override(identifier, manual_overrides=None):
 def resolve_role_from_member_roles(member_role_ids):
     """
     FONCTION DÉTERMINISTE 100% ROBOTIQUE.
-    Prend en entrée la liste des IDs de rôles Discord (member.roles) d'un membre/joueur
-    et retourne strictly le triplet (nom_guilde, couleur_hex, nom_couleur)
-    d'après l'ordre de priorité strict. Sans aucune interprétation ni IA.
+    Prend en entrée la liste des IDs de rôles Discord (member.roles) d'un membre/joueur.
+    Règle Absolue : Si un joueur possède un rôle de guilde ET un rôle 'Sans guilde' / 'Sans fiche',
+    le rôle de la guilde prend le dessus de manière exclusive et prioritaire.
+    'Sans guilde' / 'Sans fiche' n'est retourné que si le membre ne possède aucune guilde.
     """
     if not member_role_ids:
         return "Indéfini", "#94a3b8", "char_indefini"
 
-    for role_id in FACTION_ROLE_PRIORITY:
+    # 1. Priorité absolue aux rôles de guilde
+    for role_id in GUILD_ROLE_IDS:
         if role_id in member_role_ids:
             return FACTION_INFO[role_id]
+
+    # 2. Rôle Sans guilde / Sans fiche uniquement si aucune guilde présente
+    for role_id in SANS_FICHE_ROLE_IDS:
+        if role_id in member_role_ids:
+            return FACTION_INFO[1475090340557095003]
 
     return "Indéfini", "#94a3b8", "char_indefini"
 
