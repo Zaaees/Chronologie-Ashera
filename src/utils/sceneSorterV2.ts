@@ -10,6 +10,7 @@ export interface SceneV2 {
   channel_clean: string;
   title: string;
   actors: string[];
+  narrators?: string[];
   main_actor: string;
   start_time: string;
   end_time: string;
@@ -41,11 +42,11 @@ export interface SceneFilterOptionsV2 {
 
 export function filterScenesV2(scenes: SceneV2[], filters: SceneFilterOptionsV2): SceneV2[] {
   return scenes.filter(scene => {
-    // 1. Text Search (title, actors, preview, channel)
+    // 1. Text Search (title, actors, narrators, preview, channel)
     if (filters.searchQuery && filters.searchQuery.trim()) {
       const q = filters.searchQuery.toLowerCase().trim();
       const titleMatch = scene.title.toLowerCase().includes(q);
-      const actorMatch = scene.actors.some(a => a.toLowerCase().includes(q));
+      const actorMatch = scene.actors.some(a => a.toLowerCase().includes(q)) || (scene.narrators && scene.narrators.some(n => n.toLowerCase().includes(q)));
       const channelMatch = (scene.channel_clean || scene.channel_raw || '').toLowerCase().includes(q);
       const previewMatch = scene.preview.toLowerCase().includes(q);
 
@@ -61,9 +62,11 @@ export function filterScenesV2(scenes: SceneV2[], filters: SceneFilterOptionsV2)
       }
     }
 
-    // 3. Actor filter
+    // 3. Actor filter (actors or narrators)
     if (filters.selectedActor && filters.selectedActor !== 'all') {
-      if (!scene.actors.includes(filters.selectedActor)) {
+      const inActors = scene.actors.includes(filters.selectedActor);
+      const inNarrators = scene.narrators && scene.narrators.includes(filters.selectedActor);
+      if (!inActors && !inNarrators) {
         return false;
       }
     }

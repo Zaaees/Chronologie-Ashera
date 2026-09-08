@@ -131,8 +131,8 @@ export function getCharacterStats(actorName: string): CharacterStats | null {
   const displayName = charInfo?.displayName;
   const username = charInfo?.username;
 
-  // Filter scenes for this actor
-  const actorScenes = SCENES_DATA.filter(s => s.actors && s.actors.includes(actorName));
+  // Filter scenes for this actor or narrator
+  const actorScenes = SCENES_DATA.filter(s => (s.actors && s.actors.includes(actorName)) || (s.narrators && s.narrators.includes(actorName)));
   const totalScenes = actorScenes.length;
 
   if (totalScenes === 0 && !charInfo) return null;

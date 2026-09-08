@@ -223,6 +223,7 @@ const FACTION_COLORS: Record<string, { bg: string; text: string; border: string;
   },
   "Sans guilde": { bg: "rgba(180, 83, 9, 0.4)", text: "#fde047", border: "rgba(217, 119, 6, 0.75)", icon: "☀️", hexColor: "#eab308", crest: "./ashera_banner.png", roleName: "Sans guilde" },
   "PNJ": { bg: "rgba(126, 34, 206, 0.4)", text: "#d8b4fe", border: "rgba(168, 85, 247, 0.75)", icon: "🔮", hexColor: "#c084fc", crest: "./ashera_banner.png", roleName: "PNJ" },
+  "Narrateurs": { bg: "rgba(100, 116, 139, 0.4)", text: "#cbd5e1", border: "rgba(148, 163, 184, 0.75)", icon: "📜", hexColor: "#cbd5e1", crest: "./ashera_banner.png", roleName: "Narrateurs" },
   "Indéfini": { bg: "rgba(71, 85, 105, 0.4)", text: "#cbd5e1", border: "rgba(100, 116, 139, 0.65)", icon: "❓", hexColor: "#94a3b8", crest: "./ashera_banner.png", roleName: "Indéfini" }
 };
 
@@ -1489,9 +1490,14 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const SYSTEM_NARRATORS = useMemo(() => new Set(["Oeil", "LE CONSEILLER", "OWL LE MESSAGER", "LES MISSIVES", "Narrateur"]), []);
+
   const activeActorsSet = useMemo(() => {
     const set = new Set<string>();
-    currentScenesDataset.forEach(s => s.actors.forEach(a => set.add(a)));
+    currentScenesDataset.forEach(s => {
+      s.actors.forEach(a => set.add(a));
+      s.narrators?.forEach(n => set.add(n));
+    });
     return set;
   }, [currentScenesDataset]);
 
@@ -1504,6 +1510,7 @@ export default function App() {
       "JAVUS": [],
       "Sans guilde": [],
       "PNJ": [],
+      "Narrateurs": [],
       "Indéfini": []
     };
 
@@ -1513,6 +1520,9 @@ export default function App() {
       let role = charInfo?.role || "Indéfini";
       if (role === "Sans rôle" || role === "Inconnu") {
         role = "Indéfini";
+      }
+      if (SYSTEM_NARRATORS.has(actorName)) {
+        role = "Narrateurs";
       }
       
       const serverNickname = charInfo?.displayName || charInfo?.username;
@@ -1634,7 +1644,11 @@ export default function App() {
           const info = CHARACTERS_DATA[a];
           const serverNick = info?.displayName || info?.username || '';
           return a.toLowerCase().includes(q) || serverNick.toLowerCase().includes(q);
-        });
+        }) || (scene.narrators && scene.narrators.some(n => {
+          const info = CHARACTERS_DATA[n];
+          const serverNick = info?.displayName || info?.username || '';
+          return n.toLowerCase().includes(q) || serverNick.toLowerCase().includes(q);
+        }));
         const inMessages = scene.messages.some(m => 
           (m.content && m.content.toLowerCase().includes(q)) || 
           (m.embed_description && m.embed_description.toLowerCase().includes(q)) ||
@@ -1651,7 +1665,9 @@ export default function App() {
       }
 
       if (selectedActor !== 'all') {
-        if (!scene.actors.includes(selectedActor)) return false;
+        const inActors = scene.actors.includes(selectedActor);
+        const inNarrators = scene.narrators && scene.narrators.includes(selectedActor);
+        if (!inActors && !inNarrators) return false;
       }
 
       if (selectedChannel !== 'all') {
@@ -2205,6 +2221,30 @@ export default function App() {
                       </button>
                     );
                   })}
+                  {activeScene.narrators && activeScene.narrators.length > 0 && (
+                    <>
+                      <span className="text-xs text-[#949ba4] ml-2">Narration :</span>
+                      {activeScene.narrators.map(narrator => {
+                        const info = CHARACTERS_DATA[narrator];
+                        const style = getFactionStyle(info?.role || "Narrateurs");
+                        return (
+                          <button
+                            key={narrator}
+                            onClick={() => {
+                              setSelectedActor(narrator);
+                              setActiveScene(null);
+                            }}
+                            style={{ backgroundColor: style.bg, color: style.text, borderColor: style.border }}
+                            className="inline-flex items-center gap-1 px-2.5 py-0.5 border text-xs font-medium rounded cursor-pointer hover:opacity-85 hover:scale-105 transition-all shadow-sm"
+                            title={info?.displayName ? `Voir les interventions de ${narrator} (${info.displayName})` : `Voir les interventions de ${narrator}`}
+                          >
+                            <span>📜</span>
+                            <span>{highlightSearchQuery(narrator, searchQuery, `narr-${narrator}`)}</span>
+                          </button>
+                        );
+                      })}
+                    </>
+                  )}
                 </div>
               </div>
 

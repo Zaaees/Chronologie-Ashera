@@ -26,6 +26,7 @@ export interface Scene {
   category?: string;
   title: string;
   actors: string[];
+  narrators?: string[];
   start_time: string;
   end_time: string;
   preview: string;
