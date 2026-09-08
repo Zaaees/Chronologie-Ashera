@@ -94,6 +94,43 @@ L'attribution du nom canonique et de la faction suit une hiérarchie stricte :
 3. **Factions Discord** : Si le nom figure dans `discord_member_factions.json`, attribution du rôle correspondant.
 4. **Fallback** : Dans `extract_du_serveur.py` (ligne 270), tout acteur sans faction devient un `"PNJ"`.
 
+### 2.4. Gestion de la Chronologie et Tri Temporel au sein des Salons
+
+La reconstitution de la chronologie repose sur une chaîne de traitement séquentielle :
+
+1. **Extraction dans l'ordre chronologique natif** :
+   Dans `extract_du_serveur.py`, l'historique Discord de chaque salon est collecté via l'API Discord avec `channel.history(limit=history_limit, oldest_first=True)`. Les messages sont extraits dans l'ordre croissant de leurs identifiants uniques Discord (Snowflake IDs), ce qui correspond à l'ordre naturel d'émission.
+
+2. **Normalisation et Parsing des Horodatages (`parse_timestamp_v2`)** :
+   Pour traiter de manière uniforme les données brutes issues soit de l'API Discord en direct, soit des exports HTML DiscordChatExporter, le système utilise `parse_timestamp_v2`. Cette fonction nettoie les espaces insécables (`\xa0`), normalise les suffixes temporels UTC (`Z` converti en `+00:00`) et parse les formats ISO 8601 ainsi que six déclinaisons de dates européennes (`%d/%m/%Y %H:%M:%S`, etc.) pour produire un timestamp POSIX flottant précis à la seconde.
+
+3. **Ordonnancement strict intra-salon** :
+   Avant toute transmission au moteur de découpage, la collection des messages valides est explicitement triée par horodatage :
+   ```python
+   valid_msgs_sorted = sorted(filtered_msgs, key=lambda x: parse_timestamp_v2(x[0].get('timestamp', '')))
+   ```
+   Ce tri garantit que les messages envoyés quasi-simultanément ou réorganisés par le crawl ne créent pas de distorsion temporelle négative ($\Delta t < 0$).
+
+4. **Mesure de l'Inactivité Écoulée ($\Delta t$)** :
+   Pour chaque transition entre le dernier message de la scène en cours (`prev_msg`) et le message analysé (`curr_msg`), l'automate calcule l'écart en jours :
+   $$\Delta t = \frac{t_{\text{curr}} - t_{\text{prev}}}{86400}$$
+   C'est cette valeur qui alimente l'arbre de décision de coupure.
+
+5. **Bornage des Scènes (`start_time` et `end_time`)** :
+   Chaque scène générée se voit attribuer deux bornes temporelles :
+   - `start_time` : L'horodatage du premier message retenu dans la scène (avec l'anomalie historique liée au filtrage d'`isis faerieth`).
+   - `end_time` : L'horodatage du dernier message composant la scène.
+
+6. **Tri Chronologique Global Inter-Salons** :
+   Lors de la compilation finale de `src/scenes.json`, l'intégralité des scènes de tous les salons du serveur sont consolidées au sein d'une liste unique et triées chronologiquement par leur `start_time` :
+   ```python
+   scenes.sort(key=lambda s: parse_timestamp_v2(s.get('start_time', '')))
+   ```
+   Ce tri global conditionne l'ordonnancement de la timeline sur le front-end React.
+
+7. **Synchronisation Incrémentale et Cache Temporel (`last_msg_id_by_channel`)** :
+   Afin d'éviter d'extraire l'intégralité du serveur lors de chaque exécution quotidienne de GitHub Actions, le script conserve le `last_message_id` de chaque salon dans `scenes.json`. Lors d'une passe incrémentale, tout salon dont le `channel.last_message_id <= last_id` n'est pas réanalysé, conservant intactes ses scènes et son découpage historique.
+
 ---
 
 ## 3. Chasse aux Failles : Analyse Critique et Cas Concrets de l'Extract
@@ -294,14 +331,44 @@ Les scènes d'un événement se retrouvent ainsi rattachées à des lieux qui n'
 
 ---
 
+### Faille 8 : Le Dilemme du Play-by-Post Asynchrone et le Risque de Sur-Segmentation des Duos Lents
+
+#### Mécanisme
+Dans un jeu de rôle textuel littéraire sur Discord, les salons présentent des dynamiques temporelles hétérogènes :
+1. **Les salons publics à forte rotation** (places, auberges, marchés) : Plusieurs intrigues s'y succèdent. Un délai d'inactivité de quelques jours sans réponse signifie généralement que les personnages ont quitté les lieux et que le salon est redevenu libre.
+2. **Les salons intimes, dortoirs ou fils privés dédiés à un binôme (duo)** : Deux joueurs y développent une intrigue au long cours en mode *play-by-post* (rédaction de longs pavés descriptifs de plusieurs paragraphes). En période de vacances scolaires, d'examens ou de surcharge professionnelle, les réponses s'espacent fréquemment de **7 à 12 jours** sans que l'action ou le dialogue ne soit pour autant interrompu.
+
+Un seuil d'inactivité rigide et universel fixé aveuglément à 5 ou 7 jours pour l'ensemble des salons produit un effet pervers symétrique à la méga-scène : la **sur-segmentation** d'intrigues unitaires. Une conversation intime ou un entraînement martial se retrouve morcelé en 3 ou 4 micro-scènes factices sans cohérence dramatique.
+
+De plus, un cas vicieux survient lors des scellements administratifs tardifs (*The Trailing Closing Marker*) : lorsqu'un salon a été abandonné depuis des mois, puis qu'un joueur ou modérateur y poste un message administratif (ex: ````Scène close.```` ou ````Scène finie````) **50 ou 100 jours plus tard**, associer naïvement ce message à la scène précédente en étire artificiellement la durée de plusieurs mois, créant une scène fantôme de 110 jours pour seulement quelques répliques de jeu.
+
+#### Cas concrets tirés de l'extract
+1. **Duo d'entraînement Kalès & Kalem** :
+   - Les deux personnages mènent une séance continue d'apprentissage martial.
+   - Entre la réplique de Kalès du 15 juillet et la réponse de Kalem du 22 juillet s'écoulent **7 jours et 8 heures (7,3 jours)** en raison d'un départ en congés.
+   - Avec un seuil uniforme rigide de 7 jours, le dialogue est tranché au milieu d'un échange d'attaques, créant deux scènes amputées alors que le combat n'a jamais changé de protagonistes.
+2. **Thread privé `↳ Une chouette découvre enfin l'eau`** :
+   - Échange intimiste entre Lumia et Andrea. Les répliques denses de 300 à 500 mots s'espacent de 8 à 9 jours.
+   - Un seuil rigide produit une rupture artificielle alors que personne d'autre ne participe au fil.
+3. **Leçon d'alchimie de Septimus Kales et Lucia Fiorella (`Cour des alchimistes`)** :
+   - Un intervalle d'inactivité de 8 jours a provoqué un morcellement artificiel, laissant même un fragment de 1 message orphelin au sein d'une démonstration pratique continue.
+4. **Scellement tardif sur salons dormants (`Le centre des registres`, `Cantine marbrée`)** :
+   - Des scènes terminées depuis mars reçoivent une mention administrative en juin (`"Scène finie"`). L'absorption aveugle de ce message sans garde-fou temporel maximal créait des scènes d'une durée aberrante de 90 à 110 jours pour seulement 4 répliques de jeu effectif.
+
+---
+
 ## 4. Recommandations et Correctifs Techniques
 
 ### 4.1. Refonte du Moteur de Segmentation (`segmenteur_narratif.py`)
 
-#### 1. Remplacement du seuil de 45 jours et encadrement du Lookahead
-- Abaisser `hard_cutoff_days` de 45.0 jours à **7.0 jours**. Dans un jeu de rôle Discord, une pause de 7 jours consécutifs sans aucune interaction entre les personnages doit sceller la scène.
-- Restreindre le *lookahead* (`has_player_actor_replied`) à une fenêtre maximale de **3 jours**.
-- Interdire au lookahead de maintenir une scène active si le nouveau message est émis par un joueur n'ayant jamais participé à la scène en cours.
+#### 1. Seuil d'Inactivité Adaptatif Contextuel et Encadrement du Lookahead
+Plutôt qu'un seuil fixe et aveugle de 7 jours, adopter un **seuil adaptatif contextuel** selon la nature du salon et le profil des participants :
+- **Fils / Threads privés et salons à binôme exclusif ($\le 2$ joueurs)** : Seuil dur étendu à **14,0 jours** tant qu'aucun tiers n'intervient et qu'aucun mot de fin n'est prononcé, afin de préserver les duos lents en play-by-post.
+- **Dialogue actif entre co-acteurs établis dans un salon public** : Seuil étendu à **10,0 jours**.
+- **Nouveaux arrivants sans interaction préalable (`is_newcomer`)** : Seuil strict de **4,0 jours** (un tiers arrivant après 4 jours de silence ouvre immédiatement une nouvelle scène).
+- **Seuil général par défaut** : **7,0 jours** (au lieu de 45 jours).
+- **Restreindre le *lookahead* (`has_player_actor_replied`)** à une fenêtre maximale de **3 jours** et le désactiver totalement pour les nouveaux arrivants.
+- **Encadrement du scellement tardif** : Si un marqueur explicite de fin sans contenu RP arrive plus de 14 jours après la fin réelle des échanges, sceller la scène précédente à sa date réelle sans incorporer ce message tardif qui en fausserait la durée.
 
 #### 2. Priorité absolue aux marqueurs de fin (Correction de la règle 4.5)
 Le test d'un marqueur de clôture sur le message courant doit s'exécuter **avant** toute décision de coupure pour inactivité ou relance par le même auteur. Si `curr_msg` contient une formule de fin, il doit rejoindre la scène active pour la sceller, sans créer de scène orpheline.
@@ -458,6 +525,7 @@ def get_character_guild_and_color(actor_name):
 | **Joueurs majeurs classés "PNJ"** | Priorité absolue de `detected_webhooks` sur les factions | `Adelina`, `Selena`, `Lewis`, `Emil` en PNJ violet | Vérifier `detected_member_factions` avant `detected_webhooks` |
 | **Divergence des noms canoniques** | Deux `CANONICAL_MAP` distinctes dans 2 fichiers | Incohérence de nommage et doublons d'acteurs | Fusionner dans un module unique partagé |
 | **Renommage destructif des salons** | Utilisation exclusive du nom Discord courant | Scènes d'événements renommées avec des noms génériques | Conserver le nom historique du salon au moment de la scène |
+| **Sur-segmentation des duos lents & scellement tardif** | Seuil rigide uniforme sans distinction de salon + absorption aveugle de clôtures lointaines | Duos play-by-post coupés à tort (Kalès/Kalem, Lumia) ou scènes étirées à 110 jours | Seuil contextuel adaptatif (14j threads/duos $\le 2$, 10j pairs, 4j arrivants, 7j défaut) + scellement à date réelle |
 
 ---
 
