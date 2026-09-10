@@ -278,3 +278,30 @@ body {
   box-shadow: 0 0 35px rgba(245, 158, 11, 0.95), inset 0 0 25px rgba(168, 85, 247, 0.8);
   border-color: rgba(239, 68, 68, 0.9) !important;
 }
+
+/* 🔍 ANIMATION DE PULSATION POUR LE MESSAGE CIBLÉ PAR LA RECHERCHE */
+@keyframes search-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
+    background-color: transparent;
+  }
+  40% {
+    box-shadow: 0 0 0 6px rgba(251, 191, 36, 0.18), inset 0 0 20px rgba(251, 191, 36, 0.06);
+    background-color: rgba(251, 191, 36, 0.05);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(251, 191, 36, 0.08);
+    background-color: rgba(251, 191, 36, 0.03);
+  }
+}
+
+.msg-search-target {
+  animation: search-pulse 1.4s ease-in-out 2;
+  border-radius: 6px;
+}
+
+.msg-search-highlight {
+  outline: 1px solid rgba(251, 191, 36, 0.35);
+  outline-offset: 2px;
+  border-radius: 6px;
+}

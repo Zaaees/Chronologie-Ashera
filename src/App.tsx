@@ -1,11 +1,13 @@
-import React, { useState, useMemo, useEffect, useRef } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { CHARACTERS_DATA, SCENES_DATA, SCENES_DATA_V1, CHANNEL_IMAGES, getSceneLocationImage, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown, ChevronUp
 } from 'lucide-react';
 import { CharacterSpotlight } from './components/CharacterSpotlight';
 import { getCharacterCardImage } from './utils/characterHelper';
+import { SearchResultsPanel, normalizeForSearch, textMatchesQuery, messageMatchesQuery } from './components/SearchResultsPanel';
+
 
 export const formatImageUrl = (url?: string | null): string | undefined => {
   if (!url) return undefined;
@@ -1390,12 +1392,38 @@ const FACTION_THEMES: Record<string, { accent: string; border: string; glow: str
 };
 
 export default function App() {
-  const [searchQuery, setSearchQuery] = useState('');
+  // ── Recherche : valeur input réactive + query debounced pour les calculs ──
+  const [inputValue, setInputValue] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
+  const [showSearchPanel, setShowSearchPanel] = useState(false);
+  const searchBarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQuery(inputValue);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [inputValue]);
+
+  // Afficher le panneau dès qu'il y a au moins 2 caractères
+  useEffect(() => {
+    if (debouncedQuery.trim().length >= 2) {
+      setShowSearchPanel(true);
+    } else {
+      setShowSearchPanel(false);
+    }
+  }, [debouncedQuery]);
+
+  // ── Navigation intra-scène ──
+  const [searchTargetMsgIndex, setSearchTargetMsgIndex] = useState<number | null>(null);
+  const [currentMatchCursor, setCurrentMatchCursor] = useState<number>(0);
+
   const [selectedActor, setSelectedActor] = useState<string>('all');
   const [selectedChannel, setSelectedChannel] = useState<string>('all');
   const [selectedFaction, setSelectedFaction] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [activeMonthKey, setActiveMonthKey] = useState<string>('');
+
 
   // 🥚 EASTER EGG V1 (2025)
   const [isV1Mode, setIsV1Mode] = useState<boolean>(false);
@@ -1634,26 +1662,26 @@ export default function App() {
 
   // Filtrage des scènes selon Faction, Catégorie Discord, Personnage, Salon et Recherche
   const filteredScenes = useMemo(() => {
+    // Mots normalisés pour la recherche AND multi-mots
+    const normalizedWords = debouncedQuery.trim().length > 0
+      ? debouncedQuery.trim().split(/\s+/).filter(Boolean).map(normalizeForSearch)
+      : [];
+
     return currentScenesDataset.filter(scene => {
-      if (searchQuery.trim()) {
-        const q = searchQuery.toLowerCase();
-        const inTitle = scene.title.toLowerCase().includes(q);
-        const inChannel = scene.channel.toLowerCase().includes(q);
-        const inPreview = scene.preview.toLowerCase().includes(q);
+      if (normalizedWords.length > 0) {
+        const inTitle    = textMatchesQuery(scene.title, normalizedWords);
+        const inChannel  = textMatchesQuery(scene.channel, normalizedWords);
+        const inPreview  = textMatchesQuery(scene.preview, normalizedWords);
         const inActors = scene.actors.some(a => {
           const info = CHARACTERS_DATA[a];
           const serverNick = info?.displayName || info?.username || '';
-          return a.toLowerCase().includes(q) || serverNick.toLowerCase().includes(q);
+          return textMatchesQuery(a, normalizedWords) || textMatchesQuery(serverNick, normalizedWords);
         }) || (scene.narrators && scene.narrators.some(n => {
           const info = CHARACTERS_DATA[n];
           const serverNick = info?.displayName || info?.username || '';
-          return n.toLowerCase().includes(q) || serverNick.toLowerCase().includes(q);
+          return textMatchesQuery(n, normalizedWords) || textMatchesQuery(serverNick, normalizedWords);
         }));
-        const inMessages = scene.messages.some(m => 
-          (m.content && m.content.toLowerCase().includes(q)) || 
-          (m.embed_description && m.embed_description.toLowerCase().includes(q)) ||
-          (m.embed_title && m.embed_title.toLowerCase().includes(q))
-        );
+        const inMessages = scene.messages.some(m => messageMatchesQuery(m, normalizedWords));
         if (!inTitle && !inChannel && !inPreview && !inActors && !inMessages) {
           return false;
         }
@@ -1676,7 +1704,8 @@ export default function App() {
 
       return true;
     }).sort((a, b) => new Date(a.start_time).getTime() - new Date(b.start_time).getTime());
-  }, [currentScenesDataset, searchQuery, selectedCategory, selectedActor, selectedChannel, groupedChannelsByCategory]);
+  }, [currentScenesDataset, debouncedQuery, selectedCategory, selectedActor, selectedChannel, groupedChannelsByCategory]);
+
 
   // Groupement des scènes par Mois/Année
   const groupedPeriodScenes = useMemo(() => {
@@ -1724,6 +1753,81 @@ export default function App() {
     return formatImageUrl(imgUrl) || null;
   }, [activeScene]);
 
+  // ── Navigation intra-scène : indices de tous les messages qui correspondent ──
+  const normalizedSearchWords = useMemo(() => {
+    return debouncedQuery.trim().length > 0
+      ? debouncedQuery.trim().split(/\s+/).filter(Boolean).map(normalizeForSearch)
+      : [];
+  }, [debouncedQuery]);
+
+  const matchingMsgIndices = useMemo((): number[] => {
+    if (normalizedSearchWords.length === 0 || !activeScene) return [];
+    return activeScene.messages
+      .map((m, i) => ({ m, i }))
+      .filter(({ m }) => messageMatchesQuery(m, normalizedSearchWords))
+      .map(({ i }) => i);
+  }, [activeScene, normalizedSearchWords]);
+
+  // Quand la scène s'ouvre avec une cible, initialiser le curseur au bon index
+  useEffect(() => {
+    if (!activeScene) return;
+    if (searchTargetMsgIndex !== null && matchingMsgIndices.length > 0) {
+      const cursorPos = matchingMsgIndices.indexOf(searchTargetMsgIndex);
+      setCurrentMatchCursor(cursorPos >= 0 ? cursorPos : 0);
+    } else {
+      setCurrentMatchCursor(0);
+    }
+  }, [activeScene, searchTargetMsgIndex, matchingMsgIndices]);
+
+  // Référence du conteneur scrollable des messages pour le scroll intra-scène
+  const msgScrollContainerRef = useRef<HTMLDivElement>(null);
+
+  // Scroll vers le message cible quand la modale s'ouvre ou quand le curseur change
+  useEffect(() => {
+    if (!activeScene || matchingMsgIndices.length === 0) return;
+    const targetIdx = matchingMsgIndices[currentMatchCursor];
+    if (targetIdx === undefined) return;
+
+    const timer = setTimeout(() => {
+      const container = msgScrollContainerRef.current;
+      if (!container) return;
+      const target = container.querySelector<HTMLElement>(`[data-msg-index="${targetIdx}"]`);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 80);
+    return () => clearTimeout(timer);
+  }, [activeScene, currentMatchCursor, matchingMsgIndices]);
+
+  // Réinitialiser la navigation quand la modale se ferme
+  useEffect(() => {
+    if (!activeScene) {
+      setSearchTargetMsgIndex(null);
+      setCurrentMatchCursor(0);
+    }
+  }, [activeScene]);
+
+  /** Ouvre une scène et cible optionnellement un message spécifique (depuis un snippet) */
+  const openSceneAtMessage = useCallback((scene: Scene, msgIndex: number) => {
+    setActiveScene(scene);
+    if (msgIndex >= 0) {
+      setSearchTargetMsgIndex(msgIndex);
+      setCurrentMatchCursor(0);
+    } else {
+      setSearchTargetMsgIndex(null);
+    }
+    setShowSearchPanel(false);
+  }, []);
+
+  const resetAllFilters = useCallback(() => {
+    setInputValue('');
+    setDebouncedQuery('');
+    setSelectedActor('all');
+    setSelectedChannel('all');
+    setSelectedCategory(null);
+    setShowSearchPanel(false);
+  }, []);
+
   return (
     <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
@@ -1761,23 +1865,48 @@ export default function App() {
               </div>
             </div>
 
-            {/* Recherche globale */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500" />
+            {/* 🔍 Recherche globale avec panneau de résultats */}
+            <div ref={searchBarRef} className="relative flex-1 max-w-md">
+              <Search className={`absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 transition-colors ${debouncedQuery.length >= 2 ? 'text-amber-400' : 'text-slate-500'}`} />
               <input
                 type="text"
                 placeholder="Rechercher une scène, un mot, un extrait..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full bg-[#0d0f17] border border-slate-800 rounded-none pl-10 pr-4 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none focus:border-slate-400 transition-colors shadow-inner"
+                value={inputValue}
+                onChange={(e) => {
+                  setInputValue(e.target.value);
+                  if (e.target.value.trim().length >= 2) setShowSearchPanel(true);
+                }}
+                onFocus={() => {
+                  if (debouncedQuery.trim().length >= 2) setShowSearchPanel(true);
+                }}
+                className={`w-full bg-[#0d0f17] border rounded-none pl-10 pr-9 py-2 text-sm text-slate-200 placeholder-slate-600 focus:outline-none transition-colors shadow-inner ${
+                  debouncedQuery.length >= 2
+                    ? 'border-amber-500/60 focus:border-amber-400/80'
+                    : 'border-slate-800 focus:border-slate-400'
+                }`}
               />
-              {searchQuery && (
-                <button 
-                  onClick={() => setSearchQuery('')}
+              {inputValue && (
+                <button
+                  onClick={() => {
+                    setInputValue('');
+                    setDebouncedQuery('');
+                    setShowSearchPanel(false);
+                  }}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-300"
+                  title="Effacer la recherche"
                 >
                   <X className="w-4 h-4" />
                 </button>
+              )}
+
+              {/* 🔍 Panneau de résultats flottant */}
+              {showSearchPanel && debouncedQuery.trim().length >= 2 && (
+                <SearchResultsPanel
+                  query={debouncedQuery}
+                  scenes={filteredScenes}
+                  onSelectOccurrence={openSceneAtMessage}
+                  onClose={() => setShowSearchPanel(false)}
+                />
               )}
             </div>
           </div>
@@ -1852,14 +1981,9 @@ export default function App() {
               />
             </div>
 
-            {(searchQuery || selectedActor !== 'all' || selectedChannel !== 'all' || selectedCategory !== null) && (
+            {(inputValue || selectedActor !== 'all' || selectedChannel !== 'all' || selectedCategory !== null) && (
               <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedActor('all');
-                  setSelectedChannel('all');
-                  setSelectedCategory(null);
-                }}
+                onClick={resetAllFilters}
                 className="px-3 py-2 bg-red-950/40 hover:bg-red-900/60 text-red-300 border border-red-800/60 transition-colors font-medium shrink-0"
               >
                 Réinitialiser les filtres
@@ -2033,11 +2157,7 @@ export default function App() {
                 Essayez de modifier vos termes de recherche ou de réinitialiser les filtres.
               </p>
               <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedActor('all');
-                  setSelectedChannel('all');
-                }}
+                onClick={resetAllFilters}
                 className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-600 text-xs font-medium transition-colors"
               >
                 Réinitialiser les filtres
@@ -2172,6 +2292,44 @@ export default function App() {
                 </div>
               </div>
 
+              {/* 🔍 BARRE DE NAVIGATION INTRA-SCÈNE (visible si recherche active avec occurrences) */}
+              {matchingMsgIndices.length > 0 && (
+                <div className="px-4 py-2 bg-[#1e1f22] border-b border-amber-500/30 flex items-center justify-between gap-3 shrink-0">
+                  <div className="flex items-center gap-2">
+                    <Search className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    <span className="text-xs font-mono text-amber-200">
+                      Occurrence{' '}
+                      <span className="font-bold text-amber-300">{currentMatchCursor + 1}</span>
+                      {' / '}
+                      <span className="font-bold text-amber-300">{matchingMsgIndices.length}</span>
+                    </span>
+                    <span className="text-[10px] text-slate-500 hidden sm:inline">
+                      — «&nbsp;{debouncedQuery}&nbsp;»
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => setCurrentMatchCursor(prev =>
+                        prev > 0 ? prev - 1 : matchingMsgIndices.length - 1
+                      )}
+                      className="p-1.5 rounded bg-[#2b2d31] hover:bg-amber-900/40 text-amber-300 hover:text-amber-200 border border-slate-700/60 hover:border-amber-500/50 transition-all"
+                      title="Occurrence précédente"
+                    >
+                      <ChevronUp className="w-3.5 h-3.5" />
+                    </button>
+                    <button
+                      onClick={() => setCurrentMatchCursor(prev =>
+                        prev < matchingMsgIndices.length - 1 ? prev + 1 : 0
+                      )}
+                      className="p-1.5 rounded bg-[#2b2d31] hover:bg-amber-900/40 text-amber-300 hover:text-amber-200 border border-slate-700/60 hover:border-amber-500/50 transition-all"
+                      title="Occurrence suivante"
+                    >
+                      <ChevronDown className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* 📱 BANNIÈRE APERÇU DU SALON SUR MOBILE (< xl) */}
               {activeSceneLocationImage && showMobileLocationPreview && (
                 <div className="xl:hidden relative w-full h-36 sm:h-44 shrink-0 overflow-hidden border-b border-slate-700/80 bg-black/60 group/mobile-preview">
@@ -2198,7 +2356,7 @@ export default function App() {
               {/* En-tête de la Scène */}
               <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
                 <h2 className="text-base font-bold text-[#f2f3f5] mb-2">
-                  {highlightSearchQuery(activeScene.title, searchQuery, 'title')}
+                  {highlightSearchQuery(activeScene.title, debouncedQuery, 'title')}
                 </h2>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="text-xs text-[#949ba4]">Acteurs présents :</span>
@@ -2217,7 +2375,7 @@ export default function App() {
                         title={info?.displayName ? `Voir la fiche visuelle de ${actor} (${info.displayName})` : `Voir la fiche visuelle de ${actor}`}
                       >
                         <span>{style.icon}</span>
-                        <span>{highlightSearchQuery(actor, searchQuery, `act-${actor}`)}</span>
+                        <span>{highlightSearchQuery(actor, debouncedQuery, `act-${actor}`)}</span>
                       </button>
                     );
                   })}
@@ -2239,7 +2397,7 @@ export default function App() {
                             title={info?.displayName ? `Voir les interventions de ${narrator} (${info.displayName})` : `Voir les interventions de ${narrator}`}
                           >
                             <span>📜</span>
-                            <span>{highlightSearchQuery(narrator, searchQuery, `narr-${narrator}`)}</span>
+                            <span>{highlightSearchQuery(narrator, debouncedQuery, `narr-${narrator}`)}</span>
                           </button>
                         );
                       })}
@@ -2249,7 +2407,7 @@ export default function App() {
               </div>
 
               {/* FLUX DES MESSAGES : FORMAT DISCORD */}
-              <div className="p-6 overflow-y-auto flex-1 custom-scrollbar bg-[#313338]">
+              <div ref={msgScrollContainerRef} className="p-6 overflow-y-auto flex-1 custom-scrollbar bg-[#313338]">
                 {activeScene.messages.map((msg, index) => {
                   const prevMsg = index > 0 ? activeScene.messages[index - 1] : undefined;
                   const isConsecutive = isConsecutiveMessage(msg, prevMsg, 5);
@@ -2267,11 +2425,21 @@ export default function App() {
                     : null;
                   const shortTime = formatTimeOnlyDiscord(msg.timestamp);
 
+                  // Classes de mise en évidence pour la recherche
+                  const isCurrentMatch = matchingMsgIndices[currentMatchCursor] === index;
+                  const isAnyMatch = matchingMsgIndices.includes(index);
+                  const highlightClass = isCurrentMatch
+                    ? 'msg-search-target msg-search-highlight'
+                    : isAnyMatch
+                    ? 'msg-search-highlight'
+                    : '';
+
                   if (isConsecutive) {
                     return (
                       <div 
-                        key={msg.id || index} 
-                        className="flex items-start gap-4 hover:bg-[#2e3035] px-2 py-0.5 rounded transition-colors group mt-0.5 relative"
+                        key={msg.id || index}
+                        data-msg-index={index}
+                        className={`flex items-start gap-4 hover:bg-[#2e3035] px-2 py-0.5 rounded transition-colors group mt-0.5 relative ${highlightClass}`}
                       >
                         {/* HORAIRE EN PETIT ET TRANSPARENT À GAUCHE (REMPLACE L'AVATAR SUR HOVER) */}
                         <div className="w-10 shrink-0 text-center text-[10px] text-[#949ba4] font-mono opacity-0 group-hover:opacity-100 transition-opacity select-none pt-0.5">
@@ -2315,12 +2483,12 @@ export default function App() {
                             <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1 mb-2 max-w-2xl shadow-md">
                               {msg.embed_title && (
                                 <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
-                                  {renderDiscordMarkdown(msg.embed_title, searchQuery)}
+                                  {renderDiscordMarkdown(msg.embed_title, debouncedQuery)}
                                 </h4>
                               )}
                               {msg.embed_description && (
                                 <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
-                                  {renderDiscordMarkdown(msg.embed_description, searchQuery)}
+                                  {renderDiscordMarkdown(msg.embed_description, debouncedQuery)}
                                 </div>
                               )}
                             </div>
@@ -2329,7 +2497,7 @@ export default function App() {
                           {/* CONTENU TEXTE DISCORD LISIBLE */}
                           {msg.content && (
                             <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
-                              {renderDiscordMarkdown(msg.content, searchQuery)}
+                              {renderDiscordMarkdown(msg.content, debouncedQuery)}
                             </div>
                           )}
                         </div>
@@ -2339,8 +2507,9 @@ export default function App() {
 
                   return (
                     <div 
-                      key={msg.id || index} 
-                      className="flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group mt-4 first:mt-0"
+                      key={msg.id || index}
+                      data-msg-index={index}
+                      className={`flex items-start gap-4 hover:bg-[#2e3035] p-2 rounded transition-colors group mt-4 first:mt-0 ${highlightClass}`}
                     >
                       {/* AVATAR ROND DISCORD */}
                       {avatarImg ? (
@@ -2411,12 +2580,12 @@ export default function App() {
                           <div className="border-l-4 border-purple-500 bg-[#2b2d31] p-3 rounded-r-md mt-1.5 mb-2 max-w-2xl shadow-md">
                             {msg.embed_title && (
                               <h4 className="text-[14px] font-bold text-[#f2f3f5] mb-1">
-                                {renderDiscordMarkdown(msg.embed_title, searchQuery)}
+                                {renderDiscordMarkdown(msg.embed_title, debouncedQuery)}
                               </h4>
                             )}
                             {msg.embed_description && (
                               <div className="text-[14px] text-[#dbdee1] italic whitespace-pre-wrap leading-relaxed">
-                                {renderDiscordMarkdown(msg.embed_description, searchQuery)}
+                                {renderDiscordMarkdown(msg.embed_description, debouncedQuery)}
                               </div>
                             )}
                           </div>
@@ -2425,7 +2594,7 @@ export default function App() {
                         {/* CONTENU TEXTE DISCORD LISIBLE */}
                         {msg.content && (
                           <div className="text-[15px] text-[#dbdee1] leading-[1.375rem] font-sans whitespace-pre-wrap select-text">
-                            {renderDiscordMarkdown(msg.content, searchQuery)}
+                            {renderDiscordMarkdown(msg.content, debouncedQuery)}
                           </div>
                         )}
                       </div>
