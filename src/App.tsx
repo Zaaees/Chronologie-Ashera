@@ -2539,7 +2539,7 @@ export default function App() {
                               style={{ color: style.text }} 
                               className="font-semibold text-[15px] hover:underline cursor-pointer tracking-wide"
                             >
-                              {highlightSearchQuery(authorName, searchQuery, `msg-author-${index}`)}
+                              {highlightSearchQuery(authorName, debouncedQuery, `msg-author-${index}`)}
                             </span>
                             <span className="text-[12px] text-[#949ba4] font-normal select-none">
                               {formatDateDiscord(msg.timestamp)}
