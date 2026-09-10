@@ -174,11 +174,16 @@ function formatShortDate(isoString: string): string {
   try {
     const d = new Date(isoString);
     if (isNaN(d.getTime())) return '';
-    return d.toLocaleDateString('fr-FR', {
+    const dateStr = d.toLocaleDateString('fr-FR', {
       day: '2-digit',
       month: 'short',
       year: 'numeric',
     });
+    const timeStr = d.toLocaleTimeString('fr-FR', {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+    return `${dateStr} à ${timeStr}`;
   } catch {
     return '';
   }
@@ -295,7 +300,12 @@ export function SearchResultsPanel({
       }
     }
 
-    return results;
+    // Tri du plus récent au plus ancien (ordre chronologique décroissant)
+    return results.sort((a, b) => {
+      const timeA = a.timestamp ? new Date(a.timestamp).getTime() : 0;
+      const timeB = b.timestamp ? new Date(b.timestamp).getTime() : 0;
+      return timeB - timeA;
+    });
   }, [scenes, normalizedWords]);
 
   // Comptages
@@ -331,13 +341,16 @@ export function SearchResultsPanel({
     >
       {/* En-tête du panneau */}
       <div className="px-4 py-2.5 bg-[#0c0e15] border-b border-slate-800 flex items-center justify-between shrink-0">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <Search className="w-3.5 h-3.5 text-amber-400 shrink-0" />
           <span className="text-xs text-slate-200 font-medium">
             <span className="text-amber-300 font-bold">{totalOccurrences}</span>
             {' '}occurrence{totalOccurrences > 1 ? 's' : ''} dans{' '}
             <span className="text-amber-300 font-bold">{totalScenes}</span>
             {' '}scène{totalScenes > 1 ? 's' : ''}
+          </span>
+          <span className="text-[10px] font-mono text-amber-300/80 bg-amber-950/40 px-1.5 py-0.5 rounded border border-amber-500/30">
+            Du plus récent au plus ancien ▾
           </span>
         </div>
         <button
