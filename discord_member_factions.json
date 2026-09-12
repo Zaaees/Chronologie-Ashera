@@ -5,9 +5,9 @@
     "char_azur"
   ],
   "Myrea M": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
   ],
   "Hedwig Von Glanzestern": [
     "La Garde Pourpre",
@@ -1210,6 +1210,16 @@
     "char_sans_guilde"
   ],
   "pearlsblue": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "JeelGa (Himeko)": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "jeelga": [
     "Sans guilde",
     "#eab308",
     "char_sans_guilde"
