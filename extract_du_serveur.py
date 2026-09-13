@@ -113,13 +113,6 @@ def register_member_faction(name_str, faction_info, username="", display_name=""
         return
     cleaned = clean_character_name(name_str)
     if cleaned and len(cleaned) < 50:
-        # Règle formelle : les rôles de guilde prévalent sur 'Sans guilde' / 'Sans fiche'
-        # Ne jamais rétrograder une guilde déjà acquise vers 'Sans guilde'
-        current_existing = detected_member_factions.get(cleaned)
-        guild_names = {"La Garde Pourpre", "Cercle d'Azur", "Voile d'Ivoire", "L'œil", "JAVUS"}
-        if current_existing and current_existing[0] in guild_names and faction_info[0] == "Sans guilde":
-            return
-
         detected_member_factions[cleaned] = faction_info
         if username or display_name or avatar_url:
             detected_member_details[cleaned] = {
@@ -491,29 +484,27 @@ class DiscordExporterClient(discord.Client):
                 guild_role = next((r_id for r_id in GUILD_ROLE_IDS if r_id in member_role_ids), None)
                 if not guild_role:
                     for r in member.roles:
-                        r_norm = unicodedata.normalize('NFKD', r.name).lower()
-                        if 'oeil' in r_norm or 'œil' in r_norm:
+                        r_norm = unicodedata.normalize('NFKD', r.name).lower().strip()
+                        if r_norm in ["l'oeil", "l'œil", "oeil", "œil"]:
                             guild_role = 1467532532261322813
                             break
-                        elif 'pourpre' in r_norm:
+                        elif r_norm in ["la garde pourpre", "garde pourpre"]:
                             guild_role = 1327646236760608803
                             break
-                        elif 'azur' in r_norm:
+                        elif r_norm in ["cercle d'azur", "cercle dazur"]:
                             guild_role = 1327646236760608802
                             break
-                        elif 'ivoire' in r_norm:
+                        elif r_norm in ["voile d'ivoire", "voile divoire"]:
                             guild_role = 1327646236760608801
                             break
-                        elif 'javus' in r_norm:
+                        elif r_norm in ["javus"]:
                             guild_role = 1525469197935841371
                             break
 
                 if guild_role:
                     best_role = guild_role
-                elif any(r_id in member_role_ids for r_id in SANS_FICHE_ROLE_IDS):
-                    best_role = 1475090340557095003
                 else:
-                    best_role = None
+                    best_role = 1475090340557095003  # Sans guilde pour les membres sur le serveur sans rôle de guilde
 
                 if gm_role_id in member_role_ids:
                     for n_candidate in [member.display_name, member.name, getattr(member, 'global_name', None)]:
