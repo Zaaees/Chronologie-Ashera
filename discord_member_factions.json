@@ -90,9 +90,9 @@
     "char_ivoire"
   ],
   "Cassian Ortie": [
-    "Voile d'Ivoire",
-    "#fef08a",
-    "char_ivoire"
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ],
   "CʜᴜʟᴀᴋTM": [
     "Voile d'Ivoire",
@@ -145,9 +145,9 @@
     "char_sans_guilde"
   ],
   "Tarrion Tombetoile": [
-    "La Garde Pourpre",
-    "#ef4444",
-    "char_pourpre"
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ],
   "Markus Law": [
     "Sans guilde",
@@ -205,9 +205,9 @@
     "char_ivoire"
   ],
   "Junko Anarchy": [
-    "Voile d'Ivoire",
-    "#fef08a",
-    "char_ivoire"
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ],
   "Historia Fay Ruaidhri Grel": [
     "Sans guilde",
@@ -1240,6 +1240,41 @@
     "char_sans_guilde"
   ],
   "A certain YoshiHide": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "SakurakiBot": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Liste du RP FR": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Profile": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "𝐓𝐡𝐞 𝐇𝐨𝐰𝐥𝐢𝐧𝐠 𝐍𝐢𝐠𝐡𝐭": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Narrateur": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Tupperbox": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "DraftBot": [
     "Sans guilde",
     "#eab308",
     "char_sans_guilde"
