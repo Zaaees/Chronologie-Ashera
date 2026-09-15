@@ -681,20 +681,28 @@ class DiscordExporterClient(discord.Client):
                 try:
                     async def fetch_archived_for_channel(channel_obj):
                         threads_found = []
-                        # Threads/posts archivés publics
-                        try:
-                            async for arch_thread in channel_obj.archived_threads(limit=None, private=False):
-                                if not is_character_or_fiche_channel(arch_thread):
-                                    threads_found.append(arch_thread)
-                        except Exception as e_pub:
-                            pass
-                        # Threads/posts archivés privés (si accessibles)
-                        try:
-                            async for arch_thread in channel_obj.archived_threads(limit=None, private=True):
-                                if not is_character_or_fiche_channel(arch_thread):
-                                    threads_found.append(arch_thread)
-                        except Exception as e_priv:
-                            pass
+                        if isinstance(channel_obj, discord.ForumChannel):
+                            try:
+                                async for arch_thread in channel_obj.archived_threads(limit=None):
+                                    if not is_character_or_fiche_channel(arch_thread):
+                                        threads_found.append(arch_thread)
+                            except Exception as e_forum:
+                                print(f"⚠️ Note recherche archivés sur forum #{channel_obj.name} : {e_forum}")
+                        else:
+                            # Threads/posts archivés publics
+                            try:
+                                async for arch_thread in channel_obj.archived_threads(limit=None, private=False):
+                                    if not is_character_or_fiche_channel(arch_thread):
+                                        threads_found.append(arch_thread)
+                            except Exception as e_pub:
+                                pass
+                            # Threads/posts archivés privés (si accessibles)
+                            try:
+                                async for arch_thread in channel_obj.archived_threads(limit=None, private=True):
+                                    if not is_character_or_fiche_channel(arch_thread):
+                                        threads_found.append(arch_thread)
+                            except Exception as e_priv:
+                                pass
                         return threads_found
 
                     arch_threads = await asyncio.wait_for(fetch_archived_for_channel(ch), timeout=15.0)
@@ -759,6 +767,10 @@ class DiscordExporterClient(discord.Client):
 
                     # Déterminer le nom de l'auteur (affichage/surnom si disponible)
                     author_name = msg.author.display_name if hasattr(msg.author, 'display_name') else msg.author.name
+                    if target_guild and hasattr(msg.author, 'id'):
+                        g_member = target_guild.get_member(msg.author.id)
+                        if g_member and g_member.display_name:
+                            author_name = g_member.display_name
                     author_avatar_url = str(msg.author.display_avatar.url) if hasattr(msg.author, 'display_avatar') and msg.author.display_avatar else ""
                     
                     # Contenu texte + pièces jointes (ex: images)
@@ -816,7 +828,9 @@ class DiscordExporterClient(discord.Client):
                     })
 
                 cat_name = channel.category.name if hasattr(channel, 'category') and channel.category else ""
-                pos = channel.position if hasattr(channel, 'position') else 999
+                if not cat_name and hasattr(channel, 'parent') and channel.parent and hasattr(channel.parent, 'category') and channel.parent.category:
+                    cat_name = channel.parent.category.name
+                pos = channel.position if hasattr(channel, 'position') else (channel.parent.position if hasattr(channel, 'parent') and channel.parent and hasattr(channel.parent, 'position') else 999)
                 channel_scenes = segment_messages_into_scenes(ch_name, ch_id, raw_messages, str(target_guild.id), category_name=cat_name, discord_position=pos)
                 print(f"  -> {len(raw_messages)} message(s) lu(s) ({len(channel_scenes)} scène(s) au total).")
                 all_scenes.extend(channel_scenes)
