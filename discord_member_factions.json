@@ -975,14 +975,14 @@
     "char_sans_guilde"
   ],
   "Abrihicot": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
   ],
   "abrihicot": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
   ],
   "MushRoomButCooler": [
     "Sans guilde",
@@ -995,14 +995,14 @@
     "char_sans_guilde"
   ],
   "Atemlos": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "Voile d'Ivoire",
+    "#fef08a",
+    "char_ivoire"
   ],
   "atemlos": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "Voile d'Ivoire",
+    "#fef08a",
+    "char_ivoire"
   ],
   "Philipe": [
     "Sans guilde",
@@ -1313,5 +1313,20 @@
     "Sans guilde",
     "#eab308",
     "char_sans_guilde"
+  ],
+  "Frey - Helehar": [
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
+  ],
+  "Jlaus  | Lysander Armlet": [
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
+  ],
+  "Atemlos | Danaée Knytvaeve": [
+    "Voile d'Ivoire",
+    "#fef08a",
+    "char_ivoire"
   ]
 }
