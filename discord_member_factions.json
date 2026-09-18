@@ -1328,5 +1328,20 @@
     "Voile d'Ivoire",
     "#fef08a",
     "char_ivoire"
+  ],
+  "> Juh | Lucia \"Bunny\" Fiorella": [
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
+  ],
+  "Lumia \"Lum\" Faendharts / Luheur": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "RED avec un H": [
+    "Cercle d'Azur",
+    "#3b82f6",
+    "char_azur"
   ]
 }
