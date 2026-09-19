@@ -1343,5 +1343,20 @@
     "Cercle d'Azur",
     "#3b82f6",
     "char_azur"
+  ],
+  "Céleste": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "celestiale_.": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Fishmael": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ]
 }
