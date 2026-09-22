@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { CHARACTERS_DATA, SCENES_DATA, SCENES_DATA_V1, CHANNEL_IMAGES, getSceneLocationImage, Scene, Character, Message } from './data';
 import { 
   Search, Calendar, Clock, Users, ChevronRight, 
-  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown, ChevronUp
+  ExternalLink, Layers, X, ArrowUp, HelpCircle, Shield, Scroll, Eye, Sword, Feather, Sun, Moon, Wand2, MessageSquare, Zap, BarChart2, MapPin, ChevronDown, ChevronUp
 } from 'lucide-react';
 import { CharacterSpotlight } from './components/CharacterSpotlight';
 import { getCharacterCardImage } from './utils/characterHelper';
@@ -714,7 +714,7 @@ function SearchableCharacterSelect({
   }, [filterQuery, groupedActorsByFaction]);
 
   return (
-    <div ref={containerRef} className="relative flex-1 min-w-[240px]">
+    <div ref={containerRef} onKeyDown={(e) => { if (e.key === "Escape") { setIsOpen(false); e.stopPropagation(); } }} className="relative flex-1 min-w-[240px]">
       <div className="flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border border-slate-800 shadow-sm focus-within:border-purple-500/60 transition-colors">
         <Users className="w-4 h-4 text-purple-400 shrink-0" />
         
@@ -749,6 +749,7 @@ function SearchableCharacterSelect({
 
         <button 
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Ouvrir ou fermer les options" aria-expanded={isOpen}
           className="text-slate-500 hover:text-slate-300 p-0.5"
         >
           <ChevronDown className="w-3.5 h-3.5" />
@@ -878,7 +879,7 @@ function SearchableChannelSelect({
   };
 
   return (
-    <div ref={containerRef} className="relative flex-1 min-w-[260px]">
+    <div ref={containerRef} onKeyDown={(e) => { if (e.key === "Escape") { setIsOpen(false); e.stopPropagation(); } }} className="relative flex-1 min-w-[260px]">
       <div className={`flex items-center gap-2 bg-[#0d0f17] px-3 py-2 border shadow-sm transition-colors ${
         selectedCategory ? 'border-cyan-500/80 bg-cyan-950/20' : 'border-slate-800 focus-within:border-cyan-500/60'
       }`}>
@@ -916,6 +917,7 @@ function SearchableChannelSelect({
 
         <button 
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Ouvrir ou fermer les options" aria-expanded={isOpen}
           className="text-slate-500 hover:text-slate-300 p-0.5"
         >
           <ChevronDown className="w-3.5 h-3.5" />
@@ -1052,10 +1054,11 @@ function GanttMonthView({
     channel: string;
     locationImage?: string;
     rect: DOMRect;
+    anchor?: HTMLElement;
   } | null>(null);
 
   useEffect(() => {
-    const handleScrollOrResize = () => setHoveredTooltip(null);
+    const handleScrollOrResize = () => setHoveredTooltip(current => current?.anchor === document.activeElement ? { ...current, rect: current.anchor.getBoundingClientRect() } : null);
     window.addEventListener('scroll', handleScrollOrResize, true);
     window.addEventListener('resize', handleScrollOrResize);
     return () => {
@@ -1145,7 +1148,7 @@ function GanttMonthView({
   });
 
   return (
-    <div className="gothic-corner-box bg-[#0c0e15]/95 border border-slate-700/80 p-5 shadow-2xl space-y-4">
+    <div className="archive-chart gothic-corner-box bg-[#0c0e15]/95 border border-slate-700/80 p-5 shadow-2xl space-y-4">
       <div className="gothic-corner gothic-corner-tl" />
       <div className="gothic-corner gothic-corner-tr" />
       <div className="gothic-corner gothic-corner-bl" />
@@ -1173,7 +1176,7 @@ function GanttMonthView({
 
       {/* Conteneur défilable de la Frise Swimlanes */}
       <div className="overflow-x-auto custom-scrollbar py-6">
-        <div className="min-w-[950px] space-y-3">
+        <div className="archive-tracks min-w-[950px] space-y-3">
           
           {/* Règle des dates supérieure */}
           <div className="flex items-center mb-2 text-[10px] font-mono text-slate-400 border-b border-slate-800/80 pb-1.5">
@@ -1197,14 +1200,17 @@ function GanttMonthView({
                 <div 
                   key={channel} 
                   style={{ minHeight: `${trackHeight + 12}px` }}
-                  className="group/track relative flex items-center bg-[#0a0c12]/90 hover:bg-[#0f121d] border border-slate-800 hover:border-slate-700 rounded-lg p-1.5 transition-all shadow-md"
+                  className="archive-track group/track relative flex items-center bg-[#0a0c12]/90 hover:bg-[#0f121d] border border-slate-800 hover:border-slate-700 rounded-lg p-1.5 transition-all shadow-md"
                 >
                   {/* 🏰 BLOC SALON : Nom du salon avec Filtre au Clic */}
                   <div 
+                    role="button" tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelectChannel?.(channel); } }}
                     onClick={() => onSelectChannel && onSelectChannel(channel)}
-                    className="w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2 z-10 cursor-pointer group/chan"
+                    className="archive-place w-52 shrink-0 pr-3 text-xs font-mono font-medium text-slate-200 flex items-center gap-2 pl-2 z-10 cursor-pointer group/chan"
                     title={`Cliquer pour filtrer par #${channel}`}
                   >
+                    {locationImage && <img className="place-illustration" src={locationImage} alt="" loading="lazy" />}
                     <span className="w-2.5 h-2.5 rounded-full bg-purple-400/90 group-hover/chan:bg-purple-300 group-hover/chan:scale-125 transition-all shrink-0" />
                     <div className="min-w-0 flex-1">
                       <div className="truncate font-semibold text-slate-200 group-hover/chan:text-purple-300 transition-colors flex items-center gap-1">
@@ -1248,7 +1254,11 @@ function GanttMonthView({
                       return (
                         <div
                           key={scene.id}
-                          onClick={() => onSelectScene(scene)}
+                          role="button" tabIndex={0} aria-label={[scene.thread_name, scene.title].filter(Boolean).join(" — ")}
+                          onFocus={(e) => setHoveredTooltip({ scene, channel, locationImage, rect: e.currentTarget.getBoundingClientRect(), anchor: e.currentTarget })}
+                          onBlur={() => setHoveredTooltip(null)}
+                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onSelectScene(scene); } }}
+                          onClick={() => { setHoveredTooltip(null); onSelectScene(scene); }}
                           onMouseEnter={(e) => {
                             const rect = e.currentTarget.getBoundingClientRect();
                             setHoveredTooltip({ scene, channel, locationImage, rect });
@@ -1262,11 +1272,13 @@ function GanttMonthView({
                             top: `${lane * 36 + 4}px`,
                             height: '28px',
                             backgroundColor: style.bg,
-                            borderColor: style.border
-                          }}
+                            borderColor: style.border,
+                            '--scene-accent': style.hexColor
+                          } as React.CSSProperties}
                           className="gantt-bar-item absolute border rounded-md px-2 flex items-center justify-between cursor-pointer text-xs select-none group/bar z-20 shadow-md"
                         >
-                          <div className="flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
+                          <span className="mobile-scene-title">{scene.thread_name && <span className="scene-thread-name">{scene.thread_name}</span>}{scene.title}</span>
+                          <div className="desktop-scene-title flex items-center gap-1.5 min-w-0 w-full overflow-hidden">
                             {scene.thread_name && (
                               <span className="px-1.5 py-0.5 bg-purple-950/90 text-purple-200 border border-purple-500/50 text-[10px] rounded shrink-0 font-bold font-mono shadow">
                                 {scene.thread_name}
@@ -1310,6 +1322,8 @@ function GanttMonthView({
         const endStr = formatDateDiscord(hScene.end_time);
 
         // Toujours orientée vers le haut au-dessus de la barre de scène
+        const placeAbove = rect.top > window.innerHeight / 2;
+        const availableHeight = Math.max(100, (placeAbove ? rect.top : window.innerHeight - rect.bottom) - 24);
         const bottomPx = window.innerHeight - rect.top + 8;
         const targetLeft = rect.left + rect.width / 2 - 144;
         const clampedLeft = Math.max(16, Math.min(window.innerWidth - 304, targetLeft));
@@ -1319,10 +1333,13 @@ function GanttMonthView({
             style={{
               position: 'fixed',
               left: `${clampedLeft}px`,
-              bottom: `${bottomPx}px`,
+              bottom: placeAbove ? `${bottomPx}px` : undefined,
+              top: placeAbove ? undefined : `${rect.bottom + 8}px`,
+              maxHeight: `${availableHeight}px`,
+              overflow: 'hidden',
               zIndex: 99999,
             }}
-            className="pointer-events-none w-72 bg-[#0c0e15]/98 border border-slate-600 p-3 rounded-lg shadow-2xl drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)] backdrop-blur-md transition-all duration-150"
+            className="scene-tooltip pointer-events-none w-72 bg-[#0c0e15]/98 border border-slate-600 p-3 rounded-lg shadow-2xl drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)] backdrop-blur-md transition-all duration-150"
           >
             {hLocImg && (
               <div className="h-20 w-full overflow-hidden rounded mb-2 border border-slate-700/80 bg-slate-900 shadow">
@@ -1338,7 +1355,7 @@ function GanttMonthView({
               <span className="text-[11px] font-mono text-purple-300">#{hScene.channel}</span>
               <span className="text-[10px] font-mono text-[#949ba4]">{hScene.messages.length} msg</span>
             </div>
-            <h4 className="text-xs font-bold text-slate-100 mb-1">{hScene.title}</h4>
+            <h4 className="text-xs font-bold text-slate-100 mb-1">{hScene.thread_name && <span className="block mb-1">{hScene.thread_name}</span>}{hScene.title}</h4>
             <div className="text-[11px] text-slate-300 font-mono space-y-0.5 mb-2">
               <div><span className="text-slate-500">Début :</span> {startStr}</div>
               <div><span className="text-slate-500">Fin :</span> {endStr}</div>
@@ -1505,7 +1522,32 @@ export default function App() {
 
   // Scène sélectionnée pour la modale
   const [activeScene, setActiveScene] = useState<Scene | null>(null);
-  const [showMobileLocationPreview, setShowMobileLocationPreview] = useState<boolean>(true);
+  const [readingTheme, setReadingTheme] = useState<'dark' | 'paper'>(() => {
+    try { return localStorage.getItem('ashera-proposal-reading-theme') === 'paper' ? 'paper' : 'dark'; }
+    catch { return 'dark'; }
+  });
+  const readerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    try { localStorage.setItem('ashera-proposal-reading-theme', readingTheme); } catch { /* Private browsing still supports the toggle. */ }
+  }, [readingTheme]);
+  useEffect(() => {
+    if (!activeScene) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const frame = requestAnimationFrame(() => readerRef.current?.querySelector<HTMLButtonElement>('[data-reader-close]')?.focus({ preventScroll: true }));
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') { event.preventDefault(); setActiveScene(null); return; }
+      if (event.key !== 'Tab') return;
+      const controls = (Array.from(readerRef.current?.querySelectorAll('button:not([disabled]), a[href], input, [tabindex="0"]') || []) as HTMLElement[]).filter(el => el.getClientRects().length > 0);
+      const first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && (document.activeElement === first || !readerRef.current?.contains(document.activeElement))) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && (document.activeElement === last || !readerRef.current?.contains(document.activeElement))) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => { cancelAnimationFrame(frame); document.body.style.overflow = previousOverflow; document.removeEventListener('keydown', handleKey); previousFocus?.focus({ preventScroll: true }); };
+  }, [activeScene]);
+  const [showMobileLocationPreview, setShowMobileLocationPreview] = useState<boolean>(false);
 
   // Remonter en haut
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -1737,7 +1779,7 @@ export default function App() {
     setActiveMonthKey(monthKey);
     const element = document.getElementById(`period-${monthKey}`);
     if (element) {
-      const yOffset = -100;
+      const yOffset = -24;
       const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -1793,7 +1835,8 @@ export default function App() {
       if (!container) return;
       const target = container.querySelector<HTMLElement>(`[data-msg-index="${targetIdx}"]`);
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        const top = container.scrollTop + target.getBoundingClientRect().top - container.getBoundingClientRect().top - 12;
+        container.scrollTo({ top: Math.max(0, top), behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
       }
     }, 80);
     return () => clearTimeout(timer);
@@ -1829,7 +1872,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
+    <div data-faction={selectedFaction || 'default'} className="chronicle min-h-screen text-slate-200 font-sans selection:bg-red-900 selection:text-white relative">
       
       {/* 🖼️ IMAGE DE FOND DARK FANTASY FLOUTÉE */}
       <div 
@@ -1840,7 +1883,7 @@ export default function App() {
       <div className="ember-particles-bg" />
 
       {/* 🗡️ EN-TÊTE PRINCIPAL AVEC ARTWORK ET FILTRES */}
-      <header ref={headerRef} className="sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
+      <header ref={headerRef} className="chronicle-header sticky top-0 z-40 bg-[#090b10]/95 backdrop-blur-md border-b border-slate-800/90 shadow-2xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             
@@ -1912,7 +1955,7 @@ export default function App() {
           </div>
 
           {/* 🛡️ BANNIÈRES INTERACTIVES DES 4 FACTIONS D'ASHERA (CHANGEMENT DE THÈME) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
+          <div className="heraldry grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-3.5 pt-3 border-t border-slate-800/80">
             {Object.entries(FACTION_INFO).map(([factionName, info]) => {
               const isSelected = selectedFaction === factionName;
               const memberCount = groupedActorsByFaction[factionName]?.length || 0;
@@ -1920,6 +1963,8 @@ export default function App() {
               return (
                 <div
                   key={factionName}
+                  role="button" tabIndex={0} aria-pressed={isSelected}
+                  onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSelectedFaction(isSelected ? null : factionName); } }}
                   onClick={() => setSelectedFaction(isSelected ? null : factionName)}
                   style={{ 
                     borderColor: isSelected ? info.hexColor : 'rgba(226, 232, 240, 0.15)',
@@ -1961,7 +2006,7 @@ export default function App() {
 
 
           {/* BARRE DE FILTRES SÉLECTEURS AVEC RECHERCHE INTERACTIVE DE PERSONNAGES */}
-          <div className="flex flex-wrap items-center justify-between gap-3 mt-3 text-xs">
+          <div className="archive-filters flex flex-wrap items-center justify-between gap-3 mt-3 text-xs">
             <div className="flex flex-wrap items-center gap-3 flex-1">
               
               {/* 🔍 SÉLECTEUR DE PERSONNAGES AVEC RECHERCHE PAR SAISIE MANUELLE */}
@@ -1995,7 +2040,7 @@ export default function App() {
       </header>
 
       {/* 🚀 LAYOUT PRINCIPAL AVEC GANTT SWIMLANES DYNAMIQUES */}
-      <div className={`${selectedActor !== 'all' ? 'max-w-[1600px]' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6 lg:gap-8 transition-all duration-300`}>
+      <div className={`archive-layout ${selectedActor !== 'all' ? 'max-w-[1600px]' : 'max-w-7xl'} mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6 lg:gap-8 transition-all duration-300`}>
         
         {/* 📌 SAUT TEMPOREL FIGÉ PERMANENT */}
         <aside 
@@ -2227,7 +2272,7 @@ export default function App() {
 
       {/* 💬 MODALE LECTEUR DE SCÈNE : SCÈNE AU CENTRE ET IMAGE À DROITE SUR ÉCRAN LARGE / ULTRAWIDE */}
       {activeScene && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-x-auto overflow-y-auto">
+        <div data-reading-theme={readingTheme} className="reading-overlay fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-x-auto overflow-y-auto">
           
           {/* CONTENEUR GRILLE À 3 COLONNES (SPACER GAUCHE, SCÈNE CENTRE, IMAGE DROITE) */}
           <div className="w-full max-w-[1920px] my-auto flex flex-col xl:grid xl:grid-cols-[1fr_auto_1fr] items-center xl:items-start justify-items-center gap-6 xl:gap-8 px-4">
@@ -2240,7 +2285,7 @@ export default function App() {
             )}
 
             {/* 2. CASE CENTRALE PRINCIPALE (LECTEUR DISCORD DE SCÈNE) */}
-            <div className="gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-[46rem] xl:w-[48rem] 2xl:w-[52rem] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1] shrink-0">
+            <div ref={readerRef} role="dialog" aria-modal="true" aria-labelledby="reading-scene-title" className="reading-panel gothic-corner-box bg-[#313338] border border-slate-700 w-full max-w-[46rem] xl:w-[48rem] 2xl:w-[52rem] max-h-[90vh] flex flex-col shadow-2xl overflow-hidden relative text-[#dbdee1] shrink-0">
               {/* En-tête Modal Discord */}
               <div className="px-6 py-4 border-b border-[#1e1f22] flex items-center justify-between bg-[#2b2d31]">
                 <div className="flex items-center gap-3">
@@ -2253,6 +2298,9 @@ export default function App() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
+                  <button type="button" className="reading-theme-toggle" aria-label={readingTheme === 'dark' ? 'Passer à la lecture ivoire' : 'Passer à la lecture sombre Discord'} title={readingTheme === 'dark' ? 'Lecture ivoire' : 'Lecture sombre Discord'} onClick={() => setReadingTheme(theme => theme === 'dark' ? 'paper' : 'dark')}>
+                    {readingTheme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                  </button>
                   {activeSceneLocationImage && (
                     <button
                       onClick={() => setShowMobileLocationPreview(prev => !prev)}
@@ -2284,6 +2332,7 @@ export default function App() {
                     <span className="hidden sm:inline">Discord Web</span>
                   </a>
                   <button
+                    data-reader-close aria-label="Fermer la scène" title="Fermer la scène"
                     onClick={() => setActiveScene(null)}
                     className="p-1.5 rounded-full text-[#b5bac1] hover:text-[#f2f3f5] hover:bg-[#35373c] transition-colors"
                   >
@@ -2355,7 +2404,7 @@ export default function App() {
 
               {/* En-tête de la Scène */}
               <div className="px-6 py-3 bg-[#2b2d31]/60 border-b border-[#1e1f22]">
-                <h2 className="text-base font-bold text-[#f2f3f5] mb-2">
+                <h2 id="reading-scene-title" className="text-base font-bold text-[#f2f3f5] mb-2">
                   {highlightSearchQuery(activeScene.title, debouncedQuery, 'title')}
                 </h2>
                 <div className="flex flex-wrap items-center gap-2">
@@ -2407,7 +2456,7 @@ export default function App() {
               </div>
 
               {/* FLUX DES MESSAGES : FORMAT DISCORD */}
-              <div ref={msgScrollContainerRef} className="p-6 overflow-y-auto flex-1 custom-scrollbar bg-[#313338]">
+              <div ref={msgScrollContainerRef} className="reading-flow p-6 overflow-y-auto flex-1 custom-scrollbar bg-[#313338]">
                 {activeScene.messages.map((msg, index) => {
                   const prevMsg = index > 0 ? activeScene.messages[index - 1] : undefined;
                   const isConsecutive = isConsecutiveMessage(msg, prevMsg, 5);
