@@ -55,9 +55,9 @@
     "char_ivoire"
   ],
   "Aryanna Erhendil": [
-    "La Garde Pourpre",
-    "#ef4444",
-    "char_pourpre"
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ],
   "Æther": [
     "L'œil",
@@ -65,9 +65,9 @@
     "char_oeil"
   ],
   "Katelynn Hoffmann": [
-    "Voile d'Ivoire",
-    "#fef08a",
-    "char_ivoire"
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
   ],
   "Lucia Fiorella": [
     "Cercle d'Azur",
@@ -1495,6 +1495,31 @@
     "char_sans_guilde"
   ],
   "jeune baddie doomcore": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Xower L'Horrible": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "xower": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "Evil MJ": [
+    "JAVUS",
+    "#ffffff",
+    "char_javus"
+  ],
+  "Masterain": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "masterain4": [
     "Sans guilde",
     "#eab308",
     "char_sans_guilde"
