@@ -513,7 +513,7 @@ class DiscordExporterClient(discord.Client):
                             if c_name:
                                 detected_gm_names.add(c_name)
 
-                m_override = get_manual_override(member.display_name) or get_manual_override(member.name)
+                m_override = get_manual_override(member.display_name) or get_manual_override(member.name) or (get_manual_override(str(member.id)) if hasattr(member, 'id') else None)
                 if m_override and m_override.get("guild"):
                     g_name = m_override["guild"]
                     c_name = m_override.get("character_name", member.display_name)
@@ -771,6 +771,10 @@ class DiscordExporterClient(discord.Client):
                         g_member = target_guild.get_member(msg.author.id)
                         if g_member and g_member.display_name:
                             author_name = g_member.display_name
+                    if hasattr(msg.author, 'id'):
+                        id_override = get_manual_override(str(msg.author.id))
+                        if id_override and id_override.get("character_name"):
+                            author_name = id_override["character_name"]
                     author_avatar_url = str(msg.author.display_avatar.url) if hasattr(msg.author, 'display_avatar') and msg.author.display_avatar else ""
                     
                     # Contenu texte + pièces jointes (ex: images)

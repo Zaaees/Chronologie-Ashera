@@ -68,6 +68,18 @@
     "MYTHER": {
       "character_name": "Æther",
       "guild": "L'œil"
+    },
+    "345629407039193089": {
+      "character_name": "Aryanna Erhendil",
+      "guild": "La Garde Pourpre"
+    },
+    "Aryanna Erhendil": {
+      "character_name": "Aryanna Erhendil",
+      "guild": "La Garde Pourpre"
+    },
+    "aryanna erhendil": {
+      "character_name": "Aryanna Erhendil",
+      "guild": "La Garde Pourpre"
     }
   }
 }
