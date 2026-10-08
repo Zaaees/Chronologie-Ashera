@@ -55,9 +55,9 @@
     "char_ivoire"
   ],
   "Aryanna Erhendil": [
-    "Sans guilde",
-    "#eab308",
-    "char_sans_guilde"
+    "La Garde Pourpre",
+    "#ef4444",
+    "char_pourpre"
   ],
   "345629407039193089": [
     "La Garde Pourpre",
@@ -1638,5 +1638,20 @@
     "Sans guilde",
     "#eab308",
     "char_sans_guilde"
+  ],
+  "Hatemlohs | Danaée Knytvaeve": [
+    "Voile d'Ivoire",
+    "#fef08a",
+    "char_ivoire"
+  ],
+  "Tech's stan": [
+    "Sans guilde",
+    "#eab308",
+    "char_sans_guilde"
+  ],
+  "aryanna erhendil": [
+    "La Garde Pourpre",
+    "#ef4444",
+    "char_pourpre"
   ]
 }
